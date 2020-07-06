@@ -27,12 +27,13 @@
     insert-css "^2.0.0"
     rc-util "^5.0.1"
 
-"@ant-design/pro-layout@^5.0.17":
-  version "5.0.17"
-  resolved "https://registry.npm.taobao.org/@ant-design/pro-layout/download/@ant-design/pro-layout-5.0.17.tgz#d9baf216db3dfccfd0e582885a3cb717f79fe258"
+"@ant-design/pro-layout@^6.2.0":
+  version "6.2.0"
+  resolved "https://registry.npm.taobao.org/@ant-design/pro-layout/download/@ant-design/pro-layout-6.2.0.tgz#9c1b443ba7e87babc2222c0a3ce0a0402072167c"
   dependencies:
     "@ant-design/icons" "^4.0.0"
     "@umijs/route-utils" "^1.0.5"
+    antd "^4.2.0"
     classnames "^2.2.6"
     hash.js "^1.1.7"
     history "^4.10.1"
@@ -2285,7 +2286,7 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
     "@types/color-name" "^1.1.1"
     color-convert "^2.0.1"
 
-antd@^4.3.5:
+antd@^4.2.0, antd@^4.3.5:
   version "4.4.1"
   resolved "https://registry.npm.taobao.org/antd/download/antd-4.4.1.tgz?cache=0&sync_timestamp=1594011225340&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fantd%2Fdownload%2Fantd-4.4.1.tgz#2b21b43fce51187db83278d0ba3d5dd771416bb0"
   dependencies:
