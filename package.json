@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "zhouhaifei-react-scripts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -31,15 +31,14 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.5",
+    "eslint": "7.4.0",
     "http-proxy-middleware": "^1.0.4",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
-    "eslint": "7.4.0",
     "prettier": "^2.0.5",
     "stylelint": "^13.6.1",
     "typescript": "^3.9.5",
-    "zhouhaifei-code-style": "1.0.3",
-    "zhouhaifei-react-scripts": "^0.0.5"
+    "zhouhaifei-code-style": "1.0.3"
   },
   "browserslist": [
     "Chrome >= 54",
@@ -70,12 +69,12 @@
     ]
   },
   "scripts": {
-    "start": "zhouhaifei-react-scripts start",
-    "build": "zhouhaifei-react-scripts build",
-    "test": "zhouhaifei-react-scripts test",
+    "start": "node zhouhaifei-react-scripts/scripts/start.js",
+    "build": "node zhouhaifei-react-scripts/scripts/build.js",
+    "test": "node zhouhaifei-react-scripts/scripts/test.js",
     "lint-staged": "lint-staged --allow-empty",
     "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
-    "lint:js": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
+    "lint:js": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
     "prettier": "prettier -c --write \"**/*.{css,less,scss,md,html}\""
   }
 }
