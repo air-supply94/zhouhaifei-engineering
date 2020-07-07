@@ -4,6 +4,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const utils = require('./utils');
 
 module.exports = {
+  concatenateModules: true,
   minimize: utils.isProduction,
   minimizer: [
     // This is only used in production mode

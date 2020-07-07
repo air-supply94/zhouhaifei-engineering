@@ -1,15 +1,10 @@
 {
   "compilerOptions": {
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "typeRoots": ["node_modules/@types"],
     "outDir": "dist",
     "module": "esnext",
     "target": "esnext",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "sourceMap": true,
     "baseUrl": ".",
     "jsx": "react",
@@ -26,9 +21,7 @@
     "isolatedModules": false,
     "noEmit": true,
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -38,14 +31,6 @@
     "noImplicitThis": false,
     "alwaysStrict": false
   },
-  "exclude": [
-    "node_modules",
-    "build",
-    "dist",
-    "webpack",
-    "jest"
-  ],
-  "include": [
-    "src"
-  ]
+  "exclude": ["node_modules", "build", "dist", "webpack", "jest"],
+  "include": ["src"]
 }
