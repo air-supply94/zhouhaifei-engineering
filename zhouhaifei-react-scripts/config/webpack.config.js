@@ -4,22 +4,23 @@ const getClientEnvironment = require('./env');
 const fs = require('fs');
 const path = require('path');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
-const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
-const webpackBar = require('webpackbar');
-const bundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const compressionPlugin = require('compression-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PnpWebpackPlugin = require('pnp-webpack-plugin');
+const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 const webpack = require('webpack');
+const bundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const merge = require('webpack-merge');
+const webpackBar = require('webpackbar');
 const modules = require('./modules');
 const paths = require('./paths');
 const utils = require('./utils');
+
 const shouldUseSourceMap = utils.shouldUseSourceMap;
 
 const useTypeScript = fs.existsSync(paths.appTsConfig);
@@ -83,7 +84,7 @@ module.exports = function() {
     module: {
       strictExportPresence: true,
       rules: [
-        {parser: {requireEnsure: false}},
+        { parser: { requireEnsure: false }},
 
         {
           test: /\.(js|mjs|jsx|ts|tsx)$/,
@@ -107,15 +108,65 @@ module.exports = function() {
             {
               test: /\.(js|mjs|jsx|ts|tsx)$/,
               include: paths.appPath,
-              loader: require.resolve('babel-loader'),
-              options: {
-                extends: path.resolve(__dirname, 'babelrc.js'),
-                cacheDirectory: true,
+              use: [
+                {
+                  loader: require.resolve('thread-loader'),
+                  options: {
+                    /*
+                     * the number of spawned workers, defaults to (number of cpus - 1) or
+                     * fallback to 1 when require('os').cpus() is undefined
+                     */
+                    workers: require('os').cpus().length,
 
-                // See #6846 for context on why cacheCompression is disabled
-                cacheCompression: false,
-                compact: utils.isProduction,
-              },
+                    /*
+                     * number of jobs a worker processes in parallel
+                     * defaults to 20
+                     */
+                    workerParallelJobs: 50,
+
+                    // additional node.js arguments
+                    workerNodeArgs: ['--max-old-space-size=1024'],
+
+                    /*
+                     * Allow to respawn a dead worker pool
+                     * respawning slows down the entire compilation
+                     * and should be set to false for development
+                     */
+                    poolRespawn: false,
+
+                    /*
+                     * timeout for killing the worker processes when idle
+                     * defaults to 500 (ms)
+                     * can be set to Infinity for watching builds to keep workers alive
+                     */
+                    poolTimeout: 2000,
+
+                    /*
+                     * number of jobs the poll distributes to the workers
+                     * defaults to 200
+                     * decrease of less efficient but more fair distribution
+                     */
+                    poolParallelJobs: 50,
+
+                    /*
+                     * name of the pool
+                     * can be used to create different pools with elsewise identical options
+                     */
+                    name: 'my-pool',
+                  },
+                },
+                {
+                  loader: require.resolve('babel-loader'),
+                  options: {
+                    extends: path.resolve(__dirname, 'babelrc.js'),
+                    cacheDirectory: true,
+
+                    // See #6846 for context on why cacheCompression is disabled
+                    cacheCompression: false,
+                    compact: utils.isProduction,
+                  },
+                },
+              ],
             },
 
             ...require('./style'),
@@ -138,7 +189,7 @@ module.exports = function() {
         chunkFilename: `${utils.resourceName.css}/[name].chunk.[contenthash].css`,
       }),
 
-      new webpackBar({profile: true}),
+      new webpackBar({ profile: true }),
       utils.isProduction && new bundleAnalyzerPlugin({
         openAnalyzer: false,
         analyzerHost: utils.host,
@@ -162,7 +213,7 @@ module.exports = function() {
         filename: '[path].br[query]',
         algorithm: 'brotliCompress',
         test: /\.(js|css|html|svg)$/,
-        compressionOptions: {level: 11},
+        compressionOptions: { level: 11 },
         threshold: 0,
         minRatio: 0.8,
         deleteOriginalAssets: false,

@@ -94,6 +94,7 @@ module.exports = {
    */
   splitChunks: {
     chunks: 'all',
+    minSize: utils.splitChunkMinSize,
     name: false,
   },
 
