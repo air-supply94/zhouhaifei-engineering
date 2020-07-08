@@ -23,10 +23,8 @@ export class BasicLayout extends React.Component<BasicLayoutInterface> {
   state = { didMount: false };
 
   componentDidMount() {
-    /*
-     * 解决先把collapsed设置为true，再用url跳转到其他页面时。
-     * onCollapse被调用问题，不知道原因
-     */
+    /* 解决先把collapsed设置为true，再用url跳转到其他页面时。
+       onCollapse被调用问题，不知道原因 */
     this.setState({ didMount: true });
   }
 

@@ -6,27 +6,21 @@ const modules = require('../../config/modules');
 const paths = require('../../config/paths');
 
 module.exports = (resolve, rootDir) => {
-  /*
-   * Use this instead of `paths.testsSetup` to avoid putting
-   * an absolute filename into configuration after ejecting.
-   */
-  const setupTestsMatches = paths.testsSetup.match(/src[/\\]setupTests\.(.+)/);
-  const setupTestsFileExtension = (setupTestsMatches && setupTestsMatches[1]) || 'js';
-  const setupTestsFile = fs.existsSync(paths.testsSetup)
-    ? `<rootDir>/src/setupTests.${setupTestsFileExtension}`
-    : undefined;
-
   const config = {
     roots: ['<rootDir>/src'],
 
+    // Indicates whether the coverage information should be collected while executing the test
+    collectCoverage: true,
+
+    // The directory where Jest should output its coverage files.
+    coverageDirectory: '<rootDir>/coverage/',
     collectCoverageFrom: [
       'src/**/*.{js,jsx,ts,tsx}',
       '!src/**/*.d.ts',
     ],
 
-    setupFiles: [],
-
-    setupFilesAfterEnv: setupTestsFile ? [setupTestsFile] : [],
+    setupFiles: fs.existsSync(paths.testsSetup) ? [paths.testsSetup] : [],
+    setupFilesAfterEnv: fs.existsSync(paths.testsSetupAfterEnv) ? [paths.testsSetupAfterEnv] : [],
     testMatch: [
       '<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}',
       '<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}',

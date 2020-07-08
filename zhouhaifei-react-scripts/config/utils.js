@@ -32,4 +32,5 @@ module.exports = {
     image: 'image',
     media: 'media',
   },
+  exclude: [/node_modules/],
 };

@@ -5,11 +5,9 @@ process.env.BABEL_ENV = 'test';
 process.env.NODE_ENV = 'test';
 process.env.PUBLIC_URL = '';
 
-/*
- * Makes the script crash on unhandled rejections instead of silently
- * ignoring them. In the future, promise rejections that are not handled will
- * terminate the Node.js process with a non-zero exit code.
- */
+/* Makes the script crash on unhandled rejections instead of silently
+   ignoring them. In the future, promise rejections that are not handled will
+   terminate the Node.js process with a non-zero exit code. */
 process.on('unhandledRejection', (err) => {
   throw err;
 });
@@ -50,10 +48,8 @@ if (
   argv.push(hasSourceControl ? '--watch' : '--watchAll');
 }
 
-/*
- * @remove-on-eject-begin
- * This is not necessary after eject because we embed config into package.json.
- */
+/* @remove-on-eject-begin
+   This is not necessary after eject because we embed config into package.json. */
 const createJestConfig = require('./utils/createJestConfig');
 const path = require('path');
 const jest = require('jest');
@@ -69,11 +65,9 @@ argv.push(
   )
 );
 
-/*
- * This is a very dirty workaround for https://github.com/facebook/jest/issues/5913.
- * We're trying to resolve the environment ourselves because Jest does it incorrectly.
- * TODO: remove this as soon as it's fixed in Jest.
- */
+/* This is a very dirty workaround for https://github.com/facebook/jest/issues/5913.
+   We're trying to resolve the environment ourselves because Jest does it incorrectly.
+   TODO: remove this as soon as it's fixed in Jest. */
 const resolve = require('resolve');
 
 function resolveJestDefaultEnvironment(name) {

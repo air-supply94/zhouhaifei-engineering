@@ -10,10 +10,8 @@ module.exports = {
     'stylelint-declaration-block-no-ignored-properties',
   ].map((key) => require.resolve(key)),
   rules: {
-    /*
-     *  stylelint-config-standard
-     * https://github.com/stylelint/stylelint/issues/4114
-     */
+    /*  stylelint-config-standard
+       https://github.com/stylelint/stylelint/issues/4114 */
     'function-calc-no-invalid': null,
     'plugin/declaration-block-no-ignored-properties': true,
     'color-hex-length': null,

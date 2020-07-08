@@ -125,7 +125,7 @@ const eslintConfigRule = {
   ],
   'multiline-comment-style': [
     2,
-    'starred-block',
+    'bare-block',
   ],
   'new-cap': 0,
   'new-parens': 2,
@@ -394,7 +394,7 @@ const eslintTypescriptRule = {
   '@typescript-eslint/explicit-member-accessibility': [
     'error',
     {
-      accessibility: 'explicit',
+      accessibility: 'no-public',
       ignoredMethodNames: [
         'getDerivedStateFromProps',
         'componentDidMount',

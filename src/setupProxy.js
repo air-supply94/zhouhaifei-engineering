@@ -1,9 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const proxy = require('http-proxy-middleware');
-
 const target = '';
 const context = [];
-module.exports = function(app) {
+
+module.exports = function(app, proxy) {
   context.forEach((pathPrefix) => {
     app.use(
       proxy.createProxyMiddleware(
