@@ -39,7 +39,7 @@
     "stylelint": "^13.6.1",
     "typescript": "^3.9.5",
     "zhouhaifei-code-style": "1.0.4",
-    "zhouhaifei-react-scripts": "^0.0.9"
+    "zhouhaifei-react-scripts": "^0.0.10"
   },
   "browserslist": [
     "Chrome >= 54",
@@ -70,12 +70,12 @@
     ]
   },
   "scripts": {
-    "start": "node zhouhaifei-react-scripts/scripts/start.js",
-    "build": "node zhouhaifei-react-scripts/scripts/build.js",
-    "test": "node zhouhaifei-react-scripts/scripts/test.js",
-    "test-start": "zhouhaifei-react-scripts start",
-    "test-build": "zhouhaifei-react-scripts build",
-    "test-test": "zhouhaifei-react-scripts test",
+    "test-start": "node zhouhaifei-react-scripts/scripts/start.js",
+    "test-build": "node zhouhaifei-react-scripts/scripts/build.js",
+    "test-test": "node zhouhaifei-react-scripts/scripts/test.js",
+    "start": "zhouhaifei-react-scripts start",
+    "build": "zhouhaifei-react-scripts build",
+    "test": "zhouhaifei-react-scripts test",
     "lint-staged": "lint-staged --allow-empty",
     "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
     "lint:js": "eslint --fix --ext .js,.jsx,.ts,.tsx .",

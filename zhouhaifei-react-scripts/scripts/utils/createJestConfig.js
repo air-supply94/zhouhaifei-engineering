@@ -11,8 +11,7 @@ module.exports = (resolve, rootDir) => {
    * an absolute filename into configuration after ejecting.
    */
   const setupTestsMatches = paths.testsSetup.match(/src[/\\]setupTests\.(.+)/);
-  const setupTestsFileExtension =
-    (setupTestsMatches && setupTestsMatches[1]) || 'js';
+  const setupTestsFileExtension = (setupTestsMatches && setupTestsMatches[1]) || 'js';
   const setupTestsFile = fs.existsSync(paths.testsSetup)
     ? `<rootDir>/src/setupTests.${setupTestsFileExtension}`
     : undefined;
@@ -25,7 +24,7 @@ module.exports = (resolve, rootDir) => {
       '!src/**/*.d.ts',
     ],
 
-    setupFiles: [require.resolve('react-app-polyfill/jsdom')],
+    setupFiles: [],
 
     setupFilesAfterEnv: setupTestsFile ? [setupTestsFile] : [],
     testMatch: [
@@ -44,7 +43,7 @@ module.exports = (resolve, rootDir) => {
       '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$',
       '^.+\\.module\\.(css|less)$',
     ],
-    modulePaths: modules.additionalModulePaths || [],
+    modulePaths: [],
     moduleNameMapper: {
       '^react-native$': 'react-native-web',
       '^.+\\.module\\.(css|less)$': 'identity-obj-proxy',
@@ -61,9 +60,11 @@ module.exports = (resolve, rootDir) => {
       'jest-watch-typeahead/testname',
     ],
   };
+
   if (rootDir) {
     config.rootDir = rootDir;
   }
+
   const overrides = { ...require(paths.appPackageJson).jest };
   const supportedKeys = [
     'clearMocks',
