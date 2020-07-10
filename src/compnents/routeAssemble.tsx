@@ -27,21 +27,23 @@ export interface RouteAssembleConfig {
   title?: string;
 }
 
-export const RouteAssemble = (props) => (
-  <Route
-    key={props.path}
-    path={props.path}
-    exact
-    sensitive
-    render={(routeInfo: RouteChildrenProps) => (
-      <props.DefaultLayout {...routeInfo}>
-        <RouteLazyLoad {...props} {...routeInfo}/>
-      </props.DefaultLayout>
-    )}
-  />
-);
+export function RouteAssemble(config): React.ReactNode {
+  return (
+    <Route
+      key={config.path}
+      path={config.path}
+      exact
+      sensitive
+      render={(routeInfo: RouteChildrenProps) => (
+        <config.DefaultLayout {...routeInfo}>
+          <RouteLazyLoad {...config} {...routeInfo}/>
+        </config.DefaultLayout>
+      )}
+    />
+  );
+}
 
-export function renderRoute() {
+export function renderRoute(): React.ReactNode {
   return _.flattenDeep(routesInfo)
     .map((item) => RouteAssemble(item));
 }

@@ -78,7 +78,7 @@ module.exports = function() {
     module: {
       strictExportPresence: true,
       rules: [
-        { parser: { requireEnsure: false }},
+        {parser: {requireEnsure: false}},
 
         {
           test: /\.(js|mjs|jsx|ts|tsx)$/,
@@ -142,7 +142,7 @@ module.exports = function() {
                 {
                   loader: require.resolve('babel-loader'),
                   options: {
-                    extends: path.resolve(__dirname, 'babelrc.js'),
+                    extends: path.resolve(__dirname, 'babel.config.js'),
                     cacheDirectory: true,
 
                     // See #6846 for context on why cacheCompression is disabled
@@ -173,7 +173,7 @@ module.exports = function() {
         chunkFilename: `${utils.resourceName.css}/[name].chunk.[contenthash].css`,
       }),
 
-      utils.isProduction && new webpackBar({ profile: true }),
+      utils.isProduction && new webpackBar({profile: true}),
       utils.isProduction && new bundleAnalyzerPlugin({
         openAnalyzer: false,
         analyzerHost: utils.host,
@@ -197,7 +197,7 @@ module.exports = function() {
         filename: '[path].br[query]',
         algorithm: 'brotliCompress',
         test: /\.(js|css|html|svg)$/,
-        compressionOptions: { level: 11 },
+        compressionOptions: {level: 11},
         threshold: 0,
         minRatio: 0.8,
         deleteOriginalAssets: false,

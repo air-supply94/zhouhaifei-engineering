@@ -1,7 +1,3 @@
-/**
- * @description postcss配置
- */
-
 module.exports = {
   sourceMap: true,
   ident: 'postcss',

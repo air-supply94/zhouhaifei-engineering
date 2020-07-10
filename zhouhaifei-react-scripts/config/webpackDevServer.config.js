@@ -93,7 +93,7 @@ module.exports = function(proxy, allowedHost) {
        https://github.com/facebook/create-react-app/issues/293
        src/node_modules is not ignored to support absolute imports
        https://github.com/facebook/create-react-app/issues/1065 */
-    watchOptions: { ignored: ignoredFiles(paths.appSrc) },
+    watchOptions: {ignored: ignoredFiles(paths.appSrc)},
     https: getHttpsConfig(),
     host: utils.host,
     overlay: false,
@@ -113,7 +113,7 @@ module.exports = function(proxy, allowedHost) {
         require(paths.proxySetup)(app, require('http-proxy-middleware'));
       }
 
-      require('./mock')(server);
+      utils.isMock && require('./mock')(server);
 
       /* Keep `evalSourceMapMiddleware` and `errorOverlayMiddleware`
          middlewares before `redirectServedPath` otherwise will not have any effect

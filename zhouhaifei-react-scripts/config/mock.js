@@ -1,27 +1,22 @@
 const assert = require('assert');
-const fs = require('fs');
 const path = require('path');
 const bodyParser = require('body-parser');
 const chokidar = require('chokidar');
+const glob = require('glob');
 const chalk = require('react-dev-utils/chalk');
 const paths = require('./paths');
-
-const configFile = path.resolve(paths.appPath, '.roadhogrc.mock.js');
-const mockDir = path.resolve(paths.appPath, './mock/');
-
 let cacheRoutePath = [];
+let cacheMockPath = [];
 
 function getConfig() {
-  if (fs.existsSync(configFile)) {
-    // disable require cache
-    Object.keys(require.cache).forEach((file) => {
-      if (file === configFile || file.indexOf(mockDir) > -1) {
-        delete require.cache[file];
-      }
-    });
-    return require(configFile);
-  }
-  return {};
+  cacheMockPath.forEach(file => {
+    delete require.cache[file];
+  });
+  cacheMockPath = glob.sync('**/_mock/*.{js,ts}', {
+    cwd: paths.appSrc,
+    realpath: true,
+  });
+  return cacheMockPath.reduce((prev, filePath) => ({...prev, ...require(filePath)}), {});
 }
 
 function createMockHandler(method, path, value) {
@@ -36,11 +31,8 @@ function createMockHandler(method, path, value) {
 }
 
 function watchFile(devServer) {
-  const watcher = chokidar.watch([
-    configFile,
-    mockDir,
-  ], {
-    ignored: /node_modules/,
+  const watcher = chokidar.watch('**/_mock/*.{js,ts}', {
+    cwd: paths.appSrc,
     ignoreInitial: true,
   });
 
@@ -65,7 +57,7 @@ function applyMock(devServer) {
       bodyParser.urlencoded({
         extended: true,
         limit: '5mb',
-      })
+      }),
     );
 
     realApplyMock(devServer);
@@ -77,7 +69,7 @@ function applyMock(devServer) {
 
 function realApplyMock(devServer) {
   const config = getConfig();
-  const { app } = devServer;
+  const {app} = devServer;
 
   const mockRules = [];
 
@@ -92,7 +84,7 @@ function realApplyMock(devServer) {
       typeof config[key] === 'string',
       `mock value of ${key} should be function or object or string or number or boolean, but got ${typeof config[
         key
-      ]}`
+        ]}`,
     );
 
     mockRules.push({
@@ -109,7 +101,7 @@ function realApplyMock(devServer) {
   mockRules.forEach((mock) => {
     app[mock.method](
       mock.path,
-      createMockHandler(mock.method, mock.path, mock.target)
+      createMockHandler(mock.method, mock.path, mock.target),
     );
   });
 }

@@ -1,6 +1,6 @@
 {
   "name": "zhouhaifei-react-scripts",
-  "version": "0.0.12",
+  "version": "0.0.14",
   "description": "",
   "license": "MIT",
   "author": "zhouhaifei1994@sina.com",
@@ -43,6 +43,7 @@
     "eslint-loader": "4.0.2",
     "file-loader": "6.0.0",
     "fs-extra": "^9.0.1",
+    "glob": "^7.1.6",
     "html-webpack-plugin": "4.3.0",
     "http-proxy-middleware": "^1.0.4",
     "identity-obj-proxy": "3.0.0",

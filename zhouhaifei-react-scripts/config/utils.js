@@ -11,8 +11,10 @@ const host = process.env.HOST || '0.0.0.0';
 const sockHost = process.env.WDS_SOCKET_HOST;
 const sockPath = process.env.WDS_SOCKET_PATH; // default: '/sockjs-node'
 const sockPort = process.env.WDS_SOCKET_PORT;
+const isMock = typeof process.env.MOCK === 'string' && process.env.MOCK.toLocaleUpperCase() === 'YES';
 
 module.exports = {
+  isMock,
   splitChunkMinSize,
   sockHost,
   sockPath,

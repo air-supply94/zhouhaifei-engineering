@@ -27,11 +27,9 @@ module.exports = (resolve, rootDir) => {
     ],
     testEnvironment: 'jest-environment-jsdom-fourteen',
     transform: {
-      '^.+\\.(js|jsx|ts|tsx)$': resolve('config/jest/babelTransform.js'),
-      '^.+\\.css$': resolve('config/jest/cssTransform.js'),
-      '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': resolve(
-        'config/jest/fileTransform.js'
-      ),
+      '^.+\\.(js|jsx|ts|tsx)$': resolve('scripts/utils/babelTransform.js'),
+      '^.+\\.css$': resolve('scripts/utils/cssTransform.js'),
+      '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': resolve('scripts/utils/fileTransform.js'),
     },
     transformIgnorePatterns: [
       '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$',
