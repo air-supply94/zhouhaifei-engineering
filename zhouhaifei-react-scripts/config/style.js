@@ -1,3 +1,4 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
 const utils = require('./utils');
 
@@ -6,7 +7,6 @@ const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const lessRegex = /\.less$/;
 const lessModuleRegex = /\.module\.less$/;
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 function getStyleLoaders(cssOptions, preProcessor) {
   const loaders = [

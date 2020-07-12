@@ -40,8 +40,8 @@
     "react-test-renderer": "^16.13.1",
     "stylelint": "^13.6.1",
     "typescript": "^3.9.5",
-    "zhouhaifei-code-style": "^1.0.6",
-    "zhouhaifei-react-scripts": "^0.0.16"
+    "zhouhaifei-code-style": "^1.0.7",
+    "zhouhaifei-react-scripts": "^0.0.17"
   },
   "browserslist": [
     "Chrome >= 54",

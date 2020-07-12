@@ -4,8 +4,8 @@ const eslintConfigRule = {
 
   // Best Practices
   'accessor-pairs': 2,
-  'class-methods-use-this': 2,
-  'consistent-return': 2,
+  'class-methods-use-this': 0,
+  'consistent-return': 0,
   curly: 2,
   'default-case': 0,
   'dot-location': 0,
@@ -61,7 +61,7 @@ const eslintConfigRule = {
   ],
   'block-spacing': 2,
   'brace-style': 2,
-  camelcase: 2,
+  camelcase: 1,
   'comma-dangle': [
     2,
     {
@@ -297,7 +297,7 @@ const eslintConfigRule = {
 
 const eslintImportRule = {
   'import/order': [
-    'error',
+    'warn',
     {
       alphabetize: {
         order: 'asc',
@@ -308,7 +308,7 @@ const eslintImportRule = {
   'import/no-unresolved': 'off',
   'import/named': 'error',
   'import/no-absolute-path': 'error',
-  'import/no-dynamic-require': 'error',
+  'import/no-dynamic-require': 'off',
   'import/no-self-import': 'error',
   'import/no-cycle': 'error',
   'import/no-useless-path-segments': 'error',
