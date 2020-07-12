@@ -78,7 +78,7 @@ module.exports = function() {
     module: {
       strictExportPresence: true,
       rules: [
-        {parser: {requireEnsure: false}},
+        { parser: { requireEnsure: false }},
 
         {
           test: /\.(js|mjs|jsx|ts|tsx)$/,
@@ -170,10 +170,10 @@ module.exports = function() {
 
       utils.isProduction && new MiniCssExtractPlugin({
         filename: `${utils.resourceName.css}/[name].[contenthash].css`,
-        chunkFilename: `${utils.resourceName.css}/[name].chunk.[contenthash].css`,
+        chunkFilename: `${utils.resourceName.css}/[name].[contenthash].css`,
       }),
 
-      utils.isProduction && new webpackBar({profile: true}),
+      new webpackBar({ profile: false }),
       utils.isProduction && new bundleAnalyzerPlugin({
         openAnalyzer: false,
         analyzerHost: utils.host,
@@ -197,7 +197,7 @@ module.exports = function() {
         filename: '[path].br[query]',
         algorithm: 'brotliCompress',
         test: /\.(js|css|html|svg)$/,
-        compressionOptions: {level: 11},
+        compressionOptions: { level: 11 },
         threshold: 0,
         minRatio: 0.8,
         deleteOriginalAssets: false,

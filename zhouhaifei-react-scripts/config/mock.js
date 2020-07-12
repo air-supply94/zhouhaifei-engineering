@@ -5,18 +5,22 @@ const chokidar = require('chokidar');
 const glob = require('glob');
 const chalk = require('react-dev-utils/chalk');
 const paths = require('./paths');
+
 let cacheRoutePath = [];
 let cacheMockPath = [];
 
 function getConfig() {
-  cacheMockPath.forEach(file => {
+  cacheMockPath.forEach((file) => {
     delete require.cache[file];
   });
   cacheMockPath = glob.sync('**/_mock/*.{js,ts}', {
     cwd: paths.appSrc,
     realpath: true,
   });
-  return cacheMockPath.reduce((prev, filePath) => ({...prev, ...require(filePath)}), {});
+  return cacheMockPath.reduce((prev, filePath) => ({
+    ...prev,
+    ...require(filePath),
+  }), {});
 }
 
 function createMockHandler(method, path, value) {
@@ -57,7 +61,7 @@ function applyMock(devServer) {
       bodyParser.urlencoded({
         extended: true,
         limit: '5mb',
-      }),
+      })
     );
 
     realApplyMock(devServer);
@@ -69,7 +73,7 @@ function applyMock(devServer) {
 
 function realApplyMock(devServer) {
   const config = getConfig();
-  const {app} = devServer;
+  const { app } = devServer;
 
   const mockRules = [];
 
@@ -84,7 +88,7 @@ function realApplyMock(devServer) {
       typeof config[key] === 'string',
       `mock value of ${key} should be function or object or string or number or boolean, but got ${typeof config[
         key
-        ]}`,
+      ]}`
     );
 
     mockRules.push({
@@ -101,7 +105,7 @@ function realApplyMock(devServer) {
   mockRules.forEach((mock) => {
     app[mock.method](
       mock.path,
-      createMockHandler(mock.method, mock.path, mock.target),
+      createMockHandler(mock.method, mock.path, mock.target)
     );
   });
 }

@@ -83,6 +83,7 @@ module.exports = {
     chunks: 'all',
     minSize: utils.splitChunkMinSize,
     name: false,
+    cacheGroups: {},
   },
 
   /* Keep the runtime chunk separated to enable long term caching

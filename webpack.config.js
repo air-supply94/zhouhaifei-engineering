@@ -1,5 +1,20 @@
 module.exports = function(utils) {
   return {
+    entry: { commons: ['@/utils']},
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          // 提取公共包
+          commons: {
+            chunks: 'initial', // 必须三选一： "initial" | "all" | "async"(默认就是异步)
+            name: 'commons',
+            minChunks: 2,
+            minSize: 0,
+            priority: 2,
+          },
+        },
+      },
+    },
     externals: {
       lodash: {
         commonjs: 'lodash',

@@ -10,11 +10,11 @@ module.exports = {
   pathinfo: utils.isDevelopment,
   filename: utils.isProduction
     ? `${utils.resourceName.js}/[name].[contenthash].js`
-    : utils.isDevelopment && `${utils.resourceName}/[name].bundle.js`,
+    : utils.isDevelopment && `${utils.resourceName.js}/[name].bundle.js`,
 
   // There are also additional JS chunk files if you use code splitting.
   chunkFilename: utils.isProduction
-    ? `${utils.resourceName.js}/[name].chunk.[contenthash].js`
+    ? `${utils.resourceName.js}/[name].[contenthash].js`
     : utils.isDevelopment && `${utils.resourceName.js}/[name].chunk.js`,
   publicPath: paths.publicUrlOrPath,
 
