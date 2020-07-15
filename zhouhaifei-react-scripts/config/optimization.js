@@ -4,6 +4,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const utils = require('./utils');
 
 module.exports = {
+  moduleIds: 'hashed',
   concatenateModules: true,
   minimize: utils.isProduction,
   minimizer: [
