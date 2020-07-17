@@ -102,7 +102,7 @@ module.exports = function() {
           oneOf: [
             {
               test: /\.(js|mjs|jsx|ts|tsx)$/,
-              include: paths.appPath,
+              include: paths.appSrc,
               exclude: utils.exclude,
               use: [
                 {
@@ -163,7 +163,6 @@ module.exports = function() {
       new HtmlWebpackPlugin(require('./htmlWebpackPlugin')),
       new ModuleNotFoundPlugin(paths.appPath),
       new webpack.DefinePlugin(getClientEnvironment(paths.publicUrlOrPath.slice(0, -1)).stringified),
-      utils.isDevelopment && new webpack.HotModuleReplacementPlugin(),
       utils.isDevelopment && new CaseSensitivePathsPlugin(),
       utils.isDevelopment && new WatchMissingNodeModulesPlugin(paths.appNodeModules),
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
@@ -215,6 +214,8 @@ module.exports = function() {
 
       // 清除原先打包内容
       utils.isProduction && new cleanWebpackPlugin(),
+
+      utils.isDevelopment && new webpack.HotModuleReplacementPlugin(),
 
     ].filter(Boolean),
 

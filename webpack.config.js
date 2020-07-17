@@ -1,7 +1,7 @@
 module.exports = function(utils) {
   return {
-    entry: { commons: ['@/utils']},
-    optimization: {
+    entry: utils.isDevelopment ? [] : { commons: ['@/utils']},
+    optimization: utils.isDevelopment ? {} : {
       splitChunks: {
         cacheGroups: {
           // 提取公共包

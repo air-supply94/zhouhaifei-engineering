@@ -1,8 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
 const utils = require('./utils');
 
-// style files regexes
 const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const lessRegex = /\.less$/;
@@ -11,72 +9,63 @@ const lessModuleRegex = /\.module\.less$/;
 function getStyleLoaders(cssOptions, preProcessor) {
   const loaders = [
     utils.isDevelopment && require.resolve('style-loader'),
-    utils.isProduction && { loader: MiniCssExtractPlugin.loader },
+    utils.isProduction && MiniCssExtractPlugin.loader,
     {
       loader: require.resolve('css-loader'),
-      options: cssOptions,
+      options: {
+        sourceMap: utils.isProduction && utils.shouldUseSourceMap,
+        import: true,
+        url: true,
+        ...cssOptions,
+      },
     },
-    {
+    utils.isProduction && {
       loader: require.resolve('postcss-loader'),
-      options: { config: { path: __dirname }},
+      options: {
+        sourceMap: utils.isProduction && utils.shouldUseSourceMap,
+        ident: 'postcss',
+        plugins: [
+          require('postcss-import'),
+          require('postcss-cssnext'),
+          require('postcss-flexbugs-fixes'),
+        ],
+      },
     },
   ].filter(Boolean);
+
   if (preProcessor) {
     loaders.push(
       {
-        loader: require.resolve('resolve-url-loader'),
-        options: { sourceMap: utils.isProduction && utils.shouldUseSourceMap },
-      },
-      {
         loader: require.resolve(preProcessor),
         options: {
-          sourceMap: true,
+          sourceMap: utils.isProduction && utils.shouldUseSourceMap,
           lessOptions: { javascriptEnabled: true },
         },
       }
     );
   }
+
   return loaders;
 }
 
 module.exports = [
   {
     test: cssRegex,
-    exclude: cssModuleRegex,
-    use: getStyleLoaders({
-      importLoaders: 1,
-      sourceMap: utils.isProduction && utils.shouldUseSourceMap,
-    }),
-    sideEffects: true,
+    exclude: [cssModuleRegex],
+    use: getStyleLoaders(),
   },
   {
     test: cssModuleRegex,
-    use: getStyleLoaders({
-      importLoaders: 1,
-      sourceMap: utils.isProduction && utils.shouldUseSourceMap,
-      modules: { getLocalIdent: getCSSModuleLocalIdent },
-    }),
+    use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }}),
   },
   {
     test: lessRegex,
-    exclude: lessModuleRegex,
-    use: getStyleLoaders(
-      {
-        importLoaders: 3,
-        sourceMap: utils.isProduction && utils.shouldUseSourceMap,
-      },
-      'less-loader'
-    ),
-    sideEffects: true,
+    exclude: [lessModuleRegex],
+    use: getStyleLoaders({}, 'less-loader'),
   },
   {
     test: lessModuleRegex,
-    use: getStyleLoaders(
-      {
-        importLoaders: 3,
-        sourceMap: utils.isProduction && utils.shouldUseSourceMap,
-        modules: { getLocalIdent: getCSSModuleLocalIdent },
-      },
+    use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }},
       'less-loader'
     ),
   },
