@@ -12,7 +12,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Locale>
       <Provider global={new Global()}>
-        {Routes()}
+        <Routes/>
       </Provider>
     </Locale>
   </React.StrictMode>,

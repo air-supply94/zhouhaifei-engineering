@@ -3,7 +3,7 @@ import { Spin } from 'antd';
 import React from 'react';
 import { RouteChildrenProps } from 'react-router';
 
-export class RouteLazyLoad extends React.PureComponent<RouteAssembleConfig & RouteChildrenProps | any> {
+export class RouteLazyLoad extends React.PureComponent<RouteAssembleConfig & RouteChildrenProps> {
   constructor(props) {
     super(props);
     this.originTitle = document.title;

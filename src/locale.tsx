@@ -116,10 +116,10 @@ moment.defineLocale('zh-cn', zhCnConfig);
 
 moment.locale('zh-cn');
 
-export function Locale(props): React.ReactElement {
+export const Locale: React.FC = function(props) {
   return (
     <ConfigProvider locale={zhCN}>
       {props.children}
     </ConfigProvider>
   );
-}
+};

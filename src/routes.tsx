@@ -1,14 +1,29 @@
-import { renderRoute } from '@/compnents';
+import { BasicLayout, DefaultLayout, renderRoute } from '@/compnents';
 import { Result, Button } from 'antd';
 import React from 'react';
 import { HashRouter, Switch, Redirect, Route } from 'react-router-dom';
 
-export function Routes(): React.ReactNode {
+const routesInfo = [
+  {
+    path: '/dashboard',
+    DefaultLayout: BasicLayout,
+    LazyComponent: React.lazy(() => import('@/pages/dashboard')),
+    title: '仪表盘',
+  },
+  {
+    path: '/login',
+    DefaultLayout,
+    LazyComponent: React.lazy(() => import('@/pages/login')),
+    title: '登陆',
+  },
+];
+
+export const Routes: React.FC = function() {
   return (
     <HashRouter>
       <Switch>
         <Route exact path="/" render={() => <Redirect to={window.envConfig.defaultRedirectUrl}/>}/>
-        {renderRoute()}
+        {renderRoute(routesInfo)}
 
         {/* 403--路由 */}
         <Route
@@ -33,4 +48,4 @@ export function Routes(): React.ReactNode {
       </Switch>
     </HashRouter>
   );
-}
+};

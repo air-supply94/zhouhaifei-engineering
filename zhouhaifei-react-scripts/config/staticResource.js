@@ -5,17 +5,16 @@ module.exports = [
      smaller than specified limit in bytes as data URLs to avoid requests.
      A missing `test` is equivalent to a match. */
   {
-    test: [
-      /\.bmp$/,
-      /\.gif$/,
-      /\.jpe?g$/,
-      /\.png$/,
+    test: /\.(gif|png|jpe?g|svg)$/i,
+    use: [
+      {
+        loader: require.resolve('file-loader'),
+        options: {
+          limit: utils.imageInlineSizeLimit,
+          name: `${utils.resourceName.image}/[hash].[ext]`,
+        },
+      },
     ],
-    loader: require.resolve('url-loader'),
-    options: {
-      limit: utils.imageInlineSizeLimit,
-      name: `${utils.resourceName.image}/[hash].[ext]`,
-    },
   },
 
   /* "file" loader makes sure those assets get served by WebpackDevServer.
