@@ -3018,7 +3018,11 @@ caniuse-api@^3.0.0:
     lodash.memoize "^4.1.2"
     lodash.uniq "^4.5.0"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805, caniuse-lite@^1.0.30001035, caniuse-lite@^1.0.30001093, caniuse-lite@^1.0.30001097:
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805, caniuse-lite@^1.0.30001035:
+  version "1.0.30001105"
+  resolved "https://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30001105.tgz?cache=0&sync_timestamp=1595396025820&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcaniuse-lite%2Fdownload%2Fcaniuse-lite-1.0.30001105.tgz#d2cb0b31e5cf2f3ce845033b61c5c01566549abf"
+
+caniuse-lite@^1.0.30001093, caniuse-lite@^1.0.30001097:
   version "1.0.30001102"
   resolved "https://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30001102.tgz?cache=0&sync_timestamp=1594958744702&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcaniuse-lite%2Fdownload%2Fcaniuse-lite-1.0.30001102.tgz#3275e7a8d09548f955f665e532df88de0b63741a"
 
@@ -3350,11 +3354,11 @@ commander@*, commander@^5.1.0:
 
 commander@^2.18.0, commander@^2.20.0:
   version "2.20.3"
-  resolved "https://registry.npm.taobao.org/commander/download/commander-2.20.3.tgz?cache=0&sync_timestamp=1592632084115&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcommander%2Fdownload%2Fcommander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
+  resolved "https://registry.npm.taobao.org/commander/download/commander-2.20.3.tgz?cache=0&sync_timestamp=1595168224685&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcommander%2Fdownload%2Fcommander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
 
 commander@^4.1.1:
   version "4.1.1"
-  resolved "https://registry.npm.taobao.org/commander/download/commander-4.1.1.tgz?cache=0&sync_timestamp=1592632084115&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcommander%2Fdownload%2Fcommander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
+  resolved "https://registry.npm.taobao.org/commander/download/commander-4.1.1.tgz?cache=0&sync_timestamp=1595168224685&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcommander%2Fdownload%2Fcommander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -4116,7 +4120,7 @@ dom-serializer@0:
 
 domain-browser@^1.1.1:
   version "1.2.0"
-  resolved "https://registry.npm.taobao.org/domain-browser/download/domain-browser-1.2.0.tgz?cache=0&sync_timestamp=1593752811901&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdomain-browser%2Fdownload%2Fdomain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
+  resolved "https://registry.npm.taobao.org/domain-browser/download/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
 
 domelementtype@1, domelementtype@^1.3.1:
   version "1.3.1"
@@ -4214,8 +4218,8 @@ ejs@^2.6.1:
   resolved "https://registry.npm.taobao.org/ejs/download/ejs-2.7.4.tgz#48661287573dcc53e366c7a1ae52c3a120eec9ba"
 
 electron-to-chromium@^1.3.30, electron-to-chromium@^1.3.378:
-  version "1.3.500"
-  resolved "https://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.500.tgz?cache=0&sync_timestamp=1595044979883&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Felectron-to-chromium%2Fdownload%2Felectron-to-chromium-1.3.500.tgz#ac082dd2279251b14f1a7f6af6fd16655cf3eb7b"
+  version "1.3.504"
+  resolved "https://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.504.tgz?cache=0&sync_timestamp=1595420174324&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Felectron-to-chromium%2Fdownload%2Felectron-to-chromium-1.3.504.tgz#54d6288202f8453053c006eb862e2e3b7bc867a5"
 
 electron-to-chromium@^1.3.488:
   version "1.3.499"
@@ -4536,8 +4540,8 @@ eventemitter3@^4.0.0:
   resolved "https://registry.npm.taobao.org/eventemitter3/download/eventemitter3-4.0.4.tgz?cache=0&sync_timestamp=1589283112999&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feventemitter3%2Fdownload%2Feventemitter3-4.0.4.tgz#b5463ace635a083d018bdc7c917b4c5f10a85384"
 
 events@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.npm.taobao.org/events/download/events-3.1.0.tgz#84279af1b34cb75aa88bf5ff291f6d0bd9b31a59"
+  version "3.2.0"
+  resolved "https://registry.npm.taobao.org/events/download/events-3.2.0.tgz?cache=0&sync_timestamp=1595422595227&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fevents%2Fdownload%2Fevents-3.2.0.tgz#93b87c18f8efcd4202a461aec4dfc0556b639379"
 
 eventsource@^1.0.7:
   version "1.0.7"
@@ -4912,7 +4916,7 @@ forever-agent@~0.6.1:
 
 fork-ts-checker-webpack-plugin@3.1.1:
   version "3.1.1"
-  resolved "https://registry.npm.taobao.org/fork-ts-checker-webpack-plugin/download/fork-ts-checker-webpack-plugin-3.1.1.tgz?cache=0&sync_timestamp=1594108085962&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffork-ts-checker-webpack-plugin%2Fdownload%2Ffork-ts-checker-webpack-plugin-3.1.1.tgz#a1642c0d3e65f50c2cc1742e9c0a80f441f86b19"
+  resolved "https://registry.npm.taobao.org/fork-ts-checker-webpack-plugin/download/fork-ts-checker-webpack-plugin-3.1.1.tgz#a1642c0d3e65f50c2cc1742e9c0a80f441f86b19"
   dependencies:
     babel-code-frame "^6.22.0"
     chalk "^2.4.1"
@@ -6009,7 +6013,7 @@ is-wsl@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/is-wsl/download/is-wsl-1.1.0.tgz#1f16e4aa22b04d1336b66188a66af3c600c3a66d"
 
-is-wsl@^2.1.1:
+is-wsl@^2.1.1, is-wsl@^2.2.0:
   version "2.2.0"
   resolved "https://registry.npm.taobao.org/is-wsl/download/is-wsl-2.2.0.tgz#74a4c76e77ca9fd3f932f290c17ea326cd157271"
   dependencies:
@@ -7522,14 +7526,14 @@ node-modules-regexp@^1.0.0:
   resolved "https://registry.npm.taobao.org/node-modules-regexp/download/node-modules-regexp-1.0.0.tgz#8d9dbe28964a4ac5712e9131642107c71e90ec40"
 
 node-notifier@^7.0.0:
-  version "7.0.1"
-  resolved "https://registry.npm.taobao.org/node-notifier/download/node-notifier-7.0.1.tgz#a355e33e6bebacef9bf8562689aed0f4230ca6f9"
+  version "7.0.2"
+  resolved "https://registry.npm.taobao.org/node-notifier/download/node-notifier-7.0.2.tgz?cache=0&sync_timestamp=1595363578415&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnode-notifier%2Fdownload%2Fnode-notifier-7.0.2.tgz#3a70b1b70aca5e919d0b1b022530697466d9c675"
   dependencies:
     growly "^1.3.0"
-    is-wsl "^2.1.1"
-    semver "^7.2.1"
+    is-wsl "^2.2.0"
+    semver "^7.3.2"
     shellwords "^0.1.1"
-    uuid "^7.0.3"
+    uuid "^8.2.0"
     which "^2.0.2"
 
 node-releases@^1.1.52, node-releases@^1.1.58:
@@ -7726,8 +7730,8 @@ onetime@^5.1.0:
     mimic-fn "^2.1.0"
 
 open@^7.0.2:
-  version "7.0.4"
-  resolved "https://registry.npm.taobao.org/open/download/open-7.0.4.tgz#c28a9d315e5c98340bf979fdcb2e58664aa10d83"
+  version "7.1.0"
+  resolved "https://registry.npm.taobao.org/open/download/open-7.1.0.tgz?cache=0&sync_timestamp=1595208422513&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fopen%2Fdownload%2Fopen-7.1.0.tgz#68865f7d3cb238520fa1225a63cf28bcf8368a1c"
   dependencies:
     is-docker "^2.0.0"
     is-wsl "^2.1.1"
@@ -8128,8 +8132,8 @@ pnp-webpack-plugin@1.6.4:
     ts-pnp "^1.1.6"
 
 portfinder@^1.0.26:
-  version "1.0.26"
-  resolved "https://registry.npm.taobao.org/portfinder/download/portfinder-1.0.26.tgz#475658d56ca30bed72ac7f1378ed350bd1b64e70"
+  version "1.0.27"
+  resolved "https://registry.npm.taobao.org/portfinder/download/portfinder-1.0.27.tgz?cache=0&sync_timestamp=1595216146463&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fportfinder%2Fdownload%2Fportfinder-1.0.27.tgz#a41333c116b5e5f3d380f9745ac2f35084c4c758"
   dependencies:
     async "^2.6.2"
     debug "^3.1.1"
@@ -9583,7 +9587,7 @@ regenerator-runtime@0.13.5, regenerator-runtime@^0.13.4:
 
 regenerator-runtime@^0.11.0:
   version "0.11.1"
-  resolved "https://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.11.1.tgz?cache=0&sync_timestamp=1584052597708&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fregenerator-runtime%2Fdownload%2Fregenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
+  resolved "https://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.11.1.tgz?cache=0&sync_timestamp=1595374467677&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fregenerator-runtime%2Fdownload%2Fregenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
 
 regenerator-transform@^0.14.2:
   version "0.14.5"
@@ -9755,17 +9759,17 @@ replace-ext@1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/replace-ext/download/replace-ext-1.0.0.tgz?cache=0&sync_timestamp=1588581919549&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freplace-ext%2Fdownload%2Freplace-ext-1.0.0.tgz#de63128373fcbf7c3ccfa4de5a480c45a67958eb"
 
-request-promise-core@1.1.3:
-  version "1.1.3"
-  resolved "https://registry.npm.taobao.org/request-promise-core/download/request-promise-core-1.1.3.tgz#e9a3c081b51380dfea677336061fea879a829ee9"
+request-promise-core@1.1.4:
+  version "1.1.4"
+  resolved "https://registry.npm.taobao.org/request-promise-core/download/request-promise-core-1.1.4.tgz?cache=0&sync_timestamp=1595380491282&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frequest-promise-core%2Fdownload%2Frequest-promise-core-1.1.4.tgz#3eedd4223208d419867b78ce815167d10593a22f"
   dependencies:
-    lodash "^4.17.15"
+    lodash "^4.17.19"
 
 request-promise-native@^1.0.5, request-promise-native@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.npm.taobao.org/request-promise-native/download/request-promise-native-1.0.8.tgz?cache=0&sync_timestamp=1572829735085&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frequest-promise-native%2Fdownload%2Frequest-promise-native-1.0.8.tgz#a455b960b826e44e2bf8999af64dff2bfe58cb36"
+  version "1.0.9"
+  resolved "https://registry.npm.taobao.org/request-promise-native/download/request-promise-native-1.0.9.tgz#e407120526a5efdc9a39b28a5679bf47b9d9dc28"
   dependencies:
-    request-promise-core "1.1.3"
+    request-promise-core "1.1.4"
     stealthy-require "^1.1.1"
     tough-cookie "^2.3.3"
 
@@ -11483,9 +11487,9 @@ uuid@^3.3.2, uuid@^3.4.0:
   version "3.4.0"
   resolved "https://registry.npm.taobao.org/uuid/download/uuid-3.4.0.tgz?cache=0&sync_timestamp=1592944257550&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fuuid%2Fdownload%2Fuuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
 
-uuid@^7.0.3:
-  version "7.0.3"
-  resolved "https://registry.npm.taobao.org/uuid/download/uuid-7.0.3.tgz?cache=0&sync_timestamp=1592944257550&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fuuid%2Fdownload%2Fuuid-7.0.3.tgz#c5c9f2c8cf25dc0a372c4df1441c41f5bd0c680b"
+uuid@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.npm.taobao.org/uuid/download/uuid-8.2.0.tgz?cache=0&sync_timestamp=1592944257550&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fuuid%2Fdownload%2Fuuid-8.2.0.tgz#cb10dd6b118e2dada7d0cd9730ba7417c93d920e"
 
 v8-compile-cache@^2.0.3, v8-compile-cache@^2.1.1:
   version "2.1.1"
@@ -11940,7 +11944,7 @@ yargs-parser@^10.0.0:
 
 yargs-parser@^13.1.2:
   version "13.1.2"
-  resolved "https://registry.npm.taobao.org/yargs-parser/download/yargs-parser-13.1.2.tgz#130f09702ebaeef2650d54ce6e3e5706f7a4fb38"
+  resolved "https://registry.npm.taobao.org/yargs-parser/download/yargs-parser-13.1.2.tgz?cache=0&sync_timestamp=1595125195270&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fyargs-parser%2Fdownload%2Fyargs-parser-13.1.2.tgz#130f09702ebaeef2650d54ce6e3e5706f7a4fb38"
   dependencies:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
@@ -12001,9 +12005,9 @@ zhouhaifei-code-style@^1.0.7:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@^0.0.20:
-  version "0.0.20"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-0.0.20.tgz?cache=0&sync_timestamp=1595045598959&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fzhouhaifei-react-scripts%2Fdownload%2Fzhouhaifei-react-scripts-0.0.20.tgz#b2a2e441984306735183d83634ddef334fff0cfb"
+zhouhaifei-react-scripts@^0.0.21:
+  version "0.0.21"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-0.0.21.tgz?cache=0&sync_timestamp=1595430260279&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fzhouhaifei-react-scripts%2Fdownload%2Fzhouhaifei-react-scripts-0.0.21.tgz#8cae41b1c1866f07b28ce15ca210d71482ea5973"
   dependencies:
     "@babel/core" "7.10.4"
     "@babel/plugin-proposal-class-properties" "^7.10.4"

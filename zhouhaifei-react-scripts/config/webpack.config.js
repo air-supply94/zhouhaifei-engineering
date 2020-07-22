@@ -10,6 +10,7 @@ const copyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PnpWebpackPlugin = require('pnp-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
@@ -216,6 +217,22 @@ module.exports = function() {
       utils.isProduction && new cleanWebpackPlugin(),
 
       utils.isDevelopment && new webpack.HotModuleReplacementPlugin(),
+
+      // TypeScript type checking
+      useTypeScript && new ForkTsCheckerWebpackPlugin({
+        async: utils.isDevelopment,
+        useTypescriptIncrementalApi: true,
+        checkSyntacticErrors: true,
+        tsconfig: paths.appTsConfig,
+        reportFiles: [
+          '**',
+          '!**/__tests__/**',
+          '!**/?(*.)(spec|test).*',
+          '!**/src/setupProxy.*',
+        ],
+        watch: paths.appSrc,
+        silent: true,
+      }),
 
     ].filter(Boolean),
 
