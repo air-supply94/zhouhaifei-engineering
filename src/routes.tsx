@@ -18,11 +18,11 @@ const routesInfo = [
   },
 ];
 
-export const Routes: React.FC = function() {
+export const Routes: React.FC = () => {
   return (
     <HashRouter>
       <Switch>
-        <Route exact path="/" render={() => <Redirect to={window.envConfig.defaultRedirectUrl}/>}/>
+        <Redirect exact from="/" to={window.envConfig.defaultRedirectUrl}/>
         {renderRoute(routesInfo)}
 
         {/* 403--路由 */}
