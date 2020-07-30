@@ -11,7 +11,7 @@ module.exports = {
   favicon: path.resolve(paths.appPublic, 'favicon.ico'),
   inject: true,
   template: path.resolve(paths.appPublic, 'index.ejs'),
-  minify: {
+  minify: utils.isProduction ? {
     removeComments: true,
     collapseWhitespace: true,
     removeRedundantAttributes: true,
@@ -22,5 +22,5 @@ module.exports = {
     minifyJS: true,
     minifyCSS: true,
     minifyURLs: true,
-  },
+  } : {},
 };

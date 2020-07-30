@@ -91,10 +91,24 @@ function realApplyMock(devServer) {
       ]}`
     );
 
+    let value = config[key];
+
+    if (
+      typeof value === 'object' &&
+      Object.hasOwnProperty.call(value, 'disabled') &&
+      Object.hasOwnProperty.call(value, 'value')
+    ) {
+      if (value.disabled !== true) {
+        value = value.value;
+      } else {
+        return;
+      }
+    }
+
     mockRules.push({
       path: path.resolve(keyParsed.path, '.'),
       method: keyParsed.method,
-      target: config[key],
+      target: value,
     });
   });
 

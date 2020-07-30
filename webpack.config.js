@@ -15,7 +15,7 @@ module.exports = function(utils) {
         },
       },
     },
-    externals: {
+    externals: utils.isDevelopment ? {} : {
       lodash: {
         commonjs: 'lodash',
         commonjs2: 'lodash',

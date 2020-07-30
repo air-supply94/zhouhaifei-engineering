@@ -37,7 +37,7 @@ export class BasicLayout extends React.Component<BasicLayoutInterface> {
         location={{ pathname: location.pathname }}
         title={window.envConfig.title}
         logo={null}
-        menuHeaderRender={() => null}
+        menuHeaderRender={(logo, title) => null}
         fixedHeader
         fixSiderbar
         onCollapse={this.state.didMount && this.props.global.toggleCollapsed}
