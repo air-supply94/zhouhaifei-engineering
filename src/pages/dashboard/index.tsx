@@ -1,7 +1,7 @@
 import { request } from '@/utils';
 import { Card } from 'antd';
 import React from 'react';
-import styles from './index.module.less';
+import styles from './index.module.scss';
 
 export default function Entry() {
   React.useEffect(() => {

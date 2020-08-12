@@ -6,20 +6,19 @@ declare namespace NodeJS {
 }
 
 declare module '*.bmp';
-
 declare module '*.gif';
-
 declare module '*.jpg';
-
 declare module '*.jpeg';
-
 declare module '*.png';
 declare module '*.webp';
-
 declare module '*.svg';
 
+declare module '*.css';
+declare module '*.less';
+declare module '*.scss';
 declare module '*.module.css';
 declare module '*.module.less';
+declare module '*.module.scss';
 
 interface EnvConfig {
   defaultRedirectUrl: string;

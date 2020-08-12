@@ -5,6 +5,8 @@ const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const lessRegex = /\.less$/;
 const lessModuleRegex = /\.module\.less$/;
+const sassRegex = /\.(scss|sass)$/;
+const sassModuleRegex = /\.module\.(scss|sass)$/;
 
 function getStyleLoaders(cssOptions, preProcessor) {
   const loaders = [
@@ -34,15 +36,16 @@ function getStyleLoaders(cssOptions, preProcessor) {
   ].filter(Boolean);
 
   if (preProcessor) {
-    loaders.push(
-      {
-        loader: require.resolve(preProcessor),
-        options: {
-          sourceMap: utils.isProduction && utils.shouldUseSourceMap,
-          lessOptions: { javascriptEnabled: true },
-        },
-      }
-    );
+    const loaderConfig = {
+      loader: require.resolve(preProcessor),
+      options: { sourceMap: utils.isProduction && utils.shouldUseSourceMap },
+    };
+
+    if (preProcessor === 'less-loader') {
+      loaderConfig.options.lessOptions = { javascriptEnabled: true };
+    }
+
+    loaders.push(loaderConfig);
   }
 
   return loaders;
@@ -65,8 +68,15 @@ module.exports = [
   },
   {
     test: lessModuleRegex,
-    use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }},
-      'less-loader'
-    ),
+    use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }}, 'less-loader'),
+  },
+  {
+    test: sassRegex,
+    exclude: [sassModuleRegex],
+    use: getStyleLoaders({}, 'sass-loader'),
+  },
+  {
+    test: sassModuleRegex,
+    use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }}, 'sass-loader'),
   },
 ];

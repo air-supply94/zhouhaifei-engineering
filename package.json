@@ -14,6 +14,7 @@
     "qs": "^6.9.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-config": "^5.1.1",
     "react-router-dom": "^5.2.0",
     "reflect-metadata": "^0.1.13"
   },
@@ -41,7 +42,7 @@
     "stylelint": "^13.6.1",
     "typescript": "^3.9.5",
     "zhouhaifei-code-style": "^1.0.7",
-    "zhouhaifei-react-scripts": "^0.0.24"
+    "zhouhaifei-react-scripts": "^0.0.25"
   },
   "browserslist": [
     "Chrome >= 54",
@@ -59,7 +60,11 @@
   },
   "lint-staged": {
     "**/*.less": [
-      "npm run lint:style",
+      "npm run lint:style-less",
+      "git add ."
+    ],
+    "**/*.scss": [
+      "npm run lint:style-scss",
       "git add ."
     ],
     "**/*.{js,jsx,ts,tsx}": [
@@ -79,7 +84,8 @@
     "build": "zhouhaifei-react-scripts build",
     "test": "zhouhaifei-react-scripts test",
     "lint-staged": "lint-staged --allow-empty",
-    "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
+    "lint:style-less": "stylelint --fix \"src/**/*.less\" --syntax less",
+    "lint:style-scss": "stylelint --fix \"src/**/*.scss\" --syntax scss",
     "lint:js": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
     "prettier": "prettier -c --write \"**/*.{css,less,scss,md,html,json}\""
   }

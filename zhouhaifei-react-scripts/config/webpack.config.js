@@ -91,7 +91,6 @@ module.exports = function() {
                 fix: true,
                 formatter: 'stylish',
                 eslintPath: require.resolve('eslint'),
-                resolvePluginsRelativeTo: __dirname,
               },
               loader: require.resolve('eslint-loader'),
             },

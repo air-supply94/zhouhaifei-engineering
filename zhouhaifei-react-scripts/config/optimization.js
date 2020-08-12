@@ -5,6 +5,8 @@ const utils = require('./utils');
 
 module.exports = {
   moduleIds: 'hashed',
+  usedExports: true,
+  sideEffects: true,
   concatenateModules: true,
   minimize: utils.isProduction,
   minimizer: [

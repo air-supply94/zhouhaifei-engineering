@@ -80,16 +80,6 @@ function realApplyMock(devServer) {
   Object.keys(config).forEach((key) => {
     const keyParsed = parseKey(key);
     assert(Boolean(app[keyParsed.method]), `method of ${key} is not valid`);
-    assert(
-      typeof config[key] === 'function' ||
-      typeof config[key] === 'object' ||
-      typeof config[key] === 'number' ||
-      typeof config[key] === 'boolean' ||
-      typeof config[key] === 'string',
-      `mock value of ${key} should be function or object or string or number or boolean, but got ${typeof config[
-        key
-      ]}`
-    );
 
     let value = config[key];
 
@@ -104,6 +94,15 @@ function realApplyMock(devServer) {
         return;
       }
     }
+
+    assert(
+      typeof value === 'function' ||
+      typeof value === 'object' ||
+      typeof value === 'number' ||
+      typeof value === 'boolean' ||
+      typeof value === 'string',
+      `mock value of ${key} should be function or object or string or number or boolean, but got ${typeof value}`
+    );
 
     mockRules.push({
       path: path.resolve(keyParsed.path, '.'),

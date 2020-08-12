@@ -1,17 +1,5 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
-
-const RouteInstanceMap = {
-  get(key) {
-    return key._routeInternalComponent;
-  },
-  has(key) {
-    return key._routeInternalComponent !== undefined;
-  },
-  set(key, value) {
-    key._routeInternalComponent = value;
-  },
-};
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 // Support pass props from layout to child routes
 const RouteWithProps = ({ path, exact, strict, render, location, sensitive, ...rest }) => (
@@ -28,21 +16,7 @@ const RouteWithProps = ({ path, exact, strict, render, location, sensitive, ...r
   />
 );
 
-function getCompatProps(props) {
-  const compatProps = {};
-  if (__UMI_BIGFISH_COMPAT) {
-    if (props.match && props.match.params && !props.params) {
-      compatProps.params = props.match.params;
-    }
-  }
-  return compatProps;
-}
-
 function withRoutes(route) {
-  if (RouteInstanceMap.has(route)) {
-    return RouteInstanceMap.get(route);
-  }
-
   const { Routes } = route;
   let len = Routes.length - 1;
   let Component = (args) => {
@@ -60,7 +34,7 @@ function withRoutes(route) {
     len -= 1;
   }
 
-  const ret = (args) => {
+  return (args) => {
     const { render, ...rest } = args;
     return (
       <RouteWithProps
@@ -71,8 +45,6 @@ function withRoutes(route) {
       />
     );
   };
-  RouteInstanceMap.set(route, ret);
-  return ret;
 }
 
 /**
@@ -156,7 +128,6 @@ function wrapWithInitialProps(WrappedComponent, initialProps, extraProps = {}) {
 }
 
 export default function renderRoutes(routes, extraProps = {}, switchProps = {}) {
-  const plugins = require('umi/_runtimePlugin');
   return routes ? (
     <Switch {...switchProps}>
       {routes.map((route, i) => {
@@ -191,29 +162,11 @@ export default function renderRoutes(routes, extraProps = {}, switchProps = {}) 
               // TODO: ssr StaticRoute context hook, handle 40x / 30x
               const childRoutes = renderRoutes(route.routes, extraProps, { location });
               if (route.component) {
-                const compatProps = getCompatProps({
+                const newProps = {
                   ...props,
                   ...extraProps,
-                });
-                const newProps = plugins.apply('modifyRouteProps', {
-                  initialValue: {
-                    ...props,
-                    ...extraProps,
-                    ...compatProps,
-                  },
-                  args: { route },
-                });
-                let { component: Component } = route;
-                if (__IS_BROWSER && Component.getInitialProps) {
-                  const initialProps = plugins.apply('modifyInitialProps', { initialValue: {}});
-                  if (!Component.wrappedWithInitialProps) {
-                    // ensure the component is wrapped only once
-                    Component = wrapWithInitialProps(Component, initialProps, extraProps);
-
-                    // replace the original component in the route
-                    route.component = Component;
-                  }
-                }
+                };
+                const { component: Component } = route;
                 return (
 
                   // reuse component for the same umi path (could be dynamic)
