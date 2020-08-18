@@ -42,7 +42,7 @@
     "stylelint": "^13.6.1",
     "typescript": "^3.9.5",
     "zhouhaifei-code-style": "^1.0.7",
-    "zhouhaifei-react-scripts": "^0.0.25"
+    "zhouhaifei-react-scripts": "^0.0.26"
   },
   "browserslist": [
     "Chrome >= 54",

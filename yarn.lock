@@ -12515,9 +12515,9 @@ zhouhaifei-code-style@^1.0.7:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@^0.0.25:
-  version "0.0.25"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-0.0.25.tgz#0f98b9ce05ecddccc303e4f8cf7fc7601efed28d"
+zhouhaifei-react-scripts@^0.0.26:
+  version "0.0.26"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-0.0.26.tgz#1a724ae454de6aee0ea361284b268d44c6516ad5"
   dependencies:
     "@babel/core" "7.11.1"
     "@babel/plugin-proposal-class-properties" "^7.10.4"
