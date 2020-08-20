@@ -134,7 +134,7 @@ module.exports = function() {
       }),
 
       // 复制依赖文件
-      utils.isProduction && new copyWebpackPlugin({
+      utils.isProduction && fs.existsSync(path.resolve(paths.appPublic, 'assets')) && new copyWebpackPlugin({
         patterns: [
           {
             from: path.resolve(paths.appPublic, 'assets'),
