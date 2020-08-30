@@ -42,8 +42,9 @@
     "react-test-renderer": "^16.13.1",
     "stylelint": "^13.6.1",
     "typescript": "^3.9.5",
-    "zhouhaifei-code-style": "^1.0.7",
-    "zhouhaifei-react-scripts": "^0.0.27"
+    "zhouhaifei-babel-config": "^1.2.1",
+    "zhouhaifei-code-style": "^1.2.1",
+    "zhouhaifei-react-scripts": "^1.2.1"
   },
   "browserslist": [
     "Chrome >= 54",
