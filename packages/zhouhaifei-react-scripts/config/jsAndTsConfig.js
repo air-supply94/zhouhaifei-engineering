@@ -1,4 +1,3 @@
-const path = require('path');
 const paths = require('./paths');
 const utils = require('./utils');
 
@@ -45,7 +44,6 @@ module.exports = [
       {
         loader: require.resolve('babel-loader'),
         options: {
-          extends: path.resolve(__dirname, 'babelConfig.js'),
           cacheDirectory: true,
 
           // See #6846 for context on why cacheCompression is disabled
