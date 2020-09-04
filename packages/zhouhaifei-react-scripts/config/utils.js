@@ -1,7 +1,7 @@
 const isDevelopment = process.env.NODE_ENV === 'development';
 const isProduction = process.env.NODE_ENV === 'production';
 const isProductionProfile = isProduction && process.argv.includes('--profile');
-const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
+let sourceMap = process.env.SOURCEMAP === 'false' ? false : process.env.SOURCEMAP;
 const shouldInlineRuntimeChunk = process.env.INLINE_RUNTIME_CHUNK !== 'false';
 const isExtendingEslintConfig = process.env.EXTEND_ESLINT === 'true';
 const imageInlineSizeLimit = parseInt(process.env.IMAGE_INLINE_SIZE_LIMIT, 10) || 1024;
@@ -13,6 +13,14 @@ const sockPath = process.env.WDS_SOCKET_PATH; // default: '/sockjs-node'
 const sockPort = process.env.WDS_SOCKET_PORT;
 const isMock = typeof process.env.MOCK === 'string' && process.env.MOCK.toLocaleUpperCase() === 'YES';
 const isStartServiceWorker = process.env.SERVICE_WORKER.toLocaleUpperCase() === 'YES';
+
+if (sourceMap !== false && !sourceMap) {
+  if (isProduction) {
+    sourceMap = 'source-map';
+  } else {
+    sourceMap = 'cheap-module-source-map';
+  }
+}
 
 module.exports = {
   isStartServiceWorker,
@@ -26,7 +34,7 @@ module.exports = {
   imageInlineSizeLimit,
   shouldInlineRuntimeChunk,
   isExtendingEslintConfig,
-  shouldUseSourceMap,
+  sourceMap,
   isProductionProfile,
   isProduction,
   isDevelopment,

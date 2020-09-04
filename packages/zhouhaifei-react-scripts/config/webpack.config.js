@@ -24,8 +24,6 @@ const modules = require('./modules');
 const paths = require('./paths');
 const utils = require('./utils');
 
-const shouldUseSourceMap = utils.shouldUseSourceMap;
-
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 
 module.exports = function() {
@@ -34,11 +32,7 @@ module.exports = function() {
 
     // Stop compilation early in production
     bail: utils.isProduction,
-    devtool: utils.isProduction
-      ? shouldUseSourceMap
-        ? 'source-map'
-        : false
-      : utils.isDevelopment && 'cheap-module-source-map',
+    devtool: utils.sourceMap,
     entry: require('./entry'),
     output: require('./output'),
     optimization: require('./optimization'),
