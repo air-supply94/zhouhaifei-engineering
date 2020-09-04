@@ -43,8 +43,8 @@
     "stylelint": "^13.6.1",
     "typescript": "^3.9.5",
     "zhouhaifei-babel-config": "^1.2.1",
-    "zhouhaifei-code-style": "^1.2.1",
-    "zhouhaifei-react-scripts": "^1.2.1"
+    "zhouhaifei-code-style": "^1.3.0",
+    "zhouhaifei-react-scripts": "^1.3.0"
   },
   "browserslist": [
     "Chrome >= 54",

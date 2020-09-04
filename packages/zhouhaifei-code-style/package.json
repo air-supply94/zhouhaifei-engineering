@@ -28,5 +28,6 @@
 		"eslint": "^7.x",
 		"prettier": "^2.x",
 		"stylelint": "^13.x"
-	}
+	},
+	"gitHead": "88850674bec1cd4eb77cae28f9aba644212f4b85"
 }
