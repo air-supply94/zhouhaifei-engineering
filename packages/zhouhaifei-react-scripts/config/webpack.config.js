@@ -19,6 +19,7 @@ const bundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const manifestPlugin = require('webpack-manifest-plugin');
 const { merge } = require('webpack-merge');
 const webpackBar = require('webpackbar');
+const workboxWebpackPlugin = require('workbox-webpack-plugin');
 const modules = require('./modules');
 const paths = require('./paths');
 const utils = require('./utils');
@@ -138,8 +139,8 @@ module.exports = function() {
       utils.isProduction && fs.existsSync(path.resolve(paths.appPublic, 'assets')) && new copyWebpackPlugin({
         patterns: [
           {
-            from: path.resolve(paths.appPublic, 'assets'),
-            to: path.resolve(paths.appDist, 'assets'),
+            from: path.resolve(paths.appPublic),
+            to: path.resolve(paths.appDist),
           },
         ],
       }),
@@ -164,6 +165,15 @@ module.exports = function() {
             entrypoints: entrypointFiles,
           };
         },
+      }),
+      utils.isProduction && utils.isStartServiceWorker && new workboxWebpackPlugin.GenerateSW({
+        clientsClaim: true,
+        exclude: [
+          /\.map$/,
+          /asset-manifest\.json$/,
+          /envConfig\.js$/,
+        ],
+        navigateFallback: `${paths.publicUrlOrPath}index.html`,
       }),
 
       // TypeScript type checking

@@ -5,6 +5,7 @@ import '@/index.less';
 import { Provider } from 'mobx-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as serviceWorker from './serviceWorker';
 
 // import 'reflect-metadata';
 
@@ -18,3 +19,4 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+serviceWorker.register();
