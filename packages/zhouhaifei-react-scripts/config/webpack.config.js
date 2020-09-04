@@ -16,6 +16,7 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 const webpack = require('webpack');
 const bundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const manifestPlugin = require('webpack-manifest-plugin');
 const { merge } = require('webpack-merge');
 const webpackBar = require('webpackbar');
 const modules = require('./modules');
@@ -147,6 +148,23 @@ module.exports = function() {
       utils.isProduction && new cleanWebpackPlugin(),
 
       utils.isDevelopment && new webpack.HotModuleReplacementPlugin(),
+      utils.isProduction && new manifestPlugin({
+        fileName: 'asset-manifest.json',
+        publicPath: paths.publicUrlOrPath,
+        generate: (seed, files, entrypoints) => {
+          const manifestFiles = files.reduce((manifest, file) => {
+            manifest[file.name] = file.path;
+            return manifest;
+          }, seed);
+          const entrypointFiles = Object.values(entrypoints).reduce((previousValue, currentValue) => previousValue.concat(currentValue), [])
+            .filter((fileName) => !fileName.endsWith('.map'));
+
+          return {
+            files: manifestFiles,
+            entrypoints: entrypointFiles,
+          };
+        },
+      }),
 
       // TypeScript type checking
       useTypeScript && new ForkTsCheckerWebpackPlugin({
