@@ -44,6 +44,7 @@ if (
 
 const createJestConfig = require('./utils/createJestConfig');
 const path = require('path');
+// eslint-disable-next-line jest/no-jest-import
 const jest = require('jest');
 const paths = require('./utils/paths');
 
@@ -102,5 +103,4 @@ if (!resolvedEnv) {
 const testEnvironment = resolvedEnv || env;
 argv.push('--env', testEnvironment);
 
-// @remove-on-eject-end
 jest.run(argv);
