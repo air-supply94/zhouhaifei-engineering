@@ -1,0 +1,21 @@
+{
+  "name": "zhouhaifei-test",
+  "version": "0.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "zhouhaifei1994@sina.com",
+  "bin": {
+    "zhouhaifei-test": "bin/zhouhaifei-test.js"
+  },
+  "dependencies": {
+    "babel-jest": "^26.2.2",
+    "chalk": "^4.1.0",
+    "cross-spawn": "^7.0.3",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "26.2.2",
+    "jest-environment-jsdom-fourteen": "1.0.1",
+    "jest-transform-css": "^2.0.0",
+    "jest-watch-typeahead": "0.6.0",
+    "ts-jest": "^26.3.0"
+  }
+}

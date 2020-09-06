@@ -1,19 +1,26 @@
 'use strict';
 
 const fs = require('fs');
-const chalk = require('react-dev-utils/chalk');
-const modules = require('../../config/modules');
-const paths = require('../../config/paths');
+const chalk = require('chalk');
+const paths = require('./paths');
 
 module.exports = (resolve, rootDir) => {
   const config = {
     roots: ['<rootDir>/src'],
+
+    /* The bail config option can be used here to have Jest stop running tests after
+       The first failure. */
+    bail: false,
+
+    // Indicates whether each individual test should be reported during the run.
+    verbose: false,
 
     // Indicates whether the coverage information should be collected while executing the test
     collectCoverage: true,
 
     // The directory where Jest should output its coverage files.
     coverageDirectory: '<rootDir>/coverage/',
+
     collectCoverageFrom: [
       'src/**/*.{js,jsx,ts,tsx}',
       '!src/**/*.d.ts',
@@ -27,8 +34,9 @@ module.exports = (resolve, rootDir) => {
     ],
     testEnvironment: 'jest-environment-jsdom-fourteen',
     transform: {
-      '^.+\\.(js|jsx|ts|tsx)$': resolve('scripts/utils/babelTransform.js'),
-      '^.+\\.css$': resolve('scripts/utils/cssTransform.js'),
+      '^.+\\.jsx?$': require.resolve('babel-jest'),
+      '^.+\\.tsx?$': require.resolve('ts-jest'),
+      '^.+\\.css$': require.resolve('jest-transform-css'),
       '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': resolve('scripts/utils/fileTransform.js'),
     },
     transformIgnorePatterns: [
@@ -39,14 +47,12 @@ module.exports = (resolve, rootDir) => {
     moduleNameMapper: {
       '^react-native$': 'react-native-web',
       '^.+\\.module\\.(css|less|scss)$': 'identity-obj-proxy',
-      ...(modules.jestAliases || {}),
+      '^@/(.*)$': '<rootDir>/src/$1',
     },
     moduleFileExtensions: [
       ...paths.moduleFileExtensions,
       'node',
-    ].filter(
-      (ext) => !ext.includes('mjs')
-    ),
+    ].filter((ext) => !ext.includes('mjs')),
     watchPlugins: [
       'jest-watch-typeahead/filename',
       'jest-watch-typeahead/testname',

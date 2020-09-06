@@ -1,20 +1,13 @@
 #!/usr/bin/env node
 'use strict';
 
-/* Makes the script crash on unhandled rejections instead of silently
-   ignoring them. In the future, promise rejections that are not handled will
-   terminate the Node.js process with a non-zero exit code. */
 process.on('unhandledRejection', (err) => {
   throw err;
 });
-
-const spawn = require('react-dev-utils/crossSpawn');
+const spawn = require('cross-spawn');
 
 const args = process.argv.slice(2);
-const cmd = [
-  'build',
-  'start',
-];
+const cmd = ['react'];
 const scriptIndex = args.findIndex((x) => cmd.includes(x));
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex];
 const nodeArgs = scriptIndex > 0 ? args.slice(0, scriptIndex) : [];
@@ -43,5 +36,5 @@ if (cmd.includes(script)) {
   }
   process.exit(result.status);
 } else {
-  console.log(`Unknown script "${script}".`);
+  console.log(`Unknown script "${script}"`);
 }
