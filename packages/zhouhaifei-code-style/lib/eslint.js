@@ -496,16 +496,25 @@ const eslintTypescriptRule = {
   ],
 };
 
+module.exports.eslintConfigRule = eslintConfigRule;
+module.exports.eslintImportRule = eslintImportRule;
+module.exports.eslintReactRule = eslintReactRule;
+module.exports.eslintHooksRule = eslintHooksRule;
+module.exports.eslintTypescriptRule = eslintTypescriptRule;
 module.exports = {
   root: true,
   parser: 'babel-eslint',
-  extends: ['eslint:recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:jest/recommended',
+  ],
   plugins: [
     'import',
     'jsx-a11y',
     'react',
     'react-hooks',
     '@typescript-eslint',
+    'jest',
   ],
 
   env: {
