@@ -8,8 +8,7 @@ process.on('unhandledRejection', (err) => {
   throw err;
 });
 
-/* Ensure environment variables are read.
-   require('./utils/env'); */
+require('./utils/env');
 
 const execSync = require('child_process').execSync;
 

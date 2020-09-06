@@ -11,6 +11,8 @@
     "babel-jest": "^26.2.2",
     "chalk": "^4.1.0",
     "cross-spawn": "^7.0.3",
+    "dotenv": "^8.2.0",
+    "dotenv-expand": "^5.1.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "26.2.2",
     "jest-environment-jsdom-fourteen": "1.0.1",
