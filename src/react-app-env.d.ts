@@ -23,7 +23,6 @@ declare module '*.module.scss';
 interface EnvConfig {
   defaultRedirectUrl: string;
   title: string;
-  apiSuccessCode: number[];
 }
 
 interface Window {

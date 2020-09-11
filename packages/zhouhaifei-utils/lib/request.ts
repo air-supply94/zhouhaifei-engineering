@@ -1,6 +1,8 @@
 import { message } from 'antd';
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError, AxiosInstance } from 'axios';
 
+const apiSuccessCode = [0];
+
 const singleton = (function() {
   let instance;
 
@@ -37,10 +39,10 @@ export function request<T = unknown>(options: AxiosRequestConfig = {}): Promise<
     singleton.getInstance()
       .request(options)
       .then((info: AxiosResponse<T>) => {
-      // @ts-ignore
-        if (info.data && Object.prototype.hasOwnProperty.call(info.data, 'code') && !window.envConfig.apiSuccessCode.includes(info.data.code)) {
         // @ts-ignore
-          message.error(info.data.msg);
+        if (info.data && Object.prototype.hasOwnProperty.call(info.data, 'code') && !apiSuccessCode.includes(info.data.code)) {
+          // @ts-ignore
+          message.error(info.data.msg || '');
           reject(info.data);
         } else {
           resolve(info.data);

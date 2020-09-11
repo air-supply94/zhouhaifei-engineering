@@ -14694,9 +14694,9 @@ zhouhaifei-code-style@^1.3.3:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-1.3.1.tgz#e91ff48ebc156d7245c9ffa43033b82a773e5bfa"
+zhouhaifei-react-scripts@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-1.3.2.tgz#4a8b1e5517dc4f11aa2156dc2263f9f4d1ab4052"
   dependencies:
     "@babel/core" "7.11.1"
     babel-loader "8.1.0"
@@ -14754,3 +14754,7 @@ zhouhaifei-test@^1.3.2:
     jest-transform-css "^2.0.0"
     jest-watch-typeahead "0.6.0"
     ts-jest "^26.3.0"
+
+zhouhaifei-utils@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-utils/download/zhouhaifei-utils-1.3.1.tgz#8b2801228b669ec8e61127339c9a213b5581a764"

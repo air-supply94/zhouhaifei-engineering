@@ -4,16 +4,12 @@ const utils = require('./utils');
 module.exports = [
   {
     test: /\.(js|mjs|jsx|ts|tsx)$/,
-    include: paths.appSrc,
-    exclude: utils.exclude,
+
+    // include: paths.appSrc,
     use: [
       {
         loader: require.resolve('thread-loader'),
         options: {
-          /* the number of spawned workers, defaults to (number of cpus - 1) or
-             fallback to 1 when require('os').cpus() is undefined */
-          workers: require('os').cpus().length,
-
           /* number of jobs a worker processes in parallel
              defaults to 20 */
           workerParallelJobs: 50,

@@ -17,7 +17,8 @@
     "react-dom": "^16.13.1",
     "react-router-config": "^5.1.1",
     "react-router-dom": "^5.2.0",
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.1.13",
+    "zhouhaifei-utils": "^1.3.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
@@ -44,7 +45,7 @@
     "typescript": "^4.0.2",
     "zhouhaifei-babel-config": "^1.3.1",
     "zhouhaifei-code-style": "^1.3.3",
-    "zhouhaifei-react-scripts": "^1.3.1",
+    "zhouhaifei-react-scripts": "^1.3.2",
     "zhouhaifei-test": "^1.3.2"
   },
   "browserslist": [
