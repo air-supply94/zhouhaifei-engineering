@@ -11,7 +11,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PnpWebpackPlugin = require('pnp-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
-const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 const webpack = require('webpack');
@@ -88,7 +87,7 @@ module.exports = function() {
     },
     plugins: [
       new HtmlWebpackPlugin(require('./htmlWebpackPlugin')),
-      new ModuleNotFoundPlugin(paths.appPath),
+
       new webpack.DefinePlugin(getClientEnvironment(paths.publicUrlOrPath.slice(0, -1)).stringified),
       utils.isDevelopment && new CaseSensitivePathsPlugin(),
       utils.isDevelopment && new WatchMissingNodeModulesPlugin(paths.appNodeModules),

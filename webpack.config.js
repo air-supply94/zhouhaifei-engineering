@@ -1,6 +1,6 @@
 module.exports = function(utils) {
   return {
-    entry: utils.isDevelopment ? [] : { commons: ['@/utils']},
+    entry: utils.isDevelopment ? [] : {},
     optimization: utils.isDevelopment ? {} : {
       splitChunks: {
         cacheGroups: {
