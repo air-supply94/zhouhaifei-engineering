@@ -32,7 +32,7 @@ function isInMercurialRepository() {
   }
 }
 
-// Watch unless on CI or explicitly running all tests
+/*
 if (
   !process.env.CI &&
   argv.indexOf('--watchAll') === -1 &&
@@ -41,6 +41,7 @@ if (
   const hasSourceControl = isInGitRepository() || isInMercurialRepository();
   argv.push(hasSourceControl ? '--watch' : '--watchAll');
 }
+*/
 
 const createJestConfig = require('./utils/createJestConfig');
 const path = require('path');
