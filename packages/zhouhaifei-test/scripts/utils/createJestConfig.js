@@ -21,15 +21,12 @@ module.exports = (resolve, rootDir) => {
     // The directory where Jest should output its coverage files.
     coverageDirectory: '<rootDir>/coverage/',
 
-    collectCoverageFrom: [
-      'src/**/*.{js,jsx,ts,tsx}',
-      '!src/**/*.d.ts',
-    ],
+    collectCoverageFrom: [],
 
     setupFiles: fs.existsSync(paths.testsSetup) ? [paths.testsSetup] : [],
     setupFilesAfterEnv: fs.existsSync(paths.testsSetupAfterEnv) ? [paths.testsSetupAfterEnv] : [],
     testMatch: [
-      '<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}',
+      '<rootDir>/src/**/__tests__/*.{js,jsx,ts,tsx}',
       '<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}',
     ],
     testEnvironment: 'jest-environment-jsdom-fourteen',
