@@ -15,6 +15,7 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 const webpack = require('webpack');
 const bundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const manifestPlugin = require('webpack-manifest-plugin');
 const { merge } = require('webpack-merge');
 const webpackBar = require('webpackbar');
@@ -87,7 +88,7 @@ module.exports = function() {
     },
     plugins: [
       new HtmlWebpackPlugin(require('./htmlWebpackPlugin')),
-
+      new PreloadWebpackPlugin(),
       new webpack.DefinePlugin(getClientEnvironment(paths.publicUrlOrPath.slice(0, -1)).stringified),
       utils.isDevelopment && new CaseSensitivePathsPlugin(),
       utils.isDevelopment && new WatchMissingNodeModulesPlugin(paths.appNodeModules),
