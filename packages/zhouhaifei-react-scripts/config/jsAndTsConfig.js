@@ -1,3 +1,4 @@
+const path = require('path');
 const paths = require('./paths');
 const utils = require('./utils');
 
@@ -5,7 +6,10 @@ module.exports = [
   {
     test: /\.(js|mjs|jsx|ts|tsx)$/,
 
-    // include: paths.appSrc,
+    include: [
+      paths.appSrc,
+      path.resolve(paths.appNodeModules, 'zhouhaifei-utils'),
+    ],
     use: [
       {
         loader: require.resolve('thread-loader'),

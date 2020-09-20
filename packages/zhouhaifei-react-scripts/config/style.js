@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const paths = require('./paths');
 const utils = require('./utils');
 
 const cssRegex = /\.css$/;
@@ -58,6 +59,7 @@ module.exports = [
     use: getStyleLoaders(),
   },
   {
+    include: [paths.appSrc],
     test: cssModuleRegex,
     use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }}),
   },
@@ -67,6 +69,7 @@ module.exports = [
     use: getStyleLoaders({}, 'less-loader'),
   },
   {
+    include: [paths.appSrc],
     test: lessModuleRegex,
     use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }}, 'less-loader'),
   },
@@ -76,6 +79,7 @@ module.exports = [
     use: getStyleLoaders({}, 'sass-loader'),
   },
   {
+    include: [paths.appSrc],
     test: sassModuleRegex,
     use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }}, 'sass-loader'),
   },
