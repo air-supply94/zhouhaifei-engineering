@@ -1,5 +1,4 @@
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const safePostCssParser = require('postcss-safe-parser');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const utils = require('./utils');
 
@@ -51,29 +50,13 @@ module.exports = {
           ascii_only: true,
         },
       },
-      sourceMap: utils.shouldUseSourceMap,
     }),
 
-    // This is only used in production mode
-    new OptimizeCSSAssetsPlugin({
-      cssProcessorOptions: {
-        parser: safePostCssParser,
-        map: utils.shouldUseSourceMap
-          ? {
-            /* `inline: false` forces the sourcemap to be output into a
-               separate file */
-            inline: false,
-
-            /* `annotation: true` appends the sourceMappingURL to the end of
-               the css file, helping the browser find the sourcemap */
-            annotation: true,
-          }
-          : false,
-      },
-      cssProcessorPluginOptions: {
+    new CssMinimizerPlugin({
+      minimizerOptions: {
         preset: [
           'default',
-          { minifyFontValues: { removeQuotes: false }},
+          { discardComments: { removeAll: true }},
         ],
       },
     }),

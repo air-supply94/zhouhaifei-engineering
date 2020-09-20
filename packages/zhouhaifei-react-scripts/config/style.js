@@ -16,7 +16,6 @@ function getStyleLoaders(cssOptions, preProcessor) {
     {
       loader: require.resolve('css-loader'),
       options: {
-        sourceMap: utils.isProduction && utils.shouldUseSourceMap,
         import: true,
         url: true,
         ...cssOptions,
@@ -25,7 +24,6 @@ function getStyleLoaders(cssOptions, preProcessor) {
     utils.isProduction && {
       loader: require.resolve('postcss-loader'),
       options: {
-        sourceMap: utils.isProduction && utils.shouldUseSourceMap,
         ident: 'postcss',
         plugins: [
           require('postcss-import'),
@@ -39,7 +37,7 @@ function getStyleLoaders(cssOptions, preProcessor) {
   if (preProcessor) {
     const loaderConfig = {
       loader: require.resolve(preProcessor),
-      options: { sourceMap: utils.isProduction && utils.shouldUseSourceMap },
+      options: { },
     };
 
     if (preProcessor === 'less-loader') {
