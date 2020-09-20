@@ -40,12 +40,6 @@ module.exports = function(utils) {
         amd: 'axios',
         root: 'axios',
       },
-      moment: {
-        commonjs: 'moment',
-        commonjs2: 'moment',
-        amd: 'moment',
-        root: 'moment',
-      },
       react: {
         commonjs: 'react',
         commonjs2: 'react',

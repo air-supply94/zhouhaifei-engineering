@@ -13,6 +13,7 @@ const sockPath = process.env.WDS_SOCKET_PATH; // default: '/sockjs-node'
 const sockPort = process.env.WDS_SOCKET_PORT;
 const isMock = typeof process.env.MOCK === 'string' && process.env.MOCK.toLocaleUpperCase() === 'YES';
 const isStartServiceWorker = process.env.SERVICE_WORKER.toLocaleUpperCase() === 'YES';
+const isReplaceMoment = process.env.REPLACE_MOMENT.toLocaleUpperCase() === 'YES';
 
 if (sourceMap !== false && !sourceMap) {
   if (isProduction) {
@@ -23,6 +24,7 @@ if (sourceMap !== false && !sourceMap) {
 }
 
 module.exports = {
+  isReplaceMoment,
   isStartServiceWorker,
   isMock,
   splitChunkMinSize,

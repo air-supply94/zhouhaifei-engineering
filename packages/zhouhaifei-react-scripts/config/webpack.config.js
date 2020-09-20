@@ -1,8 +1,8 @@
 'use strict';
 
-const getClientEnvironment = require('./env');
 const fs = require('fs');
 const path = require('path');
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const compressionPlugin = require('compression-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
@@ -20,6 +20,7 @@ const manifestPlugin = require('webpack-manifest-plugin');
 const { merge } = require('webpack-merge');
 const webpackBar = require('webpackbar');
 const workboxWebpackPlugin = require('workbox-webpack-plugin');
+const getClientEnvironment = require('./env');
 const modules = require('./modules');
 const paths = require('./paths');
 const utils = require('./utils');
@@ -93,6 +94,7 @@ module.exports = function() {
       utils.isDevelopment && new CaseSensitivePathsPlugin(),
       utils.isDevelopment && new WatchMissingNodeModulesPlugin(paths.appNodeModules),
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+      utils.isReplaceMoment && new AntdDayjsWebpackPlugin(),
 
       utils.isProduction && new MiniCssExtractPlugin({
         filename: `${utils.resourceName.css}/[name].[contenthash].css`,
