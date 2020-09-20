@@ -24,12 +24,14 @@ function getStyleLoaders(cssOptions, preProcessor) {
     utils.isProduction && {
       loader: require.resolve('postcss-loader'),
       options: {
-        ident: 'postcss',
-        plugins: [
-          require('postcss-import'),
-          require('postcss-cssnext'),
-          require('postcss-flexbugs-fixes'),
-        ],
+        postcssOptions: {
+          ident: 'postcss',
+          plugins: [
+            require('postcss-import'),
+            require('postcss-cssnext'),
+            require('postcss-flexbugs-fixes'),
+          ],
+        },
       },
     },
   ].filter(Boolean);
@@ -37,7 +39,7 @@ function getStyleLoaders(cssOptions, preProcessor) {
   if (preProcessor) {
     const loaderConfig = {
       loader: require.resolve(preProcessor),
-      options: { },
+      options: {},
     };
 
     if (preProcessor === 'less-loader') {

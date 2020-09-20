@@ -3038,6 +3038,10 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
     "@types/color-name" "^1.1.1"
     color-convert "^2.0.1"
 
+antd-dayjs-webpack-plugin@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/antd-dayjs-webpack-plugin/download/antd-dayjs-webpack-plugin-1.0.1.tgz#cc31cc05c9bd69652a4bddab19eb49726bebe0d5"
+
 antd@^4.6.4:
   version "4.6.4"
   resolved "https://registry.npm.taobao.org/antd/download/antd-4.6.4.tgz#297c9d1856a7745bfa4bae6aa4554498a047e244"
@@ -14748,11 +14752,12 @@ zhouhaifei-code-style@1.3.8:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@1.3.8:
-  version "1.3.8"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-1.3.8.tgz#843a2559f0eb2e85d934efb257a7bdc6a1501a2f"
+zhouhaifei-react-scripts@1.3.9:
+  version "1.3.9"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-1.3.9.tgz#7e739c1f150b5213b5edcffea05f7494c97fc774"
   dependencies:
     "@babel/core" "7.11.1"
+    antd-dayjs-webpack-plugin "^1.0.1"
     babel-loader "8.1.0"
     body-parser "^1.19.0"
     case-sensitive-paths-webpack-plugin "2.3.0"
