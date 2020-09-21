@@ -7,7 +7,7 @@ module.exports = [
 
     include: [paths.appSrc],
     use: [
-      require.resolve('cache-loader'),
+      utils.isProduction && require.resolve('cache-loader'),
       {
         loader: require.resolve('thread-loader'),
         options: {
@@ -48,6 +48,6 @@ module.exports = [
           compact: utils.isProduction,
         },
       },
-    ],
+    ].filter(Boolean),
   },
 ];

@@ -91,7 +91,7 @@ module.exports = function() {
     plugins: [
       // 清除原先打包内容
       utils.isProduction && new cleanWebpackPlugin(),
-      new HardSourceWebpackPlugin(),
+      utils.isProduction && new HardSourceWebpackPlugin(),
       new HtmlWebpackPlugin(require('./htmlWebpackPlugin')),
       new PreloadWebpackPlugin(),
       new webpack.DefinePlugin(getClientEnvironment(paths.publicUrlOrPath.slice(0, -1)).stringified),
