@@ -1,6 +1,6 @@
 {
   "name": "zhouhaifei-react-scripts",
-  "version": "1.3.11",
+  "version": "1.3.13",
   "description": "",
   "license": "MIT",
   "author": "zhouhaifei1994@sina.com",
@@ -59,6 +59,9 @@
   "peerDependencies": {
     "eslint": "^7.x",
     "typescript": "^3.x"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "gitHead": "37ea565dba4a286bbf08a99ad99b26c9fa22d7c5"
 }

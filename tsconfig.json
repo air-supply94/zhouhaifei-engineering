@@ -1,29 +1,36 @@
 {
   "compilerOptions": {
     "typeRoots": ["node_modules/@types"],
-    "outDir": "./lib",
-    "target": "es5",
+    "outDir": "dist",
+    "module": "esnext",
+    "target": "esnext",
     "lib": ["esnext", "dom"],
-    "declaration": true,
+    "sourceMap": true,
     "baseUrl": ".",
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
     "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
     "isolatedModules": false,
+    "noEmit": true,
     "paths": {
       "@/*": ["./src/*"]
     },
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "alwaysStrict": false,
-    "strictNullChecks": false,
-    "strict": true,
+    "strict": false,
     "noImplicitAny": false,
+    "strictNullChecks": false,
     "noImplicitThis": false,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true
+    "alwaysStrict": false
   },
-  "exclude": ["node_modules", "dist", "lib", "coverage", "**/__tests__/"],
-  "include": ["./src"]
+  "exclude": ["node_modules", "build", "dist", "webpack", "jest"],
+  "include": ["src"]
 }
