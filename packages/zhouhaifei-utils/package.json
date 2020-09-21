@@ -7,7 +7,7 @@
   "author": "zhouhaifei1994@sina.com",
   "license": "MIT",
   "scripts": {
-    "build": "npm run compile",
+    "publish": "npm run compile",
     "compile": "tsc"
   },
   "devDependencies": {
