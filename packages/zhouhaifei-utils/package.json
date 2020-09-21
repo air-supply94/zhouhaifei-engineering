@@ -7,7 +7,7 @@
   "author": "zhouhaifei1994@sina.com",
   "license": "MIT",
   "scripts": {
-    "publish": "npm run compile",
+    "build": "npm run compile",
     "compile": "tsc"
   },
   "devDependencies": {
@@ -25,5 +25,6 @@
     "axios": ">=0.19.0",
     "react": ">=16.8.6",
     "react-dom": ">=16.8.6"
-  }
+  },
+  "gitHead": "37ea565dba4a286bbf08a99ad99b26c9fa22d7c5"
 }
