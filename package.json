@@ -82,7 +82,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "publish": "lerna run build && lerna run publish",
+    "publish": "lerna run build && lerna publish",
     "test-start": "node packages/zhouhaifei-react-scripts/scripts/start.js",
     "test-build": "node packages/zhouhaifei-react-scripts/scripts/build.js",
     "test-test": "node packages/zhouhaifei-test/scripts/react.js",

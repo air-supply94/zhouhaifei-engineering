@@ -7,6 +7,7 @@ module.exports = [
 
     include: [paths.appSrc],
     use: [
+      require.resolve('cache-loader'),
       {
         loader: require.resolve('thread-loader'),
         options: {

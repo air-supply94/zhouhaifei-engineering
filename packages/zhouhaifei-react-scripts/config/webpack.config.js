@@ -7,6 +7,7 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const compressionPlugin = require('compression-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 const copyWebpackPlugin = require('copy-webpack-plugin');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PnpWebpackPlugin = require('pnp-webpack-plugin');
@@ -88,6 +89,9 @@ module.exports = function() {
       ],
     },
     plugins: [
+      // 清除原先打包内容
+      utils.isProduction && new cleanWebpackPlugin(),
+      new HardSourceWebpackPlugin(),
       new HtmlWebpackPlugin(require('./htmlWebpackPlugin')),
       new PreloadWebpackPlugin(),
       new webpack.DefinePlugin(getClientEnvironment(paths.publicUrlOrPath.slice(0, -1)).stringified),
@@ -110,29 +114,30 @@ module.exports = function() {
 
       // gzip压缩
       utils.isProduction && new compressionPlugin({
+        filename: '[path][base].gz',
         test: /\.(js|css|html|svg)$/,
         cache: false,
         algorithm: 'gzip',
         compressionOptions: {
           level: 9,
           threshold: 0,
-          minRatio: 0.8,
+          minRatio: 1,
         },
       }),
 
       // br压缩
       utils.isProduction && parseInt(process.versions.node, 10) >= 12 && new compressionPlugin({
-        filename: '[path].br[query]',
+        filename: '[path][base].br',
         algorithm: 'brotliCompress',
         test: /\.(js|css|html|svg)$/,
         compressionOptions: { level: 11 },
         threshold: 0,
-        minRatio: 0.8,
+        minRatio: 1,
         deleteOriginalAssets: false,
       }),
 
       // 复制依赖文件
-      utils.isProduction && fs.existsSync(path.resolve(paths.appPublic, 'assets')) && new copyWebpackPlugin({
+      utils.isProduction && new copyWebpackPlugin({
         patterns: [
           {
             from: path.resolve(paths.appPublic),
@@ -140,9 +145,6 @@ module.exports = function() {
           },
         ],
       }),
-
-      // 清除原先打包内容
-      utils.isProduction && new cleanWebpackPlugin(),
 
       utils.isDevelopment && new webpack.HotModuleReplacementPlugin(),
       utils.isProduction && new manifestPlugin({
