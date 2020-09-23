@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const getPublicUrlOrPath = require('react-dev-utils/getPublicUrlOrPath');
+const getPublicUrlOrPath = require('../react-dev-utils/getPublicUrlOrPath');
 
 const appDirectory = fs.realpathSync(process.cwd());
 

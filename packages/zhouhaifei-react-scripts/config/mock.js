@@ -1,9 +1,9 @@
 const assert = require('assert');
 const path = require('path');
 const bodyParser = require('body-parser');
+const chalk = require('chalk');
 const chokidar = require('chokidar');
 const glob = require('glob');
-const chalk = require('react-dev-utils/chalk');
 const paths = require('./paths');
 
 let cacheRoutePath = [];

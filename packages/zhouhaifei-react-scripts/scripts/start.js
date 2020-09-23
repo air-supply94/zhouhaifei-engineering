@@ -15,17 +15,17 @@ process.on('unhandledRejection', (err) => {
 require('../config/env');
 
 const fs = require('fs');
-const { checkBrowsers } = require('react-dev-utils/browsersHelper');
-const chalk = require('react-dev-utils/chalk');
-const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
-const clearConsole = require('react-dev-utils/clearConsole');
-const openBrowser = require('react-dev-utils/openBrowser');
-const { choosePort, createCompiler, prepareProxy, prepareUrls } = require('react-dev-utils/WebpackDevServerUtils');
+const chalk = require('chalk');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const paths = require('../config/paths');
 const configFactory = require('../config/webpack.config');
 const createDevServerConfig = require('../config/webpackDevServer.config');
+const { checkBrowsers } = require('../react-dev-utils/browsersHelper');
+const checkRequiredFiles = require('../react-dev-utils/checkRequiredFiles');
+const clearConsole = require('../react-dev-utils/clearConsole');
+const openBrowser = require('../react-dev-utils/openBrowser');
+const { choosePort, createCompiler, prepareProxy, prepareUrls } = require('../react-dev-utils/WebpackDevServerUtils');
 
 const useYarn = fs.existsSync(paths.yarnLockFile);
 const isInteractive = process.stdout.isTTY;

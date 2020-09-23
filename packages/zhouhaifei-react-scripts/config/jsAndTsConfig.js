@@ -3,11 +3,14 @@ const utils = require('./utils');
 
 module.exports = [
   {
+    test: /\.m?js/,
+    resolve: { fullySpecified: false },
+  },
+  {
     test: /\.(js|mjs|jsx|ts|tsx)$/,
 
     include: [paths.appSrc],
     use: [
-      utils.isProduction && require.resolve('cache-loader'),
       {
         loader: require.resolve('thread-loader'),
         options: {
@@ -41,6 +44,7 @@ module.exports = [
       {
         loader: require.resolve('babel-loader'),
         options: {
+          sourceType: 'unambiguous', // 自动处理es和js模块
           cacheDirectory: true,
 
           // See #6846 for context on why cacheCompression is disabled

@@ -15,17 +15,17 @@ process.on('unhandledRejection', (err) => {
 require('../config/env');
 
 const path = require('path');
+const chalk = require('chalk');
 const fs = require('fs-extra');
-const { checkBrowsers } = require('react-dev-utils/browsersHelper');
-const chalk = require('react-dev-utils/chalk');
-const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
-const FileSizeReporter = require('react-dev-utils/FileSizeReporter');
-const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages');
-const printBuildError = require('react-dev-utils/printBuildError');
-const printHostingInstructions = require('react-dev-utils/printHostingInstructions');
 const webpack = require('webpack');
 const paths = require('../config/paths');
 const configFactory = require('../config/webpack.config');
+const { checkBrowsers } = require('../react-dev-utils/browsersHelper');
+const checkRequiredFiles = require('../react-dev-utils/checkRequiredFiles');
+const FileSizeReporter = require('../react-dev-utils/FileSizeReporter');
+const formatWebpackMessages = require('../react-dev-utils/formatWebpackMessages');
+const printBuildError = require('../react-dev-utils/printBuildError');
+const printHostingInstructions = require('../react-dev-utils/printHostingInstructions');
 
 const measureFileSizesBeforeBuild = FileSizeReporter.measureFileSizesBeforeBuild;
 const printFileSizesAfterBuild = FileSizeReporter.printFileSizesAfterBuild;
