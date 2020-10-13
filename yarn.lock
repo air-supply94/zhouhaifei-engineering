@@ -5908,14 +5908,6 @@ from2@^2.1.0:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
 
-fs-extra@^7.0.0:
-  version "7.0.1"
-  resolved "https://registry.npm.taobao.org/fs-extra/download/fs-extra-7.0.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffs-extra%2Fdownload%2Ffs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
-  dependencies:
-    graceful-fs "^4.1.2"
-    jsonfile "^4.0.0"
-    universalify "^0.1.0"
-
 fs-extra@^8.1.0:
   version "8.1.0"
   resolved "https://registry.npm.taobao.org/fs-extra/download/fs-extra-8.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffs-extra%2Fdownload%2Ffs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
@@ -8211,7 +8203,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.npm.taobao.org/lodash.uniq/download/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.4, lodash@^4.2.1, lodash@~4.17.10:
+lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.4, lodash@^4.2.1, lodash@~4.17.10:
   version "4.17.20"
   resolved "https://registry.npm.taobao.org/lodash/download/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
 
@@ -9122,7 +9114,7 @@ object.assign@^4.1.0, object.assign@^4.1.1:
     has-symbols "^1.0.1"
     object-keys "^1.1.1"
 
-object.entries@^1.1.0, object.entries@^1.1.2:
+object.entries@^1.1.2:
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/object.entries/download/object.entries-1.1.2.tgz#bc73f00acb6b6bb16c203434b10f9a7e797d3add"
   dependencies:
@@ -10034,14 +10026,14 @@ postcss-modules-local-by-default@^3.0.3:
 
 postcss-modules-scope@1.1.0:
   version "1.1.0"
-  resolved "https://registry.npm.taobao.org/postcss-modules-scope/download/postcss-modules-scope-1.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-modules-scope%2Fdownload%2Fpostcss-modules-scope-1.1.0.tgz#d6ea64994c79f97b62a72b426fbe6056a194bb90"
+  resolved "https://registry.npm.taobao.org/postcss-modules-scope/download/postcss-modules-scope-1.1.0.tgz?cache=0&sync_timestamp=1602594980328&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-modules-scope%2Fdownload%2Fpostcss-modules-scope-1.1.0.tgz#d6ea64994c79f97b62a72b426fbe6056a194bb90"
   dependencies:
     css-selector-tokenizer "^0.7.0"
     postcss "^6.0.1"
 
 postcss-modules-scope@^2.2.0:
   version "2.2.0"
-  resolved "https://registry.npm.taobao.org/postcss-modules-scope/download/postcss-modules-scope-2.2.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-modules-scope%2Fdownload%2Fpostcss-modules-scope-2.2.0.tgz#385cae013cc7743f5a7d7602d1073a89eaae62ee"
+  resolved "https://registry.npm.taobao.org/postcss-modules-scope/download/postcss-modules-scope-2.2.0.tgz?cache=0&sync_timestamp=1602594980328&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-modules-scope%2Fdownload%2Fpostcss-modules-scope-2.2.0.tgz#385cae013cc7743f5a7d7602d1073a89eaae62ee"
   dependencies:
     postcss "^7.0.6"
     postcss-selector-parser "^6.0.0"
@@ -13620,15 +13612,6 @@ webpack-log@^2.0.0:
     ansi-colors "^3.0.0"
     uuid "^3.3.2"
 
-webpack-manifest-plugin@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.npm.taobao.org/webpack-manifest-plugin/download/webpack-manifest-plugin-2.2.0.tgz#19ca69b435b0baec7e29fbe90fb4015de2de4f16"
-  dependencies:
-    fs-extra "^7.0.0"
-    lodash ">=3.5 <5"
-    object.entries "^1.1.0"
-    tapable "^1.0.0"
-
 webpack-merge@^5.2.0:
   version "5.2.0"
   resolved "https://registry.npm.taobao.org/webpack-merge/download/webpack-merge-5.2.0.tgz?cache=0&sync_timestamp=1602062996194&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwebpack-merge%2Fdownload%2Fwebpack-merge-5.2.0.tgz#31cbcc954f8f89cd4b06ca8d97a38549f7f3f0c9"
@@ -14159,9 +14142,9 @@ zhouhaifei-code-style@2.0.0:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.0.1.tgz#60c0a0d1a8b786066ec0d32fdba19205038bd01e"
+zhouhaifei-react-scripts@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.0.2.tgz#fec557cea3e16cc0f594e58b8a1280438defb955"
   dependencies:
     "@babel/core" "7.11.6"
     address "^1.1.2"
@@ -14217,7 +14200,6 @@ zhouhaifei-react-scripts@2.0.1:
     webpack "5.0.0"
     webpack-bundle-analyzer "^3.9.0"
     webpack-dev-server "3.11.0"
-    webpack-manifest-plugin "^2.2.0"
     webpack-merge "^5.2.0"
     webpackbar "^4.0.0"
     workbox-webpack-plugin "^5.1.4"
