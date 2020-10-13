@@ -15,8 +15,6 @@ const WatchMissingNodeModulesPlugin = require('../react-dev-utils/WatchMissingNo
 const webpack = require('webpack');
 const bundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
-
-// const manifestPlugin = require('webpack-manifest-plugin');
 const { merge } = require('webpack-merge');
 const webpackBar = require('webpackbar');
 const workboxWebpackPlugin = require('workbox-webpack-plugin');
@@ -135,25 +133,6 @@ module.exports = function() {
 
       utils.isDevelopment && new webpack.HotModuleReplacementPlugin(),
 
-      /*
-      utils.isProduction && new manifestPlugin({
-        fileName: 'asset-manifest.json',
-        publicPath: paths.publicUrlOrPath,
-        generate: (seed, files, entrypoints) => {
-          const manifestFiles = files.reduce((manifest, file) => {
-            manifest[file.name] = file.path;
-            return manifest;
-          }, seed);
-          const entrypointFiles = Object.values(entrypoints).reduce((previousValue, currentValue) => previousValue.concat(currentValue), [])
-            .filter((fileName) => !fileName.endsWith('.map'));
-
-          return {
-            files: manifestFiles,
-            entrypoints: entrypointFiles,
-          };
-        },
-      }),
-*/
       utils.isProduction && utils.isStartServiceWorker && new workboxWebpackPlugin.GenerateSW({
         clientsClaim: true,
         exclude: [
