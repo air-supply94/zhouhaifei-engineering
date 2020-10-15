@@ -80,6 +80,7 @@ module.exports = function() {
       new HtmlWebpackPlugin(require('./htmlWebpackPlugin')),
       utils.isProduction && new PreloadWebpackPlugin(),
       new webpack.DefinePlugin(getClientEnvironment(paths.publicUrlOrPath.slice(0, -1)).stringified),
+
       new CaseSensitivePathsPlugin(),
       utils.isDevelopment && new WatchMissingNodeModulesPlugin(paths.appNodeModules),
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
