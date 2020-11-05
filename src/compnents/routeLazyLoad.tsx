@@ -9,8 +9,6 @@ export class RouteLazyLoad extends React.PureComponent<RouteAssembleConfig & Rou
     this.originTitle = document.title;
   }
 
-  originTitle: string;
-
   componentDidMount() {
     if (this.props.title) {
       document.title = this.props.title;
@@ -20,6 +18,8 @@ export class RouteLazyLoad extends React.PureComponent<RouteAssembleConfig & Rou
   componentWillUnmount() {
     document.title = this.originTitle;
   }
+
+  originTitle: string;
 
   render() {
     const { title, path, DefaultLayout, LazyComponent, ...rest } = this.props;

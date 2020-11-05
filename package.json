@@ -17,7 +17,7 @@
     "react-router-config": "^5.1.1",
     "react-router-dom": "^5.2.0",
     "reflect-metadata": "^0.1.13",
-    "zhouhaifei-utils": "2.0.0"
+    "zhouhaifei-utils": "2.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -43,10 +43,10 @@
     "react-test-renderer": "^17.0.1",
     "stylelint": "13.7.2",
     "typescript": "^4.0.5",
-    "zhouhaifei-babel-config": "^2.0.0",
-    "zhouhaifei-code-style": "2.0.0",
-    "zhouhaifei-react-scripts": "2.1.1",
-    "zhouhaifei-test": "^2.0.0"
+    "zhouhaifei-babel-config": "^2.2.0",
+    "zhouhaifei-code-style": "2.2.0",
+    "zhouhaifei-react-scripts": "2.2.0",
+    "zhouhaifei-test": "^2.2.0"
   },
   "browserslist": [
     "Chrome >= 54",

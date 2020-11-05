@@ -32,9 +32,9 @@ export default function Login() {
             ]}
           >
             <Input
-              type="text"
-              placeholder="请输入用户名"
               onKeyDown={handleSubmit}
+              placeholder="请输入用户名"
+              type="text"
             />
           </Form.Item>
           <Form.Item
@@ -47,9 +47,9 @@ export default function Login() {
             ]}
           >
             <Input
-              type="password"
-              placeholder="请输入密码"
               onKeyDown={handleSubmit}
+              placeholder="请输入密码"
+              type="password"
             />
           </Form.Item>
           <Button

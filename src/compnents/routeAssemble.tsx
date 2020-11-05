@@ -14,15 +14,18 @@ export interface RouteAssembleConfig {
 export function RouteAssemble(config: RouteAssembleConfig): React.ReactNode {
   return (
     <Route
+      exact
       key={config.path}
       path={config.path}
-      exact
-      sensitive
       render={(routeInfo: RouteChildrenProps) => (
         <config.DefaultLayout {...routeInfo}>
-          <RouteLazyLoad {...config} {...routeInfo}/>
+          <RouteLazyLoad
+            {...config}
+            {...routeInfo}
+          />
         </config.DefaultLayout>
       )}
+      sensitive
     />
   );
 }

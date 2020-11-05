@@ -4,15 +4,15 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 // Support pass props from layout to child routes
 const RouteWithProps = ({ path, exact, strict, render, location, sensitive, ...rest }) => (
   <Route
-    path={path}
     exact={exact}
-    strict={strict}
     location={location}
-    sensitive={sensitive}
+    path={path}
     render={(props) => render({
       ...props,
       ...rest,
     })}
+    sensitive={sensitive}
+    strict={strict}
   />
 );
 
@@ -40,7 +40,13 @@ function withRoutes(route) {
       <RouteWithProps
         {...rest}
         render={(props) => {
-          return <Component {...props} route={route} render={render}/>;
+          return (
+            <Component
+              {...props}
+              render={render}
+              route={route}
+            />
+          );
         }}
       />
     );
@@ -54,9 +60,6 @@ let routeChanged = false;
 
 function wrapWithInitialProps(WrappedComponent, initialProps, extraProps = {}) {
   return class SSRComponent extends React.Component {
-    // A const static value marking itself as wrapped
-    wrappedWithInitialProps = true;
-
     constructor(props) {
       super(props);
       this.state = { extraProps: { ...extraProps }};
@@ -88,6 +91,9 @@ function wrapWithInitialProps(WrappedComponent, initialProps, extraProps = {}) {
       // Catch the case of navigating back to the root layout
       routeChanged = true;
     }
+
+    // A const static value marking itself as wrapped
+    wrappedWithInitialProps = true;
 
     // 前端路由切换时，也需要执行 getInitialProps
     async getInitialProps() {
@@ -134,22 +140,20 @@ export default function renderRoutes(routes, extraProps = {}, switchProps = {}) 
         if (route.redirect) {
           return (
             <Redirect
-              key={route.key || i}
-              from={route.path}
-              to={route.redirect}
               exact={route.exact}
+              from={route.path}
+              key={route.key || i}
               strict={route.strict}
+              to={route.redirect}
             />
           );
         }
         const RouteRoute = route.Routes ? withRoutes(route) : RouteWithProps;
         return (
           <RouteRoute
+            exact={route.exact}
             key={route.key || i}
             path={route.path}
-            exact={route.exact}
-            strict={route.strict}
-            sensitive={route.sensitive}
             render={(props) => {
               const { location } = props;
 
@@ -170,13 +174,19 @@ export default function renderRoutes(routes, extraProps = {}, switchProps = {}) 
                 return (
 
                   // reuse component for the same umi path (could be dynamic)
-                  <Component key={route.path} {...newProps} route={route}>
+                  <Component
+                    key={route.path}
+                    {...newProps}
+                    route={route}
+                  >
                     {childRoutes}
                   </Component>
                 );
               }
               return childRoutes;
             }}
+            sensitive={route.sensitive}
+            strict={route.strict}
           />
         );
       })}

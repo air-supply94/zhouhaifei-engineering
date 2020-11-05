@@ -34,21 +34,25 @@ export class BasicLayout extends React.Component<BasicLayoutInterface> {
     return (
       <ProLayout
         collapsed={this.props.global.collapsed}
-        location={{ pathname: location.pathname }}
-        title={window.envConfig.title}
-        logo={null}
-        menuHeaderRender={(logo, title) => null}
-        fixedHeader
         fixSiderbar
-        onCollapse={this.state.didMount && this.props.global.toggleCollapsed}
+        fixedHeader
+        location={{ pathname: location.pathname }}
+        logo={null}
+        menuDataRender={() => menuDataRender()}
+        menuHeaderRender={(logo, title) => null}
         menuItemRender={(menuItemProps, defaultDom) => {
           if (menuItemProps.isUrl || menuItemProps.children || !menuItemProps.path) {
             return defaultDom;
           }
 
-          return <NavLink to={menuItemProps.path}>{defaultDom}</NavLink>;
+          return (
+            <NavLink to={menuItemProps.path}>
+              {defaultDom}
+            </NavLink>
+          );
         }}
-        menuDataRender={() => menuDataRender()}
+        onCollapse={this.state.didMount && this.props.global.toggleCollapsed}
+        title={window.envConfig.title}
         {...rest}
       />
     );
@@ -56,5 +60,10 @@ export class BasicLayout extends React.Component<BasicLayoutInterface> {
 }
 
 export const DefaultLayout: React.FC = function(props) {
-  return <>{props.children}</>;
+  return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
+    <>
+      {props.children}
+    </>
+  );
 };

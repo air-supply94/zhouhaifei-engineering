@@ -12,12 +12,10 @@ export default function Entry() {
   }, []);
 
   return (
-    <>
-      <div className={styles.container}>
-        <Card size="small">
-          dashboard
-        </Card>
-      </div>
-    </>
+    <div className={styles.container}>
+      <Card size="small">
+        dashboard
+      </Card>
+    </div>
   );
 }

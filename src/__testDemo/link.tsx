@@ -9,17 +9,17 @@ export class Link extends React.Component<{ page?: string; }> {
   constructor(props) {
     super(props);
 
-    this._onMouseEnter = this._onMouseEnter.bind(this);
-    this._onMouseLeave = this._onMouseLeave.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }
 
   state = { class: STATUS.NORMAL };
 
-  public _onMouseEnter() {
+  public handleMouseEnter() {
     this.setState({ class: STATUS.HOVERED });
   }
 
-  public _onMouseLeave() {
+  public handleMouseLeave() {
     this.setState({ class: STATUS.NORMAL });
   }
 
@@ -28,8 +28,8 @@ export class Link extends React.Component<{ page?: string; }> {
       <a
         className={this.state.class}
         href={this.props.page || '#'}
-        onMouseEnter={this._onMouseEnter}
-        onMouseLeave={this._onMouseLeave}
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
       >
         {this.props.children}
       </a>

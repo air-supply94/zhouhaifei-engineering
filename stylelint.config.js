@@ -1,3 +1,1 @@
-const codeStyle = require('zhouhaifei-code-style');
-
-module.exports = { ...codeStyle.stylelint };
+module.exports = require('zhouhaifei-code-style').stylelint;

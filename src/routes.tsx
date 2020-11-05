@@ -33,7 +33,11 @@ export const Routes: React.FC = () => {
   return (
     <HashRouter>
       <Switch>
-        <Redirect exact from="/" to={window.envConfig.defaultRedirectUrl}/>
+        <Redirect
+          exact
+          from="/"
+          to={window.envConfig.defaultRedirectUrl}
+        />
         {renderRoute(routesInfo)}
       </Switch>
     </HashRouter>
