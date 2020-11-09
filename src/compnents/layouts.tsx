@@ -30,7 +30,6 @@ export class BasicLayout extends React.Component<BasicLayoutInterface> {
 
   render() {
     const { history, location, match, global, ...rest } = this.props;
-
     return (
       <ProLayout
         collapsed={this.props.global.collapsed}

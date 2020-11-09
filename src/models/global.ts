@@ -10,9 +10,8 @@ export interface GlobalInterface {
 export class Global implements GlobalInterface {
   @observable public collapsed = window.localStorage.getItem(collapsedKey) === 'true';
 
-  @action.bound
-  public toggleCollapsed(): void {
+  @action public toggleCollapsed = () => {
     this.collapsed = !this.collapsed;
     window.localStorage.setItem(collapsedKey, String(this.collapsed));
-  }
+  };
 }
