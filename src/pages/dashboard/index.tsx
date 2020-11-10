@@ -14,7 +14,7 @@ export default function Entry() {
   return (
     <div className={styles.container}>
       <Card size="small">
-        dashboard1
+        dashboard
       </Card>
     </div>
   );
