@@ -45,7 +45,7 @@
     "typescript": "^4.0.5",
     "zhouhaifei-babel-config": "^2.2.0",
     "zhouhaifei-code-style": "2.2.1",
-    "zhouhaifei-react-scripts": "^1.3.17",
+    "zhouhaifei-react-scripts": "^2.2.2",
     "zhouhaifei-test": "^2.2.0"
   },
   "browserslist": [
