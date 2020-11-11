@@ -1,1 +1,1 @@
-module.exports = { extends: [require.resolve('./packages/zhouhaifei-code-style/lib/react')]};
+module.exports = { extends: [require.resolve('zhouhaifei-code-style/lib/react')]};
