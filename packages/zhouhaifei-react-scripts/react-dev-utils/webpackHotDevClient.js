@@ -132,7 +132,7 @@ function handleWarnings(warnings) {
         if (i === 5) {
           console.warn(
             'There were more warnings in other files.\n' +
-              'You can find a complete log in the terminal.'
+            'You can find a complete log in the terminal.'
           );
           break;
         }
@@ -245,11 +245,7 @@ function tryApplyUpdates(onHotUpdateSuccess) {
   }
 
   function handleApplyUpdates(err, updatedModules) {
-    const hasReactRefresh = process.env.FAST_REFRESH !== 'false';
-    const wantsForcedReload = err || !updatedModules || hadRuntimeError;
-
-    // React refresh can handle hot-reloading over errors.
-    if (!hasReactRefresh && wantsForcedReload) {
+    if (err || !updatedModules || hadRuntimeError) {
       window.location.reload();
       return;
     }
