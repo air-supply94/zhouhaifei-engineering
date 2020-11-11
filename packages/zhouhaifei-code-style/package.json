@@ -4,7 +4,7 @@
   "description": "code style rule",
   "main": "lib/index.js",
   "keywords": [
-    "eslintRule",
+    "reactEslintRule",
     "prettierRule",
     "styleLintRule"
   ],
