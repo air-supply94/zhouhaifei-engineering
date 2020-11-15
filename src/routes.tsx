@@ -1,57 +1,43 @@
-import { BasicLayout, DefaultLayout } from '@/compnents';
-import { renderRoutes } from '@/renderRoutes';
+import { BasicLayout, DefaultLayout } from '@/compnents/layouts';
+import { NotAuthority } from '@/pages/403';
+import { NotPage } from '@/pages/404';
+import { UserOutlined } from '@ant-design/icons';
 import React from 'react';
-import { HashRouter } from 'react-router-dom';
 
-const routes = [
+export const routes = [
   {
     exact: true,
     path: '/login',
     component: DefaultLayout,
-    children: [
-      {
-        exact: true,
-        path: '/login',
-        component: React.lazy(() => import('@/pages/login')),
-      },
-    ],
-    title: '登陆',
+    routes: [{ component: React.lazy(() => import('@/pages/login')) }],
+    name: '登陆',
   },
   {
-    path: '/',
     component: BasicLayout,
-    children: [
+    routes: [
       {
         exact: true,
-        from: '/',
-        to: window.envConfig.defaultRedirectUrl,
+        path: '/',
+        redirect: window.envConfig.defaultRedirectUrl,
       },
       {
         path: '/dashboard',
+        icon: <UserOutlined/>,
         exact: true,
         component: React.lazy(() => import('@/pages/dashboard')),
-        title: '仪表盘',
+        name: '仪表盘',
       },
       {
         path: '/403',
         exact: true,
-        component: React.lazy(() => import('@/pages/403')),
-        title: '无权限',
+        component: NotAuthority,
+        name: '无权限',
       },
       {
         path: '',
-        exact: true,
-        component: React.lazy(() => import('@/pages/404')),
-        title: '无页面',
+        component: NotPage,
+        name: '无页面',
       },
     ],
   },
 ];
-
-export const Routes: React.FC = () => {
-  return (
-    <HashRouter>
-      {renderRoutes(routes)}
-    </HashRouter>
-  );
-};

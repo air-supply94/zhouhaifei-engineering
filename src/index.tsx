@@ -1,7 +1,8 @@
 import { Locale } from '@/locale';
 import { Global } from '@/models/global';
-import { Routes } from '@/routes';
+import { Routes } from '@/renderRoutes';
 import '@/index.less';
+import { routes } from '@/routes';
 import { Provider } from 'mobx-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -12,7 +13,10 @@ ReactDOM.render(
   <React.StrictMode>
     <Locale>
       <Provider global={new Global()}>
-        <Routes/>
+        <Routes
+          hash
+          routes={routes}
+        />
       </Provider>
     </Locale>
   </React.StrictMode>,

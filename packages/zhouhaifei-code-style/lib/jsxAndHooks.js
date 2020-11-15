@@ -122,7 +122,7 @@ module.exports = {
     2,
     'multiline-multiprop',
   ],
-  'react/jsx-handler-names': 2,
+  'react/jsx-handler-names': 1,
   'react/jsx-indent': [
     2,
     2,
