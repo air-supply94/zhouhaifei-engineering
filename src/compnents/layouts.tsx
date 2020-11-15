@@ -14,7 +14,7 @@ function menuDataRender(menuList: MenuDataItem[] = []): MenuDataItem[] {
     ].includes(item.path))
     .map((item) => ({
       ...item,
-      children: Array.isArray(item.children) && item.children.length ? menuDataRender(item.children) : [],
+      children: Array.isArray(item.routes) && item.routes.length ? menuDataRender(item.routes) : [],
     }));
 }
 
@@ -56,7 +56,6 @@ export class BasicLayout extends React.Component<BasicLayoutInterface> {
   }
 }
 
-// @ts-ignore
-export const DefaultLayout: React.FC = function(props) {
+export const DefaultLayout: React.FC<any> = function(props) {
   return props.children;
 };

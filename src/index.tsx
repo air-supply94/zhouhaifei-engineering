@@ -3,6 +3,7 @@ import { Global } from '@/models/global';
 import { Routes } from '@/renderRoutes';
 import '@/index.less';
 import { routes } from '@/routes';
+import { Spin } from 'antd';
 import { Provider } from 'mobx-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -15,6 +16,7 @@ ReactDOM.render(
       <Provider global={new Global()}>
         <Routes
           hash
+          loading={<Spin size="large"/>}
           routes={routes}
         />
       </Provider>

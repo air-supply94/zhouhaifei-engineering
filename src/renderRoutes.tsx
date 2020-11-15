@@ -1,14 +1,12 @@
 import { MenuDataItem } from '@ant-design/pro-layout';
-import { Spin } from 'antd';
 import React from 'react';
 import { Redirect, HashRouter, BrowserRouter, Route, Switch } from 'react-router-dom';
 
-// @ts-ignore
-const DefaultWrapper: React.FC = function(props) {
+const DefaultWrapper: React.FC<any> = function(props) {
   return props.children;
 };
 
-const WrapperRoute: React.FC<any> = ({ path, Wrapper, route, exact, strict, render, location, sensitive, ...rest }) => (
+const WrapperRoute: React.FC<any> = ({ path, Wrapper, route, exact, strict, render, location, sensitive, loading, ...rest }) => (
   <Route
     exact={exact}
     location={location}
@@ -17,7 +15,7 @@ const WrapperRoute: React.FC<any> = ({ path, Wrapper, route, exact, strict, rend
       const NewWrapper = Wrapper ? Wrapper : DefaultWrapper;
       return (
         <NewWrapper route={route}>
-          <React.Suspense fallback={<Spin size="large"/>}>
+          <React.Suspense fallback={loading}>
             {render({
               route,
               ...props,
@@ -32,7 +30,7 @@ const WrapperRoute: React.FC<any> = ({ path, Wrapper, route, exact, strict, rend
   />
 );
 
-function renderRoutes(routes: MenuDataItem[], extraProps = {}, switchProps = {}) {
+function renderRoutes(routes: MenuDataItem[], extraProps = {}, switchProps = {}, loading) {
   if (Array.isArray(routes) && routes.length) {
     return (
       <Switch {...switchProps}>
@@ -53,16 +51,16 @@ function renderRoutes(routes: MenuDataItem[], extraProps = {}, switchProps = {})
                 Wrapper={route.Wrapper}
                 exact={route.exact}
                 key={route.key || index}
+                loading={loading}
                 path={route.path}
                 render={(props) => {
-                  const childRoutes = renderRoutes(route.routes, extraProps, { location: props.location });
+                  const childRoutes = renderRoutes(route.routes, extraProps, { location: props.location }, loading);
                   if (route.component) {
                     const { component: Component } = route;
                     return (
                       <Component
                         {...props}
                         {...extraProps}
-                        route={route}
                       >
                         {childRoutes}
                       </Component>
@@ -91,16 +89,14 @@ interface RoutesProps {
   basename?: string;
   extraProps?: any;
   switchProps?: any;
+  loading?: React.ReactNode;
 }
 
-export const Routes: React.FC<RoutesProps> = ({ routes, hash, basename, extraProps, switchProps }) => {
+export const Routes: React.FC<RoutesProps> = ({ routes, hash, basename, extraProps, switchProps, loading }) => {
   const Router: React.ReactType = hash ? HashRouter : BrowserRouter;
   return (
-    <Router
-      basename={basename}
-      history={history}
-    >
-      {renderRoutes(routes, extraProps, switchProps)}
+    <Router basename={basename}>
+      {renderRoutes(routes, extraProps, switchProps, loading)}
     </Router>
   );
 };
