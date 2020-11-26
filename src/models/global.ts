@@ -7,7 +7,7 @@ export interface GlobalInterface {
   toggleCollapsed: () => void;
 }
 
-export class Global implements GlobalInterface {
+class Global implements GlobalInterface {
   @observable public collapsed = window.localStorage.getItem(collapsedKey) === 'true';
 
   @action public toggleCollapsed = () => {
@@ -15,3 +15,5 @@ export class Global implements GlobalInterface {
     window.localStorage.setItem(collapsedKey, String(this.collapsed));
   };
 }
+
+export const globalStore = new Global();

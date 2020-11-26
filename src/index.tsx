@@ -1,5 +1,5 @@
 import { Locale } from '@/locale';
-import { Global } from '@/models/global';
+import { globalStore } from '@/models/global';
 import { Routes } from '@/renderRoutes';
 import '@/index.less';
 import { routes } from '@/routes';
@@ -13,7 +13,7 @@ import ReactDOM from 'react-dom';
 ReactDOM.render(
   <React.StrictMode>
     <Locale>
-      <Provider global={new Global()}>
+      <Provider globalStore={globalStore}>
         <Routes
           hash
           loading={<Spin size="large"/>}

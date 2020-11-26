@@ -1,4 +1,4 @@
-import { Global } from '@/models/global';
+import { GlobalInterface } from '@/models/global';
 import ProLayout, { MenuDataItem } from '@ant-design/pro-layout';
 import { observer, inject } from 'mobx-react';
 import React from 'react';
@@ -19,19 +19,33 @@ function menuDataRender(menuList: MenuDataItem[] = []): MenuDataItem[] {
 }
 
 export interface BasicLayoutInterface extends RouteChildrenProps {
-  global: Global;
+  globalStore: GlobalInterface;
   route: MenuDataItem;
 }
 
-@inject('global')
+@inject('globalStore')
 @observer
 export class BasicLayout extends React.Component<BasicLayoutInterface> {
+  state = { isMounted: false };
+
+  componentDidMount() {
+    this.setState({ isMounted: true });
+  }
+
   render() {
-    const { location, global, children, route = { routes: []}} = this.props;
+    const {
+      location,
+      globalStore: {
+        collapsed,
+        toggleCollapsed,
+      },
+      children,
+      route = { routes: []},
+    } = this.props;
     return (
       <ProLayout
         children={children}
-        collapsed={global.collapsed}
+        collapsed={collapsed}
         fixSiderbar
         fixedHeader
         location={{ pathname: location.pathname }}
@@ -49,7 +63,7 @@ export class BasicLayout extends React.Component<BasicLayoutInterface> {
             </NavLink>
           );
         }}
-        onCollapse={global.toggleCollapsed}
+        onCollapse={this.state.isMounted ? toggleCollapsed : undefined}
         title={window.envConfig.title}
       />
     );
