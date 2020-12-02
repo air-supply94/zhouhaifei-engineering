@@ -11,6 +11,7 @@
   "author": "zhouhaifei1994@sina.com",
   "license": "MIT",
   "dependencies": {
+    "@commitlint/config-conventional": "^11.0.0",
     "@typescript-eslint/eslint-plugin": "^4.6.1",
     "@typescript-eslint/parser": "^4.6.1",
     "babel-eslint": "^10.1.0",

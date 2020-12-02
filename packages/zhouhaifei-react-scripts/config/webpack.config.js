@@ -102,7 +102,6 @@ module.exports = function() {
       utils.isProduction && new compressionPlugin({
         filename: '[path][base].gz',
         test: /\.(js|css|html|svg)$/,
-        cache: false,
         algorithm: 'gzip',
         compressionOptions: {
           level: 9,

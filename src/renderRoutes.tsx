@@ -6,7 +6,18 @@ const DefaultWrapper: React.FC<any> = function(props) {
   return props.children;
 };
 
-const WrapperRoute: React.FC<any> = ({ path, Wrapper, route, exact, strict, render, location, sensitive, loading, ...rest }) => (
+const WrapperRoute: React.FC<any> = ({
+  path,
+  Wrapper,
+  route,
+  exact,
+  strict,
+  render,
+  location,
+  sensitive,
+  loading,
+  ...rest
+}) => (
   <Route
     exact={exact}
     location={location}
@@ -92,7 +103,14 @@ interface RoutesProps {
   loading?: React.ReactNode;
 }
 
-export const Routes: React.FC<RoutesProps> = ({ routes, hash, basename, extraProps, switchProps, loading }) => {
+export const Routes: React.FC<RoutesProps> = ({
+  routes,
+  hash,
+  basename,
+  extraProps,
+  switchProps,
+  loading,
+}) => {
   const Router: React.ReactType = hash ? HashRouter : BrowserRouter;
   return (
     <Router basename={basename}>
