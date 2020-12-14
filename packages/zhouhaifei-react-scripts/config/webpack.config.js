@@ -64,7 +64,7 @@ module.exports = function() {
       strictExportPresence: true,
       rules: [
         { parser: { requireEnsure: false }},
-        require('./eslintConfig'),
+        utils.allowEslint && require('./eslintConfig'),
         {
           oneOf: [
             ...require('./jsAndTsConfig'),
@@ -72,7 +72,7 @@ module.exports = function() {
             ...require('./staticResource'),
           ],
         },
-      ],
+      ].filter(Boolean),
     },
     plugins: [
       // 清除原先打包内容

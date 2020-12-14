@@ -19,10 +19,15 @@ const scriptIndex = args.findIndex((x) => cmd.includes(x));
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex];
 const nodeArgs = scriptIndex > 0 ? args.slice(0, scriptIndex) : [];
 
+if (args.includes('-v') || args.includes('--version')) {
+  console.log(require('../package.json').version);
+}
+
 if (cmd.includes(script)) {
   const result = spawn.sync(
     'node',
-    nodeArgs.concat(require.resolve(`../scripts/${script}`)).concat(args.slice(scriptIndex + 1)),
+    nodeArgs.concat(require.resolve(`../scripts/${script}`))
+      .concat(args.slice(scriptIndex + 1)),
     { stdio: 'inherit' }
   );
   if (result.signal) {

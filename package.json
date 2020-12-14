@@ -42,8 +42,8 @@
     "stylelint": "13.8.0",
     "typescript": "^4.1.2",
     "zhouhaifei-babel-config": "^2.2.0",
-    "zhouhaifei-code-style": "2.2.4",
-    "zhouhaifei-react-scripts": "^2.4.0",
+    "zhouhaifei-code-style": "2.5.1",
+    "zhouhaifei-react-scripts": "^2.5.1",
     "zhouhaifei-test": "^2.2.0"
   },
   "browserslist": [
@@ -81,9 +81,6 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "publish": "lerna run build && lerna publish",
-    "test-start": "node packages/zhouhaifei-react-scripts/scripts/start.js",
-    "test-build": "node packages/zhouhaifei-react-scripts/scripts/build.js",
-    "test-test": "node packages/zhouhaifei-test/scripts/react.js",
     "start": "zhouhaifei-react-scripts start",
     "build": "zhouhaifei-react-scripts build",
     "test": "zhouhaifei-test react",
