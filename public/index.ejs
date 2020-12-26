@@ -161,11 +161,6 @@
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
-<script>
-  window.variableConfig = {
-    publicPath: '<%= publicPath %>',
-  };
-</script>
 <div id="root">
     <div style="display: flex;justify-content: center;align-items: center;flex-direction: column;min-height: 420px;height: 100%;">
         <div class="page-loading-warp">
@@ -185,7 +180,6 @@
 <% if (isProduction) { %>
     <script type="text/javascript" src="<%= publicPath %>assets/plugin/react.production.min.js?v=16.13.1"></script>
     <script type="text/javascript" src="<%= publicPath %>assets/plugin/react-dom.production.min.js?v=16.13.1"></script>
-    <script type="text/javascript" src="<%= publicPath %>assets/plugin/babel-polyfill.min.js?v=7.10.1"></script>
     <script type="text/javascript" src="<%= publicPath %>assets/plugin/url-search-params-polyfill.min.js?v=6.0.0"></script>
     <script type="text/javascript" src="<%= publicPath %>assets/plugin/axios.min.js?v=0.19.2"></script>
     <script type="text/javascript" src="<%= publicPath %>assets/plugin/lodash.min.js?v=4.7.11"></script>

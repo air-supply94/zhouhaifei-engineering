@@ -4,7 +4,10 @@ import React from 'react';
 export const NotAuthority: React.FC = () => (
   <Result
     extra={(
-      <Button type="primary">
+      <Button
+        href="/"
+        type="primary"
+      >
         回到首页
       </Button>
     )}

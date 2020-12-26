@@ -1,6 +1,7 @@
 import { MenuDataItem } from '@ant-design/pro-layout';
+import { History } from 'history';
 import React from 'react';
-import { Redirect, HashRouter, BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Redirect, Router, Route, Switch } from 'react-router-dom';
 
 const DefaultWrapper: React.FC<any> = function(props) {
   return props.children;
@@ -95,9 +96,8 @@ function renderRoutes(routes: MenuDataItem[], extraProps = {}, switchProps = {},
 }
 
 interface RoutesProps {
+  history: History;
   routes: MenuDataItem[];
-  hash?: boolean;
-  basename?: string;
   extraProps?: any;
   switchProps?: any;
   loading?: React.ReactNode;
@@ -105,15 +105,13 @@ interface RoutesProps {
 
 export const Routes: React.FC<RoutesProps> = ({
   routes,
-  hash,
-  basename,
+  history,
   extraProps,
   switchProps,
   loading,
 }) => {
-  const Router: React.ReactType = hash ? HashRouter : BrowserRouter;
   return (
-    <Router basename={basename}>
+    <Router history={history}>
       {renderRoutes(routes, extraProps, switchProps, loading)}
     </Router>
   );

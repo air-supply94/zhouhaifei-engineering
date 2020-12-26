@@ -1,3 +1,4 @@
+import { history } from '@/history';
 import { Locale } from '@/locale';
 import { globalStore } from '@/models/global';
 import { Routes } from '@/renderRoutes';
@@ -15,7 +16,7 @@ ReactDOM.render(
     <Locale>
       <Provider globalStore={globalStore}>
         <Routes
-          hash
+          history={history}
           loading={<Spin size="large"/>}
           routes={routes}
         />
