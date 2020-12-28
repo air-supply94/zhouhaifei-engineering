@@ -1,6 +1,11 @@
 ## 0.1.0 (2020-12-28)
 
-- feat(\*): add conventional-changelog-cli commitizen ([1d01da3](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/1d01da3))
+- feat(\*): remove commitizen ([09b4d70](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/09b4d70))
+
+## <small>2.5.4 (2020-12-28)</small>
+
+- chore(release): publish ([7c1911d](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/7c1911d))
+- feat(\*): add conventional-changelog-cli commitizen ([75d566c](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/75d566c))
 
 ## <small>2.5.3 (2020-12-28)</small>
 
