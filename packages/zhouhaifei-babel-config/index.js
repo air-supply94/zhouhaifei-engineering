@@ -2,11 +2,8 @@ const presets = [
   [
     '@babel/preset-env',
     {
-      loose: false,
       modules: false, // modules预先将es6模块转成"amd" | "umd" | "systemjs" | "commonjs", 值为false则不转换
       useBuiltIns: 'usage',
-      debug: false,
-      bugfixes: true,
       corejs: {
         version: 3,
         proposals: true,

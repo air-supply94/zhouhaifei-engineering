@@ -3,9 +3,9 @@
 **/*.jsx
 **.ts
 **.tsx
-package.json
 public
 dist
+coverage
 .dockerignore
 .DS_Store
 .eslintignore

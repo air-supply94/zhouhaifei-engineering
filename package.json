@@ -33,6 +33,8 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.6",
+    "commitizen": "^4.2.2",
+    "conventional-changelog-cli": "^2.1.1",
     "eslint": "7.14.0",
     "husky": "4.3.0",
     "lerna": "^3.22.1",
@@ -42,10 +44,10 @@
     "react-test-renderer": "^17.0.1",
     "stylelint": "13.8.0",
     "typescript": "^4.1.2",
-    "zhouhaifei-babel-config": "^2.2.0",
-    "zhouhaifei-code-style": "2.5.1",
-    "zhouhaifei-react-scripts": "^2.5.1",
-    "zhouhaifei-test": "^2.2.0"
+    "zhouhaifei-babel-config": "^2.5.3",
+    "zhouhaifei-code-style": "2.5.3",
+    "zhouhaifei-react-scripts": "^2.5.2",
+    "zhouhaifei-test": "^2.5.2"
   },
   "browserslist": [
     "Chrome >= 54",
@@ -80,6 +82,8 @@
     ]
   },
   "scripts": {
+    "commit": "cz",
+    "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "bootstrap": "lerna bootstrap",
     "publish": "lerna run build && lerna publish",
     "start": "zhouhaifei-react-scripts start",
