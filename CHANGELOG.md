@@ -1,6 +1,7 @@
-## 0.1.0 (2020-12-28)
+## 0.0.0 (2020-12-29)
 
-- feat(\*): remove commitizen ([09b4d70](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/09b4d70))
+- feat(\*): remove commitizen ([bc521f6](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/bc521f6))
+- feat(package.json): add validate-commit-msg and cz ([1db65d0](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/1db65d0))
 
 ## <small>2.5.4 (2020-12-28)</small>
 

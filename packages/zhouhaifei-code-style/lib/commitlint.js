@@ -7,7 +7,7 @@ module.exports = {
       'camel-case',
     ],
     'scope-case': [
-      2,
+      1,
       'always',
       'camel-case',
     ],

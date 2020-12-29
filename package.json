@@ -1,6 +1,6 @@
 {
   "name": "zhouhaifei-react-scripts",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.3.0",
@@ -33,7 +33,9 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.6",
+    "commitizen": "^4.2.2",
     "conventional-changelog-cli": "^2.1.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "7.14.0",
     "husky": "4.3.0",
     "lerna": "^3.22.1",
@@ -43,6 +45,7 @@
     "react-test-renderer": "^17.0.1",
     "stylelint": "13.8.0",
     "typescript": "^4.1.2",
+    "validate-commit-msg": "^2.14.0",
     "zhouhaifei-babel-config": "^2.5.3",
     "zhouhaifei-code-style": "2.5.3",
     "zhouhaifei-react-scripts": "^2.5.2",
@@ -59,7 +62,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && validate-commit-msg"
     }
   },
   "lint-staged": {
@@ -80,7 +83,13 @@
       "git add ."
     ]
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "scripts": {
+    "commit": "cz",
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "bootstrap": "lerna bootstrap",
     "publish": "lerna run build && lerna publish",
