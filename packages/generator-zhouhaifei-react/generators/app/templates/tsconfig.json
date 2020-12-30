@@ -20,9 +20,6 @@
     "resolveJsonModule": true,
     "isolatedModules": false,
     "noEmit": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    },
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "strict": false,

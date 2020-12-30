@@ -12,10 +12,16 @@ module.exports = class extends Generator {
 
     const prompts = [
       {
-        type: 'confirm',
-        name: 'someAnswer',
-        message: 'Would you like to enable this option?',
-        default: true,
+        type: 'input',
+        name: 'projectName',
+        message: '项目名称',
+        default: this.appname,
+      },
+      {
+        type: 'input',
+        name: 'projectDescription',
+        message: '项目描述',
+        default: '',
       },
     ];
 
@@ -35,6 +41,15 @@ module.exports = class extends Generator {
     this.fs.copy(
       this.templatePath('\.**'),
       this.destinationPath('')
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('package.json.ejs'),
+      this.destinationPath('package.json'),
+      {
+        projectName: this.props.projectName,
+        projectDescription: this.props.projectDescription,
+      }
     );
   }
 

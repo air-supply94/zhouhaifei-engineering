@@ -16417,10 +16417,10 @@ yocto-queue@^0.1.0:
   resolved "https://registry.npm.taobao.org/yocto-queue/download/yocto-queue-0.1.0.tgz?cache=0&sync_timestamp=1606288334406&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fyocto-queue%2Fdownload%2Fyocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=
 
-zhouhaifei-babel-config@^2.5.4:
-  version "2.5.4"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-babel-config/download/zhouhaifei-babel-config-2.5.4.tgz#395aeea62b89a3989d51db355489366d429ae3cf"
-  integrity sha1-OVrupiuJo5idUds1VIk2bUKa488=
+zhouhaifei-babel-config@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-babel-config/download/zhouhaifei-babel-config-2.6.0.tgz#f759ca02c6aa7276d7828c8cf54e89292b5118a5"
+  integrity sha1-91nKAsaqcnbXgoyM9U6JKStRGKU=
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.12.1"
     "@babel/plugin-proposal-decorators" "^7.12.1"
@@ -16437,10 +16437,10 @@ zhouhaifei-babel-config@^2.5.4:
     "@babel/preset-typescript" "^7.12.1"
     babel-plugin-import "^1.13.1"
 
-zhouhaifei-code-style@2.5.5:
-  version "2.5.5"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-code-style/download/zhouhaifei-code-style-2.5.5.tgz#371bf3a93070ef2a5274fb83f1f2eaaf44e2a230"
-  integrity sha1-NxvzqTBw7ypSdPuD8fLqr0TiojA=
+zhouhaifei-code-style@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-code-style/download/zhouhaifei-code-style-2.6.0.tgz#82c9290d32ee8e9353695c8000d7816ccf20fa05"
+  integrity sha1-gskpDTLujpNTaVyAANeBbM8g+gU=
   dependencies:
     "@commitlint/config-conventional" "^11.0.0"
     "@typescript-eslint/eslint-plugin" "^4.6.1"
@@ -16458,10 +16458,10 @@ zhouhaifei-code-style@2.5.5:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@^2.5.2:
-  version "2.5.2"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.5.2.tgz#ecef77a066eeebd906fbb93af9e898c38ee9ace7"
-  integrity sha1-7O93oGbu69kG+7k6+eiYw47prOc=
+zhouhaifei-react-scripts@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.6.0.tgz#b15069e0768158c6c64617ae3f9871ded9bda9fd"
+  integrity sha1-sVBp4HaBWMbGRheuP5hx3tm9qf0=
   dependencies:
     "@babel/core" "7.12.10"
     address "^1.1.2"
@@ -16522,10 +16522,10 @@ zhouhaifei-react-scripts@^2.5.2:
     webpackbar "^5.0.0-3"
     workbox-webpack-plugin "^6.0.2"
 
-zhouhaifei-test@^2.5.2:
-  version "2.5.2"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-test/download/zhouhaifei-test-2.5.2.tgz#315a220919321cad7852d48b1218126a74810d8d"
-  integrity sha1-MVoiCRkyHK14UtSLEhgSanSBDY0=
+zhouhaifei-test@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-test/download/zhouhaifei-test-2.6.0.tgz#cce1b3359eaa9c33ed7cc4f1f7de882ff307a126"
+  integrity sha1-zOGzNZ6qnDPtfMTx996IL/MHoSY=
   dependencies:
     babel-jest "^26.6.3"
     chalk "^4.1.0"

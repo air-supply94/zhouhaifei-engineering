@@ -103,7 +103,7 @@ interface RoutesProps {
   loading?: React.ReactNode;
 }
 
-export const Routes: React.FC<RoutesProps> = ({
+export const RenderRoutes: React.FC<RoutesProps> = ({
   routes,
   history,
   extraProps,

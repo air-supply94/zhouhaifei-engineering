@@ -2,35 +2,20 @@
   "name": "zhouhaifei-utils",
   "version": "2.6.0",
   "description": "utils",
-  "types": "./lib/index.d.ts",
-  "main": "./lib/index.js",
+  "types": "./es/index.d.ts",
+  "main": "./es/index.js",
   "author": "zhouhaifei1994@sina.com",
   "license": "MIT",
   "scripts": {
-    "build": "npm run compile",
-    "compile": "tsc"
-  },
-  "devDependencies": {
-    "@types/jest": "^26.0.15",
-    "@types/react": "^16.9.55",
-    "@types/react-dom": "^16.9.9",
-    "antd": "^4.8.0",
-    "axios": "^0.21.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "typescript": "^4.0.5"
+    "build": "father build"
   },
   "files": [
-    "lib"
+    "es"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "peerDependencies": {
-    "antd": ">=4.0.0",
-    "axios": ">=0.19.0",
-    "react": ">=16.8.6",
-    "react-dom": ">=16.8.6"
-  },
-  "gitHead": "37ea565dba4a286bbf08a99ad99b26c9fa22d7c5"
+  "gitHead": "37ea565dba4a286bbf08a99ad99b26c9fa22d7c5",
+  "dependencies": {},
+  "sideEffects": false
 }

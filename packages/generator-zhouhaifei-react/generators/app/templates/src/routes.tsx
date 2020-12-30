@@ -1,8 +1,8 @@
-import { BasicLayout } from '@/compnents/layouts';
-import { NotAuthority } from '@/pages/403';
-import { NotPage } from '@/pages/404';
 import { UserOutlined } from '@ant-design/icons';
 import React from 'react';
+import { BasicLayout } from './compnents/layouts';
+import { NotAuthority } from './pages/403';
+import { NotPage } from './pages/404';
 
 export const routes = [
   {
@@ -17,7 +17,7 @@ export const routes = [
         path: '/dashboard',
         icon: <UserOutlined/>,
         exact: true,
-        component: React.lazy(() => import('@/pages/dashboard')),
+        component: React.lazy(() => import('./pages/dashboard')),
         name: '仪表盘',
       },
       {

@@ -1,9 +1,9 @@
-import { GlobalInterface } from '@/models/global';
 import ProLayout, { MenuDataItem } from '@ant-design/pro-layout';
 import { observer, inject } from 'mobx-react';
 import React from 'react';
 import { RouteChildrenProps } from 'react-router';
 import { NavLink } from 'react-router-dom';
+import { GlobalInterface } from '../models/global';
 
 function menuDataRender(menuList: MenuDataItem[] = []): MenuDataItem[] {
   return menuList.filter((item) => item.path)

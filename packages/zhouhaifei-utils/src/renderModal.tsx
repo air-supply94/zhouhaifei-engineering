@@ -1,5 +1,5 @@
 import React from 'react';
-import { render as reactDomRender, unmountComponentAtNode } from 'react-dom';
+import ReactDOM from 'react-dom';
 
 const domStack: HTMLElement[] = [];
 
@@ -7,14 +7,14 @@ export function renderModal(element: React.ReactElement): HTMLElement {
   const newDomElement = document.createElement('div');
   domStack.push(newDomElement);
   document.body.appendChild(newDomElement);
-  reactDomRender(element, newDomElement);
+  ReactDOM.render(element, newDomElement);
   return newDomElement;
 }
 
 export function destroyModal(): HTMLElement | undefined {
   const oldDomElement = domStack.pop();
   if (oldDomElement && oldDomElement.parentElement) {
-    unmountComponentAtNode(oldDomElement);
+    ReactDOM.unmountComponentAtNode(oldDomElement);
     oldDomElement.parentElement.removeChild(oldDomElement);
   }
   return oldDomElement;
