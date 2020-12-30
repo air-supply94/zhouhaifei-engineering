@@ -1,6 +1,6 @@
 {
   "name": "generator-zhouhaifei-react",
-  "version": "0.0.0",
+  "version": "2.6.0",
   "description": "",
   "homepage": "",
   "author": {
@@ -17,16 +17,16 @@
     "yeoman-generator"
   ],
   "devDependencies": {
-    "yeoman-test": "^1.7.0",
+    "jest": "^26.1.0",
     "yeoman-assert": "^3.1.0",
-    "jest": "^26.1.0"
+    "yeoman-test": "^1.7.0"
   },
   "engines": {
     "npm": ">= 4.0.0"
   },
   "dependencies": {
-    "yeoman-generator": "^2.0.1",
     "chalk": "^2.1.0",
+    "yeoman-generator": "^2.0.1",
     "yosay": "^2.0.1"
   },
   "jest": {
