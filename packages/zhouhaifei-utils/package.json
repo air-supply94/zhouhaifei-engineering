@@ -1,6 +1,6 @@
 {
   "name": "zhouhaifei-utils",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "description": "utils",
   "types": "./es/index.d.ts",
   "main": "./es/index.js",
@@ -16,6 +16,5 @@
     "registry": "https://registry.npmjs.org/"
   },
   "gitHead": "37ea565dba4a286bbf08a99ad99b26c9fa22d7c5",
-  "dependencies": {},
   "sideEffects": false
 }
