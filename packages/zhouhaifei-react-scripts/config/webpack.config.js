@@ -10,14 +10,15 @@ const copyWebpackPlugin = require('copy-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 const ModuleScopePlugin = require('../react-dev-utils/ModuleScopePlugin');
 const WatchMissingNodeModulesPlugin = require('../react-dev-utils/WatchMissingNodeModulesPlugin');
-const webpack = require('webpack');
 const bundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const { merge } = require('webpack-merge');
 const webpackBar = require('webpackbar');
 const workboxWebpackPlugin = require('workbox-webpack-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const getClientEnvironment = require('./env');
 const modules = require('./modules');
 const paths = require('./paths');
@@ -41,7 +42,8 @@ module.exports = function() {
         paths.appNodeModules,
       ],
 
-      extensions: paths.moduleFileExtensions.map((ext) => `.${ext}`).filter((ext) => useTypeScript || !ext.includes('ts')),
+      extensions: paths.moduleFileExtensions.map((ext) => `.${ext}`)
+        .filter((ext) => useTypeScript || !ext.includes('ts')),
       alias: {
         'react-native': 'react-native-web',
 
@@ -78,6 +80,10 @@ module.exports = function() {
       // 清除原先打包内容
       utils.isProduction && new cleanWebpackPlugin(),
       new HtmlWebpackPlugin(require('./htmlWebpackPlugin')),
+
+      // TypeScript type checking
+      useTypeScript && new ForkTsCheckerWebpackPlugin({ typescript: { configFile: paths.appTsConfig }}),
+
       utils.isProduction && new PreloadWebpackPlugin(),
       new webpack.DefinePlugin(getClientEnvironment(paths.publicUrlOrPath.slice(0, -1)).stringified),
 
@@ -143,8 +149,22 @@ module.exports = function() {
         navigateFallback: `${paths.publicUrlOrPath}index.html`,
       }),
 
-      // TypeScript type checking
-      useTypeScript && new ForkTsCheckerWebpackPlugin({ typescript: { configFile: paths.appTsConfig }}),
+      utils.isProduction && new WebpackManifestPlugin({
+        fileName: 'asset-manifest.json',
+        publicPath: paths.publicUrlOrPath,
+        generate: (seed, files, entrypoints) => {
+          const manifestFiles = files.reduce((manifest, file) => {
+            manifest[file.name] = file.path;
+            return manifest;
+          }, seed);
+          const entrypointFiles = entrypoints.app.filter((fileName) => !fileName.endsWith('.map'));
+
+          return {
+            files: manifestFiles,
+            entrypoints: entrypointFiles,
+          };
+        },
+      }),
 
     ].filter(Boolean),
 

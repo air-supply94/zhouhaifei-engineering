@@ -1,8 +1,20 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.5.5...v0.0.0) (2020-12-30)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.1...v0.0.0) (2021-01-05)
 
 ### Features
 
-- **packages/generator-zhouhaifei-react:** init template ([997ef25](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/997ef255890ca8a2d7eb8853f3cc1adf3a6289c2))
+- **react-scripts:** add webpack-manifest-plugin ([3e69014](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/3e690140805cec5326292b6c880299c483f80690))
+
+## [2.6.1](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.0...v2.6.1) (2020-12-31)
+
+### Features
+
+- **src:** extract Local and RenderRoutes ([ca6f29a](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/ca6f29a25cb21ae4c9bb61d10366bc632af9f658))
+
+# [2.6.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.5.5...v2.6.0) (2020-12-30)
+
+### Features
+
+- **packages/generator-zhouhaifei-react:** init template ([0b67ce6](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/0b67ce60d641dfbb14d5c9a058c0ac735abe8c07))
 
 ## [2.5.5](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.5.4...v2.5.5) (2020-12-29)
 

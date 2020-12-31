@@ -16,7 +16,7 @@
     "react-dom": "17.0.1",
     "react-router-dom": "^5.2.0",
     "reflect-metadata": "^0.1.13",
-    "zhouhaifei-utils": "2.2.0"
+    "zhouhaifei-utils": "2.6.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -48,7 +48,7 @@
     "validate-commit-msg": "^2.14.0",
     "zhouhaifei-babel-config": "^2.6.0",
     "zhouhaifei-code-style": "2.6.0",
-    "zhouhaifei-react-scripts": "^2.6.0",
+    "zhouhaifei-react-scripts": "^2.6.1",
     "zhouhaifei-test": "^2.6.0"
   },
   "browserslist": [

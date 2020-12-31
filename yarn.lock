@@ -16458,10 +16458,10 @@ zhouhaifei-code-style@2.6.0:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.6.0.tgz#b15069e0768158c6c64617ae3f9871ded9bda9fd"
-  integrity sha1-sVBp4HaBWMbGRheuP5hx3tm9qf0=
+zhouhaifei-react-scripts@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.6.1.tgz#dcd4dd53f0d56709e1899084c620726a34c20f60"
+  integrity sha1-3NTdU/DVZwnhiZCExiByajTCD2A=
   dependencies:
     "@babel/core" "7.12.10"
     address "^1.1.2"
@@ -16539,10 +16539,10 @@ zhouhaifei-test@^2.6.0:
     jest-watch-typeahead "0.6.1"
     ts-jest "^26.4.3"
 
-zhouhaifei-utils@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-utils/download/zhouhaifei-utils-2.2.0.tgz#0e205baab662f93da5a34f19765ac0729b6ae6f8"
-  integrity sha1-DiBbqrZi+T2lo08ZdlrAcptq5vg=
+zhouhaifei-utils@2.6.1:
+  version "2.6.1"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-utils/download/zhouhaifei-utils-2.6.1.tgz#fc11b20ca9fff70dfb5af17a231196903fa46396"
+  integrity sha1-/BGyDKn/9w37WvF6IxGWkD+kY5Y=
 
 zwitch@^1.0.0:
   version "1.0.5"

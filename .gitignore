@@ -17,3 +17,4 @@ dist
 .env.production.local
 
 *.log
+packages/zhouhaifei-utils/es
