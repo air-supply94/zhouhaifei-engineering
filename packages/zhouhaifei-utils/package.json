@@ -1,6 +1,6 @@
 {
   "name": "zhouhaifei-utils",
-  "version": "2.6.1",
+  "version": "2.6.2",
   "description": "utils",
   "types": "./es/index.d.ts",
   "main": "./es/index.js",
