@@ -13,6 +13,7 @@ const isMock = typeof process.env.MOCK === 'string' && process.env.MOCK.toLocale
 const isStartServiceWorker = process.env.SERVICE_WORKER.toLocaleUpperCase() === 'YES';
 const isReplaceMoment = process.env.REPLACE_MOMENT.toLocaleUpperCase() === 'YES';
 const allowEslint = process.env.ALLOW_ESLINT.toLocaleUpperCase() !== 'NO';
+const allowStylelint = process.env.ALLOW_STYLELINT.toLocaleUpperCase() !== 'NO';
 
 if (sourceMap !== false && !sourceMap) {
   if (isProduction) {
@@ -23,6 +24,7 @@ if (sourceMap !== false && !sourceMap) {
 }
 
 module.exports = {
+  allowStylelint,
   allowEslint,
   isReplaceMoment,
   isStartServiceWorker,

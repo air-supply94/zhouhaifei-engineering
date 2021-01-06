@@ -1,8 +1,14 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.1...v0.0.0) (2021-01-05)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.2...v0.0.0) (2021-01-06)
 
 ### Features
 
-- **react-scripts:** add webpack-manifest-plugin ([3e69014](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/3e690140805cec5326292b6c880299c483f80690))
+- **react-scripts:** add styleLint ([0984ef4](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/0984ef41a76a9b97abaf23f4ae850e3cf9c93fee))
+
+## [2.6.2](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.1...v2.6.2) (2021-01-05)
+
+### Features
+
+- **react-scripts:** add webpack-manifest-plugin ([a7dd6f2](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/a7dd6f2f76893078219aa4f1c47d5bf30709402e))
 
 ## [2.6.1](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.0...v2.6.1) (2020-12-31)
 

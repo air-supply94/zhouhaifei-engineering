@@ -19,6 +19,7 @@ const { merge } = require('webpack-merge');
 const webpackBar = require('webpackbar');
 const workboxWebpackPlugin = require('workbox-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const getClientEnvironment = require('./env');
 const modules = require('./modules');
 const paths = require('./paths');
@@ -84,14 +85,26 @@ module.exports = function() {
       // TypeScript type checking
       useTypeScript && new ForkTsCheckerWebpackPlugin({ typescript: { configFile: paths.appTsConfig }}),
 
+      // styleLint
+      utils.allowStylelint && new StylelintPlugin({
+        context: paths.appSrc,
+        files: '**/*.(css|scss|less)',
+      }),
+
+      // preload
       utils.isProduction && new PreloadWebpackPlugin(),
       new webpack.DefinePlugin(getClientEnvironment(paths.publicUrlOrPath.slice(0, -1)).stringified),
 
       new CaseSensitivePathsPlugin(),
       utils.isDevelopment && new WatchMissingNodeModulesPlugin(paths.appNodeModules),
+
+      // ignore moment locale file
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+
+      // replace moment
       utils.isReplaceMoment && new AntdDayjsWebpackPlugin({ replaceMoment: true }),
 
+      // zip css with content hash
       utils.isProduction && new MiniCssExtractPlugin({
         filename: `${utils.resourceName.css}/[name].[contenthash].css`,
         chunkFilename: `${utils.resourceName.css}/[name].[contenthash].css`,
@@ -139,6 +152,7 @@ module.exports = function() {
 
       utils.isDevelopment && new webpack.HotModuleReplacementPlugin(),
 
+      // 是否开启serviceWorker
       utils.isProduction && utils.isStartServiceWorker && new workboxWebpackPlugin.GenerateSW({
         clientsClaim: true,
         exclude: [
@@ -149,6 +163,7 @@ module.exports = function() {
         navigateFallback: `${paths.publicUrlOrPath}index.html`,
       }),
 
+      // manifest
       utils.isProduction && new WebpackManifestPlugin({
         fileName: 'asset-manifest.json',
         publicPath: paths.publicUrlOrPath,

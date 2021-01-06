@@ -15836,6 +15836,14 @@ webpack-log@^2.0.0:
     ansi-colors "^3.0.0"
     uuid "^3.3.2"
 
+webpack-manifest-plugin@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/webpack-manifest-plugin/download/webpack-manifest-plugin-3.0.0.tgz?cache=0&sync_timestamp=1606923385006&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwebpack-manifest-plugin%2Fdownload%2Fwebpack-manifest-plugin-3.0.0.tgz#426644300e5dc41a75a9c996c4d4f876eb3c2b5b"
+  integrity sha1-QmZEMA5dxBp1qcmWxNT4dus8K1s=
+  dependencies:
+    tapable "^2.0.0"
+    webpack-sources "^2.2.0"
+
 webpack-merge@^5.7.0:
   version "5.7.0"
   resolved "https://registry.npmjs.org/webpack-merge/-/webpack-merge-5.7.0.tgz#004dec31f7a875e590c9731e5bdcd3efad0f2715"
@@ -15852,7 +15860,7 @@ webpack-sources@^1.1.0, webpack-sources@^1.4.3:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack-sources@^2.1.1:
+webpack-sources@^2.1.1, webpack-sources@^2.2.0:
   version "2.2.0"
   resolved "https://registry.npm.taobao.org/webpack-sources/download/webpack-sources-2.2.0.tgz?cache=0&sync_timestamp=1603965314165&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwebpack-sources%2Fdownload%2Fwebpack-sources-2.2.0.tgz#058926f39e3d443193b6c31547229806ffd02bac"
   integrity sha1-BYkm8549RDGTtsMVRyKYBv/QK6w=
@@ -16458,10 +16466,10 @@ zhouhaifei-code-style@2.6.0:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.6.1.tgz#dcd4dd53f0d56709e1899084c620726a34c20f60"
-  integrity sha1-3NTdU/DVZwnhiZCExiByajTCD2A=
+zhouhaifei-react-scripts@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.6.2.tgz#a931a650c20b1fc5a3a5a79d43a5319642c2cd1b"
+  integrity sha1-qTGmUMILH8WjpaedQ6UxlkLCzRs=
   dependencies:
     "@babel/core" "7.12.10"
     address "^1.1.2"
@@ -16518,6 +16526,7 @@ zhouhaifei-react-scripts@^2.6.1:
     webpack "5.10.1"
     webpack-bundle-analyzer "^4.2.0"
     webpack-dev-server "3.11.0"
+    webpack-manifest-plugin "^3.0.0"
     webpack-merge "^5.7.0"
     webpackbar "^5.0.0-3"
     workbox-webpack-plugin "^6.0.2"
@@ -16539,10 +16548,10 @@ zhouhaifei-test@^2.6.0:
     jest-watch-typeahead "0.6.1"
     ts-jest "^26.4.3"
 
-zhouhaifei-utils@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-utils/download/zhouhaifei-utils-2.6.1.tgz#fc11b20ca9fff70dfb5af17a231196903fa46396"
-  integrity sha1-/BGyDKn/9w37WvF6IxGWkD+kY5Y=
+zhouhaifei-utils@2.6.2:
+  version "2.6.2"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-utils/download/zhouhaifei-utils-2.6.2.tgz#070237e8c7a9e4bd181d634b99f2bfc7a9fa9521"
+  integrity sha1-BwI36Mep5L0YHWNLmfK/x6n6lSE=
 
 zwitch@^1.0.0:
   version "1.0.5"
