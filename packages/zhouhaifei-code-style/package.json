@@ -1,6 +1,6 @@
 {
   "name": "zhouhaifei-code-style",
-  "version": "2.6.0",
+  "version": "2.6.3",
   "description": "code style rule",
   "main": "lib/index.js",
   "keywords": [
