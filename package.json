@@ -8,7 +8,7 @@
     "antd": "^4.9.1",
     "axios": "^0.21.0",
     "dayjs": "^1.9.6",
-    "loadsh": "^0.0.4",
+    "lodash": "4.17.20",
     "mobx": "5.15.7",
     "mobx-react": "6.3.1",
     "qs": "^6.9.4",
@@ -48,7 +48,7 @@
     "validate-commit-msg": "^2.14.0",
     "zhouhaifei-babel-config": "^2.6.0",
     "zhouhaifei-code-style": "2.6.3",
-    "zhouhaifei-react-scripts": "^2.6.2",
+    "zhouhaifei-react-scripts": "^2.6.5",
     "zhouhaifei-test": "^2.6.0"
   },
   "browserslist": [
@@ -96,6 +96,9 @@
     "start": "zhouhaifei-react-scripts start",
     "build": "zhouhaifei-react-scripts build",
     "test": "zhouhaifei-test react",
+    "locale-start": "node ./packages/zhouhaifei-react-scripts/scripts/start.js",
+    "locale-build": "node ./packages/zhouhaifei-react-scripts/scripts/build.js",
+    "locale-test": "node ./packages/zhouhaifei-test/scripts/react.js",
     "lint-staged": "lint-staged --allow-empty",
     "lint:style-less": "stylelint --fix \"src/**/*.less\" --syntax less",
     "lint:style-scss": "stylelint --fix \"src/**/*.scss\" --syntax scss",

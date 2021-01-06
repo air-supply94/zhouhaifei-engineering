@@ -1,8 +1,20 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.2...v0.0.0) (2021-01-06)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.5...v0.0.0) (2021-01-07)
 
 ### Features
 
-- **react-scripts:** add styleLint ([0984ef4](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/0984ef41a76a9b97abaf23f4ae850e3cf9c93fee))
+- **generator:** update template ([c4158ad](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/c4158addaa758f1e8556e0a9355f0cb719f88da9))
+
+## [2.6.5](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.3...v2.6.5) (2021-01-06)
+
+### Features
+
+- **generator:** update template ([e993526](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/e993526030299ac5c8facd96b8f6bd8fe004f155))
+
+## [2.6.3](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.2...v2.6.3) (2021-01-06)
+
+### Features
+
+- **react-scripts:** add styleLint ([994ff8e](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/994ff8e38e774caa7bfd48d42eebeed075947447))
 
 ## [2.6.2](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.1...v2.6.2) (2021-01-05)
 
