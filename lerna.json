@@ -1,12 +1,12 @@
 {
   "packages": ["packages/*"],
   "npmClient": "yarn",
-  "version": "2.6.3",
+  "version": "2.6.4",
   "command": {
     "publish": {
       "ignoreChanges": ["ignored-file", "*.md"],
       "message": "chore(release): publish",
-      "registry": "http://registry.npmjs.org/"
+      "registry": "https://registry.npmjs.org/"
     }
   }
 }
