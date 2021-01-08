@@ -14655,10 +14655,10 @@ zhouhaifei-code-style@2.6.3:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@^2.6.5:
-  version "2.6.5"
-  resolved "https://registry.npmjs.org/zhouhaifei-react-scripts/-/zhouhaifei-react-scripts-2.6.5.tgz#a6bc0dee56f7155d5bbe45fe363133ea56f170ed"
-  integrity sha512-YAbu29nGx3rGhcHwxGXkvtEkv3Ed7PzVKEOb/Q2E1HpqmRGzWaU9tfmVX1ApgZbnPUfhs88RTZ9V6OHE93TFQw==
+zhouhaifei-react-scripts@^2.6.7:
+  version "2.6.7"
+  resolved "https://registry.npmjs.org/zhouhaifei-react-scripts/-/zhouhaifei-react-scripts-2.6.7.tgz#9917f06aaa55c6bdcb158563ee2f4e2176e94a6a"
+  integrity sha512-UTXjxiUJWTOMuQeD5IFOIFenYWqEwtCPLiSxrmun/eyEDeNOHiKL8FpfIqkgwdt3zCjKPW2MTpsamkYXqRk3Jg==
   dependencies:
     "@babel/core" "7.12.10"
     address "^1.1.2"

@@ -1,8 +1,20 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.5...v0.0.0) (2021-01-07)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.7...v0.0.0) (2021-01-08)
 
 ### Features
 
-- **generator:** update template ([c4158ad](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/c4158addaa758f1e8556e0a9355f0cb719f88da9))
+- **generator:** update template ([632325b](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/632325b054c8f927d445e7d5f2bc59c8a3ac3599))
+
+## [2.6.7](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.6...v2.6.7) (2021-01-08)
+
+### Features
+
+- **packages/react-scripts:** update copyWebpackPlugin options ([e9cc3dd](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/e9cc3ddb1183d92d0b195b426cecce75f80c3451))
+
+## [2.6.6](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.5...v2.6.6) (2021-01-07)
+
+### Features
+
+- **generator:** update template ([3fd6d60](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/3fd6d60aa4a5cd5e384aa6bc0ee46fcf161ace37))
 
 ## [2.6.5](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.3...v2.6.5) (2021-01-06)
 
