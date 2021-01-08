@@ -145,6 +145,10 @@ module.exports = function() {
         patterns: [
           {
             from: path.resolve(paths.appPublic),
+            globOptions: {
+              ignore: ['**/**.ejs'],
+              dot: true,
+            },
             to: path.resolve(paths.appDist),
           },
         ],
