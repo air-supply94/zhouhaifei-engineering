@@ -2,7 +2,7 @@
 
 ### Features
 
-- **react-scripts:** modify bundleAnalyzerPlugin host ([ec4b28e](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/ec4b28e60155bbc13509e762c229f99789f1eadf))
+- **react-scripts:** modify bundleAnalyzerPlugin host ([febdd55](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/febdd55bc404765d75fcce053097c3f8e4d14e6b))
 
 ## [2.6.8](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.7...v2.6.8) (2021-01-08)
 
