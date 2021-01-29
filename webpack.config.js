@@ -16,7 +16,7 @@ module.exports = function(utils) {
       },
     },
 
-    externals: utils.isDevelopment ? {} : {
+    externals: {
       lodash: {
         commonjs: 'lodash',
         commonjs2: 'lodash',
@@ -64,6 +64,24 @@ module.exports = function(utils) {
         commonjs2: 'react-redux',
         amd: 'react-redux',
         root: 'ReactRedux',
+      },
+      mobx: {
+        commonjs: 'mobx',
+        commonjs2: 'mobx',
+        amd: 'mobx',
+        root: 'mobx',
+      },
+      'mobx-react': {
+        commonjs: 'mobx-react',
+        commonjs2: 'mobx-react',
+        amd: 'mobx-react',
+        root: 'mobxReact',
+      },
+      'mobx-react-lite': {
+        commonjs: 'mobx-react-lite',
+        commonjs2: 'mobx-react-lite',
+        amd: 'mobx-react-lite',
+        root: 'mobxReactLite',
       },
     },
   };
