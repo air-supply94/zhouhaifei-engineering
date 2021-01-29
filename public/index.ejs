@@ -176,14 +176,14 @@
   </div>
 </div>
 <script type="text/javascript" src="<%= publicPath %>envConfig.js"></script>
-<% if (isDevelopment) { %>
+<% if (process.env.NODE_ENV === 'development') { %>
   <script type="text/javascript" src="<%= publicPath %>assets/plugin/react.development.min.js?v=17.0.1"></script>
   <script type="text/javascript" src="<%= publicPath %>assets/plugin/react-dom.development.min.js?v=17.0.1"></script>
   <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobx.production.min.js?v=5.15.7"></script>
   <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobxReactLite.development.min.js?v=2.2.2"></script>
   <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobxReact.development.min.js?v=6.3.1"></script>
 <% } %>
-<% if (isProduction) { %>
+<% if (process.env.NODE_ENV === 'production') { %>
   <script type="text/javascript" src="<%= publicPath %>assets/plugin/react.production.min.js?v=17.0.1"></script>
   <script type="text/javascript" src="<%= publicPath %>assets/plugin/react-dom.production.min.js?v=17.0.1"></script>
   <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobx.production.min.js?v=5.15.7"></script>
