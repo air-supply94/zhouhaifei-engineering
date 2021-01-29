@@ -61,7 +61,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "npm run changelog && git add . && lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && validate-commit-msg"
     }
   },

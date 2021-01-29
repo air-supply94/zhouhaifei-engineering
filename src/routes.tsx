@@ -1,6 +1,6 @@
 import { UserOutlined } from '@ant-design/icons';
 import React from 'react';
-import { BasicLayout } from './compnents/layouts';
+import { BasicLayout } from './compnents/BasicLayout';
 import { NotAuthority } from './pages/403';
 import { NotPage } from './pages/404';
 

@@ -1,8 +1,14 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.7...v0.0.0) (2021-01-08)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.8...v0.0.0) (2021-01-29)
 
 ### Features
 
-- **generator:** update template ([632325b](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/632325b054c8f927d445e7d5f2bc59c8a3ac3599))
+- **react-scripts:** modify bundleAnalyzerPlugin host ([ec4b28e](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/ec4b28e60155bbc13509e762c229f99789f1eadf))
+
+## [2.6.8](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.7...v2.6.8) (2021-01-08)
+
+### Features
+
+- **generator:** update template ([0c73098](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/0c73098f8b5a73209ca5bb54c822b29e29be4632))
 
 ## [2.6.7](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.6...v2.6.7) (2021-01-08)
 

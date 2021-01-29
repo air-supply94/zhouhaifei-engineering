@@ -111,9 +111,8 @@ module.exports = function() {
       }),
 
       utils.isProduction && new webpackBar({ profile: false }),
-      utils.isProduction && new bundleAnalyzerPlugin({
+      utils.isDevelopment && new bundleAnalyzerPlugin({
         openAnalyzer: false,
-        analyzerHost: utils.host,
         analyzerPort: utils.port + 1,
       }),
 

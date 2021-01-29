@@ -69,7 +69,3 @@ export class BasicLayout extends React.Component<BasicLayoutInterface> {
     );
   }
 }
-
-export const DefaultLayout: React.FC<any> = function(props) {
-  return props.children;
-};
