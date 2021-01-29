@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.8...v0.0.0) (2021-01-29)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.9...v0.0.0) (2021-01-29)
+
+### Features
+
+- extract mobx mobx-react to externals ([31e7df4](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/31e7df4b2f9bc0303148e82eae560eb17088ae4e))
+
+## [2.6.9](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.8...v2.6.9) (2021-01-29)
 
 ### Features
 

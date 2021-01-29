@@ -13679,6 +13679,8 @@ rollup@^2.25.0:
   version "2.36.0"
   resolved "https://registry.npm.taobao.org/rollup/download/rollup-2.36.0.tgz?cache=0&sync_timestamp=1609851987263&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frollup%2Fdownload%2Frollup-2.36.0.tgz#af2cdea36f70fa3de586840c2604882dfb4d0aac"
   integrity sha1-ryzeo29w+j3lhoQMJgSILftNCqw=
+  dependencies:
+    fsevents "~2.1.2"
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -16665,10 +16667,10 @@ zhouhaifei-code-style@2.6.3:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@^2.6.7:
-  version "2.6.7"
-  resolved "https://registry.npmjs.org/zhouhaifei-react-scripts/-/zhouhaifei-react-scripts-2.6.7.tgz#9917f06aaa55c6bdcb158563ee2f4e2176e94a6a"
-  integrity sha512-UTXjxiUJWTOMuQeD5IFOIFenYWqEwtCPLiSxrmun/eyEDeNOHiKL8FpfIqkgwdt3zCjKPW2MTpsamkYXqRk3Jg==
+zhouhaifei-react-scripts@^2.6.9:
+  version "2.6.9"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.6.9.tgz#abdf68cfaff326e293b2e92c1ba680ad67fd3864"
+  integrity sha1-q99oz6/zJuKTsuksG6aArWf9OGQ=
   dependencies:
     "@babel/core" "7.12.10"
     address "^1.1.2"

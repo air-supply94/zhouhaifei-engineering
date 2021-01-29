@@ -179,10 +179,16 @@
 <% if (isDevelopment) { %>
   <script type="text/javascript" src="<%= publicPath %>assets/plugin/react.development.min.js?v=17.0.1"></script>
   <script type="text/javascript" src="<%= publicPath %>assets/plugin/react-dom.development.min.js?v=17.0.1"></script>
+  <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobx.production.min.js?v=5.15.7"></script>
+  <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobxReactLite.development.min.js?v=2.2.2"></script>
+  <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobxReact.development.min.js?v=6.3.1"></script>
 <% } %>
 <% if (isProduction) { %>
   <script type="text/javascript" src="<%= publicPath %>assets/plugin/react.production.min.js?v=17.0.1"></script>
   <script type="text/javascript" src="<%= publicPath %>assets/plugin/react-dom.production.min.js?v=17.0.1"></script>
+  <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobx.production.min.js?v=5.15.7"></script>
+  <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobxReactLite.production.min.js?v=2.2.2"></script>
+  <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobxReact.production.min.js?v=6.3.1"></script>
 <% } %>
 <script type="text/javascript" src="<%= publicPath %>assets/plugin/url-search-params-polyfill.min.js?v=8.1.0"></script>
 <script type="text/javascript" src="<%= publicPath %>assets/plugin/axios.min.js?v=0.21.0"></script>
