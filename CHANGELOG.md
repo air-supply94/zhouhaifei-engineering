@@ -2,7 +2,7 @@
 
 ### Features
 
-- test ([f0ded62](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/f0ded62595095c9e70744cb87d89c803dd5143d8))
+- **react-scripts:** modify cache type ([55fa561](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/55fa5615b76b858ab168a638ef6211bb028b208a))
 
 ## [2.6.10](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.9...v2.6.10) (2021-01-31)
 
