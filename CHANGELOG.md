@@ -3,6 +3,7 @@
 ### Features
 
 - **packages:** remove generator ([8afe794](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/8afe794bbdec6907c43929e8fe388d4f7e08aeb2))
+- **packages/utils:** update locale ([136d4ef](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/136d4efe93425e0bb2c256dd84e7879a628ce093))
 
 ## [2.6.11](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.10...v2.6.11) (2021-01-31)
 
