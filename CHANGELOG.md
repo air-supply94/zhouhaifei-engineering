@@ -3,6 +3,7 @@
 ### Features
 
 - extract mobx mobx-react to externals ([0e1e2bb](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/0e1e2bbbcff0adf9a48f29f6f1bf9e4c4c101402))
+- extract mobx mobx-react to externals ([31e7df4](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/31e7df4b2f9bc0303148e82eae560eb17088ae4e))
 - **react-scripts:** remove dayjs-plugin ([2f3b670](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/2f3b67014d05f6daf306a3e91ac230e634832259))
 - **react-scripts/htmlPlugin:** remove context item ([9927ab1](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/9927ab15f1cc8f545b75690c6bb06a980be073a9))
 
