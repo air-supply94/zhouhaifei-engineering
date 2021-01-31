@@ -2,7 +2,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const compressionPlugin = require('compression-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
@@ -28,7 +27,7 @@ const utils = require('./utils');
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 module.exports = function() {
   const initConfig = {
-    cache: { type: 'filesystem' },
+    cache: { type: utils.isDevelopment ? 'memory' : 'filesystem' },
     mode: utils.isProduction ? 'production' : utils.isDevelopment && 'development',
 
     // Stop compilation early in production
@@ -45,15 +44,7 @@ module.exports = function() {
 
       extensions: paths.moduleFileExtensions.map((ext) => `.${ext}`)
         .filter((ext) => useTypeScript || !ext.includes('ts')),
-      alias: {
-        'react-native': 'react-native-web',
-
-        ...(utils.isProductionProfile && {
-          'react-dom$': 'react-dom/profiling',
-          'scheduler/tracing': 'scheduler/tracing-profiling',
-        }),
-        ...modules.webpackAliases,
-      },
+      alias: modules.webpackAliases,
       plugins: [
         /* Prevents users from importing files from outside of src/ (or node_modules/).
            This often causes confusion because we only process files within src/ with babel.
@@ -101,17 +92,14 @@ module.exports = function() {
       // ignore moment locale file
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
 
-      // replace moment
-      utils.isReplaceMoment && new AntdDayjsWebpackPlugin({ replaceMoment: true }),
-
       // zip css with content hash
       utils.isProduction && new MiniCssExtractPlugin({
         filename: `${utils.resourceName.css}/[name].[contenthash].css`,
         chunkFilename: `${utils.resourceName.css}/[name].[contenthash].css`,
       }),
 
-      utils.isProduction && new webpackBar({ profile: false }),
-      utils.isDevelopment && new bundleAnalyzerPlugin({
+      new webpackBar({ profile: false }),
+      utils.isProduction && new bundleAnalyzerPlugin({
         openAnalyzer: false,
         analyzerPort: utils.port + 1,
       }),

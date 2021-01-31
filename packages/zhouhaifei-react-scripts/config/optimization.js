@@ -7,7 +7,7 @@ module.exports = {
   sideEffects: true,
   concatenateModules: true,
   minimize: utils.isProduction,
-  minimizer: [
+  minimizer: utils.isProduction ? [
     // This is only used in production mode
     new TerserPlugin({
       terserOptions: {
@@ -38,8 +38,8 @@ module.exports = {
         mangle: { safari10: true },
 
         // Added for profiling in devtools
-        keep_classnames: utils.isProductionProfile,
-        keep_fnames: utils.isProductionProfile,
+        keep_classnames: false,
+        keep_fnames: false,
         output: {
           ecma: 5,
           comments: false,
@@ -59,7 +59,7 @@ module.exports = {
         ],
       },
     }),
-  ],
+  ] : [],
 
   /* Automatically split vendor and commons
      https://twitter.com/wSokra/status/969633336732905474
