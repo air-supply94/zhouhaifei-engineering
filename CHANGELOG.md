@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.11...v0.0.0) (2021-01-31)
 
+### Features
+
+- **packages:** remove generator ([8afe794](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/8afe794bbdec6907c43929e8fe388d4f7e08aeb2))
+
 ## [2.6.11](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.10...v2.6.11) (2021-01-31)
 
 ### Features
