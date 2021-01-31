@@ -83,6 +83,12 @@ module.exports = function(utils) {
         amd: 'mobx-react-lite',
         root: 'mobxReactLite',
       },
+      moment: {
+        commonjs: 'moment',
+        commonjs2: 'moment',
+        amd: 'moment',
+        root: 'moment',
+      },
     },
   };
 };

@@ -11,7 +11,7 @@ export const routes = [
       {
         exact: true,
         path: '/',
-        redirect: window.envConfig.defaultRedirectUrl,
+        redirect: '/dashboard',
       },
       {
         path: '/dashboard',

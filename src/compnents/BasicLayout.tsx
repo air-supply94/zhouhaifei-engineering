@@ -64,7 +64,6 @@ export class BasicLayout extends React.Component<BasicLayoutInterface> {
           );
         }}
         onCollapse={this.state.isMounted ? toggleCollapsed : undefined}
-        title={window.envConfig.title}
       />
     );
   }

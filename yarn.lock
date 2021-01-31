@@ -10439,7 +10439,7 @@ modify-values@^1.0.0:
   resolved "https://registry.npm.taobao.org/modify-values/download/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
   integrity sha1-s5OfpgVUZHTj4+PGPWS9Q7TuYCI=
 
-moment@^2.24.0, moment@^2.25.3:
+moment@2.29.1, moment@^2.24.0, moment@^2.25.3:
   version "2.29.1"
   resolved "https://registry.npm.taobao.org/moment/download/moment-2.29.1.tgz?cache=0&sync_timestamp=1601983557585&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmoment%2Fdownload%2Fmoment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
   integrity sha1-sr52n6MZQL6e7qZGnAdeNQBvo9M=
@@ -16665,10 +16665,10 @@ zhouhaifei-code-style@2.6.3:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@^2.6.10:
-  version "2.6.10"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.6.10.tgz#c4122180bbb21de38b10936dfb01b9e6f125d78f"
-  integrity sha1-xBIhgLuyHeOLEJNt+wG55vEl148=
+zhouhaifei-react-scripts@^2.6.11:
+  version "2.6.11"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.6.11.tgz#a511263261218df52e5e1e662703234c0321ce5f"
+  integrity sha1-pREmMmEhjfUuXh5mJwMjTAMhzl8=
   dependencies:
     "@babel/core" "7.12.10"
     address "^1.1.2"
