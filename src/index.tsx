@@ -8,8 +8,6 @@ import { history } from './history';
 import { globalStore } from './models/global';
 import { routes } from './routes';
 
-// import 'reflect-metadata';
-
 ReactDOM.render(
   <React.StrictMode>
     <Locale>

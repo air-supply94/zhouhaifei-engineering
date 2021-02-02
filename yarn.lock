@@ -13306,11 +13306,6 @@ reduce-function-call@^1.0.1, reduce-function-call@^1.0.2:
   dependencies:
     balanced-match "^1.0.0"
 
-reflect-metadata@0.1.13:
-  version "0.1.13"
-  resolved "https://registry.npm.taobao.org/reflect-metadata/download/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
-  integrity sha1-Z648pXyXKiqhZCsQ/jY/4y1J3Ag=
-
 regenerate-unicode-properties@^8.2.0:
   version "8.2.0"
   resolved "https://registry.npm.taobao.org/regenerate-unicode-properties/download/regenerate-unicode-properties-8.2.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fregenerate-unicode-properties%2Fdownload%2Fregenerate-unicode-properties-8.2.0.tgz#e5de7111d655e7ba60c057dbe9ff37c87e65cdec"
@@ -13721,8 +13716,6 @@ rollup@^2.25.0:
   version "2.36.0"
   resolved "https://registry.npm.taobao.org/rollup/download/rollup-2.36.0.tgz?cache=0&sync_timestamp=1609851987263&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frollup%2Fdownload%2Frollup-2.36.0.tgz#af2cdea36f70fa3de586840c2604882dfb4d0aac"
   integrity sha1-ryzeo29w+j3lhoQMJgSILftNCqw=
-  dependencies:
-    fsevents "~2.1.2"
   optionalDependencies:
     fsevents "~2.1.2"
 

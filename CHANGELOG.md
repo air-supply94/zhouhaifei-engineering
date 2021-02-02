@@ -1,4 +1,9 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.12...v0.0.0) (2021-01-31)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.12...v0.0.0) (2021-02-02)
+
+### Features
+
+- lock version ([5b584a2](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/5b584a22f3f4ebffb4718b4a4031afae12b19754))
+- **utils:** remove request ([0c5eb41](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/0c5eb41fca89038c8a2c6301b1e4ffa2b603b606))
 
 ## [2.6.12](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.11...v2.6.12) (2021-01-31)
 

@@ -89,6 +89,12 @@ module.exports = function(utils) {
         amd: 'moment',
         root: 'moment',
       },
+      'reflect-metadata': {
+        commonjs: 'reflect-metadata',
+        commonjs2: 'reflect-metadata',
+        amd: 'reflect-metadata',
+        root: 'Reflect',
+      },
     },
   };
 };

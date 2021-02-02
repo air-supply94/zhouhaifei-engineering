@@ -1,6 +1,6 @@
 import { Card } from 'antd';
 import React from 'react';
-import { request } from 'zhouhaifei-utils';
+import { request } from '../../utils/request';
 import styles from './index.module.less';
 
 export default function Entry() {
