@@ -16693,10 +16693,10 @@ zhouhaifei-babel-config@2.6.0:
     "@babel/preset-typescript" "^7.12.1"
     babel-plugin-import "^1.13.1"
 
-zhouhaifei-code-style@2.6.3:
-  version "2.6.3"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-code-style/download/zhouhaifei-code-style-2.6.3.tgz#8ce2cb04bd223564e8ef0a42c74460f15110d234"
-  integrity sha1-jOLLBL0iNWTo7wpCx0Rg8VEQ0jQ=
+zhouhaifei-code-style@2.6.13:
+  version "2.6.13"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-code-style/download/zhouhaifei-code-style-2.6.13.tgz#45ff5749d80d7e91b271041a5143437431794df7"
+  integrity sha1-Rf9XSdgNfpGycQQaUUNDdDF5Tfc=
   dependencies:
     "@commitlint/config-conventional" "^11.0.0"
     "@typescript-eslint/eslint-plugin" "^4.6.1"
@@ -16796,10 +16796,10 @@ zhouhaifei-test@2.6.0:
     jest-watch-typeahead "0.6.1"
     ts-jest "^26.4.3"
 
-zhouhaifei-utils@2.6.2:
-  version "2.6.2"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-utils/download/zhouhaifei-utils-2.6.2.tgz#070237e8c7a9e4bd181d634b99f2bfc7a9fa9521"
-  integrity sha1-BwI36Mep5L0YHWNLmfK/x6n6lSE=
+zhouhaifei-utils@2.6.13:
+  version "2.6.13"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-utils/download/zhouhaifei-utils-2.6.13.tgz#c559e83f07fa8ead662d010961e41cd039df54d5"
+  integrity sha1-xVnoPwf6jq1mLQEJYeQc0DnfVNU=
 
 zwitch@^1.0.0:
   version "1.0.5"
