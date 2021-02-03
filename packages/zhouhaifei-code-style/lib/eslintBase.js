@@ -133,7 +133,7 @@ module.exports = {
     2,
     { ignoreChainWithDepth: 2 },
   ],
-  'no-lonely-if': 2,
+  'no-lonely-if': 0,
   'no-multiple-empty-lines': [
     2,
     {
