@@ -7,12 +7,8 @@ import { MenuDataItem } from '../utils';
 import styles from './basicLayout.module.less';
 
 function menuDataRender(menuList: MenuDataItem[] = []): MenuDataItem[] {
-  return menuList.filter((item) => item.path)
-    .filter((item) => ![
-      '/',
-      '/403',
-      '/403/',
-    ].includes(item.path))
+  return menuList.filter((item) => item.name)
+    .filter((item) => !Object.prototype.hasOwnProperty.call(item, 'redirect'))
     .map((item) => ({
       ...item,
       children: Array.isArray(item.children) && item.children.length ? menuDataRender(item.children) : [],

@@ -6,7 +6,7 @@ import { MenuDataItem } from './utils';
 
 export const routes: MenuDataItem[] = [
   {
-    Component: BasicLayout,
+    component: BasicLayout,
     children: [
       {
         exact: true,
@@ -17,18 +17,16 @@ export const routes: MenuDataItem[] = [
         path: '/dashboard',
         name: '仪表盘',
         exact: true,
-        Component: React.lazy(() => import('./pages/dashboard')),
+        component: React.lazy(() => import('./pages/dashboard')),
       },
       {
         path: '/403',
         exact: true,
-        Component: NotAuthority,
-        name: '无权限',
+        component: NotAuthority,
       },
       {
         path: '',
-        Component: NotPage,
-        name: '无页面',
+        component: NotPage,
       },
     ],
   },

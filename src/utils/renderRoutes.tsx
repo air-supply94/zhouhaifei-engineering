@@ -3,8 +3,8 @@ import React from 'react';
 import { Redirect, Router, Route, Switch } from 'react-router-dom';
 
 export interface MenuDataItem {
-  Component?: React.ComponentType;
-  Wrapper?: React.ComponentType;
+  component?: React.ComponentType;
+  wrapper?: React.ComponentType;
   exact?: boolean;
   sensitive?: boolean;
   strict?: boolean;
@@ -22,7 +22,7 @@ const DefaultWrapper: React.FC<any> = function(props) {
 
 const WrapperRoute: React.FC<any> = ({
   path,
-  Wrapper,
+  wrapper,
   route,
   exact,
   strict,
@@ -37,7 +37,7 @@ const WrapperRoute: React.FC<any> = ({
     location={location}
     path={path}
     render={(props) => {
-      const NewWrapper = Wrapper ? Wrapper : DefaultWrapper;
+      const NewWrapper = wrapper ? wrapper : DefaultWrapper;
       return (
         <NewWrapper route={route}>
           <React.Suspense fallback={loading}>
@@ -73,15 +73,14 @@ function renderRoutes(routes: MenuDataItem[], extraProps = {}, switchProps = {},
           } else {
             return (
               <WrapperRoute
-                Wrapper={route.Wrapper}
                 exact={route.exact}
                 key={route.key || index}
                 loading={loading}
                 path={route.path}
                 render={(props) => {
                   const childRoutes = renderRoutes(route.children, extraProps, { location: props.location }, loading);
-                  if (route.Component) {
-                    const { Component } = route;
+                  if (route.component) {
+                    const { component: Component } = route;
                     return (
                       <Component
                         {...props}
@@ -97,6 +96,7 @@ function renderRoutes(routes: MenuDataItem[], extraProps = {}, switchProps = {},
                 route={route}
                 sensitive={route.sensitive}
                 strict={route.strict}
+                wrapper={route.wrapper}
               />
             );
           }

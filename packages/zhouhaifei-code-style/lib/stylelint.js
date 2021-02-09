@@ -139,7 +139,7 @@ module.exports = {
     'value-no-vendor-prefix': true,
     'shorthand-property-no-redundant-values': true,
     'length-zero-no-unit': true,
-    'color-function-notation': 'modern',
+    'color-function-notation': null,
     'hue-degree-notation': 'angle',
     'alpha-value-notation': 'number',
     'no-extra-semicolons': true,
