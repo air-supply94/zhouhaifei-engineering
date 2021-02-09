@@ -2,7 +2,8 @@
 
 ### Features
 
-- update package ([e0435c5](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/e0435c5f270356b5310c23e1c37db886480537cb))
+- **code-style:** add normal style ([a2c1026](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/a2c10268466a326c2d8834d41c04c6b7499a8a47))
+- **utils:** remove packages ([d7592e8](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/d7592e8b369a92ffbdc3d8c1140a9b524233b1f0))
 
 ## [2.6.14](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.13...v2.6.14) (2021-02-03)
 

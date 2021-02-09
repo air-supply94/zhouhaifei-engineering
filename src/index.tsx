@@ -3,17 +3,16 @@ import { Spin } from 'antd';
 import { Provider } from 'mobx-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Locale, RenderRoutes } from 'zhouhaifei-utils';
-import { history } from './history';
 import { globalStore } from './models/global';
 import { routes } from './routes';
+import { Locale, RenderRoutes, browserHistory } from './utils';
 
 ReactDOM.render(
   <React.StrictMode>
     <Locale>
       <Provider globalStore={globalStore}>
         <RenderRoutes
-          history={history}
+          history={browserHistory}
           loading={<Spin size="large"/>}
           routes={routes}
         />

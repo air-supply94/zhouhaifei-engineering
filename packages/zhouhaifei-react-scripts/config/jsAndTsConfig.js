@@ -9,10 +9,7 @@ module.exports = [
   },
   {
     test: /\.(js|mjs|jsx|ts|tsx)$/,
-    include: [
-      paths.appSrc,
-      path.resolve(paths.appNodeModules, 'zhouhaifei-utils'),
-    ],
+    include: [paths.appSrc],
     use: [
       {
         loader: require.resolve('thread-loader'),

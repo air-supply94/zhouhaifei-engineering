@@ -13716,6 +13716,8 @@ rollup@^2.25.0:
   version "2.36.0"
   resolved "https://registry.npm.taobao.org/rollup/download/rollup-2.36.0.tgz?cache=0&sync_timestamp=1609851987263&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frollup%2Fdownload%2Frollup-2.36.0.tgz#af2cdea36f70fa3de586840c2604882dfb4d0aac"
   integrity sha1-ryzeo29w+j3lhoQMJgSILftNCqw=
+  dependencies:
+    fsevents "~2.1.2"
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -16795,11 +16797,6 @@ zhouhaifei-test@2.6.0:
     jest-transform-css "^2.1.0"
     jest-watch-typeahead "0.6.1"
     ts-jest "^26.4.3"
-
-zhouhaifei-utils@2.6.13:
-  version "2.6.13"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-utils/download/zhouhaifei-utils-2.6.13.tgz#c559e83f07fa8ead662d010961e41cd039df54d5"
-  integrity sha1-xVnoPwf6jq1mLQEJYeQc0DnfVNU=
 
 zwitch@^1.0.0:
   version "1.0.5"
