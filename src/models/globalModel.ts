@@ -2,18 +2,13 @@ import { action, observable } from 'mobx';
 
 const collapsedKey = '@@globalCollapsedKey';
 
-export interface GlobalInterface {
-  collapsed: boolean;
-  toggleCollapsed: () => void;
-}
-
-class Global implements GlobalInterface {
+export class GlobalModel {
   @observable public collapsed = window.localStorage.getItem(collapsedKey) === 'true';
 
-  @action public toggleCollapsed = () => {
+  @action public handleCollapsed = () => {
     this.collapsed = !this.collapsed;
     window.localStorage.setItem(collapsedKey, String(this.collapsed));
   };
 }
 
-export const globalStore = new Global();
+export const globalModel = new GlobalModel();

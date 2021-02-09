@@ -1,6 +1,6 @@
 import { Card } from 'antd';
 import React from 'react';
-import { request } from '../../utils/request';
+import { request } from '../../utils';
 import styles from './index.module.less';
 
 export default function Entry() {

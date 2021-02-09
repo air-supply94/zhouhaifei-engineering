@@ -11,7 +11,7 @@ const sockPort = process.env.WDS_SOCKET_PORT;
 const isMock = typeof process.env.MOCK === 'string' && process.env.MOCK.toLocaleUpperCase() === 'YES';
 const isStartServiceWorker = process.env.SERVICE_WORKER.toLocaleUpperCase() === 'YES';
 const allowEslint = process.env.ALLOW_ESLINT.toLocaleUpperCase() !== 'NO';
-const allowStylelint = process.env.ALLOW_STYLELINT.toLocaleUpperCase() !== 'YES';
+const allowStylelint = process.env.ALLOW_STYLELINT.toLocaleUpperCase() === 'YES';
 
 if (sourceMap !== false && !sourceMap) {
   if (isProduction) {

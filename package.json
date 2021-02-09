@@ -1,10 +1,8 @@
 {
   "name": "zhouhaifei-react-scripts",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "dependencies": {
-    "@ant-design/icons": "^4.3.0",
-    "@ant-design/pro-layout": "6.5.17",
     "antd": "4.11.2",
     "axios": "0.21.0",
     "lodash": "4.17.20",
@@ -21,7 +19,6 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "11.2.2",
     "@testing-library/user-event": "12.3.0",
-    "@types/history": "^4.7.8",
     "@types/jest": "^26.0.16",
     "@types/lodash": "^4.14.165",
     "@types/mockjs": "^1.0.3",

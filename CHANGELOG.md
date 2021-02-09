@@ -2,8 +2,9 @@
 
 ### Features
 
+- remove layout-pro icon ([f7c1e5d](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/f7c1e5dc00d79c7bfe25e3050f48d9f29c325c2b))
 - **code-style:** add normal style ([a2c1026](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/a2c10268466a326c2d8834d41c04c6b7499a8a47))
-- **utils:** remove packages ([d7592e8](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/d7592e8b369a92ffbdc3d8c1140a9b524233b1f0))
+- **utils:** remove packages ([517c3e6](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/517c3e64df268f2a0d2f5df11e0980c92ce1ce02))
 
 ## [2.6.14](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.13...v2.6.14) (2021-02-03)
 

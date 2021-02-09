@@ -1,0 +1,26 @@
+@header-height: 64px;
+@base-padding: 16px;
+
+.container {
+  :global {
+    .ant-layout-header {
+      display: flex;
+      align-items: center;
+      height: @header-height;
+      margin-bottom: @base-padding;
+      margin-left: @base-padding;
+      padding: 0 @base-padding*2;
+      background: #fff;
+      box-shadow: 0 1px 4px 0 #f7f9fd, 2px 4px 8px 0 #dde8f4;
+    }
+
+    .ant-layout-sider {
+      height: 100vh;
+      border-radius: 4px;
+    }
+
+    .ant-layout-content {
+      padding: 0 @base-padding @base-padding @base-padding;
+    }
+  }
+}

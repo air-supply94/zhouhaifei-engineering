@@ -1,9 +1,10 @@
-import ProLayout, { MenuDataItem } from '@ant-design/pro-layout';
+import { Layout, Menu } from 'antd';
 import { observer, inject } from 'mobx-react';
 import React from 'react';
-import { RouteChildrenProps } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import { GlobalInterface } from '../models/global';
+import { GlobalModel } from '../models/globalModel';
+import { MenuDataItem } from '../utils';
+import styles from './basicLayout.module.less';
 
 function menuDataRender(menuList: MenuDataItem[] = []): MenuDataItem[] {
   return menuList.filter((item) => item.path)
@@ -14,57 +15,90 @@ function menuDataRender(menuList: MenuDataItem[] = []): MenuDataItem[] {
     ].includes(item.path))
     .map((item) => ({
       ...item,
-      children: Array.isArray(item.routes) && item.routes.length ? menuDataRender(item.routes) : [],
+      children: Array.isArray(item.children) && item.children.length ? menuDataRender(item.children) : [],
     }));
 }
 
-export interface BasicLayoutInterface extends RouteChildrenProps {
-  globalStore: GlobalInterface;
-  route: MenuDataItem;
-}
-
-@inject('globalStore')
-@observer
-export class BasicLayout extends React.Component<BasicLayoutInterface> {
-  state = { isMounted: false };
-
-  componentDidMount() {
-    this.setState({ isMounted: true });
-  }
-
+export class BasicLayout extends React.Component<{ route: MenuDataItem; }> {
   render() {
     const {
-      location,
-      globalStore: {
-        collapsed,
-        toggleCollapsed,
-      },
       children,
-      route = { routes: []},
+      route,
     } = this.props;
     return (
-      <ProLayout
-        children={children}
-        collapsed={collapsed}
-        fixSiderbar
-        fixedHeader
-        location={{ pathname: location.pathname }}
-        logo={null}
-        menuDataRender={() => menuDataRender(route.routes)}
-        menuHeaderRender={(logo, title) => null}
-        menuItemRender={(menuItemProps, defaultDom) => {
-          if (menuItemProps.isUrl || menuItemProps.children || !menuItemProps.path) {
-            return defaultDom;
-          }
+      <Layout
+        className={styles.container}
+        hasSider
+      >
+        <LayoutSider route={route}/>
+        <Layout hasSider={false}>
+          <LayoutHeader/>
+          <Layout.Content children={children}/>
+        </Layout>
+      </Layout>
+    );
+  }
+}
 
-          return (
-            <NavLink to={menuItemProps.path}>
-              {defaultDom}
-            </NavLink>
-          );
-        }}
-        onCollapse={this.state.isMounted ? toggleCollapsed : undefined}
-      />
+@inject('globalModel')
+@observer
+class LayoutSider extends React.Component<{ globalModel?: GlobalModel; route: MenuDataItem; }> {
+  render() {
+    const {
+      globalModel: {
+        collapsed,
+        handleCollapsed,
+      },
+      route,
+    } = this.props;
+    const routes = menuDataRender(route?.children || []);
+    return (
+      <Layout.Sider
+        collapsed={collapsed}
+        collapsible
+        onCollapse={handleCollapsed}
+        theme="light"
+      >
+        <Menu
+          mode="inline"
+          theme="light"
+        >
+          {
+            (function fn(routes) {
+              return routes.map((item) => {
+                if (Array.isArray(item.children) && item.children.length) {
+                  return (
+                    <Menu.SubMenu
+                      key={item.path}
+                      title={item.name}
+                    >
+                      {fn(item.children)}
+                    </Menu.SubMenu>
+                  );
+                } else {
+                  return (
+                    <Menu.Item key={item.path}>
+                      <NavLink to={item.path}>
+                        {item.name}
+                      </NavLink>
+                    </Menu.Item>
+                  );
+                }
+              });
+            })(routes)
+          }
+        </Menu>
+      </Layout.Sider>
+    );
+  }
+}
+
+@inject('globalModel')
+@observer
+class LayoutHeader extends React.Component<{ globalModel?: GlobalModel; }> {
+  render() {
+    return (
+      <Layout.Header/>
     );
   }
 }

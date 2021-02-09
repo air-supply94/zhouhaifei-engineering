@@ -1,13 +1,13 @@
-import { UserOutlined } from '@ant-design/icons';
 import React from 'react';
 import { BasicLayout } from './compnents/BasicLayout';
 import { NotAuthority } from './pages/403';
 import { NotPage } from './pages/404';
+import { MenuDataItem } from './utils';
 
-export const routes = [
+export const routes: MenuDataItem[] = [
   {
-    component: BasicLayout,
-    routes: [
+    Component: BasicLayout,
+    children: [
       {
         exact: true,
         path: '/',
@@ -15,20 +15,19 @@ export const routes = [
       },
       {
         path: '/dashboard',
-        icon: <UserOutlined/>,
-        exact: true,
-        component: React.lazy(() => import('./pages/dashboard')),
         name: '仪表盘',
+        exact: true,
+        Component: React.lazy(() => import('./pages/dashboard')),
       },
       {
         path: '/403',
         exact: true,
-        component: NotAuthority,
+        Component: NotAuthority,
         name: '无权限',
       },
       {
         path: '',
-        component: NotPage,
+        Component: NotPage,
         name: '无页面',
       },
     ],
