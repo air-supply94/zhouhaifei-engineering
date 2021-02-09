@@ -3,6 +3,7 @@
 ### Features
 
 - update package ([fc91e22](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/fc91e229d1a757b90840650168fbae47ae0eddd2))
+- **code-style:** export eslintNormal ([407929d](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/407929dc349e44acae69943054be548e08c069ee))
 
 # [2.7.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.6.14...v2.7.0) (2021-02-09)
 
