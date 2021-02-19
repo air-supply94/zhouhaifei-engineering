@@ -1,4 +1,4 @@
-import { Card } from 'antd';
+import { Card, Button } from 'antd';
 import React from 'react';
 import { request } from '../../utils';
 import styles from './index.module.less';
@@ -14,7 +14,9 @@ export default function Entry() {
   return (
     <div className={styles.container}>
       <Card size="small">
-        dashboard
+        <Button type="primary">
+          111
+        </Button>
       </Card>
     </div>
   );

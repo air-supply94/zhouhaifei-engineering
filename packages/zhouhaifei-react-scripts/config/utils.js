@@ -9,9 +9,8 @@ const sockHost = process.env.WDS_SOCKET_HOST;
 const sockPath = process.env.WDS_SOCKET_PATH; // default: '/sockjs-node'
 const sockPort = process.env.WDS_SOCKET_PORT;
 const isMock = typeof process.env.MOCK === 'string' && process.env.MOCK.toLocaleUpperCase() === 'YES';
-const isStartServiceWorker = process.env.SERVICE_WORKER.toLocaleUpperCase() === 'YES';
-const allowEslint = process.env.ALLOW_ESLINT.toLocaleUpperCase() !== 'NO';
-const allowStylelint = process.env.ALLOW_STYLELINT.toLocaleUpperCase() === 'YES';
+const isStartServiceWorker = typeof process.env.SERVICE_WORKER === 'string' && process.env.SERVICE_WORKER.toLocaleUpperCase() === 'YES';
+const allowEslint = typeof process.env.ALLOW_ESLINT === 'string' && process.env.ALLOW_ESLINT.toLocaleUpperCase() !== 'NO';
 
 if (sourceMap !== false && !sourceMap) {
   if (isProduction) {
@@ -22,7 +21,6 @@ if (sourceMap !== false && !sourceMap) {
 }
 
 module.exports = {
-  allowStylelint,
   allowEslint,
   isStartServiceWorker,
   isMock,

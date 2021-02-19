@@ -62,7 +62,6 @@
     "shell-quote": "^1.7.2",
     "strip-ansi": "^6.0.0",
     "style-loader": "2.0.0",
-    "stylelint-webpack-plugin": "^2.1.1",
     "terser-webpack-plugin": "5.0.3",
     "thread-loader": "^3.0.1",
     "url-loader": "4.1.1",

@@ -18,7 +18,6 @@ const { merge } = require('webpack-merge');
 const webpackBar = require('webpackbar');
 const workboxWebpackPlugin = require('workbox-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
-const StylelintPlugin = require('stylelint-webpack-plugin');
 const getClientEnvironment = require('./env');
 const modules = require('./modules');
 const paths = require('./paths');
@@ -75,12 +74,6 @@ module.exports = function() {
 
       // TypeScript type checking
       useTypeScript && new ForkTsCheckerWebpackPlugin({ typescript: { configFile: paths.appTsConfig }}),
-
-      // styleLint
-      utils.allowStylelint && new StylelintPlugin({
-        context: paths.appSrc,
-        files: '**/*.(css|scss|less)',
-      }),
 
       // preload
       utils.isProduction && new PreloadWebpackPlugin(),
