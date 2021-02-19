@@ -2,7 +2,7 @@
 
 ### Features
 
-- update package ([4ace605](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/4ace60526589f8ee9802ea4cc817ee37a79bc4c7))
+- **react-scripts:** remove styleLint ([5d3737c](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/5d3737cfef6172868c3326117f1fc73040319abb))
 
 ## [2.7.2](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.7.1...v2.7.2) (2021-02-19)
 
