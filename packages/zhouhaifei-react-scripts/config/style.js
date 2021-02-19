@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const paths = require('./paths');
 const utils = require('./utils');
@@ -41,9 +43,13 @@ function getStyleLoaders(cssOptions, preProcessor) {
       loader: require.resolve(preProcessor),
       options: {},
     };
+    const themeConfig = path.resolve(paths.appPath, 'theme.js');
 
     if (preProcessor === 'less-loader') {
-      loaderConfig.options.lessOptions = { javascriptEnabled: true };
+      loaderConfig.options.lessOptions = {
+        javascriptEnabled: true,
+        modifyVars: fs.existsSync(themeConfig) ? require(themeConfig) : {},
+      };
     }
 
     loaders.push(loaderConfig);

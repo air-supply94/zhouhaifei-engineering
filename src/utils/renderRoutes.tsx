@@ -3,17 +3,14 @@ import React from 'react';
 import { Redirect, Router, Route, Switch } from 'react-router-dom';
 
 export interface MenuDataItem {
-  component?: React.ComponentType;
-  wrapper?: React.ComponentType;
-  exact?: boolean;
-  sensitive?: boolean;
-  strict?: boolean;
-  redirect?: string;
   children?: MenuDataItem[];
-  icon?: React.ReactNode;
+  hideChildrenInMenu?: boolean;
+  hideInMenu?: boolean;
+  icon?: string;
+  locale?: string;
   name?: string;
   path?: string;
-  key?: string;
+  [key: string]: any;
 }
 
 const DefaultWrapper: React.FC<any> = function(props) {

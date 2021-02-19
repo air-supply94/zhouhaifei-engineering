@@ -23,7 +23,7 @@ module.exports = {
   '@typescript-eslint/explicit-member-accessibility': [
     'error',
     {
-      accessibility: 'no-public',
+      accessibility: 'explicit',
       ignoredMethodNames: [
         'getDerivedStateFromProps',
         'componentDidMount',
@@ -41,7 +41,7 @@ module.exports = {
         accessors: 'explicit',
         constructors: 'no-public',
         methods: 'explicit',
-        properties: 'off',
+        properties: 'explicit',
         parameterProperties: 'explicit',
       },
     },

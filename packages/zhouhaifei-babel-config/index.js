@@ -14,6 +14,14 @@ const presets = [
   '@babel/preset-typescript',
 ];
 const plugins = [
+  [
+    require.resolve('babel-plugin-import'),
+    {
+      libraryName: 'antd',
+      libraryDirectory: 'es',
+      style: true,
+    },
+  ],
   require.resolve('@babel/plugin-syntax-dynamic-import'), // 支持动态import
   [
     require.resolve('@babel/plugin-proposal-decorators'),

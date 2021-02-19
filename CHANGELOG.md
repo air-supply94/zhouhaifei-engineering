@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.7.2...v0.0.0) (2021-02-19)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.8.0...v0.0.0) (2021-02-21)
+
+### Features
+
+- **layout:** 还是以 pro-layout 做为布局 ([2d7e97a](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/2d7e97a3a2258afa47e7a21a80ee95bd4158e1af))
+
+# [2.8.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.7.2...v2.8.0) (2021-02-19)
 
 ### Features
 
