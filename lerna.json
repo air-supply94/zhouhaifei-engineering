@@ -1,7 +1,7 @@
 {
   "packages": ["packages/*"],
   "npmClient": "yarn",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "command": {
     "publish": {
       "ignoreChanges": ["ignored-file", "*.md"],
