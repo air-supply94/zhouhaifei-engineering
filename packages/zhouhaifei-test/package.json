@@ -18,7 +18,7 @@
     "jest-environment-jsdom-fourteen": "1.0.1",
     "jest-transform-css": "^2.1.0",
     "jest-watch-typeahead": "0.6.1",
-    "ts-jest": "^26.4.3"
+    "ts-jest": "^26.5.1"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
