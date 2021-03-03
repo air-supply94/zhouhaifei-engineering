@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.8.3...v0.0.0) (2021-03-03)
 
+### Features
+
+- **code-style/eslintBase:** remove multiline-comment-style ([076705f](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/076705f30dbe842dd77ce9df7abc828a2a129f66))
+
 ## [2.8.3](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.8.2...v2.8.3) (2021-03-03)
 
 ### Features
