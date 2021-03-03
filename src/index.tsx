@@ -1,4 +1,4 @@
-import './index.less';
+import './global.less';
 import { Spin } from 'antd';
 import { Provider } from 'mobx-react';
 import React from 'react';
@@ -7,6 +7,8 @@ import { globalModel } from './models/globalModel';
 import { routes } from './routes';
 import { Locale, RenderRoutes, browserHistory } from './utils';
 
+/* 1
+   2 */
 ReactDOM.render(
   <React.StrictMode>
     <Locale>

@@ -125,7 +125,7 @@ module.exports = {
   ],
   'multiline-comment-style': [
     2,
-    'bare-block',
+    'starred-block',
   ],
   'new-cap': 0,
   'new-parens': 2,
