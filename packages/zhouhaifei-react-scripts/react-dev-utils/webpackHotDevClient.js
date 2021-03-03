@@ -7,14 +7,18 @@
 
 'use strict';
 
-/* This alternative WebpackDevServer combines the functionality of:
-   https://github.com/webpack/webpack-dev-server/blob/webpack-1/client/index.js
-   https://github.com/webpack/webpack/blob/webpack-1/hot/dev-server.js */
+/*
+ * This alternative WebpackDevServer combines the functionality of:
+ * https://github.com/webpack/webpack-dev-server/blob/webpack-1/client/index.js
+ * https://github.com/webpack/webpack/blob/webpack-1/hot/dev-server.js
+ */
 
-/* It only supports their simplest configuration (hot updates on same server).
-   It makes some opinionated choices on top, like adding a syntax error overlay
-   that looks similar to our console output. The error overlay is inspired by:
-   https://github.com/glenjamin/webpack-hot-middleware */
+/*
+ * It only supports their simplest configuration (hot updates on same server).
+ * It makes some opinionated choices on top, like adding a syntax error overlay
+ * that looks similar to our console output. The error overlay is inspired by:
+ * https://github.com/glenjamin/webpack-hot-middleware
+ */
 
 const url = require('url');
 const ErrorOverlay = require('react-error-overlay');
@@ -35,12 +39,14 @@ ErrorOverlay.setEditorHandler((errorLocation) => {
   );
 });
 
-/* We need to keep track of if there has been a runtime error.
-   Essentially, we cannot guarantee application state was not corrupted by the
-   runtime error. To prevent confusing behavior, we forcibly reload the entire
-   application. This is handled below when we are notified of a compile (code
-   change).
-   See https://github.com/facebook/create-react-app/issues/3096 */
+/*
+ * We need to keep track of if there has been a runtime error.
+ * Essentially, we cannot guarantee application state was not corrupted by the
+ * runtime error. To prevent confusing behavior, we forcibly reload the entire
+ * application. This is handled below when we are notified of a compile (code
+ * change).
+ * See https://github.com/facebook/create-react-app/issues/3096
+ */
 let hadRuntimeError = false;
 ErrorOverlay.startReportingRuntimeErrors({
   onError() {
@@ -69,9 +75,11 @@ const connection = new WebSocket(
   })
 );
 
-/* Unlike WebpackDevServer client, we won't try to reconnect
-   to avoid spamming the console. Disconnect usually happens
-   when developer stops the server. */
+/*
+ * Unlike WebpackDevServer client, we won't try to reconnect
+ * to avoid spamming the console. Disconnect usually happens
+ * when developer stops the server.
+ */
 connection.onclose = function() {
   if (typeof console !== 'undefined' && typeof console.info === 'function') {
     console.info(
@@ -105,8 +113,10 @@ function handleSuccess() {
   // Attempt to apply hot updates or reload.
   if (isHotUpdate) {
     tryApplyUpdates(() => {
-      /* Only dismiss it when we're sure it's a hot update.
-         Otherwise it would flicker right before the reload. */
+      /*
+       * Only dismiss it when we're sure it's a hot update.
+       * Otherwise it would flicker right before the reload.
+       */
       tryDismissErrorOverlay();
     });
   }
@@ -146,8 +156,10 @@ function handleWarnings(warnings) {
   // Attempt to apply hot updates or reload.
   if (isHotUpdate) {
     tryApplyUpdates(() => {
-      /* Only dismiss it when we're sure it's a hot update.
-         Otherwise it would flicker right before the reload. */
+      /*
+       * Only dismiss it when we're sure it's a hot update.
+       * Otherwise it would flicker right before the reload.
+       */
       tryDismissErrorOverlay();
     });
   }
@@ -176,8 +188,10 @@ function handleErrors(errors) {
     }
   }
 
-  /* Do not attempt to reload now.
-     We will reload on next success instead. */
+  /*
+   * Do not attempt to reload now.
+   * We will reload on next success instead.
+   */
 }
 
 function tryDismissErrorOverlay() {
@@ -222,8 +236,10 @@ connection.onmessage = function(e) {
 // Is there a newer version of this code available?
 function isUpdateAvailable() {
   /* globals __webpack_hash__ */
-  /* __webpack_hash__ is the hash of the current compilation.
-     It's a global variable injected by webpack. */
+  /*
+   * __webpack_hash__ is the hash of the current compilation.
+   * It's a global variable injected by webpack.
+   */
   return mostRecentCompilationHash !== __webpack_hash__;
 }
 

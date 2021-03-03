@@ -18,11 +18,13 @@ function getSourceById(server, id) {
   return module.originalSource();
 }
 
-/* Middleware responsible for retrieving a generated source
-   Receives a webpack internal url: "webpack-internal:///<module-id>"
-   Returns a generated source: "<source-text><sourceMappingURL><sourceURL>"
-   
-   Based on EvalSourceMapDevToolModuleTemplatePlugin.js */
+/*
+ * Middleware responsible for retrieving a generated source
+ * Receives a webpack internal url: "webpack-internal:///<module-id>"
+ * Returns a generated source: "<source-text><sourceMappingURL><sourceURL>"
+ *
+ * Based on EvalSourceMapDevToolModuleTemplatePlugin.js
+ */
 module.exports = function createEvalSourceMapMiddleware(server) {
   return function handleWebpackInternalMiddleware(req, res, next) {
     if (req.url.startsWith('/__get-internal-source')) {

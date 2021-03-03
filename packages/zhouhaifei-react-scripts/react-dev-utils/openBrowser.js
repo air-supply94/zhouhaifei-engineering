@@ -22,9 +22,11 @@ const Actions = Object.freeze({
 });
 
 function getBrowserEnv() {
-  /* Attempt to honor this environment variable.
-     It is specific to the operating system.
-     See https://github.com/sindresorhus/open#app for documentation. */
+  /*
+   * Attempt to honor this environment variable.
+   * It is specific to the operating system.
+   * See https://github.com/sindresorhus/open#app for documentation.
+   */
   const value = process.env.BROWSER;
   const args = process.env.BROWSER_ARGS
     ? process.env.BROWSER_ARGS.split(' ')
@@ -70,10 +72,12 @@ function executeNodeScript(scriptPath, url) {
 }
 
 function startBrowserProcess(browser, url, args) {
-  /* If we're on OS X, the user hasn't specifically
-     requested a different browser, we can try opening
-     Chrome with AppleScript. This lets us reuse an
-     existing tab when possible instead of creating a new one. */
+  /*
+   * If we're on OS X, the user hasn't specifically
+   * requested a different browser, we can try opening
+   * Chrome with AppleScript. This lets us reuse an
+   * existing tab when possible instead of creating a new one.
+   */
   const shouldTryOpenChromiumWithAppleScript =
     process.platform === 'darwin' &&
     (typeof browser !== 'string' || browser === OSX_CHROME);
@@ -91,8 +95,10 @@ function startBrowserProcess(browser, url, args) {
 
     for (const chromiumBrowser of supportedChromiumBrowsers) {
       try {
-        /* Try our best to reuse existing tab
-           on OSX Chromium-based browser with AppleScript */
+        /*
+         * Try our best to reuse existing tab
+         * on OSX Chromium-based browser with AppleScript
+         */
         execSync(`ps cax | grep "${chromiumBrowser}"`);
         execSync(
           `osascript openChrome.applescript "${
@@ -112,10 +118,12 @@ function startBrowserProcess(browser, url, args) {
     }
   }
 
-  /* Another special case: on OS X, check if BROWSER has been set to "open".
-     In this case, instead of passing `open` to `opn` (which won't work),
-     just ignore it (thus ensuring the intended behavior, i.e. opening the system browser):
-     https://github.com/facebook/create-react-app/pull/1690#issuecomment-283518768 */
+  /*
+   * Another special case: on OS X, check if BROWSER has been set to "open".
+   * In this case, instead of passing `open` to `opn` (which won't work),
+   * just ignore it (thus ensuring the intended behavior, i.e. opening the system browser):
+   * https://github.com/facebook/create-react-app/pull/1690#issuecomment-283518768
+   */
   if (process.platform === 'darwin' && browser === 'open') {
     browser = undefined;
   }
@@ -125,8 +133,10 @@ function startBrowserProcess(browser, url, args) {
     browser = [browser].concat(args);
   }
 
-  /* Fallback to open
-     (It will always open new tab) */
+  /*
+   * Fallback to open
+   * (It will always open new tab)
+   */
   try {
     const options = {
       app: browser,

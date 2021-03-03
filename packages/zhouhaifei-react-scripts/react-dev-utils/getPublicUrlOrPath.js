@@ -31,8 +31,10 @@ function getPublicUrlOrPath(isEnvDevelopment, homepage, envPublicUrl) {
       ? envPublicUrl
       : `${envPublicUrl}/`;
 
-    /* validate if `envPublicUrl` is a URL or path like
-       `stubDomain` is ignored if `envPublicUrl` contains a domain */
+    /*
+     * validate if `envPublicUrl` is a URL or path like
+     * `stubDomain` is ignored if `envPublicUrl` contains a domain
+     */
     const validPublicUrl = new URL(envPublicUrl, stubDomain);
 
     return isEnvDevelopment

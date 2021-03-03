@@ -37,8 +37,10 @@ class ModuleScopePlugin {
           return callback();
         }
 
-        /* Resolve the issuer from our appSrc and make sure it's one of our files
-           Maybe an indexOf === 0 would be better? */
+        /*
+         * Resolve the issuer from our appSrc and make sure it's one of our files
+         * Maybe an indexOf === 0 would be better?
+         */
         if (
           appSrcs.every((appSrc) => {
             const relative = path.relative(appSrc, request.context.issuer);
@@ -57,8 +59,10 @@ class ModuleScopePlugin {
           return callback();
         }
 
-        /* Find path from src to the requested file
-           Error if in a parent directory of all given appSrcs */
+        /*
+         * Find path from src to the requested file
+         * Error if in a parent directory of all given appSrcs
+         */
         if (
           appSrcs.every((appSrc) => {
             const requestRelative = path.relative(appSrc, requestFullPath);

@@ -7,8 +7,6 @@ import { globalModel } from './models/globalModel';
 import { routes } from './routes';
 import { Locale, RenderRoutes, browserHistory } from './utils';
 
-/* 1
-   2 */
 ReactDOM.render(
   <React.StrictMode>
     <Locale>

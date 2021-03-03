@@ -115,8 +115,10 @@ function removeFileNameHash(buildFolder, fileName) {
     );
 }
 
-/* Input: 1024, 2048
-   Output: "(+1 KB)" */
+/*
+ * Input: 1024, 2048
+ * Output: "(+1 KB)"
+ */
 function getDifferenceLabel(currentSize, previousSize) {
   const FIFTY_KILOBYTES = 1024 * 50;
   const difference = currentSize - previousSize;

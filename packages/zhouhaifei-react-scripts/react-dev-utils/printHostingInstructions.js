@@ -32,8 +32,10 @@ function printHostingInstructions(
     // "homepage": "http://mywebsite.com/project"
     printBaseMessage(buildFolder, publicPath);
   } else {
-    /* "homepage": "http://mywebsite.com"
-         or no homepage */
+    /*
+     * "homepage": "http://mywebsite.com"
+     *   or no homepage
+     */
     printBaseMessage(buildFolder, publicUrl);
 
     printStaticServerInstructions(buildFolder, useYarn);

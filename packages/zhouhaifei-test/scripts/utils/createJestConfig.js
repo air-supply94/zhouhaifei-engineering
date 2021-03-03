@@ -8,8 +8,10 @@ module.exports = (resolve, rootDir) => {
   const config = {
     roots: ['<rootDir>/src'],
 
-    /* The bail config option can be used here to have Jest stop running tests after
-       The first failure. */
+    /*
+     * The bail config option can be used here to have Jest stop running tests after
+     * The first failure.
+     */
     bail: false,
 
     // Indicates whether each individual test should be reported during the run.

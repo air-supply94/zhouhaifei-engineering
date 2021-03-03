@@ -4,9 +4,11 @@
 process.env.BABEL_ENV = 'production';
 process.env.NODE_ENV = 'production';
 
-/* Makes the script crash on unhandled rejections instead of silently
-   ignoring them. In the future, promise rejections that are not handled will
-   terminate the Node.js process with a non-zero exit code. */
+/*
+ * Makes the script crash on unhandled rejections instead of silently
+ * ignoring them. In the future, promise rejections that are not handled will
+ * terminate the Node.js process with a non-zero exit code.
+ */
 process.on('unhandledRejection', (err) => {
   throw err;
 });
@@ -45,12 +47,16 @@ if (!checkRequiredFiles([paths.appIndexJs])) {
 // Generate configuration
 const config = configFactory();
 
-/* We require that you explicitly set browsers and do not fall back to
-   browserslist defaults. */
+/*
+ * We require that you explicitly set browsers and do not fall back to
+ * browserslist defaults.
+ */
 
 checkBrowsers(paths.appPath, isInteractive).then(() => {
-  /* First, read the current file sizes in build directory.
-     This lets us display how much they changed later. */
+  /*
+   * First, read the current file sizes in build directory.
+   * This lets us display how much they changed later.
+   */
   return measureFileSizesBeforeBuild(paths.appDist);
 })
   .then((previousFileSizes) => {
@@ -122,9 +128,11 @@ checkBrowsers(paths.appPath, isInteractive).then(() => {
 
 // Create the production build and print the deployment instructions.
 function build(previousFileSizes) {
-  /* We used to support resolving modules according to `NODE_PATH`.
-     This now has been deprecated in favor of jsconfig/tsconfig.json
-     This lets you use absolute paths in imports inside large monorepos: */
+  /*
+   * We used to support resolving modules according to `NODE_PATH`.
+   * This now has been deprecated in favor of jsconfig/tsconfig.json
+   * This lets you use absolute paths in imports inside large monorepos:
+   */
   if (process.env.NODE_PATH) {
     console.log(
       chalk.yellow(
@@ -168,8 +176,10 @@ function build(previousFileSizes) {
         );
       }
       if (messages.errors.length) {
-        /* Only keep the first error. Others are often indicative
-           of the same problem, but confuse the reader with noise. */
+        /*
+         * Only keep the first error. Others are often indicative
+         * of the same problem, but confuse the reader with noise.
+         */
         if (messages.errors.length > 1) {
           messages.errors.length = 1;
         }
