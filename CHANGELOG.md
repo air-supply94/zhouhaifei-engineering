@@ -3,6 +3,7 @@
 ### Features
 
 - update package ([962c3b2](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/962c3b2bfdbc04d713f4f575a0c244f655244183))
+- **code-style/eslintBase:** update multiline-comment-style ([f74b89c](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/f74b89c42c88564dda932b82e0bfb9e33a6f60ca))
 
 ## [2.8.2](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.8.1...v2.8.2) (2021-02-21)
 
