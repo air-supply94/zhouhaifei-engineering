@@ -1,17 +1,15 @@
-const target = '';
+const target = 'http://192.168.0.1';
 const context = [];
 
 module.exports = function(app, proxy) {
-  context.forEach((pathPrefix) => {
-    app.use(
-      proxy.createProxyMiddleware(
-        pathPrefix,
-        {
-          changeOrigin: true,
-          target,
-          secure: false,
-        }
-      )
-    );
-  });
+  app.use(
+    proxy.createProxyMiddleware(
+      context,
+      {
+        changeOrigin: true,
+        target,
+        secure: false,
+      }
+    )
+  );
 };

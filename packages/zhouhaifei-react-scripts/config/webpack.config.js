@@ -79,7 +79,7 @@ module.exports = function() {
 
       // preload
       utils.isProduction && new PreloadWebpackPlugin(),
-      new webpack.DefinePlugin(getClientEnvironment(paths.publicUrlOrPath.slice(0, -1)).stringified),
+      new webpack.DefinePlugin(getClientEnvironment(paths.publicUrlOrPath).stringified),
 
       new CaseSensitivePathsPlugin(),
       utils.isDevelopment && new WatchMissingNodeModulesPlugin(paths.appNodeModules),
@@ -144,7 +144,6 @@ module.exports = function() {
         exclude: [
           /\.map$/,
           /asset-manifest\.json$/,
-          /envConfig\.js$/,
         ],
         navigateFallback: `${paths.publicUrlOrPath}index.html`,
       }),

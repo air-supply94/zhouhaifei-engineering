@@ -3,7 +3,6 @@ const paths = require('./paths');
 const utils = require('./utils');
 
 module.exports = {
-  templateParameters: { publicPath: paths.publicUrlOrPath },
   favicon: path.resolve(paths.appPublic, 'favicon.ico'),
   inject: true,
   template: path.resolve(paths.appPublic, 'index.ejs'),

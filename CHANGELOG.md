@@ -1,4 +1,9 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.0...v0.0.0) (2021-03-03)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.0...v0.0.0) (2021-03-05)
+
+### Features
+
+- update package ([4f7b896](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/4f7b8966df4a08f9354203d010b399d4a62c318b))
+- **react-scripts:** update style ([da8d6c2](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/da8d6c220c22e70a68fcce9376c4fc0da84873e3))
 
 # [2.9.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.8.3...v2.9.0) (2021-03-03)
 

@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="theme-color" content="#000000"/>
   <meta name="description" content="app"/>
-  <link rel="manifest" href="<%= publicPath %>manifest.json"/>
   <title>app</title>
+  <link rel="manifest" href="<%= process.env.PUBLIC_URL %>manifest.json"/>
   <style>
     html,
     body,
@@ -175,25 +175,24 @@
     </div>
   </div>
 </div>
-<script type="text/javascript" src="<%= publicPath %>assets/plugin/reflect.min.js?v=0.1.9"></script>
+<script type="text/javascript" src="<%= process.env.PUBLIC_URL %>assets/plugin/reflect.min.js?v=0.1.9"></script>
 <% if (process.env.NODE_ENV === 'development') { %>
-  <script type="text/javascript" src="<%= publicPath %>assets/plugin/react.development.min.js?v=17.0.1"></script>
-  <script type="text/javascript" src="<%= publicPath %>assets/plugin/react-dom.development.min.js?v=17.0.1"></script>
-  <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobx.production.min.js?v=5.15.7"></script>
-  <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobxReactLite.development.min.js?v=2.2.2"></script>
-  <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobxReact.development.min.js?v=6.3.1"></script>
+  <script type="text/javascript" src="<%= process.env.PUBLIC_URL %>assets/plugin/react.development.min.js?v=17.0.1"></script>
+  <script type="text/javascript" src="<%= process.env.PUBLIC_URL %>assets/plugin/react-dom.development.min.js?v=17.0.1"></script>
+  <script type="text/javascript" src="<%= process.env.PUBLIC_URL %>assets/plugin/mobx.production.min.js?v=5.15.7"></script>
+  <script type="text/javascript" src="<%= process.env.PUBLIC_URL %>assets/plugin/mobxReactLite.development.min.js?v=2.2.2"></script>
+  <script type="text/javascript" src="<%= process.env.PUBLIC_URL %>assets/plugin/mobxReact.development.min.js?v=6.3.1"></script>
 <% } %>
 <% if (process.env.NODE_ENV === 'production') { %>
-  <script type="text/javascript" src="<%= publicPath %>assets/plugin/react.production.min.js?v=17.0.1"></script>
-  <script type="text/javascript" src="<%= publicPath %>assets/plugin/react-dom.production.min.js?v=17.0.1"></script>
-  <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobx.production.min.js?v=5.15.7"></script>
-  <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobxReactLite.production.min.js?v=2.2.2"></script>
-  <script type="text/javascript" src="<%= publicPath %>assets/plugin/mobxReact.production.min.js?v=6.3.1"></script>
+  <script type="text/javascript" src="<%= process.env.PUBLIC_URL %>assets/plugin/react.production.min.js?v=17.0.1"></script>
+  <script type="text/javascript" src="<%= process.env.PUBLIC_URL %>assets/plugin/react-dom.production.min.js?v=17.0.1"></script>
+  <script type="text/javascript" src="<%= process.env.PUBLIC_URL %>assets/plugin/mobx.production.min.js?v=5.15.7"></script>
+  <script type="text/javascript" src="<%= process.env.PUBLIC_URL %>assets/plugin/mobxReactLite.production.min.js?v=2.2.2"></script>
+  <script type="text/javascript" src="<%= process.env.PUBLIC_URL %>assets/plugin/mobxReact.production.min.js?v=6.3.1"></script>
 <% } %>
-<script type="text/javascript" src="<%= publicPath %>assets/plugin/url-search-params-polyfill.min.js?v=8.1.0"></script>
-<script type="text/javascript" src="<%= publicPath %>assets/plugin/moment.min.js?v=2.29.1"></script>
-<script type="text/javascript" src="<%= publicPath %>assets/plugin/axios.min.js?v=0.21.0"></script>
-<script type="text/javascript" src="<%= publicPath %>assets/plugin/lodash.min.js?v=4.17.20"></script>
-<script type="text/javascript" src="<%= publicPath %>assets/plugin/qs.min.js?v=6.9.4"></script>
+<script type="text/javascript" src="<%= process.env.PUBLIC_URL %>assets/plugin/moment.min.js?v=2.29.1"></script>
+<script type="text/javascript" src="<%= process.env.PUBLIC_URL %>assets/plugin/axios.min.js?v=0.21.0"></script>
+<script type="text/javascript" src="<%= process.env.PUBLIC_URL %>assets/plugin/lodash.min.js?v=4.17.20"></script>
+<script type="text/javascript" src="<%= process.env.PUBLIC_URL %>assets/plugin/qs.min.js?v=6.9.4"></script>
 </body>
 </html>

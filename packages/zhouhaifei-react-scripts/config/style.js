@@ -6,10 +6,6 @@ const utils = require('./utils');
 
 const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
-const lessRegex = /\.less$/;
-const lessModuleRegex = /\.module\.less$/;
-const sassRegex = /\.(scss|sass)$/;
-const sassModuleRegex = /\.module\.(scss|sass)$/;
 
 function getStyleLoaders(cssOptions, preProcessor) {
   const loaders = [
@@ -58,6 +54,10 @@ function getStyleLoaders(cssOptions, preProcessor) {
   return loaders;
 }
 
+function getGlobalStyle(suffix) {
+  return path.resolve(paths.appSrc, `global.${suffix}`);
+}
+
 module.exports = [
   {
     test: cssRegex,
@@ -70,23 +70,32 @@ module.exports = [
     use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }}),
   },
   {
-    test: lessRegex,
-    exclude: [lessModuleRegex],
+    include: [getGlobalStyle('less')],
     use: getStyleLoaders({}, 'less-loader'),
   },
   {
+    test: /\.less$/,
     include: [paths.appSrc],
-    test: lessModuleRegex,
     use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }}, 'less-loader'),
   },
   {
-    test: sassRegex,
-    exclude: [sassModuleRegex],
+    test: /\.less$/,
+    use: getStyleLoaders({}, 'less-loader'),
+  },
+  {
+    include: [
+      getGlobalStyle('scss'),
+      getGlobalStyle('sass'),
+    ],
     use: getStyleLoaders({}, 'sass-loader'),
   },
   {
+    test: /\.(scss|sass)$/,
     include: [paths.appSrc],
-    test: sassModuleRegex,
     use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }}, 'sass-loader'),
+  },
+  {
+    test: /\.(scss|sass)$/,
+    use: getStyleLoaders({}, 'sass-loader'),
   },
 ];
