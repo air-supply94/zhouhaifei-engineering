@@ -41,6 +41,21 @@ const plugins = [
 ];
 
 module.exports = {
-  presets,
-  plugins,
+  env: {
+    development: {
+      presets,
+      plugins,
+    },
+    production: {
+      presets,
+      plugins,
+    },
+    test: {
+      presets: [
+        '@babel/preset-env',
+        '@babel/preset-typescript',
+      ],
+      plugins: [require.resolve('@babel/plugin-transform-runtime')],
+    },
+  },
 };
