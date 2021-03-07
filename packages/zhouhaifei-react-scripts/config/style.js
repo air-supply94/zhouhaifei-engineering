@@ -1,11 +1,7 @@
-const fs = require('fs');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const paths = require('./paths');
 const utils = require('./utils');
-
-const cssRegex = /\.css$/;
-const cssModuleRegex = /\.module\.css$/;
 
 function getStyleLoaders(cssOptions, preProcessor) {
   const loaders = [
@@ -39,12 +35,10 @@ function getStyleLoaders(cssOptions, preProcessor) {
       loader: require.resolve(preProcessor),
       options: {},
     };
-    const themeConfig = path.resolve(paths.appPath, 'theme.js');
-
     if (preProcessor === 'less-loader') {
       loaderConfig.options.lessOptions = {
         javascriptEnabled: true,
-        modifyVars: fs.existsSync(themeConfig) ? require(themeConfig) : {},
+        modifyVars: utils.less.theme,
       };
     }
 
@@ -60,14 +54,13 @@ function getGlobalStyle(suffix) {
 
 module.exports = [
   {
-    test: cssRegex,
-    exclude: [cssModuleRegex],
-    use: getStyleLoaders(),
+    test: /\.module\.css$/,
+    include: [paths.appSrc],
+    use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }}),
   },
   {
-    include: [paths.appSrc],
-    test: cssModuleRegex,
-    use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }}),
+    test: /\.css$/,
+    use: getStyleLoaders(),
   },
   {
     include: [getGlobalStyle('less')],
@@ -75,7 +68,10 @@ module.exports = [
   },
   {
     test: /\.less$/,
-    include: [paths.appSrc],
+    include: [
+      paths.appSrc,
+      ...utils.less.moduleInclude,
+    ],
     use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }}, 'less-loader'),
   },
   {

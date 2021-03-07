@@ -1,3 +1,8 @@
+const fs = require('fs');
+const path = require('path');
+const paths = require('./paths');
+
+// format from env
 const isDevelopment = process.env.NODE_ENV === 'development';
 const isProduction = process.env.NODE_ENV === 'production';
 let sourceMap = process.env.SOURCEMAP === 'false' ? false : process.env.SOURCEMAP;
@@ -20,7 +25,21 @@ if (sourceMap !== false && !sourceMap) {
   }
 }
 
-module.exports = {
+const config = {
+  // init
+  paths,
+  isProduction,
+  isDevelopment,
+  resourceName: {
+    css: 'css',
+    js: 'js',
+    image: 'image',
+    media: 'media',
+  },
+  exclude: [/node_modules/],
+  otherConfig: {},
+
+  // env
   allowEslint,
   isStartServiceWorker,
   isMock,
@@ -32,13 +51,59 @@ module.exports = {
   port,
   imageInlineSizeLimit,
   sourceMap,
-  isProduction,
-  isDevelopment,
-  resourceName: {
-    css: 'css',
-    js: 'js',
-    image: 'image',
-    media: 'media',
+
+  // user
+  less: {
+    theme: {},
+    moduleInclude: [],
   },
-  exclude: [/node_modules/],
+  babel: {
+    options: {},
+    include: [],
+  },
 };
+
+function formatUserConfig(originConfig) {
+  function hasProperty(obj, key) {
+    return Object.prototype.hasOwnProperty.call(obj, key);
+  }
+
+  const outConfig = path.resolve(paths.configDir, 'config.js');
+  if (fs.existsSync(outConfig)) {
+    try {
+      const userConfig = require(outConfig)({ ...originConfig });
+      if (typeof userConfig === 'object' && userConfig !== null) {
+        // 其它配置
+        if (hasProperty(userConfig, 'otherConfig')) {
+          originConfig.otherConfig = userConfig.otherConfig;
+        }
+
+        // less配置
+        if (userConfig.less) {
+          if (userConfig.less.theme) {
+            originConfig.less.theme = userConfig.less.theme;
+          }
+          if (userConfig.less.moduleInclude) {
+            originConfig.less.moduleInclude = userConfig.less.moduleInclude;
+          }
+        }
+
+        // babel配置
+        if (userConfig.babel) {
+          if (userConfig.babel.options) {
+            originConfig.babel.options = userConfig.babel.options;
+          }
+          if (userConfig.babel.include) {
+            originConfig.babel.include = userConfig.babel.include;
+          }
+        }
+      }
+    } catch (e) {
+      console.log('webpack.config.js 必须导出为函数');
+    }
+  }
+}
+
+formatUserConfig(config);
+
+module.exports = config;

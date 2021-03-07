@@ -134,11 +134,12 @@ module.exports = function(proxy, allowedHost) {
     proxy,
     before(app, server) {
       if (fs.existsSync(paths.proxySetup)) {
-        // This registers user provided middleware for proxy reasons
         require(paths.proxySetup)(app, require('http-proxy-middleware'));
       }
 
-      utils.isMock && require('./mock')(server);
+      if (utils.isMock) {
+        require('./mock')(server);
+      }
 
       /*
        * Keep `evalSourceMapMiddleware` and `errorOverlayMiddleware`

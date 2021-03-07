@@ -8,7 +8,10 @@ module.exports = [
   },
   {
     test: /\.(js|mjs|jsx|ts|tsx)$/,
-    include: [paths.appSrc],
+    include: [
+      paths.appSrc,
+      ...utils.babel.include,
+    ],
     use: [
       {
         loader: require.resolve('thread-loader'),
@@ -59,6 +62,7 @@ module.exports = [
           // See #6846 for context on why cacheCompression is disabled
           cacheCompression: false,
           compact: utils.isProduction,
+          ...utils.babel.options,
         },
       },
     ].filter(Boolean),

@@ -26,7 +26,7 @@ const utils = require('./utils');
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 module.exports = function() {
   const initConfig = {
-    cache: { type: 'filesystem' },
+    cache: { type: 'memory' },
     mode: utils.isProduction ? 'production' : utils.isDevelopment && 'development',
 
     // Stop compilation early in production
@@ -175,6 +175,5 @@ module.exports = function() {
     performance: false,
   };
 
-  const outConfig = path.resolve(paths.appPath, 'webpack.config.js');
-  return fs.existsSync(outConfig) ? merge(initConfig, require(outConfig)(utils)) : initConfig;
+  return merge(initConfig, utils.otherConfig);
 };

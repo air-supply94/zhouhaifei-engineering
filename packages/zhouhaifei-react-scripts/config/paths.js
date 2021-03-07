@@ -42,6 +42,7 @@ function resolveModule(resolveFn, filePath) {
 }
 
 module.exports = {
+  configDir: resolveApp('config'),
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
   appDist: resolveApp('dist'),

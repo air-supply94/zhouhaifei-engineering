@@ -1,21 +1,13 @@
+const { getThemeVariables } = require('antd/dist/theme');
+
 module.exports = function(utils) {
   return {
-    entry: utils.isDevelopment ? [] : {},
-    optimization: utils.isDevelopment ? {} : {
-      splitChunks: {
-        cacheGroups: {
-          // 提取公共包
-          commons: {
-            chunks: 'initial', // 必须三选一： "initial" | "all" | "async"(默认就是异步)
-            name: 'commons',
-            minChunks: 2,
-            minSize: 0,
-            priority: 2,
-          },
-        },
-      },
+    less: {
+      theme: getThemeVariables({
+        dark: true, // 开启暗黑模式
+        compact: true, // 开启紧凑模式
+      }),
     },
-
     externals: {
       lodash: {
         commonjs: 'lodash',
