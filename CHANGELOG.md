@@ -2,7 +2,7 @@
 
 ### Features
 
-- update package ([f71d106](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/f71d106a8504885a3fee9390392e2632d1ee1284))
+- **packages/babel-config:** update test env config ([6a3b9ef](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/6a3b9efcf51fd0ffdeb688df59c9984f37eb228a))
 
 ## [2.9.4](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.3...v2.9.4) (2021-03-07)
 
