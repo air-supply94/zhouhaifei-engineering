@@ -4,7 +4,7 @@
 
 - update package ([4f7b896](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/4f7b8966df4a08f9354203d010b399d4a62c318b))
 - **react-scripts:** update style ([17d7054](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/17d70542665aeaff9701d7ba0910bd287ae92a76))
-- **react-scripts:** update style config ([d2fd8f7](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/d2fd8f7e6d6d262f37895e7e344a6d098c30f2aa))
+- **react-scripts:** update style config ([cfd1363](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/cfd1363cd928cebb5088cee1ac85de8563669073))
 
 # [2.9.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.8.3...v2.9.0) (2021-03-03)
 
