@@ -17365,10 +17365,10 @@ yocto-queue@^0.1.0:
   resolved "https://registry.npm.taobao.org/yocto-queue/download/yocto-queue-0.1.0.tgz?cache=0&sync_timestamp=1606288334406&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fyocto-queue%2Fdownload%2Fyocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=
 
-zhouhaifei-babel-config@2.8.2:
-  version "2.8.2"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-babel-config/download/zhouhaifei-babel-config-2.8.2.tgz#e589ed6dd1a98ea8d8dfcf9f0774b13ea3e5c052"
-  integrity sha1-5YntbdGpjqjY38+fB3SxPqPlwFI=
+zhouhaifei-babel-config@2.9.5:
+  version "2.9.5"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-babel-config/download/zhouhaifei-babel-config-2.9.5.tgz#4941bf193e278c56a60cf3b6b023bb091579989f"
+  integrity sha1-SUG/GT4njFamDPO2sCO7CRV5mJ8=
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.12.13"
     "@babel/plugin-proposal-decorators" "^7.12.13"
