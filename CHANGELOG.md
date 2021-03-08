@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.6...v0.0.0) (2021-03-08)
 
+### Features
+
+- **react-scripts:** update analyzePlugin config 不默认打开 ([3c560d5](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/3c560d5b1466e3b5712dc0eb5fce66d8c6ae61e2))
+
 ## [2.9.6](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.5...v2.9.6) (2021-03-08)
 
 ### Features
