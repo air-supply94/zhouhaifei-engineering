@@ -3,7 +3,7 @@
 ### Features
 
 - update package ([e7a27f7](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/e7a27f76aff92e8b0fe774eb11bbb79cc17cbdea))
-- **react-scripts:** update analyzePlugin config(默认开启对 ci 有影响，改为默认不开启) ([ce89723](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/ce89723ebcfaa1b3491eec5ff67784598ed1811a))
+- **react-scripts:** update analyzePlugin config(默认开启对 ci 有影响，改为默认不开启) ([8ef986a](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/8ef986a399812e012af765dc391cdfd4eac7a47e))
 
 ## [2.9.5](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.4...v2.9.5) (2021-03-07)
 
