@@ -106,8 +106,22 @@ module.exports = {
     'error',
     'always',
   ],
+  'object-curly-spacing': 'off',
+  '@typescript-eslint/object-curly-spacing': [
+    'error',
+    'always',
+    {
+      arraysInObjects: false,
+      objectsInObjects: false,
+    },
+  ],
   'no-array-constructor': 'off',
   '@typescript-eslint/no-array-constructor': 'warn',
+  'space-infix-ops': 'off',
+  '@typescript-eslint/space-infix-ops': [
+    'error',
+    { 'int32Hint': false },
+  ],
 
   // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/291)
   'no-dupe-class-members': 'off',
