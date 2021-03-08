@@ -85,7 +85,10 @@ module.exports = function() {
       utils.isDevelopment && new WatchMissingNodeModulesPlugin(paths.appNodeModules),
 
       // ignore moment locale file
-      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+      new webpack.IgnorePlugin({
+        resourceRegExp: /^\.\/locale$/,
+        contextRegExp: /moment$/,
+      }),
 
       // zip css with content hash
       utils.isProduction && new MiniCssExtractPlugin({
@@ -94,8 +97,8 @@ module.exports = function() {
       }),
 
       new webpackBar({ profile: false }),
-      utils.isProduction && new bundleAnalyzerPlugin({
-        openAnalyzer: false,
+      utils.isProduction && utils.isAnalyze && new bundleAnalyzerPlugin({
+        openAnalyzer: true,
         analyzerPort: utils.port + 1,
       }),
 

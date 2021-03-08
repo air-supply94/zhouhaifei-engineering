@@ -16,7 +16,7 @@ const sockPort = process.env.WDS_SOCKET_PORT;
 const isMock = typeof process.env.MOCK === 'string' && process.env.MOCK.toLocaleUpperCase() === 'YES';
 const isStartServiceWorker = typeof process.env.SERVICE_WORKER === 'string' && process.env.SERVICE_WORKER.toLocaleUpperCase() === 'YES';
 const allowEslint = typeof process.env.ALLOW_ESLINT === 'string' && process.env.ALLOW_ESLINT.toLocaleUpperCase() !== 'NO';
-
+const isAnalyze = typeof process.env.IS_ANALYZE === 'string' && process.env.IS_ANALYZE.toLocaleUpperCase() === 'YES';
 if (sourceMap !== false && !sourceMap) {
   if (isProduction) {
     sourceMap = 'source-map';
@@ -51,6 +51,7 @@ const config = {
   port,
   imageInlineSizeLimit,
   sourceMap,
+  isAnalyze,
 
   // user
   less: {
