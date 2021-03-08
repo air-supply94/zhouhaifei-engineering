@@ -9,6 +9,21 @@ module.exports = function(utils) {
       }),
     },
     otherConfig: {
+      optimization: {
+        splitChunks: {
+          cacheGroups: {
+            vendors: {
+              // 拆分第三方库
+              test: /node_modules/,
+              name: 'vendor',
+              chunks: 'initial',
+              minChunks: 2,
+              priority: 1,
+            },
+          },
+        },
+      },
+
       externals: {
         lodash: {
           commonjs: 'lodash',
