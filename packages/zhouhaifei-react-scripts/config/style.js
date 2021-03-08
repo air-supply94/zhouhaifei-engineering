@@ -56,7 +56,7 @@ module.exports = [
   {
     test: /\.module\.css$/,
     include: [paths.appSrc],
-    use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }}),
+    use: getStyleLoaders({ modules: { localIdentName: '[name]__[local]--[hash:base64:8]' }}),
   },
   {
     test: /\.css$/,
@@ -72,7 +72,7 @@ module.exports = [
       paths.appSrc,
       ...utils.less.moduleInclude,
     ],
-    use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }}, 'less-loader'),
+    use: getStyleLoaders({ modules: { localIdentName: '[name]__[local]--[hash:base64:8]' }}, 'less-loader'),
   },
   {
     test: /\.less$/,
@@ -88,7 +88,7 @@ module.exports = [
   {
     test: /\.(scss|sass)$/,
     include: [paths.appSrc],
-    use: getStyleLoaders({ modules: { localIdentName: '[name][hash:base64]' }}, 'sass-loader'),
+    use: getStyleLoaders({ modules: { localIdentName: '[name]__[local]--[hash:base64:8]' }}, 'sass-loader'),
   },
   {
     test: /\.(scss|sass)$/,

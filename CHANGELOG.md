@@ -2,7 +2,8 @@
 
 ### Features
 
-- **config.js:** update split config ([78bfbcc](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/78bfbcc7622da61ee42c2f5d7edfa1893c9b36ea))
+- update package ([2c07d71](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/2c07d71a15aeb623708d3bbe5b7698c0add499ab))
+- **config.js:** update split config ([814d030](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/814d030c3f2a94005316860f96ad7df7110a8fed))
 
 ## [2.9.7](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.6...v2.9.7) (2021-03-08)
 
