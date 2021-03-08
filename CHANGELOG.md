@@ -3,6 +3,7 @@
 ### Features
 
 - update package ([7d0a0a7](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/7d0a0a7b3cb7132388306bad8fda3e36e0d7de6f))
+- **code-style:** update lineBreak-style ([3a9c05e](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/3a9c05ebb5aa385f2a1ac7b1d72db1129cac30a1))
 
 ## [2.9.8](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.7...v2.9.8) (2021-03-08)
 
