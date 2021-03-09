@@ -70,6 +70,8 @@ module.exports = function() {
       ].filter(Boolean),
     },
     plugins: [
+      new webpack.DefinePlugin(getClientEnvironment(paths.publicUrlOrPath).stringified),
+
       // 清除原先打包内容
       utils.isProduction && new cleanWebpackPlugin(),
       new HtmlWebpackPlugin(require('./htmlWebpackPlugin')),
@@ -79,7 +81,6 @@ module.exports = function() {
 
       // preload
       utils.isProduction && new PreloadWebpackPlugin(),
-      new webpack.DefinePlugin(getClientEnvironment(paths.publicUrlOrPath).stringified),
 
       new CaseSensitivePathsPlugin(),
       utils.isDevelopment && new WatchMissingNodeModulesPlugin(paths.appNodeModules),
