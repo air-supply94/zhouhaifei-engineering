@@ -3,7 +3,7 @@
 ### Features
 
 - update packages ([632cb1f](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/632cb1f55b50c6158da299b4f085bec0e236d63e))
-- **read.me:** 简单说明 ([30fb91b](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/30fb91bfc45c515e197c6cdd7f69ab3da367d054))
+- **read.me:** 简单说明 ([6f4fa99](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/6f4fa99975f40507c691e1e33595cff89d64450e))
 
 ## [2.9.11](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.10...v2.9.11) (2021-03-09)
 
