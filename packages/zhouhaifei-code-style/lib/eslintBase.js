@@ -1,11 +1,3 @@
-const os = require('os');
-
-function isWindows() {
-  return os.type()
-    .toLowerCase()
-    .includes('windows');
-}
-
 module.exports = {
   // Possible Errors
   'no-console': 0,
@@ -117,7 +109,7 @@ module.exports = {
   ],
   'linebreak-style': [
     2,
-    isWindows() ? 'windows' : 'unix',
+    'unix',
   ],
   'lines-around-comment': [
     2,

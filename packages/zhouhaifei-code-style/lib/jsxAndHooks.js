@@ -162,10 +162,6 @@ module.exports = {
   'react/jsx-pascal-case': 2,
   'react/jsx-props-no-multi-spaces': 0,
   'react/jsx-sort-props': 2,
-  'react/jsx-space-before-closing': [
-    2,
-    'never',
-  ],
   'react/jsx-tag-spacing': [
     2,
     {
