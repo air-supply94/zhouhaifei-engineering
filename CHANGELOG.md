@@ -2,7 +2,7 @@
 
 ### Features
 
-- update packages ([ceab3f3](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/ceab3f325e24bb41343bba9275af2fd8a9c5ff47))
+- **react-scripts:** 解决 htmlWebpackPlugin 缓存问题 ([8714b7b](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/8714b7b7d7033780e398e1d87703117d22287435))
 
 ## [2.9.12](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.11...v2.9.12) (2021-03-09)
 
