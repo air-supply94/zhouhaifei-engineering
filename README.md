@@ -9,3 +9,7 @@
 - babel
   - options: babel-loader 额外的 options
   - include: babel-loader 额外的 include
+- PUBLIC_URL 设置
+  - 在.env.development、.env.production 设置
+  - ./node_modules/.bin/cross-env PUBLIC_URL=你的 PUBLIC_URL npm run build
+    - 建议另写 shell 脚本打包。可以更好的配合 ci、jenkins

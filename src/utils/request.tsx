@@ -6,6 +6,8 @@ const singleton = (function() {
 
   function init() {
     const axiosInstance: AxiosInstance = axios.create({
+      timeout: 30000,
+      timeoutErrorMessage: '请求超时',
       withCredentials: true,
 
       // 'arraybuffer', 'blob', 'document', 'json', 'text', 'stream'
@@ -26,10 +28,15 @@ const singleton = (function() {
     axiosInstance
       .interceptors
       .response
-      .use(responseBaseInterceptors, (error: AxiosError) => {
+      .use(undefined, (error: AxiosError) => {
         message.error(error?.message ?? '请求失败');
         return Promise.reject(error);
       });
+
+    axiosInstance
+      .interceptors
+      .response
+      .use(responseBaseInterceptors, undefined);
 
     function responseBaseInterceptors(info: AxiosResponse) {
       return info;

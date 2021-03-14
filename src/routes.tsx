@@ -1,5 +1,5 @@
 import React from 'react';
-import { BasicLayout } from './compnents/BasicLayout';
+import { BasicLayout } from './compnents/basicLayout';
 import { NotAuthority } from './pages/403';
 import { NotPage } from './pages/404';
 import { MenuDataItem } from './utils';

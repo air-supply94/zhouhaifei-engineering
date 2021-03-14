@@ -5,19 +5,34 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { globalModel } from './models/globalModel';
 import { routes } from './routes';
-import { Locale, RenderRoutes, browserHistory } from './utils';
+import { Locale, RenderRoutes, history } from './utils';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Locale>
-      <Provider globalModel={globalModel}>
-        <RenderRoutes
-          history={browserHistory}
-          loading={<Spin size="large"/>}
-          routes={routes}
-        />
-      </Provider>
-    </Locale>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function render() {
+  ReactDOM.render(
+    <React.StrictMode>
+      <Locale>
+        <Provider globalModel={globalModel}>
+          <RenderRoutes
+            history={history}
+            loading={<Spin size="large"/>}
+            routes={routes}
+          />
+        </Provider>
+      </Locale>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+}
+
+render();
+
+// @ts-ignore
+if (module.hot) {
+  // @ts-ignore
+  module.hot.accept([
+    './routes',
+    './utils',
+  ], () => {
+    render();
+  });
+}

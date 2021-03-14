@@ -3,7 +3,7 @@ import React from 'react';
 import { request } from '../../utils';
 import styles from './index.module.less';
 
-export default function Entry() {
+export default function() {
   React.useEffect(() => {
     request({ url: '/api/test' })
       .then((info) => {
