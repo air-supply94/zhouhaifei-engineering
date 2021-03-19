@@ -80,7 +80,7 @@ module.exports = function() {
       useTypeScript && new ForkTsCheckerWebpackPlugin({ typescript: { configFile: paths.appTsConfig }}),
 
       // preload
-      utils.isProduction && new PreloadWebpackPlugin(),
+      utils.isProduction && new PreloadWebpackPlugin({ rel: 'prefetch' }),
 
       new CaseSensitivePathsPlugin(),
       utils.isDevelopment && new WatchMissingNodeModulesPlugin(paths.appNodeModules),
