@@ -3,7 +3,7 @@
 ### Features
 
 - add module hot update ([406d8f2](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/406d8f2ddec038699050df83fb52cd46a7c36b44))
-- **react-scripts:** move publicUrlOrPath to utils ([698c9b4](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/698c9b48fa1d0264fb7f523404a6a5f638c8578f))
+- **react-scripts:** move publicUrlOrPath to utils ([2023c8d](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/2023c8de2d496a723963e7190f89654f15561961))
 
 ## [2.9.13](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.12...v2.9.13) (2021-03-11)
 
