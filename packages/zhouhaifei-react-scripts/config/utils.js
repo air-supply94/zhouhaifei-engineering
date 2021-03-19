@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const getPublicUrlOrPath = require('../react-dev-utils/getPublicUrlOrPath');
 const paths = require('./paths');
 
 // format from env
@@ -24,6 +25,12 @@ if (sourceMap !== false && !sourceMap) {
     sourceMap = 'cheap-module-source-map';
   }
 }
+
+const publicUrlOrPath = getPublicUrlOrPath(
+  isDevelopment,
+  require(paths.appPackageJson).homepage,
+  process.env.PUBLIC_URL
+);
 
 const config = {
   // init
@@ -52,6 +59,7 @@ const config = {
   imageInlineSizeLimit,
   sourceMap,
   isAnalyze,
+  publicUrlOrPath,
 
   // user
   less: {

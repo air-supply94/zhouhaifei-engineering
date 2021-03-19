@@ -57,6 +57,7 @@ export class BasicLayout extends React.Component<BasicLayoutInterface> {
         }}
         navTheme="dark"
         onCollapse={handleCollapsed}
+        title={route.name}
       />
     );
   }

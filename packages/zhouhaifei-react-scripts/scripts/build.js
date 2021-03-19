@@ -21,6 +21,7 @@ const chalk = require('chalk');
 const fs = require('fs-extra');
 const webpack = require('webpack');
 const paths = require('../config/paths');
+const utils = require('../config/utils');
 const configFactory = require('../config/webpack.config');
 const { checkBrowsers } = require('../react-dev-utils/browsersHelper');
 const checkRequiredFiles = require('../react-dev-utils/checkRequiredFiles');
@@ -92,7 +93,7 @@ checkBrowsers(paths.appPath, isInteractive).then(() => {
       console.log();
 
       const appPackage = require(paths.appPackageJson);
-      const publicUrl = paths.publicUrlOrPath;
+      const publicUrl = utils.publicUrlOrPath;
       const publicPath = config.output.publicPath;
       const buildFolder = path.relative(process.cwd(), paths.appDist);
       printHostingInstructions(

@@ -6,6 +6,7 @@ import { MenuDataItem } from './utils';
 
 export const routes: MenuDataItem[] = [
   {
+    name: 'app',
     component: BasicLayout,
     children: [
       {

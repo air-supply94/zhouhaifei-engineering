@@ -2,15 +2,8 @@
 
 const fs = require('fs');
 const path = require('path');
-const getPublicUrlOrPath = require('../react-dev-utils/getPublicUrlOrPath');
 
 const appDirectory = fs.realpathSync(process.cwd());
-
-const publicUrlOrPath = getPublicUrlOrPath(
-  process.env.NODE_ENV === 'development',
-  require(resolveApp('package.json')).homepage,
-  process.env.PUBLIC_URL
-);
 
 const moduleFileExtensions = [
   'web.mjs',
@@ -55,7 +48,6 @@ module.exports = {
   yarnLockFile: resolveApp('yarn.lock'),
   proxySetup: resolveModule(resolveApp, 'src/setupProxy'),
   appNodeModules: resolveApp('node_modules'),
-  publicUrlOrPath,
 };
 
 module.exports.moduleFileExtensions = moduleFileExtensions;

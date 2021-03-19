@@ -70,7 +70,7 @@ module.exports = function() {
       ].filter(Boolean),
     },
     plugins: [
-      new webpack.DefinePlugin(getClientEnvironment(paths.publicUrlOrPath).stringified),
+      new webpack.DefinePlugin(getClientEnvironment(utils.publicUrlOrPath).stringified),
 
       // 清除原先打包内容
       utils.isProduction && new cleanWebpackPlugin(),
@@ -149,13 +149,13 @@ module.exports = function() {
           /\.map$/,
           /asset-manifest\.json$/,
         ],
-        navigateFallback: `${paths.publicUrlOrPath}index.html`,
+        navigateFallback: `${utils.publicUrlOrPath}index.html`,
       }),
 
       // manifest
       utils.isProduction && new WebpackManifestPlugin({
         fileName: 'asset-manifest.json',
-        publicPath: paths.publicUrlOrPath,
+        publicPath: utils.publicUrlOrPath,
         generate: (seed, files, entrypoints) => {
           const manifestFiles = files.reduce((manifest, file) => {
             manifest[file.name] = file.path;

@@ -14,7 +14,7 @@ module.exports = {
   chunkFilename: utils.isProduction
     ? `${utils.resourceName.js}/[name].[contenthash].js`
     : utils.isDevelopment && `${utils.resourceName.js}/[name].chunk.js`,
-  publicPath: paths.publicUrlOrPath,
+  publicPath: utils.publicUrlOrPath,
 
   // Point sourcemap entries to original disk location (format as URL on Windows)
   devtoolModuleFilenameTemplate: utils.isProduction
