@@ -2,7 +2,7 @@
 
 ### Features
 
-- update packages ([a888b85](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/a888b85b16684ea55a8d35c070a8795762a2c927))
+- **react-scripts:** 将 preload 改为 prefetch ([e142c36](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/e142c360b2625fa5a08b040c6e084ed1c5724e6b))
 
 ## [2.9.14](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.13...v2.9.14) (2021-03-19)
 
