@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.15...v0.0.0) (2021-03-23)
 
+### Bug Fixes
+
+- **code-style:** 解决 stylelint 下 value-no-vendor-prefix ([58b92a6](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/58b92a6e06c59bf1c4eafe9c71cfd3ea4f2c381e))
+
 ### Features
 
 - update packages ([acaae5b](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/acaae5b38f2b86e89f49266102b03afa1687151f))
