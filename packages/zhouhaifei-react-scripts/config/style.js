@@ -15,7 +15,7 @@ function getStyleLoaders(cssOptions, preProcessor) {
         ...cssOptions,
       },
     },
-    utils.isProduction && {
+    {
       loader: require.resolve('postcss-loader'),
       options: {
         postcssOptions: {
