@@ -136,7 +136,7 @@ module.exports = {
     'selector-pseudo-element-colon-notation': 'double',
     'selector-no-vendor-prefix': true,
     'selector-max-empty-lines': 0,
-    'value-no-vendor-prefix': true,
+    'value-no-vendor-prefix': null,
     'shorthand-property-no-redundant-values': true,
     'length-zero-no-unit': true,
     'color-function-notation': null,
