@@ -3,6 +3,7 @@
 ### Features
 
 - update packages ([3b306d2](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/3b306d2e92fe73de680d0bd6ab857938da5aa256))
+- **react-scripts:** open postcss in development ([048649b](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/048649bc80df84204b93fbcbdd0c40f8d1c0ffac))
 
 ## [2.9.16](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.15...v2.9.16) (2021-03-23)
 
