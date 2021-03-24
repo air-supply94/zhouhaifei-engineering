@@ -10,7 +10,7 @@ module.exports = {
         cache: true,
         fix: false,
         formatter: 'stylish',
-        eslintPath: 'eslint',
+        eslintPath: require.resolve('eslint'),
       },
       loader: require.resolve('eslint-loader'),
     },

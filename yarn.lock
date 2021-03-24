@@ -17406,10 +17406,10 @@ zhouhaifei-code-style@2.9.16:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@2.9.17:
-  version "2.9.17"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.9.17.tgz#f21218820d31a648dc11d6507b6f2d2b29983ad3"
-  integrity sha1-8hIYgg0xpkjcEdZQe28tKymYOtM=
+zhouhaifei-react-scripts@2.9.18:
+  version "2.9.18"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.9.18.tgz#e4e1bdc4dc53d5904282eaa01663f75b8d8da308"
+  integrity sha1-5OG9xNxT1ZBCguqgFmP3W42Nowg=
   dependencies:
     "@babel/core" "7.13.8"
     address "^1.1.2"
