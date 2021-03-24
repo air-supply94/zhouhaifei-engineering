@@ -2,6 +2,7 @@
 
 ### Features
 
+- update packages ([0765390](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/07653901f6606ce10ef36c417b3845b57cb4061b))
 - **code-style:** 兼容 windows 系统换行符、新增对象空格、操作符空格(按照不同系统默认的格式) ([0ef9fb4](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/0ef9fb46c0675cfb4e485dd763e338844c155640))
 
 ## [2.9.20](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.19...v2.9.20) (2021-03-24)
