@@ -2,7 +2,7 @@
 
 ### Features
 
-- update packages ([e2d1857](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/e2d1857fcca3c70321d61bb9362736ab901afb7f))
+- **react-scripts:** add eslint ([dd7e58c](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/dd7e58c060f0d07d7821d0cfd19aa2499d8440d1))
 
 ## [2.9.18](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.17...v2.9.18) (2021-03-24)
 
