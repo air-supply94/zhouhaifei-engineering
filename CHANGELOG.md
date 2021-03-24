@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.17...v0.0.0) (2021-03-24)
 
+### Features
+
+- **react-scripts:** remove require.resolve eslint ([21040c5](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/21040c5d75a67b6982872f01c42a796831ff1f1d))
+
 ## [2.9.17](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.16...v2.9.17) (2021-03-23)
 
 ### Features
