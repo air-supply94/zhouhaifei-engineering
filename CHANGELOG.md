@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.19...v0.0.0) (2021-03-24)
 
+### Features
+
+- **react-scripts:** add typescript ([20a4121](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/20a4121f5cb7af92999402e7c499bb2cbd5c6084))
+
 ## [2.9.19](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.18...v2.9.19) (2021-03-24)
 
 ### Features
