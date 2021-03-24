@@ -17385,10 +17385,10 @@ zhouhaifei-babel-config@2.9.5:
     "@babel/preset-typescript" "^7.12.17"
     babel-plugin-import "^1.13.3"
 
-zhouhaifei-code-style@2.9.16:
-  version "2.9.16"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-code-style/download/zhouhaifei-code-style-2.9.16.tgz#afcccf5eba3f4a78085dcb2ca4b33d4e3fe4e4bf"
-  integrity sha1-r8zPXro/SngIXcsspLM9Tj/k5L8=
+zhouhaifei-code-style@2.9.21:
+  version "2.9.21"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-code-style/download/zhouhaifei-code-style-2.9.21.tgz#f883536dbac8c1084752b9c0fb2cb4aa7e3cc25d"
+  integrity sha1-+INTbbrIwQhHUrnA+yy0qn48wl0=
   dependencies:
     "@commitlint/config-conventional" "^11.0.0"
     "@typescript-eslint/eslint-plugin" "^4.15.1"
