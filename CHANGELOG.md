@@ -1,4 +1,9 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.21...v0.0.0) (2021-03-24)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.21...v0.0.0) (2021-03-29)
+
+### Features
+
+- update packages ([51961e7](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/51961e7e3de0af7691dfd6b37da7816613832092))
+- **readme.md:** 更新说明 ([fc85939](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/fc8593997e0678968afee0626891012922a74585))
 
 ## [2.9.21](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.20...v2.9.21) (2021-03-24)
 
@@ -326,8 +331,8 @@
 
 ### Features
 
-- **routes:** 增加子路由渲染 ([cea8cf8](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/cea8cf86f3110066b9710ba5bd4deca644f9ee36))
 - **routes:** 改进子路由渲染 ([fabe6a5](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/fabe6a5e6f7e86de5260a08211192012d48c74d6))
+- **routes:** 增加子路由渲染 ([cea8cf8](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/cea8cf86f3110066b9710ba5bd4deca644f9ee36))
 
 ## [2.2.3](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.2.2...v2.2.3) (2020-11-11)
 
@@ -504,14 +509,14 @@
 
 ### Features
 
+- add 路由可配置 ([0876278](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/0876278b96c7bfacb900603d0293ffab728e638c))
+- add 路由可配置 ([fabc55b](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/fabc55baeca4b6bfda4d1df39133f7fed063861e))
 - add code-style package ([cb9c0b6](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/cb9c0b6c2d4083df58e32d031497a1a63d916559))
 - add lerna ([9cf09c6](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/9cf09c624b097526b088128ebe21d38b9ab3005c))
 - add mock ([37ecf44](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/37ecf44fa161e3d12d200c3c3f647f6f5a49a4ca))
 - add react types ([3f20c86](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/3f20c86b4805af541e36299c46b6e4f258a37f5f))
 - add test framework ([3bd428f](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/3bd428fe292f6d55a5f9131994321c9cf8e6aecd))
 - add ts check ([7a16705](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/7a167052036d3b96d7938a46d0d1c9dabcd0133f))
-- add 路由可配置 ([0876278](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/0876278b96c7bfacb900603d0293ffab728e638c))
-- add 路由可配置 ([fabc55b](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/fabc55baeca4b6bfda4d1df39133f7fed063861e))
 - init project ([81473a1](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/81473a15cb708bbc9cb79d735cb90775a6c3b44a))
 - remove useless ([c7b422d](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/c7b422d851643a2a8fb421d99cf4df7318a1f0d9))
 - test ([8e2c631](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/8e2c631f32aa569e8e1acd71a997f9212504479f))

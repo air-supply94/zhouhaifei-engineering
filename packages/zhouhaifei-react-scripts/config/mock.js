@@ -105,7 +105,7 @@ function realApplyMock(devServer) {
     );
 
     mockRules.push({
-      path: path.resolve(keyParsed.path, '.'),
+      path: keyParsed.path,
       method: keyParsed.method,
       target: value,
     });

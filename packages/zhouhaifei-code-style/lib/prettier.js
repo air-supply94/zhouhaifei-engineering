@@ -1,3 +1,11 @@
+const os = require('os');
+
+function isWindows() {
+  return os.type()
+    .toLowerCase()
+    .includes('windows');
+}
+
 module.exports = {
   printWidth: 180,
   tabWidth: 2,
@@ -10,16 +18,16 @@ module.exports = {
   bracketSpacing: true,
   jsxBracketSameLine: false,
   proseWrap: 'never',
-  endOfLine: 'lf',
+  endOfLine: isWindows() ? 'crlf' : 'lf',
   arrowParens: 'always',
   overrides: [
     {
       files: '.prettierrc',
-      options: { parser: 'json' },
+      options: {parser: 'json'},
     },
     {
       files: '*.ejs',
-      options: { parser: 'html' },
+      options: {parser: 'html'},
     },
   ],
 };
