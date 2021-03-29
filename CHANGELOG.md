@@ -2,11 +2,12 @@
 
 ### Bug Fixes
 
-- **react-scripts/mock:** 解决 windows 下 path 不对 ([6a24268](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/6a24268247b95fe0c44ad60b8de14b127eecb93e))
+- **react-scripts/mock:** 解决 windows 下 path 不对 ([24f4ffc](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/24f4ffc49d13401494c286e3426ebe5c6560bec3))
 - **react-scripts/mock:** 解决 windows 下 path 不对 ([cdb6a46](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/cdb6a463924cf776d63382e12bce3262a1b40eaa))
 
 ### Features
 
+- test ([8229b10](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/8229b10c973530a1d98d80a8af429c9eefe40bcf))
 - update packages ([51961e7](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/51961e7e3de0af7691dfd6b37da7816613832092))
 - **readme.md:** 更新说明 ([fc85939](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/fc8593997e0678968afee0626891012922a74585))
 
