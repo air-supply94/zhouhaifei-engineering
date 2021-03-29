@@ -17385,10 +17385,10 @@ zhouhaifei-babel-config@2.9.5:
     "@babel/preset-typescript" "^7.12.17"
     babel-plugin-import "^1.13.3"
 
-zhouhaifei-code-style@2.9.21:
-  version "2.9.21"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-code-style/download/zhouhaifei-code-style-2.9.21.tgz#f883536dbac8c1084752b9c0fb2cb4aa7e3cc25d"
-  integrity sha1-+INTbbrIwQhHUrnA+yy0qn48wl0=
+zhouhaifei-code-style@2.10.0:
+  version "2.10.0"
+  resolved "https://registry.npmjs.org/zhouhaifei-code-style/-/zhouhaifei-code-style-2.10.0.tgz#1f985b68d7773fe145bd5f6a10f517735984fb96"
+  integrity sha512-O2cz+lrxLxysV1o7c3GJ89CbGqkCz27HTwYLmroKDP2f8TVb9AwZJI6VeHTnyDXMSsMx9pihxCw7GilAKN5GeA==
   dependencies:
     "@commitlint/config-conventional" "^11.0.0"
     "@typescript-eslint/eslint-plugin" "^4.15.1"
@@ -17406,10 +17406,10 @@ zhouhaifei-code-style@2.9.21:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@2.9.20:
-  version "2.9.20"
-  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.9.20.tgz#d9153f180a0b27a80eb282bb5d8414cfe31843a0"
-  integrity sha1-2RU/GAoLJ6gOsoK7XYQUz+MYQ6A=
+zhouhaifei-react-scripts@2.10.0:
+  version "2.10.0"
+  resolved "https://registry.npmjs.org/zhouhaifei-react-scripts/-/zhouhaifei-react-scripts-2.10.0.tgz#4297a74fee80ad81efdc80abe8bd308aeeeea3aa"
+  integrity sha512-N0aqhnvZqcoLc7+2YL1gbRbowN/Ze1w2NKNKTpxMgAhfLpII9P0SH3Njaf6OWGyiyv0Rn3isWUO1wYqYIyoF5g==
   dependencies:
     "@babel/core" "7.13.8"
     address "^1.1.2"

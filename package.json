@@ -42,8 +42,8 @@
     "typescript": "^4.1.2",
     "validate-commit-msg": "^2.14.0",
     "zhouhaifei-babel-config": "2.9.5",
-    "zhouhaifei-code-style": "2.9.21",
-    "zhouhaifei-react-scripts": "2.9.20",
+    "zhouhaifei-code-style": "2.10.0",
+    "zhouhaifei-react-scripts": "2.10.0",
     "zhouhaifei-test": "2.9.0"
   },
   "browserslist": [
@@ -84,6 +84,7 @@
     }
   },
   "scripts": {
+    "prepublish": "npm run prettier && git add .",
     "commit": "cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && npm run prettier && git add CHANGELOG.md",
     "bootstrap": "lerna bootstrap",
