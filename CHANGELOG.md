@@ -1,9 +1,12 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.21...v0.0.0) (2021-03-29)
 
+### Bug Fixes
+
+- **react-scripts/mock:** 解决 windows 下 path 不对 ([cdb6a46](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/cdb6a463924cf776d63382e12bce3262a1b40eaa))
+
 ### Features
 
 - update packages ([51961e7](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/51961e7e3de0af7691dfd6b37da7816613832092))
-- **readme.md:** 更新说明 ([fc85939](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/fc8593997e0678968afee0626891012922a74585))
 
 ## [2.9.21](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.20...v2.9.21) (2021-03-24)
 
