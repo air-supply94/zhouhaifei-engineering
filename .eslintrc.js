@@ -1,1 +1,1 @@
-module.exports = require('./packages/zhouhaifei-code-style/lib/react');
+module.exports = require('zhouhaifei-code-style').react;
