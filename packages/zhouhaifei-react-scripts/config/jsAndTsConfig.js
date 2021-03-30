@@ -5,6 +5,7 @@ module.exports = [
   {
     test: /\.m?js/,
     resolve: { fullySpecified: false },
+    include: [paths.appNodeModules],
   },
   {
     test: /\.(js|mjs|jsx|ts|tsx)$/,

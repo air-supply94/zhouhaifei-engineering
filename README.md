@@ -20,6 +20,11 @@ git config --global core.autocrlf input
 
 # 提交检出均不转换
 git config --global core.autocrlf false
+
+# 参考配置
+git config --global core.safecrlf true
+git config --global core.autocrlf input
+
 ```
 
 ## cli 外放配置说明。
@@ -53,7 +58,7 @@ module.exports = function(utils) {
 
 ## 环境变量
 
-1. 在项目配置文件相关文件。参考 dotenv。下面为常用
+1. 在项目配置相关文件。参考 dotenv。下面为常用
 
 ```
 .env.development
@@ -79,7 +84,7 @@ module.exports = function(utils) {
   - 是否启用 mock 数据功能
   - YES 开启
 - SERVICE_WORKER
-  - 是否打包生产 serviceWorker 文件。注册请自写
+  - 是否打包生成 serviceWorker 文件。注册请自写
   - YES 开启
 - SOURCEMAP
   - sourcemap 方式
@@ -87,5 +92,5 @@ module.exports = function(utils) {
   - 是否开启 eslint
   - NO 不开启
 - IS_ANALYZE
-  - 是否开启包大小分析
+  - 是否开启打包大小分析
   - YES 开启

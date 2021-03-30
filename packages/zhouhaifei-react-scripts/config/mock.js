@@ -1,5 +1,4 @@
 const assert = require('assert');
-const path = require('path');
 const bodyParser = require('body-parser');
 const chalk = require('chalk');
 const chokidar = require('chokidar');
