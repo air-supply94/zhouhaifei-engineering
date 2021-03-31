@@ -2,12 +2,12 @@
 
 ### Bug Fixes
 
+- **react-scripts:** 解决 ts 和 js 混用，js 文件 loader 不生效 ([793501d](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/793501d778ff0c07955c1e1cffa170560f63c116))
 - **react-scripts/mock:** 解决 windows 下 path 不对 ([24f4ffc](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/24f4ffc49d13401494c286e3426ebe5c6560bec3))
 - **react-scripts/mock:** 解决 windows 下 path 不对 ([cdb6a46](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/cdb6a463924cf776d63382e12bce3262a1b40eaa))
 
 ### Features
 
-- test ([8388df5](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/8388df503d5faf8a3d769c7d0fb4f94e78c90858))
 - update packages ([a8c8bf8](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/a8c8bf8b0d98db99afe463c6a43adb35a148fb00))
 - update packages ([51961e7](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/51961e7e3de0af7691dfd6b37da7816613832092))
 - **code-style:** 换行符统一 lf ([4422074](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/4422074a9a298a89d878ac5bb685a82c01e66eec))
