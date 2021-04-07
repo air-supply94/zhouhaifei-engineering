@@ -2,7 +2,7 @@
 
 ### Bug Fixes
 
-- **自动去除 css 前缀:** remove postcss-cssnext add postcss-preset-env。 ([7cf7d7d](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/7cf7d7d59fdd8dde32c420b69c737bc49c1cfc75))
+- **自动去除 css 前缀:** remove postcss-cssnext add postcss-preset-env。 ([341dc93](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/341dc939402b3a6aaa6c99abd08bc1866ff173af))
 
 ## [2.10.2](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.9.21...v2.10.2) (2021-03-31)
 
