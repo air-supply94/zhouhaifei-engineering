@@ -42,8 +42,8 @@
     "typescript": "^4.2.4",
     "validate-commit-msg": "^2.14.0",
     "zhouhaifei-babel-config": "2.9.5",
-    "zhouhaifei-code-style": "2.10.2",
-    "zhouhaifei-react-scripts": "2.10.3",
+    "zhouhaifei-code-style": "2.10.4",
+    "zhouhaifei-react-scripts": "2.10.4",
     "zhouhaifei-test": "2.9.0"
   },
   "browserslist": [

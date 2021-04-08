@@ -2873,6 +2873,18 @@ es-to-primitive@^1.2.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
+esbuild-webpack-plugin@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/esbuild-webpack-plugin/download/esbuild-webpack-plugin-1.1.0.tgz#dcf0971284bf3c174fdb27832209a59f2079075b"
+  integrity sha1-3PCXEoS/PBdP2yeDIgmlnyB5B1s=
+  dependencies:
+    esbuild "^0.7.15"
+
+esbuild@^0.7.15:
+  version "0.7.22"
+  resolved "https://registry.npm.taobao.org/esbuild/download/esbuild-0.7.22.tgz#9149b903f8128b7c45a754046c24199d76bbe08e"
+  integrity sha1-kUm5A/gSi3xFp1QEbCQZnXa74I4=
+
 escalade@^3.1.1:
   version "3.1.1"
   resolved "https://registry.npm.taobao.org/escalade/download/escalade-3.1.1.tgz#d8cfdc7000965c5a0174b4a82eaa5c0552742e40"

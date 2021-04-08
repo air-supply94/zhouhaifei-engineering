@@ -1,8 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# webpack cache
+.cache
 
 # dependencies
 node_modules
 .idea
+
 # testing
 coverage
 

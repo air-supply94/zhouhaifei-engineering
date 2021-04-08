@@ -18,6 +18,8 @@ const isMock = typeof process.env.MOCK === 'string' && process.env.MOCK.toLocale
 const isStartServiceWorker = typeof process.env.SERVICE_WORKER === 'string' && process.env.SERVICE_WORKER.toLocaleUpperCase() === 'YES';
 const allowEslint = typeof process.env.ALLOW_ESLINT === 'string' && process.env.ALLOW_ESLINT.toLocaleUpperCase() !== 'NO';
 const isAnalyze = typeof process.env.IS_ANALYZE === 'string' && process.env.IS_ANALYZE.toLocaleUpperCase() === 'YES';
+const useEsBuild = typeof process.env.USE_ESBUILD === 'string' && process.env.USE_ESBUILD.toLocaleUpperCase() === 'YES';
+
 if (sourceMap !== false && !sourceMap) {
   if (isProduction) {
     sourceMap = 'source-map';
@@ -60,6 +62,7 @@ const config = {
   sourceMap,
   isAnalyze,
   publicUrlOrPath,
+  useEsBuild,
 
   // user
   less: {
