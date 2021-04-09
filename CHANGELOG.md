@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.10.6...v0.0.0) (2021-04-09)
 
+### Bug Fixes
+
+- **eslint:** 解决 eslint 的模版字符串规则报错 ([fd25c07](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/fd25c077feeaf66ba05334b3eb102c31ff7835a0))
+
 ## [2.10.6](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.10.5...v2.10.6) (2021-04-09)
 
 ### Features
