@@ -62,7 +62,7 @@ module.exports = function() {
     module: {
       strictExportPresence: true,
       rules: [
-        { parser: { requireEnsure: false } },
+        { parser: { requireEnsure: false }},
         utils.allowEslint && require('./eslintConfig'),
         {
           oneOf: [
@@ -81,7 +81,7 @@ module.exports = function() {
       new HtmlWebpackPlugin(require('./htmlWebpackPlugin')),
 
       // TypeScript type checking
-      useTypeScript && new ForkTsCheckerWebpackPlugin({ typescript: { configFile: paths.appTsConfig } }),
+      useTypeScript && new ForkTsCheckerWebpackPlugin({ typescript: { configFile: paths.appTsConfig }}),
 
       // preload
       utils.isProduction && new PreloadWebpackPlugin({ rel: 'prefetch' }),

@@ -93,7 +93,10 @@ module.exports = {
   indent: [
     'error',
     2,
-    { SwitchCase: 1 },
+    {
+      SwitchCase: 1,
+      ignoredNodes: ['TemplateLiteral'],
+    },
   ],
   'jsx-quotes': [
     2,
@@ -283,10 +286,11 @@ module.exports = {
     2,
     'never',
   ],
-  'template-curly-spacing': [
-    2,
-    'never',
-  ],
+  // has bug
+  // 'template-curly-spacing': [
+  //   2,
+  //   'never',
+  // ],
   'sort-imports': 0,
   'yield-star-spacing': [
     2,
