@@ -2,7 +2,7 @@
 
 ### Features
 
-- update packages ([5f2a815](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/5f2a81599c6f91b00aa0cd5418bf63832dd46e7f))
+- **react-scripts:** add EsBuild ([8e7a2da](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/8e7a2da1f1e70c30d5b8725a93911bee655aabe1))
 
 ## [2.10.4](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.10.3...v2.10.4) (2021-04-08)
 
