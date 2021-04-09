@@ -3,6 +3,7 @@
 ### Features
 
 - update packages ([c3e4a6d](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/c3e4a6d8c0281895fe2121201ead0372987dd452))
+- **react-scripts:** update cache config ([3c7aeb8](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/3c7aeb8d2859b2f2986b1e7d23924bc967ac3e64))
 
 ## [2.10.5](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.10.4...v2.10.5) (2021-04-09)
 
