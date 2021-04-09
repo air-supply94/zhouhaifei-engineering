@@ -6786,6 +6786,18 @@ es6-promisify@^5.0.0:
   dependencies:
     es6-promise "^4.0.3"
 
+esbuild-webpack-plugin@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/esbuild-webpack-plugin/download/esbuild-webpack-plugin-1.1.0.tgz#dcf0971284bf3c174fdb27832209a59f2079075b"
+  integrity sha1-3PCXEoS/PBdP2yeDIgmlnyB5B1s=
+  dependencies:
+    esbuild "^0.7.15"
+
+esbuild@^0.7.15:
+  version "0.7.22"
+  resolved "https://registry.npm.taobao.org/esbuild/download/esbuild-0.7.22.tgz#9149b903f8128b7c45a754046c24199d76bbe08e"
+  integrity sha1-kUm5A/gSi3xFp1QEbCQZnXa74I4=
+
 escalade@^3.1.1:
   version "3.1.1"
   resolved "https://registry.npm.taobao.org/escalade/download/escalade-3.1.1.tgz?cache=0&sync_timestamp=1602567259580&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fescalade%2Fdownload%2Fescalade-3.1.1.tgz#d8cfdc7000965c5a0174b4a82eaa5c0552742e40"
@@ -17256,10 +17268,10 @@ zhouhaifei-code-style@2.10.4:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@2.10.4:
-  version "2.10.4"
-  resolved "https://registry.npmjs.org/zhouhaifei-react-scripts/-/zhouhaifei-react-scripts-2.10.4.tgz#e2d71615d89dbbdd88f1388120ef22777b24093f"
-  integrity sha512-sQmMZj9S3HtIxKHtqBtkWUxCmDhtUDZPdnk+KSby+t6lsltNgsr89tqIo+J+Pd64ypLp7rop6kGGkntxfPnq3w==
+zhouhaifei-react-scripts@2.10.5:
+  version "2.10.5"
+  resolved "https://registry.npm.taobao.org/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.10.5.tgz#9056d78d8432bc332123de46e1d6a9d8c3e70972"
+  integrity sha1-kFbXjYQyvDMhI95G4dap2MPnCXI=
   dependencies:
     "@babel/core" "7.13.8"
     address "^1.1.2"
@@ -17278,6 +17290,7 @@ zhouhaifei-react-scripts@2.10.4:
     detect-port-alt "^1.1.6"
     dotenv "8.2.0"
     dotenv-expand "5.1.0"
+    esbuild-webpack-plugin "^1.1.0"
     escape-string-regexp "^4.0.0"
     eslint "7.23.0"
     eslint-loader "4.0.2"

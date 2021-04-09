@@ -94,3 +94,6 @@ module.exports = function(utils) {
 - IS_ANALYZE
   - 是否开启打包大小分析
   - YES 开启
+- USE_ESBUILD
+  - 是否使用 EsBuild
+  - YES 开启
