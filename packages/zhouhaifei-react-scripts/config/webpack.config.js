@@ -26,10 +26,11 @@ const utils = require('./utils');
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 module.exports = function() {
   const initConfig = {
-    cache: {
-      type: utils.isProduction ? 'filesystem' : 'memory',
+    cache: utils.isProduction ? {
+      type: 'filesystem',
       cacheDirectory: path.resolve(paths.appPath, '.cache'),
-    },
+    } : { type: 'memory' },
+
     mode: utils.isProduction ? 'production' : utils.isDevelopment && 'development',
 
     // Stop compilation early in production
@@ -61,7 +62,7 @@ module.exports = function() {
     module: {
       strictExportPresence: true,
       rules: [
-        { parser: { requireEnsure: false }},
+        { parser: { requireEnsure: false } },
         utils.allowEslint && require('./eslintConfig'),
         {
           oneOf: [
@@ -80,7 +81,7 @@ module.exports = function() {
       new HtmlWebpackPlugin(require('./htmlWebpackPlugin')),
 
       // TypeScript type checking
-      useTypeScript && new ForkTsCheckerWebpackPlugin({ typescript: { configFile: paths.appTsConfig }}),
+      useTypeScript && new ForkTsCheckerWebpackPlugin({ typescript: { configFile: paths.appTsConfig } }),
 
       // preload
       utils.isProduction && new PreloadWebpackPlugin({ rel: 'prefetch' }),
