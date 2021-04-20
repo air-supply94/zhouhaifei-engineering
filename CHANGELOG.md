@@ -2,7 +2,7 @@
 
 ### Features
 
-- **react-scripts:** 内联 px2rem ([64828c8](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/64828c8aea62910e83854f93d3decb888f49ea4a))
+- **react-scripts:** 内联 px2rem ([d45bdda](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/d45bddaf5fadfe330fbe039228bb333df75d79aa))
 
 ## [2.10.10](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.10.9...v2.10.10) (2021-04-20)
 
