@@ -1,6 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const px2rem = require('postcss-px2rem');
+const px2rem = require('../react-dev-utils/postcss-px2rem');
 const paths = require('./paths');
 const utils = require('./utils');
 
