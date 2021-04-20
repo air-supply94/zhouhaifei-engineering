@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const px2rem = require('postcss-px2rem');
 const paths = require('./paths');
 const utils = require('./utils');
 
@@ -30,7 +31,11 @@ function getStyleLoaders(cssOptions, preProcessor) {
               },
             }),
             require('postcss-flexbugs-fixes'),
-          ],
+            utils.remUnit ? px2rem({
+              remUnit: utils.remUnit,
+              exclude: /node_modules/,
+            }) : false,
+          ].filter(Boolean),
         },
       },
     },

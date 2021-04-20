@@ -97,3 +97,7 @@ module.exports = function(utils) {
 - USE_ESBUILD
   - 是否使用 EsBuild
   - YES 开启
+- REM_UNIT
+  - 移动端 rem 单位。一般为 75。
+  - 配合 amfe-flexible 更佳
+  - 有单位则开启 postcss-px2rem。否则不开启

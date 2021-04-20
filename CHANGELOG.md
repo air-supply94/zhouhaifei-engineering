@@ -3,6 +3,8 @@
 ### Features
 
 - update packages ([1a798bd](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/1a798bd66e3a6fceb4a4a950e8f1040c647e5184))
+- 去掉 eslint 的 warning ([7167ab6](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/7167ab67a903b60155a12fa6ffc2c523bffa1110))
+- **react-scripts:** 增加移动端 rem 配置 ([43032d9](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/43032d9808a50b79f003f3136b4b5b7a5b7abb37))
 
 ## [2.10.8](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.10.7...v2.10.8) (2021-04-12)
 

@@ -1,1 +1,1 @@
-module.exports = require('zhouhaifei-code-style').commitlint;
+module.exports = require('./packages/zhouhaifei-code-style').commitlint;

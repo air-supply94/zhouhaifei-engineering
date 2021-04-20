@@ -10,6 +10,7 @@ export interface MenuDataItem {
   locale?: string;
   name?: string;
   path?: string;
+  component?: React.ReactType;
   [key: string]: any;
 }
 
