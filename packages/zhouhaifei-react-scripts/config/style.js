@@ -31,10 +31,7 @@ function getStyleLoaders(cssOptions, preProcessor) {
               },
             }),
             require('postcss-flexbugs-fixes'),
-            utils.remUnit ? px2rem({
-              remUnit: utils.remUnit,
-              exclude: /node_modules/,
-            }) : false,
+            utils.remUnit ? px2rem({ remUnit: utils.remUnit }) : false,
           ].filter(Boolean),
         },
       },
