@@ -1,5 +1,10 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.11.2...v0.0.0) (2021-04-21)
 
+### Features
+
+- update packages ([716e866](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/716e866116b463cb8140ab5ae87c1af8bfd2b5de))
+- **react-scripts:** 将 file-loader 换为 url-loader ([bbf9188](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/bbf91885e47a37f6c0dbcb815bd15e85ec442519))
+
 ## [2.11.2](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.11.1...v2.11.2) (2021-04-21)
 
 ### Bug Fixes
