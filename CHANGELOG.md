@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.11.0...v0.0.0) (2021-04-21)
 
+### Features
+
+- **react-scripts:** migrate postcss plugin ([b49626f](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/b49626f84d4fd2ead53d02f3935c70de64931c01))
+
 # [2.11.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.10.10...v2.11.0) (2021-04-20)
 
 ### Features
