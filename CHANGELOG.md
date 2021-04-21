@@ -3,6 +3,7 @@
 ### Features
 
 - update packages ([f2d7335](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/f2d7335bdd9416db637e93c1e8cce43da4177460))
+- **react-script:** add file-loader ([044fc8d](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/044fc8d07dc31e9cfbab32640e779a30fc6703f8))
 
 ## [2.11.3](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.11.2...v2.11.3) (2021-04-21)
 
