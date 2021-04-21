@@ -19,7 +19,7 @@ const isStartServiceWorker = typeof process.env.SERVICE_WORKER === 'string' && p
 const allowEslint = typeof process.env.ALLOW_ESLINT === 'string' && process.env.ALLOW_ESLINT.toLocaleUpperCase() !== 'NO';
 const isAnalyze = typeof process.env.IS_ANALYZE === 'string' && process.env.IS_ANALYZE.toLocaleUpperCase() === 'YES';
 const useEsBuild = typeof process.env.USE_ESBUILD === 'string' && process.env.USE_ESBUILD.toLocaleUpperCase() === 'YES';
-const remUnit = typeof process.env.REM_UNIT === 'string' ? process.env.REM_UNIT >>> 0 : 0;
+const remUnit = typeof process.env.REM_UNIT === 'string' ? Number(process.env.REM_UNIT) : 0;
 
 if (sourceMap !== false && !sourceMap) {
   if (isProduction) {
