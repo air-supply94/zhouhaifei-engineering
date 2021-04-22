@@ -3,19 +3,51 @@ import React from 'react';
 import { Redirect, Router, Route, Switch } from 'react-router-dom';
 
 export interface MenuDataItem {
+
+  // react-router的exact
+  exact?: boolean;
+
+  // react-router的sensitive
+  sensitive?: boolean;
+
+  // react-router的strict
+  strict?: boolean;
+
+  // 标题
+  title?: string;
+
+  // 路径
+  path?: string;
+
+  // 子路由-支持n级
   children?: MenuDataItem[];
+
+  // 子组件-支持n级
+  component?: React.ReactType;
+
   hideChildrenInMenu?: boolean;
   hideInMenu?: boolean;
   icon?: string;
   locale?: string;
-  name?: string;
-  path?: string;
-  component?: React.ReactType;
   [key: string]: any;
 }
 
-const DefaultWrapper: React.FC<any> = function(props) {
-  return props.children;
+const DefaultWrapper: React.FC<{ route: MenuDataItem; }> = function({
+  route,
+  children,
+}) {
+  React.useEffect(() => {
+    if (route.title) {
+      document.title = route.title;
+    }
+  }, []);
+
+  return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
+    <>
+      {children}
+    </>
+  );
 };
 
 const WrapperRoute: React.FC<any> = ({
@@ -29,29 +61,31 @@ const WrapperRoute: React.FC<any> = ({
   sensitive,
   loading,
   ...rest
-}) => (
-  <Route
-    exact={exact}
-    location={location}
-    path={path}
-    render={(props) => {
-      const NewWrapper = wrapper ? wrapper : DefaultWrapper;
-      return (
-        <NewWrapper route={route}>
-          <React.Suspense fallback={loading}>
-            {render({
-              route,
-              ...props,
-              ...rest,
-            })}
-          </React.Suspense>
-        </NewWrapper>
-      );
-    }}
-    sensitive={sensitive}
-    strict={strict}
-  />
-);
+}) => {
+  return (
+    <Route
+      exact={exact}
+      location={location}
+      path={path}
+      render={(props) => {
+        const NewWrapper = wrapper ? wrapper : DefaultWrapper;
+        return (
+          <NewWrapper route={route}>
+            <React.Suspense fallback={loading}>
+              {render({
+                route,
+                ...props,
+                ...rest,
+              })}
+            </React.Suspense>
+          </NewWrapper>
+        );
+      }}
+      sensitive={sensitive}
+      strict={strict}
+    />
+  );
+};
 
 function renderRoutes(routes: MenuDataItem[], extraProps = {}, switchProps = {}, loading) {
   if (Array.isArray(routes) && routes.length) {
@@ -94,6 +128,7 @@ function renderRoutes(routes: MenuDataItem[], extraProps = {}, switchProps = {},
                 route={route}
                 sensitive={route.sensitive}
                 strict={route.strict}
+                title={route.title}
                 wrapper={route.wrapper}
               />
             );
