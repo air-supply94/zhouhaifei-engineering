@@ -1,5 +1,10 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.11.5...v0.0.0) (2021-04-26)
 
+### Features
+
+- update packages ([9b1747c](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/9b1747c447fae5eb098a0bc974cecf199f47bf32))
+- **react-scripts:** add esbuild-loader ([c51e600](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/c51e600bf684d54f3869b873bbfcadbba0ae04c4))
+
 ## [2.11.5](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.11.4...v2.11.5) (2021-04-26)
 
 ### Features

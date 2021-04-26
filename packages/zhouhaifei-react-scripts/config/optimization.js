@@ -10,7 +10,12 @@ module.exports = {
   minimize: utils.isProduction,
   minimizer: utils.isProduction ? [
     utils.useEsBuild
-      ? new ESBuildPlugin()
+      ? new ESBuildPlugin({
+        loader: 'tsx',
+        target: 'es2015',
+        jsxFactory: 'React.createElement',
+        jsxFragment: 'React.Fragment',
+      })
       : new TerserPlugin({
         terserOptions: {
           parse: {

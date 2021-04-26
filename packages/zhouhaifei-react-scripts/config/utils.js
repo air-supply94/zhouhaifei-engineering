@@ -19,6 +19,7 @@ const isStartServiceWorker = typeof process.env.SERVICE_WORKER === 'string' && p
 const allowEslint = typeof process.env.ALLOW_ESLINT === 'string' && process.env.ALLOW_ESLINT.toLocaleUpperCase() !== 'NO';
 const isAnalyze = typeof process.env.IS_ANALYZE === 'string' && process.env.IS_ANALYZE.toLocaleUpperCase() === 'YES';
 const useEsBuild = typeof process.env.USE_ESBUILD === 'string' && process.env.USE_ESBUILD.toLocaleUpperCase() === 'YES';
+const useEsBuildLoader = typeof process.env.USE_ESBUILD_LOADER === 'string' && process.env.USE_ESBUILD_LOADER.toLocaleUpperCase() === 'YES';
 const remUnit = typeof process.env.REM_UNIT === 'string' ? Number(process.env.REM_UNIT) : 0;
 
 if (sourceMap !== false && !sourceMap) {
@@ -64,6 +65,7 @@ const config = {
   isAnalyze,
   publicUrlOrPath,
   useEsBuild,
+  useEsBuildLoader,
   remUnit,
 
   // user

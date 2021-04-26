@@ -95,7 +95,10 @@ module.exports = function(utils) {
   - 是否开启打包大小分析
   - YES 开启
 - USE_ESBUILD
-  - 是否使用 EsBuild
+  - 是否使用 esbuild-webpack-plugin
+  - YES 开启
+- USE_ESBUILD_LOADER
+  - 是否使用 esbuild-loader
   - YES 开启
 - REM_UNIT
   - 移动端 rem 单位。一般为 75。
