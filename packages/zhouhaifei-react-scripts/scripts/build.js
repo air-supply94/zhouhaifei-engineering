@@ -26,8 +26,6 @@ const configFactory = require('../config/webpack.config');
 const { checkBrowsers } = require('../react-dev-utils/browsersHelper');
 const checkRequiredFiles = require('../react-dev-utils/checkRequiredFiles');
 const FileSizeReporter = require('../react-dev-utils/FileSizeReporter');
-const formatWebpackMessages = require('../react-dev-utils/formatWebpackMessages');
-const printBuildError = require('../react-dev-utils/printBuildError');
 const printHostingInstructions = require('../react-dev-utils/printHostingInstructions');
 
 const measureFileSizesBeforeBuild = FileSizeReporter.measureFileSizesBeforeBuild;
@@ -64,23 +62,8 @@ checkBrowsers(paths.appPath, isInteractive).then(() => {
     return build(previousFileSizes);
   })
   .then(
-    ({ stats, previousFileSizes, warnings }) => {
-      if (warnings.length) {
-        console.log(chalk.yellow('Compiled with warnings.\n'));
-        console.log(warnings.join('\n\n'));
-        console.log(
-          `\nSearch for the ${
-            chalk.underline(chalk.yellow('keywords'))
-          } to learn more about each warning.`
-        );
-        console.log(
-          `To ignore, add ${
-            chalk.cyan('// eslint-disable-next-line')
-          } to the line before.\n`
-        );
-      } else {
-        console.log(chalk.green('Compiled successfully.\n'));
-      }
+    ({ stats, previousFileSizes }) => {
+      console.log(chalk.green('Compiled successfully.\n'));
 
       console.log('File sizes after gzip:\n');
       printFileSizesAfterBuild(
@@ -103,27 +86,10 @@ checkBrowsers(paths.appPath, isInteractive).then(() => {
         buildFolder,
         useYarn
       );
-    },
-    (err) => {
-      const tscCompileOnError = process.env.TSC_COMPILE_ON_ERROR === 'true';
-      if (tscCompileOnError) {
-        console.log(
-          chalk.yellow(
-            'Compiled with the following type errors (you may want to check these before deploying your app):\n'
-          )
-        );
-        printBuildError(err);
-      } else {
-        console.log(chalk.red('Failed to compile.\n'));
-        printBuildError(err);
-        process.exit(1);
-      }
     }
   )
   .catch((err) => {
-    if (err && err.message) {
-      console.log(err.message);
-    }
+    console.log(chalk.red('Failed to compile.\n'));
     process.exit(1);
   });
 
@@ -148,63 +114,30 @@ function build(previousFileSizes) {
   const compiler = webpack(config);
   return new Promise((resolve, reject) => {
     compiler.run((err, stats) => {
-      let messages;
       if (err) {
-        if (!err.message) {
-          return reject(err);
+        console.error(err.stack || err);
+        if (err.details) {
+          console.error(err.details);
         }
 
-        let errMessage = err.message;
-
-        // Add additional information for postcss errors
-        if (Object.prototype.hasOwnProperty.call(err, 'postcssNode')) {
-          errMessage +=
-            `\nCompileError: Begins at CSS selector ${
-              err['postcssNode'].selector}`;
-        }
-
-        messages = formatWebpackMessages({
-          errors: [errMessage],
-          warnings: [],
-        });
-      } else {
-        messages = formatWebpackMessages(
-          stats.toJson({
-            all: false,
-            warnings: true,
-            errors: true,
-          })
-        );
+        reject(new Error(err));
+        return;
       }
-      if (messages.errors.length) {
-        /*
-         * Only keep the first error. Others are often indicative
-         * of the same problem, but confuse the reader with noise.
-         */
-        if (messages.errors.length > 1) {
-          messages.errors.length = 1;
-        }
-        return reject(new Error(messages.errors.join('\n\n')));
+
+      const info = stats.toJson();
+      if (stats.hasErrors()) {
+        console.error(info.errors);
+        reject(new Error(info.errors));
+        return;
       }
-      if (
-        process.env.CI &&
-        (typeof process.env.CI !== 'string' ||
-          process.env.CI.toLowerCase() !== 'false') &&
-        messages.warnings.length
-      ) {
-        console.log(
-          chalk.yellow(
-            '\nTreating warnings as errors because process.env.CI = true.\n' +
-            'Most CI servers set it automatically.\n'
-          )
-        );
-        return reject(new Error(messages.warnings.join('\n\n')));
+
+      if (stats.hasWarnings()) {
+        console.warn(info.warnings);
       }
 
       return resolve({
         stats,
         previousFileSizes,
-        warnings: messages.warnings,
       });
     });
   });
