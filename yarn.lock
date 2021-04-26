@@ -6791,12 +6791,29 @@ es6-promisify@^5.0.0:
   dependencies:
     es6-promise "^4.0.3"
 
+esbuild-loader@^2.12.0:
+  version "2.12.0"
+  resolved "https://registry.npm.taobao.org/esbuild-loader/download/esbuild-loader-2.12.0.tgz#ebdfd0e1131ba0d2166d3cb6f0592cabbb02a602"
+  integrity sha1-69/Q4RMboNIWbTy28Fksq7sCpgI=
+  dependencies:
+    esbuild "^0.10.2"
+    joycon "^3.0.1"
+    json5 "^2.2.0"
+    loader-utils "^2.0.0"
+    type-fest "^1.0.1"
+    webpack-sources "^2.2.0"
+
 esbuild-webpack-plugin@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/esbuild-webpack-plugin/download/esbuild-webpack-plugin-1.1.0.tgz#dcf0971284bf3c174fdb27832209a59f2079075b"
   integrity sha1-3PCXEoS/PBdP2yeDIgmlnyB5B1s=
   dependencies:
     esbuild "^0.7.15"
+
+esbuild@^0.10.2:
+  version "0.10.2"
+  resolved "https://registry.nlark.com/esbuild/download/esbuild-0.10.2.tgz#caa65a8f3096d547d89159918039df6c5c6c90be"
+  integrity sha1-yqZajzCW1UfYkVmRgDnfbFxskL4=
 
 esbuild@^0.7.15:
   version "0.7.22"
@@ -9812,6 +9829,11 @@ jest@26.6.3:
     import-local "^3.0.2"
     jest-cli "^26.6.3"
 
+joycon@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.npm.taobao.org/joycon/download/joycon-3.0.1.tgz#9074c9b08ccf37a6726ff74a18485f85efcaddaf"
+  integrity sha1-kHTJsIzPN6Zyb/dKGEhfhe/K3a8=
+
 js-base64@^2.1.8:
   version "2.6.4"
   resolved "https://registry.npm.taobao.org/js-base64/download/js-base64-2.6.4.tgz?cache=0&sync_timestamp=1604450326544&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fjs-base64%2Fdownload%2Fjs-base64-2.6.4.tgz#f4e686c5de1ea1f867dbcad3d46d969428df98c4"
@@ -9982,6 +10004,13 @@ json5@^1.0.1:
   integrity sha1-d5+wAYYE+oVOrL9iUhgNg1Q+Pb4=
   dependencies:
     minimist "^1.2.0"
+
+json5@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.nlark.com/json5/download/json5-2.2.0.tgz#2dfefe720c6ba525d9ebd909950f0515316c89a3"
+  integrity sha1-Lf7+cgxrpSXZ69kJlQ8FFTFsiaM=
+  dependencies:
+    minimist "^1.2.5"
 
 jsonfile@^2.0.0:
   version "2.4.0"
@@ -15990,6 +16019,11 @@ type-fest@^0.8.1:
   resolved "https://registry.npm.taobao.org/type-fest/download/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha1-CeJJ696FHTseSNJ8EFREZn8XuD0=
 
+type-fest@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.nlark.com/type-fest/download/type-fest-1.0.2.tgz?cache=0&sync_timestamp=1618847153984&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftype-fest%2Fdownload%2Ftype-fest-1.0.2.tgz#3f9c39982859f385c77c38b7e5f1432b8a3661c6"
+  integrity sha1-P5w5mChZ84XHfDi35fFDK4o2YcY=
+
 type-is@~1.6.17, type-is@~1.6.18:
   version "1.6.18"
   resolved "https://registry.npm.taobao.org/type-is/download/type-is-1.6.18.tgz#4e552cd05df09467dcbc4ef739de89f2cf37c131"
@@ -17243,10 +17277,10 @@ zhouhaifei-code-style@2.10.7:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@2.11.5:
-  version "2.11.5"
-  resolved "https://registry.nlark.com/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.11.5.tgz#c01b0b6c3c941fdc63547dbc4c8547780beef559"
-  integrity sha1-wBsLbDyUH9xjVH28TIVHeAvu9Vk=
+zhouhaifei-react-scripts@2.11.6:
+  version "2.11.6"
+  resolved "https://registry.nlark.com/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.11.6.tgz#f7d2f6aa2b6f877f68690ef6ec9020688d07fcdd"
+  integrity sha1-99L2qitvh39oaQ727JAgaI0H/N0=
   dependencies:
     "@babel/core" "7.13.8"
     address "^1.1.2"
@@ -17265,6 +17299,7 @@ zhouhaifei-react-scripts@2.11.5:
     detect-port-alt "^1.1.6"
     dotenv "8.2.0"
     dotenv-expand "5.1.0"
+    esbuild-loader "^2.12.0"
     esbuild-webpack-plugin "^1.1.0"
     escape-string-regexp "^4.0.0"
     eslint "7.23.0"
