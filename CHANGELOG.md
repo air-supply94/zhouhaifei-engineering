@@ -4,7 +4,7 @@
 
 - update packages ([b06b46f](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/b06b46fbb8238c601423985f07c9a48b8f654268))
 - **react-scripts:** remove formatMessage ([b141103](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/b1411030ad337bbd9c9a3387bdec15d12e5e4816))
-- **react-scripts:** update build config ([730dd11](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/730dd11dd7b2a6c633e352225e32b2e2675750f0))
+- **react-scripts:** update build config ([4b71ebe](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/4b71ebe9f9d764ca6e6943a5b314f09c20d5597b))
 - **renderRoutes:** add introduce ([76d44db](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/76d44db3a675fc10b42d3522fce3b9d66dac7fb1))
 
 ## [2.11.4](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.11.3...v2.11.4) (2021-04-21)
