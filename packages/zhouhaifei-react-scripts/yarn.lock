@@ -2818,29 +2818,12 @@ es-module-lexer@^0.4.0:
   resolved "https://registry.npm.taobao.org/es-module-lexer/download/es-module-lexer-0.4.1.tgz?cache=0&sync_timestamp=1614787418359&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fes-module-lexer%2Fdownload%2Fes-module-lexer-0.4.1.tgz#dda8c6a14d8f340a24e34331e0fab0cb50438e0e"
   integrity sha1-3ajGoU2PNAok40Mx4Pqwy1BDjg4=
 
-esbuild-loader@^2.12.0:
-  version "2.12.0"
-  resolved "https://registry.npm.taobao.org/esbuild-loader/download/esbuild-loader-2.12.0.tgz#ebdfd0e1131ba0d2166d3cb6f0592cabbb02a602"
-  integrity sha1-69/Q4RMboNIWbTy28Fksq7sCpgI=
-  dependencies:
-    esbuild "^0.10.2"
-    joycon "^3.0.1"
-    json5 "^2.2.0"
-    loader-utils "^2.0.0"
-    type-fest "^1.0.1"
-    webpack-sources "^2.2.0"
-
 esbuild-webpack-plugin@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/esbuild-webpack-plugin/download/esbuild-webpack-plugin-1.1.0.tgz#dcf0971284bf3c174fdb27832209a59f2079075b"
   integrity sha1-3PCXEoS/PBdP2yeDIgmlnyB5B1s=
   dependencies:
     esbuild "^0.7.15"
-
-esbuild@^0.10.2:
-  version "0.10.2"
-  resolved "https://registry.nlark.com/esbuild/download/esbuild-0.10.2.tgz#caa65a8f3096d547d89159918039df6c5c6c90be"
-  integrity sha1-yqZajzCW1UfYkVmRgDnfbFxskL4=
 
 esbuild@^0.7.15:
   version "0.7.22"
@@ -4315,11 +4298,6 @@ jest-worker@^26.2.1, jest-worker@^26.3.0, jest-worker@^26.6.2:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
 
-joycon@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.npm.taobao.org/joycon/download/joycon-3.0.1.tgz#9074c9b08ccf37a6726ff74a18485f85efcaddaf"
-  integrity sha1-kHTJsIzPN6Zyb/dKGEhfhe/K3a8=
-
 js-base64@^2.1.8:
   version "2.6.4"
   resolved "https://registry.npm.taobao.org/js-base64/download/js-base64-2.6.4.tgz?cache=0&sync_timestamp=1604450326544&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fjs-base64%2Fdownload%2Fjs-base64-2.6.4.tgz#f4e686c5de1ea1f867dbcad3d46d969428df98c4"
@@ -4400,7 +4378,7 @@ json5@^1.0.1:
   dependencies:
     minimist "^1.2.0"
 
-json5@^2.1.2, json5@^2.2.0:
+json5@^2.1.2:
   version "2.2.0"
   resolved "https://registry.npm.taobao.org/json5/download/json5-2.2.0.tgz?cache=0&sync_timestamp=1612146875530&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fjson5%2Fdownload%2Fjson5-2.2.0.tgz#2dfefe720c6ba525d9ebd909950f0515316c89a3"
   integrity sha1-Lf7+cgxrpSXZ69kJlQ8FFTFsiaM=
@@ -7477,11 +7455,6 @@ type-fest@^0.8.1:
   version "0.8.1"
   resolved "https://registry.npm.taobao.org/type-fest/download/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha1-CeJJ696FHTseSNJ8EFREZn8XuD0=
-
-type-fest@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.npm.taobao.org/type-fest/download/type-fest-1.0.2.tgz?cache=0&sync_timestamp=1618336110445&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftype-fest%2Fdownload%2Ftype-fest-1.0.2.tgz#3f9c39982859f385c77c38b7e5f1432b8a3661c6"
-  integrity sha1-P5w5mChZ84XHfDi35fFDK4o2YcY=
 
 type-is@~1.6.17, type-is@~1.6.18:
   version "1.6.18"

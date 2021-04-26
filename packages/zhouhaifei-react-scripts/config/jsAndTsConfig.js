@@ -14,17 +14,7 @@ module.exports = [
       ...utils.babel.include,
     ],
     use: [
-      utils.useEsBuildLoader && {
-        loader: require.resolve('esbuild-loader'),
-        options: {
-          loader: 'tsx',
-          target: 'es2015',
-          jsxFactory: 'React.createElement',
-          jsxFragment: 'React.Fragment',
-        },
-      },
-
-      !utils.useEsBuildLoader && {
+      {
         loader: require.resolve('thread-loader'),
         options: {
           /*
@@ -64,7 +54,7 @@ module.exports = [
           name: 'my-pool',
         },
       },
-      !utils.useEsBuildLoader && {
+      {
         loader: require.resolve('babel-loader'),
         options: {
           sourceType: 'unambiguous', // 自动处理es和js模块
