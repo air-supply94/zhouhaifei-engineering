@@ -17243,10 +17243,10 @@ zhouhaifei-code-style@2.10.7:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-react-scripts@2.11.4:
-  version "2.11.4"
-  resolved "https://registry.nlark.com/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.11.4.tgz#58993a502a43771ce5412b02a8c96d10e7f03742"
-  integrity sha1-WJk6UCpDdxzlQSsCqMltEOfwN0I=
+zhouhaifei-react-scripts@2.11.5:
+  version "2.11.5"
+  resolved "https://registry.nlark.com/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.11.5.tgz#c01b0b6c3c941fdc63547dbc4c8547780beef559"
+  integrity sha1-wBsLbDyUH9xjVH28TIVHeAvu9Vk=
   dependencies:
     "@babel/core" "7.13.8"
     address "^1.1.2"
