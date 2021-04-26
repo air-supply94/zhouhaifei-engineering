@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.11.8...v0.0.0) (2021-04-26)
 
+### Features
+
+- **react-scripts/style:** remove esbuild-loader ([82787a1](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/82787a182fb3445cf421e4db8a1f92651f3583a5))
+
 ## [2.11.8](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.11.7...v2.11.8) (2021-04-26)
 
 ### Features
