@@ -2,7 +2,7 @@
 
 ### Features
 
-- update packages ([a9178cb](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/a9178cb6aa209e627fb9026e0cf2371d8a2723df))
+- **react-scripts/style:** add esbuild-loader ([06cf52c](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/06cf52ce7e6bc1c068dbac99beb3652cc4024386))
 
 ## [2.11.6](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.11.5...v2.11.6) (2021-04-26)
 
