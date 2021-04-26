@@ -26,6 +26,11 @@ const utils = require('./utils');
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 module.exports = function() {
   const initConfig = {
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: false,
+      ignored: /node_modules/,
+    },
     cache: utils.isProduction ? {
       type: 'filesystem',
       cacheDirectory: path.resolve(paths.appPath, '.cache'),
