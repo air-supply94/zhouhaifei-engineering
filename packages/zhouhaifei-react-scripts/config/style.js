@@ -17,7 +17,7 @@ function getStyleLoaders(cssOptions, preProcessor) {
       },
     },
     utils.isDevelopment && utils.useEsBuildLoader && {
-      loader: 'esbuild-loader',
+      loader: require.resolve('esbuild-loader'),
       options: {
         loader: 'css',
         minify: false,
