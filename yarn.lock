@@ -916,7 +916,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.3"
 
-"@babel/plugin-syntax-import-meta@^7.10.4", "@babel/plugin-syntax-import-meta@^7.8.3":
+"@babel/plugin-syntax-import-meta@^7.8.3":
   version "7.10.4"
   resolved "https://registry.npm.taobao.org/@babel/plugin-syntax-import-meta/download/@babel/plugin-syntax-import-meta-7.10.4.tgz#ee601348c370fa334d2207be158777496521fd51"
   integrity sha1-7mATSMNw+jNNIge+FYd3SWUh/VE=
@@ -17202,20 +17202,14 @@ yocto-queue@^0.1.0:
   resolved "https://registry.npm.taobao.org/yocto-queue/download/yocto-queue-0.1.0.tgz?cache=0&sync_timestamp=1606288334406&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fyocto-queue%2Fdownload%2Fyocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=
 
-zhouhaifei-babel-config@2.10.9:
-  version "2.10.9"
-  resolved "https://registry.nlark.com/zhouhaifei-babel-config/download/zhouhaifei-babel-config-2.10.9.tgz#5a1bae377d96fc07833579f1db501f864de0cd0a"
-  integrity sha1-WhuuN32W/AeDNXnx21Afhk3gzQo=
+zhouhaifei-babel-config@2.12.1:
+  version "2.12.1"
+  resolved "https://registry.nlark.com/zhouhaifei-babel-config/download/zhouhaifei-babel-config-2.12.1.tgz#cc0880bf21d14a9ee4aec49bfa9c391e471579ac"
+  integrity sha1-zAiAvyHRSp7krsSb+pw5HkcVeaw=
   dependencies:
-    "@babel/plugin-proposal-class-properties" "^7.12.13"
     "@babel/plugin-proposal-decorators" "^7.12.13"
     "@babel/plugin-proposal-export-default-from" "^7.12.13"
-    "@babel/plugin-proposal-export-namespace-from" "^7.12.13"
-    "@babel/plugin-proposal-json-strings" "^7.12.13"
-    "@babel/plugin-proposal-object-rest-spread" "^7.12.13"
-    "@babel/plugin-proposal-optional-chaining" "^7.12.17"
     "@babel/plugin-syntax-dynamic-import" "^7.8.3"
-    "@babel/plugin-syntax-import-meta" "^7.10.4"
     "@babel/plugin-transform-runtime" "^7.12.17"
     "@babel/preset-env" "^7.12.17"
     "@babel/preset-react" "^7.12.13"
