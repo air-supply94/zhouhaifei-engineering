@@ -3,6 +3,7 @@
 ### Features
 
 - update packages ([ea15ef4](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/ea15ef4fd43641570ccd845fb069aafe56652d12))
+- **babel-config:** remove plugin whick includeed in preset-env ([40e2d75](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/40e2d7579532fcfd4e4e03d222ad9e3bb7404381))
 
 # [2.12.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.11.8...v2.12.0) (2021-04-26)
 
