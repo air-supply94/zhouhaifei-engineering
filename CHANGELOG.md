@@ -3,6 +3,7 @@
 ### Features
 
 - update packages ([359d311](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/359d31178233b35027732ae4f66534a13d5fb006))
+- **react-scripts:** remove ignore plugin ([420d887](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/420d887d0c8367a43d346ff25918e149b9dc5cc3))
 
 ## [2.12.1](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.12.0...v2.12.1) (2021-04-30)
 
