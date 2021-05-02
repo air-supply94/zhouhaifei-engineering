@@ -101,3 +101,6 @@ module.exports = function(utils) {
   - 移动端 rem 单位。一般为 75。
   - 配合 amfe-flexible 更佳
   - 有单位则开启 postcss-px2rem。否则不开启
+- IS_COMPRESS
+  - 是否开启 gzip 和 br 压缩
+  - YES 开启

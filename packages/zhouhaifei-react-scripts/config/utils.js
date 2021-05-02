@@ -20,6 +20,7 @@ const allowEslint = typeof process.env.ALLOW_ESLINT === 'string' && process.env.
 const isAnalyze = typeof process.env.IS_ANALYZE === 'string' && process.env.IS_ANALYZE.toLocaleUpperCase() === 'YES';
 const useEsBuild = typeof process.env.USE_ESBUILD === 'string' && process.env.USE_ESBUILD.toLocaleUpperCase() === 'YES';
 const remUnit = typeof process.env.REM_UNIT === 'string' ? Number(process.env.REM_UNIT) : 0;
+const isCompress = typeof process.env.IS_COMPRESS === 'string' && process.env.IS_COMPRESS.toLocaleUpperCase() === 'YES';
 
 if (sourceMap !== false && !sourceMap) {
   if (isProduction) {
@@ -65,6 +66,7 @@ const config = {
   publicUrlOrPath,
   useEsBuild,
   remUnit,
+  isCompress,
 
   // user
   less: {
