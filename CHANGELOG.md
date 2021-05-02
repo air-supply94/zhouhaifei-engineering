@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.12.2...v0.0.0) (2021-05-02)
 
+### Features
+
+- **react-scripts:** add config to compress ([3e6275f](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/3e6275f5c2dff68725321fafdd2826f184ac0963))
+
 ## [2.12.2](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.12.1...v2.12.2) (2021-05-02)
 
 ### Features
