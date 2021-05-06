@@ -2,7 +2,7 @@
 
 ### Features
 
-- **react-config:** fix postcss version(外层写死,暂时没找到好方法) ([b3f9f68](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/b3f9f686bfc4694eb5814717b0da89acafef2fde))
+- **react-config:** fix postcss version(外层写死,暂时没找到好方法) ([aacd669](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/aacd66927b86f258f600a4c5299a63c09794a859))
 
 # [2.13.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.12.4...v2.13.0) (2021-05-06)
 
