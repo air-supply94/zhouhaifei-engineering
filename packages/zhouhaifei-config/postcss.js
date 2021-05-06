@@ -3,7 +3,7 @@
 const postcss = require('postcss');
 const Px2rem = require('px2rem');
 
-module.exports = (options) => {
+function px2rem(options) {
   return {
     postcssPlugin: 'postcss-px2rem',
     Once: (css, { result }) => {
@@ -13,5 +13,23 @@ module.exports = (options) => {
       const newCssObj = postcss.parse(newCssText);
       result.root = newCssObj;
     },
+  };
+}
+
+module.exports = function(remUnit) {
+  return {
+    ident: 'postcss',
+    plugins: [
+      require('postcss-import'),
+      require('postcss-preset-env')({
+        stage: 0,
+        autoprefixer: {
+          remove: false,
+          grid: true,
+        },
+      }),
+      require('postcss-flexbugs-fixes'),
+      remUnit ? px2rem({ remUnit }) : false,
+    ].filter(Boolean),
   };
 };

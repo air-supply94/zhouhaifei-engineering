@@ -1,6 +1,5 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const px2rem = require('../react-dev-utils/postcss-px2rem');
 const paths = require('./paths');
 const utils = require('./utils');
 
@@ -16,26 +15,7 @@ function getStyleLoaders(cssOptions, preProcessor) {
         ...cssOptions,
       },
     },
-    {
-      loader: require.resolve('postcss-loader'),
-      options: {
-        postcssOptions: {
-          ident: 'postcss',
-          plugins: [
-            require('postcss-import'),
-            require('postcss-preset-env')({
-              stage: 0,
-              autoprefixer: {
-                remove: false,
-                grid: true,
-              },
-            }),
-            require('postcss-flexbugs-fixes'),
-            utils.remUnit ? px2rem({ remUnit: utils.remUnit }) : false,
-          ].filter(Boolean),
-        },
-      },
-    },
+    { loader: require.resolve('postcss-loader') },
   ].filter(Boolean);
 
   if (preProcessor) {

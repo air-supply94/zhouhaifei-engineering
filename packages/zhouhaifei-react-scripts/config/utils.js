@@ -19,7 +19,6 @@ const isStartServiceWorker = typeof process.env.SERVICE_WORKER === 'string' && p
 const allowEslint = typeof process.env.ALLOW_ESLINT === 'string' && process.env.ALLOW_ESLINT.toLocaleUpperCase() !== 'NO';
 const isAnalyze = typeof process.env.IS_ANALYZE === 'string' && process.env.IS_ANALYZE.toLocaleUpperCase() === 'YES';
 const useEsBuild = typeof process.env.USE_ESBUILD === 'string' && process.env.USE_ESBUILD.toLocaleUpperCase() === 'YES';
-const remUnit = typeof process.env.REM_UNIT === 'string' ? Number(process.env.REM_UNIT) : 0;
 const isCompress = typeof process.env.IS_COMPRESS === 'string' && process.env.IS_COMPRESS.toLocaleUpperCase() === 'YES';
 
 if (sourceMap !== false && !sourceMap) {
@@ -65,7 +64,6 @@ const config = {
   isAnalyze,
   publicUrlOrPath,
   useEsBuild,
-  remUnit,
   isCompress,
 
   // user

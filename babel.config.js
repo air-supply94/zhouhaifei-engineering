@@ -1,1 +1,1 @@
-module.exports = require('./packages/zhouhaifei-babel-config')(true);
+module.exports = require('./packages/zhouhaifei-config').babel(true);
