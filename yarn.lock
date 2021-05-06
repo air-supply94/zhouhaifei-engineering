@@ -298,7 +298,7 @@
     "@babel/helper-replace-supers" "^7.12.13"
     "@babel/helper-split-export-declaration" "^7.12.13"
 
-"@babel/helper-create-class-features-plugin@^7.13.0", "@babel/helper-create-class-features-plugin@^7.14.0":
+"@babel/helper-create-class-features-plugin@^7.13.0", "@babel/helper-create-class-features-plugin@^7.13.11", "@babel/helper-create-class-features-plugin@^7.14.0":
   version "7.14.1"
   resolved "https://registry.nlark.com/@babel/helper-create-class-features-plugin/download/@babel/helper-create-class-features-plugin-7.14.1.tgz?cache=0&sync_timestamp=1620093429594&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fhelper-create-class-features-plugin%2Fdownload%2F%40babel%2Fhelper-create-class-features-plugin-7.14.1.tgz#1fe11b376f3c41650ad9fedc665b0068722ea76c"
   integrity sha1-H+EbN288QWUK2f7cZlsAaHIup2w=
@@ -771,6 +771,15 @@
   dependencies:
     "@babel/helper-create-class-features-plugin" "^7.12.13"
     "@babel/helper-plugin-utils" "^7.12.13"
+    "@babel/plugin-syntax-decorators" "^7.12.13"
+
+"@babel/plugin-proposal-decorators@^7.13.15":
+  version "7.13.15"
+  resolved "https://registry.npm.taobao.org/@babel/plugin-proposal-decorators/download/@babel/plugin-proposal-decorators-7.13.15.tgz?cache=0&sync_timestamp=1617898190000&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fplugin-proposal-decorators%2Fdownload%2F%40babel%2Fplugin-proposal-decorators-7.13.15.tgz#e91ccfef2dc24dd5bd5dcc9fc9e2557c684ecfb8"
+  integrity sha1-6RzP7y3CTdW9XcyfyeJVfGhOz7g=
+  dependencies:
+    "@babel/helper-create-class-features-plugin" "^7.13.11"
+    "@babel/helper-plugin-utils" "^7.13.0"
     "@babel/plugin-syntax-decorators" "^7.12.13"
 
 "@babel/plugin-proposal-dynamic-import@^7.12.17":
@@ -1411,7 +1420,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.12.13"
 
-"@babel/plugin-transform-react-jsx-development@^7.12.12":
+"@babel/plugin-transform-react-jsx-development@^7.12.12", "@babel/plugin-transform-react-jsx-development@^7.12.17":
   version "7.12.17"
   resolved "https://registry.npm.taobao.org/@babel/plugin-transform-react-jsx-development/download/@babel/plugin-transform-react-jsx-development-7.12.17.tgz#f510c0fa7cd7234153539f9a362ced41a5ca1447"
   integrity sha1-9RDA+nzXI0FTU5+aNiztQaXKFEc=
@@ -1428,6 +1437,17 @@
     "@babel/helper-plugin-utils" "^7.12.13"
     "@babel/plugin-syntax-jsx" "^7.12.13"
     "@babel/types" "^7.12.17"
+
+"@babel/plugin-transform-react-jsx@^7.13.12":
+  version "7.13.12"
+  resolved "https://registry.npm.taobao.org/@babel/plugin-transform-react-jsx/download/@babel/plugin-transform-react-jsx-7.13.12.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fplugin-transform-react-jsx%2Fdownload%2F%40babel%2Fplugin-transform-react-jsx-7.13.12.tgz#1df5dfaf0f4b784b43e96da6f28d630e775f68b3"
+  integrity sha1-HfXfrw9LeEtD6W2m8o1jDndfaLM=
+  dependencies:
+    "@babel/helper-annotate-as-pure" "^7.12.13"
+    "@babel/helper-module-imports" "^7.13.12"
+    "@babel/helper-plugin-utils" "^7.13.0"
+    "@babel/plugin-syntax-jsx" "^7.12.13"
+    "@babel/types" "^7.13.12"
 
 "@babel/plugin-transform-react-pure-annotations@^7.12.1":
   version "7.12.1"
@@ -1466,6 +1486,18 @@
     "@babel/helper-module-imports" "^7.12.13"
     "@babel/helper-plugin-utils" "^7.12.13"
     semver "^5.5.1"
+
+"@babel/plugin-transform-runtime@^7.13.15":
+  version "7.13.15"
+  resolved "https://registry.npm.taobao.org/@babel/plugin-transform-runtime/download/@babel/plugin-transform-runtime-7.13.15.tgz?cache=0&sync_timestamp=1617897647194&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fplugin-transform-runtime%2Fdownload%2F%40babel%2Fplugin-transform-runtime-7.13.15.tgz#2eddf585dd066b84102517e10a577f24f76a9cd7"
+  integrity sha1-Lt31hd0Ga4QQJRfhCld/JPdqnNc=
+  dependencies:
+    "@babel/helper-module-imports" "^7.13.12"
+    "@babel/helper-plugin-utils" "^7.13.0"
+    babel-plugin-polyfill-corejs2 "^0.2.0"
+    babel-plugin-polyfill-corejs3 "^0.2.0"
+    babel-plugin-polyfill-regenerator "^0.2.0"
+    semver "^6.3.0"
 
 "@babel/plugin-transform-shorthand-properties@^7.12.13":
   version "7.12.13"
@@ -1527,6 +1559,15 @@
     "@babel/helper-plugin-utils" "^7.12.13"
     "@babel/plugin-syntax-typescript" "^7.12.13"
 
+"@babel/plugin-transform-typescript@^7.13.0":
+  version "7.13.0"
+  resolved "https://registry.npm.taobao.org/@babel/plugin-transform-typescript/download/@babel/plugin-transform-typescript-7.13.0.tgz#4a498e1f3600342d2a9e61f60131018f55774853"
+  integrity sha1-SkmOHzYANC0qnmH2ATEBj1V3SFM=
+  dependencies:
+    "@babel/helper-create-class-features-plugin" "^7.13.0"
+    "@babel/helper-plugin-utils" "^7.13.0"
+    "@babel/plugin-syntax-typescript" "^7.12.13"
+
 "@babel/plugin-transform-unicode-escapes@^7.12.13":
   version "7.12.13"
   resolved "https://registry.npm.taobao.org/@babel/plugin-transform-unicode-escapes/download/@babel/plugin-transform-unicode-escapes-7.12.13.tgz#840ced3b816d3b5127dd1d12dcedc5dead1a5e74"
@@ -1542,7 +1583,7 @@
     "@babel/helper-create-regexp-features-plugin" "^7.12.13"
     "@babel/helper-plugin-utils" "^7.12.13"
 
-"@babel/preset-env@^7.11.0":
+"@babel/preset-env@^7.11.0", "@babel/preset-env@^7.14.1":
   version "7.14.1"
   resolved "https://registry.nlark.com/@babel/preset-env/download/@babel/preset-env-7.14.1.tgz?cache=0&sync_timestamp=1620093780272&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fpreset-env%2Fdownload%2F%40babel%2Fpreset-env-7.14.1.tgz#b55914e2e68885ea03f69600b2d3537e54574a93"
   integrity sha1-tVkU4uaIheoD9pYAstNTflRXSpM=
@@ -1715,6 +1756,18 @@
     "@babel/plugin-transform-react-jsx-development" "^7.12.12"
     "@babel/plugin-transform-react-pure-annotations" "^7.12.1"
 
+"@babel/preset-react@^7.13.13":
+  version "7.13.13"
+  resolved "https://registry.npm.taobao.org/@babel/preset-react/download/@babel/preset-react-7.13.13.tgz#fa6895a96c50763fe693f9148568458d5a839761"
+  integrity sha1-+miVqWxQdj/mk/kUhWhFjVqDl2E=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.13.0"
+    "@babel/helper-validator-option" "^7.12.17"
+    "@babel/plugin-transform-react-display-name" "^7.12.13"
+    "@babel/plugin-transform-react-jsx" "^7.13.12"
+    "@babel/plugin-transform-react-jsx-development" "^7.12.17"
+    "@babel/plugin-transform-react-pure-annotations" "^7.12.1"
+
 "@babel/preset-typescript@^7.12.17":
   version "7.12.17"
   resolved "https://registry.npm.taobao.org/@babel/preset-typescript/download/@babel/preset-typescript-7.12.17.tgz?cache=0&sync_timestamp=1613661308818&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fpreset-typescript%2Fdownload%2F%40babel%2Fpreset-typescript-7.12.17.tgz#8ecf04618956c268359dd9feab775dc14a666eb5"
@@ -1723,6 +1776,15 @@
     "@babel/helper-plugin-utils" "^7.12.13"
     "@babel/helper-validator-option" "^7.12.17"
     "@babel/plugin-transform-typescript" "^7.12.17"
+
+"@babel/preset-typescript@^7.13.0":
+  version "7.13.0"
+  resolved "https://registry.npm.taobao.org/@babel/preset-typescript/download/@babel/preset-typescript-7.13.0.tgz#ab107e5f050609d806fbb039bec553b33462c60a"
+  integrity sha1-qxB+XwUGCdgG+7A5vsVTszRixgo=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.13.0"
+    "@babel/helper-validator-option" "^7.12.17"
+    "@babel/plugin-transform-typescript" "^7.13.0"
 
 "@babel/runtime-corejs3@^7.10.2":
   version "7.12.5"
@@ -12464,10 +12526,10 @@ postcss-image-set-function@^3.0.1:
     postcss "^7.0.2"
     postcss-values-parser "^2.0.0"
 
-postcss-import@14.0.0:
-  version "14.0.0"
-  resolved "https://registry.npm.taobao.org/postcss-import/download/postcss-import-14.0.0.tgz?cache=0&sync_timestamp=1617231908649&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-import%2Fdownload%2Fpostcss-import-14.0.0.tgz#3ed1dadac5a16650bde3f4cdea6633b9c3c78296"
-  integrity sha1-PtHa2sWhZlC94/TN6mYzucPHgpY=
+postcss-import@14.0.1:
+  version "14.0.1"
+  resolved "https://registry.npm.taobao.org/postcss-import/download/postcss-import-14.0.1.tgz?cache=0&sync_timestamp=1617231908649&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-import%2Fdownload%2Fpostcss-import-14.0.1.tgz#6a3f8f2ce74a95fc7c72ecfe3eddfa0e9124e677"
+  integrity sha1-aj+PLOdKlfx8cuz+Pt36DpEk5nc=
   dependencies:
     postcss-value-parser "^4.0.0"
     read-cache "^1.0.0"
@@ -17400,29 +17462,29 @@ zhouhaifei-code-style@2.10.7:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-config@2.13.0:
-  version "2.13.0"
-  resolved "https://registry.nlark.com/zhouhaifei-config/download/zhouhaifei-config-2.13.0.tgz#abf9560b6cf3d48990af952a2ac40fe351b02943"
-  integrity sha1-q/lWC2zz1ImQr5UqKsQP41GwKUM=
+zhouhaifei-config@2.13.1:
+  version "2.13.1"
+  resolved "https://registry.nlark.com/zhouhaifei-config/download/zhouhaifei-config-2.13.1.tgz#60dd59ed25de5461a2c2587fbfe41a6ba5b5e3f9"
+  integrity sha1-YN1Z7SXeVGGiwlh/v+Qaa6W14/k=
   dependencies:
-    "@babel/plugin-proposal-decorators" "^7.12.13"
+    "@babel/plugin-proposal-decorators" "^7.13.15"
     "@babel/plugin-proposal-export-default-from" "^7.12.13"
     "@babel/plugin-syntax-dynamic-import" "^7.8.3"
-    "@babel/plugin-transform-runtime" "^7.12.17"
-    "@babel/preset-env" "^7.12.17"
-    "@babel/preset-react" "^7.12.13"
-    "@babel/preset-typescript" "^7.12.17"
+    "@babel/plugin-transform-runtime" "^7.13.15"
+    "@babel/preset-env" "^7.14.1"
+    "@babel/preset-react" "^7.13.13"
+    "@babel/preset-typescript" "^7.13.0"
     babel-plugin-import "^1.13.3"
     postcss "8.2.7"
     postcss-flexbugs-fixes "5.0.2"
-    postcss-import "14.0.0"
+    postcss-import "14.0.1"
     postcss-preset-env "6.7.0"
     px2rem "0.5.0"
 
-zhouhaifei-react-scripts@2.13.0:
-  version "2.13.0"
-  resolved "https://registry.nlark.com/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.13.0.tgz#87ee167aa83fa999d29e0f19c036f3a9e77f41c6"
-  integrity sha1-h+4Weqg/qZnSng8ZwDbzqed/QcY=
+zhouhaifei-react-scripts@2.13.1:
+  version "2.13.1"
+  resolved "https://registry.nlark.com/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.13.1.tgz#e31e56e45800b4ac4dc4904cabf31dd2f083590c"
+  integrity sha1-4x5W5FgAtKxNxJBMq/Md0vCDWQw=
   dependencies:
     "@babel/core" "7.13.8"
     address "^1.1.2"
@@ -17462,6 +17524,7 @@ zhouhaifei-react-scripts@2.13.0:
     node-sass "^5.0.0"
     open "^8.0.2"
     pkg-up "^3.1.0"
+    postcss "8.2.7"
     postcss-loader "5.2.0"
     preload-webpack-plugin "^3.0.0-beta.4"
     react-error-overlay "^6.0.9"
