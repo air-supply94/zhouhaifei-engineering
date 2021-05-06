@@ -3,6 +3,7 @@
 ### Features
 
 - update packages ([f30b727](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/f30b727e349646e3f41b250febca8f0c2563f033))
+- **react-scripts:** migrate eslint-loader to eslint-webpack-plugin ([295eb5e](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/295eb5e573f4c40d3838101a7bdec1ad744090f3))
 
 ## [2.12.3](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.12.2...v2.12.3) (2021-05-02)
 
