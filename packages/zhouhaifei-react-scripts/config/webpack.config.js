@@ -6,6 +6,7 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const compressionPlugin = require('compression-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 const copyWebpackPlugin = require('copy-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -68,7 +69,6 @@ module.exports = function() {
       strictExportPresence: true,
       rules: [
         { parser: { requireEnsure: false }},
-        utils.allowEslint && require('./eslintConfig'),
         {
           oneOf: [
             ...require('./jsAndTsConfig'),
@@ -80,6 +80,20 @@ module.exports = function() {
     },
     plugins: [
       new webpack.DefinePlugin(getClientEnvironment(utils.publicUrlOrPath).stringified),
+
+      // eslint
+      utils.allowEslint && new ESLintPlugin({
+        fix: false,
+        formatter: 'stylish',
+        quiet: true,
+        eslintPath: require.resolve('eslint'),
+        extensions: [
+          'js',
+          'jsx',
+          'ts',
+          'tsx',
+        ],
+      }),
 
       // 清除原先打包内容
       utils.isProduction && new cleanWebpackPlugin(),

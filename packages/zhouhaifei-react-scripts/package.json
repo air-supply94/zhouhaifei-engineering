@@ -34,7 +34,7 @@
     "esbuild-webpack-plugin": "^1.1.0",
     "escape-string-regexp": "^4.0.0",
     "eslint": "7.23.0",
-    "eslint-loader": "4.0.2",
+    "eslint-webpack-plugin": "^2.5.4",
     "file-loader": "^6.2.0",
     "filesize": "^6.1.0",
     "fork-ts-checker-webpack-plugin": "6.2.1",
