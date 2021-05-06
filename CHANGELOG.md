@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.12.4...v0.0.0) (2021-05-06)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.0...v0.0.0) (2021-05-06)
+
+### Features
+
+- **react-config:** fix postcss version(外层写死,暂时没找到好方法) ([b3f9f68](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/b3f9f686bfc4694eb5814717b0da89acafef2fde))
+
+# [2.13.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.12.4...v2.13.0) (2021-05-06)
 
 ### Features
 
