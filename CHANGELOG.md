@@ -1,4 +1,6 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.12.3...v0.0.0) (2021-05-06)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.12.4...v0.0.0) (2021-05-06)
+
+## [2.12.4](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.12.3...v2.12.4) (2021-05-06)
 
 ### Features
 
