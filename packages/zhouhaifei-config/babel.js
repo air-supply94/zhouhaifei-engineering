@@ -30,7 +30,7 @@ module.exports = function(isWeb = true) {
     ], // 支持装饰器语法
     [
       '@babel/plugin-proposal-class-properties',
-      { loose: true },
+      { loose: false },
     ], // 支持class属性初始化和static
     require.resolve('@babel/plugin-proposal-export-default-from'), // 支持 export v from 'mod'语法
     require.resolve('@babel/plugin-syntax-import-meta'),
