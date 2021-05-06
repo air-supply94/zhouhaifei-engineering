@@ -3,6 +3,7 @@
 ### Features
 
 - update packages ([9253bbe](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/9253bbe357e3b27cd8a3af4625a68e8d5b3c350c))
+- **config:** update babel config ([b07ce5c](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/b07ce5c6a7e16ab352db68c9e534ba7fe00a707c))
 
 ## [2.13.1](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.0...v2.13.1) (2021-05-06)
 
