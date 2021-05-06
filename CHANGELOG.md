@@ -3,7 +3,7 @@
 ### Features
 
 - update packages ([0667881](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/066788153adb94d6a9b3caf72c161080df149206))
-- **react-scripts:** extract postcss config ([0aff950](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/0aff95095845e74cc38c5f29b61ecb33a44d2348))
+- **react-scripts:** extract postcss config ([c081efc](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/c081efc1d7b80e3392081331c43eb0c4339015e7))
 
 ## [2.12.4](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.12.3...v2.12.4) (2021-05-06)
 
