@@ -2,7 +2,7 @@
 
 ### Bug Fixes
 
-- **utils:** 解决 routes 嵌套，title 错误 ([33508cd](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/33508cdea952d7ee484c941ae104fd71c4d5459b))
+- **utils:** 解决 routes 嵌套，title 错误 ([d7e9279](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/d7e9279e186cd70cb51829823bf6847ebd77320f))
 
 ### Features
 
