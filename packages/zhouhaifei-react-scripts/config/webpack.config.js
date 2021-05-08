@@ -32,10 +32,7 @@ module.exports = function() {
       poll: false,
       ignored: /node_modules/,
     },
-    cache: utils.isProduction ? {
-      type: 'filesystem',
-      cacheDirectory: path.resolve(paths.appPath, '.cache'),
-    } : { type: 'memory' },
+    cache: { type: 'filesystem' },
 
     mode: utils.isProduction ? 'production' : utils.isDevelopment && 'development',
 
