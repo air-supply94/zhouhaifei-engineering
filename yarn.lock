@@ -17040,10 +17040,10 @@ zhouhaifei-code-style@2.10.7:
     stylelint-declaration-block-no-ignored-properties "^2.3.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-config@2.13.2:
-  version "2.13.2"
-  resolved "https://registry.nlark.com/zhouhaifei-config/download/zhouhaifei-config-2.13.2.tgz#f78a23ab875f3892eb79dba4a2b53e9ddf920ce9"
-  integrity sha1-94ojq4dfOJLredukorU+nd+SDOk=
+zhouhaifei-config@2.13.3:
+  version "2.13.3"
+  resolved "https://registry.nlark.com/zhouhaifei-config/download/zhouhaifei-config-2.13.3.tgz#bfa17132e6fef47e27a5e85d87f73ae2bde2cebf"
+  integrity sha1-v6FxMub+9H4npehdh/c64r3izr8=
   dependencies:
     "@babel/plugin-proposal-decorators" "^7.13.15"
     "@babel/plugin-proposal-export-default-from" "^7.12.13"
@@ -17059,10 +17059,10 @@ zhouhaifei-config@2.13.2:
     postcss-preset-env "6.7.0"
     px2rem "0.5.0"
 
-zhouhaifei-react-scripts@2.13.1:
-  version "2.13.1"
-  resolved "https://registry.nlark.com/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.13.1.tgz#e31e56e45800b4ac4dc4904cabf31dd2f083590c"
-  integrity sha1-4x5W5FgAtKxNxJBMq/Md0vCDWQw=
+zhouhaifei-react-scripts@2.13.3:
+  version "2.13.3"
+  resolved "https://registry.nlark.com/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.13.3.tgz#07b55f7c10529919bbb57cb292aa0a6540e59dde"
+  integrity sha1-B7VffBBSmRm7tXyykqoKZUDlnd4=
   dependencies:
     "@babel/core" "7.13.8"
     address "^1.1.2"
