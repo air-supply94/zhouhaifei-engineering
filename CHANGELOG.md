@@ -1,8 +1,12 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.2...v0.0.0) (2021-05-06)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.2...v0.0.0) (2021-05-08)
+
+### Bug Fixes
+
+- **utils:** 解决 routes 嵌套，title 错误 ([33508cd](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/33508cdea952d7ee484c941ae104fd71c4d5459b))
 
 ### Features
 
-- update packages ([f4b7dfa](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/f4b7dfa0d722c624eccd9f084508150066c3a96e))
+- update packages ([66d7845](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/66d7845a223b82b64e12588245708f668368c662))
 
 ## [2.13.2](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.1...v2.13.2) (2021-05-06)
 

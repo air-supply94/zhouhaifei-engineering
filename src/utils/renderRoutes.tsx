@@ -37,7 +37,8 @@ const DefaultWrapper: React.FC<{ route: MenuDataItem; }> = function({
   children,
 }) {
   React.useEffect(() => {
-    if (route.title) {
+    if (route.title && !(Array.isArray(route.children) && route.children.length)) {
+      console.log(route);
       document.title = route.title;
     }
   }, []);

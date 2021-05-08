@@ -19,12 +19,3 @@ declare module '*.scss';
 declare module '*.module.css';
 declare module '*.module.less';
 declare module '*.module.scss';
-
-interface EnvConfig {
-  defaultRedirectUrl: string;
-  title: string;
-}
-
-interface Window {
-  envConfig: EnvConfig;
-}
