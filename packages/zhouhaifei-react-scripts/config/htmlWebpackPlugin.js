@@ -3,7 +3,6 @@ const paths = require('./paths');
 const utils = require('./utils');
 
 module.exports = {
-  favicon: path.resolve(paths.appPublic, 'favicon.ico'),
   inject: true,
   cache: false,
   publicPath: utils.publicUrlOrPath,
