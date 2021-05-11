@@ -1,12 +1,7 @@
 'use strict';
 const chalk = require('chalk');
-const yeoman = require('yeoman-environment');
 const Generator = require('yeoman-generator');
 const yosay = require('yosay');
-
-const env = yeoman.createEnv();
-env.register(require.resolve('generator-zhouhaifei-react'), 'npm:generator-zhouhaifei-react');
-env.run('npm:generator-zhouhaifei-react');
 
 module.exports = class extends Generator {
   prompting() {
@@ -21,6 +16,18 @@ module.exports = class extends Generator {
         name: 'projectName',
         message: '项目名称',
         default: this.appname,
+      },
+      {
+        type: 'confirm',
+        name: 'isWeb',
+        message: '是web项目',
+        default: true,
+      },
+      {
+        type: 'number',
+        name: 'remUnit',
+        message: 'rem单位(有单位则开启rem布局且自动引入amfe-flexible)',
+        default: 0,
       },
     ];
 
@@ -42,13 +49,47 @@ module.exports = class extends Generator {
       this.destinationPath('')
     );
 
+    this.fs.delete(this.destinationPath('template'));
+
+    // package.json
     this.fs.copyTpl(
-      this.templatePath('package.json.ejs'),
+      this.templatePath('template/package.json.ejs'),
       this.destinationPath('package.json'),
-      { projectName: this.props.projectName }
+      this.props
     );
 
-    this.fs.deleteDestination(this.templatePath('package.json.ejs'));
+    // babel-config
+    this.fs.copyTpl(
+      this.templatePath('template/babel.config.js.ejs'),
+      this.destinationPath('babel.config.js'),
+      this.props
+    );
+
+    // request
+    this.fs.copyTpl(
+      this.props.isWeb ? this.templatePath('template/request.web.tsx') : this.templatePath('template/request.h5.tsx'),
+      this.destinationPath('src/utils/request.ts')
+    );
+
+    // locale
+    this.fs.copyTpl(
+      this.props.isWeb ? this.templatePath('template/locale.web.tsx') : this.templatePath('template/locale.h5.tsx'),
+      this.destinationPath('src/utils/locale.tsx')
+    );
+
+    // entry file
+    this.fs.copyTpl(
+      this.templatePath('template/index.tsx.ejs'),
+      this.destinationPath('src/index.tsx'),
+      this.props
+    );
+
+    // postcss
+    this.fs.copyTpl(
+      this.templatePath('template/postcss.config.js.ejs'),
+      this.destinationPath('postcss.config.js'),
+      this.props
+    );
   }
 
   install() {

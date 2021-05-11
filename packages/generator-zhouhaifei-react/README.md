@@ -14,6 +14,7 @@ npm install -g generator-zhouhaifei-react
 Then generate your new project:
 
 ```bash
+mkdir 目录名称 && cd 目录名称
 yo zhouhaifei-react
 ```
 

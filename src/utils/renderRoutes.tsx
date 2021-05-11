@@ -59,10 +59,8 @@ const WrapperRoute: React.FC<any> = ({
   location,
   sensitive,
   loading,
-  name,
   ...rest
 }) => {
-  console.log(name);
   return (
     <Route
       exact={exact}
