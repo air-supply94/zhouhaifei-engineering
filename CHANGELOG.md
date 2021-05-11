@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.4...v0.0.0) (2021-05-11)
 
+### Features
+
+- **react-scripts:** remove favicon.ico config ([0c0ca15](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/0c0ca15249d6d6a057c7d31df6f4dc678ac90d9e))
+
 ## [2.13.4](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.4-alpha.0...v2.13.4) (2021-05-11)
 
 ### Features
