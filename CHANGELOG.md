@@ -2,7 +2,7 @@
 
 ### Features
 
-- **packages:** add generator-zhouhaifei-react ([ef051c4](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/ef051c44e94b8bca8dee3800fd384c51cc1a1dbc))
+- **packages:** add generator-zhouhaifei-react ([d1d37fb](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/d1d37fbcb0d2fec8be56a4bae73e3b99cbf8c792))
 
 ## [2.13.4-alpha.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.3...v2.13.4-alpha.0) (2021-05-11)
 
