@@ -17059,10 +17059,10 @@ zhouhaifei-config@2.13.3:
     postcss-preset-env "6.7.0"
     px2rem "0.5.0"
 
-zhouhaifei-react-scripts@2.13.3:
-  version "2.13.3"
-  resolved "https://registry.nlark.com/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.13.3.tgz#07b55f7c10529919bbb57cb292aa0a6540e59dde"
-  integrity sha1-B7VffBBSmRm7tXyykqoKZUDlnd4=
+zhouhaifei-react-scripts@2.13.5:
+  version "2.13.5"
+  resolved "https://registry.nlark.com/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.13.5.tgz#57a091b10c77d0f1566849e3746e1dfd39a1c33f"
+  integrity sha1-V6CRsQx30PFWaEnjdG4d/Tmhwz8=
   dependencies:
     "@babel/core" "7.13.8"
     address "^1.1.2"
