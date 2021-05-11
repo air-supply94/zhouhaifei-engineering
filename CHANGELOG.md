@@ -1,4 +1,9 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.3...v0.0.0) (2021-05-08)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.3...v0.0.0) (2021-05-11)
+
+### Features
+
+- update packages ([6c9a115](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/6c9a11562d832205ba61a742fdbc1befe5eb3c61))
+- **packages:** add generator-zhouhaifei-react ([193cf81](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/193cf8144bc26da880af2247ff382181b1a0c650))
 
 ## [2.13.3](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.2...v2.13.3) (2021-05-08)
 

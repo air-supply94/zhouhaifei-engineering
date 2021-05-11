@@ -1,0 +1,40 @@
+{
+  "name": "generator-zhouhaifei-react",
+  "version": "2.6.8",
+  "description": "",
+  "homepage": "",
+  "author": {
+    "name": "joey",
+    "email": "zhouhaifei1994@sina.com",
+    "url": ""
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "",
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "jest": "^26.1.0",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^6.0.0"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "yeoman-environment": "^3.3.0",
+    "yeoman-generator": "^5.2.0",
+    "yosay": "^2.0.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "license": "MIT"
+}

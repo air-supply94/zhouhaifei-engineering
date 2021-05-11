@@ -1,8 +1,7 @@
 {
-  "name": "zhouhaifei-react-scripts",
+  "name": "<%= projectName %>",
   "version": "0.0.0",
   "dependencies": {
-    "@ant-design/pro-layout": "^6.14.0",
     "antd": "4.12.3",
     "axios": "0.21.0",
     "lodash": "4.17.20",
@@ -29,11 +28,8 @@
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.6",
     "commitizen": "^4.2.2",
-    "conventional-changelog-cli": "^2.1.1",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "7.23.0",
     "husky": "4.3.0",
-    "lerna": "^3.22.1",
     "lint-staged": "10.5.2",
     "mockjs": "^1.1.0",
     "postcss": "8.2.7",
@@ -57,7 +53,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "npm run changelog && git add . && lint-staged",
+      "pre-commit": "git add . && lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && validate-commit-msg"
     }
   },
@@ -79,22 +75,11 @@
       "git add ."
     ]
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
   "scripts": {
     "commit": "cz",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && npm run prettier && git add CHANGELOG.md",
-    "bootstrap": "lerna bootstrap",
-    "publish": "lerna run build && lerna publish",
     "start": "zhouhaifei-react-scripts start",
     "build": "zhouhaifei-react-scripts build",
     "test": "zhouhaifei-test react",
-    "locale-start": "node ./packages/zhouhaifei-react-scripts/scripts/start.js",
-    "locale-build": "node ./packages/zhouhaifei-react-scripts/scripts/build.js",
-    "locale-test": "node ./packages/zhouhaifei-test/scripts/react.js",
     "lint-staged": "lint-staged --allow-empty",
     "lint:style-less": "stylelint --fix \"src/**/*.less\" --syntax less",
     "lint:style-scss": "stylelint --fix \"src/**/*.scss\" --syntax scss",
