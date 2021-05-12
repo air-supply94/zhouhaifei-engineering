@@ -7,7 +7,7 @@
 First, install [Yeoman](http://yeoman.io) and generator-zhouhaifei-react using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
-npm install -g yo
+npm install -g yo@3.1.0
 npm install -g generator-zhouhaifei-react
 ```
 
