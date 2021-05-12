@@ -3,7 +3,7 @@
 ### Features
 
 - update packages ([1a9c6e1](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/1a9c6e1896e2b7afebf2c8018cf1d2efa74c19cb))
-- **generator:** update remUnit config ([1c90eee](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/1c90eeed5f8e6e761dcdb9a0f81933267f6fb403))
+- **generator:** update remUnit config ([eb92005](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/eb920055f4709112dd21193f4240ceb7856cf8d0))
 
 ## [2.13.5](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.4...v2.13.5) (2021-05-11)
 
