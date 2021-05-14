@@ -2,7 +2,7 @@
 
 ### Bug Fixes
 
-- **react-scripts:** 解决 copy-webpack-plugin 没有文件报错 ([ee2c759](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/ee2c759b913df251d8e4e75f8d61a879fd20614a))
+- **react-scripts:** 解决 copy-webpack-plugin 没有文件报错 ([d72c1de](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/d72c1de045debf9c8308b9fc8ea0fec11e2bde19))
 
 ### Features
 
