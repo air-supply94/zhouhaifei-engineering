@@ -1,4 +1,12 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.6...v0.0.0) (2021-05-12)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.6...v0.0.0) (2021-05-14)
+
+### Bug Fixes
+
+- **react-scripts:** 解决 copy-webpack-plugin 没有文件报错 ([ee2c759](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/ee2c759b913df251d8e4e75f8d61a879fd20614a))
+
+### Features
+
+- **generator:** lock yo version ([322cbc3](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/322cbc328b06ddb4da5a1d2202a980684c2c976b))
 
 ## [2.13.6](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.5...v2.13.6) (2021-05-12)
 

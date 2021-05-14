@@ -8,6 +8,7 @@ First, install [Yeoman](http://yeoman.io) and generator-zhouhaifei-react using [
 
 ```bash
 npm install -g yo@3.1.0
+# 下载最新generator-zhouhaifei-react。存在则更新
 npm install -g generator-zhouhaifei-react
 ```
 
