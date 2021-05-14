@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.7...v0.0.0) (2021-05-14)
 
+### Bug Fixes
+
+- **react-scripts:** update copy-webpack config ([8862033](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/88620338a3f717b35303187a3440a95a93d5bef0))
+
 ### Features
 
 - update packages ([de20a11](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/de20a11d42ef09954956b15ebe1f1d50ad68fc5b))
