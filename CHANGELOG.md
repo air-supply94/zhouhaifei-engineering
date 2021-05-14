@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.8...v0.0.0) (2021-05-14)
 
+### Bug Fixes
+
+- **generator:** 去除 package.json 的 fix eslint 多一个点 ([36b3cad](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/36b3cad05f03a948f40a507c311a24f1bd23adc9))
+
 ### Features
 
 - update packages ([e31e59e](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/e31e59e9de5f94e8acc2bff37ee077695973bc26))
