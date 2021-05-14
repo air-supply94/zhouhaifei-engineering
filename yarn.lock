@@ -3086,7 +3086,7 @@
     "@types/eslint" "*"
     "@types/estree" "*"
 
-"@types/eslint@*", "@types/eslint@^7.2.6":
+"@types/eslint@*":
   version "7.2.10"
   resolved "https://registry.npm.taobao.org/@types/eslint/download/@types/eslint-7.2.10.tgz?cache=0&sync_timestamp=1618425587304&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Feslint%2Fdownload%2F%40types%2Feslint-7.2.10.tgz#4b7a9368d46c0f8cd5408c23288a59aa2394d917"
   integrity sha1-S3qTaNRsD4zVQIwjKIpZqiOU2Rc=
@@ -4050,11 +4050,6 @@ arrify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/arrify/download/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
   integrity sha1-iYUI2iIm84DfkEcoRWhJwVAaSw0=
-
-arrify@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.nlark.com/arrify/download/arrify-2.0.1.tgz#c9655e9331e0abcd588d2a7cad7e9956f66701fa"
-  integrity sha1-yWVekzHgq81YjSp8rX6ZVvZnAfo=
 
 asap@^2.0.0:
   version "2.0.6"
@@ -6598,12 +6593,29 @@ es6-promisify@^5.0.0:
   dependencies:
     es6-promise "^4.0.3"
 
+esbuild-loader@^2.12.0:
+  version "2.13.0"
+  resolved "https://registry.nlark.com/esbuild-loader/download/esbuild-loader-2.13.0.tgz#f5a3602a89a3b728506ae3e1887304fffeef9270"
+  integrity sha1-9aNgKomjtyhQauPhiHME//7vknA=
+  dependencies:
+    esbuild "^0.11.19"
+    joycon "^3.0.1"
+    json5 "^2.2.0"
+    loader-utils "^2.0.0"
+    type-fest "^1.0.1"
+    webpack-sources "^2.2.0"
+
 esbuild-webpack-plugin@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/esbuild-webpack-plugin/download/esbuild-webpack-plugin-1.1.0.tgz#dcf0971284bf3c174fdb27832209a59f2079075b"
   integrity sha1-3PCXEoS/PBdP2yeDIgmlnyB5B1s=
   dependencies:
     esbuild "^0.7.15"
+
+esbuild@^0.11.19:
+  version "0.11.21"
+  resolved "https://registry.nlark.com/esbuild/download/esbuild-0.11.21.tgz#9220b0185ae40947811dcaff6bfcfb572bebac08"
+  integrity sha1-kiCwGFrkCUeBHcr/a/z7VyvrrAg=
 
 esbuild@^0.7.15:
   version "0.7.22"
@@ -6654,6 +6666,17 @@ eslint-import-resolver-node@^0.3.4:
   dependencies:
     debug "^2.6.9"
     resolve "^1.13.1"
+
+eslint-loader@4.0.2:
+  version "4.0.2"
+  resolved "https://registry.nlark.com/eslint-loader/download/eslint-loader-4.0.2.tgz#386a1e21bcb613b3cf2d252a3b708023ccfb41ec"
+  integrity sha1-OGoeIby2E7PPLSUqO3CAI8z7Qew=
+  dependencies:
+    find-cache-dir "^3.3.1"
+    fs-extra "^8.1.0"
+    loader-utils "^2.0.0"
+    object-hash "^2.0.3"
+    schema-utils "^2.6.5"
 
 eslint-module-utils@^2.6.0:
   version "2.6.0"
@@ -6753,18 +6776,6 @@ eslint-visitor-keys@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/eslint-visitor-keys/download/eslint-visitor-keys-2.0.0.tgz?cache=0&sync_timestamp=1597435347526&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-visitor-keys%2Fdownload%2Feslint-visitor-keys-2.0.0.tgz#21fdc8fbcd9c795cc0321f0563702095751511a8"
   integrity sha1-If3I+82ceVzAMh8FY3AglXUVEag=
-
-eslint-webpack-plugin@^2.5.4:
-  version "2.5.4"
-  resolved "https://registry.nlark.com/eslint-webpack-plugin/download/eslint-webpack-plugin-2.5.4.tgz#473b84932f1a8e2c2b8e66a402d0497bf440b986"
-  integrity sha1-RzuEky8ajiwrjmakAtBJe/RAuYY=
-  dependencies:
-    "@types/eslint" "^7.2.6"
-    arrify "^2.0.1"
-    jest-worker "^26.6.2"
-    micromatch "^4.0.2"
-    normalize-path "^3.0.0"
-    schema-utils "^3.0.0"
 
 eslint@7.23.0:
   version "7.23.0"
@@ -9620,6 +9631,11 @@ jest@26.6.3:
     import-local "^3.0.2"
     jest-cli "^26.6.3"
 
+joycon@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.npm.taobao.org/joycon/download/joycon-3.0.1.tgz#9074c9b08ccf37a6726ff74a18485f85efcaddaf"
+  integrity sha1-kHTJsIzPN6Zyb/dKGEhfhe/K3a8=
+
 js-base64@^2.1.8:
   version "2.6.4"
   resolved "https://registry.npm.taobao.org/js-base64/download/js-base64-2.6.4.tgz#f4e686c5de1ea1f867dbcad3d46d969428df98c4"
@@ -9790,6 +9806,13 @@ json5@^1.0.1:
   integrity sha1-d5+wAYYE+oVOrL9iUhgNg1Q+Pb4=
   dependencies:
     minimist "^1.2.0"
+
+json5@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.npm.taobao.org/json5/download/json5-2.2.0.tgz?cache=0&sync_timestamp=1612146113654&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fjson5%2Fdownload%2Fjson5-2.2.0.tgz#2dfefe720c6ba525d9ebd909950f0515316c89a3"
+  integrity sha1-Lf7+cgxrpSXZ69kJlQ8FFTFsiaM=
+  dependencies:
+    minimist "^1.2.5"
 
 jsonfile@^2.0.0:
   version "2.4.0"
@@ -11269,6 +11292,11 @@ object-copy@^0.1.0:
     define-property "^0.2.5"
     kind-of "^3.0.3"
 
+object-hash@^2.0.3:
+  version "2.1.1"
+  resolved "https://registry.npm.taobao.org/object-hash/download/object-hash-2.1.1.tgz#9447d0279b4fcf80cff3259bf66a1dc73afabe09"
+  integrity sha1-lEfQJ5tPz4DP8yWb9modxzr6vgk=
+
 object-inspect@^1.8.0, object-inspect@^1.9.0:
   version "1.9.0"
   resolved "https://registry.npm.taobao.org/object-inspect/download/object-inspect-1.9.0.tgz?cache=0&sync_timestamp=1606804318855&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fobject-inspect%2Fdownload%2Fobject-inspect-1.9.0.tgz#c90521d74e1127b67266ded3394ad6116986533a"
@@ -12127,6 +12155,15 @@ postcss-import@14.0.1:
     read-cache "^1.0.0"
     resolve "^1.1.7"
 
+postcss-import@^14.0.0:
+  version "14.0.2"
+  resolved "https://registry.nlark.com/postcss-import/download/postcss-import-14.0.2.tgz#60eff77e6be92e7b67fe469ec797d9424cae1aa1"
+  integrity sha1-YO/3fmvpLntn/kaex5fZQkyuGqE=
+  dependencies:
+    postcss-value-parser "^4.0.0"
+    read-cache "^1.0.0"
+    resolve "^1.1.7"
+
 postcss-initial@^3.0.0:
   version "3.0.4"
   resolved "https://registry.npm.taobao.org/postcss-initial/download/postcss-initial-3.0.4.tgz#9d32069a10531fe2ecafa0b6ac750ee0bc7efc53"
@@ -12430,7 +12467,7 @@ postcss-place@^4.0.1:
     postcss "^7.0.2"
     postcss-values-parser "^2.0.0"
 
-postcss-preset-env@6.7.0:
+postcss-preset-env@6.7.0, postcss-preset-env@^6.7.0:
   version "6.7.0"
   resolved "https://registry.npm.taobao.org/postcss-preset-env/download/postcss-preset-env-6.7.0.tgz#c34ddacf8f902383b35ad1e030f178f4cdf118a5"
   integrity sha1-w03az4+QI4OzWtHgMPF49M3xGKU=
@@ -15807,6 +15844,11 @@ type-fest@^0.8.1:
   resolved "https://registry.npm.taobao.org/type-fest/download/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha1-CeJJ696FHTseSNJ8EFREZn8XuD0=
 
+type-fest@^1.0.1:
+  version "1.1.1"
+  resolved "https://registry.nlark.com/type-fest/download/type-fest-1.1.1.tgz#210251e7f57357a1457269e6b34837fed067ac2c"
+  integrity sha1-IQJR5/VzV6FFcmnms0g3/tBnrCw=
+
 type-is@~1.6.17, type-is@~1.6.18:
   version "1.6.18"
   resolved "https://registry.npm.taobao.org/type-is/download/type-is-1.6.18.tgz#4e552cd05df09467dcbc4ef739de89f2cf37c131"
@@ -17059,10 +17101,10 @@ zhouhaifei-config@2.13.3:
     postcss-preset-env "6.7.0"
     px2rem "0.5.0"
 
-zhouhaifei-react-scripts@2.13.7:
-  version "2.13.7"
-  resolved "https://registry.npmjs.org/zhouhaifei-react-scripts/-/zhouhaifei-react-scripts-2.13.7.tgz#687829a042b6af3d22b03f42c62960ef38ba561b"
-  integrity sha512-eUmZz2Md6QvsKjT8Vcraq9CZ1hbT7F2TpxY1PoHdRq9fBFfe1nszMpLUElLc7NVvMI/RlYnr6c7zMnzIgTzwOA==
+zhouhaifei-react-scripts@2.11.8:
+  version "2.11.8"
+  resolved "https://registry.nlark.com/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.11.8.tgz#a2c3548f6b83966bef68ea736c243b82c5b04afb"
+  integrity sha1-osNUj2uDlmvvaOpzbCQ7gsWwSvs=
   dependencies:
     "@babel/core" "7.13.8"
     address "^1.1.2"
@@ -17081,10 +17123,11 @@ zhouhaifei-react-scripts@2.13.7:
     detect-port-alt "^1.1.6"
     dotenv "8.2.0"
     dotenv-expand "5.1.0"
+    esbuild-loader "^2.12.0"
     esbuild-webpack-plugin "^1.1.0"
     escape-string-regexp "^4.0.0"
     eslint "7.23.0"
-    eslint-webpack-plugin "^2.5.4"
+    eslint-loader "4.0.2"
     file-loader "^6.2.0"
     filesize "^6.1.0"
     fork-ts-checker-webpack-plugin "6.2.1"
@@ -17103,8 +17146,12 @@ zhouhaifei-react-scripts@2.13.7:
     open "^8.0.2"
     pkg-up "^3.1.0"
     postcss "8.2.7"
+    postcss-flexbugs-fixes "5.0.2"
+    postcss-import "^14.0.0"
     postcss-loader "5.2.0"
+    postcss-preset-env "^6.7.0"
     preload-webpack-plugin "^3.0.0-beta.4"
+    px2rem "0.5.0"
     react-error-overlay "^6.0.9"
     recursive-readdir "^2.2.2"
     sass-loader "^11.0.1"
