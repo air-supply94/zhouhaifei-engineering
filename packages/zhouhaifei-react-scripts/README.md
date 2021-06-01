@@ -72,6 +72,29 @@ module.exports = function(utils) {
   - 是否开启 gzip 和 br 压缩
   - YES 开启
 
+## mock 数据
+
+- 配置环境变量(.env.development 文件): MOCK=YES
+- 约定式 \_mock 文件(src 目录下\_mock 目录下面的所有 js 文件)
+- 编写。目录如下 src/pages/aaa/\_mock/api.js
+
+```
+export default {
+  // 支持值为 Object 和 Array
+  'GET /api/users': { users: [1, 2] },
+
+  // GET 可忽略
+  '/api/users/1': { id: 1 },
+
+  // 支持自定义函数，API 参考 express@4
+  'POST /api/users/create': (req, res) => {
+    // 添加跨域请求头
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.end('ok');
+  },
+}
+```
+
 ## 具体使用
 
 ```
