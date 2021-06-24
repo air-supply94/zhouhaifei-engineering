@@ -3,8 +3,11 @@
   "version": "2.13.3",
   "description": "",
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/index.js",
   "author": "zhouhaifei1994@sina.com",
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.13.15",
     "@babel/plugin-proposal-export-default-from": "^7.12.13",

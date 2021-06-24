@@ -113,7 +113,8 @@ function formatUserConfig(originConfig) {
         }
       }
     } catch (e) {
-      console.log('webpack.config.js 必须导出为函数');
+      console.log(e);
+      console.log('config.js 必须导出为函数');
     }
   }
 }

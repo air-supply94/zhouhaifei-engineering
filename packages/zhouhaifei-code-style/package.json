@@ -8,6 +8,9 @@
     "prettierRule",
     "styleLintRule"
   ],
+  "files": [
+    "lib"
+  ],
   "author": "zhouhaifei1994@sina.com",
   "license": "MIT",
   "dependencies": {
