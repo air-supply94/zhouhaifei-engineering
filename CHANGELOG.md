@@ -2,6 +2,7 @@
 
 ### Features
 
+- update packages ([77f5cb5](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/77f5cb5119b5800ca683c978b770c38dc6593b21))
 - update packages ([07efa75](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/07efa755d95b7ccc6aae04226cd9ab08753e8e32))
 - **react-scripts:** update README.md ([ec34fd1](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/ec34fd1b33dfe8ce1e69c96236f25b9adf7b0a5a))
 
