@@ -44,7 +44,7 @@
     "validate-commit-msg": "^2.14.0",
     "zhouhaifei-code-style": "2.13.10",
     "zhouhaifei-config": "2.13.10",
-    "zhouhaifei-react-scripts": "2.13.10",
+    "zhouhaifei-react-scripts": "2.13.12",
     "zhouhaifei-test": "2.13.10"
   },
   "browserslist": [
