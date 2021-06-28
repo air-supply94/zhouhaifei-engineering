@@ -2,7 +2,7 @@
 
 ### Features
 
-- **react-script:** 去掉 url-loader、file-loader。用 assets 替换 ([e8cb222](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/e8cb22230857c46c07618bef62306a257a561b04))
+- **react-script:** 去掉 url-loader、file-loader。用 assets 替换 ([a829cf8](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/a829cf82def17562fb9229e38e7a18765ad6895d))
 
 ## [2.13.11](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.10...v2.13.11) (2021-06-24)
 
