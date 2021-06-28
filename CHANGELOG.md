@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.10...v0.0.0) (2021-06-24)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.11...v0.0.0) (2021-06-28)
+
+### Features
+
+- **react-script:** 去掉 url-loader、file-loader。用 assets 替换 ([e8cb222](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/e8cb22230857c46c07618bef62306a257a561b04))
+
+## [2.13.11](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.10...v2.13.11) (2021-06-24)
 
 ### Features
 

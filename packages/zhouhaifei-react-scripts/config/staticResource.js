@@ -3,24 +3,18 @@ const utils = require('./utils');
 module.exports = [
   {
     test: /\.(gif|png|jpe?g|svg)$/i,
-    use: [
-      {
-        loader: require.resolve('url-loader'),
-        options: {
-          limit: utils.imageInlineSizeLimit,
-          name: `${utils.resourceName.image}/[hash].[ext]`,
-        },
-      },
-    ],
+    type: 'asset',
+    generator: { filename: `${utils.resourceName.image}/[hash].[ext]` },
+    parser: { dataUrlCondition: { maxSize: utils.imageInlineSizeLimit }},
   },
   {
-    loader: require.resolve('url-loader'),
+    type: 'asset',
+    generator: { filename: `${utils.resourceName.media}/[hash].[ext]` },
     exclude: [
       /\.(js|mjs|jsx|ts|tsx)$/,
       /\.html$/,
       /\.ejs$/,
       /\.json$/,
     ],
-    options: { name: `${utils.resourceName.media}/[hash].[ext]` },
   },
 ];

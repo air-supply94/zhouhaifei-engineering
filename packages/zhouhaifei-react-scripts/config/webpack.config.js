@@ -66,7 +66,6 @@ module.exports = function() {
     module: {
       strictExportPresence: true,
       rules: [
-        { parser: { requireEnsure: false }},
         {
           oneOf: [
             ...require('./jsAndTsConfig'),
