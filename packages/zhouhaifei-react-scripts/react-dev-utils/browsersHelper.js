@@ -77,7 +77,7 @@ function checkBrowsers(dir, isInteractive, retry = true) {
             return Promise.reject();
           }
           const pkg = JSON.parse(fs.readFileSync(filePath));
-          pkg['browserslist'] = defaultBrowsers;
+          pkg.browserslist = defaultBrowsers;
           fs.writeFileSync(filePath, JSON.stringify(pkg, null, 2) + os.EOL);
 
           browserslist.clearCaches();

@@ -9,6 +9,7 @@ module.exports = {
   curly: 2,
   'default-case': 0,
   'dot-location': 0,
+  'dot-notation': 2,
   eqeqeq: 0,
   'guard-for-in': 2,
   'no-alert': 0,
