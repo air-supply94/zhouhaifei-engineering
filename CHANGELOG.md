@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.15...v0.0.0) (2021-07-25)
 
+### Features
+
+- **generator:** 更新 tsconfig.json ([18df53c](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/18df53c5510cf2ff932f13993d66c8fa43145a50))
+
 ## [2.13.15](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.14...v2.13.15) (2021-07-25)
 
 ### Features
