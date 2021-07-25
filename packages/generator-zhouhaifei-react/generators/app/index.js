@@ -90,6 +90,13 @@ module.exports = class extends Generator {
       this.destinationPath('postcss.config.js'),
       this.props
     );
+
+    // .gitignore
+    this.fs.copyTpl(
+      this.templatePath('template/gitignore.ejs'),
+      this.destinationPath('.gitignore'),
+      this.props
+    );
   }
 
   install() {
