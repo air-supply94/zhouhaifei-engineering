@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.14...v0.0.0) (2021-07-25)
 
+### Features
+
+- **code-style:** 增加 jest 版本依赖 ([9e1085e](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/9e1085e35a636933d87ac422f9bf1c28f431c609))
+
 ## [2.13.14](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.13...v2.13.14) (2021-07-25)
 
 ### Features
