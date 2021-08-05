@@ -26,7 +26,7 @@ moment.defineLocale('zh-cn', {
     llll: 'YYYY年M月D日dddd HH:mm',
   },
   meridiemParse: /凌晨|早上|上午|中午|下午|晚上/,
-  meridiemHour(hour, meridiem) {
+  meridiemHour(hour: number, meridiem: string) {
     if (hour === 12) {
       hour = 0;
     }
@@ -120,11 +120,11 @@ moment.defineLocale('zh-cn', {
   },
 });
 
-export function Locale(props) {
+export const Locale: React.FC = function Locale(props) {
   return (
     <ConfigProvider locale={zhCN}>
       {props.children}
     </ConfigProvider>
   );
-}
+};
 

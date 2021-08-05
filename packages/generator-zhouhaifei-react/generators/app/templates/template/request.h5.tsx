@@ -2,7 +2,7 @@ import { Toast } from 'antd-mobile';
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError, AxiosInstance } from 'axios';
 
 const singleton = (function() {
-  let instance;
+  let instance: AxiosInstance;
 
   function init() {
     const axiosInstance: AxiosInstance = axios.create({

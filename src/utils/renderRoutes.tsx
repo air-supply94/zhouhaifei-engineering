@@ -1,6 +1,6 @@
 import { History } from 'history';
 import React from 'react';
-import { Redirect, Router, Route, Switch } from 'react-router-dom';
+import { Redirect, Router, Route, Switch, RouteComponentProps } from 'react-router-dom';
 
 export interface MenuDataItem {
   key?: string;
@@ -66,7 +66,7 @@ const WrapperRoute: React.FC<any> = ({
       exact={exact}
       location={location}
       path={path}
-      render={(props) => {
+      render={(props: RouteComponentProps<any>) => {
         const NewWrapper = wrapper ? wrapper : DefaultWrapper;
         return (
           <NewWrapper route={route}>
@@ -86,7 +86,7 @@ const WrapperRoute: React.FC<any> = ({
   );
 };
 
-function renderRoutes(routes: MenuDataItem[], extraProps = {}, switchProps = {}, loading) {
+function renderRoutes(routes: MenuDataItem[], extraProps = {}, switchProps = {}, loading?: React.ReactNode) {
   if (Array.isArray(routes) && routes.length) {
     return (
       <Switch {...switchProps}>
@@ -109,7 +109,7 @@ function renderRoutes(routes: MenuDataItem[], extraProps = {}, switchProps = {},
                 loading={loading}
                 name={route.name}
                 path={route.path}
-                render={(props) => {
+                render={(props: RouteComponentProps<any> & MenuDataItem) => {
                   const childRoutes = renderRoutes(route.children, extraProps, { location: props.location }, loading);
                   if (route.component) {
                     const { component: Component } = route;
