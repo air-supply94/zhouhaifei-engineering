@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.16...v0.0.0) (2021-08-05)
 
+### Features
+
+- **tsconfig.json:** set noImplicitAny true ([9071cda](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/9071cda9847764a4495cd9939e29745b8ac7aadb))
+
 ## [2.13.16](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.15...v2.13.16) (2021-07-25)
 
 ### Features
