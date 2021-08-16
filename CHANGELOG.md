@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.14.0...v0.0.0) (2021-08-16)
 
+### Features
+
+- **react-scripts:** remove purgecss-webpack-plugin ([11568dc](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/11568dcb9e30eff167c8a2930829b04f74a2c474))
+
 # [2.14.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.17...v2.14.0) (2021-08-16)
 
 ### Features
