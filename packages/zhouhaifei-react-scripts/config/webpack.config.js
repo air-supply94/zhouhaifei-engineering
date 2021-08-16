@@ -8,6 +8,7 @@ const cleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
@@ -23,7 +24,10 @@ const getClientEnvironment = require('./env');
 const modules = require('./modules');
 const paths = require('./paths');
 const utils = require('./utils');
+const createEnvironmentHash = require('../react-dev-utils/createEnvironmentHash');
+const PurgeCSSPlugin = require('purgecss-webpack-plugin');
 
+const env = getClientEnvironment(utils.publicUrlOrPath);
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 
 module.exports = function() {
@@ -33,7 +37,20 @@ module.exports = function() {
       poll: false,
       ignored: /node_modules/,
     },
-    cache: { type: 'filesystem' },
+    cache: {
+      type: 'filesystem',
+      version: createEnvironmentHash(env.raw),
+      cacheDirectory: paths.appWebpackCache,
+      store: 'pack',
+      buildDependencies: {
+        defaultWebpack: ['webpack/lib/'],
+        config: [__filename],
+        tsconfig: [
+          paths.appTsConfig,
+          paths.appJsConfig,
+        ].filter((f) => fs.existsSync(f)),
+      },
+    },
 
     mode: utils.isProduction ? 'production' : utils.isDevelopment && 'development',
 
@@ -76,7 +93,7 @@ module.exports = function() {
       ].filter(Boolean),
     },
     plugins: [
-      new webpack.DefinePlugin(getClientEnvironment(utils.publicUrlOrPath).stringified),
+      new webpack.DefinePlugin(env.stringified),
 
       // eslint
       utils.allowEslint && new ESLintPlugin({
@@ -110,6 +127,9 @@ module.exports = function() {
         filename: `${utils.resourceName.css}/[name].[contenthash].css`,
         chunkFilename: `${utils.resourceName.css}/[name].[contenthash].css`,
       }),
+
+      // CSS Tree Shaking
+      utils.isProduction && new PurgeCSSPlugin({ paths: glob.sync(`${paths.appSrc}/**/*`, { nodir: true }) }),
 
       new webpackBar({ profile: false }),
       utils.isProduction && utils.isAnalyze && new bundleAnalyzerPlugin({

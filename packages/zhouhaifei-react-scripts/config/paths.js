@@ -48,6 +48,7 @@ module.exports = {
   yarnLockFile: resolveApp('yarn.lock'),
   proxySetup: resolveModule(resolveApp, 'src/setupProxy'),
   appNodeModules: resolveApp('node_modules'),
+  appWebpackCache: resolveApp('node_modules/.cache'),
 };
 
 module.exports.moduleFileExtensions = moduleFileExtensions;
