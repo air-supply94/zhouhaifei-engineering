@@ -17992,10 +17992,10 @@ yocto-queue@^0.1.0:
   resolved "https://registry.npm.taobao.org/yocto-queue/download/yocto-queue-0.1.0.tgz?cache=0&sync_timestamp=1606288334406&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fyocto-queue%2Fdownload%2Fyocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=
 
-zhouhaifei-code-style@2.13.13:
-  version "2.13.13"
-  resolved "https://registry.nlark.com/zhouhaifei-code-style/download/zhouhaifei-code-style-2.13.13.tgz#c539a2696c68ba55558221096d1a52b24d37cc05"
-  integrity sha1-xTmiaWxoulVVgiEJbRpSsk03zAU=
+zhouhaifei-code-style@2.13.15:
+  version "2.13.15"
+  resolved "https://registry.nlark.com/zhouhaifei-code-style/download/zhouhaifei-code-style-2.13.15.tgz#e39e041fded0e007e21446d783633512a605e80b"
+  integrity sha1-454EH97Q4AfiFEbXg2M1EqYF6As=
   dependencies:
     "@commitlint/config-conventional" "^13.1.0"
     "@typescript-eslint/eslint-plugin" "^4.28.4"
@@ -18006,6 +18006,7 @@ zhouhaifei-code-style@2.13.13:
     eslint-plugin-jsx-a11y "^6.4.1"
     eslint-plugin-react "^7.24.0"
     eslint-plugin-react-hooks "^4.2.0"
+    jest "26.6.3"
     stylelint-config-css-modules "^2.2.0"
     stylelint-config-prettier "^8.0.2"
     stylelint-config-rational-order "^0.1.2"
@@ -18032,10 +18033,10 @@ zhouhaifei-config@2.13.10:
     postcss-preset-env "6.7.0"
     px2rem "0.5.0"
 
-zhouhaifei-react-scripts@2.13.13:
-  version "2.13.13"
-  resolved "https://registry.nlark.com/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.13.13.tgz#296d3b1bc0ea4455cab724e2b8cb9d4e44a1dc0b"
-  integrity sha1-KW07G8DqRFXKtyTiuMudTkSh3As=
+zhouhaifei-react-scripts@2.14.1:
+  version "2.14.1"
+  resolved "https://registry.nlark.com/zhouhaifei-react-scripts/download/zhouhaifei-react-scripts-2.14.1.tgz#77cd3f5df1d2a4f77099e5a880da9eea3acdc05b"
+  integrity sha1-d80/XfHSpPdwmeWogNqe6jrNwFs=
   dependencies:
     "@babel/core" "7.14.6"
     address "^1.1.2"
