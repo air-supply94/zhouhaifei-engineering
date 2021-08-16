@@ -8,7 +8,6 @@ const cleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
@@ -25,7 +24,6 @@ const modules = require('./modules');
 const paths = require('./paths');
 const utils = require('./utils');
 const createEnvironmentHash = require('../react-dev-utils/createEnvironmentHash');
-const PurgeCSSPlugin = require('purgecss-webpack-plugin');
 
 const env = getClientEnvironment(utils.publicUrlOrPath);
 const useTypeScript = fs.existsSync(paths.appTsConfig);
@@ -127,9 +125,6 @@ module.exports = function() {
         filename: `${utils.resourceName.css}/[name].[contenthash].css`,
         chunkFilename: `${utils.resourceName.css}/[name].[contenthash].css`,
       }),
-
-      // CSS Tree Shaking
-      utils.isProduction && new PurgeCSSPlugin({ paths: glob.sync(`${paths.appSrc}/**/*`, { nodir: true }) }),
 
       new webpackBar({ profile: false }),
       utils.isProduction && utils.isAnalyze && new bundleAnalyzerPlugin({
