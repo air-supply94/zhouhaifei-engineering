@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.14.3...v0.0.0) (2021-08-24)
 
+### Features
+
+- **generator-egenie-react-web:** 更新 build 时 source-map 方式 ([1befdc9](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/1befdc9ef76b1ce4aa6ef0facf6ea939d7565ff7))
+
 ## [2.14.3](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.14.2...v2.14.3) (2021-08-24)
 
 ### Features
