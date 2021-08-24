@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.14.2...v0.0.0) (2021-08-24)
 
+### Features
+
+- **generator-egenie-react-web:** 更新第三方包的 interface 引入方式 ([143007a](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/143007ae7fdc9caf4ebcf8eeea6423ebd33286f3))
+
 ## [2.14.2](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.14.1...v2.14.2) (2021-08-24)
 
 ### Features
