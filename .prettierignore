@@ -22,3 +22,7 @@ LICENSE
 yarn-error.log
 .history
 CNAME
+.umi
+.umi-production
+docs-dist
+.github

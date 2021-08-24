@@ -1,60 +1,31 @@
 {
   "name": "zhouhaifei-react-scripts",
+  "homepage": "https://air-supply94.github.io/zhouhaifei-react-scripts/",
   "version": "0.0.0",
-  "dependencies": {
-    "@ant-design/pro-layout": "^6.14.0",
-    "antd": "4.12.3",
-    "axios": "0.21.0",
-    "lodash": "4.17.20",
-    "mobx": "5.15.7",
-    "mobx-react": "6.3.1",
-    "moment": "2.29.1",
-    "qs": "6.9.4",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "react-router-dom": "5.2.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/air-supply94/zhouhaifei-react-scripts.git",
+    "branch": "master",
+    "platform": "github"
   },
+  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
-    "@testing-library/jest-dom": "^5.11.6",
-    "@testing-library/react": "11.2.2",
-    "@testing-library/user-event": "12.3.0",
-    "@types/jest": "^26.0.16",
-    "@types/lodash": "^4.14.165",
-    "@types/mockjs": "^1.0.3",
-    "@types/node": "^14.14.10",
-    "@types/qs": "^6.9.5",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@types/react-router": "^5.1.8",
-    "@types/react-router-dom": "^5.1.6",
     "commitizen": "^4.2.2",
     "conventional-changelog-cli": "^2.1.1",
     "cz-conventional-changelog": "^3.3.0",
+    "dumi": "^1.1.25",
     "eslint": "7.29.0",
+    "gh-pages": "^3.2.3",
     "husky": "4.3.0",
     "lerna": "^4.0.0",
     "lint-staged": "10.5.2",
-    "mockjs": "^1.1.0",
-    "postcss": "8.3.5",
     "prettier": "2.2.1",
-    "react-test-renderer": "^17.0.1",
     "stylelint": "13.13.1",
     "typescript": "4.2.4",
     "validate-commit-msg": "^2.14.0",
-    "zhouhaifei-code-style": "2.13.15",
-    "zhouhaifei-config": "2.13.10",
-    "zhouhaifei-react-scripts": "2.14.1",
-    "zhouhaifei-test": "2.13.10"
+    "zhouhaifei-code-style": "2.13.15"
   },
-  "browserslist": [
-    "Chrome >= 54",
-    "Firefox >= 47",
-    "Edge >= 12",
-    "Explorer >= 11",
-    "Safari >= 10.1",
-    "Opera >= 41"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "npm run changelog && git add . && lint-staged",
@@ -89,16 +60,13 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && npm run prettier && git add CHANGELOG.md",
     "bootstrap": "lerna bootstrap",
     "publish": "lerna publish",
-    "start": "zhouhaifei-react-scripts start",
-    "build": "zhouhaifei-react-scripts build",
-    "test": "zhouhaifei-test react",
-    "locale-start": "node ./packages/zhouhaifei-react-scripts/scripts/start.js",
-    "locale-build": "node ./packages/zhouhaifei-react-scripts/scripts/build.js",
-    "locale-test": "node ./packages/zhouhaifei-test/scripts/react.js",
     "lint-staged": "lint-staged --allow-empty",
     "lint:style-less": "stylelint --fix \"src/**/*.less\" --syntax less",
     "lint:style-scss": "stylelint --fix \"src/**/*.scss\" --syntax scss",
     "lint:js": "eslint --fix --quiet --ext .js,.jsx,.ts,.tsx .",
-    "prettier": "prettier -c --write \"**/*.{css,less,scss,md,html,json}\""
+    "prettier": "prettier -c --write \"**/*.{css,less,scss,md,html,json}\"",
+    "docs:start": "dumi dev",
+    "docs:build": "dumi build",
+    "deploy": "npm run docs:build && gh-pages -d dist"
   }
 }

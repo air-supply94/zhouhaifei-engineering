@@ -6,10 +6,6 @@
 # dependencies
 node_modules
 .idea
-.umi
-.umi-production
-docs-dist
-.github
 
 # testing
 coverage

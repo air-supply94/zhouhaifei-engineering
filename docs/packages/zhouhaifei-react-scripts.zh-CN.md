@@ -1,4 +1,9 @@
-## cli 外放配置说明。
+---
+title: 项目打包工具
+order: 4
+---
+
+## cli 外放配置说明
 
 - 在项目目录下建立 config/config.js
 
@@ -29,7 +34,7 @@ module.exports = function(utils) {
 
 ## 环境变量
 
-1. 在项目配置相关文件。参考 dotenv。下面为常用
+- 在项目配置相关文件。参考 dotenv。下面为常用
 
 ```
 .env.development
@@ -38,48 +43,45 @@ module.exports = function(utils) {
 .env.production.local
 ```
 
-2. 通过 cross-env。./node_modules/.bin/cross-env 你的 key=你的 value npm 脚本
+- 具体说明
+  - `PUBLIC_URL`
+    - 静态资源前缀
+    - 建议通过 cross-env 配合 shell 脚本打包。不要写死
+  - `IMAGE_INLINE_SIZE_LIMIT`
+    - 图片 inline 大小(字节)
+  - `PORT`
+    - 启动端口
+  - `SPLIT_CHUNK_MIN_SIZE`
+    - 分包的最小尺寸
+  - `MOCK`
+    - 是否启用 mock 数据功能
+    - YES 开启
+  - SERVICE_WORKER
+    - 是否打包生成 serviceWorker 文件。注册请自写
+    - YES 开启
+  - `SOURCEMAP`
+    - sourcemap 方式
+  - `ALLOW_ESLINT`
+    - 是否开启 eslint
+    - NO 不开启
+  - `IS_ANALYZE`
+    - 是否开启打包大小分析
+    - YES 开启
+  - `USE_ESBUILD`
+    - 是否使用 esbuild-webpack-plugin
+    - YES 开启
+  - `IS_COMPRESS`
+    - 是否开启 gzip 和 br 压缩
+    - YES 开启
 
-3. 具体说明
-
-- PUBLIC_URL
-  - 静态资源前缀
-  - 建议通过 cross-env 配合 shell 脚本打包
-- IMAGE_INLINE_SIZE_LIMIT
-  - 图片 inline 大小
-- PORT
-  - 启动端口
-- SPLIT_CHUNK_MIN_SIZE
-  - 分包的最小尺寸
-- MOCK
-  - 是否启用 mock 数据功能
-  - YES 开启
-- SERVICE_WORKER
-  - 是否打包生成 serviceWorker 文件。注册请自写
-  - YES 开启
-- SOURCEMAP
-  - sourcemap 方式
-- ALLOW_ESLINT
-  - 是否开启 eslint
-  - NO 不开启
-- IS_ANALYZE
-  - 是否开启打包大小分析
-  - YES 开启
-- USE_ESBUILD
-  - 是否使用 esbuild-webpack-plugin
-  - YES 开启
-- IS_COMPRESS
-  - 是否开启 gzip 和 br 压缩
-  - YES 开启
-
-## mock 数据
+## `mock 数据`
 
 - 配置环境变量(.env.development 文件): MOCK=YES
 - 约定式 \_mock 文件(src 目录下\_mock 目录下面的所有 js 文件)
 - 编写。目录如下 src/pages/aaa/\_mock/api.js
 
 ```
-export default {
+module.exports = {
   // 支持值为 Object 和 Array
   'GET /api/users': { users: [1, 2] },
 
@@ -98,10 +100,10 @@ export default {
 - 引入[mock.js](http://mockjs.com/examples.html)
 
 ```
-import mockjs from 'mockjs';
+const mockjs = require('mockjs');
 
-export default {
-  // 使用 mockjs 等三方库
+module.exports = {
+  // 使用 mockjs 等三方库。mock的接口可以直接调用
   'GET /api/tags': mockjs.mock({
     'list|100': [{ name: '@city', 'value|1-100': 50, 'type|0-2': 1 }],
   }),
@@ -111,7 +113,7 @@ export default {
 ## 具体使用
 
 ```
-// start
+// 启动
 zhouhaifei-react-scripts start
 
 // 打包

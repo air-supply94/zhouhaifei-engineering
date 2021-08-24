@@ -1,6 +1,11 @@
-# generator-zhouhaifei-react [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+---
+title: 项目模版生成器
+order: 1
+nav:
+  title: 包介绍
+---
 
->
+# generator-zhouhaifei-react [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 ## Installation
 

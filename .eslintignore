@@ -2,3 +2,7 @@ public
 dist
 coverage
 **/lib
+.umi
+.umi-production
+docs-dist
+.github

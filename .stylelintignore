@@ -2,3 +2,7 @@ public
 coverage
 packages
 dist
+.umi
+.umi-production
+docs-dist
+.github

@@ -1,0 +1,54 @@
+{
+  "name": "zhouhaifei-react-demo",
+  "version": "0.0.0",
+  "dependencies": {
+    "@ant-design/pro-layout": "^6.14.0",
+    "antd": "4.12.3",
+    "axios": "0.21.0",
+    "lodash": "4.17.20",
+    "mobx": "5.15.7",
+    "mobx-react": "6.3.1",
+    "moment": "2.29.1",
+    "qs": "6.9.4",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-router-dom": "5.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "11.2.2",
+    "@testing-library/user-event": "12.3.0",
+    "@types/jest": "^26.0.16",
+    "@types/lodash": "^4.14.165",
+    "@types/mockjs": "^1.0.3",
+    "@types/node": "^14.14.10",
+    "@types/qs": "^6.9.5",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router": "^5.1.8",
+    "@types/react-router-dom": "^5.1.6",
+    "eslint": "7.29.0",
+    "mockjs": "^1.1.0",
+    "postcss": "8.3.5",
+    "react-test-renderer": "^17.0.1",
+    "typescript": "4.2.4",
+    "zhouhaifei-code-style": "2.13.15",
+    "zhouhaifei-config": "2.14.4",
+    "zhouhaifei-react-scripts": "2.14.1",
+    "zhouhaifei-test": "2.13.10"
+  },
+  "browserslist": [
+    "Chrome >= 54",
+    "Firefox >= 47",
+    "Edge >= 12",
+    "Explorer >= 11",
+    "Safari >= 10.1",
+    "Opera >= 41"
+  ],
+  "scripts": {
+    "start": "zhouhaifei-react-scripts start",
+    "build": "zhouhaifei-react-scripts build",
+    "test": "zhouhaifei-test react"
+  }
+}

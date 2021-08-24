@@ -1,7 +1,7 @@
 import ProLayout from '@ant-design/pro-layout';
 import { observer, inject } from 'mobx-react';
 import React from 'react';
-import { RouteChildrenProps } from 'react-router';
+import type { RouteChildrenProps } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { MenuDataItem } from 'src/utils';
 import { GlobalModel } from '../models/globalModel';

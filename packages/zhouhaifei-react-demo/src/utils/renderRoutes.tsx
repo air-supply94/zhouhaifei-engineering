@@ -1,6 +1,7 @@
-import { History } from 'history';
+import type { History } from 'history';
 import React from 'react';
-import { Redirect, Router, Route, Switch, RouteComponentProps } from 'react-router-dom';
+import { Redirect, Router, Route, Switch } from 'react-router-dom';
+import type { RouteComponentProps } from 'react-router-dom';
 
 export interface MenuDataItem {
   key?: string;
