@@ -1239,7 +1239,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.3"
 
-"@babel/plugin-syntax-import-meta@^7.8.3":
+"@babel/plugin-syntax-import-meta@^7.10.4", "@babel/plugin-syntax-import-meta@^7.8.3":
   version "7.10.4"
   resolved "https://registry.npm.taobao.org/@babel/plugin-syntax-import-meta/download/@babel/plugin-syntax-import-meta-7.10.4.tgz#ee601348c370fa334d2207be158777496521fd51"
   integrity sha1-7mATSMNw+jNNIge+FYd3SWUh/VE=
@@ -18014,14 +18014,16 @@ zhouhaifei-code-style@2.13.15:
     stylelint-declaration-block-no-ignored-properties "^2.4.0"
     stylelint-order "^4.1.0"
 
-zhouhaifei-config@2.13.10:
-  version "2.13.10"
-  resolved "https://registry.nlark.com/zhouhaifei-config/download/zhouhaifei-config-2.13.10.tgz#6f39ac758963870f9f7393ac28ed91b4e64de326"
-  integrity sha1-bzmsdYljhw+fc5OsKO2RtOZN4yY=
+zhouhaifei-config@2.14.4:
+  version "2.14.4"
+  resolved "https://registry.npmjs.org/zhouhaifei-config/-/zhouhaifei-config-2.14.4.tgz#59671e1ed54d203c94abf780ed82469c6b3d2b6c"
+  integrity sha512-M52Pipc6474iy5RX6sBZDOqUsOVbLAuj2psrmdDhQN2Zq58fzlh6E+AhsgvMyTzgbHxTFm+LfqbtISFEC15W8w==
   dependencies:
+    "@babel/plugin-proposal-class-properties" "^7.14.5"
     "@babel/plugin-proposal-decorators" "^7.14.5"
     "@babel/plugin-proposal-export-default-from" "^7.14.5"
     "@babel/plugin-syntax-dynamic-import" "^7.8.3"
+    "@babel/plugin-syntax-import-meta" "^7.10.4"
     "@babel/plugin-transform-runtime" "^7.14.5"
     "@babel/preset-env" "^7.14.7"
     "@babel/preset-react" "^7.14.5"
