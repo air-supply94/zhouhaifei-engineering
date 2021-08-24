@@ -29,7 +29,7 @@ module.exports = function(isWeb = true) {
       { legacy: true },
     ], // 支持装饰器语法
     [
-      '@babel/plugin-proposal-class-properties',
+      require.resolve('@babel/plugin-proposal-class-properties'),
       { loose: false },
     ], // 支持class属性初始化和static
     require.resolve('@babel/plugin-proposal-export-default-from'), // 支持 export v from 'mod'语法

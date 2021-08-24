@@ -88,7 +88,7 @@
     "commit": "cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && npm run prettier && git add CHANGELOG.md",
     "bootstrap": "lerna bootstrap",
-    "publish": "lerna run build && lerna publish",
+    "publish": "lerna publish",
     "start": "zhouhaifei-react-scripts start",
     "build": "zhouhaifei-react-scripts build",
     "test": "zhouhaifei-test react",
