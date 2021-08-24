@@ -35,5 +35,6 @@
   "scripts": {
     "test": "jest"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "0bb86aef488e08a6460842e6bd06331e0b349bde"
 }
