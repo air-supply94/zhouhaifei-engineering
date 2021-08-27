@@ -1,12 +1,11 @@
 import { defineConfig } from 'dumi';
 
-const homepage = 'https://air-supply94.github.io/zhouhaifei-react-scripts/';
 const isProduction = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
   title: '文档',
-  base: isProduction ? homepage : undefined,
-  publicPath: isProduction ? homepage : undefined,
+  base: isProduction ? '/zhouhaifei-react-scripts/' : undefined,
+  publicPath: isProduction ? 'https://air-supply94.github.io/zhouhaifei-react-scripts/' : undefined,
 
   // favicon: null,
   // logo: null,

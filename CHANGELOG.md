@@ -3,6 +3,7 @@
 ### Features
 
 - **packages:** add zhouhaifei-react-demo ([daaa607](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/daaa607037a07bf9d3c962bffce8d4b5bcae9bf0))
+- update packages ([dc0136d](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/dc0136dc5ea247570c6e03052da4e5716fd0d764))
 
 ## [2.14.4](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.14.3...v2.14.4) (2021-08-24)
 
