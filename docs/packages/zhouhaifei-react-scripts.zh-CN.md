@@ -8,28 +8,59 @@ order: 4
 - 在项目目录下建立 config/config.js
 
 ```
-// utils为内部的一些配置
+// utils为内部的一些配置。返回一个对象，支持下面参数
 module.exports = function(utils) {
-  return {
-    less: {
-      // 重写less变量
-      theme: {},
-
-      // 额外需要开启 cssModule
-      moduleInclude: [],
-    },
-    babel: {
-      // babel-loader 额外的 options
-      options: [],
-
-      // babel-loader 额外的 include
-      include: [],
-    },
-
-    // 重写的 webpack 配置。内部调用 webpack-merge 合并
-    otherConfig: {},
-  };
+  return {};
 };
+```
+
+### less
+
+- 类型: `Object`
+- 默认值：`null`
+- 详细：
+
+> 示例：
+
+```js
+{
+  // 重写less变量
+  theme: {},
+  // 额外需要开启 cssModule
+  moduleInclude: []
+}
+```
+
+### babel
+
+- 类型: `Object`
+- 默认值：`null`
+- 详细：
+
+> 示例：
+
+```js
+{
+  // babel-loader 额外的 options
+  options: {},
+  // babel-loader 额外的 include
+  include: []
+}
+```
+
+### otherConfig
+
+- 类型: `Object`
+- 默认值：`null`
+- 重写的 webpack 配置。内部调用 webpack-merge 合并
+- 详细：
+  > 示例：
+
+```js
+{
+  externals: {
+  }
+}
 ```
 
 ## 环境变量

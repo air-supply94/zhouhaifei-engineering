@@ -2,6 +2,7 @@
 
 ### Features
 
+- **config/config.ts:** 修改 github pages 的 base 和 publicPath ([8ad6f02](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/8ad6f023f1a66a0c5d2b61d948e7173f4d366eed))
 - **packages:** add zhouhaifei-react-demo ([daaa607](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/daaa607037a07bf9d3c962bffce8d4b5bcae9bf0))
 - update packages ([dc0136d](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/dc0136dc5ea247570c6e03052da4e5716fd0d764))
 

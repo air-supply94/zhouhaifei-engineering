@@ -3,7 +3,7 @@ import { defineConfig } from 'dumi';
 const isProduction = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
-  title: '文档',
+  title: 'react工程化',
   base: isProduction ? '/zhouhaifei-react-scripts/' : undefined,
   publicPath: isProduction ? 'https://air-supply94.github.io/zhouhaifei-react-scripts/' : undefined,
 
