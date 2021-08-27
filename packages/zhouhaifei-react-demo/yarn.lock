@@ -2802,10 +2802,10 @@ axe-core@^4.0.2:
   resolved "https://registry.nlark.com/axe-core/download/axe-core-4.3.3.tgz?cache=0&sync_timestamp=1629992714887&other_urls=https%3A%2F%2Fregistry.nlark.com%2Faxe-core%2Fdownload%2Faxe-core-4.3.3.tgz#b55cd8e8ddf659fe89b064680e1c6a4dceab0325"
   integrity sha1-tVzY6N32Wf6JsGRoDhxqTc6rAyU=
 
-axios@0.21.0:
-  version "0.21.0"
-  resolved "https://registry.npm.taobao.org/axios/download/axios-0.21.0.tgz#26df088803a2350dff2c27f96fef99fe49442aca"
-  integrity sha1-Jt8IiAOiNQ3/LCf5b++Z/klEKso=
+axios@0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   dependencies:
     follow-redirects "^1.10.0"
 
