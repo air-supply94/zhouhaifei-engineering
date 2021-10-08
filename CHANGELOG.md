@@ -2,6 +2,7 @@
 
 ### Features
 
+- **code-style:** 更新 type、interface 引入方式 ([de9373b](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/de9373bb66071fcd16a83a833ecf83f88f730926))
 - **docs:** 增加 windows 安装 ubuntu 双系统文档 ([b5f8edf](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/b5f8edf4f52ccb6127a11637acb1f3bdd7a786a0))
 
 # [2.15.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.14.4...v2.15.0) (2021-08-27)
