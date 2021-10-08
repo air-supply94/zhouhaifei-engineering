@@ -2,7 +2,7 @@
 title: 项目模版生成器
 order: 1
 nav:
-  title: 包介绍
+  title: 基础包
 ---
 
 ## 下载

@@ -3,8 +3,8 @@ import { observer, inject } from 'mobx-react';
 import React from 'react';
 import type { RouteChildrenProps } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import { MenuDataItem } from 'src/utils';
-import { GlobalModel } from '../models/globalModel';
+import type { MenuDataItem } from 'src/utils';
+import type { GlobalModel } from '../models/globalModel';
 
 function menuDataRender(menuList: MenuDataItem[] = []): MenuDataItem[] {
   return menuList.filter((item) => !Object.prototype.hasOwnProperty.call(item, 'redirect'))

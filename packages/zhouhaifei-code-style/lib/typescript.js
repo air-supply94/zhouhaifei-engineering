@@ -20,6 +20,10 @@ module.exports = {
     'error',
     'interface',
   ],
+  '@typescript-eslint/consistent-type-imports': [
+    'error',
+    { prefer: 'type-imports' },
+  ],
   '@typescript-eslint/explicit-member-accessibility': [
     'error',
     {

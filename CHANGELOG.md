@@ -1,8 +1,8 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.15.0...v0.0.0) (2021-10-01)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.15.0...v0.0.0) (2021-10-08)
 
 ### Features
 
-- test ([a14b2ef](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/a14b2ef55592605165aa3c019f6a81acfb9c0dd4))
+- **docs:** 增加 windows 安装 ubuntu 双系统文档 ([b5f8edf](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/b5f8edf4f52ccb6127a11637acb1f3bdd7a786a0))
 
 # [2.15.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.14.4...v2.15.0) (2021-08-27)
 
