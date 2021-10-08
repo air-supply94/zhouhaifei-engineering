@@ -1,5 +1,6 @@
 import { Toast } from 'antd-mobile';
-import axios, { AxiosRequestConfig, AxiosResponse, AxiosError, AxiosInstance } from 'axios';
+import type { AxiosRequestConfig, AxiosResponse, AxiosError, AxiosInstance } from 'axios';
+import axios from 'axios';
 
 const singleton = (function() {
   let instance: AxiosInstance;

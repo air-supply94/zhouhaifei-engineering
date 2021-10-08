@@ -24,7 +24,7 @@
     "stylelint": "13.13.1",
     "typescript": "4.2.4",
     "validate-commit-msg": "^2.14.0",
-    "zhouhaifei-code-style": "2.13.15"
+    "zhouhaifei-code-style": "2.15.1"
   },
   "husky": {
     "hooks": {

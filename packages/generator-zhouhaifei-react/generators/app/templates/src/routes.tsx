@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuDataItem } from './utils';
+import type { MenuDataItem } from './utils';
 
 export const routes: MenuDataItem[] = [
   {
