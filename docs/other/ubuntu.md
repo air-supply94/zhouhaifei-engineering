@@ -1,8 +1,6 @@
 ---
-title: windows安装ubuntu双系统
-order: 2
-nav:
-  title: 其他
+title: windows安装ubuntu双系统 order: 2 nav:
+title: 其他
 ---
 
 ## u 盘镜像制作
@@ -58,7 +56,7 @@ sudo apt upgrade
 - x11
 
   ```bash
-  xrandr --output DP-4 --scale 1.25x1.25
+  xrandr --output DP-4 --scale 1.50x1.50
   ```
 
 - 自动脚本设置
@@ -66,8 +64,7 @@ sudo apt upgrade
   ```bash
   # start-service.sh
   #!/bin/bash
-  xrandr --output DP-4 --scale 1.25x1.25
-  exit 0
+  xrandr --output DP-4 --scale 1.50x1.50
   ```
 
   - startup Applications 将脚本添加进去
@@ -91,14 +88,20 @@ git config --global user.name xxx
 git config --global user.email xxx
 ```
 
-### 中文输入法(待确定)
+### 中文输入法
 
 ```bash
 sudo apt install ibus-libpinyin
 sudo apt install ibus-clutter
 ```
 
-- 接着在应用程序中找到「Language Support」(语言支持)，更改「Keyboard input method system」(键盘输入法系统)为「IBUS」。重启系统，然后在 Settings>Region & Language>Input Sources（设置>区域与语言>输入源）中新增「Chinese(Intelligent Pinyin)」(中文(智能拼音))就可以使用中文输入法了
+- 接着在应用程序中找到「Language Support」(语言支持)，更改「Keyboard input method system」(键盘输入法系统)为「IBUS」。重启系统，然后在 Settings>Region & Language>Input Sources（设置>区域与语言>输入源）中新增「Chinese(Intelligent Pinyin) 」(中文(智能拼音))就可以使用中文输入法了
+
+### net-tools
+
+```shell
+sudo apt install net-tools
+```
 
 ## 命令行工具
 
@@ -176,7 +179,30 @@ sudo apt install screenfetch
 
 ## 软件安装
 
-### expressvpn(待定)
+### expressvpn
+
+- 下载包
+- 安装
+
+```shell
+sudo dpkg -i file_name
+```
+
+- 激活
+
+```shell
+expressvpn activate
+```
+
+- 常用命令
+
+```shell
+## 连接
+expressvpn connect
+
+## 不连接
+expressvpn disconnect
+```
 
 ### typora
 
@@ -227,3 +253,75 @@ nvm default v14.18.0
 
 nvm alias default v14.18.0
 ```
+
+### Shutter(截图)
+
+```shell
+sudo apt install shutter
+```
+
+### [金山 WPS](https://www.wps.cn/product/wpslinux)
+
+```shell
+sudo dpkg -i /your_path_to/wps-office_11.1.0.8865_amd64.deb
+```
+
+### [谷歌浏览器](https://www.google.cn/chrome/)
+
+```shell
+sudo dpkg -i /your_path_to/google-chrome-stable_current_amd64.deb
+```
+
+### Vim
+
+```shell
+sudo apt-get install vim
+```
+
+### [JDK8](https://www.oracle.com/java/technologies/downloads/#java8)
+
+- 解压缩
+
+```shell
+sudo tar -xzvf /user/local/software/jdk-8u191-linux-x64.tar.gz
+```
+
+- 配置环境变量
+
+```shell
+export JAVA_HOME=/usr/local/jdk1.8.0_191
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=.:${JAVA_HOME}/bin:$PATH
+```
+
+### [Maven](https://maven.apache.org/download.cgi)
+
+- 解压缩
+
+```shell
+sudo tar -xzvf /user/local/apache-maven-3.6.2-bin.tar.gz
+```
+
+- 配置环境变量
+
+```shell
+export MAVEN_HOME=/usr/local/apache-maven-3.6.2
+export PATH=${MAVEN_HOME}/bin:$PATH
+```
+
+- 配置镜像源 编辑 maven 的 settings.xml 文件（maven 主目录下/conf/），在<mirrors></mirrors>区块之间加入：
+
+```xml
+
+<mirror>
+  <id>aliyunmaven</id>
+  <mirrorOf>*</mirrorOf>
+  <name>阿里云公共仓库</name>
+  <url>https://maven.aliyun.com/repository/public</url>
+</mirror>
+```
+
+### Postman
+
+- 直接在 Ubuntu 自带的【Ubuntu 软件】中搜索 Postman
