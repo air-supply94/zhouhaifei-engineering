@@ -4752,18 +4752,6 @@ stylelint-config-rational-order@^0.1.2:
     stylelint "^9.10.1"
     stylelint-order "^2.2.1"
 
-stylelint-config-recommended@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.npmmirror.com/stylelint-config-recommended/download/stylelint-config-recommended-6.0.0.tgz?cache=0&sync_timestamp=1634869546347&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fstylelint-config-recommended%2Fdownload%2Fstylelint-config-recommended-6.0.0.tgz#fd2523a322836005ad9bf473d3e5534719c09f9d"
-  integrity sha1-/SUjoyKDYAWtm/Rz0+VTRxnAn50=
-
-stylelint-config-standard@^23.0.0:
-  version "23.0.0"
-  resolved "https://registry.npmmirror.com/stylelint-config-standard/download/stylelint-config-standard-23.0.0.tgz#4ad58c74804c544cb4d30667c21a30ab14d1c17d"
-  integrity sha1-StWMdIBMVEy00wZnwhowqxTRwX0=
-  dependencies:
-    stylelint-config-recommended "^6.0.0"
-
 stylelint-declaration-block-no-ignored-properties@^2.4.0:
   version "2.4.0"
   resolved "https://registry.nlark.com/stylelint-declaration-block-no-ignored-properties/download/stylelint-declaration-block-no-ignored-properties-2.4.0.tgz#767f05aaa15353354f280d6e3245c76bff511010"
