@@ -2,7 +2,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const compressionPlugin = require('compression-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 const copyWebpackPlugin = require('copy-webpack-plugin');
@@ -12,7 +11,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const ModuleScopePlugin = require('../react-dev-utils/ModuleScopePlugin');
-const WatchMissingNodeModulesPlugin = require('../react-dev-utils/WatchMissingNodeModulesPlugin');
 const bundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const { merge } = require('webpack-merge');
@@ -61,7 +59,7 @@ module.exports = function() {
     resolve: {
       modules: [
         'node_modules',
-        paths.appNodeModules,
+        paths.appSrc,
       ],
 
       extensions: paths.moduleFileExtensions.map((ext) => `.${ext}`)
@@ -117,16 +115,13 @@ module.exports = function() {
       // preload
       utils.isProduction && new PreloadWebpackPlugin({ rel: 'prefetch' }),
 
-      new CaseSensitivePathsPlugin(),
-      utils.isDevelopment && new WatchMissingNodeModulesPlugin(paths.appNodeModules),
-
       // zip css with content hash
       utils.isProduction && new MiniCssExtractPlugin({
         filename: `${utils.resourceName.css}/[name].[contenthash].css`,
         chunkFilename: `${utils.resourceName.css}/[name].[contenthash].css`,
       }),
 
-      new webpackBar({ profile: false }),
+      new webpackBar({ profile: true }),
       utils.isProduction && utils.isAnalyze && new bundleAnalyzerPlugin({
         openAnalyzer: false,
         analyzerPort: utils.port + 1,

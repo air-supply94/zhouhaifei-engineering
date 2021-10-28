@@ -5,7 +5,7 @@ const utils = require('./utils');
 module.exports = {
   libraryTarget: 'umd',
   path: utils.isProduction ? paths.appDist : utils.isDevelopment && paths.appPublic,
-  pathinfo: utils.isDevelopment,
+  pathinfo: false,
   filename: utils.isProduction
     ? `${utils.resourceName.js}/[name].[contenthash].js`
     : utils.isDevelopment && `${utils.resourceName.js}/[name].bundle.js`,

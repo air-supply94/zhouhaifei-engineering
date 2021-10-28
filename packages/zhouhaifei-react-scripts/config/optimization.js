@@ -7,6 +7,8 @@ module.exports = {
   usedExports: true,
   sideEffects: true,
   concatenateModules: true,
+  moduleIds: 'deterministic',
+  runtimeChunk: 'single',
   minimize: utils.isProduction,
   minimizer: utils.isProduction ? [
     utils.useEsBuild
@@ -80,9 +82,15 @@ module.exports = {
     chunks: 'all',
     minSize: utils.splitChunkMinSize,
     minChunks: 1,
-    name: false,
-    cacheGroups: {},
+    cacheGroups: {
+      vendors: {
+        // 拆分第三方库
+        test: /node_modules/,
+        chunks: 'all',
+        minChunks: 1,
+        priority: 100,
+        enforce: true,
+      },
+    },
   },
-
-  runtimeChunk: { name: (entryPoint) => `runtime-${entryPoint.name}` },
 };

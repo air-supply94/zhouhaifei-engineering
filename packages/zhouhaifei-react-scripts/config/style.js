@@ -66,20 +66,4 @@ module.exports = [
     test: /\.less$/,
     use: getStyleLoaders({}, 'less-loader'),
   },
-  {
-    include: [
-      getGlobalStyle('scss'),
-      getGlobalStyle('sass'),
-    ],
-    use: getStyleLoaders({}, 'sass-loader'),
-  },
-  {
-    test: /\.(scss|sass)$/,
-    include: [paths.appSrc],
-    use: getStyleLoaders({ modules: { localIdentName: '[name]__[local]--[hash:base64:8]' }}, 'sass-loader'),
-  },
-  {
-    test: /\.(scss|sass)$/,
-    use: getStyleLoaders({}, 'sass-loader'),
-  },
 ];

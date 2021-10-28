@@ -1,11 +1,5 @@
 {
-  "packages": [
-    "packages/generator-zhouhaifei-react",
-    "packages/zhouhaifei-code-style",
-    "packages/zhouhaifei-config",
-    "packages/zhouhaifei-react-scripts",
-    "packages/zhouhaifei-test"
-  ],
+  "packages": ["packages/*"],
   "npmClient": "yarn",
   "version": "2.15.1",
   "command": {

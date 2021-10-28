@@ -1,21 +1,14 @@
+const { getThemeVariables } = require('antd/dist/theme');
+
 module.exports = function(utils) {
   return {
+    less: {
+      theme: getThemeVariables({
+        dark: true, // 开启暗黑模式
+        compact: true, // 开启紧凑模式
+      }),
+    },
     otherConfig: {
-      optimization: {
-        splitChunks: {
-          cacheGroups: {
-            vendors: {
-              // 拆分第三方库
-              test: /node_modules/,
-              name: 'vendor',
-              chunks: 'initial',
-              minChunks: 2,
-              priority: 1,
-            },
-          },
-        },
-      },
-
       externals: {
         lodash: {
           commonjs: 'lodash',
