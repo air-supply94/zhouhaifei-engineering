@@ -2,7 +2,7 @@
 
 ### Features
 
-- **react-scripts:** update config ([7258505](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/7258505322cc426311202483a19eadb5c6f527ed))
+- **react-scripts:** update config ([4f72045](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/4f7204579242f523b42c0586ee43f5f39f24c678))
 
 ## [2.15.1](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.15.0...v2.15.1) (2021-10-08)
 
