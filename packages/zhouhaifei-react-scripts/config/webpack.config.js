@@ -25,6 +25,7 @@ const createEnvironmentHash = require('../react-dev-utils/createEnvironmentHash'
 
 const env = getClientEnvironment(utils.publicUrlOrPath);
 const useTypeScript = fs.existsSync(paths.appTsConfig);
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 
 module.exports = function() {
   const initConfig = {
@@ -89,6 +90,7 @@ module.exports = function() {
       ].filter(Boolean),
     },
     plugins: [
+      new SpeedMeasurePlugin(),
       new webpack.DefinePlugin(env.stringified),
 
       // eslint

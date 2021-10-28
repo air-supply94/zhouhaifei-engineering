@@ -48,7 +48,7 @@
     "validate-commit-msg": "^2.14.0",
     "zhouhaifei-code-style": "2.16.1",
     "zhouhaifei-config": "2.16.0",
-    "zhouhaifei-react-scripts": "2.16.0",
+    "zhouhaifei-react-scripts": "2.16.2",
     "zhouhaifei-test": "2.16.0"
   },
   "config": {
@@ -56,14 +56,19 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "browserslist": [
-    "Chrome >= 54",
-    "Firefox >= 47",
-    "Edge >= 12",
-    "Explorer >= 11",
-    "Safari >= 10.1",
-    "Opera >= 41"
-  ],
+  "browserslist": {
+    "production": [
+      "Chrome >= 54",
+      "Firefox >= 47",
+      "Edge >= 12",
+      "Explorer >= 11",
+      "Safari >= 10.1",
+      "Opera >= 41"
+    ],
+    "development": [
+      "Chrome >= 90"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "git add . && lint-staged",

@@ -51,7 +51,12 @@ module.exports = [
     use: getStyleLoaders(),
   },
   {
-    include: [getGlobalStyle('less')],
+    test: /\.less$/,
+    include: [
+      getGlobalStyle('less'),
+      /node_modules/,
+    ],
+    exclude: [...utils.less.moduleInclude],
     use: getStyleLoaders({}, 'less-loader'),
   },
   {
@@ -60,10 +65,7 @@ module.exports = [
       paths.appSrc,
       ...utils.less.moduleInclude,
     ],
+    exclude: getGlobalStyle('less'),
     use: getStyleLoaders({ modules: { localIdentName: '[name]__[local]--[hash:base64:8]' }}, 'less-loader'),
-  },
-  {
-    test: /\.less$/,
-    use: getStyleLoaders({}, 'less-loader'),
   },
 ];

@@ -1,26 +1,23 @@
 const paths = require('./paths');
 const utils = require('./utils');
 
-module.exports = [
-  {
-    test: /\.m?js/,
-    resolve: { fullySpecified: false },
-    include: [paths.appNodeModules],
-  },
-  {
-    test: /\.(js|mjs|jsx|ts|tsx)$/,
-    include: [
-      paths.appSrc,
-      ...utils.babel.include,
-    ],
+const parseJs = utils.isDevelopment && utils.useEsBuild
+  ? {
+    loader: require.resolve('esbuild-loader'),
+    options: {
+      loader: 'tsx',
+      target: 'es2015',
+    },
+  }
+  : {
     use: [
       {
         loader: require.resolve('thread-loader'),
         options: {
           /*
-           * number of jobs a worker processes in parallel
-           * defaults to 20
-           */
+             * number of jobs a worker processes in parallel
+             * defaults to 20
+             */
           workerParallelJobs: 50,
 
           // additional node.js arguments
@@ -67,5 +64,20 @@ module.exports = [
         },
       },
     ].filter(Boolean),
+  };
+
+module.exports = [
+  {
+    test: /\.m?js/,
+    resolve: { fullySpecified: false },
+    include: [paths.appNodeModules],
+  },
+  {
+    test: /\.(js|mjs|jsx|ts|tsx)$/,
+    include: [
+      paths.appSrc,
+      ...utils.babel.include,
+    ],
+    ...parseJs,
   },
 ];

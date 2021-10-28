@@ -99,7 +99,7 @@ module.exports = function(utils) {
     - 是否开启打包大小分析
     - YES 开启
   - `USE_ESBUILD`
-    - 是否使用 esbuild-webpack-plugin
+    - 是否使用 esbuild
     - YES 开启
   - `IS_COMPRESS`
     - 是否开启 gzip 和 br 压缩

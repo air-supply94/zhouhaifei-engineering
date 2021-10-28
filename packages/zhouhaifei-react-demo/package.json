@@ -38,14 +38,19 @@
     "zhouhaifei-react-scripts": "^2.16.0",
     "zhouhaifei-test": "^2.16.0"
   },
-  "browserslist": [
-    "Chrome >= 54",
-    "Firefox >= 47",
-    "Edge >= 12",
-    "Explorer >= 11",
-    "Safari >= 10.1",
-    "Opera >= 41"
-  ],
+  "browserslist": {
+    "production": [
+      "Chrome >= 54",
+      "Firefox >= 47",
+      "Edge >= 12",
+      "Explorer >= 11",
+      "Safari >= 10.1",
+      "Opera >= 41"
+    ],
+    "development": [
+      "Chrome >= 90"
+    ]
+  },
   "scripts": {
     "start": "zhouhaifei-react-scripts start",
     "build": "zhouhaifei-react-scripts build",
