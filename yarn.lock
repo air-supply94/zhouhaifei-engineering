@@ -11253,18 +11253,6 @@ stylelint-config-rational-order@^0.1.2:
     stylelint "^9.10.1"
     stylelint-order "^2.2.1"
 
-stylelint-config-recommended@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.npmjs.org/stylelint-config-recommended/-/stylelint-config-recommended-6.0.0.tgz#fd2523a322836005ad9bf473d3e5534719c09f9d"
-  integrity sha512-ZorSSdyMcxWpROYUvLEMm0vSZud2uB7tX1hzBZwvVY9SV/uly4AvvJPPhCcymZL3fcQhEQG5AELmrxWqtmzacw==
-
-stylelint-config-standard@^23.0.0:
-  version "23.0.0"
-  resolved "https://registry.npmjs.org/stylelint-config-standard/-/stylelint-config-standard-23.0.0.tgz#4ad58c74804c544cb4d30667c21a30ab14d1c17d"
-  integrity sha512-8PDlk+nWuc1T66nVaODTdVodN0pjuE5TBlopi39Lt9EM36YJsRhqttMyUhnS78oc/59Q6n8iw2GJB4QcoFqtRg==
-  dependencies:
-    stylelint-config-recommended "^6.0.0"
-
 stylelint-declaration-block-no-ignored-properties@^2.4.0:
   version "2.4.0"
   resolved "https://registry.nlark.com/stylelint-declaration-block-no-ignored-properties/download/stylelint-declaration-block-no-ignored-properties-2.4.0.tgz#767f05aaa15353354f280d6e3245c76bff511010"
@@ -12593,10 +12581,10 @@ yocto-queue@^0.1.0:
   resolved "https://registry.nlark.com/yocto-queue/download/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=
 
-zhouhaifei-code-style@2.16.0:
-  version "2.16.0"
-  resolved "https://registry.npmjs.org/zhouhaifei-code-style/-/zhouhaifei-code-style-2.16.0.tgz#8708f205b2b7975645a22302a347d9a525c18dab"
-  integrity sha512-/ZadRrQONV7L+tj3rkk/vlyW7wUfq4ATk1eTRXU6Nk9exq2KF4jMVG3G35qm/UhDzpuXL3IjLt691y9SsPb5pw==
+zhouhaifei-code-style@2.16.1:
+  version "2.16.1"
+  resolved "https://registry.npmjs.org/zhouhaifei-code-style/-/zhouhaifei-code-style-2.16.1.tgz#f49fcb48529c69c3911850c8742a7396e9ca6ce5"
+  integrity sha512-asnxDW012NI3AqZDvggsiSm3IOmWHFMb9EubZZ6zITTtmYW8gYsC+kZV5OUQdJIPkmQ84WSJduJ2A6gSWIjrDw==
   dependencies:
     "@commitlint/config-conventional" "^13.2.0"
     "@typescript-eslint/eslint-plugin" "^5.2.0"
@@ -12611,7 +12599,6 @@ zhouhaifei-code-style@2.16.0:
     stylelint-config-css-modules "^2.3.0"
     stylelint-config-prettier "^9.0.3"
     stylelint-config-rational-order "^0.1.2"
-    stylelint-config-standard "^23.0.0"
     stylelint-declaration-block-no-ignored-properties "^2.4.0"
     stylelint-order "^5.0.0"
 
