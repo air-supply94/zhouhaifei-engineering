@@ -2,7 +2,7 @@
 
 ### Features
 
-- **react-script:** 更新配置 ([849f968](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/849f96835c5133a67b8ece4249bd61723bca9559))
+- **react-script:** 更新配置 ([76c08b5](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/76c08b55f55f329c0da7dc2ec4718cc85b54e78e))
 
 ## [2.16.1](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.16.0...v2.16.1) (2021-10-28)
 
