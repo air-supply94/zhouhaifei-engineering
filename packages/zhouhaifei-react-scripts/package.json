@@ -30,7 +30,6 @@
     "detect-port-alt": "^1.1.6",
     "dotenv": "10.0.0",
     "dotenv-expand": "5.1.0",
-    "esbuild-loader": "^2.16.0",
     "esbuild-webpack-plugin": "^1.1.0",
     "escape-string-regexp": "4.0.0",
     "eslint": "7.29.0",
