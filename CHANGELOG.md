@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.16.2...v0.0.0) (2021-11-08)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.16.3...v0.0.0) (2021-11-18)
+
+### Features
+
+- **code-style:** 更新 stylelint 配置 ([04bbbe2](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/04bbbe2f979dbdb24db54136592b7e9c11f23f87))
+
+## [2.16.3](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.16.2...v2.16.3) (2021-11-08)
 
 ### Features
 

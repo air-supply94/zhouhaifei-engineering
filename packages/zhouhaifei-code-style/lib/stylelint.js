@@ -29,7 +29,6 @@ module.exports = {
     'keyframe-declaration-no-important': true,
     'media-feature-name-no-unknown': true,
     'named-grid-areas-no-invalid': true,
-    'no-descending-specificity': true,
     'no-duplicate-at-import-rules': true,
     'no-duplicate-selectors': true,
     'no-empty-source': true,
@@ -38,8 +37,12 @@ module.exports = {
     'no-invalid-position-at-import-rule': true,
     'no-irregular-whitespace': true,
     'property-no-unknown': true,
-    'selector-pseudo-class-no-unknown': true,
     'selector-pseudo-element-no-unknown': true,
+    'selector-pseudo-class-no-unknown': [
+      true,
+      {ignorePseudoClasses: ['global']},
+    ],
+    'no-descending-specificity': null,
     'selector-type-no-unknown': [
       true,
       {
@@ -50,32 +53,14 @@ module.exports = {
     'unit-no-unknown': true,
 
     // config-standard
-    'custom-media-pattern': [
-      '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
-      {
-        message: 'Expected custom media query name to be kebab-case',
-      },
-    ],
-    'custom-property-pattern': [
-      '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
-      {
-        message: 'Expected custom property name to be kebab-case',
-      },
-    ],
     'declaration-block-single-line-max-declarations': 1,
-    'declaration-block-no-redundant-longhand-properties': true,
+    'declaration-block-no-redundant-longhand-properties': null,
     'declaration-colon-newline-after': 'always-multi-line',
     'font-family-name-quotes': 'always-where-recommended',
     'function-name-case': 'lower',
-    'function-url-quotes': 'always',
-    'keyframes-name-pattern': [
-      '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
-      {
-        message: 'Expected keyframe name to be kebab-case',
-      },
-    ],
-    'max-line-length': 120,
-    'number-max-precision': 4,
+    'function-url-quotes': null,
+    'max-line-length': 180,
+    'number-max-precision': null,
     'property-no-vendor-prefix': true,
     'rule-empty-line-before': [
       'always-multi-line',
@@ -85,12 +70,6 @@ module.exports = {
       },
     ],
     'selector-class-pattern': null,
-    'selector-id-pattern': [
-      '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
-      {
-        message: 'Expected id selector to be kebab-case',
-      },
-    ],
     'selector-list-comma-newline-after': 'always',
     'selector-type-case': 'lower',
 
