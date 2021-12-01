@@ -28,11 +28,12 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.6",
+    "@types/react-test-renderer": "^17.0.1",
     "eslint": "7.29.0",
     "mockjs": "^1.1.0",
     "postcss": "8.3.11",
     "react-test-renderer": "^17.0.1",
-    "typescript": "4.4.4",
+    "typescript": "4.2.4",
     "zhouhaifei-code-style": "^2.16.4",
     "zhouhaifei-config": "^2.16.0",
     "zhouhaifei-react-scripts": "^2.16.3",
@@ -54,6 +55,7 @@
   "scripts": {
     "start": "zhouhaifei-react-scripts start",
     "build": "zhouhaifei-react-scripts build",
-    "test": "zhouhaifei-test react"
+    "test": "node node_modules/zhouhaifei-test/bin/zhouhaifei-test.js react -u",
+    "test-pattern": "node node_modules/zhouhaifei-test/bin/zhouhaifei-test.js react -u --testNamePattern=^$"
   }
 }

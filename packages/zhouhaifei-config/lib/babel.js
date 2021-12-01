@@ -1,4 +1,4 @@
-module.exports = function(isWeb = true) {
+module.exports = function (isWeb = true) {
   const presets = [
     [
       require.resolve('@babel/preset-env'),
@@ -26,11 +26,11 @@ module.exports = function(isWeb = true) {
     require.resolve('@babel/plugin-syntax-dynamic-import'), // 支持动态import
     [
       require.resolve('@babel/plugin-proposal-decorators'),
-      { legacy: true },
+      {legacy: true},
     ], // 支持装饰器语法
     [
       require.resolve('@babel/plugin-proposal-class-properties'),
-      { loose: false },
+      {loose: false},
     ], // 支持class属性初始化和static
     require.resolve('@babel/plugin-proposal-export-default-from'), // 支持 export v from 'mod'语法
     require.resolve('@babel/plugin-syntax-import-meta'),
@@ -49,10 +49,16 @@ module.exports = function(isWeb = true) {
       },
       test: {
         presets: [
-          require.resolve('@babel/preset-env'),
+          [
+            require.resolve('@babel/preset-env'),
+            {
+              modules: 'commonjs', // modules预先将es6模块转成"amd" | "umd" | "systemjs" | "commonjs", 值为false则不转换
+            },
+          ],
+          require.resolve('@babel/preset-react'), // 转换jsx语法
           require.resolve('@babel/preset-typescript'),
         ],
-        plugins: [require.resolve('@babel/plugin-transform-runtime')],
+        plugins: plugins.slice(1),
       },
     },
   };
