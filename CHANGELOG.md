@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.16.4...v0.0.0) (2021-12-01)
 
+### Features
+
+- **packages:** 更新测试配置 ([5c0a3dc](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/5c0a3dc82f298db61fbe6e46ac402453028f2dd7))
+
 ## [2.16.4](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.16.3...v2.16.4) (2021-11-18)
 
 ### Features
