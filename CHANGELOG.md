@@ -2,7 +2,7 @@
 
 ### Features
 
-- **react-demo:** 更新测试配置 ([ed6dd07](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/ed6dd072c021fac9cfa04cb0cc5c0163dc3181d6))
+- **react-demo:** 更新测试配置 ([ff90ca7](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/ff90ca76248f87799941c84659574ec40e96dbc2))
 
 # [2.17.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.16.4...v2.17.0) (2021-12-01)
 
