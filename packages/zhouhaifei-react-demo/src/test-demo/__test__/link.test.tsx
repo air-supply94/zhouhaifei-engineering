@@ -1,35 +1,25 @@
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { Link } from '../link';
 
+afterEach(cleanup);
+
 test('Link', () => {
-  let component: renderer.ReactTestRenderer;
-  renderer.act(() => {
-    component = renderer.create(
-      <Link page="http://www.facebook.com">
-        Facebook
-      </Link>
-    );
-  });
+  const component = render(
+    <Link page="http://www.facebook.com">
+      Facebook
+    </Link>
+  );
 
-  let tree = component.toJSON() as renderer.ReactTestRendererJSON;
-  expect(tree).toMatchSnapshot();
+  // init
+  expect(component.asFragment()).toMatchSnapshot();
 
-  renderer.act(() => {
-    // manually trigger the callback
-    tree.props.onMouseEnter();
-  });
+  // mouseEnter
+  fireEvent.mouseEnter(component.container.firstChild);
+  expect(component.asFragment()).toMatchSnapshot();
 
-  // re-rendering
-  tree = component.toJSON() as renderer.ReactTestRendererJSON;
-  expect(tree).toMatchSnapshot();
+  // mouseLeave
+  fireEvent.mouseLeave(component.container.firstChild);
 
-  renderer.act(() => {
-    // manually trigger the callback
-    tree.props.onMouseLeave();
-  });
-
-  // re-rendering
-  tree = component.toJSON() as renderer.ReactTestRendererJSON;
-  expect(tree).toMatchSnapshot();
+  expect(component.asFragment()).toMatchSnapshot();
 });

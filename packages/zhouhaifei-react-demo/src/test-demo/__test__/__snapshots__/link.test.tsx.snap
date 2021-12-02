@@ -1,34 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Link 1`] = `
-<a
-  className="normal"
-  href="http://www.facebook.com"
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  Facebook
-</a>
+<DocumentFragment>
+  <a
+    class="normal"
+    href="http://www.facebook.com"
+  >
+    Facebook
+  </a>
+</DocumentFragment>
 `;
 
 exports[`Link 2`] = `
-<a
-  className="hovered"
-  href="http://www.facebook.com"
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  Facebook
-</a>
+<DocumentFragment>
+  <a
+    class="hovered"
+    href="http://www.facebook.com"
+  >
+    Facebook
+  </a>
+</DocumentFragment>
 `;
 
 exports[`Link 3`] = `
-<a
-  className="normal"
-  href="http://www.facebook.com"
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  Facebook
-</a>
+<DocumentFragment>
+  <a
+    class="normal"
+    href="http://www.facebook.com"
+  >
+    Facebook
+  </a>
+</DocumentFragment>
 `;
