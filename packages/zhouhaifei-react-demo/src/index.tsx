@@ -6,6 +6,9 @@ import ReactDOM from 'react-dom';
 import { globalModel } from './models/globalModel';
 import { routes } from './routes';
 import { Locale, RenderRoutes, history } from './utils';
+import { webVitals } from './webVitals';
+
+webVitals(console.log);
 
 function render() {
   ReactDOM.render(
