@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.2...v0.0.0) (2021-12-10)
 
+### Features
+
+- **code-style:** remove property-no-vendor-prefix ([40d9c91](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/40d9c9160e0926bda23cf7d7de51790c1098b3a9))
+
 ## [2.17.2](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.1...v2.17.2) (2021-12-08)
 
 ### Features
