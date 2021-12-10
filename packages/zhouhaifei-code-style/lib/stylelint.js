@@ -61,7 +61,7 @@ module.exports = {
     'function-url-quotes': null,
     'max-line-length': 180,
     'number-max-precision': null,
-    'property-no-vendor-prefix': true,
+    'property-no-vendor-prefix': null,
     'rule-empty-line-before': [
       'always-multi-line',
       {
