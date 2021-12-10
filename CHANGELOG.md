@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.3...v0.0.0) (2021-12-10)
 
+### Features
+
+- **react-scripts:** 更新 copy-plugin 参数 ([3ea6d7f](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/3ea6d7fef2b3711d0009118abb93a54ee7f3ce0a))
+
 ## [2.17.3](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.2...v2.17.3) (2021-12-10)
 
 ### Features

@@ -1,6 +1,6 @@
 {
   "name": "zhouhaifei-react-demo",
-  "version": "2.17.3",
+  "version": "2.17.4",
   "dependencies": {
     "@ant-design/pro-layout": "^6.14.0",
     "antd": "4.12.3",
@@ -35,7 +35,7 @@
     "typescript": "4.2.4",
     "zhouhaifei-code-style": "^2.17.3",
     "zhouhaifei-config": "^2.17.2",
-    "zhouhaifei-react-scripts": "^2.17.2",
+    "zhouhaifei-react-scripts": "^2.17.4",
     "zhouhaifei-test": "^2.16.0"
   },
   "browserslist": {
