@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.5...v0.0.0) (2021-12-16)
 
+### Features
+
+- **generator:** 更新包依赖 ([4c169c7](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/4c169c7f4713906377aa186053f79dd2fa5d68c4))
+
 ## [2.17.5](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.4...v2.17.5) (2021-12-16)
 
 ### Features
