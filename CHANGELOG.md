@@ -2,7 +2,7 @@
 
 ### Features
 
-- **react-scripts:** 增加 esbuild-loader ([59a0bca](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/59a0bca831146f30c962ffc7974a056e79f0bcf1))
+- **react-scripts:** 增加 esbuild-loader ([4750748](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/4750748d8b33f5dfb6e07e2511be7ad0de03cc2e))
 
 ## [2.17.4](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.3...v2.17.4) (2021-12-10)
 
