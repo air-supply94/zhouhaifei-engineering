@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.3...v0.0.0) (2021-12-10)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.4...v0.0.0) (2021-12-16)
+
+### Features
+
+- **react-scripts:** 增加 esbuild-loader ([59a0bca](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/59a0bca831146f30c962ffc7974a056e79f0bcf1))
+
+## [2.17.4](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.3...v2.17.4) (2021-12-10)
 
 ### Features
 

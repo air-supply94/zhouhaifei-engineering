@@ -33,10 +33,6 @@
     }
   },
   "lint-staged": {
-    "**/*.less": [
-      "npm run lint:style-less",
-      "git add ."
-    ],
     "**/*.{js,jsx,ts,tsx}": [
       "npm run lint:js",
       "git add ."
@@ -57,7 +53,6 @@
     "bootstrap": "lerna bootstrap",
     "publish": "lerna publish",
     "lint-staged": "lint-staged --allow-empty",
-    "lint:style-less": "stylelint --quiet --fix \"**/*.less\" --syntax less",
     "lint:js": "eslint --fix --quiet --ext .js,.jsx,.ts,.tsx .",
     "prettier": "prettier -c --write \"**/*.{css,md,html,json}\"",
     "docs:start": "dumi dev",

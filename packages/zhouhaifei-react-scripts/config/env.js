@@ -73,7 +73,9 @@ function getClientEnvironment(publicUrl) {
         return env;
       },
       {
-      /*
+        USE_ESBUILD: process.env.USE_ESBUILD || 'NO',
+
+        /*
        * Useful for determining whether we’re running in production mode.
        * Most importantly, it switches React into the correct mode.
        */

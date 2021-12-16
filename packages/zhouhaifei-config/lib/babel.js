@@ -30,20 +30,23 @@ module.exports = function (isWeb = true) {
     [require.resolve('@babel/plugin-transform-runtime')],
   ];
 
-  const pluginImport = [[
-    require.resolve('babel-plugin-import'),
-    {
-      libraryName: isWeb ? 'antd' : 'antd-mobile',
-      libraryDirectory: 'es',
-      style: true,
-    },
-  ]];
+  const pluginImport = [
+    [
+      require.resolve('babel-plugin-import'),
+      {
+        libraryName: isWeb ? 'antd' : 'antd-mobile',
+        libraryDirectory: 'es',
+        style: true,
+      },
+    ]
+  ];
+  const useEsBuild = typeof process.env.USE_ESBUILD === 'string' && process.env.USE_ESBUILD.toLocaleUpperCase() === 'YES';
 
   return {
     env: {
       development: {
         presets,
-        plugins: basePlugins,
+        plugins: useEsBuild ? basePlugins : pluginImport.concat(basePlugins),
       },
       production: {
         presets,

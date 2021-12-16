@@ -8,7 +8,11 @@ import { routes } from './routes';
 import { Locale, RenderRoutes, history } from './utils';
 import { webVitals } from './webVitals';
 
-webVitals(console.log);
+if (process.env.NODE_ENV === 'development' && typeof process.env.USE_ESBUILD === 'string' && process.env.USE_ESBUILD.toLocaleUpperCase() === 'YES') {
+  import('antd/dist/antd.less').then(render);
+} else {
+  render();
+}
 
 function render() {
   ReactDOM.render(
@@ -27,7 +31,7 @@ function render() {
   );
 }
 
-render();
+webVitals(console.log);
 
 // @ts-ignore
 if (module.hot) {
@@ -35,7 +39,5 @@ if (module.hot) {
   module.hot.accept([
     './routes',
     './utils',
-  ], () => {
-    render();
-  });
+  ], render);
 }
