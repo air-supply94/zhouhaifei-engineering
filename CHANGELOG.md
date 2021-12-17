@@ -2,6 +2,7 @@
 
 ### Features
 
+- **generator:** 增加对 react-error-overlay 错误兼容 ([71a0d1c](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/71a0d1c925e35cbfe35dca38c3df8b68015af0e8))
 - **generator:** 更新包依赖 ([8391c00](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/8391c0043fb0dcc9cd55c067ac210cb33add9cf7))
 
 ## [2.17.6](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.5...v2.17.6) (2021-12-16)
