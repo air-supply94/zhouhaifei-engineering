@@ -27,7 +27,7 @@ module.exports = function (isWeb = true) {
     ], // 支持class属性初始化和static
     require.resolve('@babel/plugin-proposal-export-default-from'), // 支持 export v from 'mod'语法
     require.resolve('@babel/plugin-syntax-import-meta'),
-    [require.resolve('@babel/plugin-transform-runtime')],
+    [require.resolve('@babel/plugin-transform-runtime'), {corejs: 3, proposals: true}],
   ];
 
   const pluginImport = [
