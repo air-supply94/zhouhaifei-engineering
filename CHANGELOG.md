@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.7...v0.0.0) (2021-12-21)
 
+### Features
+
+- **generator:** remove url-search-params-polyfill ([1b692d6](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/1b692d66145b8863efc8e77a1cca03419d0919e0))
+
 ## [2.17.7](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.6...v2.17.7) (2021-12-17)
 
 ### Features
