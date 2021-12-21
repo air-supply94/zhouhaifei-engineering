@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.8...v0.0.0) (2021-12-21)
 
+### Features
+
+- **config:** 更新 babel 配置 ([9524210](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/95242107030a709bff30756cf3941a401dfdce6c))
+
 ## [2.17.8](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.7...v2.17.8) (2021-12-21)
 
 ### Features

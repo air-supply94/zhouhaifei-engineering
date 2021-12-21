@@ -1,6 +1,6 @@
 {
   "name": "zhouhaifei-react-demo",
-  "version": "2.17.8",
+  "version": "2.18.0",
   "dependencies": {
     "@ant-design/pro-layout": "^6.14.0",
     "antd": "4.12.3",
@@ -33,10 +33,10 @@
     "mockjs": "^1.1.0",
     "postcss": "8.3.11",
     "typescript": "4.2.4",
-    "zhouhaifei-code-style": "^2.17.3",
-    "zhouhaifei-config": "^2.17.5",
-    "zhouhaifei-react-scripts": "^2.17.5",
-    "zhouhaifei-test": "^2.16.0"
+    "zhouhaifei-code-style": "^2.18.0",
+    "zhouhaifei-config": "^2.18.0",
+    "zhouhaifei-react-scripts": "^2.18.0",
+    "zhouhaifei-test": "^2.18.0"
   },
   "browserslist": {
     "production": [
