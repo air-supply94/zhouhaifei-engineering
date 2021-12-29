@@ -158,15 +158,6 @@ module.exports = function() {
           {
             from: path.resolve(paths.appPublic),
             to: path.resolve(paths.appDist),
-            toType: 'dir',
-            globOptions: {
-              dot: true,
-              gitignore: true,
-              ignore: [
-                '**/*.html',
-                '**/*.ejs',
-              ],
-            },
           },
         ],
       }),
