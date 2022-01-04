@@ -2,7 +2,7 @@
 
 ### Features
 
-- **react-scripts:** add url-loader ([29d46e0](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/29d46e07d937dd102cf2361647b2481c33101ce2))
+- **react-scripts:** add url-loader ([1071b4f](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/1071b4f7f1382f196b8341d67f0b0aac733d8a5e))
 
 ## [2.18.1](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.0...v2.18.1) (2021-12-29)
 
