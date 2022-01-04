@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.0...v0.0.0) (2021-12-29)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.1...v0.0.0) (2022-01-04)
+
+### Features
+
+- **react-scripts:** add url-loader ([29d46e0](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/29d46e07d937dd102cf2361647b2481c33101ce2))
+
+## [2.18.1](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.0...v2.18.1) (2021-12-29)
 
 ### Features
 
