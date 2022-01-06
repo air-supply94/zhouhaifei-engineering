@@ -1,66 +1,8 @@
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 'use strict';
 
-/*
- * This alternative WebpackDevServer combines the functionality of:
- * https://github.com/webpack/webpack-dev-server/blob/webpack-1/client/index.js
- * https://github.com/webpack/webpack/blob/webpack-1/hot/dev-server.js
- */
-
-/*
- * It only supports their simplest configuration (hot updates on same server).
- * It makes some opinionated choices on top, like adding a syntax error overlay
- * that looks similar to our console output. The error overlay is inspired by:
- * https://github.com/glenjamin/webpack-hot-middleware
- */
-
 const url = require('url');
-const ErrorOverlay = require('react-error-overlay');
 const stripAnsi = require('strip-ansi');
 const formatWebpackMessages = require('./formatWebpackMessages');
-const launchEditorEndpoint = require('./launchEditorEndpoint');
-
-ErrorOverlay.setEditorHandler((errorLocation) => {
-  // Keep this sync with errorOverlayMiddleware.js
-  fetch(
-    `${launchEditorEndpoint
-    }?fileName=${
-      window.encodeURIComponent(errorLocation.fileName)
-    }&lineNumber=${
-      window.encodeURIComponent(errorLocation.lineNumber || 1)
-    }&colNumber=${
-      window.encodeURIComponent(errorLocation.colNumber || 1)}`
-  );
-});
-
-/*
- * We need to keep track of if there has been a runtime error.
- * Essentially, we cannot guarantee application state was not corrupted by the
- * runtime error. To prevent confusing behavior, we forcibly reload the entire
- * application. This is handled below when we are notified of a compile (code
- * change).
- * See https://github.com/facebook/create-react-app/issues/3096
- */
-let hadRuntimeError = false;
-ErrorOverlay.startReportingRuntimeErrors({
-  onError() {
-    hadRuntimeError = true;
-  },
-  filename: '/static/js/bundle.js',
-});
-
-if (module.hot && typeof module.hot.dispose === 'function') {
-  module.hot.dispose(() => {
-    // TODO: why do we need this?
-    ErrorOverlay.stopReportingRuntimeErrors();
-  });
-}
 
 // Connect to WebpackDevServer via a socket.
 const connection = new WebSocket(
@@ -112,13 +54,7 @@ function handleSuccess() {
 
   // Attempt to apply hot updates or reload.
   if (isHotUpdate) {
-    tryApplyUpdates(() => {
-      /*
-       * Only dismiss it when we're sure it's a hot update.
-       * Otherwise it would flicker right before the reload.
-       */
-      tryDismissErrorOverlay();
-    });
+    tryApplyUpdates(() => {});
   }
 }
 
@@ -155,13 +91,7 @@ function handleWarnings(warnings) {
 
   // Attempt to apply hot updates or reload.
   if (isHotUpdate) {
-    tryApplyUpdates(() => {
-      /*
-       * Only dismiss it when we're sure it's a hot update.
-       * Otherwise it would flicker right before the reload.
-       */
-      tryDismissErrorOverlay();
-    });
+    tryApplyUpdates(() => {});
   }
 }
 
@@ -178,25 +108,11 @@ function handleErrors(errors) {
     warnings: [],
   });
 
-  // Only show the first error.
-  ErrorOverlay.reportBuildError(formatted.errors[0]);
-
   // Also log them to the console.
   if (typeof console !== 'undefined' && typeof console.error === 'function') {
     for (let i = 0; i < formatted.errors.length; i++) {
       console.error(stripAnsi(formatted.errors[i]));
     }
-  }
-
-  /*
-   * Do not attempt to reload now.
-   * We will reload on next success instead.
-   */
-}
-
-function tryDismissErrorOverlay() {
-  if (!hasCompileErrors) {
-    ErrorOverlay.dismissBuildError();
   }
 }
 
@@ -261,7 +177,7 @@ function tryApplyUpdates(onHotUpdateSuccess) {
   }
 
   function handleApplyUpdates(err, updatedModules) {
-    if (err || !updatedModules || hadRuntimeError) {
+    if (err || !updatedModules) {
       window.location.reload();
       return;
     }
