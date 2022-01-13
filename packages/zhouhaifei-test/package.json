@@ -17,12 +17,12 @@
     "cross-spawn": "^7.0.3",
     "dotenv": "^10.0.0",
     "dotenv-expand": "^5.1.0",
+    "esbuild-jest": "^0.5.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "27.3.1",
     "jest-environment-jsdom-fourteen": "1.0.1",
     "jest-transform-css": "^2.1.0",
-    "jest-watch-typeahead": "1.0.0",
-    "ts-jest": "^27.0.7"
+    "jest-watch-typeahead": "1.0.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
