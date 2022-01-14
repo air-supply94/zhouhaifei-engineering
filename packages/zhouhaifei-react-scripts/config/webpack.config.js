@@ -1,18 +1,16 @@
 'use strict';
-
 const fs = require('fs');
 const path = require('path');
 const compressionPlugin = require('compression-webpack-plugin');
-const cleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const webpack = require('webpack');
 const ModuleScopePlugin = require('../react-dev-utils/ModuleScopePlugin');
 const bundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const { merge } = require('webpack-merge');
 const webpackBar = require('webpackbar');
 const workboxWebpackPlugin = require('workbox-webpack-plugin');
@@ -107,8 +105,6 @@ module.exports = function() {
         ],
       }),
 
-      // 清除原先打包内容
-      utils.isProduction && new cleanWebpackPlugin(),
       new HtmlWebpackPlugin(require('./htmlWebpackPlugin')),
 
       // TypeScript type checking
