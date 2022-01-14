@@ -1,5 +1,10 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.4...v0.0.0) (2022-01-14)
 
+### Features
+
+- **react-scripts:** 去掉 cra 无用的插件 ([52c0f2d](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/52c0f2d3f0346a64679e18099ab30c4b1d7b3f72))
+- **react-scripts:** remove clean-plugin ([7f0cc70](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/7f0cc70e0e48b3f328372cb70454ac7c37e931d5))
+
 ## [2.18.4](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.3...v2.18.4) (2022-01-13)
 
 ### Features
