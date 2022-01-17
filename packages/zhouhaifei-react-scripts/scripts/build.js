@@ -11,21 +11,17 @@ process.on('unhandledRejection', (err) => {
 // Ensure environment variables are read.
 require('../config/env');
 
-const path = require('path');
 const chalk = require('chalk');
-const fs = require('fs-extra');
 const webpack = require('webpack');
 const paths = require('../config/paths');
 const utils = require('../config/utils');
 const configFactory = require('../config/webpack.config');
-const checkBrowsers = require('../react-dev-utils/browsersHelper');
+const checkBrowsers = require('../react-dev-utils/checkBrowsers');
 const checkRequiredFiles = require('../react-dev-utils/checkRequiredFiles');
-const FileSizeReporter = require('../react-dev-utils/FileSizeReporter');
-const printHostingInstructions = require('../react-dev-utils/printHostingInstructions');
+const FileSizeReporter = require('../react-dev-utils/fileSizeReporter');
 
 const measureFileSizesBeforeBuild = FileSizeReporter.measureFileSizesBeforeBuild;
 const printFileSizesAfterBuild = FileSizeReporter.printFileSizesAfterBuild;
-const useYarn = fs.existsSync(paths.yarnLockFile);
 
 // These sizes are pretty large. We'll warn for bundles exceeding them.
 const WARN_AFTER_BUNDLE_GZIP_SIZE = 512 * 1024;
@@ -67,7 +63,7 @@ function build() {
   });
 }
 
-async function deploy() {
+async function runBuild() {
   await checkBrowsers(paths.appPath);
   const previousFileSizes = await measureFileSizesBeforeBuild(paths.appDist);
   const stats = await build();
@@ -84,20 +80,11 @@ async function deploy() {
   );
   console.log();
 
-  const appPackage = require(paths.appPackageJson);
-  const publicUrl = utils.publicUrlOrPath;
-  const publicPath = config.output.publicPath;
-  const buildFolder = path.relative(process.cwd(), paths.appDist);
-  printHostingInstructions(
-    appPackage,
-    publicUrl,
-    publicPath,
-    buildFolder,
-    useYarn
-  );
+  console.log(chalk.green(`publicUrl: ${utils.publicUrlOrPath}`));
+  console.log(chalk.green(`buildFolder: ${paths.appDist}`));
 }
 
-deploy().catch((err) => {
+runBuild().catch((err) => {
   console.log(err);
   console.log(chalk.red('Failed to compile.\n'));
   process.exit(1);

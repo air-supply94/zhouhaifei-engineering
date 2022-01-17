@@ -20,6 +20,7 @@ const allowEslint = typeof process.env.ALLOW_ESLINT === 'string' && process.env.
 const isAnalyze = typeof process.env.IS_ANALYZE === 'string' && process.env.IS_ANALYZE.toLocaleUpperCase() === 'YES';
 const useEsBuild = typeof process.env.USE_ESBUILD === 'string' && process.env.USE_ESBUILD.toLocaleUpperCase() === 'YES';
 const isCompress = typeof process.env.IS_COMPRESS === 'string' && process.env.IS_COMPRESS.toLocaleUpperCase() === 'YES';
+const protocol = typeof process.env.HTTPS === 'string' && process.env.HTTPS.toLocaleUpperCase() === 'YES' ? 'https' : 'http';
 
 if (sourceMap !== false && !sourceMap) {
   if (isProduction) {
@@ -65,6 +66,7 @@ const config = {
   publicUrlOrPath,
   useEsBuild,
   isCompress,
+  protocol,
 
   // user
   less: {

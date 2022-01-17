@@ -1,5 +1,4 @@
 const assert = require('assert');
-const bodyParser = require('body-parser');
 const chalk = require('chalk');
 const chokidar = require('chokidar');
 const glob = require('glob');
@@ -51,18 +50,6 @@ function watchFile(devServer) {
 
 function applyMock(devServer) {
   try {
-    devServer.use(bodyParser.json({
-      limit: '5mb',
-      strict: false,
-    }));
-
-    devServer.use(
-      bodyParser.urlencoded({
-        extended: true,
-        limit: '5mb',
-      })
-    );
-
     realApplyMock(devServer);
     watchFile(devServer);
   } catch (e) {

@@ -1,4 +1,5 @@
 'use strict';
+const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 const compressionPlugin = require('compression-webpack-plugin');
@@ -9,7 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const webpack = require('webpack');
-const ModuleScopePlugin = require('../react-dev-utils/ModuleScopePlugin');
+const ModuleScopePlugin = require('../react-dev-utils/moduleScopePlugin');
 const bundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { merge } = require('webpack-merge');
 const webpackBar = require('webpackbar');
@@ -19,7 +20,13 @@ const getClientEnvironment = require('./env');
 const modules = require('./modules');
 const paths = require('./paths');
 const utils = require('./utils');
-const createEnvironmentHash = require('../react-dev-utils/createEnvironmentHash');
+
+function createEnvironmentHash(env) {
+  const hash = crypto.createHash('md5');
+  hash.update(JSON.stringify(env));
+
+  return hash.digest('hex');
+}
 
 const env = getClientEnvironment(utils.publicUrlOrPath);
 const useTypeScript = fs.existsSync(paths.appTsConfig);
@@ -157,8 +164,6 @@ module.exports = function() {
           },
         ],
       }),
-
-      utils.isDevelopment && new webpack.HotModuleReplacementPlugin(),
 
       // 是否开启serviceWorker
       utils.isProduction && utils.isStartServiceWorker && new workboxWebpackPlugin.GenerateSW({

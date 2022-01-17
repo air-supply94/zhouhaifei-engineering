@@ -1,14 +1,16 @@
 'use strict';
 
 const fs = require('fs');
+const bodyParser = require('body-parser');
 const ignoredFiles = require('../react-dev-utils/ignoredFiles');
 const getHttpsConfig = require('./getHttpsConfig');
 const paths = require('./paths');
 const utils = require('./utils');
 
-module.exports = function(allowedHost) {
+module.exports = function createDevServerConfig() {
   return {
-    disableHostCheck: false,
+    hot: true,
+    allowedHosts: 'all',
 
     // Enable gzip compression of generated files.
     compress: true,
@@ -19,51 +21,58 @@ module.exports = function(allowedHost) {
       'Access-Control-Allow-Headers': '*',
     },
 
-    /*
-     * Silence WebpackDevServer's own logs since they're generally not useful.
-     * It will still show compile warnings and errors with this setting.
-     */
-    clientLogLevel: 'none',
-
-    contentBase: paths.appPublic,
-    contentBasePublicPath: utils.publicUrlOrPath,
-
-    // By default files from `contentBase` will not trigger a page reload.
-    watchContentBase: true,
-
-    hot: true,
-
-    injectClient: true,
-
-    sockHost: utils.sockHost,
-    sockPath: utils.sockPath,
-    sockPort: utils.sockPort,
-
-    publicPath: utils.publicUrlOrPath.slice(0, -1),
-
-    quiet: true,
-
-    watchOptions: {
-      aggregateTimeout: 600,
-      ignored: ignoredFiles(paths.appSrc),
+    client: {
+      logging: 'none',
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
+      webSocketURL: {
+        hostname: utils.sockHost,
+        pathname: utils.sockPath,
+        port: utils.sockPort,
+      },
+      progress: false,
     },
     https: getHttpsConfig(),
     host: utils.host,
-    overlay: false,
+    port: utils.port,
     historyApiFallback: {
       disableDotRule: true,
       index: utils.publicUrlOrPath,
     },
-    public: allowedHost,
+    devMiddleware: { publicPath: utils.publicUrlOrPath },
+    static: {
+      directory: paths.appPublic,
+      publicPath: utils.publicUrlOrPath,
+      watch: {
+        aggregateTimeout: 600,
+        ignored: ignoredFiles(paths.appSrc),
+      },
+    },
 
-    before(app, server) {
+    setupMiddlewares(middlewares, devServer) {
       if (fs.existsSync(paths.proxySetup)) {
-        require(paths.proxySetup)(app, require('http-proxy-middleware'));
+        require(paths.proxySetup)(devServer.app, require('http-proxy-middleware'));
       }
 
       if (utils.isMock) {
-        require('./mock')(server);
+        middlewares.push(bodyParser.json({
+          limit: '5mb',
+          strict: false,
+        }));
+
+        middlewares.push(
+          bodyParser.urlencoded({
+            extended: true,
+            limit: '5mb',
+          })
+        );
+
+        require('./mock')(devServer);
       }
+
+      return middlewares;
     },
   };
 };
