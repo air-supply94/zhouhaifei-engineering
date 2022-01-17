@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.5...v0.0.0) (2022-01-17)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.6...v0.0.0) (2022-01-17)
+
+### Features
+
+- **egenie-test:** add esbuild ([dacff55](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/dacff550a495f1195f08825ec2ea817faa8dae5c))
+
+## [2.18.6](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.5...v2.18.6) (2022-01-17)
 
 ### Features
 
