@@ -27,11 +27,6 @@ const printFileSizesAfterBuild = FileSizeReporter.printFileSizesAfterBuild;
 const WARN_AFTER_BUNDLE_GZIP_SIZE = 512 * 1024;
 const WARN_AFTER_CHUNK_GZIP_SIZE = 1024 * 1024;
 
-// Warn and crash if required files are missing
-if (!checkRequiredFiles([paths.appIndexJs])) {
-  process.exit(1);
-}
-
 // Generate configuration
 const config = configFactory();
 
@@ -64,7 +59,9 @@ function build() {
 }
 
 async function runBuild() {
+  await checkRequiredFiles([paths.appIndexJs]);
   await checkBrowsers(paths.appPath);
+
   const previousFileSizes = await measureFileSizesBeforeBuild(paths.appDist);
   const stats = await build();
 

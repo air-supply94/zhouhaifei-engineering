@@ -11,13 +11,13 @@ module.exports = function checkRequiredFiles(files) {
       currentFilePath = filePath;
       fs.accessSync(filePath, fs.F_OK);
     });
-    return true;
+    return Promise.resolve();
   } catch (err) {
     const dirName = path.dirname(currentFilePath);
     const fileName = path.basename(currentFilePath);
     console.log(chalk.red('Could not find a required file.'));
     console.log(chalk.red('  Name: ') + chalk.cyan(fileName));
     console.log(chalk.red('  Searched in: ') + chalk.cyan(dirName));
-    return false;
+    return Promise.reject();
   }
 };

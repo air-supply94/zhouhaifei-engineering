@@ -9,6 +9,7 @@ const utils = require('./utils');
 
 module.exports = function createDevServerConfig() {
   return {
+    open: false,
     hot: true,
     allowedHosts: 'all',
 
