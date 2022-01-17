@@ -2,7 +2,7 @@
 
 ### Features
 
-- **egenie-test:** add esbuild ([dacff55](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/dacff550a495f1195f08825ec2ea817faa8dae5c))
+- **egenie-test:** add esbuild ([7f14ed3](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/7f14ed31c756334766b4a3873dc8e5a1756b49e6))
 
 ## [2.18.6](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.5...v2.18.6) (2022-01-17)
 
