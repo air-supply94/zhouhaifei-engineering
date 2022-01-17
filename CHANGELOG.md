@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.7...v0.0.0) (2022-01-17)
 
+### Bug Fixes
+
+- **egenie-test:** remove esbuild-jest ([1638815](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/16388159a747cead3d3fc8253c125c5bf9d105bb))
+
 ## [2.18.7](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.6...v2.18.7) (2022-01-17)
 
 ### Features
