@@ -34,7 +34,7 @@ module.exports = (resolve, rootDir) => {
     testEnvironment: 'jest-environment-jsdom-fourteen',
     transform: {
       '^.+\\.jsx?$': require.resolve('babel-jest'),
-      '^.+\\.tsx?$': require.resolve('esbuild-jest'),
+      '^.+\\.tsx?$': require.resolve('ts-jest'),
       '^.+\\.css$': require.resolve('jest-transform-css'),
       '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': resolve('scripts/utils/fileTransform.js'),
     },
