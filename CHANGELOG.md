@@ -3,6 +3,7 @@
 ### Features
 
 - **react-scripts:** 更新 dev-server ([ac6b5d5](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/ac6b5d5bce73b4de34a58adb5df0815398b8a12c))
+- **react-scripts:** 更新 dev-server 配置 ([c4b7624](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/c4b762479f171685501cc96f0fc49cc29c626c61))
 
 ## [2.18.5](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.4...v2.18.5) (2022-01-14)
 
