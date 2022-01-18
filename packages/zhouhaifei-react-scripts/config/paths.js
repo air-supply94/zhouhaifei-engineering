@@ -24,18 +24,17 @@ function resolveApp(relativePath) {
 }
 
 function resolveModule(resolveFn, filePath) {
-  const extension = moduleFileExtensions.find((extension) => fs.existsSync(resolveFn(`${filePath}.${extension}`))
-  );
+  const extension = moduleFileExtensions.find((extension) => fs.existsSync(resolveFn(`${filePath}.${extension}`)));
 
   if (extension) {
     return resolveFn(`${filePath}.${extension}`);
+  } else {
+    return resolveFn(`${filePath}.js`);
   }
-
-  return resolveFn(`${filePath}.js`);
 }
 
 module.exports = {
-  configDir: resolveApp('config'),
+  configFile: resolveApp('config/config.js'),
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
   appDist: resolveApp('dist'),

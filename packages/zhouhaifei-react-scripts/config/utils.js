@@ -1,116 +1,121 @@
 const fs = require('fs');
-const path = require('path');
 const getPublicUrlOrPath = require('../react-dev-utils/getPublicUrlOrPath');
 const paths = require('./paths');
 
-// format from env
-const isDevelopment = process.env.NODE_ENV === 'development';
-const isProduction = process.env.NODE_ENV === 'production';
-let sourceMap = process.env.SOURCEMAP === 'false' ? false : process.env.SOURCEMAP;
-const imageInlineSizeLimit = parseInt(process.env.IMAGE_INLINE_SIZE_LIMIT, 10) || 1024;
-const port = parseInt(process.env.PORT, 10) || 3000;
-const splitChunkMinSize = parseInt(process.env.SPLIT_CHUNK_MIN_SIZE, 10) || 0;
-const host = process.env.HOST || '0.0.0.0';
-const sockHost = process.env.WDS_SOCKET_HOST;
-const sockPath = process.env.WDS_SOCKET_PATH; // default: '/sockjs-node'
-const sockPort = process.env.WDS_SOCKET_PORT;
-const isMock = typeof process.env.MOCK === 'string' && process.env.MOCK.toLocaleUpperCase() === 'YES';
-const isStartServiceWorker = typeof process.env.SERVICE_WORKER === 'string' && process.env.SERVICE_WORKER.toLocaleUpperCase() === 'YES';
-const allowEslint = typeof process.env.ALLOW_ESLINT === 'string' && process.env.ALLOW_ESLINT.toLocaleUpperCase() !== 'NO';
-const isAnalyze = typeof process.env.IS_ANALYZE === 'string' && process.env.IS_ANALYZE.toLocaleUpperCase() === 'YES';
-const useEsBuild = typeof process.env.USE_ESBUILD === 'string' && process.env.USE_ESBUILD.toLocaleUpperCase() === 'YES';
-const isCompress = typeof process.env.IS_COMPRESS === 'string' && process.env.IS_COMPRESS.toLocaleUpperCase() === 'YES';
-const protocol = typeof process.env.HTTPS === 'string' && process.env.HTTPS.toLocaleUpperCase() === 'YES' ? 'https' : 'http';
+function getBaseConfig(oldConfig) {
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  const isProduction = process.env.NODE_ENV === 'production';
+  const publicUrlOrPath = getPublicUrlOrPath(
+    isDevelopment,
+    require(paths.appPackageJson).homepage,
+    process.env.PUBLIC_URL
+  );
 
-if (sourceMap !== false && !sourceMap) {
-  if (isProduction) {
-    sourceMap = 'source-map';
-  } else {
-    sourceMap = 'cheap-module-source-map';
+  let sourceMap = typeof process.env.SOURCEMAP === 'string' && process.env.SOURCEMAP.toLocaleUpperCase() === 'FALSE' ? false : process.env.SOURCEMAP;
+  if (sourceMap !== false && !sourceMap) {
+    sourceMap = isProduction ? 'source-map' : 'cheap-module-source-map';
   }
+
+  return {
+    ...oldConfig,
+    ...paths,
+    isProduction,
+    isDevelopment,
+    publicUrlOrPath,
+    sourceMap,
+    resourceName: {
+      css: 'css',
+      js: 'js',
+      image: 'image',
+      media: 'media',
+    },
+    exclude: [/node_modules/],
+  };
 }
 
-const publicUrlOrPath = getPublicUrlOrPath(
-  isDevelopment,
-  require(paths.appPackageJson).homepage,
-  process.env.PUBLIC_URL
-);
+function getDevServerConfig(oldConfig) {
+  const port = parseInt(process.env.PORT, 10) || 3000;
+  const host = process.env.HOST || '0.0.0.0';
+  const sockHost = process.env.WDS_SOCKET_HOST;
+  const sockPath = process.env.WDS_SOCKET_PATH;
+  const sockPort = process.env.WDS_SOCKET_PORT;
+  const isMock = typeof process.env.MOCK === 'string' && process.env.MOCK.toLocaleUpperCase() === 'YES';
+  const protocol = typeof process.env.HTTPS === 'string' && process.env.HTTPS.toLocaleUpperCase() === 'YES' ? 'https' : 'http';
 
-const config = {
-  // init
-  paths,
-  isProduction,
-  isDevelopment,
-  resourceName: {
-    css: 'css',
-    js: 'js',
-    image: 'image',
-    media: 'media',
-  },
-  exclude: [/node_modules/],
-  otherConfig: {},
+  return {
+    ...oldConfig,
+    port,
+    host,
+    sockHost,
+    sockPath,
+    sockPort,
+    isMock,
+    protocol,
+  };
+}
 
-  // env
-  allowEslint,
-  isStartServiceWorker,
-  isMock,
-  splitChunkMinSize,
-  sockHost,
-  sockPath,
-  sockPort,
-  host,
-  port,
-  imageInlineSizeLimit,
-  sourceMap,
-  isAnalyze,
-  publicUrlOrPath,
-  useEsBuild,
-  isCompress,
-  protocol,
+function getPerformanceConfig(oldConfig) {
+  const imageInlineSizeLimit = parseInt(process.env.IMAGE_INLINE_SIZE_LIMIT, 10) || 1024;
+  const splitChunkMinSize = parseInt(process.env.SPLIT_CHUNK_MIN_SIZE, 10) || 0;
+  const isStartServiceWorker = typeof process.env.SERVICE_WORKER === 'string' && process.env.SERVICE_WORKER.toLocaleUpperCase() === 'YES';
+  const allowEslint = typeof process.env.ALLOW_ESLINT === 'string' && process.env.ALLOW_ESLINT.toLocaleUpperCase() !== 'NO';
+  const isAnalyze = typeof process.env.IS_ANALYZE === 'string' && process.env.IS_ANALYZE.toLocaleUpperCase() === 'YES';
+  const useEsBuild = typeof process.env.USE_ESBUILD === 'string' && process.env.USE_ESBUILD.toLocaleUpperCase() === 'YES';
+  const isCompress = typeof process.env.IS_COMPRESS === 'string' && process.env.IS_COMPRESS.toLocaleUpperCase() === 'YES';
 
-  // user
-  less: {
-    theme: {},
-    moduleInclude: [],
-  },
-  babel: {
-    options: {},
-    include: [],
-  },
-};
+  return {
+    ...oldConfig,
+    imageInlineSizeLimit,
+    splitChunkMinSize,
+    isStartServiceWorker,
+    allowEslint,
+    isAnalyze,
+    useEsBuild,
+    isCompress,
+  };
+}
 
-function formatUserConfig(originConfig) {
-  function hasProperty(obj, key) {
-    return Object.prototype.hasOwnProperty.call(obj, key);
-  }
+function getUserConfig(oldConfig) {
+  const baseConfig = {
+    less: {
+      theme: {},
+      moduleInclude: [],
+    },
+    babel: {
+      options: {},
+      include: [],
+    },
+    otherConfig: {},
+  };
 
-  const outConfig = path.resolve(paths.configDir, 'config.js');
-  if (fs.existsSync(outConfig)) {
+  if (fs.existsSync(paths.configFile)) {
     try {
-      const userConfig = require(outConfig)({ ...originConfig });
+      const userConfig = require(paths.configFile)({ ...oldConfig });
       if (typeof userConfig === 'object' && userConfig !== null) {
         // 其它配置
-        if (hasProperty(userConfig, 'otherConfig')) {
-          originConfig.otherConfig = userConfig.otherConfig;
+        if ('otherConfig' in userConfig) {
+          baseConfig.otherConfig = userConfig.otherConfig || {};
         }
 
         // less配置
         if (userConfig.less) {
           if (userConfig.less.theme) {
-            originConfig.less.theme = userConfig.less.theme;
+            baseConfig.less.theme = userConfig.less.theme;
           }
+
           if (userConfig.less.moduleInclude) {
-            originConfig.less.moduleInclude = userConfig.less.moduleInclude;
+            baseConfig.less.moduleInclude = userConfig.less.moduleInclude;
           }
         }
 
         // babel配置
         if (userConfig.babel) {
           if (userConfig.babel.options) {
-            originConfig.babel.options = userConfig.babel.options;
+            baseConfig.babel.options = userConfig.babel.options;
           }
+
           if (userConfig.babel.include) {
-            originConfig.babel.include = userConfig.babel.include;
+            baseConfig.babel.include = userConfig.babel.include;
           }
         }
       }
@@ -119,8 +124,20 @@ function formatUserConfig(originConfig) {
       console.log('config.js 必须导出为函数');
     }
   }
+
+  return {
+    ...oldConfig,
+    ...baseConfig,
+  };
 }
 
-formatUserConfig(config);
+function getConfig(configPipe) {
+  return configPipe.reduce((prev, current) => current(prev), {});
+}
 
-module.exports = config;
+module.exports = getConfig([
+  getBaseConfig,
+  getDevServerConfig,
+  getPerformanceConfig,
+  getUserConfig,
+]);

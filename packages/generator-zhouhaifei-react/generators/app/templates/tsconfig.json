@@ -19,7 +19,7 @@
     "strict": true, //启用所有严格类型检查选项
     "noImplicitThis": true, //当 this表达式的值为 any类型的时候，生成一个错误
     "noImplicitReturns": true, //不是函数的所有返回路径都有返回值时报错
-    "noUnusedLocals": true, // 有未使用的变量时，抛出错误
+    "noUnusedLocals": false, // 有未使用的变量时，抛出错误
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true, //在表达式和声明上有隐含的 any类型时报错
