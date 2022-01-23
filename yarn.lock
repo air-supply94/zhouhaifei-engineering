@@ -12581,10 +12581,10 @@ yocto-queue@^0.1.0:
   resolved "https://registry.nlark.com/yocto-queue/download/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=
 
-zhouhaifei-code-style@2.16.1:
-  version "2.16.1"
-  resolved "https://registry.npmjs.org/zhouhaifei-code-style/-/zhouhaifei-code-style-2.16.1.tgz#f49fcb48529c69c3911850c8742a7396e9ca6ce5"
-  integrity sha512-asnxDW012NI3AqZDvggsiSm3IOmWHFMb9EubZZ6zITTtmYW8gYsC+kZV5OUQdJIPkmQ84WSJduJ2A6gSWIjrDw==
+zhouhaifei-code-style@2.18.11:
+  version "2.18.11"
+  resolved "https://registry.npmmirror.com/zhouhaifei-code-style/download/zhouhaifei-code-style-2.18.11.tgz#32e84c7d81fbf2c550a1009a93c1dd07e86fe59d"
+  integrity sha512-fuF0fim5+NnsOHQsGfo2d8Wvj5xJupFLd0ylbJ0KzkYLFdPL+1IXqmchocwxu1W1x5JJRzgtWimFeo4Hxi07gQ==
   dependencies:
     "@commitlint/config-conventional" "^13.2.0"
     "@typescript-eslint/eslint-plugin" "^5.2.0"
