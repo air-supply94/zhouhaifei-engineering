@@ -101,6 +101,8 @@ module.exports = function(utils) {
   - `USE_ESBUILD`
     - 是否使用 esbuild
     - YES 开启
+      - development 开启 esbuild-loader
+      - production 开启动 esbuild-webpack-plugin
   - `IS_COMPRESS`
     - 是否开启 gzip 和 br 压缩
     - YES 开启

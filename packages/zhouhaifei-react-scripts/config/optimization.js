@@ -82,15 +82,6 @@ module.exports = {
     chunks: 'all',
     minSize: utils.splitChunkMinSize,
     minChunks: 1,
-    cacheGroups: {
-      vendors: {
-        // 拆分第三方库
-        test: /node_modules/,
-        chunks: 'all',
-        minChunks: 1,
-        priority: 100,
-        enforce: true,
-      },
-    },
+    cacheGroups: {},
   },
 };

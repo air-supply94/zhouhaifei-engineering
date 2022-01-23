@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.8...v0.0.0) (2022-01-19)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.9...v0.0.0) (2022-01-23)
+
+### Features
+
+- **react-scripts:** 调整分包策略 ([7b12202](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/7b12202cb005fc59946db970b6f12baf57a7bb16))
+
+## [2.18.9](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.8...v2.18.9) (2022-01-19)
 
 ### Features
 

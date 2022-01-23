@@ -5,6 +5,10 @@ nav:
   title: 基础包
 ---
 
+## node
+
+- 建议 >= 16.13.0
+
 ## 下载
 
 ```bash
@@ -18,9 +22,8 @@ yarn global upgrade generator-zhouhaifei-react --latest
 ## 生成
 
 ```bash
-# mac 、linux
-mkdir 目录名称 && cd 目录名称
-# window则自行创建目录,然后进入目录
+mkdir 目录名称
+cd 目录名称
 yo zhouhaifei-react
 ```
 

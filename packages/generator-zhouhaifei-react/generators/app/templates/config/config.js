@@ -9,18 +9,24 @@ module.exports = function(utils) {
       }),
     },
     otherConfig: {
+      /*      splitChunks: {
+        cacheGroups: {
+          vendors: {
+            // 拆分第三方库
+            test: /node_modules/,
+            chunks: 'all',
+            minChunks: 1,
+            priority: 100,
+            enforce: true,
+          },
+        },
+      },*/
       externals: {
         lodash: {
           commonjs: 'lodash',
           commonjs2: 'lodash',
           amd: 'lodash',
           root: '_',
-        },
-        echarts: {
-          commonjs: 'echarts',
-          commonjs2: 'echarts',
-          amd: 'echarts',
-          root: 'echarts',
         },
         qs: {
           commonjs: 'qs',
@@ -81,12 +87,6 @@ module.exports = function(utils) {
           commonjs2: 'moment',
           amd: 'moment',
           root: 'moment',
-        },
-        'reflect-metadata': {
-          commonjs: 'reflect-metadata',
-          commonjs2: 'reflect-metadata',
-          amd: 'reflect-metadata',
-          root: 'Reflect',
         },
       },
     },
