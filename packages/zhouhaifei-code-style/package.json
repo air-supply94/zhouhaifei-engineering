@@ -30,12 +30,6 @@
     "stylelint-declaration-block-no-ignored-properties": "^2.4.0",
     "stylelint-order": "^5.0.0"
   },
-  "peerDependencies": {
-    "eslint": "7.29.0",
-    "jest": "27.3.1",
-    "prettier": "^2.x",
-    "typescript": "4.2.4"
-  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
