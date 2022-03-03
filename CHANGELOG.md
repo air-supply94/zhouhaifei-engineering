@@ -1,4 +1,8 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.11...v0.0.0) (2022-01-23)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.11...v0.0.0) (2022-03-10)
+
+### Features
+
+- **react-scripts:** remove file-loader url-loader ([3b619bc](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/3b619bcfc47410bb1df6012e58667ba15cb82746))
 
 ## [2.18.11](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.10...v2.18.11) (2022-01-23)
 
