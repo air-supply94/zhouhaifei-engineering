@@ -1,6 +1,7 @@
 import { message } from 'antd';
 import type { AxiosRequestConfig, AxiosResponse, AxiosError, AxiosInstance } from 'axios';
 import axios from 'axios';
+import 'antd/es/message/style';
 
 const singleton = (function() {
   let instance: AxiosInstance;
@@ -30,7 +31,10 @@ const singleton = (function() {
       .interceptors
       .response
       .use(undefined, (error: AxiosError) => {
-        message.error(error?.message ?? '请求失败');
+        if (!axios.isCancel(error)) {
+          message.error(error?.message ?? '请求失败');
+        }
+
         return Promise.reject(error);
       });
 

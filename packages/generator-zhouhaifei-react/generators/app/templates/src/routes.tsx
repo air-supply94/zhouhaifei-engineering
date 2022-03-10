@@ -1,5 +1,5 @@
 import React from 'react';
-import type { MenuDataItem } from './utils';
+import type { MenuDataItem } from 'zhouhaifei-common';
 
 export const routes: MenuDataItem[] = [
   {

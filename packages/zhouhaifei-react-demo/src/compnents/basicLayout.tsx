@@ -3,7 +3,7 @@ import { observer, inject } from 'mobx-react';
 import React from 'react';
 import type { RouteChildrenProps } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import type { MenuDataItem } from 'src/utils';
+import type { MenuDataItem } from 'zhouhaifei-common';
 import type { GlobalModel } from '../models/globalModel';
 
 function menuDataRender(menuList: MenuDataItem[] = []): MenuDataItem[] {

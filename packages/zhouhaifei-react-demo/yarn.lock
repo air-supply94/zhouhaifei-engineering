@@ -6454,14 +6454,6 @@ file-entry-cache@^6.0.1:
   dependencies:
     flat-cache "^3.0.4"
 
-file-loader@6.2.0:
-  version "6.2.0"
-  resolved "https://registry.nlark.com/file-loader/download/file-loader-6.2.0.tgz?cache=0&sync_timestamp=1624607980029&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ffile-loader%2Fdownload%2Ffile-loader-6.2.0.tgz#baef7cf8e1840df325e4390b4484879480eebe4d"
-  integrity sha1-uu98+OGEDfMl5DkLRISHlIDuvk0=
-  dependencies:
-    loader-utils "^2.0.0"
-    schema-utils "^3.0.0"
-
 file-uri-to-path@1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/file-uri-to-path/download/file-uri-to-path-1.0.0.tgz#553a7b8446ff6f684359c445f1e37a05dacc33dd"
@@ -13568,15 +13560,6 @@ urix@^0.1.0:
   resolved "https://registry.nlark.com/urix/download/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
 
-url-loader@4.1.1:
-  version "4.1.1"
-  resolved "https://registry.npmmirror.com/url-loader/download/url-loader-4.1.1.tgz#28505e905cae158cf07c92ca622d7f237e70a4e2"
-  integrity sha1-KFBekFyuFYzwfJLKYi1/I35wpOI=
-  dependencies:
-    loader-utils "^2.0.0"
-    mime-types "^2.1.27"
-    schema-utils "^3.0.0"
-
 use-json-comparison@^1.0.3:
   version "1.0.6"
   resolved "https://registry.nlark.com/use-json-comparison/download/use-json-comparison-1.0.6.tgz#a012bbc258ce745db1f56745dc653f575226cb21"
@@ -14343,10 +14326,15 @@ zhouhaifei-code-style@^2.18.11:
     stylelint-declaration-block-no-ignored-properties "^2.4.0"
     stylelint-order "^5.0.0"
 
-zhouhaifei-config@^2.18.11:
-  version "2.18.11"
-  resolved "https://registry.npmmirror.com/zhouhaifei-config/-/zhouhaifei-config-2.18.11.tgz#2c3a070717a15696cd87ce0829ab794f038d4241"
-  integrity sha512-iJhohXZ8mFobO2oatFdWhQp9fuhxdjGOvmoP+X3A70tZHij5XeLSRA+O5Y45pWimZrgj7+yizx0IzErEJD738Q==
+zhouhaifei-common@^2.18.12:
+  version "2.18.12"
+  resolved "https://registry.npmmirror.com/zhouhaifei-common/-/zhouhaifei-common-2.18.12.tgz#627d908a7cde91dd24676b1a95cfd1d70fc61c14"
+  integrity sha512-u+3E/B7/1AUEz4uPM53FqxN0xDCKl4ivy9GBfB8nqWo/z9t/sQtW1D6pJYxTZ4Cc4YDk0aeXlev+2QVgjX6IYg==
+
+zhouhaifei-config@^2.18.12:
+  version "2.18.12"
+  resolved "https://registry.npmmirror.com/zhouhaifei-config/-/zhouhaifei-config-2.18.12.tgz#1a0d90b5f8b3e8150250417e01c48f36c23c44ad"
+  integrity sha512-NTzYE7fU7bMAnK0TpJ3w3AjFmXPlferYtO+61/COi3w6cyTn+nwlLGY3185CDiumN+i6jc5kxJiKMR1GFmxddw==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.14.5"
     "@babel/plugin-proposal-decorators" "^7.15.8"
@@ -14365,10 +14353,10 @@ zhouhaifei-config@^2.18.11:
     px2rem "0.5.0"
     typescript "4.2.4"
 
-zhouhaifei-react-scripts@^2.18.11:
-  version "2.18.11"
-  resolved "https://registry.npmmirror.com/zhouhaifei-react-scripts/-/zhouhaifei-react-scripts-2.18.11.tgz#0a4b0227571764221931f809407f2d5677f891fc"
-  integrity sha512-m9oS5QNl6/wBFdfemO5FnR/w0q41OInEz6nCWchrSTq+wz9x2xVbd0U7dDhdvE6QXnkvnNFnzyuSKDWo3p4SGw==
+zhouhaifei-react-scripts@^2.18.12:
+  version "2.18.12"
+  resolved "https://registry.npmmirror.com/zhouhaifei-react-scripts/-/zhouhaifei-react-scripts-2.18.12.tgz#62af6cfbbd2853d5dda506e3454f11a1dc8002d5"
+  integrity sha512-INIB6ry1MJr0Mi/+FNVzvcJzFSo6/DhLwzQTDSQYM2I6ALWMCJV2H7vyS7uapLTorSqaROWIk1cxzhMFuWAoqQ==
   dependencies:
     "@babel/core" "7.15.8"
     babel-loader "8.2.3"
@@ -14388,7 +14376,6 @@ zhouhaifei-react-scripts@^2.18.11:
     escape-string-regexp "4.0.0"
     eslint "7.29.0"
     eslint-webpack-plugin "3.1.0"
-    file-loader "6.2.0"
     filesize "6.1.0"
     fork-ts-checker-webpack-plugin "6.5.0"
     fs-extra "^10.0.0"
@@ -14412,7 +14399,6 @@ zhouhaifei-react-scripts@^2.18.11:
     terser-webpack-plugin "5.3.0"
     thread-loader "^3.0.4"
     typescript "4.2.4"
-    url-loader "4.1.1"
     webpack "5.66.0"
     webpack-bundle-analyzer "^4.5.0"
     webpack-dev-server "4.7.3"

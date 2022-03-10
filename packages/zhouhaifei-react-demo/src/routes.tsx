@@ -1,9 +1,9 @@
 import React from 'react';
 
 // import { BasicLayout } from './compnents/basicLayout';
+import type { MenuDataItem } from 'zhouhaifei-common';
 import { NotAuthority } from './pages/403';
 import { NotPage } from './pages/404';
-import type { MenuDataItem } from './utils';
 
 export const routes: MenuDataItem[] = [
   {

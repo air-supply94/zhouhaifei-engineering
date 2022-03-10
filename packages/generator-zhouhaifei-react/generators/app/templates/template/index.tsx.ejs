@@ -1,36 +1,29 @@
-<% if (remUnit) { %>
-import 'amfe-flexible';
-<% } %>
 import './global.less';
+import { Spin } from 'antd';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Locale, RenderRoutes, history } from 'zhouhaifei-common';
 import { routes } from './routes';
-import { Locale, RenderRoutes, history } from './utils';
 import { webVitals } from './webVitals';
+<% if (remUnit) { %>
+  import 'amfe-flexible';
+<% } %>
 
-<% if (isWeb !== true) { %>
+if (process.env.NODE_ENV === 'development' && typeof process.env.USE_ESBUILD === 'string' && process.env.USE_ESBUILD.toLocaleUpperCase() === 'YES') {
+  import('antd/dist/antd.less').then(render);
+} else {
   render();
-<% } %>
-
-<% if (isWeb === true) { %>
-  if (process.env.NODE_ENV === 'development' && typeof process.env.USE_ESBUILD === 'string' && process.env.USE_ESBUILD.toLocaleUpperCase() === 'YES') {
-    import('antd/dist/antd.less').then(render);
-  } else {
-    render();
-  }
-<% } %>
+}
 
 function render() {
   ReactDOM.render(
-    <React.StrictMode>
-      <Locale>
-        <RenderRoutes
-          history={history}
-          loading="这是默认的loading文字,请根据实际需要替换。如antd的Spin"
-          routes={routes}
-        />
-      </Locale>
-    </React.StrictMode>,
+    <Locale>
+      <RenderRoutes
+        history={history}
+        loading={<Spin size="large"/>}
+        routes={routes}
+      />
+    </Locale>,
     document.getElementById('root')
   );
 }
