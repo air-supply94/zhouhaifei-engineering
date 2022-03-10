@@ -2,7 +2,7 @@
 
 ### Features
 
-- **react-scripts:** remove file-loader url-loader ([3b619bc](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/3b619bcfc47410bb1df6012e58667ba15cb82746))
+- **react-scripts:** remove file-loader url-loader ([88fa5df](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/88fa5df0c00ecc763e40201308d0cc4795bc3837))
 
 ## [2.18.11](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.10...v2.18.11) (2022-01-23)
 
