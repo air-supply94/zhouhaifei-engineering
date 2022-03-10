@@ -6563,11 +6563,6 @@ lodash.uniq@^4.3.0, lodash.uniq@^4.5.0:
   resolved "https://registry.npmmirror.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==
 
-lodash@4.17.20:
-  version "4.17.20"
-  resolved "https://registry.npmmirror.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
-  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
-
 lodash@4.17.21, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.7.0:
   version "4.17.21"
   resolved "https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
@@ -10662,10 +10657,10 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-zhouhaifei-config@2.18.12:
-  version "2.18.12"
-  resolved "https://registry.npmmirror.com/zhouhaifei-config/-/zhouhaifei-config-2.18.12.tgz#1a0d90b5f8b3e8150250417e01c48f36c23c44ad"
-  integrity sha512-NTzYE7fU7bMAnK0TpJ3w3AjFmXPlferYtO+61/COi3w6cyTn+nwlLGY3185CDiumN+i6jc5kxJiKMR1GFmxddw==
+zhouhaifei-config@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/zhouhaifei-config/-/zhouhaifei-config-2.19.0.tgz#a69de72598abc9bd1d714fa04913bce5b1989f08"
+  integrity sha512-GwSGsKzBZSGWrvmM0mQr/S5WF7YJUMgKmalG9YMKxdl+PZ7ShltSYXc9DED+P39yhdcIn4ZZIiu1bysNn9PFNg==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.14.5"
     "@babel/plugin-proposal-decorators" "^7.15.8"
@@ -10684,10 +10679,10 @@ zhouhaifei-config@2.18.12:
     px2rem "0.5.0"
     typescript "4.2.4"
 
-zhouhaifei-test@2.18.8:
-  version "2.18.8"
-  resolved "https://registry.npmmirror.com/zhouhaifei-test/-/zhouhaifei-test-2.18.8.tgz#5fc625329e27ffcaf58e27b91f4307a25e087c75"
-  integrity sha512-Cz/t3FjzB986FrGMGenXRgp8dBBFJsoUzqgB8kCpm/rE9mlZUZjyHoj1OSo2qMN8dxrdHtHatAVNn4mLymQ+Nw==
+zhouhaifei-test@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/zhouhaifei-test/-/zhouhaifei-test-2.19.0.tgz#b68f924a6a008dac3769bd53718877c4e57dc470"
+  integrity sha512-qNIsIs2jCatnLI7jBr8KAE4lKCfI9ozsrqG/RMI9yMZGJpeXCl23qU1gSnxlrQ1ou+4kxUEHbUfYgl5JP05RlQ==
   dependencies:
     babel-jest "^27.3.1"
     chalk "^4.1.2"

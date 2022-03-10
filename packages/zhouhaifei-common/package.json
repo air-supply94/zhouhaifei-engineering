@@ -27,7 +27,7 @@
     "axios": "0.21.0",
     "babel-plugin-import": "^1.13.3",
     "father-build": "^1.19.8",
-    "lodash": "4.17.20",
+    "lodash": "4.17.21",
     "mobx": "5.15.7",
     "mobx-react": "6.3.1",
     "moment": "2.29.1",
