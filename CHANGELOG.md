@@ -2,7 +2,7 @@
 
 ### Features
 
-- 抽取配置 ([985b55e](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/985b55eb4c39a87d20c7f3b424ab858969d73028))
+- 抽取配置 ([7ab643f](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/7ab643f502a9b82fd62591269219bd6bba9c9cca))
 
 ## [2.18.12](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.11...v2.18.12) (2022-03-10)
 
