@@ -9394,9 +9394,9 @@ minimist-options@^3.0.1:
     is-plain-obj "^1.1.0"
 
 minimist@^1.1.1, minimist@^1.2.0, minimist@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.nlark.com/minimist/download/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
-  integrity sha1-Z9ZgFLZqaoqqDAg8X9WN9OTpdgI=
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
+  integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
 mixin-deep@^1.2.0:
   version "1.3.2"
@@ -14305,10 +14305,10 @@ yocto-queue@^0.1.0:
   resolved "https://registry.nlark.com/yocto-queue/download/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=
 
-zhouhaifei-code-style@^2.18.11:
-  version "2.18.11"
-  resolved "https://registry.npmmirror.com/zhouhaifei-code-style/-/zhouhaifei-code-style-2.18.11.tgz#32e84c7d81fbf2c550a1009a93c1dd07e86fe59d"
-  integrity sha512-fuF0fim5+NnsOHQsGfo2d8Wvj5xJupFLd0ylbJ0KzkYLFdPL+1IXqmchocwxu1W1x5JJRzgtWimFeo4Hxi07gQ==
+zhouhaifei-code-style@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/zhouhaifei-code-style/-/zhouhaifei-code-style-2.19.0.tgz#519617482046f0565ffe8c8e1c11ccadbbf8df15"
+  integrity sha512-X8CGhg7vRrhV87I6YvDTrfkndWueytHmr91mmmrOCH7jlZCz0o8quO0BEKrDzrYSRPTO6pczRe45zKj8eBG07g==
   dependencies:
     "@commitlint/config-conventional" "^13.2.0"
     "@typescript-eslint/eslint-plugin" "^5.2.0"
@@ -14326,15 +14326,15 @@ zhouhaifei-code-style@^2.18.11:
     stylelint-declaration-block-no-ignored-properties "^2.4.0"
     stylelint-order "^5.0.0"
 
-zhouhaifei-common@^2.18.12:
-  version "2.18.12"
-  resolved "https://registry.npmmirror.com/zhouhaifei-common/-/zhouhaifei-common-2.18.12.tgz#627d908a7cde91dd24676b1a95cfd1d70fc61c14"
-  integrity sha512-u+3E/B7/1AUEz4uPM53FqxN0xDCKl4ivy9GBfB8nqWo/z9t/sQtW1D6pJYxTZ4Cc4YDk0aeXlev+2QVgjX6IYg==
+zhouhaifei-common@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/zhouhaifei-common/-/zhouhaifei-common-2.19.0.tgz#37cebf7ed45a662400a86bf1b4ffb2c2c6c9ed07"
+  integrity sha512-ISE+Y/RxfYooN8tEzINv7aj+RVvUTZtWir5q466b/mVGkCujnQekhx6ekWfBTnjrGpF4gn+KSapBo2xvVN9y6g==
 
-zhouhaifei-config@^2.18.12:
-  version "2.18.12"
-  resolved "https://registry.npmmirror.com/zhouhaifei-config/-/zhouhaifei-config-2.18.12.tgz#1a0d90b5f8b3e8150250417e01c48f36c23c44ad"
-  integrity sha512-NTzYE7fU7bMAnK0TpJ3w3AjFmXPlferYtO+61/COi3w6cyTn+nwlLGY3185CDiumN+i6jc5kxJiKMR1GFmxddw==
+zhouhaifei-config@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/zhouhaifei-config/-/zhouhaifei-config-2.19.0.tgz#a69de72598abc9bd1d714fa04913bce5b1989f08"
+  integrity sha512-GwSGsKzBZSGWrvmM0mQr/S5WF7YJUMgKmalG9YMKxdl+PZ7ShltSYXc9DED+P39yhdcIn4ZZIiu1bysNn9PFNg==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.14.5"
     "@babel/plugin-proposal-decorators" "^7.15.8"
@@ -14353,10 +14353,10 @@ zhouhaifei-config@^2.18.12:
     px2rem "0.5.0"
     typescript "4.2.4"
 
-zhouhaifei-react-scripts@^2.18.12:
-  version "2.18.12"
-  resolved "https://registry.npmmirror.com/zhouhaifei-react-scripts/-/zhouhaifei-react-scripts-2.18.12.tgz#62af6cfbbd2853d5dda506e3454f11a1dc8002d5"
-  integrity sha512-INIB6ry1MJr0Mi/+FNVzvcJzFSo6/DhLwzQTDSQYM2I6ALWMCJV2H7vyS7uapLTorSqaROWIk1cxzhMFuWAoqQ==
+zhouhaifei-react-scripts@^2.19.1:
+  version "2.19.1"
+  resolved "https://registry.yarnpkg.com/zhouhaifei-react-scripts/-/zhouhaifei-react-scripts-2.19.1.tgz#bc028e6da53fccdb96d82c06c2c8a444f9b6b6b0"
+  integrity sha512-A4vonur9VnyuibDsfsz/vh3G53fm3pRRpEDHP7EGs+EL9kT90z8GjYM0LNnkw4MgVNNiP34ywHAGBPWhE9dqkw==
   dependencies:
     "@babel/core" "7.15.8"
     babel-loader "8.2.3"
@@ -14407,10 +14407,10 @@ zhouhaifei-react-scripts@^2.18.12:
     webpackbar "^5.0.0-3"
     workbox-webpack-plugin "^6.4.2"
 
-zhouhaifei-test@^2.18.8:
-  version "2.18.8"
-  resolved "https://registry.npmmirror.com/zhouhaifei-test/-/zhouhaifei-test-2.18.8.tgz#5fc625329e27ffcaf58e27b91f4307a25e087c75"
-  integrity sha512-Cz/t3FjzB986FrGMGenXRgp8dBBFJsoUzqgB8kCpm/rE9mlZUZjyHoj1OSo2qMN8dxrdHtHatAVNn4mLymQ+Nw==
+zhouhaifei-test@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/zhouhaifei-test/-/zhouhaifei-test-2.19.0.tgz#b68f924a6a008dac3769bd53718877c4e57dc470"
+  integrity sha512-qNIsIs2jCatnLI7jBr8KAE4lKCfI9ozsrqG/RMI9yMZGJpeXCl23qU1gSnxlrQ1ou+4kxUEHbUfYgl5JP05RlQ==
   dependencies:
     babel-jest "^27.3.1"
     chalk "^4.1.2"
