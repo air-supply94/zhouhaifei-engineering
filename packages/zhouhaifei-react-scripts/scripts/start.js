@@ -40,6 +40,28 @@ async function runDev() {
     });
     openBrowser(localUrlForBrowser);
   });
+
+  [
+    'SIGINT',
+    'SIGTERM',
+  ].forEach((sig) => {
+    process.on(sig, () => {
+      if (devServer) {
+        devServer.close();
+      }
+      process.exit();
+    });
+  });
+
+  if (process.stdout.isTTY) {
+    process.stdin.on('end', () => {
+      if (devServer) {
+        devServer.close();
+      }
+      process.exit();
+    });
+    process.stdin.resume();
+  }
 }
 
 runDev();

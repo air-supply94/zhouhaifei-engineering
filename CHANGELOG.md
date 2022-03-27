@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.12...v0.0.0) (2022-03-10)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.19.0...v0.0.0) (2022-03-27)
+
+### Features
+
+- **devServer:** 更新 start 配置 ([0eca3ed](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/0eca3edca972058bd5814c67013143c4dfacb346))
+
+# [2.19.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.12...v2.19.0) (2022-03-10)
 
 ### Features
 
