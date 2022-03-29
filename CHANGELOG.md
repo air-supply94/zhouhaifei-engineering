@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.19.0...v0.0.0) (2022-03-27)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.19.1...v0.0.0) (2022-03-29)
+
+### Features
+
+- **react-scripts:** remove esbuild ([fe773be](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/fe773bedc4a3577cf035087ca18b87c9b369bf51))
+
+## [2.19.1](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.19.0...v2.19.1) (2022-03-27)
 
 ### Features
 

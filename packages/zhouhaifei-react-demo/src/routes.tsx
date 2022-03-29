@@ -13,10 +13,10 @@ export const routes: MenuDataItem[] = [
       {
         exact: true,
         path: '/',
-        redirect: '/base/dashboard',
+        redirect: '/dashboard',
       },
       {
-        path: '/base/dashboard',
+        path: '/dashboard',
         name: '仪表盘',
         exact: true,
         component: React.lazy(() => import('./pages/dashboard')),

@@ -15,7 +15,15 @@ module.exports = function (isWeb = true) {
     require.resolve('@babel/preset-typescript'),
   ];
 
-  const basePlugins = [
+  const plugins = [
+    [
+      require.resolve('babel-plugin-import'),
+      {
+        libraryName: isWeb ? 'antd' : 'antd-mobile',
+        libraryDirectory: 'es',
+        style: true,
+      },
+    ],
     require.resolve('@babel/plugin-syntax-dynamic-import'), // 支持动态import
     [
       require.resolve('@babel/plugin-proposal-decorators'),
@@ -30,27 +38,15 @@ module.exports = function (isWeb = true) {
     [require.resolve('@babel/plugin-transform-runtime'), {corejs: 3, proposals: true}],
   ];
 
-  const pluginImport = [
-    [
-      require.resolve('babel-plugin-import'),
-      {
-        libraryName: isWeb ? 'antd' : 'antd-mobile',
-        libraryDirectory: 'es',
-        style: true,
-      },
-    ]
-  ];
-  const useEsBuild = typeof process.env.USE_ESBUILD === 'string' && process.env.USE_ESBUILD.toLocaleUpperCase() === 'YES';
-
   return {
     env: {
       development: {
         presets,
-        plugins: useEsBuild ? basePlugins : pluginImport.concat(basePlugins),
+        plugins,
       },
       production: {
         presets,
-        plugins: pluginImport.concat(basePlugins),
+        plugins,
       },
       test: {
         presets: [
@@ -63,7 +59,7 @@ module.exports = function (isWeb = true) {
           require.resolve('@babel/preset-react'), // 转换jsx语法
           require.resolve('@babel/preset-typescript'),
         ],
-        plugins: basePlugins,
+        plugins: plugins,
       },
     },
   };
