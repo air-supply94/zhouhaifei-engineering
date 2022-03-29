@@ -8,11 +8,7 @@ import { globalModel } from './models/globalModel';
 import { routes } from './routes';
 import { webVitals } from './webVitals';
 
-if (process.env.NODE_ENV === 'development' && typeof process.env.USE_ESBUILD === 'string' && process.env.USE_ESBUILD.toLocaleUpperCase() === 'YES') {
-  import('antd/dist/antd.less').then(render);
-} else {
-  render();
-}
+render();
 
 function render() {
   ReactDOM.render(
