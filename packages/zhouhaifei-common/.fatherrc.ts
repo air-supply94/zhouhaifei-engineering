@@ -1,6 +1,5 @@
 export default {
   esm: 'rollup',
-  cjs: 'rollup',
   autoprefixer: {
     remove: false,
     grid: true,

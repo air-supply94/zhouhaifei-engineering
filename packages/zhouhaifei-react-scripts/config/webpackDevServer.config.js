@@ -66,7 +66,7 @@ module.exports = function createDevServerConfig() {
           })
         );
 
-        require('./mock')(devServer);
+        require('./mock')(middlewares);
       }
 
       if (fs.existsSync(paths.proxySetup)) {
