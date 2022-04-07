@@ -2,7 +2,7 @@
 
 ### Features
 
-- **react-scripts:** update mockMiddleware ([dd46531](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/dd4653107ecd72c5fe7d1651c36cfcdf1a7912d3))
+- **react-scripts:** update mockMiddleware ([8f4cb5c](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/8f4cb5c7fbf5c2ad3ac0c9a8b130e30d9d29c291))
 
 ## [2.19.2](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.19.1...v2.19.2) (2022-03-29)
 
