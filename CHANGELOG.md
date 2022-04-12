@@ -1,4 +1,8 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.20.0...v0.0.0) (2022-04-11)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.20.0...v0.0.0) (2022-04-12)
+
+### Features
+
+- **react-scripts:** update mockMiddleware ([8fa1f5a](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/8fa1f5ae539c6974b837426898d1014bd10d0376))
 
 # [2.20.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.19.2...v2.20.0) (2022-04-08)
 
