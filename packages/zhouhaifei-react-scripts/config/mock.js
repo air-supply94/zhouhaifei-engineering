@@ -104,17 +104,20 @@ function getMatchedRule(reqMethod, reqPath) {
   }
 }
 
-function mockMiddleware(devServer) {
+function mockMiddleware(middlewares) {
   watchFile();
   refreshConfig();
 
-  devServer.app.use((req, res, next) => {
-    const matchItem = getMatchedRule(req.method, req.path);
-    if (matchItem) {
-      return matchItem.target(req, res);
-    } else {
-      return next();
-    }
+  middlewares.push({
+    name: 'mockMiddleware',
+    middleware: (req, res, next) => {
+      const matchItem = getMatchedRule(req.method, req.path);
+      if (matchItem) {
+        matchItem.target(req, res);
+      } else {
+        next();
+      }
+    },
   });
 }
 
