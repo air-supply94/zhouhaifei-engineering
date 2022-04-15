@@ -1,5 +1,10 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.20.1...v0.0.0) (2022-04-15)
 
+### Features
+
+- **react-scripts:** 解决本地 server 代理到远端 nginx 时，connection 关闭 ([6ae0b19](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/6ae0b19fe83821726e64042e1d5f707a0b2cfae3))
+- **react-scripts:** 解决本地 server 代理到远端 nginx 时，connection 关闭 ([2571ce2](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/2571ce2720279be2963b8f48d702992fc5d41d78))
+
 ## [2.20.1](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.20.0...v2.20.1) (2022-04-12)
 
 ### Features
