@@ -6,6 +6,9 @@ module.exports = function(app, proxy) {
     proxy.createProxyMiddleware(
       context,
       {
+        onProxyRes: function onProxyRes(proxyRes, req, res) {
+          proxyRes.headers.connection = 'keep-alive';
+        },
         changeOrigin: true,
         target,
         secure: false,
