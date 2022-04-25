@@ -2,7 +2,7 @@
 
 ### Features
 
-- **react-scripts:** 增加是否校验 ts 配置 ([eec0e53](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/eec0e537739f9d01868523b65d62435a217d069c))
+- **react-scripts:** 增加是否校验 ts 配置 ([1b20159](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/1b20159463059408cde0ac064e10dec496305998))
 
 ## [2.20.2](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.20.1...v2.20.2) (2022-04-15)
 
