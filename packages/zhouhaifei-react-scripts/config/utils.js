@@ -59,6 +59,7 @@ function getPerformanceConfig(oldConfig) {
   const splitChunkMinSize = parseInt(process.env.SPLIT_CHUNK_MIN_SIZE, 10) || 0;
   const isStartServiceWorker = typeof process.env.SERVICE_WORKER === 'string' && process.env.SERVICE_WORKER.toLocaleUpperCase() === 'YES';
   const allowEslint = typeof process.env.ALLOW_ESLINT === 'string' && process.env.ALLOW_ESLINT.toLocaleUpperCase() !== 'NO';
+  const checkTs = typeof process.env.CHECK_TS === 'string' && process.env.CHECK_TS.toLocaleUpperCase() !== 'NO';
   const isAnalyze = typeof process.env.IS_ANALYZE === 'string' && process.env.IS_ANALYZE.toLocaleUpperCase() === 'YES';
   const isCompress = typeof process.env.IS_COMPRESS === 'string' && process.env.IS_COMPRESS.toLocaleUpperCase() === 'YES';
 
@@ -70,6 +71,7 @@ function getPerformanceConfig(oldConfig) {
     allowEslint,
     isAnalyze,
     isCompress,
+    checkTs,
   };
 }
 

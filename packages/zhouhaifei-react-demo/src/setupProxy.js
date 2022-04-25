@@ -46,14 +46,11 @@ const context = [
   '/ejl-pos',
 ];
 
-module.exports = function(app, proxy) {
-  app.use(
+module.exports = function(app, proxy, middlewares) {
+  middlewares.push(
     proxy.createProxyMiddleware(
       context,
       {
-        onProxyRes: function onProxyRes(proxyRes, req, res) {
-          proxyRes.headers.connection = 'keep-alive';
-        },
         changeOrigin: true,
         target,
         secure: false,
@@ -61,7 +58,7 @@ module.exports = function(app, proxy) {
     )
   );
 
-  app.use(
+  middlewares.push(
     proxy.createProxyMiddleware(
       '/js-xlsx',
       {

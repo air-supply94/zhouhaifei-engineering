@@ -115,7 +115,7 @@ module.exports = function() {
       new HtmlWebpackPlugin(require('./htmlWebpackPlugin')),
 
       // TypeScript type checking
-      useTypeScript && new ForkTsCheckerWebpackPlugin({ typescript: { configFile: paths.appTsConfig }}),
+      useTypeScript && utils.checkTs && new ForkTsCheckerWebpackPlugin({ typescript: { configFile: paths.appTsConfig }}),
 
       // preload
       utils.isProduction && new PreloadWebpackPlugin({ rel: 'prefetch' }),
