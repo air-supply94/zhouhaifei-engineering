@@ -1,6 +1,6 @@
 {
   "name": "zhouhaifei-react-demo",
-  "version": "2.21.0",
+  "version": "2.21.1",
   "dependencies": {
     "@ant-design/pro-layout": "^6.14.0",
     "antd": "4.12.3",
