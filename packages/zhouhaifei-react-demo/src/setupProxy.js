@@ -46,8 +46,8 @@ const context = [
   '/ejl-pos',
 ];
 
-module.exports = function(app, proxy, middlewares) {
-  middlewares.push(
+module.exports = function(app, proxy) {
+  app.use(
     proxy.createProxyMiddleware(
       context,
       {
@@ -58,7 +58,7 @@ module.exports = function(app, proxy, middlewares) {
     )
   );
 
-  middlewares.push(
+  app.use(
     proxy.createProxyMiddleware(
       '/js-xlsx',
       {

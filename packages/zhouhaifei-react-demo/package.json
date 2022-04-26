@@ -52,6 +52,10 @@
       "Chrome >= 90"
     ]
   },
+  "resolutions": {
+    "@types/react": "17.0.0",
+    "@types/react-dom": "17.0.0"
+  },
   "scripts": {
     "start": "zhouhaifei-react-scripts start",
     "build": "zhouhaifei-react-scripts build",
