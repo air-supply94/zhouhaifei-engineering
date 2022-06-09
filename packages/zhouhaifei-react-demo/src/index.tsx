@@ -12,17 +12,15 @@ render();
 
 function render() {
   ReactDOM.render(
-    <React.StrictMode>
-      <Locale>
-        <Provider globalModel={globalModel}>
-          <RenderRoutes
-            history={history}
-            loading={<Spin size="large"/>}
-            routes={routes}
-          />
-        </Provider>
-      </Locale>
-    </React.StrictMode>,
+    <Locale>
+      <Provider globalModel={globalModel}>
+        <RenderRoutes
+          history={history}
+          loading={<Spin size="large"/>}
+          routes={routes}
+        />
+      </Provider>
+    </Locale>,
     document.getElementById('root')
   );
 }

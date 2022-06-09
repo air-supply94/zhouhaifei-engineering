@@ -39,19 +39,14 @@
     "zhouhaifei-react-scripts": "^2.21.0",
     "zhouhaifei-test": "^2.21.0"
   },
-  "browserslist": {
-    "production": [
-      "Chrome >= 54",
-      "Firefox >= 47",
-      "Edge >= 12",
-      "Explorer >= 11",
-      "Safari >= 10.1",
-      "Opera >= 41"
-    ],
-    "development": [
-      "Chrome >= 90"
-    ]
-  },
+  "browserslist": [
+    "Chrome >= 54",
+    "Firefox >= 47",
+    "Edge >= 12",
+    "Explorer >= 11",
+    "Safari >= 10.1",
+    "Opera >= 41"
+  ],
   "resolutions": {
     "@types/react": "17.0.0",
     "@types/react-dom": "17.0.0"

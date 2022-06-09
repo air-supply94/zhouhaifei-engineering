@@ -1,4 +1,4 @@
-module.exports = function (isWeb = true) {
+module.exports = function () {
   const presets = [
     [
       require.resolve('@babel/preset-env'),
@@ -19,7 +19,7 @@ module.exports = function (isWeb = true) {
     [
       require.resolve('babel-plugin-import'),
       {
-        libraryName: isWeb ? 'antd' : 'antd-mobile',
+        libraryName:  ['antd','antd-mobile'],
         libraryDirectory: 'es',
         style: true,
       },
@@ -35,7 +35,7 @@ module.exports = function (isWeb = true) {
     ], // 支持class属性初始化和static
     require.resolve('@babel/plugin-proposal-export-default-from'), // 支持 export v from 'mod'语法
     require.resolve('@babel/plugin-syntax-import-meta'),
-    [require.resolve('@babel/plugin-transform-runtime'), {corejs: 3, proposals: true}],
+    require.resolve('@babel/plugin-transform-runtime'),
   ];
 
   return {
