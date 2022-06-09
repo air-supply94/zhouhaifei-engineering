@@ -1,6 +1,6 @@
 {
   "name": "zhouhaifei-config",
-  "version": "2.21.0",
+  "version": "2.21.2",
   "description": "",
   "license": "MIT",
   "main": "lib/index.js",
