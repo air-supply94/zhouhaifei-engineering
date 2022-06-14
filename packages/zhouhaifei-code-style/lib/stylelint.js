@@ -36,11 +36,11 @@ module.exports = {
     'no-invalid-double-slash-comments': true,
     'no-invalid-position-at-import-rule': true,
     'no-irregular-whitespace': true,
-    'property-no-unknown': true,
+    'property-no-unknown': null,
     'selector-pseudo-element-no-unknown': true,
     'selector-pseudo-class-no-unknown': [
       true,
-      {ignorePseudoClasses: ['global']},
+      { ignorePseudoClasses: ['global']},
     ],
     'no-descending-specificity': null,
     'selector-type-no-unknown': [
