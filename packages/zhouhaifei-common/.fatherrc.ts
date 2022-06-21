@@ -4,16 +4,16 @@ export default {
     remove: false,
     grid: true,
   },
-  cssModules: { generateScopedName: '[name]__[local]--[hash:base64:8]' },
+  cssModules: {generateScopedName: '[name]__[local]--[hash:base64:8]'},
   extractCSS: true,
-  lessInRollupMode: { modifyVars: require('zhouhaifei-config/lib/theme/index.js')() },
-  /*  extraBabelPlugins: [
-      ['babel-plugin-import', {
-        libraryName: 'antd',
-        libraryDirectory: 'es',
-        style: true,
-      }],
-    ],*/
+  lessInRollupMode: {modifyVars: require('zhouhaifei-config/lib/theme/index.js')()},
+  extraBabelPlugins: [
+    ['babel-plugin-import', {
+      libraryName: 'antd',
+      libraryDirectory: 'es',
+      style: true,
+    }],
+  ],
   extraExternals: [
     'antd',
     'lodash',

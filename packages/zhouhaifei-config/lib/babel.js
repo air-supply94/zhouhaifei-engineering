@@ -19,7 +19,7 @@ module.exports = function () {
     [
       require.resolve('babel-plugin-import'),
       {
-        libraryName:  ['antd','antd-mobile'],
+        libraryName: 'antd',
         libraryDirectory: 'es',
         style: true,
       },
