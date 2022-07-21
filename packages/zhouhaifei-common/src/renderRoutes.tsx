@@ -1,7 +1,7 @@
 import type { History } from 'history';
 import React from 'react';
 import { Redirect, Router, Route, Switch } from 'react-router-dom';
-import type { RouteComponentProps } from 'react-router-dom';
+import type { RouteComponentProps, SwitchProps } from 'react-router-dom';
 
 export class MenuDataItem {
   public key?: string;
@@ -70,7 +70,7 @@ const WrapperRoute: React.FC<any> = ({
       exact={exact}
       location={location}
       path={path}
-      render={(props: RouteComponentProps<any>) => {
+      render={(props: RouteComponentProps) => {
         const NewWrapper = wrapper ? wrapper : DefaultWrapper;
         return (
           <NewWrapper route={route}>
@@ -90,11 +90,15 @@ const WrapperRoute: React.FC<any> = ({
   );
 };
 
-function renderRoutes(routes: MenuDataItem[], extraProps = {}, switchProps = {}, loading?: React.ReactNode) {
-  if (Array.isArray(routes) && routes.length) {
-    return (
-      <Switch {...switchProps}>
-        {routes.map((route, index) => {
+function renderRoutes(routes: MenuDataItem[], switchProps: SwitchProps = {}, loading?: React.ReactNode) {
+  if (!(Array.isArray(routes) && routes.length)) {
+    return null;
+  }
+
+  return (
+    <Switch {...switchProps}>
+      {
+        routes.map((route, index) => {
           if (route.redirect) {
             return (
               <Redirect
@@ -113,15 +117,12 @@ function renderRoutes(routes: MenuDataItem[], extraProps = {}, switchProps = {},
                 loading={loading}
                 name={route.name}
                 path={route.path}
-                render={(props: RouteComponentProps<any> & MenuDataItem) => {
-                  const childRoutes = renderRoutes(route.children, extraProps, { location: props.location }, loading);
+                render={(props: RouteComponentProps & MenuDataItem) => {
+                  const childRoutes = renderRoutes(route.children, { location: props.location }, loading);
                   if (route.component) {
                     const { component: Component } = route;
                     return (
-                      <Component
-                        {...props}
-                        {...extraProps}
-                      >
+                      <Component {...props}>
                         {childRoutes}
                       </Component>
                     );
@@ -136,32 +137,28 @@ function renderRoutes(routes: MenuDataItem[], extraProps = {}, switchProps = {},
               />
             );
           }
-        })}
-      </Switch>
-    );
-  } else {
-    return null;
-  }
+        })
+      }
+    </Switch>
+  );
 }
 
 interface RoutesProps {
   history: History;
   routes: MenuDataItem[];
-  extraProps?: any;
-  switchProps?: any;
+  switchProps?: SwitchProps;
   loading?: React.ReactNode;
 }
 
 export const RenderRoutes: React.FC<RoutesProps> = ({
   routes,
   history,
-  extraProps,
   switchProps,
   loading,
 }) => {
   return (
     <Router history={history}>
-      {renderRoutes(routes, extraProps, switchProps, loading)}
+      {renderRoutes(routes, switchProps, loading)}
     </Router>
   );
 };

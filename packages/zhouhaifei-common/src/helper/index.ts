@@ -13,20 +13,10 @@ export function formatNumber(num: unknown): number {
  * @param num2 数字2
  */
 export function add(num1: unknown, num2: unknown): number {
-  let decimalLength1;
-  let decimalLength2;
   const s1 = String(formatNumber(num1));
   const s2 = String(formatNumber(num2));
-  try {
-    decimalLength1 = s1.split('.')[1].length;
-  } catch (e) {
-    decimalLength1 = 0;
-  }
-  try {
-    decimalLength2 = s2.split('.')[1].length;
-  } catch (e) {
-    decimalLength2 = 0;
-  }
+  const decimalLength1 = (s1.split('.')[1] || '').length;
+  const decimalLength2 = (s2.split('.')[1] || '').length;
 
   const maxDecimalLength = Math.max(decimalLength1, decimalLength2);
   const newNum1 = Number(s1.replace('.', '')) * Math.pow(10, maxDecimalLength - decimalLength1);
@@ -49,21 +39,11 @@ export function subtract(num1: unknown, num2: unknown): number {
  * @param num2 数字2
  */
 export function multiple(num1: unknown, num2: unknown): number {
-  let m = 0;
   const s1 = String(formatNumber(num1));
   const s2 = String(formatNumber(num2));
+  const decimalLength = (s1.split('.')[1] || '').length + (s2.split('.')[1] || '').length;
 
-  try {
-    m += s1.split('.')[1].length;
-  } catch (e) {
-    // nothing
-  }
-  try {
-    m += s2.split('.')[1].length;
-  } catch (e) {
-    // nothing
-  }
-  return Number(s1.replace('.', '')) * Number(s2.replace('.', '')) / Math.pow(10, m);
+  return Number(s1.replace('.', '')) * Number(s2.replace('.', '')) / Math.pow(10, decimalLength);
 }
 
 /**
@@ -108,3 +88,4 @@ export function thousandthSeparator(num: unknown): string {
   return String(formatNumber(num))
     .replace(/\d+/, (n) => n.replace(/(?!^)(?=(\d{3})+$)/g, ','));
 }
+

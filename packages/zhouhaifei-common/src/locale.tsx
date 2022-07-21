@@ -2,7 +2,6 @@ import { ConfigProvider } from 'antd';
 import zhCN from 'antd/lib/locale/zh_CN';
 import moment from 'moment';
 import React from 'react';
-import 'antd/es/config-provider/style';
 
 export const Locale: React.FC = function Locale(props) {
   try {

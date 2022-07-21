@@ -4,7 +4,6 @@ export default {
     remove: false,
     grid: true,
   },
-  cssModules: {generateScopedName: '[name]__[local]--[hash:base64:8]'},
   extractCSS: true,
   lessInRollupMode: {modifyVars: require('zhouhaifei-config/lib/theme/index.js')()},
   extraBabelPlugins: [

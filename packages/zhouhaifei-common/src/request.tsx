@@ -1,7 +1,6 @@
 import { message } from 'antd';
 import type { AxiosRequestConfig, AxiosResponse, AxiosError, AxiosInstance } from 'axios';
 import axios from 'axios';
-import 'antd/es/message/style';
 
 const singleton = (function() {
   let instance: AxiosInstance;
