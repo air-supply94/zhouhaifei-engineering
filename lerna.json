@@ -4,8 +4,7 @@
   "version": "2.21.14",
   "command": {
     "publish": {
-      "verifyAccess": false,
-      "npmClient": "npm",
+      "verifyAccess": true,
       "ignoreChanges": ["ignored-file", "*.md"],
       "message": "chore(release): publish",
       "registry": "https://registry.npmjs.org/"
