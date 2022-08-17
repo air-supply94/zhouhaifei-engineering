@@ -1,6 +1,6 @@
 {
   "name": "zhouhaifei-config",
-  "version": "2.21.12",
+  "version": "2.21.13",
   "description": "",
   "license": "MIT",
   "main": "lib/index.js",
@@ -29,5 +29,5 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "bfd6c4dc011a6a67de16625f9f4d40216e7e2771"
+  "gitHead": "503e1fd37ecb4a09c0081d64e27aede46912ec54"
 }
