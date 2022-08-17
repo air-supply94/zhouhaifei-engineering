@@ -55,5 +55,5 @@
     "test": "node node_modules/zhouhaifei-test/bin/zhouhaifei-test.js react",
     "test-match": "node node_modules/zhouhaifei-test/bin/zhouhaifei-test.js react --testMatch="
   },
-  "gitHead": "1de568c71f2e25234c091ae7561494fd6d63cb6b"
+  "gitHead": "bfd6c4dc011a6a67de16625f9f4d40216e7e2771"
 }
