@@ -1,10 +1,8 @@
 import './global.less';
 import { Spin } from 'antd';
-import { Provider } from 'mobx-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Locale, RenderRoutes, history } from 'zhouhaifei-common';
-import { globalModel } from './models/globalModel';
 import { routes } from './routes';
 import { webVitals } from './webVitals';
 
@@ -13,13 +11,11 @@ render();
 function render() {
   ReactDOM.render(
     <Locale>
-      <Provider globalModel={globalModel}>
-        <RenderRoutes
-          history={history}
-          loading={<Spin size="large"/>}
-          routes={routes}
-        />
-      </Provider>
+      <RenderRoutes
+        history={history}
+        loading={<Spin size="large"/>}
+        routes={routes}
+      />
     </Locale>,
     document.getElementById('root')
   );

@@ -1,10 +1,8 @@
 import ProLayout from '@ant-design/pro-layout';
-import { observer, inject } from 'mobx-react';
 import React from 'react';
 import type { RouteChildrenProps } from 'react-router';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import type { MenuDataItem } from 'zhouhaifei-common';
-import type { GlobalModel } from '../models/globalModel';
 
 function menuDataRender(menuList: MenuDataItem[] = []): MenuDataItem[] {
   return menuList.filter((item) => !Object.prototype.hasOwnProperty.call(item, 'redirect'))
@@ -16,20 +14,13 @@ function menuDataRender(menuList: MenuDataItem[] = []): MenuDataItem[] {
 }
 
 export interface BasicLayoutInterface extends RouteChildrenProps {
-  globalModel: GlobalModel;
   route: MenuDataItem;
 }
 
-@inject('globalModel')
-@observer
 export class BasicLayout extends React.Component<BasicLayoutInterface> {
   render() {
     const {
       location,
-      globalModel: {
-        collapsed,
-        handleCollapsed,
-      },
       children,
       route = { children: []},
     } = this.props;
@@ -37,7 +28,7 @@ export class BasicLayout extends React.Component<BasicLayoutInterface> {
       <ProLayout
         breakpoint={false}
         children={children}
-        collapsed={collapsed}
+        contentStyle={{ margin: 8 }}
         fixSiderbar
         fixedHeader
         location={{ pathname: location.pathname }}
@@ -47,16 +38,15 @@ export class BasicLayout extends React.Component<BasicLayoutInterface> {
         menuItemRender={(menuItemProps, defaultDom) => {
           if (menuItemProps.isUrl || menuItemProps.children || !menuItemProps.path) {
             return defaultDom;
+          } else {
+            return (
+              <Link to={menuItemProps.path}>
+                {defaultDom}
+              </Link>
+            );
           }
-
-          return (
-            <NavLink to={menuItemProps.path}>
-              {defaultDom}
-            </NavLink>
-          );
         }}
-        navTheme="dark"
-        onCollapse={handleCollapsed}
+        navTheme="light"
         title={route.name}
       />
     );

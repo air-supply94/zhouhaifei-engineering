@@ -1,13 +1,16 @@
 import React from 'react';
-
-// import { BasicLayout } from './compnents/basicLayout';
 import type { MenuDataItem } from 'zhouhaifei-common';
-import { NotAuthority } from './pages/403';
+import { BasicLayout } from './compnents/basicLayout';
 import { NotPage } from './pages/404';
+
+const noPage = {
+  path: '',
+  component: NotPage,
+};
 
 export const routes: MenuDataItem[] = [
   {
-    // component: BasicLayout,
+    component: BasicLayout,
     name: 'app',
     children: [
       {
@@ -21,15 +24,7 @@ export const routes: MenuDataItem[] = [
         exact: true,
         component: React.lazy(() => import('./pages/dashboard')),
       },
-      {
-        path: '/403',
-        exact: true,
-        component: NotAuthority,
-      },
-      {
-        path: '',
-        component: NotPage,
-      },
+      noPage,
     ],
   },
 ];
