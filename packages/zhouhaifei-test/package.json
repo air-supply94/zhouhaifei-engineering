@@ -1,6 +1,6 @@
 {
   "name": "zhouhaifei-test",
-  "version": "2.21.13",
+  "version": "2.21.14",
   "description": "",
   "license": "MIT",
   "author": "zhouhaifei1994@sina.com",
@@ -27,5 +27,5 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "503e1fd37ecb4a09c0081d64e27aede46912ec54"
+  "gitHead": "5489331d36d3dc8626533caea9faf46bd3e7613d"
 }
