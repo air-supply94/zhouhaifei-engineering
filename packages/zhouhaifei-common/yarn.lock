@@ -10662,10 +10662,10 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-zhouhaifei-config@2.18.12:
-  version "2.18.12"
-  resolved "https://registry.npmmirror.com/zhouhaifei-config/-/zhouhaifei-config-2.18.12.tgz#1a0d90b5f8b3e8150250417e01c48f36c23c44ad"
-  integrity sha512-NTzYE7fU7bMAnK0TpJ3w3AjFmXPlferYtO+61/COi3w6cyTn+nwlLGY3185CDiumN+i6jc5kxJiKMR1GFmxddw==
+zhouhaifei-config@^2.21.15:
+  version "2.21.15"
+  resolved "https://registry.npmjs.org/zhouhaifei-config/-/zhouhaifei-config-2.21.15.tgz#6ce29cb3dc49dd1c701dc937a4e5aec1da0cb40a"
+  integrity sha512-daslhqsJax5A8/HVevp2xhoiRr310QRcM2GIA/0JTSMmMNNQ1TmGM6vbtJ+lOwRyzZQ2ELtFcXr6LPcfqDnIHQ==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.14.5"
     "@babel/plugin-proposal-decorators" "^7.15.8"
@@ -10684,10 +10684,10 @@ zhouhaifei-config@2.18.12:
     px2rem "0.5.0"
     typescript "4.2.4"
 
-zhouhaifei-test@2.18.8:
-  version "2.18.8"
-  resolved "https://registry.npmmirror.com/zhouhaifei-test/-/zhouhaifei-test-2.18.8.tgz#5fc625329e27ffcaf58e27b91f4307a25e087c75"
-  integrity sha512-Cz/t3FjzB986FrGMGenXRgp8dBBFJsoUzqgB8kCpm/rE9mlZUZjyHoj1OSo2qMN8dxrdHtHatAVNn4mLymQ+Nw==
+zhouhaifei-test@^2.21.15:
+  version "2.21.15"
+  resolved "https://registry.npmjs.org/zhouhaifei-test/-/zhouhaifei-test-2.21.15.tgz#2f1a8b35ecde68384e104a24bf8ee8e31bb70ed9"
+  integrity sha512-XuUEvEnsQNsKny4ndVffNUlQEC7zdcXm3gIvdjBXbC4xLryjOG5eHNIsiq6Wupu8Xqd54ivxkCBWXCvSsR83Qg==
   dependencies:
     babel-jest "^27.3.1"
     chalk "^4.1.2"

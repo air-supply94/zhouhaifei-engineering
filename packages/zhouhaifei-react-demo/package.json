@@ -12,7 +12,7 @@
     "react-dom": "17.0.1",
     "react-router-dom": "5.2.0",
     "web-vitals": "^2.1.2",
-    "zhouhaifei-common": "^2.21.15"
+    "zhouhaifei-common": "^2.21.16"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
