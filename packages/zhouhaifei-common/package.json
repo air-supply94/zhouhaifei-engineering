@@ -1,6 +1,6 @@
 {
   "name": "zhouhaifei-common",
-  "version": "2.21.2",
+  "version": "2.21.4",
   "description": "",
   "license": "MIT",
   "sideEffects": false,
@@ -34,8 +34,8 @@
     "react-dom": "17.0.1",
     "react-router-dom": "5.2.0",
     "typescript": "4.2.4",
-    "zhouhaifei-config": "^2.21.2",
-    "zhouhaifei-test": "^2.21.0"
+    "zhouhaifei-config": "^2.21.4",
+    "zhouhaifei-test": "^2.21.4"
   },
   "scripts": {
     "prepublish": "yarn run build",
