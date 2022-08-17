@@ -4,8 +4,6 @@
   "version": "2.21.10",
   "command": {
     "publish": {
-      "npmClient": "npm",
-      "verifyAccess": false,
       "ignoreChanges": ["ignored-file", "*.md"],
       "message": "chore(release): publish",
       "registry": "https://registry.npmjs.org/"
