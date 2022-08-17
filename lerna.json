@@ -1,9 +1,11 @@
 {
   "packages": ["packages/*"],
   "npmClient": "yarn",
-  "version": "2.21.8",
+  "version": "2.21.9",
   "command": {
     "publish": {
+      "npmClient": "npm",
+      "verifyAccess": false,
       "ignoreChanges": ["ignored-file", "*.md"],
       "message": "chore(release): publish",
       "registry": "https://registry.npmjs.org/"
