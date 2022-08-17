@@ -1,4 +1,6 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.21.5...v0.0.0) (2022-08-17)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.21.6...v0.0.0) (2022-08-17)
+
+## [2.21.6](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.21.5...v2.21.6) (2022-08-17)
 
 ## [2.21.5](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.21.4...v2.21.5) (2022-08-17)
 
@@ -6,8 +8,8 @@
 
 ### Features
 
-- 去掉 mobx ([16bc506](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/16bc506c10b0d901b24f593994cd244d58eb2be4))
 - **common:** 更改路由和 helper ([f32552f](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/f32552fc68fe3e36572752b84a8880892610b7e4))
+- 去掉 mobx ([16bc506](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/16bc506c10b0d901b24f593994cd244d58eb2be4))
 
 ## [2.21.3](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.21.2...v2.21.3) (2022-06-14)
 
@@ -79,8 +81,8 @@
 
 ### Features
 
-- **react-scripts:** 更新版本 ([bd4d981](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/bd4d9813df24cc62741a01eac592ebf79c3dfba6))
 - **react-scripts:** 更新 utils ([08db652](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/08db652d7749ff81411b8ee31286691281506e16))
+- **react-scripts:** 更新版本 ([bd4d981](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/bd4d9813df24cc62741a01eac592ebf79c3dfba6))
 
 ## [2.18.8](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.7...v2.18.8) (2022-01-17)
 
@@ -105,8 +107,8 @@
 
 ### Features
 
-- **react-scripts:** 去掉 cra 无用的插件 ([34b1a24](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/34b1a24dc9eb71ddca570759ae93603347473be0))
 - **react-scripts:** remove clean-plugin ([7f0cc70](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/7f0cc70e0e48b3f328372cb70454ac7c37e931d5))
+- **react-scripts:** 去掉 cra 无用的插件 ([34b1a24](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/34b1a24dc9eb71ddca570759ae93603347473be0))
 
 ## [2.18.4](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.18.3...v2.18.4) (2022-01-13)
 
@@ -148,8 +150,8 @@
 
 ### Features
 
-- **generator:** 更新包依赖 ([8391c00](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/8391c0043fb0dcc9cd55c067ac210cb33add9cf7))
 - **generator:** 增加对 react-error-overlay 错误兼容 ([71a0d1c](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/71a0d1c925e35cbfe35dca38c3df8b68015af0e8))
+- **generator:** 更新包依赖 ([8391c00](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/8391c0043fb0dcc9cd55c067ac210cb33add9cf7))
 
 ## [2.17.6](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.17.5...v2.17.6) (2021-12-16)
 
@@ -377,9 +379,9 @@
 
 ### Features
 
-- 更新文档 ([15327ad](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/15327ad1e68ac164cc849470962c26f726758e0a))
 - **react-scripts:** update cache type ([50af23d](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/50af23de45306272a5ac7ac58af8d7df21f009a7))
 - update packages ([66d7845](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/66d7845a223b82b64e12588245708f668368c662))
+- 更新文档 ([15327ad](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/15327ad1e68ac164cc849470962c26f726758e0a))
 
 ## [2.13.2](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.13.1...v2.13.2) (2021-05-06)
 
@@ -509,9 +511,9 @@
 
 ### Features
 
-- 去掉 eslint 的 warning ([7167ab6](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/7167ab67a903b60155a12fa6ffc2c523bffa1110))
 - **react-scripts:** 增加移动端 rem 配置 ([f189026](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/f1890265b9a5ca59768ddb0c26e98c1842f0730c))
 - update packages ([1a798bd](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/1a798bd66e3a6fceb4a4a950e8f1040c647e5184))
+- 去掉 eslint 的 warning ([7167ab6](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/7167ab67a903b60155a12fa6ffc2c523bffa1110))
 
 ## [2.10.8](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.10.7...v2.10.8) (2021-04-12)
 
@@ -893,8 +895,8 @@
 
 ### Features
 
-- **routes:** 改进子路由渲染 ([fabe6a5](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/fabe6a5e6f7e86de5260a08211192012d48c74d6))
 - **routes:** 增加子路由渲染 ([cea8cf8](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/cea8cf86f3110066b9710ba5bd4deca644f9ee36))
+- **routes:** 改进子路由渲染 ([fabe6a5](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/fabe6a5e6f7e86de5260a08211192012d48c74d6))
 
 ## [2.2.3](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.2.2...v2.2.3) (2020-11-11)
 
@@ -1071,14 +1073,14 @@
 
 ### Features
 
-- add 路由可配置 ([0876278](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/0876278b96c7bfacb900603d0293ffab728e638c))
-- add 路由可配置 ([fabc55b](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/fabc55baeca4b6bfda4d1df39133f7fed063861e))
 - add code-style package ([cb9c0b6](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/cb9c0b6c2d4083df58e32d031497a1a63d916559))
 - add lerna ([9cf09c6](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/9cf09c624b097526b088128ebe21d38b9ab3005c))
 - add mock ([37ecf44](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/37ecf44fa161e3d12d200c3c3f647f6f5a49a4ca))
 - add react types ([3f20c86](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/3f20c86b4805af541e36299c46b6e4f258a37f5f))
 - add test framework ([3bd428f](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/3bd428fe292f6d55a5f9131994321c9cf8e6aecd))
 - add ts check ([7a16705](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/7a167052036d3b96d7938a46d0d1c9dabcd0133f))
+- add 路由可配置 ([0876278](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/0876278b96c7bfacb900603d0293ffab728e638c))
+- add 路由可配置 ([fabc55b](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/fabc55baeca4b6bfda4d1df39133f7fed063861e))
 - **entry:** 解决样式文件不更新问题（以后会去除不熟悉依赖） ([c6117a6](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/c6117a6d7f233ba311eb3cacb45196f374d04505))
 - init project ([81473a1](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/81473a15cb708bbc9cb79d735cb90775a6c3b44a))
 - **react-scripts:** add scss style config ([d7665e4](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/d7665e49954efd4536b24627a71f595249826501))
