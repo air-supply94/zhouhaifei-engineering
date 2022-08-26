@@ -1,4 +1,8 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.21.15...v0.0.0) (2022-08-17)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.21.15...v0.0.0) (2022-08-27)
+
+### Features
+
+- 更新 react-router-dom 到 v6 ([386ac38](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/386ac383c69a1f52553afb949a794933c978e3d1))
 
 ## [2.21.15](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.21.14...v2.21.15) (2022-08-17)
 

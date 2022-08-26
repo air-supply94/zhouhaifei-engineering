@@ -1,9 +1,9 @@
 import './global.less';
-import { Spin } from 'antd';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Locale, RenderRoutes, history } from 'zhouhaifei-common';
-import { routes } from './routes';
+import { BrowserRouter } from 'react-router-dom';
+import { RenderRoutes } from './routes';
+import { Locale } from './utils';
 import { webVitals } from './webVitals';
 
 render();
@@ -11,11 +11,9 @@ render();
 function render() {
   ReactDOM.render(
     <Locale>
-      <RenderRoutes
-        history={history}
-        loading={<Spin size="large"/>}
-        routes={routes}
-      />
+      <BrowserRouter>
+        <RenderRoutes/>
+      </BrowserRouter>
     </Locale>,
     document.getElementById('root')
   );

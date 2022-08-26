@@ -2,7 +2,7 @@ import { Result } from 'antd';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const NotPage: React.FC = () => (
+export const NoPage: React.FC = () => (
   <Result
     extra={(
       <Link to="/">

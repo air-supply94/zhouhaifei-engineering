@@ -20,7 +20,6 @@ export default {
     'axios',
     'react',
     'react-dom',
-    'react-router-dom',
     'history',
     'mobx',
     'mobx-react',

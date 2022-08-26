@@ -2,12 +2,13 @@ import { message } from 'antd';
 import type { AxiosRequestConfig, AxiosResponse, AxiosError, AxiosInstance } from 'axios';
 import axios from 'axios';
 
-const singleton = (function() {
+export const singleton = (function() {
   let instance: AxiosInstance;
 
   function init() {
     const axiosInstance: AxiosInstance = axios.create({
-      timeout: 30000,
+      // 30s超时限制
+      timeout: 1000 * 30,
       timeoutErrorMessage: '请求超时',
       withCredentials: true,
 
