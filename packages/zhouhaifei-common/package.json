@@ -1,6 +1,6 @@
 {
   "name": "zhouhaifei-common",
-  "version": "2.21.16",
+  "version": "2.21.17",
   "description": "",
   "license": "MIT",
   "sideEffects": false,
@@ -31,8 +31,8 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "typescript": "4.2.4",
-    "zhouhaifei-config": "^2.21.15",
-    "zhouhaifei-test": "^2.21.15"
+    "zhouhaifei-config": "^2.21.17",
+    "zhouhaifei-test": "^2.21.17"
   },
   "scripts": {
     "prepublish": "yarn run build",
@@ -40,5 +40,5 @@
     "test": "node node_modules/zhouhaifei-test/bin/zhouhaifei-test.js react",
     "test-match": "node node_modules/zhouhaifei-test/bin/zhouhaifei-test.js react --testMatch="
   },
-  "gitHead": "5489331d36d3dc8626533caea9faf46bd3e7613d"
+  "gitHead": "d2aa9ce735309d393ebe6452ac392a6a76d9fae6"
 }

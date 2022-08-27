@@ -1,7 +1,7 @@
 {
   "packages": ["packages/*"],
   "npmClient": "yarn",
-  "version": "2.21.16",
+  "version": "2.21.17",
   "command": {
     "publish": {
       "verifyAccess": true,

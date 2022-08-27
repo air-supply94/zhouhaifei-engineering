@@ -1,6 +1,6 @@
 {
   "name": "generator-zhouhaifei-react",
-  "version": "2.21.16",
+  "version": "2.21.17",
   "description": "",
   "homepage": "",
   "author": {
@@ -36,5 +36,5 @@
     "test": "jest"
   },
   "license": "MIT",
-  "gitHead": "5489331d36d3dc8626533caea9faf46bd3e7613d"
+  "gitHead": "d2aa9ce735309d393ebe6452ac392a6a76d9fae6"
 }
