@@ -2,7 +2,7 @@
 
 ### Features
 
-- 更新 react-router-dom 到 v6 ([386ac38](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/386ac383c69a1f52553afb949a794933c978e3d1))
+- 更新 react-router-dom 到 v6 ([47c0d5d](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/47c0d5d4defdd1b1b32ec1dd81cd610235d54529))
 
 ## [2.21.15](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.21.14...v2.21.15) (2022-08-17)
 
