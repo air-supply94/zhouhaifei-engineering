@@ -3,15 +3,15 @@
   "version": "2.21.17",
   "dependencies": {
     "@ant-design/pro-layout": "^6.38.21",
-    "antd": "4.12.3",
-    "axios": "0.21.0",
-    "lodash": "4.17.20",
-    "moment": "2.29.1",
-    "qs": "6.9.4",
+    "antd": "4.22.8",
+    "axios": "0.27.2",
+    "lodash": "4.17.21",
+    "moment": "2.29.4",
+    "qs": "6.11.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-router-dom": "6.3.0",
-    "web-vitals": "^2.1.2"
+    "web-vitals": "^3.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
