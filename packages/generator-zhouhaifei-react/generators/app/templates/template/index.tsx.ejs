@@ -1,6 +1,6 @@
 import './global.less';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { RenderRoutes } from './routes';
 import { Locale } from './utils';
@@ -11,14 +11,14 @@ import { webVitals } from './webVitals';
 render();
 
 function render() {
-  ReactDOM.render(
-    <Locale>
-      <BrowserRouter>
-        <RenderRoutes/>
-      </BrowserRouter>
-    </Locale>,
-    document.getElementById('root')
-  );
+  ReactDOM.createRoot(document.getElementById('root'))
+    .render(
+      <Locale>
+        <BrowserRouter>
+          <RenderRoutes/>
+        </BrowserRouter>
+      </Locale>
+    );
 }
 
 webVitals(console.log);

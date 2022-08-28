@@ -8,8 +8,8 @@
     "lodash": "4.17.21",
     "moment": "2.29.4",
     "qs": "6.11.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-router-dom": "6.3.0",
     "web-vitals": "^3.0.0"
   },
@@ -23,8 +23,8 @@
     "@types/mockjs": "^1.0.3",
     "@types/node": "^14.14.10",
     "@types/qs": "^6.9.5",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
+    "@types/react": "18.0.17",
+    "@types/react-dom": "18.0.6",
     "eslint": "7.29.0",
     "mockjs": "^1.1.0",
     "postcss": "8.3.11",
@@ -43,8 +43,8 @@
     "Opera >= 41"
   ],
   "resolutions": {
-    "@types/react": "17.0.0",
-    "@types/react-dom": "17.0.0"
+    "@types/react": "18.0.17",
+    "@types/react-dom": "18.0.6"
   },
   "scripts": {
     "start": "zhouhaifei-react-scripts start",

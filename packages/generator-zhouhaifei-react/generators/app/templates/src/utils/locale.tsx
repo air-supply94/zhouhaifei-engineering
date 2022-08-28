@@ -3,7 +3,7 @@ import zhCN from 'antd/lib/locale/zh_CN';
 import moment from 'moment';
 import React from 'react';
 
-export const Locale: React.FC = function Locale(props) {
+export const Locale: React.FC<React.PropsWithChildren> = function Locale(props) {
   try {
     moment.defineLocale('zh-cn', {
       months: '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(

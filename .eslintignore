@@ -1,6 +1,7 @@
 public
 dist
 coverage
+packages/generator-zhouhaifei-react
 **/lib
 .umi
 .umi-production
