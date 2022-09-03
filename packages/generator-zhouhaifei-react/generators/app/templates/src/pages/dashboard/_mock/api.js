@@ -1,7 +1,7 @@
 const mock = require('mockjs');
 
 module.exports = {
-  'GET /1api/test': mock.mock({
+  'GET /api/test': mock.mock({
     'list|100': [
       {
         name: '@city',
