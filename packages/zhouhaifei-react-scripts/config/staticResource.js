@@ -2,7 +2,36 @@ const utils = require('./utils');
 
 module.exports = [
   {
-    test: /\.(gif|png|jpe?g|svg)$/i,
+    test: /\.svg$/,
+    use: [
+      {
+        loader: require.resolve('@svgr/webpack'),
+        options: {
+          prettier: false,
+          svgo: false,
+          svgoConfig: { plugins: [{ removeViewBox: false }]},
+          titleProp: true,
+          ref: true,
+        },
+      },
+      {
+        loader: require.resolve('url-loader'),
+        options: {
+          limit: utils.imageInlineSizeLimit,
+          name: `${utils.resourceName.image}/[hash].[ext]`,
+        },
+      },
+    ],
+    issuer: { and: [/\.(ts|tsx|js|jsx|md|mdx)$/]},
+  },
+  {
+    test: [/\.avif$/],
+    type: 'asset',
+    mimetype: 'image/avif',
+    parser: { dataUrlCondition: { maxSize: utils.imageInlineSizeLimit }},
+  },
+  {
+    test: /\.(gif|png|jpe?g|bmp)$/i,
     type: 'asset',
     generator: { filename: `${utils.resourceName.image}/[hash].[ext]` },
     parser: { dataUrlCondition: { maxSize: utils.imageInlineSizeLimit }},

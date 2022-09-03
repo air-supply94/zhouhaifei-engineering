@@ -31,7 +31,7 @@ module.exports = (resolve, rootDir) => {
       '<rootDir>/src/**/__tests__/*.{js,jsx,ts,tsx}',
       '<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}',
     ],
-    testEnvironment: 'jest-environment-jsdom-fourteen',
+    testEnvironment: 'jsdom',
     transform: {
       '^.+\\.jsx?$': require.resolve('babel-jest'),
       '^.+\\.tsx?$': require.resolve('ts-jest'),
