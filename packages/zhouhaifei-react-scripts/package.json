@@ -60,7 +60,7 @@
     "webpack-manifest-plugin": "4.1.1",
     "webpack-merge": "^5.8.0",
     "webpackbar": "^5.0.0-3",
-    "workbox-webpack-plugin": "^6.4.2"
+    "workbox-webpack-plugin": "^6.5.4"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

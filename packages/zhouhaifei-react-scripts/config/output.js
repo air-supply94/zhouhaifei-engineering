@@ -3,6 +3,7 @@ const paths = require('./paths');
 const utils = require('./utils');
 
 module.exports = {
+  clean: true,
   libraryTarget: 'umd',
   path: utils.isProduction ? paths.appDist : utils.isDevelopment && paths.appPublic,
   pathinfo: false,

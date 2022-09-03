@@ -6,7 +6,7 @@ module.exports = {
   inject: true,
   cache: false,
   publicPath: utils.publicUrlOrPath,
-  template: path.resolve(paths.appPublic, 'index.ejs'),
+  template: path.resolve(paths.appSrc, 'index.ejs'),
   minify: utils.isProduction ? {
     removeComments: true,
     collapseWhitespace: true,

@@ -168,11 +168,11 @@ module.exports = function() {
       // 是否开启serviceWorker
       utils.isProduction && utils.isStartServiceWorker && new workboxWebpackPlugin.GenerateSW({
         clientsClaim: true,
+        skipWaiting: true,
         exclude: [
           /\.map$/,
           /asset-manifest\.json$/,
         ],
-        navigateFallback: `${utils.publicUrlOrPath}index.html`,
       }),
 
       // manifest

@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.21.17...v0.0.0) (2022-08-28)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.21.18...v0.0.0) (2022-09-03)
+
+### Features
+
+- add serviceWorker ([6d57898](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/6d578988b04d6f7acb2838d7030a39a2edab6b26))
+
+## [2.21.18](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.21.17...v2.21.18) (2022-08-28)
 
 ## [2.21.17](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.21.16...v2.21.17) (2022-08-27)
 

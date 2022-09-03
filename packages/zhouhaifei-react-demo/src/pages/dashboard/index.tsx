@@ -5,7 +5,7 @@ import styles from './index.less';
 
 export default function() {
   React.useEffect(() => {
-    request({ url: '/1api/test' })
+    request({ url: '/api/test' })
       .then((info) => {
         console.log(info);
       });

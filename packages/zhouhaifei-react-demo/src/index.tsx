@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { RenderRoutes } from './routes';
 import { Locale } from './utils';
 import { webVitals } from './webVitals';
+import './registerServiceWorker';
 
 render();
 
