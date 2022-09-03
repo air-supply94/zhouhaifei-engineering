@@ -2,7 +2,7 @@
 
 ### Features
 
-- **scripts:** add svg 解析 ([360d136](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/360d136d4d7d47c29916304a1d46995b3012a892))
+- **scripts:** add svg 解析 ([b522df2](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/b522df26752697b557f6848a13672644ebead6e3))
 
 ## [2.21.19](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.21.18...v2.21.19) (2022-09-03)
 
