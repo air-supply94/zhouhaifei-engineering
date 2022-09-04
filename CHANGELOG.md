@@ -3,7 +3,7 @@
 ### Features
 
 - **scripts:** add svg 解析 ([40bbaac](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/40bbaac2c579641b9a04dbbe2f8ad0db9c08200d))
-- **scripts:** 去掉打包过后文件大小报告(实际意义不大) ([688b201](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/688b20136e845991e9c29b488460e9e4fc90cac0))
+- **scripts:** 去掉打包过后文件大小报告(实际意义不大) ([2746722](https://github.com/air-supply94/zhouhaifei-react-scripts/commit/27467225d24eebb22945664149ddd440af5b5593))
 
 ## [2.21.20](https://github.com/air-supply94/zhouhaifei-react-scripts/compare/v2.21.19...v2.21.20) (2022-09-03)
 
