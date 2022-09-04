@@ -197,8 +197,11 @@ module.exports = function() {
     ].filter(Boolean),
 
     performance: {
+      // 设置所有产物体积阈值
+      maxAssetSize: 180 * 1024,
+
       // 设置 entry 产物体积阈值
-      maxEntrypointSize: 1024 * 1024,
+      maxEntrypointSize: 250 * 1024,
 
       // 报错方式，支持 `error` | `warning` | false
       hints: 'warning',
