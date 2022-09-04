@@ -40,6 +40,7 @@ module.exports = {
   appDist: resolveApp('dist'),
   appPublic: resolveApp('public'),
   appIndexJs: resolveModule(resolveApp, 'src/index'),
+  appIndexEjs: resolveApp('src/index.ejs'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),
@@ -47,7 +48,7 @@ module.exports = {
   yarnLockFile: resolveApp('yarn.lock'),
   proxySetup: resolveModule(resolveApp, 'src/setupProxy'),
   appNodeModules: resolveApp('node_modules'),
-  appWebpackCache: resolveApp('node_modules/.cache'),
+  appWebpackCache: resolveApp('.cache'),
 };
 
 module.exports.moduleFileExtensions = moduleFileExtensions;

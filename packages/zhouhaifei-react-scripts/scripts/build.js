@@ -18,14 +18,6 @@ const utils = require('../config/utils');
 const configFactory = require('../config/webpack.config');
 const checkBrowsers = require('../react-dev-utils/checkBrowsers');
 const checkRequiredFiles = require('../react-dev-utils/checkRequiredFiles');
-const FileSizeReporter = require('../react-dev-utils/fileSizeReporter');
-
-const measureFileSizesBeforeBuild = FileSizeReporter.measureFileSizesBeforeBuild;
-const printFileSizesAfterBuild = FileSizeReporter.printFileSizesAfterBuild;
-
-// These sizes are pretty large. We'll warn for bundles exceeding them.
-const WARN_AFTER_BUNDLE_GZIP_SIZE = 512 * 1024;
-const WARN_AFTER_CHUNK_GZIP_SIZE = 1024 * 1024;
 
 // Generate configuration
 const config = configFactory();
@@ -59,23 +51,15 @@ function build() {
 }
 
 async function runBuild() {
-  await checkRequiredFiles([paths.appIndexJs]);
+  await checkRequiredFiles([
+    paths.appIndexJs,
+    paths.appIndexEjs,
+  ]);
   await checkBrowsers(paths.appPath);
 
-  const previousFileSizes = await measureFileSizesBeforeBuild(paths.appDist);
-  const stats = await build();
+  await build();
 
   console.log(chalk.green('Compiled successfully.\n'));
-
-  console.log('File sizes after gzip:\n');
-  printFileSizesAfterBuild(
-    stats,
-    previousFileSizes,
-    paths.appDist,
-    WARN_AFTER_BUNDLE_GZIP_SIZE,
-    WARN_AFTER_CHUNK_GZIP_SIZE
-  );
-  console.log();
 
   console.log(chalk.green(`publicUrl: ${utils.publicUrlOrPath}`));
   console.log(chalk.green(`buildFolder: ${paths.appDist}`));

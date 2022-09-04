@@ -22,7 +22,10 @@ const checkRequiredFiles = require('../react-dev-utils/checkRequiredFiles');
 const openBrowser = require('../react-dev-utils/openBrowser');
 
 async function runDev() {
-  await checkRequiredFiles([paths.appIndexJs]);
+  await checkRequiredFiles([
+    paths.appIndexJs,
+    paths.appIndexEjs,
+  ]);
   await checkBrowsers(paths.appPath);
 
   const compiler = webpack(configFactory());

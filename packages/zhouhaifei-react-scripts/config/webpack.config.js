@@ -34,6 +34,7 @@ const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 
 module.exports = function() {
   const initConfig = {
+    profile: true,
     watchOptions: {
       aggregateTimeout: 300,
       poll: false,
@@ -195,11 +196,18 @@ module.exports = function() {
 
     ].filter(Boolean),
 
-    /*
-     * Turn off performance processing because we utilize
-     * our own hints via the FileSizeReporter
-     */
-    performance: false,
+    performance: {
+      // 设置 entry 产物体积阈值
+      maxEntrypointSize: 1024 * 1024,
+
+      // 报错方式，支持 `error` | `warning` | false
+      hints: 'warning',
+
+      // 过滤需要监控的文件类型
+      assetFilter(assetFilename) {
+        return assetFilename.endsWith('.js');
+      },
+    },
   };
 
   return merge(initConfig, utils.otherConfig);

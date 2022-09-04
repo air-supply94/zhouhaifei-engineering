@@ -1,4 +1,3 @@
-const path = require('path');
 const paths = require('./paths');
 const utils = require('./utils');
 
@@ -6,7 +5,7 @@ module.exports = {
   inject: true,
   cache: false,
   publicPath: utils.publicUrlOrPath,
-  template: path.resolve(paths.appSrc, 'index.ejs'),
+  template: paths.appIndexEjs,
   minify: utils.isProduction ? {
     removeComments: true,
     collapseWhitespace: true,
