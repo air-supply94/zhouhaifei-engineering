@@ -1,5 +1,5 @@
 {
-  "packages": ["packages/*(?!zhouhaifei-react-demo)"],
+  "packages": ["packages/(?!zhouhaifei-react-demo)*"],
   "npmClient": "yarn",
   "version": "2.22.0",
   "command": {
