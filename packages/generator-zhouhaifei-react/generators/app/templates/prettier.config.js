@@ -1,1 +1,1 @@
-module.exports = require('zhouhaifei-code-style').prettier;
+module.exports = require('@zhouhaifei/code-style').prettier;

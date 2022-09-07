@@ -2256,6 +2256,27 @@
   dependencies:
     "@umijs/deps" "3.5.17"
 
+"@zhouhaifei/code-style@^2.21.17":
+  version "2.21.17"
+  resolved "https://registry.npmmirror.com/@zhouhaifei/code-style/-/code-style-2.21.17.tgz#2f7504bc6b289b007a03f50c28e6f9dde73d3de7"
+  integrity sha512-eCM+EXIRLWS0mrtUZMos8q0n64E9UxLnqozRlAjt68zsyVENKvGgMRBzqwMD5JmgIBmJ9Y+5z4hYp/KSals26Q==
+  dependencies:
+    "@commitlint/config-conventional" "^13.2.0"
+    "@typescript-eslint/eslint-plugin" "^5.2.0"
+    "@typescript-eslint/parser" "^5.2.0"
+    babel-eslint "^10.1.0"
+    eslint-plugin-import "^2.25.2"
+    eslint-plugin-jest "^25.2.2"
+    eslint-plugin-jsx-a11y "^6.4.1"
+    eslint-plugin-react "^7.26.1"
+    eslint-plugin-react-hooks "^4.2.0"
+    jest "27.3.1"
+    stylelint-config-css-modules "^2.3.0"
+    stylelint-config-prettier "^9.0.3"
+    stylelint-config-rational-order "^0.1.2"
+    stylelint-declaration-block-no-ignored-properties "^2.4.0"
+    stylelint-order "^5.0.0"
+
 JSONStream@^1.0.4:
   version "1.3.5"
   resolved "https://registry.nlark.com/JSONStream/download/JSONStream-1.3.5.tgz#3208c1f08d3a4d99261ab64f92302bc15e111ca0"
@@ -12580,27 +12601,6 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.nlark.com/yocto-queue/download/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=
-
-zhouhaifei-code-style@2.18.11:
-  version "2.18.11"
-  resolved "https://registry.npmmirror.com/zhouhaifei-code-style/download/zhouhaifei-code-style-2.18.11.tgz#32e84c7d81fbf2c550a1009a93c1dd07e86fe59d"
-  integrity sha512-fuF0fim5+NnsOHQsGfo2d8Wvj5xJupFLd0ylbJ0KzkYLFdPL+1IXqmchocwxu1W1x5JJRzgtWimFeo4Hxi07gQ==
-  dependencies:
-    "@commitlint/config-conventional" "^13.2.0"
-    "@typescript-eslint/eslint-plugin" "^5.2.0"
-    "@typescript-eslint/parser" "^5.2.0"
-    babel-eslint "^10.1.0"
-    eslint-plugin-import "^2.25.2"
-    eslint-plugin-jest "^25.2.2"
-    eslint-plugin-jsx-a11y "^6.4.1"
-    eslint-plugin-react "^7.26.1"
-    eslint-plugin-react-hooks "^4.2.0"
-    jest "27.3.1"
-    stylelint-config-css-modules "^2.3.0"
-    stylelint-config-prettier "^9.0.3"
-    stylelint-config-rational-order "^0.1.2"
-    stylelint-declaration-block-no-ignored-properties "^2.4.0"
-    stylelint-order "^5.0.0"
 
 zwitch@^1.0.0:
   version "1.0.5"

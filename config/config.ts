@@ -4,8 +4,8 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
   title: 'react工程化',
-  base: isProduction ? '/zhouhaifei-react-scripts/' : undefined,
-  publicPath: isProduction ? 'https://air-supply94.github.io/zhouhaifei-react-scripts/' : undefined,
+  base: isProduction ? '/zhouhaifei/' : undefined,
+  publicPath: isProduction ? 'https://air-supply94.github.io/zhouhaifei/' : undefined,
 
   // favicon: null,
   // logo: null,
@@ -27,22 +27,22 @@ export default defineConfig({
       null,
       {
         title: 'GitHub',
-        path: 'https://github.com/air-supply94/zhouhaifei-react-scripts.git',
+        path: 'https://github.com/air-supply94/zhouhaifei.git',
       },
       {
         title: '更新日志',
-        path: 'https://github.com/air-supply94/zhouhaifei-react-scripts/blob/master/CHANGELOG.md',
+        path: 'https://github.com/air-supply94/zhouhaifei/blob/master/CHANGELOG.md',
       },
     ],
     'en-US': [
       null,
       {
         title: 'GitHub',
-        path: 'https://github.com/air-supply94/zhouhaifei-react-scripts.git',
+        path: 'https://github.com/air-supply94/zhouhaifei.git',
       },
       {
         title: '更新日志',
-        path: 'https://github.com/air-supply94/zhouhaifei-react-scripts/blob/master/CHANGELOG.md',
+        path: 'https://github.com/air-supply94/zhouhaifei/blob/master/CHANGELOG.md',
       },
     ],
   },

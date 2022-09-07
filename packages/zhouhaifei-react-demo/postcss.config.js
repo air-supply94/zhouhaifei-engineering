@@ -1,1 +1,1 @@
-module.exports = require('zhouhaifei-config').postcss(0);
+module.exports = require('@zhouhaifei/pc-config').postcss(0);

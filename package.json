@@ -1,16 +1,17 @@
 {
-  "name": "zhouhaifei-react-scripts",
-  "homepage": "https://air-supply94.github.io/zhouhaifei-react-scripts/",
+  "name": "zhouhaifei",
+  "homepage": "https://air-supply94.github.io/zhouhaifei/",
   "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/air-supply94/zhouhaifei-react-scripts.git",
+    "url": "git+https://github.com/air-supply94/zhouhaifei.git",
     "branch": "master",
     "platform": "github"
   },
   "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
+    "@zhouhaifei/code-style": "^2.21.17",
     "commitizen": "^4.2.2",
     "conventional-changelog-cli": "^2.1.1",
     "cz-conventional-changelog": "^3.3.0",
@@ -23,8 +24,7 @@
     "prettier": "2.2.1",
     "stylelint": "13.13.1",
     "typescript": "4.2.4",
-    "validate-commit-msg": "^2.14.0",
-    "zhouhaifei-code-style": "2.18.11"
+    "validate-commit-msg": "^2.14.0"
   },
   "husky": {
     "hooks": {

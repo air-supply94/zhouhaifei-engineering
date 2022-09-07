@@ -1,6 +1,6 @@
 {
-  "name": "zhouhaifei-react-scripts",
-  "version": "2.21.22",
+  "name": "@zhouhaifei/react-scripts",
+  "version": "2.21.23",
   "description": "",
   "license": "MIT",
   "author": "zhouhaifei1994@sina.com",
@@ -11,7 +11,7 @@
     "react-dev-utils"
   ],
   "bin": {
-    "zhouhaifei-react-scripts": "bin/react-scripts.js"
+    "zhouhaifei-react-scripts": "bin/zhouhaifei-react-scripts.js"
   },
   "dependencies": {
     "@babel/core": "7.15.8",

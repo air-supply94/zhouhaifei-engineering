@@ -1,1 +1,1 @@
-[简要文档](https://air-supply94.github.io/zhouhaifei-react-scripts/)
+[简要文档](https://air-supply94.github.io/zhouhaifei/)

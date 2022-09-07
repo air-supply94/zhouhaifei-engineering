@@ -4,5 +4,6 @@ packages
 dist
 .umi
 .umi-production
+packages/generator-zhouhaifei-react
 docs-dist
 .github

@@ -1,1 +1,1 @@
-module.exports = require('zhouhaifei-config').babel();
+module.exports = require('@zhouhaifei/pc-config').babel();

@@ -5,6 +5,7 @@
 **.tsx
 public
 dist
+packages/generator-zhouhaifei-react
 coverage
 .dockerignore
 .DS_Store
