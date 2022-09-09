@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei/compare/v2.22.0...v0.0.0) (2022-09-07)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei/compare/v2.22.1...v0.0.0) (2022-09-09)
+
+### Features
+
+- **react-scripts:** 去掉 url-loader ([67a2d19](https://github.com/air-supply94/zhouhaifei/commit/67a2d1930ceaf8e66e8a4f759258110d4c3867c6))
+
+## [2.22.1](https://github.com/air-supply94/zhouhaifei/compare/v2.22.0...v2.22.1) (2022-09-07)
 
 # [2.22.0](https://github.com/air-supply94/zhouhaifei/compare/v2.21.22...v2.22.0) (2022-09-07)
 
