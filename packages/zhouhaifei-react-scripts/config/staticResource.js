@@ -15,11 +15,8 @@ module.exports = [
         },
       },
       {
-        loader: require.resolve('url-loader'),
-        options: {
-          limit: utils.imageInlineSizeLimit,
-          name: `${utils.resourceName.image}/[hash].[ext]`,
-        },
+        loader: require.resolve('file-loader'),
+        options: { name: `${utils.resourceName.image}/[hash].[ext]` },
       },
     ],
     issuer: { and: [/\.(ts|tsx|js|jsx|md|mdx)$/]},
