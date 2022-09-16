@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei/compare/v2.22.1...v0.0.0) (2022-09-09)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei/compare/v2.22.2...v0.0.0) (2022-09-16)
+
+### Features
+
+- 更改 public-url 配置 ([dedcb4b](https://github.com/air-supply94/zhouhaifei/commit/dedcb4bb299fc59ced8adf51aa88ae9e28545282))
+
+## [2.22.2](https://github.com/air-supply94/zhouhaifei/compare/v2.22.1...v2.22.2) (2022-09-09)
 
 ### Features
 
