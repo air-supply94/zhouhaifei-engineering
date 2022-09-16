@@ -3,13 +3,15 @@
 const { URL } = require('url');
 
 module.exports = function getPublicUrlOrPath(isEnvDevelopment, homepage, envPublicUrl) {
+  const stubDomain = 'https://create-react-app.dev';
+
   if (envPublicUrl) {
     // ensure last slash exists
     envPublicUrl = envPublicUrl.endsWith('/')
       ? envPublicUrl
       : `${envPublicUrl}/`;
 
-    const validPublicUrl = new URL(envPublicUrl);
+    const validPublicUrl = new URL(envPublicUrl, stubDomain);
 
     return isEnvDevelopment
       ? envPublicUrl.startsWith('.')
