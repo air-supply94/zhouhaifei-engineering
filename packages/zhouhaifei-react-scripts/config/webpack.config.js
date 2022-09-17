@@ -101,6 +101,7 @@ module.exports = function() {
 
       // eslint
       utils.allowEslint && new ESLintPlugin({
+        threads: true,
         fix: false,
         formatter: 'stylish',
         quiet: true,

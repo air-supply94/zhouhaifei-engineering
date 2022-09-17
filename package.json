@@ -54,8 +54,8 @@
     "publish": "lerna publish",
     "publish-force": "lerna publish --force-publish",
     "lint-staged": "lint-staged --allow-empty",
-    "lint:js": "eslint --fix --quiet --ext .js,.jsx,.ts,.tsx .",
-    "prettier": "prettier -c --write \"**/*.{css,md,html,json}\"",
+    "lint:js": "eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
+    "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{css,md,html,json}\"",
     "docs:start": "dumi dev",
     "docs:build": "dumi build",
     "deploy": "npm run docs:build && gh-pages -d dist"
