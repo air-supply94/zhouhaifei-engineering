@@ -1,21 +1,13 @@
 module.exports = {
-  'import/order': [
-    'warn',
-    {
-      alphabetize: {
-        order: 'asc',
-        caseInsensitive: true,
-      },
-    },
-  ],
+  'import/order': 'off',
   'import/no-unresolved': 'off',
-  'import/named': 'error',
+  'import/named': 'off',
   'import/no-absolute-path': 'error',
   'import/no-dynamic-require': 'off',
-  'import/no-self-import': 'error',
-  'import/no-cycle': 'error',
-  'import/no-useless-path-segments': 'error',
+  'import/no-self-import': 'off',
+  'import/no-cycle': 'off',
+  'import/no-useless-path-segments': 'off',
   'import/first': 'error',
   'import/newline-after-import': 'error',
-  'import/no-duplicates': 'error',
+  'import/no-duplicates': 'off',
 };
