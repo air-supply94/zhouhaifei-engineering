@@ -2256,10 +2256,10 @@
   dependencies:
     "@umijs/deps" "3.5.17"
 
-"@zhouhaifei/code-style@^2.21.17":
-  version "2.21.17"
-  resolved "https://registry.npmmirror.com/@zhouhaifei/code-style/-/code-style-2.21.17.tgz#2f7504bc6b289b007a03f50c28e6f9dde73d3de7"
-  integrity sha512-eCM+EXIRLWS0mrtUZMos8q0n64E9UxLnqozRlAjt68zsyVENKvGgMRBzqwMD5JmgIBmJ9Y+5z4hYp/KSals26Q==
+"@zhouhaifei/code-style@^2.22.6":
+  version "2.22.6"
+  resolved "https://registry.npmmirror.com/@zhouhaifei/code-style/-/code-style-2.22.6.tgz#0b40540055a89bba296232e57d6f25a474dc6e95"
+  integrity sha512-T21T6jsywihwjS2CNs2IgPzyXslz3eY2taGHfb/kUNQd3KglINN9X1IpP/jO/OtuhDUZnzAicdhC7Pw0v/r1JA==
   dependencies:
     "@commitlint/config-conventional" "^13.2.0"
     "@typescript-eslint/eslint-plugin" "^5.2.0"
