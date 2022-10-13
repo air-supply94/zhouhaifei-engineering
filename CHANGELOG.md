@@ -1,4 +1,6 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei/compare/v2.22.4...v0.0.0) (2022-10-13)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei/compare/v2.22.5...v0.0.0) (2022-10-13)
+
+## [2.22.5](https://github.com/air-supply94/zhouhaifei/compare/v2.22.4...v2.22.5) (2022-10-13)
 
 ## [2.22.4](https://github.com/air-supply94/zhouhaifei/compare/v2.22.3...v2.22.4) (2022-09-17)
 
