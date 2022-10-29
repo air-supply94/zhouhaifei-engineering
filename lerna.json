@@ -1,6 +1,6 @@
 {
   "packages": ["packages/(?!zhouhaifei-react-demo)*"],
-  "npmClient": "yarn",
+  "npmClient": "npm",
   "version": "2.22.6",
   "command": {
     "publish": {
