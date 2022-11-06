@@ -9,5 +9,5 @@ module.exports = {
   'import/no-useless-path-segments': 'off',
   'import/first': 'error',
   'import/newline-after-import': 'error',
-  'import/no-duplicates': 'off',
+  'import/no-duplicates': 'error',
 };
