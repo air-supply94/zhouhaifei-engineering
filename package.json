@@ -1,10 +1,10 @@
 {
-  "name": "zhouhaifei",
-  "homepage": "https://air-supply94.github.io/zhouhaifei/",
+  "name": "zhouhaifei-engineering",
+  "homepage": "https://air-supply94.github.io/zhouhaifei-engineering/",
   "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/air-supply94/zhouhaifei.git",
+    "url": "git+https://github.com/air-supply94/zhouhaifei-engineering.git",
     "branch": "master",
     "platform": "github"
   },
