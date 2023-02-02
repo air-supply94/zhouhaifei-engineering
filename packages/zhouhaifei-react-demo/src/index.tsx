@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { RenderRoutes } from './routes';
 import { Locale } from './utils';
-import { webVitals } from './webVitals';
 import './registerServiceWorker';
 
 render();
@@ -19,8 +18,6 @@ function render() {
       </Locale>
     );
 }
-
-webVitals(console.log);
 
 // @ts-ignore
 if (module.hot) {
