@@ -37,7 +37,7 @@ export class BasicLayout extends React.Component {
             );
           }
         }}
-        navTheme="light"
+        navTheme="realDark"
         title={routes[0].name}
       >
         <React.Suspense fallback={<Spin/>}>

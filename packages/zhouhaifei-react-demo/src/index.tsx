@@ -3,8 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { RenderRoutes } from './routes';
-import { Locale } from './utils';
 import './registerServiceWorker';
+import { Locale } from './utils';
 
 render();
 
