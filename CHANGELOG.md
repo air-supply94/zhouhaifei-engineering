@@ -2,7 +2,7 @@
 
 ### Features
 
-- **demo:** 更新 antd 版本 ([c878d2d](https://github.com/air-supply94/zhouhaifei-engineering/commit/c878d2d6b5edb9da5a53622e651f3c4f721b7215))
+- **demo:** 更新 antd 版本 ([7528bbb](https://github.com/air-supply94/zhouhaifei-engineering/commit/7528bbb72a5555ef392a6a57d38b17ecd99d2782))
 - 去掉 mobx、redux 等的 externals ([631722c](https://github.com/air-supply94/zhouhaifei-engineering/commit/631722ce036b9b2eb30894c52b2512fad5c91d24))
 - 去掉 web-vitals ([02975f4](https://github.com/air-supply94/zhouhaifei-engineering/commit/02975f42f30d36837c37be9be84f16f7af81990c))
 

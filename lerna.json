@@ -1,7 +1,7 @@
 {
   "packages": ["packages/(?!zhouhaifei-react-demo)*"],
   "npmClient": "npm",
-  "version": "2.23.0",
+  "version": "2.22.7",
   "command": {
     "publish": {
       "access": "public",
