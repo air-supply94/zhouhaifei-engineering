@@ -2,6 +2,7 @@
 
 ### Features
 
+- 去掉最新版 antd-pro,windows 上有水平滚动条 ([af77f9e](https://github.com/air-supply94/zhouhaifei-engineering/commit/af77f9efe2a2e626d1d095116f8a1315a0a288d3))
 - 更新 generator 生成方式 ([ee77597](https://github.com/air-supply94/zhouhaifei-engineering/commit/ee77597c535dc306c139d030783bbfb7841f1f0e))
 
 ### Reverts
