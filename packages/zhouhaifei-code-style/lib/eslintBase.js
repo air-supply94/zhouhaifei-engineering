@@ -245,7 +245,7 @@ module.exports = {
     'never',
   ],
 
-  'no-useless-escape': 0,
+  'no-useless-escape': 2,
   'getter-return': 2,
   'no-unused-vars': 0,
   'no-redeclare': 0,
