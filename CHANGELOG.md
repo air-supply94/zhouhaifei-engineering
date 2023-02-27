@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.23.4...v0.0.0) (2023-02-27)
 
+### Features
+
+- **react-scripts:** add esbuild ([dfcc232](https://github.com/air-supply94/zhouhaifei-engineering/commit/dfcc232c0df14dd959672cb35032bf477be380af))
+
 ## [2.23.4](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.22.8...v2.23.4) (2023-02-27)
 
 ### Features
