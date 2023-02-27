@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.22.8...v0.0.0) (2023-02-27)
 
+### Features
+
+- **code-style:** 开启 no-useless-escape ([e342933](https://github.com/air-supply94/zhouhaifei-engineering/commit/e342933fac6e16c268e7d022732d814e64536612))
+
 ## [2.22.8](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.23.0...v2.22.8) (2023-02-27)
 
 ### Features
