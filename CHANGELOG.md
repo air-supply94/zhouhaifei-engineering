@@ -1,8 +1,18 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.22.7...v0.0.0) (2023-02-19)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.23.0...v0.0.0) (2023-02-27)
 
 ### Features
 
-- **demo:** 更新 antd 版本 ([7528bbb](https://github.com/air-supply94/zhouhaifei-engineering/commit/7528bbb72a5555ef392a6a57d38b17ecd99d2782))
+- 更新 generator 生成方式 ([ee77597](https://github.com/air-supply94/zhouhaifei-engineering/commit/ee77597c535dc306c139d030783bbfb7841f1f0e))
+
+### Reverts
+
+- Revert "chore(release): publish" ([71e9a24](https://github.com/air-supply94/zhouhaifei-engineering/commit/71e9a243bce6ab5544a1e4aedd7cf20664abba7c))
+
+# [2.23.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.22.7...v2.23.0) (2023-02-19)
+
+### Features
+
+- **demo:** 更新 antd 版本 ([c878d2d](https://github.com/air-supply94/zhouhaifei-engineering/commit/c878d2d6b5edb9da5a53622e651f3c4f721b7215))
 - 去掉 mobx、redux 等的 externals ([631722c](https://github.com/air-supply94/zhouhaifei-engineering/commit/631722ce036b9b2eb30894c52b2512fad5c91d24))
 - 去掉 web-vitals ([02975f4](https://github.com/air-supply94/zhouhaifei-engineering/commit/02975f42f30d36837c37be9be84f16f7af81990c))
 

@@ -2,7 +2,6 @@
   "name": "@zhouhaifei/react-demo",
   "version": "2.21.22",
   "dependencies": {
-    "@ant-design/pro-layout": "^7.8.2",
     "antd": "5.2.1",
     "axios": "0.27.2",
     "lodash": "4.17.21",

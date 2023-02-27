@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRoutes, Navigate } from 'react-router-dom';
 import type { RouteObject } from 'react-router-dom';
-import { BasicLayout } from './compnents/basicLayout';
+import { DefaultLayout } from './compnents/defaultLayout';
 import { NoPage } from './compnents/noPage';
 
 const Dashboard = React.lazy(() => import('./pages/dashboard'));
@@ -14,7 +14,7 @@ export interface MenuDataItem extends RouteObject {
 export const routes: MenuDataItem[] = [
   {
     name: 'app',
-    element: <BasicLayout/>,
+    element: <DefaultLayout/>,
     children: [
       {
         name: '仪表盘',
