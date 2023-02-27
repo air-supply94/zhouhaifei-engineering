@@ -62,9 +62,11 @@ function getPerformanceConfig(oldConfig) {
   const checkTs = typeof process.env.CHECK_TS === 'string' && process.env.CHECK_TS.toLocaleUpperCase() !== 'NO';
   const isAnalyze = typeof process.env.IS_ANALYZE === 'string' && process.env.IS_ANALYZE.toLocaleUpperCase() === 'YES';
   const isCompress = typeof process.env.IS_COMPRESS === 'string' && process.env.IS_COMPRESS.toLocaleUpperCase() === 'YES';
+  const useEsBuild = typeof process.env.USE_ESBUILD === 'string' && process.env.USE_ESBUILD.toLocaleUpperCase() === 'YES';
 
   return {
     ...oldConfig,
+    useEsBuild,
     imageInlineSizeLimit,
     splitChunkMinSize,
     isStartServiceWorker,
