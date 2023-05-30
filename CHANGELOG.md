@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.23.4...v0.0.0) (2023-02-27)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.0...v0.0.0) (2023-05-30)
+
+### Features
+
+- 更改 github pages 相关配置 ([d7ae01e](https://github.com/air-supply94/zhouhaifei-engineering/commit/d7ae01eeaf7105266e57fad220e6c39bb6787e26))
+
+# [2.24.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.23.4...v2.24.0) (2023-02-27)
 
 ### Features
 
