@@ -1,15 +1,20 @@
 import { Card } from 'antd';
+import { Container } from 'inversify';
 import React from 'react';
-import { request } from '../../utils';
 import styles from './index.less';
+import { Ninja, Katana, Shuriken } from './store';
+import type { Warrior, Weapon, ThrowableWeapon } from './types';
+import { TYPES } from './types';
 
 export default function() {
-  React.useEffect(() => {
-    request({ url: '/api/test' })
-      .then((info) => {
-        console.log(info);
-      });
-  }, []);
+  const myContainer = new Container();
+  myContainer.bind<Warrior>(TYPES.Warrior)
+    .to(Ninja);
+  myContainer.bind<Weapon>(TYPES.Weapon)
+    .to(Katana);
+  myContainer.bind<ThrowableWeapon>(TYPES.ThrowableWeapon)
+    .to(Shuriken);
+  console.log(myContainer);
 
   return (
     <div className={styles.container}>
