@@ -3,7 +3,7 @@
     "typeRoots": ["node_modules/@types"],
     "outDir": "dist", // 指定输出目录
     "module": "esnext",
-    "target": "esnext", // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES6'/'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
+    "target": "es6", // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES6'/'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
     "lib": ["esnext", "dom"],
     "baseUrl": ".", // 用于解析非相对模块名称的基目录
     "jsx": "react", // 指定 jsx 代码的生成: 'preserve', 'react-native', or 'react'
