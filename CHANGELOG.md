@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.1...v0.0.0) (2023-06-06)
 
+### Features
+
+- add inversify ([fea516f](https://github.com/air-supply94/zhouhaifei-engineering/commit/fea516f8365a6e3dc46a55204af3322f4f3e61e9))
+
 ## [2.24.1](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.0...v2.24.1) (2023-05-30)
 
 ### Features

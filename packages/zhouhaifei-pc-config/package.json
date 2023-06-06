@@ -1,6 +1,6 @@
 {
   "name": "@zhouhaifei/pc-config",
-  "version": "2.24.0",
+  "version": "2.24.2",
   "description": "",
   "license": "MIT",
   "main": "lib/index.js",
