@@ -71,7 +71,7 @@ module.exports = {
     'error',
     { after: true },
   ],
-  '@typescript-eslint/no-namespace': 'error',
+  '@typescript-eslint/no-namespace': null,
 
   /**
    * extension rule
