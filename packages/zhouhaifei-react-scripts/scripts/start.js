@@ -24,7 +24,7 @@ const openBrowser = require('../react-dev-utils/openBrowser');
 async function runDev() {
   await checkRequiredFiles([
     paths.appIndexJs,
-    paths.appIndexEjs,
+    paths.appIndexHtml,
   ]);
   await checkBrowsers(paths.appPath);
 

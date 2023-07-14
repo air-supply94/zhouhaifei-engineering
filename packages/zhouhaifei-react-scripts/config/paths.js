@@ -40,7 +40,7 @@ module.exports = {
   appDist: resolveApp('dist'),
   appPublic: resolveApp('public'),
   appIndexJs: resolveModule(resolveApp, 'src/index'),
-  appIndexEjs: resolveApp('src/index.ejs'),
+  appIndexHtml: resolveApp('public/index.html'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),

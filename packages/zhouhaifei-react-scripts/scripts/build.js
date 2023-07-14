@@ -53,7 +53,7 @@ function build() {
 async function runBuild() {
   await checkRequiredFiles([
     paths.appIndexJs,
-    paths.appIndexEjs,
+    paths.appIndexHtml,
   ]);
   await checkBrowsers(paths.appPath);
 

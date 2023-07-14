@@ -40,8 +40,10 @@
     "typescript": "4.2.4"
   },
   "browserslist": [
-    "Chrome >= 80",
-    "Edge >= 12"
+    "Chrome >= 60",
+    "Firefox >= 60",
+    "Edge >= 16",
+    "Safari >= 10.1"
   ],
   "resolutions": {
     "@types/react": "18.0.17",
