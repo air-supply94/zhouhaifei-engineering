@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "outDir": "dist", // 指定输出目录
+    "module": "es6",
+    "target": "esnext", // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES6'/'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
+    "lib": ["esnext"],
+    "baseUrl": ".", // 用于解析非相对模块名称的基目录
+    "allowSyntheticDefaultImports": true, //允许从没有设置默认导出的模块中默认导入
+    "moduleResolution": "node", // 选择模块解析策略： 'node' (Node.js) or 'classic' (TypeScript pre-1.6)
+    "allowJs": true, // 允许编译 javascript 文件
+    "isolatedModules": false, //将每个文件作为单独的模块
+    "strictNullChecks": false, //在严格的 null检查模式下， null和 undefined值不包含在任何类型里，只允许用它们自己和 any来赋值（有个例外， undefined可以赋值到 void）
+    "downlevelIteration": true,
+    "declaration": true, // 生成相应的 '.d.ts' 文件
+    "strict": true, //启用所有严格类型检查选项
+    "noImplicitThis": true, //当 this表达式的值为 any类型的时候，生成一个错误
+    "noImplicitReturns": true, //不是函数的所有返回路径都有返回值时报错
+    "noUnusedLocals": true, // 有未使用的变量时，抛出错误
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true, //在表达式和声明上有隐含的 any类型时报错
+    "strictPropertyInitialization": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "forceConsistentCasingInFileNames": true, //禁止对同一个文件的不一致的引用
+    "importHelpers": true, //从 tslib 导入辅助工具函数（比如 __extends， __rest等）
+    "esModuleInterop": true, //自动增加默认导出项
+    "sourceMap": true, //生成相应的 .map文件
+    "suppressImplicitAnyIndexErrors": true, //阻止 --noImplicitAny对缺少索引签名的索引对象报错
+    "skipLibCheck": true, //忽略所有的声明文件（ *.d.ts）的类型检查
+    "resolveJsonModule": true, //导入 JSON Module
+    "alwaysStrict": false //以严格模式解析并为每个源文件生成 "use strict"语句
+  },
+  "exclude": ["node_modules", "dist"],
+  "include": ["src", "./rollup.config.ts"]
+}

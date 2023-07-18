@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.2...v0.0.0) (2023-07-14)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.3...v0.0.0) (2023-07-18)
+
+### Features
+
+- **viteConfig:** add package ([4e465dc](https://github.com/air-supply94/zhouhaifei-engineering/commit/4e465dc01b375467414c0ad4c98dd559c996d4ed))
+
+## [2.24.3](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.2...v2.24.3) (2023-07-14)
 
 ## [2.24.2](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.1...v2.24.2) (2023-06-06)
 
