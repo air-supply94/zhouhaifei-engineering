@@ -1,4 +1,4 @@
-import type { UserConfigExport } from 'vite';
+import type { UserConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import { viteExternalsPlugin } from 'vite-plugin-externals';
@@ -37,7 +37,7 @@ function defineEnv() {
   }, {});
 }
 
-export const defaultViteConfig: UserConfigExport = {
+export const defaultViteConfig: UserConfig = {
   define: defineEnv(),
   server: {
     host: true,
@@ -49,7 +49,7 @@ export const defaultViteConfig: UserConfigExport = {
     outDir: 'dist',
     assetsInlineLimit: 1024 * 8,
     chunkSizeWarningLimit: 500,
-    manifest: true, // for PWA
+    manifest: false, // for PWA
   },
   css: {
     devSourcemap: true,

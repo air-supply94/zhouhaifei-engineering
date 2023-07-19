@@ -4,14 +4,14 @@ import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
-import path from 'path';
+import dts from 'rollup-plugin-dts';
 
 export default (commandLineArgs: any): RollupOptions[] => {
   return defineConfig([
     {
       input: './src/index.ts',
       output: {
-        file: path.resolve('./dist', 'index.cjs'),
+        file: 'dist/index.cjs',
         format: 'cjs',
         sourcemap: true,
       },
@@ -20,13 +20,13 @@ export default (commandLineArgs: any): RollupOptions[] => {
         json(),
         resolve(),
         commonjs(),
-        typescript({ tsconfig: path.resolve('./', 'tsconfig.json') }),
+        typescript(),
       ],
     },
     {
       input: './src/index.ts',
       output: {
-        file: path.resolve('./dist', 'index.js'),
+        file: 'dist/index.js',
         format: 'es',
         sourcemap: true,
       },
@@ -35,8 +35,16 @@ export default (commandLineArgs: any): RollupOptions[] => {
         json(),
         resolve(),
         commonjs(),
-        typescript({ tsconfig: path.resolve('./', 'tsconfig.json') }),
+        typescript(),
       ],
+    },
+    {
+      input: './src/index.ts',
+      plugins: [dts()],
+      output: {
+        format: 'esm',
+        file: 'dist/index.d.ts',
+      },
     },
   ]);
 };
