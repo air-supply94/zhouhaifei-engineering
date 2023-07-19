@@ -5,10 +5,10 @@ import { viteExternalsPlugin } from 'vite-plugin-externals';
 import { createStyleImportPlugin, AntdResolve } from 'vite-plugin-style-import';
 import path from 'path';
 import fs from 'fs';
-import requireTransform from 'vite-plugin-require-transform';
 import { config } from 'dotenv';
 import { expand } from 'dotenv-expand';
 import loadCssModulePlugin from 'vite-plugin-load-css-module';
+import requireTransform from 'vite-plugin-require-transform';
 
 const dotenv = path.resolve(process.cwd(), '.env');
 const NODE_ENV = process.env.NODE_ENV;
@@ -60,8 +60,10 @@ export const defaultViteConfig: UserConfig = {
     preprocessorOptions: { less: { javascriptEnabled: true }},
   },
   plugins: [
-    loadCssModulePlugin({ include: (id) => id.endsWith('less') && !id.includes('node_modules') && !id.includes('global.less') }),
-    requireTransform({ fileRegex: /\.(ts|tsx|js|jsx)$/ }),
+    // 兼容commonjs和esm(此2包commonjs导出的是esm格式)
+    (typeof loadCssModulePlugin === 'function' ? loadCssModulePlugin : (loadCssModulePlugin as any).default)({ include: (id) => id.endsWith('less') && !id.includes('node_modules') && !id.includes('global.less') }),
+    (typeof requireTransform === 'function' ? requireTransform : (requireTransform as any).default)({ fileRegex: /\.(ts|tsx|js|jsx)$/ }),
+
     viteExternalsPlugin({
       // echarts: 'echarts',
       lodash: '_',
