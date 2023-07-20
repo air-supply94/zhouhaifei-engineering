@@ -1,5 +1,9 @@
 # [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.4...v0.0.0) (2023-07-20)
 
+### Features
+
+- 抽取 vite 常见配置 ([030097d](https://github.com/air-supply94/zhouhaifei-engineering/commit/030097db9c1fdb9dba677052e4f15dc31131f96c))
+
 ## [2.24.4](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.3...v2.24.4) (2023-07-20)
 
 ### Features

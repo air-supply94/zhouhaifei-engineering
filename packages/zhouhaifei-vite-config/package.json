@@ -1,7 +1,7 @@
 {
   "name": "@zhouhaifei/vite-config",
   "main": "./dist/index.cjs",
-  "version": "2.24.4",
+  "version": "2.24.5",
   "module": "./dist/index.js",
   "type": "module",
   "types": "./dist/index.d.ts",
