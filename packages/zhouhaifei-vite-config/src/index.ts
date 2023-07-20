@@ -78,9 +78,10 @@ export function getDefaultViteConfig({
         react: 'React',
         'react-dom': 'ReactDOM',
         moment: 'moment',
-        mobx: 'mobx',
-        'mobx-react': 'mobxReact',
-        'mobx-react-lite': 'mobxReactLite',
+
+        // mobx: 'mobx',
+        // 'mobx-react': 'mobxReact',
+        // 'mobx-react-lite': 'mobxReactLite',
         ...externals,
       }),
       createHtmlPlugin({

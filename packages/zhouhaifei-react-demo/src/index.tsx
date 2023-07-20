@@ -20,7 +20,7 @@ function render() {
 }
 
 // @ts-ignore
-if (module.hot) {
+if (typeof module !== 'undefined' && module.hot) {
   // @ts-ignore
   module.hot.accept([
     './routes',

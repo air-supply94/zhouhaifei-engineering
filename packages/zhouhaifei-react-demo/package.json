@@ -30,16 +30,20 @@
     "@types/qs": "^6.9.5",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
-    "@zhouhaifei/code-style": "^2.24.0",
-    "@zhouhaifei/pc-config": "^2.24.0",
-    "@zhouhaifei/react-scripts": "^2.24.0",
+    "@zhouhaifei/code-style": "^2.24.7",
+    "@zhouhaifei/pc-config": "^2.24.6",
+    "@zhouhaifei/react-scripts": "^2.24.7",
     "@zhouhaifei/test": "^2.24.0",
+    "@zhouhaifei/vite-config": "^2.24.7",
+    "cross-env": "^7.0.3",
     "eslint": "7.29.0",
     "mockjs": "^1.1.0",
     "postcss": "8.3.11",
-    "typescript": "4.2.4"
+    "typescript": "4.2.4",
+    "vite": "^4.4.5"
   },
   "browserslist": [
+    "> 0.2%",
     "Chrome >= 60",
     "Firefox >= 60",
     "Edge >= 16",
@@ -50,6 +54,7 @@
     "@types/react-dom": "18.0.6"
   },
   "scripts": {
+    "start-vite": "cross-env IS_VITE=YES vite",
     "start": "zhouhaifei-react-scripts start",
     "build": "zhouhaifei-react-scripts build",
     "test": "zhouhaifei-test react",

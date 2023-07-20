@@ -26,6 +26,7 @@
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "commitizen": "^4.2.2",
+    "cross-env": "^7.0.3",
     "eslint": "7.29.0",
     "husky": "4.3.0",
     "lint-staged": "10.5.2",
@@ -35,10 +36,12 @@
     "stylelint": "13.13.1",
     "typescript": "4.2.4",
     "validate-commit-msg": "^2.14.0",
-    "@zhouhaifei/code-style": "2.24.3",
-    "@zhouhaifei/pc-config": "2.24.3",
-    "@zhouhaifei/react-scripts": "2.24.3",
-    "@zhouhaifei/test": "2.24.3"
+    "@zhouhaifei/code-style": "^2.24.7",
+    "@zhouhaifei/pc-config": "^2.24.6",
+    "@zhouhaifei/react-scripts": "^2.24.7",
+    "@zhouhaifei/test": "^2.24.0",
+    "@zhouhaifei/vite-config": "^2.24.7",
+    "vite": "^4.4.5"
   },
   "config": {
     "commitizen": {
@@ -46,6 +49,7 @@
     }
   },
   "browserslist": [
+    "> 0.2%",
     "Chrome >= 60",
     "Firefox >= 60",
     "Edge >= 16",
@@ -77,6 +81,7 @@
   },
   "scripts": {
     "commit": "cz",
+    "start-vite": "cross-env IS_VITE=YES vite",
     "start": "zhouhaifei-react-scripts start",
     "build": "zhouhaifei-react-scripts build",
     "test": "zhouhaifei-test react",

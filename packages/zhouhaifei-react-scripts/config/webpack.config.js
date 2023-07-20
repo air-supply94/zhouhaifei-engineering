@@ -162,6 +162,7 @@ module.exports = function() {
         patterns: [
           {
             from: path.resolve(paths.appPublic),
+            filter: (filename) => !filename.endsWith('.html'),
             to: path.resolve(paths.appDist),
           },
         ],

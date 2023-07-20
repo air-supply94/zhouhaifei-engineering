@@ -47,6 +47,7 @@ class User {
 }
 
 container.load(buildProviderModule());
+
 @observer
 class Demo extends React.Component {
   @lazyInject(TYPES.parent)
@@ -72,7 +73,5 @@ class Demo extends React.Component {
 }
 
 export default function() {
-  return (
-    <Demo/>
-  );
+  return <Demo/>;
 }

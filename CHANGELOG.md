@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.5...v0.0.0) (2023-07-20)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.6...v0.0.0) (2023-07-21)
+
+### Features
+
+- **demo:** 增加 vite 配置 ([917974d](https://github.com/air-supply94/zhouhaifei-engineering/commit/917974dbb520a6cbc70f886a2460d2abdef51134))
+
+## [2.24.6](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.5...v2.24.6) (2023-07-20)
 
 ### Features
 
