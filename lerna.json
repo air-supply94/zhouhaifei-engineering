@@ -1,7 +1,7 @@
 {
   "packages": ["packages/(?!zhouhaifei-react-demo)(?!vite-config)*"],
   "npmClient": "npm",
-  "version": "2.24.3",
+  "version": "2.24.4",
   "command": {
     "publish": {
       "access": "public",
