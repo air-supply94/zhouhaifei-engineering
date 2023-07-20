@@ -39,5 +39,6 @@
   "peerDependencies": {
     "less": "*",
     "vite": "4.3.9"
-  }
+  },
+  "gitHead": "f119a566b36d6e4de572f7799462a5863cc8a703"
 }

@@ -1,4 +1,6 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.3...v0.0.0) (2023-07-20)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.4...v0.0.0) (2023-07-20)
+
+## [2.24.4](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.3...v2.24.4) (2023-07-20)
 
 ### Features
 
