@@ -1,5 +1,5 @@
 {
-  "packages": ["packages/(?!zhouhaifei-react-demo)(?!vite-config)*"],
+  "packages": ["packages/(?!zhouhaifei-react-demo)*"],
   "npmClient": "npm",
   "version": "2.24.5",
   "command": {
