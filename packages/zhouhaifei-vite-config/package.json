@@ -1,5 +1,5 @@
 {
-  "name": "vite-config",
+  "name": "@zhouhaifei/vite-config",
   "main": "./dist/index.cjs",
   "version": "0.0.0",
   "module": "./dist/index.js",

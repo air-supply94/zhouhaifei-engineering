@@ -1,8 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.3...v0.0.0) (2023-07-18)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.3...v0.0.0) (2023-07-20)
 
 ### Features
 
-- **viteConfig:** add package ([4e465dc](https://github.com/air-supply94/zhouhaifei-engineering/commit/4e465dc01b375467414c0ad4c98dd559c996d4ed))
+- **viteConfig:** add package ([879ba47](https://github.com/air-supply94/zhouhaifei-engineering/commit/879ba47617931c8427ab942868fdb422b5887b4d))
+- **viteConfig:** 更新配置 ([4d24bb8](https://github.com/air-supply94/zhouhaifei-engineering/commit/4d24bb804771b22fa26742ce0057454c1e849a81))
+- 抽取 vite 常见配置 ([b940159](https://github.com/air-supply94/zhouhaifei-engineering/commit/b940159017b55ed2d9bb339891819bad76b8cf7d))
 
 ## [2.24.3](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.2...v2.24.3) (2023-07-14)
 
