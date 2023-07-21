@@ -1,6 +1,6 @@
 {
   "name": "generator-zhouhaifei-react",
-  "version": "2.24.6",
+  "version": "2.24.7",
   "description": "",
   "homepage": "",
   "author": {
@@ -34,6 +34,10 @@
   },
   "scripts": {
     "test": "jest"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "license": "MIT",
   "gitHead": "ce4551cd88c6784201776422d690bc7ac9bf0bee"
