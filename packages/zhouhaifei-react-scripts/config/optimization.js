@@ -4,9 +4,6 @@ const utils = require('./utils');
 const ESBuildPlugin = require('esbuild-webpack-plugin').default;
 
 module.exports = {
-  usedExports: true,
-  sideEffects: true,
-  concatenateModules: true,
   moduleIds: 'deterministic',
   runtimeChunk: 'single',
   minimize: utils.isProduction,
@@ -78,7 +75,7 @@ module.exports = {
     }),
   ] : [],
 
-  splitChunks: {
+  splitChunks: utils.isProduction ? {
     chunks: 'all',
     minSize: utils.splitChunkMinSize,
     minChunks: 1,
@@ -86,5 +83,5 @@ module.exports = {
     maxInitialRequests: 30,
     enforceSizeThreshold: 50 * 1000,
     cacheGroups: {},
-  },
+  } : false,
 };
