@@ -44,15 +44,7 @@ module.exports = function() {
       type: 'filesystem',
       version: createEnvironmentHash(env.raw),
       cacheDirectory: paths.appWebpackCache,
-      store: 'pack',
-      buildDependencies: {
-        defaultWebpack: ['webpack/lib/'],
-        config: [__filename],
-        tsconfig: [
-          paths.appTsConfig,
-          paths.appJsConfig,
-        ].filter((f) => fs.existsSync(f)),
-      },
+      buildDependencies: { config: [__filename]},
     },
 
     mode: utils.isProduction ? 'production' : utils.isDevelopment && 'development',
