@@ -3,7 +3,6 @@ module.exports = {
   parser: 'babel-eslint',
   extends: [
     'eslint:recommended',
-    'plugin:jest/recommended',
   ],
   plugins: [
     'import',
@@ -11,7 +10,6 @@ module.exports = {
     'react',
     'react-hooks',
     '@typescript-eslint',
-    'jest',
   ],
 
   env: {

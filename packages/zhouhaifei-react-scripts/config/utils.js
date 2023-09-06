@@ -39,7 +39,6 @@ function getDevServerConfig(oldConfig) {
   const sockHost = process.env.WDS_SOCKET_HOST;
   const sockPath = process.env.WDS_SOCKET_PATH;
   const sockPort = process.env.WDS_SOCKET_PORT;
-  const isMock = typeof process.env.MOCK === 'string' && process.env.MOCK.toLocaleUpperCase() === 'YES';
   const protocol = typeof process.env.HTTPS === 'string' && process.env.HTTPS.toLocaleUpperCase() === 'YES' ? 'https' : 'http';
 
   return {
@@ -49,7 +48,6 @@ function getDevServerConfig(oldConfig) {
     sockHost,
     sockPath,
     sockPort,
-    isMock,
     protocol,
   };
 }

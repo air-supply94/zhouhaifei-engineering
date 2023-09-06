@@ -1,24 +1,24 @@
 import './global.less';
-import 'reflect-metadata';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { RenderRoutes } from './routes';
 import { Locale } from './utils';
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 render();
 
 function render() {
-  ReactDOM.createRoot(document.getElementById('root'))
-    .render(
-      <Locale>
-        <BrowserRouter>
-          <RenderRoutes/>
-        </BrowserRouter>
-      </Locale>
-    );
+  root.render(
+    <Locale>
+      <BrowserRouter>
+        <RenderRoutes/>
+      </BrowserRouter>
+    </Locale>
+  );
 }
 
+// TODO vite的热更新
 // @ts-ignore
 if (typeof module !== 'undefined' && module.hot) {
   // @ts-ignore

@@ -4,9 +4,6 @@
   "dependencies": {
     "antd": "5.2.1",
     "axios": "0.27.2",
-    "inversify": "^6.0.1",
-    "inversify-binding-decorators": "^4.0.0",
-    "inversify-inject-decorators": "^3.1.0",
     "lodash": "4.17.21",
     "mobx": "5.15.7",
     "mobx-react": "6.3.1",
@@ -15,15 +12,10 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.3.0",
-    "reflect-metadata": "^0.1.13",
     "register-service-worker": "^1.7.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
-    "@testing-library/jest-dom": "^5.15.1",
-    "@testing-library/react": "12.1.2",
-    "@testing-library/user-event": "13.5.0",
-    "@types/jest": "^27.0.3",
     "@types/lodash": "^4.14.165",
     "@types/mockjs": "^1.0.3",
     "@types/node": "^14.14.10",
@@ -33,7 +25,6 @@
     "@zhouhaifei/code-style": "^2.24.7",
     "@zhouhaifei/pc-config": "^2.24.6",
     "@zhouhaifei/react-scripts": "^2.24.7",
-    "@zhouhaifei/test": "^2.24.0",
     "@zhouhaifei/vite-config": "^2.24.7",
     "cross-env": "^7.0.3",
     "eslint": "7.29.0",

@@ -1,7 +1,6 @@
 'use strict';
 
 const fs = require('fs');
-const bodyParser = require('body-parser');
 const ignoredFiles = require('../react-dev-utils/ignoredFiles');
 const getHttpsConfig = require('./getHttpsConfig');
 const paths = require('./paths');
@@ -53,22 +52,6 @@ module.exports = function createDevServerConfig() {
     },
 
     setupMiddlewares(middlewares, devServer) {
-      if (utils.isMock) {
-        middlewares.push(bodyParser.json({
-          limit: '1000mb',
-          strict: false,
-        }));
-
-        middlewares.push(
-          bodyParser.urlencoded({
-            extended: true,
-            limit: '10mb',
-          })
-        );
-
-        require('./mock')(middlewares);
-      }
-
       if (fs.existsSync(paths.proxySetup)) {
         require(paths.proxySetup)(devServer.app, require('http-proxy-middleware'), middlewares);
       }
