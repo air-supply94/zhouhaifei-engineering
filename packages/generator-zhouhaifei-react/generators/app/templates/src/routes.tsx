@@ -13,7 +13,7 @@ export interface MenuDataItem extends RouteObject {
 
 export const routes: MenuDataItem[] = [
   {
-    name: 'app',
+    name: '',
     element: <DefaultLayout/>,
     children: [
       {
