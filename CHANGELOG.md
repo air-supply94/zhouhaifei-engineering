@@ -1,8 +1,13 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.6...v0.0.0) (2023-07-21)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.6...v0.0.0) (2023-09-07)
 
 ### Features
 
-- **demo:** 增加 vite 配置 ([917974d](https://github.com/air-supply94/zhouhaifei-engineering/commit/917974dbb520a6cbc70f886a2460d2abdef51134))
+- **demo:** 增加 vite 配置 ([c0ce820](https://github.com/air-supply94/zhouhaifei-engineering/commit/c0ce820a483bd5b46ea9af6b1315e8aec60f1746))
+- **demo:** 增加 vite 配置 ([4879626](https://github.com/air-supply94/zhouhaifei-engineering/commit/48796262f5adb9afa2c1c093699476d4f7432786))
+- **generator:** 更新生成文件 ([4fc94b2](https://github.com/air-supply94/zhouhaifei-engineering/commit/4fc94b2ea6d36ee47b171353c05a9714c2056eb7))
+- **react-scripts:** 更新配置 ([1dd332c](https://github.com/air-supply94/zhouhaifei-engineering/commit/1dd332c5f13ecd54eedcd5013dcbcb95d94f9736))
+- **react-scripts:** 更新配置 ([44f8d16](https://github.com/air-supply94/zhouhaifei-engineering/commit/44f8d1622939e2dc454ae96c65197360252e34e2))
+- 去掉 inversify 和业务相关 jest 测试配置 ([6d0192b](https://github.com/air-supply94/zhouhaifei-engineering/commit/6d0192baa3fedc4005a3a45b85fb9a1a3adedc39))
 
 ## [2.24.6](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.5...v2.24.6) (2023-07-20)
 
