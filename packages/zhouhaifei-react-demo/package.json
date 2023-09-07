@@ -47,9 +47,7 @@
   "scripts": {
     "start-vite": "cross-env IS_VITE=YES vite",
     "start": "zhouhaifei-react-scripts start",
-    "build": "zhouhaifei-react-scripts build",
-    "test": "zhouhaifei-test react",
-    "test-match": "zhouhaifei-test react --testMatch="
+    "build": "zhouhaifei-react-scripts build"
   },
   "gitHead": "d2aa9ce735309d393ebe6452ac392a6a76d9fae6"
 }
