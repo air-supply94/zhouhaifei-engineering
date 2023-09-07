@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.0...v0.0.0) (2023-09-07)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.1...v0.0.0) (2023-09-07)
+
+### Features
+
+- **generator:** 更新生成文件 ([15694aa](https://github.com/air-supply94/zhouhaifei-engineering/commit/15694aaf9403c96cc86125a9228738b53fac7105))
+
+## [2.25.1](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.0...v2.25.1) (2023-09-07)
 
 # [2.25.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.24.6...v2.25.0) (2023-09-07)
 
