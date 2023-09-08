@@ -18,12 +18,15 @@ function render() {
   );
 }
 
-// TODO vite的热更新
 // @ts-ignore
 if (typeof module !== 'undefined' && module.hot) {
   // @ts-ignore
-  module.hot.accept([
-    './routes',
-    './utils',
-  ], render);
+  module.hot.accept(render);
 }
+
+// .env.development.local配置相关环境变量
+if (process.env.IS_VITE === 'YES') {
+  // @ts-ignore
+  import.meta.hot.accept(render);
+}
+

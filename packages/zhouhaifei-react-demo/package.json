@@ -45,7 +45,7 @@
     "@types/react-dom": "18.0.6"
   },
   "scripts": {
-    "start-vite": "cross-env IS_VITE=YES vite",
+    "start-vite": "vite",
     "start": "zhouhaifei-react-scripts start",
     "build": "zhouhaifei-react-scripts build"
   },
