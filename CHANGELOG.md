@@ -1,4 +1,12 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.1...v0.0.0) (2023-09-07)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.2...v0.0.0) (2023-09-09)
+
+### Features
+
+- **generator:** 更新生成文件 ([4a1b52b](https://github.com/air-supply94/zhouhaifei-engineering/commit/4a1b52b44b8801caca2b4d6061f1be644a56f799))
+- **generator:** 更新生成文件 ([05d32d0](https://github.com/air-supply94/zhouhaifei-engineering/commit/05d32d0546cbb2e83dcac8deb181e9ae3c22932a))
+- **react-demo:** 更新 vite 的热更新 ([2520fd1](https://github.com/air-supply94/zhouhaifei-engineering/commit/2520fd1105297a517c3e44fe1520dc07b89abdbb))
+
+## [2.25.2](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.1...v2.25.2) (2023-09-07)
 
 ### Features
 
