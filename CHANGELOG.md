@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.2...v0.0.0) (2023-09-09)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.3...v0.0.0) (2023-09-11)
+
+### Features
+
+- **test:** 去掉此包,用 vitest 替换 ([c578f56](https://github.com/air-supply94/zhouhaifei-engineering/commit/c578f56451684e1a82268e9e87ff6e47ed305119))
+
+## [2.25.3](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.2...v2.25.3) (2023-09-09)
 
 ### Features
 
