@@ -61,8 +61,8 @@ module.exports = class extends Generator {
 
     // postcss
     this.fs.copyTpl(
-      this.templatePath('template/postcss.config.js.ejs'),
-      this.destinationPath('postcss.config.js'),
+      this.templatePath('template/postcss.config.cjs.ejs'),
+      this.destinationPath('postcss.config.cjs'),
       this.props
     );
 

@@ -8,7 +8,9 @@
     "branch": "master",
     "platform": "github"
   },
-  "dependencies": {},
+  "engines": {
+    "node": ">= 16"
+  },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@zhouhaifei/code-style": "^2.22.6",
