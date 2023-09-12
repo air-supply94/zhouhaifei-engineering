@@ -2,7 +2,7 @@
 
 ### Features
 
-- **generator:** 更新生成文件 ([8239430](https://github.com/air-supply94/zhouhaifei-engineering/commit/82394303517e159fc35866bb0e1d6eedbb904738))
+- **generator:** 更新生成文件 ([aad28ce](https://github.com/air-supply94/zhouhaifei-engineering/commit/aad28ce7ba3c3cc611e3b2d53ae3a3f6e425a1d1))
 
 ## [2.25.5](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.4...v2.25.5) (2023-09-12)
 
