@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.3...v0.0.0) (2023-09-11)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.4...v0.0.0) (2023-09-12)
+
+### Features
+
+- 增加 nprogress ([030d2db](https://github.com/air-supply94/zhouhaifei-engineering/commit/030d2db2bed897b2487ad24aa7e01282a99fee58))
+
+## [2.25.4](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.3...v2.25.4) (2023-09-11)
 
 ### Features
 
