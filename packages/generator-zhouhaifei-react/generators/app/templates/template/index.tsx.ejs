@@ -11,13 +11,24 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 render();
 
 function render() {
-  root.render(
-    <Locale>
-      <BrowserRouter>
-        <RenderRoutes/>
-      </BrowserRouter>
-    </Locale>
-  );
+  function Internal() {
+    React.useLayoutEffect(() => {
+      if (process.env.REACT_APP_NPROGRESS === 'YES') {
+        // @ts-ignore
+        NProgress.done();
+      }
+    }, []);
+
+    return (
+      <Locale>
+        <BrowserRouter>
+          <RenderRoutes/>
+        </BrowserRouter>
+      </Locale>
+    );
+  }
+
+  root.render(<Internal/>);
 }
 
 // @ts-ignore
