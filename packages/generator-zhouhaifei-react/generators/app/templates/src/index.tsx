@@ -4,9 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { RenderRoutes } from './routes';
 import { Locale } from './utils';
-<% if (remUnit) { %>
-  import 'amfe-flexible';
-<% } %>
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 render();
 
