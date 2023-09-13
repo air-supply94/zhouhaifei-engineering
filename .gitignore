@@ -20,9 +20,8 @@ dist
 
 # misc
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+zhouhaifei-react-demo/.env.local
+zhouhaifei-react-demo/.env.development.local
+zhouhaifei-react-demo/.env.production.local
 
 *.log
