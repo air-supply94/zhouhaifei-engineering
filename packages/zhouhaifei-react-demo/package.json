@@ -20,8 +20,8 @@
     "@types/mockjs": "^1.0.3",
     "@types/node": "^14.14.10",
     "@types/qs": "^6.9.5",
-    "@types/react": "18.0.17",
-    "@types/react-dom": "18.0.6",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
     "@zhouhaifei/code-style": "^2.24.7",
     "@zhouhaifei/pc-config": "^2.24.6",
     "@zhouhaifei/react-scripts": "^2.24.7",
@@ -33,6 +33,10 @@
     "typescript": "4.2.4",
     "vite": "^4.4.5"
   },
+  "resolutions": {
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7"
+  },
   "browserslist": [
     "> 0.2%",
     "Chrome >= 60",
@@ -40,10 +44,6 @@
     "Edge >= 16",
     "Safari >= 10.1"
   ],
-  "resolutions": {
-    "@types/react": "18.0.17",
-    "@types/react-dom": "18.0.6"
-  },
   "scripts": {
     "start-vite": "vite",
     "start": "zhouhaifei-react-scripts start",
