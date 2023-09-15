@@ -1,11 +1,10 @@
-import './global.less';
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import './global.less';
 import { RenderRoutes } from './routes';
 import { Locale } from './utils';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
 render();
 
 function render() {
@@ -26,7 +25,7 @@ function render() {
     );
   }
 
-  root.render(<Internal/>);
+  createRoot(document.getElementById('root')).render(<Internal/>);
 }
 
 // @ts-ignore
@@ -38,6 +37,6 @@ if (typeof module !== 'undefined' && module.hot) {
 // .env.development.local配置相关环境变量
 if (process.env.IS_VITE === 'YES') {
   // @ts-ignore
-  import.meta.hot.accept(render);
+  import.meta.hot.accept();
 }
 
