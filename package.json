@@ -17,9 +17,7 @@
     "commitizen": "^4.2.2",
     "conventional-changelog-cli": "^2.1.1",
     "cz-conventional-changelog": "^3.3.0",
-    "dumi": "^1.1.25",
     "eslint": "7.29.0",
-    "gh-pages": "^3.2.3",
     "husky": "4.3.0",
     "lerna": "^4.0.0",
     "lint-staged": "10.5.2",
@@ -57,9 +55,6 @@
     "publish-force": "lerna publish --force-publish",
     "lint-staged": "lint-staged --allow-empty",
     "lint:js": "eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
-    "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{css,md,html,json}\"",
-    "docs:start": "dumi dev",
-    "docs:build": "dumi build",
-    "deploy": "npm run docs:build && gh-pages -d dist"
+    "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{css,md,html,json}\""
   }
 }
