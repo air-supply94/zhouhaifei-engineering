@@ -145,6 +145,9 @@ const babelOptions = {
 - `IS_COMPRESS`
   - 是否开启 gzip 和 br 压缩
   - YES 开启
+- `IS_VITE`
+  - dev是否开启vite
+  - YES 开启
 
 ### 具体使用
 
