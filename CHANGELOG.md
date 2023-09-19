@@ -1,4 +1,9 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.7...v0.0.0) (2023-09-17)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.7...v0.0.0) (2023-09-19)
+
+### Features
+
+- 去掉 dumi 和 gh-pages ([c4e545e](https://github.com/air-supply94/zhouhaifei-engineering/commit/c4e545e23786d413a06cb2f7b09b541084e7a81c))
+- 更新 generator ([fff7501](https://github.com/air-supply94/zhouhaifei-engineering/commit/fff75010bfd1f31974e569011f5916a434632bb2))
 
 ## [2.25.7](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.25.6...v2.25.7) (2023-09-13)
 
