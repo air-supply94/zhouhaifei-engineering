@@ -12,24 +12,19 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.fs.copyTemplate(
+    this.copyTemplate(
       this.templatePath(''),
       this.destinationPath('')
     );
 
-    this.fs.copyTemplate(
+    this.copyTemplate(
       this.templatePath('\.**'),
       this.destinationPath('')
     );
 
-    this.fs.moveDestination(
+    this.moveDestination(
       '.gitignore.ejs',
-      '.gitignore',
-      this.props
+      '.gitignore'
     );
-  }
-
-  install() {
-    this.yarnInstall();
   }
 };

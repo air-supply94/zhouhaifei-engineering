@@ -9,7 +9,7 @@
 ```bash
 mkdir 目录名称
 cd 目录名称
-npx -p yo@3.1.0 -p generator-zhouhaifei-react -c "yo zhouhaifei-react"
+npx -p yo -p generator-zhouhaifei-react -c "yo zhouhaifei-react"
 ```
 
 ## windows 换行符设置
