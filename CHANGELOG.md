@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.26.7...v0.0.0) (2023-09-30)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.26.8...v0.0.0) (2023-09-30)
+
+### Features
+
+- 升级 lerna ([afdcf42](https://github.com/air-supply94/zhouhaifei-engineering/commit/afdcf42bb6a45b2830ffb88994680c2d2a60b4ac))
+
+## [2.26.8](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.26.7...v2.26.8) (2023-09-30)
 
 ### Features
 
