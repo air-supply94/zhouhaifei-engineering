@@ -1,6 +1,7 @@
 {
   "name": "@zhouhaifei/react-demo",
   "version": "2.21.22",
+  "private": true,
   "dependencies": {
     "antd": "5.2.1",
     "axios": "0.27.2",

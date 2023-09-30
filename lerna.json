@@ -1,5 +1,5 @@
 {
-  "packages": ["packages/(?!zhouhaifei-react-demo)*"],
+  "packages": ["packages/*"],
   "npmClient": "npm",
   "version": "2.25.8",
   "command": {
