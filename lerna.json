@@ -1,7 +1,7 @@
 {
   "packages": ["packages/*"],
   "npmClient": "pnpm",
-  "version": "2.26.7",
+  "version": "2.26.8",
   "command": {
     "publish": {
       "access": "public",
