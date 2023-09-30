@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.26.2...v0.0.0) (2023-09-30)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.26.3...v0.0.0) (2023-09-30)
+
+### Features
+
+- add pnpm ([84990d4](https://github.com/air-supply94/zhouhaifei-engineering/commit/84990d45266184157d1feff6b3b8647843a072a7))
+
+## [2.26.3](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.26.2...v2.26.3) (2023-09-30)
 
 ### Features
 
