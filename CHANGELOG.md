@@ -1,4 +1,10 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.26.8...v0.0.0) (2023-09-30)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.26.9...v0.0.0) (2023-09-30)
+
+### Features
+
+- 测试 ppnm ([db4e2ae](https://github.com/air-supply94/zhouhaifei-engineering/commit/db4e2aeb07cafb60747514839c7b21210dd00f73))
+
+## [2.26.9](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.26.8...v2.26.9) (2023-09-30)
 
 ### Features
 
