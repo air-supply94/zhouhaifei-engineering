@@ -52,8 +52,6 @@
     "commit": "cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && npm run prettier && git add CHANGELOG.md",
     "bootstrap": "lerna bootstrap",
-    "publish": "lerna publish",
-    "publish-force": "lerna publish --force-publish",
     "lint-staged": "lint-staged --allow-empty",
     "lint:js": "eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
     "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{css,md,html,json}\""
