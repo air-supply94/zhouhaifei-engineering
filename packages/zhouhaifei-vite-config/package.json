@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "build": "rimraf dist && rollup -c rollup.config.ts --configPlugin typescript"
   },
   "dependencies": {
