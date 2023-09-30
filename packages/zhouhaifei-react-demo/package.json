@@ -1,6 +1,6 @@
 {
   "name": "@zhouhaifei/react-demo",
-  "version": "2.26.1",
+  "version": "2.26.2",
   "private": true,
   "dependencies": {
     "antd": "5.2.1",
@@ -23,10 +23,10 @@
     "@types/qs": "^6.9.5",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "@zhouhaifei/code-style": "^2.26.1",
-    "@zhouhaifei/pc-config": "^2.26.1",
-    "@zhouhaifei/react-scripts": "^2.26.1",
-    "@zhouhaifei/vite-config": "^2.26.1",
+    "@zhouhaifei/code-style": "^2.26.2",
+    "@zhouhaifei/pc-config": "^2.26.2",
+    "@zhouhaifei/react-scripts": "^2.26.2",
+    "@zhouhaifei/vite-config": "^2.26.2",
     "cross-env": "^7.0.3",
     "eslint": "7.29.0",
     "mockjs": "^1.1.0",
