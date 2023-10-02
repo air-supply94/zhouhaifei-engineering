@@ -12,7 +12,7 @@ importers:
         specifier: ^11.0.0
         version: registry.npmmirror.com/@commitlint/cli@11.0.0
       '@zhouhaifei/code-style':
-        specifier: ^2.22.6
+        specifier: workspace:*
         version: link:packages/zhouhaifei-code-style
       commitizen:
         specifier: ^4.2.2

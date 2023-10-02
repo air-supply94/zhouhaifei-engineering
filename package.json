@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
-    "@zhouhaifei/code-style": "^2.22.6",
+    "@zhouhaifei/code-style": "workspace:*",
     "commitizen": "^4.2.2",
     "conventional-changelog-cli": "^2.1.1",
     "cz-conventional-changelog": "^3.3.0",
