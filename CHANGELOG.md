@@ -1,4 +1,11 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.26.10...v0.0.0) (2023-09-30)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.27.0...v0.0.0) (2023-10-04)
+
+### Features
+
+- 更改 pnpm 相关配置 ([1e34323](https://github.com/air-supply94/zhouhaifei-engineering/commit/1e34323193135758cf05c254b7c9002944982542))
+- 更改 pnpm 相关配置 ([d818c55](https://github.com/air-supply94/zhouhaifei-engineering/commit/d818c551f3d6fa3bc88f07bebd2f5aff632c520e))
+
+# [2.27.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.26.10...v2.27.0) (2023-09-30)
 
 ### Features
 
