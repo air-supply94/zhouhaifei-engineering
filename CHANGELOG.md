@@ -2,6 +2,7 @@
 
 ### Features
 
+- add nx ([4517d4d](https://github.com/air-supply94/zhouhaifei-engineering/commit/4517d4d9fea6e0e5c8868ad210d526d0813802bc))
 - 更改 pnpm 相关配置 ([1e34323](https://github.com/air-supply94/zhouhaifei-engineering/commit/1e34323193135758cf05c254b7c9002944982542))
 - 更改 pnpm 相关配置 ([d818c55](https://github.com/air-supply94/zhouhaifei-engineering/commit/d818c551f3d6fa3bc88f07bebd2f5aff632c520e))
 
