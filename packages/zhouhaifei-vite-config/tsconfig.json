@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "dist", // 指定输出目录
-    "module": "es6",
+    "module": "esnext",
     "target": "esnext", // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES6'/'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
     "lib": ["esnext"],
     "baseUrl": ".", // 用于解析非相对模块名称的基目录

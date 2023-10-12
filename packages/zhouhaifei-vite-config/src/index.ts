@@ -116,3 +116,6 @@ export function getDefaultViteConfig({
     ].filter(Boolean),
   };
 }
+
+export { loadConfigFile } from './parse';
+export type { LoadConfigFromFile } from './parse';
