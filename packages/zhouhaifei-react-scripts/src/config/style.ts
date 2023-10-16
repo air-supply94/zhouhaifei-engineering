@@ -1,26 +1,26 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const paths = require('./paths');
-const utils = require('./utils');
+import path from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { paths } from './paths';
+import { utils } from './utils';
 
-function getStyleLoaders(cssOptions, preProcessor) {
+function getStyleLoaders(cssOptions?: any, preProcessor?: any) {
   const loaders = [
-    utils.isDevelopment && require.resolve('style-loader'),
+    utils.isDevelopment && 'style-loader',
     utils.isProduction && MiniCssExtractPlugin.loader,
     {
-      loader: require.resolve('css-loader'),
+      loader: 'css-loader',
       options: {
         import: true,
         url: true,
         ...cssOptions,
       },
     },
-    { loader: require.resolve('postcss-loader') },
+    { loader: 'postcss-loader' },
   ].filter(Boolean);
 
   if (preProcessor) {
-    const loaderConfig = {
-      loader: require.resolve(preProcessor),
+    const loaderConfig: any = {
+      loader: preProcessor,
       options: {},
     };
     if (preProcessor === 'less-loader') {
@@ -40,7 +40,7 @@ function getGlobalStyle(suffix) {
   return path.resolve(paths.appSrc, `global.${suffix}`);
 }
 
-module.exports = [
+export const styleConfig = [
   {
     test: /\.module\.css$/,
     include: [paths.appSrc],

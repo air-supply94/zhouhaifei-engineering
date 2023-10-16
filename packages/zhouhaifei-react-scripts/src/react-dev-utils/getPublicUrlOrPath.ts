@@ -1,8 +1,6 @@
-'use strict';
+import { URL } from 'url';
 
-const { URL } = require('url');
-
-module.exports = function getPublicUrlOrPath(isEnvDevelopment, homepage, envPublicUrl) {
+export function getPublicUrlOrPath(isEnvDevelopment: boolean, homepage?: string, envPublicUrl?: string): string {
   const stubDomain = 'https://create-react-app.dev';
 
   if (envPublicUrl) {
@@ -34,5 +32,5 @@ module.exports = function getPublicUrlOrPath(isEnvDevelopment, homepage, envPubl
   } else {
     return '/';
   }
-};
+}
 

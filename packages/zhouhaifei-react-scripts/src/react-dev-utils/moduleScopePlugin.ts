@@ -1,17 +1,19 @@
-'use strict';
+import os from 'os';
+import path from 'path';
+import chalk from 'chalk';
 
-const os = require('os');
-const path = require('path');
-const chalk = require('chalk');
-
-class ModuleScopePlugin {
-  constructor(appSrc, allowedFiles = []) {
-    this.appSrcs = Array.isArray(appSrc) ? appSrc : [appSrc];
+export class ModuleScopePlugin {
+  constructor(appSrc: string | string[], allowedFiles: string[] = []) {
+    this.appSrc = Array.isArray(appSrc) ? appSrc : [appSrc];
     this.allowedFiles = new Set(allowedFiles);
   }
 
-  apply(resolver) {
-    const { appSrcs } = this;
+  private appSrc: string[];
+
+  private allowedFiles: Set<string>;
+
+  public apply(resolver) {
+    const { appSrc } = this;
     resolver.hooks.file.tapAsync(
       'ModuleScopePlugin',
       (request, contextResolver, callback) => {
@@ -35,7 +37,7 @@ class ModuleScopePlugin {
          * Maybe an indexOf === 0 would be better?
          */
         if (
-          appSrcs.every((appSrc) => {
+          appSrc.every((appSrc) => {
             const relative = path.relative(appSrc, request.context.issuer);
 
             // If it's not in one of our app src or a subdirectory, not our request!
@@ -57,7 +59,7 @@ class ModuleScopePlugin {
          * Error if in a parent directory of all given appSrcs
          */
         if (
-          appSrcs.every((appSrc) => {
+          appSrc.every((appSrc) => {
             const requestRelative = path.relative(appSrc, requestFullPath);
             return (
               requestRelative.startsWith('../') ||
@@ -94,5 +96,3 @@ class ModuleScopePlugin {
     );
   }
 }
-
-module.exports = ModuleScopePlugin;

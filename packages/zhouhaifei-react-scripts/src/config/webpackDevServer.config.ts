@@ -1,12 +1,12 @@
-'use strict';
+import fs from 'fs';
+import path from 'path';
+import { paths } from './paths.js';
+import { utils } from './utils.js';
 
-const fs = require('fs');
-const ignoredFiles = require('../react-dev-utils/ignoredFiles');
-const getHttpsConfig = require('./getHttpsConfig');
-const paths = require('./paths');
-const utils = require('./utils');
+import { createProxyMiddleware } from 'http-proxy-middleware';
+import { loadConfigFile } from '../loadConfigFile';
 
-module.exports = function createDevServerConfig() {
+export function createDevServerConfig() {
   return {
     open: false,
     hot: true,
@@ -34,7 +34,6 @@ module.exports = function createDevServerConfig() {
       },
       progress: false,
     },
-    https: getHttpsConfig(),
     host: utils.host,
     port: utils.port,
     historyApiFallback: {
@@ -45,18 +44,21 @@ module.exports = function createDevServerConfig() {
     static: {
       directory: paths.appPublic,
       publicPath: utils.publicUrlOrPath,
-      watch: {
-        aggregateTimeout: 600,
-        ignored: ignoredFiles(paths.appSrc),
-      },
+      watch: { aggregateTimeout: 600 },
     },
 
-    setupMiddlewares(middlewares, devServer) {
+    async setupMiddlewares(middlewares, devServer) {
       if (fs.existsSync(paths.proxySetup)) {
-        require(paths.proxySetup)(devServer.app, require('http-proxy-middleware'), middlewares);
+        await loadConfigFile({
+          baseDir: path.dirname(paths.proxySetup),
+          defaultConfigFiles: [path.parse(paths.proxySetup).name + path.extname(paths.proxySetup)],
+        })
+          .then((proxyModule: any) => {
+            proxyModule(devServer.app, createProxyMiddleware, middlewares);
+          });
       }
 
       return middlewares;
     },
   };
-};
+}

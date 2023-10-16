@@ -1,11 +1,10 @@
-import { existsSync } from 'node:fs';
-import fs from 'node:fs/promises';
-import path from 'node:path';
+import fs from 'fs';
+import path from 'path';
 import { build } from 'esbuild';
-import { pathToFileURL } from 'node:url';
-import { createRequire } from 'node:module';
+import { pathToFileURL } from 'url';
+import { createRequire } from 'module';
 
-const _require = createRequire(import.meta.url);
+const _require = createRequire(process.cwd());
 
 function getConfigFilename(
   baseDir: string,
@@ -13,7 +12,7 @@ function getConfigFilename(
 ): string {
   for (let i = 0; i < defaultConfigFiles.length; i++) {
     const filename = path.resolve(baseDir, defaultConfigFiles[i]);
-    if (existsSync(filename)) {
+    if (fs.existsSync(filename)) {
       return filename;
     }
   }
@@ -34,8 +33,8 @@ async function isEsmConfig(baseDir: string, configFileName: string): Promise<boo
   } else {
     try {
       const pkgPath = path.resolve(baseDir, 'package.json');
-      if (existsSync(pkgPath)) {
-        const pkg = await fs.readFile(pkgPath, 'utf8');
+      if (fs.existsSync(pkgPath)) {
+        const pkg = await fs.promises.readFile(pkgPath, 'utf8');
         return JSON.parse(pkg).type === 'module';
       } else {
         return false;
@@ -86,17 +85,17 @@ async function loadConfigFromBundledFile(
       .slice(2)}`;
     const fileNameTmp = `${fileBase}.mjs`;
     const fileUrl = `${pathToFileURL(fileBase)}.mjs`;
-    await fs.writeFile(fileNameTmp, bundledCode);
+    await fs.promises.writeFile(fileNameTmp, bundledCode);
     try {
       const result = await import(fileUrl);
       return result.default;
     } finally {
-      await fs.unlink(fileNameTmp);
+      await fs.promises.unlink(fileNameTmp);
     }
   } else {
     const extension = path.extname(fileName);
 
-    const realFileName = await fs.realpath(fileName);
+    const realFileName = await fs.promises.realpath(fileName);
     const loaderExt = extension in _require.extensions ? extension : '.js';
     const defaultLoader = _require.extensions[loaderExt]!;
     _require.extensions[loaderExt] = (module: NodeModule, filename: string) => {

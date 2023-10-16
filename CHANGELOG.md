@@ -1,4 +1,12 @@
-# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.28.0...v0.0.0) (2023-10-04)
+# [0.0.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.28.1...v0.0.0) (2023-10-17)
+
+### Features
+
+- react-scripts 支持 es6 模块 ([0fe5f25](https://github.com/air-supply94/zhouhaifei-engineering/commit/0fe5f25e8cba7815ab8e5e85b0047d0041b380b1))
+- 增加解析 ts 的配置文件函数 ([cd7142c](https://github.com/air-supply94/zhouhaifei-engineering/commit/cd7142ccc05d81922b1b9d803cfcf43929f5d7a0))
+- 更改 demo 配置 ([d5b2832](https://github.com/air-supply94/zhouhaifei-engineering/commit/d5b2832c65fa85cb8588945d32d56a24096a9fcf))
+
+## [2.28.1](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.28.0...v2.28.1) (2023-10-04)
 
 # [2.28.0](https://github.com/air-supply94/zhouhaifei-engineering/compare/v2.27.0...v2.28.0) (2023-10-04)
 

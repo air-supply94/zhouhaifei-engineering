@@ -1,23 +1,7 @@
-'use strict';
-
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 const appDirectory = fs.realpathSync(process.cwd());
-
-const moduleFileExtensions = [
-  'web.mjs',
-  'mjs',
-  'web.js',
-  'js',
-  'web.ts',
-  'ts',
-  'web.tsx',
-  'tsx',
-  'json',
-  'web.jsx',
-  'jsx',
-];
 
 function resolveApp(relativePath) {
   return path.resolve(appDirectory, relativePath);
@@ -33,7 +17,16 @@ function resolveModule(resolveFn, filePath) {
   }
 }
 
-module.exports = {
+export const moduleFileExtensions = [
+  'mjs',
+  'js',
+  'jsx',
+  'ts',
+  'tsx',
+  'json',
+];
+
+export const paths = {
   configFile: resolveApp('config/config.js'),
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
@@ -51,4 +44,3 @@ module.exports = {
   appWebpackCache: resolveApp('.cache'),
 };
 
-module.exports.moduleFileExtensions = moduleFileExtensions;

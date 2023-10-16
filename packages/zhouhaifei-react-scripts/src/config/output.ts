@@ -1,8 +1,8 @@
-const path = require('path');
-const paths = require('./paths');
-const utils = require('./utils');
+import path from 'path';
+import { paths } from './paths';
+import { utils } from './utils';
 
-module.exports = {
+export const output = {
   clean: true,
   libraryTarget: 'umd',
   path: utils.isProduction ? paths.appDist : utils.isDevelopment && paths.appPublic,

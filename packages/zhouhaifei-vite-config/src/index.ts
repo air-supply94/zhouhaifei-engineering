@@ -9,6 +9,8 @@ import { config } from 'dotenv';
 import { expand } from 'dotenv-expand';
 import loadCssModulePlugin from 'vite-plugin-load-css-module';
 import requireTransform from 'vite-plugin-require-transform';
+import babelPluginProposalDecorators from '@babel/plugin-proposal-decorators';
+import babelPluginProposalClassProperties from '@babel/plugin-proposal-class-properties';
 
 const dotenv = path.resolve(process.cwd(), '.env');
 const NODE_ENV = process.env.NODE_ENV;
@@ -67,9 +69,8 @@ export function getDefaultViteConfig({
       preprocessorOptions: { less: { javascriptEnabled: true }},
     },
     plugins: [
-      // 兼容commonjs和esm(此2包commonjs导出的是esm格式)
-      (typeof loadCssModulePlugin === 'function' ? loadCssModulePlugin : (loadCssModulePlugin as any).default)({ include: (id) => id.endsWith('less') && !id.includes('node_modules') && !id.includes('global.less') }),
-      (typeof requireTransform === 'function' ? requireTransform : (requireTransform as any).default)({ fileRegex: /\.(ts|tsx|js|jsx)$/ }),
+      loadCssModulePlugin({ include: (id) => id.endsWith('less') && !id.includes('node_modules') && !id.includes('global.less') }),
+      requireTransform({ fileRegex: /\.(ts|tsx|js|jsx)$/ }),
 
       viteExternalsPlugin({
         lodash: '_',
@@ -103,11 +104,11 @@ export function getDefaultViteConfig({
         babel: {
           plugins: [
             [
-              require.resolve('@babel/plugin-proposal-decorators'),
+              babelPluginProposalDecorators,
               { version: 'legacy' },
             ],
             [
-              require.resolve('@babel/plugin-proposal-class-properties'),
+              babelPluginProposalClassProperties,
               { loose: false },
             ],
           ],
@@ -116,6 +117,3 @@ export function getDefaultViteConfig({
     ].filter(Boolean),
   };
 }
-
-export { loadConfigFile } from './parse';
-export type { LoadConfigFromFile } from './parse';

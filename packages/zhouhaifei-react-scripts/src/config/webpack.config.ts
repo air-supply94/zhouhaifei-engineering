@@ -1,25 +1,30 @@
-'use strict';
-const crypto = require('crypto');
-const fs = require('fs');
-const path = require('path');
-const compressionPlugin = require('compression-webpack-plugin');
-const copyWebpackPlugin = require('copy-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const PreloadWebpackPlugin = require('preload-webpack-plugin');
-const webpack = require('webpack');
-const ModuleScopePlugin = require('../react-dev-utils/moduleScopePlugin');
-const bundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const { merge } = require('webpack-merge');
-const webpackBar = require('webpackbar');
-const workboxWebpackPlugin = require('workbox-webpack-plugin');
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
-const getClientEnvironment = require('./env');
-const modules = require('./modules');
-const paths = require('./paths');
-const utils = require('./utils');
+import { ModuleScopePlugin } from '../react-dev-utils/moduleScopePlugin';
+import { moduleFileExtensions } from './paths';
+import crypto from 'crypto';
+import fs from 'fs';
+import path from 'path';
+import CompressionPlugin from 'compression-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import PreloadWebpackPlugin from 'preload-webpack-plugin';
+import webpack from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { merge } from 'webpack-merge';
+import WebpackBar from 'webpackbar';
+import WorkboxWebpackPlugin from 'workbox-webpack-plugin';
+import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
+import { getClientEnvironment } from './env.js';
+import { paths } from './paths.js';
+import { utils } from './utils.js';
+import SpeedMeasurePlugin from 'speed-measure-webpack-plugin';
+import { output } from './output';
+import { optimization } from './optimization';
+import { jsAndTsConfig } from './jsAndTsConfig';
+import { styleConfig } from './style';
+import { staticResource } from './staticResource';
 
 function createEnvironmentHash(env) {
   const hash = crypto.createHash('md5');
@@ -30,10 +35,47 @@ function createEnvironmentHash(env) {
 
 const env = getClientEnvironment(utils.publicUrlOrPath);
 const useTypeScript = fs.existsSync(paths.appTsConfig);
-const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 
-module.exports = function() {
+export function webpackConfig() {
   const initConfig = {
+    externals: {
+      lodash: {
+        commonjs: 'lodash',
+        commonjs2: 'lodash',
+        amd: 'lodash',
+        root: '_',
+      },
+      qs: {
+        commonjs: 'qs',
+        commonjs2: 'qs',
+        amd: 'qs',
+        root: 'Qs',
+      },
+      axios: {
+        commonjs: 'axios',
+        commonjs2: 'axios',
+        amd: 'axios',
+        root: 'axios',
+      },
+      react: {
+        commonjs: 'react',
+        commonjs2: 'react',
+        amd: 'react',
+        root: 'React',
+      },
+      'react-dom': {
+        commonjs: 'react-dom',
+        commonjs2: 'react-dom',
+        amd: 'react-dom',
+        root: 'ReactDOM',
+      },
+      moment: {
+        commonjs: 'moment',
+        commonjs2: 'moment',
+        amd: 'moment',
+        root: 'moment',
+      },
+    },
     profile: true,
     watchOptions: {
       aggregateTimeout: 300,
@@ -52,37 +94,26 @@ module.exports = function() {
     // Stop compilation early in production
     bail: utils.isProduction,
     devtool: utils.sourceMap,
-    entry: require('./entry'),
-    output: require('./output'),
-    optimization: require('./optimization'),
+    entry: { app: paths.appIndexJs },
+    output,
+    optimization,
     resolve: {
       modules: [
         'node_modules',
         paths.appSrc,
       ],
 
-      extensions: paths.moduleFileExtensions.map((ext) => `.${ext}`)
-        .filter((ext) => useTypeScript || !ext.includes('ts')),
-      alias: modules.webpackAliases,
-      plugins: [
-        /*
-         * Prevents users from importing files from outside of src/ (or node_modules/).
-         * This often causes confusion because we only process files within src/ with babel.
-         * To fix this, we prevent you from importing files out of src/ -- if you'd like to,
-         * please link the files into your node_modules/ and let module-resolution kick in.
-         * Make sure your source files are compiled, as they will not be processed in any way.
-         */
-        new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
-      ],
+      extensions: moduleFileExtensions,
+      plugins: [new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson])],
     },
     module: {
       strictExportPresence: true,
       rules: [
         {
           oneOf: [
-            ...require('./jsAndTsConfig'),
-            ...require('./style'),
-            ...require('./staticResource'),
+            ...jsAndTsConfig,
+            ...styleConfig,
+            ...staticResource,
           ],
         },
       ].filter(Boolean),
@@ -97,7 +128,6 @@ module.exports = function() {
         fix: false,
         formatter: 'stylish',
         quiet: true,
-        eslintPath: require.resolve('eslint'),
         extensions: [
           'js',
           'jsx',
@@ -106,7 +136,24 @@ module.exports = function() {
         ],
       }),
 
-      new HtmlWebpackPlugin(require('./htmlWebpackPlugin')),
+      new HtmlWebpackPlugin({
+        inject: true,
+        cache: false,
+        publicPath: utils.publicUrlOrPath,
+        template: paths.appIndexHtml,
+        minify: utils.isProduction ? {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true,
+          removeEmptyAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          keepClosingSlash: true,
+          minifyJS: true,
+          minifyCSS: true,
+          minifyURLs: true,
+        } : {},
+      }),
 
       // TypeScript type checking
       useTypeScript && utils.checkTs && new ForkTsCheckerWebpackPlugin({ typescript: { configFile: paths.appTsConfig }}),
@@ -120,26 +167,22 @@ module.exports = function() {
         chunkFilename: `${utils.resourceName.css}/[name].[contenthash].css`,
       }),
 
-      new webpackBar({ profile: true }),
-      utils.isProduction && utils.isAnalyze && new bundleAnalyzerPlugin({
+      new WebpackBar({ profile: true }),
+      utils.isProduction && utils.isAnalyze && new BundleAnalyzerPlugin({
         openAnalyzer: false,
         analyzerPort: utils.port + 1,
       }),
 
       // gzip压缩
-      utils.isCompress && utils.isProduction && new compressionPlugin({
+      utils.isCompress && utils.isProduction && new CompressionPlugin({
         filename: '[path][base].gz',
         test: /\.(js|css|html|svg)$/,
         algorithm: 'gzip',
-        compressionOptions: {
-          level: 9,
-          threshold: 0,
-          minRatio: 1,
-        },
+        compressionOptions: { level: 9 },
       }),
 
       // br压缩
-      utils.isCompress && utils.isProduction && parseInt(process.versions.node, 10) >= 12 && new compressionPlugin({
+      utils.isCompress && utils.isProduction && parseInt(process.versions.node, 10) >= 12 && new CompressionPlugin({
         filename: '[path][base].br',
         algorithm: 'brotliCompress',
         test: /\.(js|css|html|svg)$/,
@@ -150,7 +193,7 @@ module.exports = function() {
       }),
 
       // 复制依赖文件
-      utils.isProduction && new copyWebpackPlugin({
+      utils.isProduction && new CopyWebpackPlugin({
         patterns: [
           {
             from: path.resolve(paths.appPublic),
@@ -161,7 +204,7 @@ module.exports = function() {
       }),
 
       // 是否开启serviceWorker
-      utils.isProduction && utils.isStartServiceWorker && new workboxWebpackPlugin.GenerateSW({
+      utils.isProduction && utils.isStartServiceWorker && new WorkboxWebpackPlugin.GenerateSW({
         clientsClaim: true,
         skipWaiting: true,
         exclude: [
@@ -208,4 +251,4 @@ module.exports = function() {
   };
 
   return merge(initConfig, utils.otherConfig);
-};
+}

@@ -1,11 +1,11 @@
-const utils = require('./utils');
+import { utils } from './utils';
 
-module.exports = [
+export const staticResource = [
   {
     test: /\.svg$/,
     use: [
       {
-        loader: require.resolve('@svgr/webpack'),
+        loader: '@svgr/webpack',
         options: {
           prettier: false,
           svgo: false,
@@ -15,7 +15,7 @@ module.exports = [
         },
       },
       {
-        loader: require.resolve('file-loader'),
+        loader: 'file-loader',
         options: { name: `${utils.resourceName.image}/[hash].[ext]` },
       },
     ],

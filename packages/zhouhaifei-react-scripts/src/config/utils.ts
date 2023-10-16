@@ -1,13 +1,13 @@
-const fs = require('fs');
-const getPublicUrlOrPath = require('../react-dev-utils/getPublicUrlOrPath');
-const paths = require('./paths');
+import { getPublicUrlOrPath } from '../react-dev-utils/getPublicUrlOrPath';
+import fs from 'fs';
+import { paths } from './paths.js';
 
 function getBaseConfig(oldConfig) {
   const isDevelopment = process.env.NODE_ENV === 'development';
   const isProduction = process.env.NODE_ENV === 'production';
   const publicUrlOrPath = getPublicUrlOrPath(
     isDevelopment,
-    require(paths.appPackageJson).homepage,
+    '',
     process.env.PUBLIC_URL
   );
 
@@ -90,7 +90,7 @@ function getUserConfig(oldConfig) {
 
   if (fs.existsSync(paths.configFile)) {
     try {
-      const userConfig = require(paths.configFile)({ ...oldConfig });
+      const userConfig: any = {};
       if (typeof userConfig === 'object' && userConfig !== null) {
         // 其它配置
         if ('otherConfig' in userConfig) {
@@ -135,7 +135,7 @@ function getConfig(configPipe) {
   return configPipe.reduce((prev, current) => current(prev), {});
 }
 
-module.exports = getConfig([
+export const utils = getConfig([
   getBaseConfig,
   getDevServerConfig,
   getPerformanceConfig,

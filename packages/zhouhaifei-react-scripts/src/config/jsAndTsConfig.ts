@@ -1,9 +1,9 @@
-const paths = require('./paths');
-const utils = require('./utils');
+import { paths } from './paths';
+import { utils } from './utils';
 
 const parseJs = utils.isDevelopment && utils.useEsBuild
   ? {
-    loader: require.resolve('esbuild-loader'),
+    loader: 'esbuild-loader',
     options: {
       loader: 'tsx',
       target: 'es2015',
@@ -12,14 +12,14 @@ const parseJs = utils.isDevelopment && utils.useEsBuild
   : {
     use: [
       {
-        loader: require.resolve('thread-loader'),
+        loader: 'thread-loader',
         options: {
           // additional node.js arguments
           workerNodeArgs: ['--max-old-space-size=1024'],
         },
       },
       {
-        loader: require.resolve('babel-loader'),
+        loader: 'babel-loader',
         options: {
           sourceType: 'unambiguous', // 自动处理es和js模块
           cacheDirectory: true,
@@ -33,7 +33,7 @@ const parseJs = utils.isDevelopment && utils.useEsBuild
     ].filter(Boolean),
   };
 
-module.exports = [
+export const jsAndTsConfig = [
   {
     test: /\.m?js/,
     resolve: { fullySpecified: false },
