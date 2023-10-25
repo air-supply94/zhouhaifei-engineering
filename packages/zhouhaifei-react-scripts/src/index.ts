@@ -22,7 +22,7 @@ cli
       envFile: '.env',
     });
 
-    await import('./scripts/start.js');
+    require('./scripts/start.js');
   });
 
 // build
@@ -37,7 +37,7 @@ cli
       envFile: '.env',
     });
 
-    await import('./scripts/build.js');
+    require('./scripts/build.js');
   });
 
 cli.help();
