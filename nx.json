@@ -9,9 +9,6 @@
     }
   },
   "targetDefaults": {
-    "test": {
-      "dependsOn": ["^build"]
-    },
     "build": {
       "dependsOn": ["^build", "^prebuild"]
     }
