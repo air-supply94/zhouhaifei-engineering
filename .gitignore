@@ -3,6 +3,7 @@
 .cache
 .vscode
 .eslintcache
+.turbo
 
 # dependencies
 node_modules

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "baseBranch": "origin/master",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "dev": {
+      "cache": false
+    },
+    "test": {
+      "outputs": ["coverage/**"],
+      "dependsOn": ["build"],
+      "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts", "__tests__/**/*.ts"],
+      "outputMode": "full"
+    }
+  },
+  "globalDependencies": ["tsconfig.json"]
+}
