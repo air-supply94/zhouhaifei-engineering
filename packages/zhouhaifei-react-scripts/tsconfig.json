@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "dist", // 指定输出目录
     "module": "esnext",
-    "target": "esnext", // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES6'/'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
+    "target": "es6", // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES6'/'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
     "lib": ["esnext"],
     "baseUrl": ".", // 用于解析非相对模块名称的基目录
     "allowSyntheticDefaultImports": true, //允许从没有设置默认导出的模块中默认导入
@@ -30,5 +30,5 @@
     "alwaysStrict": false //以严格模式解析并为每个源文件生成 "use strict"语句
   },
   "exclude": ["node_modules", "dist"],
-  "include": ["src", "./rollup.config.ts"]
+  "include": ["src"]
 }

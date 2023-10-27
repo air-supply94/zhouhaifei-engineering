@@ -1,11 +1,8 @@
 import chalk from 'chalk';
 import webpack from 'webpack';
-import { paths } from '../config/paths';
-import { utils } from '../config/utils';
-import { webpackConfig } from '../config/webpack.config';
 
 // Generate configuration
-const config = webpackConfig();
+const config = {};
 
 function build() {
   const compiler = webpack(config);
@@ -36,8 +33,8 @@ export default async function runBuild() {
 
   console.log(chalk.green('Compiled successfully.\n'));
 
-  console.log(chalk.green(`publicUrl: ${utils.publicUrlOrPath}`));
-  console.log(chalk.green(`buildFolder: ${paths.appDist}`));
+  // console.log(chalk.green(`publicUrl: ${utils.publicUrlOrPath}`));
+  // console.log(chalk.green(`buildFolder: ${paths.appDist}`));
 }
 
 runBuild()

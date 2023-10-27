@@ -1,9 +1,9 @@
 import { cac } from 'cac';
 import fs from 'fs';
 import path from 'path';
-import { loadEnv } from './config/env';
+import { loadEnv } from './utils/loadEnv';
 
-const cli = cac('zhouhaifei-react-scripts');
+const cli = cac('zhouhaifei-react-script');
 const { version } = JSON.parse(fs.readFileSync(path.resolve('../../package.json'), 'utf8')
   .toString());
 
@@ -13,31 +13,33 @@ cli
   .alias('serve')
   .alias('dev')
   .alias('start')
-  .action(async(root, options) => {
+  .action((root, options) => {
     process.env.BABEL_ENV = 'development';
     process.env.NODE_ENV = 'development';
 
-    loadEnv({
+    const env = loadEnv({
       cwd: process.cwd(),
       envFile: '.env',
     });
+    console.log(env);
 
-    require('./scripts/start.js');
+    // require('./scripts/start.js');
   });
 
 // build
 cli
   .command('build [root]', 'build for production')
-  .action(async(root, options) => {
+  .action((root, options) => {
     process.env.BABEL_ENV = 'production';
     process.env.NODE_ENV = 'production';
 
-    loadEnv({
+    const env = loadEnv({
       cwd: process.cwd(),
       envFile: '.env',
     });
+    console.log(env);
 
-    require('./scripts/build.js');
+    // require('./scripts/build.js');
   });
 
 cli.help();

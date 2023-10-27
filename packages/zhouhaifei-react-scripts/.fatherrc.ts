@@ -1,6 +1,9 @@
-import { defineConfig } from 'father';
+import {defineConfig} from 'father';
 
 export default defineConfig({
-  cjs: { sourcemap: true },
+  cjs: {
+    sourcemap: true,
+    transformer: "babel"
+  },
   platform: 'node'
 });
