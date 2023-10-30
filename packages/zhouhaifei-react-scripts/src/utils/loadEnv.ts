@@ -4,7 +4,7 @@ import { config } from 'dotenv';
 import { expand } from 'dotenv-expand';
 import type { interfaces } from '../types';
 
-export function loadEnv(cwd: string, envFile: string): interfaces.UserConfigInternal['userEnv'] {
+export function loadEnv(cwd: string, envFile: string): interfaces.ConfigOptions['userEnv'] {
   const dotenv = path.resolve(cwd, envFile);
   const NODE_ENV = process.env.NODE_ENV;
   const dotenvFiles = [

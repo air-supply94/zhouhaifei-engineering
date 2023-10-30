@@ -1,11 +1,11 @@
 import webpack from 'webpack';
 import { getConfig } from './config/config';
-import type { interfaces } from './types';
+import { interfaces } from './types';
 
-export async function build(options: interfaces.UserConfigInternal) {
+export async function build(options: interfaces.BuildOptions) {
   const config = await getConfig({
     ...options,
-    env: 'production',
+    env: interfaces.Env.production,
   });
 
   const compiler = webpack(config);

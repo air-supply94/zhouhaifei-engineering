@@ -1,14 +1,14 @@
 import { cac } from 'cac';
 import fs from 'fs';
+import path from 'path';
 import { interfaces } from './types';
 import { version } from './utils/constants';
 import { loadEnv } from './utils/loadEnv';
 import { loadFile } from './utils/loadFile';
-import { start } from './start';
+import { dev } from './dev';
 import { build } from './build';
-import { resolveFile, resolveModule } from './utils/lookupFile';
+import { resolveFile, resolveModule, tryFiles } from './utils/lookupFile';
 
-console.log(version, 'version');
 const cli = cac('zhouhaifei-react-script');
 const cwd = fs.realpathSync(process.cwd());
 const userConfigFile = resolveModule(resolveFile.bind(null, cwd), '.reactScriptsConfig', [
@@ -16,22 +16,29 @@ const userConfigFile = resolveModule(resolveFile.bind(null, cwd), '.reactScripts
   '.js',
 ]);
 
+const entryFile = tryFiles([
+  path.join(cwd, 'src/index.tsx'),
+  path.join(cwd, 'src/index.ts'),
+  path.join(cwd, 'index.tsx'),
+  path.join(cwd, 'index.ts'),
+]);
+const entry = { [path.basename(entryFile, path.extname(entryFile))]: entryFile };
+
 // start
 cli
   .command('[root]', 'start dev server')
   .alias('dev')
   .alias('start')
   .action(async(root, options) => {
-    const env = interfaces.Env.development;
-    process.env.BABEL_ENV = env;
-    process.env.NODE_ENV = env;
+    process.env.NODE_ENV = interfaces.Env.development;
 
     const userEnv = loadEnv(cwd, '.env') || {};
     const userConfig: interfaces.UserConfig = await loadFile(userConfigFile);
-    await start({
+    await dev({
       userConfig,
       cwd,
       userEnv,
+      entry,
     });
   });
 
@@ -39,9 +46,7 @@ cli
 cli
   .command('build [root]', 'build for production')
   .action(async(root, options) => {
-    const env = interfaces.Env.production;
-    process.env.BABEL_ENV = env;
-    process.env.NODE_ENV = env;
+    process.env.NODE_ENV = interfaces.Env.production;
 
     const userEnv = loadEnv(cwd, '.env');
     const userConfig: interfaces.UserConfig = await loadFile(userConfigFile);
@@ -49,6 +54,7 @@ cli
       userConfig,
       cwd,
       userEnv,
+      entry,
     });
   });
 

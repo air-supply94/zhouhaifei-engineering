@@ -1,12 +1,12 @@
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import { getConfig } from './config/config';
-import type { interfaces } from './types';
+import { interfaces } from './types';
 
-export async function start(options: interfaces.UserConfigInternal) {
+export async function dev(options: interfaces.DevOptions) {
   const config = await getConfig({
     ...options,
-    env: 'development',
+    env: interfaces.Env.development,
   });
   const compiler = webpack(config);
   const devServer = new WebpackDevServer(config.devServer, compiler);
