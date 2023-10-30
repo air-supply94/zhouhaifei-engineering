@@ -1,31 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import { build } from 'esbuild';
-import { pathToFileURL } from 'url';
 import { createRequire } from 'module';
 
 const _require = createRequire(process.cwd());
 
-function getConfigFilename(
-  baseDir: string,
-  defaultConfigFiles: LoadConfigFromFile['defaultConfigFiles']
-): string {
-  for (let i = 0; i < defaultConfigFiles.length; i++) {
-    const filename = path.resolve(baseDir, defaultConfigFiles[i]);
-    if (fs.existsSync(filename)) {
-      return filename;
-    }
-  }
-
-  return null;
-}
-
-export interface LoadConfigFromFile {
-  baseDir?: string;
-  defaultConfigFiles: string[];
-}
-
-async function isEsmConfig(baseDir: string, configFileName: string): Promise<boolean> {
+/* async function isEsmConfig(baseDir: string, configFileName: string): Promise<boolean> {
   if (/\.m[jt]s$/.test(configFileName)) {
     return true;
   } else if (/\.c[jt]s$/.test(configFileName)) {
@@ -44,35 +24,7 @@ async function isEsmConfig(baseDir: string, configFileName: string): Promise<boo
       return false;
     }
   }
-}
-
-export async function loadConfigFile(options: LoadConfigFromFile): Promise<unknown> {
-  const baseDir: string = options.baseDir ? options.baseDir : process.cwd();
-  const defaultConfigFile = getConfigFilename(baseDir, options.defaultConfigFiles);
-  if (!defaultConfigFile) {
-    return null;
-  }
-
-  const isEsm = await isEsmConfig(baseDir, defaultConfigFile);
-  const result = await build({
-    absWorkingDir: process.cwd(),
-    entryPoints: [defaultConfigFile],
-    outfile: 'out.js',
-    write: false,
-    target: [
-      'node14.18',
-      'node16',
-    ],
-    platform: 'node',
-    bundle: true,
-    format: isEsm ? 'esm' : 'cjs',
-    mainFields: ['main'],
-    sourcemap: false,
-    metafile: true,
-  });
-
-  return loadConfigFromBundledFile(defaultConfigFile, result.outputFiles[0].text, isEsm);
-}
+}*/
 
 async function loadConfigFromBundledFile(
   fileName: string,
@@ -80,14 +32,13 @@ async function loadConfigFromBundledFile(
   isESM: boolean
 ): Promise<any> {
   if (isESM) {
-    const fileBase = `${fileName}.timestamp-${Date.now()}-${Math.random()
+    const fileBase = path.resolve(path.dirname(fileName), `${Date.now()}-${Math.random()
       .toString(16)
-      .slice(2)}`;
+      .slice(2)}`);
     const fileNameTmp = `${fileBase}.mjs`;
-    const fileUrl = `${pathToFileURL(fileBase)}.mjs`;
     await fs.promises.writeFile(fileNameTmp, bundledCode);
     try {
-      const result = await import(fileUrl);
+      const result = await import(fileNameTmp);
       return result.default;
     } finally {
       await fs.promises.unlink(fileNameTmp);
@@ -113,3 +64,30 @@ async function loadConfigFromBundledFile(
     return raw.__esModule ? raw.default : raw;
   }
 }
+
+export async function loadFile(filename: string): Promise<unknown> {
+  if (!fs.existsSync(filename)) {
+    return null;
+  }
+
+  const isEsm = false;
+  const result = await build({
+    absWorkingDir: process.cwd(),
+    entryPoints: [filename],
+    outfile: 'out.js',
+    write: false,
+    target: [
+      'node14.18',
+      'node16',
+    ],
+    platform: 'node',
+    bundle: true,
+    format: isEsm ? 'esm' : 'cjs',
+    mainFields: ['main'],
+    sourcemap: false,
+    metafile: true,
+  });
+
+  return loadConfigFromBundledFile(filename, result.outputFiles[0].text, isEsm);
+}
+

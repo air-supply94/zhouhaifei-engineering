@@ -2,9 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import { config } from 'dotenv';
 import { expand } from 'dotenv-expand';
+import type { interfaces } from '../types';
 
-export function loadEnv(opts: { cwd: string; envFile: string; }): Record<string, string> {
-  const dotenv = path.resolve(opts.cwd, opts.envFile);
+export function loadEnv(cwd: string, envFile: string): interfaces.UserConfigInternal['userEnv'] {
+  const dotenv = path.resolve(cwd, envFile);
   const NODE_ENV = process.env.NODE_ENV;
   const dotenvFiles = [
     `${dotenv}.${NODE_ENV}.local`,
