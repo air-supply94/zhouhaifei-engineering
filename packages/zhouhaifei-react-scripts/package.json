@@ -13,6 +13,7 @@
     "zhouhaifei-react-scripts": "bin/zhouhaifei-react-scripts.js"
   },
   "dependencies": {
+    "unused-webpack-plugin": "2.4.0",
     "@babel/core": "7.15.8",
     "@svgr/webpack": "5.5.0",
     "babel-loader": "8.2.3",
@@ -53,8 +54,7 @@
   },
   "devDependencies": {
     "father": "4.3.5",
-    "rimraf": "5.0.1",
-    "vite": "4.4.5"
+    "rimraf": "5.0.1"
   },
   "scripts": {
     "dev": "father dev",

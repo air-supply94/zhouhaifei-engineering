@@ -4,6 +4,7 @@ import type { Configuration } from 'webpack';
 import type { Options as HPMOptions } from 'http-proxy-middleware';
 import type { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import type { ManifestPluginOptions } from 'webpack-manifest-plugin';
+import type HtmlWebpackPlugin from 'html-webpack-plugin';
 
 type HPMFnArgs = Parameters<NonNullable<HPMOptions['onProxyReq']>>;
 
@@ -35,8 +36,8 @@ export namespace interfaces {
     publicPath?: string;
     define?: {[key: string]: any; };
     externals?: Configuration['externals'];
-    preloadOptions?: boolean | Record<string, any>;
-    forkTsCheckerOptions?: boolean | Record<string, any>;
+    preloadOptions?: false | Record<string, any>;
+    forkTsCheckerOptions?: false | Record<string, any>;
     chainWebpack?: (
       memo: Config,
       args: {
@@ -46,10 +47,12 @@ export namespace interfaces {
     ) => void | Promise<void>;
     analyze?: BundleAnalyzerPlugin.Options;
     manifestOptions?: ManifestPluginOptions;
+    ignoreMomentLocale?: boolean;
+    copy?: CopyOptions[] | string[];
+    deadCode?: { directories?: string[]; exclude?: string[]; root?: string; };
+    htmlOption?: false | HtmlWebpackPlugin.Options;
 
     autoCSSModules?: boolean;
-    copy?: CopyOptions[] | string[];
-    ignoreMomentLocale?: boolean;
     lessLoader?: {[key: string]: any; };
     proxy?: {[key: string]: ProxyOptions; } | ProxyOptions[];
   }

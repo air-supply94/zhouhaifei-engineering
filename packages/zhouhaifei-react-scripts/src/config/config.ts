@@ -8,14 +8,19 @@ import { getBrowsersList } from '../utils/getBrowsersList';
 import { resolveFile } from '../utils/lookupFile';
 import path from 'path';
 import webpack from 'webpack';
-import webpackBar from 'webpackBar';
-import SpeedMeasureWebpackPlugin from 'speed-measure-webpack-plugin';
 import { bundleAnalyzerPlugin } from './bundleAnalyzerPlugin';
 import { copyPlugin } from './copyPlugin';
 import { forkTsCheckerPlugin } from './forkTsCheckerPlugin';
 import { manifestPlugin } from './manifestPlugin';
 import { miniCssExtractPlugin } from './miniCssExtractPlugin';
-import { preloadWebpackPlugin } from './preloadWebpackPlugin';
+import { preloadPlugin } from './preloadPlugin';
+import { definePlugin } from './definePlugin';
+import { speedMeasurePlugin } from './speedMeasurePlugin';
+import { progressPlugin } from './progressPlugin';
+import { ignorePlugin } from './ignorePlugin';
+import { harmonyLinkingErrorPlugin } from './harmonyLinkingErrorPlugin';
+import { unusedPlugin } from './unusedPlugin ';
+import { htmlPlugin } from './htmlPlugin';
 
 function createEnvironmentHash(userEnv: interfaces.ConfigOptions['userEnv']) {
   const hash = crypto.createHash('md5');
@@ -38,6 +43,7 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
   } = options;
   userConfig.targets ||= DEFAULT_BROWSER_TARGETS;
   userConfig.inlineLimit ||= 1024 * 8;
+  userConfig.publicPath = process.env.PUBLIC_URL || userConfig.publicPath || '/';
 
   const nodeModules = /node_modules/;
   const isDev = env === interfaces.Env.development;
@@ -106,12 +112,11 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
     cwd,
     userConfig.outputPath || DEFAULT_OUTPUT_PATH
   );
-  const publicPath = process.env.PUBLIC_URL || userConfig.publicPath || 'auto';
   config.output
     .path(outputPath)
     .filename(isDev ? '[name].js' : '[name].[contenthash].js')
     .chunkFilename(isDev ? '[name].async.js' : '[name].[contenthash].async.js')
-    .publicPath(publicPath)
+    .publicPath(userConfig.publicPath)
     .pathinfo(true)
     .set('assetModuleFilename', `${staticPathPrefix}[name].[hash][ext]`)
     .set('hashFunction', 'xxhash64');
@@ -128,43 +133,22 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
   // experiments
   config.experiments({ topLevelAwait: true });
 
-  // speed-measure-webpack-plugin
-  config.plugin('speed-measure-webpack-plugin').use(SpeedMeasureWebpackPlugin);
-
-  // webpackBar
-  config.plugin('webpackBar').use(webpackBar);
-
-  // DefinePlugin
-  const definePluginArgs = {
-    ...userEnv,
-    ...userConfig.define,
-  };
-  config.plugin('webpack-define-plugin').use(webpack.DefinePlugin, [
-    {
-      'process.env': Object.keys(definePluginArgs).reduce((env, key) => {
-        env[key] = JSON.stringify(definePluginArgs[key]);
-        return env;
-      }, {}),
-    },
-  ]);
-
-  // fork-ts-checker-webpack-plugin
+  definePlugin({
+    ...applyOptions,
+    userEnv,
+  });
+  ignorePlugin(applyOptions);
+  htmlPlugin(applyOptions);
+  speedMeasurePlugin(applyOptions);
+  progressPlugin(applyOptions);
   forkTsCheckerPlugin(applyOptions);
-
-  // preload-webpack-plugin
-  preloadWebpackPlugin(applyOptions);
-
-  // mini-css-extract-plugin
+  preloadPlugin(applyOptions);
   miniCssExtractPlugin(applyOptions);
-
-  // webpack-bundle-analyzer
   bundleAnalyzerPlugin(applyOptions);
-
-  // copy-webpack-plugin
   copyPlugin(applyOptions);
-
-  // webpack-manifest-plugin
   manifestPlugin(applyOptions);
+  harmonyLinkingErrorPlugin(applyOptions);
+  unusedPlugin(applyOptions);
 
   // chain webpack
   if (chainWebpack) {
