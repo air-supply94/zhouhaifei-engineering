@@ -3,6 +3,7 @@ import type webpack from 'webpack';
 import type { Configuration } from 'webpack';
 import type { Options as HPMOptions } from 'http-proxy-middleware';
 import type { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import type { ManifestPluginOptions } from 'webpack-manifest-plugin';
 
 type HPMFnArgs = Parameters<NonNullable<HPMOptions['onProxyReq']>>;
 
@@ -27,59 +28,74 @@ export namespace interfaces {
 
   export interface UserConfig {
     alias?: Record<string, string>;
+    targets?: Record<string, any>;
+    inlineLimit?: number;
+    outputPath?: string;
     devtool?: Config.DevTool;
-    analyze?: BundleAnalyzerPlugin.Options;
-    cache?: {
-      absNodeModulesPath?: string;
-      buildDependencies?: string[];
-      cacheDirectory?: string;
-    };
-    autoCSSModules?: boolean;
+    publicPath?: string;
+    define?: {[key: string]: any; };
+    externals?: Configuration['externals'];
+    preloadOptions?: boolean | Record<string, any>;
+    forkTsCheckerOptions?: boolean | Record<string, any>;
     chainWebpack?: (
       memo: Config,
       args: {
         env: keyof typeof Env;
         webpack: typeof webpack;
       },
-    ) => void;
+    ) => void | Promise<void>;
+    analyze?: BundleAnalyzerPlugin.Options;
+    manifestOptions?: ManifestPluginOptions;
+
+    autoCSSModules?: boolean;
     copy?: CopyOptions[] | string[];
-    define?: {[key: string]: any; };
-    externals?: Configuration['externals'];
     ignoreMomentLocale?: boolean;
     lessLoader?: {[key: string]: any; };
-    outputPath?: string;
     proxy?: {[key: string]: ProxyOptions; } | ProxyOptions[];
-    publicPath?: string;
-    targets?: {[key: string]: any; };
   }
 
   export interface ConfigOptions {
     cwd: string;
-    env: Env;
     entry: Record<string, string>;
     userConfig: UserConfig;
+    env: Env;
+
     userEnv?: Record<string, string | number>;
+    staticPathPrefix?: string;
+    cache?: {
+      buildDependencies?: string[];
+      cacheDirectory?: string;
+    };
+    chainWebpack?: UserConfig['chainWebpack'];
+    modifyWebpackConfig?: (
+      memo: Configuration,
+      args: {
+        env: keyof typeof Env;
+        webpack: typeof webpack;
+      },
+    ) => Configuration | Promise<Configuration>;
   }
 
   export type BuildOptions = {
-    cwd: string;
-    entry: Record<string, string>;
-    userConfig: UserConfig;
-
     clean?: boolean;
     watch?: boolean;
-  } & Pick<ConfigOptions, 'userEnv'>;
+  } & Omit<ConfigOptions, 'env'>;
 
   export type DevOptions = {
-    cwd: string;
-    entry: Record<string, string>;
-    userConfig: UserConfig;
-
     afterMiddlewares?: any[];
     beforeMiddlewares?: any[];
     port?: number;
     host?: string;
     ip?: string;
     onBeforeMiddleware?: (...args: any[]) => any;
-  } & Pick<ConfigOptions, 'userEnv'>;
+  } & Omit<ConfigOptions, 'env'>;
+
+  export interface ApplyOptions {
+    readonly config: Config;
+    readonly browsers: UserConfig['targets'];
+    readonly env: ConfigOptions['env'];
+    readonly cwd: ConfigOptions['cwd'];
+    readonly userConfig: UserConfig;
+    readonly staticPathPrefix: ConfigOptions['staticPathPrefix'];
+  }
 }

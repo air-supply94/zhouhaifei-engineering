@@ -1,6 +1,7 @@
 import { cac } from 'cac';
 import fs from 'fs';
 import path from 'path';
+import { DEFAULT_CONFIG_EXTENSIONS, DEFAULT_CONFIG_NAME } from './constants';
 import { interfaces } from './types';
 import { version } from './utils/constants';
 import { loadEnv } from './utils/loadEnv';
@@ -11,10 +12,7 @@ import { resolveFile, resolveModule, tryFiles } from './utils/lookupFile';
 
 const cli = cac('zhouhaifei-react-script');
 const cwd = fs.realpathSync(process.cwd());
-const userConfigFile = resolveModule(resolveFile.bind(null, cwd), '.reactScriptsConfig', [
-  '.ts',
-  '.js',
-]);
+const userConfigFile = resolveModule(resolveFile.bind(null, cwd), DEFAULT_CONFIG_NAME, DEFAULT_CONFIG_EXTENSIONS);
 
 const entryFile = tryFiles([
   path.join(cwd, 'src/index.tsx'),
