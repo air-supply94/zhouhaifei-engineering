@@ -124,6 +124,7 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
     userConfig.outputPath || DEFAULT_OUTPUT_PATH
   );
   config.output
+    .clean(true)
     .path(outputPath)
     .filename(isDev ? '[name].js' : '[name].[contenthash].js')
     .chunkFilename(isDev ? '[name].async.js' : '[name].[contenthash].async.js')

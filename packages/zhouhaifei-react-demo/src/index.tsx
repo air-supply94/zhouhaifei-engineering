@@ -10,7 +10,7 @@ render();
 function render() {
   function Internal() {
     React.useLayoutEffect(() => {
-      if (process.env.REACT_APP_NPROGRESS === 'YES') {
+      if (process.env.NPROGRESS === 'YES') {
         // @ts-ignore
         NProgress.done();
       }

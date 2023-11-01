@@ -7,17 +7,13 @@
   <meta name="description" content="app"/>
   <title>app</title>
   <link rel="icon" href="<%= process.env.PUBLIC_URL %>favicon.ico">
-  <% if (process.env.SERVICE_WORKER === 'YES') { %>
-    <link rel="manifest" href="<%= process.env.PUBLIC_URL %>manifest.json" crossorigin="anonymous"/>
-  <% } %>
-  <% if (process.env.REACT_APP_NPROGRESS === 'YES') { %>
+  <% if (process.env.NPROGRESS === 'YES') { %>
   <link href="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
   <% } %>
 </head>
 <body>
-<noscript>You need to enable JavaScript to run this app.</noscript>
 <div id="root"></div>
-<% if (process.env.REACT_APP_NPROGRESS === 'YES') { %>
+<% if (process.env.NPROGRESS === 'YES') { %>
 <script src="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
 <script>
   NProgress.start();

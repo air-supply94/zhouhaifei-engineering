@@ -77,16 +77,12 @@ export namespace interfaces {
   }
 
   export type BuildOptions = {
-    clean?: boolean;
     watch?: boolean;
   } & Omit<ConfigOptions, 'env'>;
 
   export type DevOptions = {
-    afterMiddlewares?: any[];
-    beforeMiddlewares?: any[];
     port?: number;
     host?: string;
-    onBeforeMiddleware?: (...args: any[]) => any;
   } & Omit<ConfigOptions, 'env'>;
 
   export interface ApplyOptions {

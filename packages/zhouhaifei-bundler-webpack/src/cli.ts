@@ -9,7 +9,7 @@ import { dev } from './dev';
 import { build } from './build';
 import { resolveFile, resolveModule, tryFiles } from './utils/lookupFile';
 
-const cli = cac('zhouhaifei-react-script');
+const cli = cac('zhouhaifei-bundler-webpack');
 const cwd = fs.realpathSync(process.cwd());
 const userConfigFile = tryFiles([
   path.resolve(cwd, `${DEFAULT_CONFIG_NAME }.ts`),
@@ -26,7 +26,7 @@ const extensions = [
 const entryFile = resolveModule(resolveFile.bind(null, cwd), 'src/index', extensions) || resolveModule(resolveFile.bind(null, cwd), 'index', extensions);
 const entry = { [`${path.basename(entryFile, path.extname(entryFile))}`]: entryFile };
 
-// start
+// dev
 cli
   .command('[root]', 'start dev server')
   .alias('dev')

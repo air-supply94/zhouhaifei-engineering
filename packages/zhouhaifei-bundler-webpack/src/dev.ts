@@ -6,11 +6,8 @@ import type { Configuration as DevServerConfiguration } from 'webpack-dev-server
 import path from 'path';
 
 export async function dev({
-  afterMiddlewares,
-  beforeMiddlewares,
   port,
   host,
-  onBeforeMiddleware,
   cwd,
   userConfig,
   ...rest
