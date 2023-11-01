@@ -1,16 +1,19 @@
 import type { Configuration } from 'webpack';
 import Config from 'webpack-5-chain';
 import crypto from 'crypto';
-import { DEFAULT_BROWSER_TARGETS, DEFAULT_BUILD_DEVTOOL, DEFAULT_DEV_DEVTOOL, DEFAULT_OUTPUT_PATH } from '../constants';
+import { DEFAULT_BROWSER_TARGETS, DEFAULT_BUILD_DEVTOOL, DEFAULT_DEV_DEVTOOL, DEFAULT_OUTPUT_PATH, version } from '../constants';
 import { interfaces } from '../types';
-import { version } from '../utils/constants';
 import { getBrowsersList } from '../utils/getBrowsersList';
 import { resolveFile } from '../utils/lookupFile';
 import path from 'path';
 import webpack from 'webpack';
+import { assetRule } from './assetRule';
 import { bundleAnalyzerPlugin } from './bundleAnalyzerPlugin';
+import { caseSensitivePathsPlugin } from './caseSensitivePathsPlugin';
 import { copyPlugin } from './copyPlugin';
+import { cssRule } from './cssRule';
 import { forkTsCheckerPlugin } from './forkTsCheckerPlugin';
+import { javascriptRule } from './javascriptRule';
 import { manifestPlugin } from './manifestPlugin';
 import { miniCssExtractPlugin } from './miniCssExtractPlugin';
 import { preloadPlugin } from './preloadPlugin';
@@ -19,6 +22,7 @@ import { speedMeasurePlugin } from './speedMeasurePlugin';
 import { progressPlugin } from './progressPlugin';
 import { ignorePlugin } from './ignorePlugin';
 import { harmonyLinkingErrorPlugin } from './harmonyLinkingErrorPlugin';
+import { svgRule } from './svgRule';
 import { unusedPlugin } from './unusedPlugin ';
 import { htmlPlugin } from './htmlPlugin';
 
@@ -56,6 +60,10 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
     env,
     browsers: getBrowsersList({ targets: userConfig.targets }),
     staticPathPrefix,
+    isDevelopment: env === interfaces.Env.development,
+    isProduction: env === interfaces.Env.production,
+    srcDir: path.resolve(cwd, 'src'),
+    publicDir: path.resolve(cwd, 'public'),
   };
 
   // watchOptions
@@ -74,20 +82,23 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
   });
 
   // entry
-  Object.keys(entry).forEach((key) => {
-    const entry = config.entry(key);
-    entry.add(entry[key]);
-  });
+  Object.keys(entry)
+    .forEach((key) => {
+      config
+        .entry(key)
+        .add(entry[key])
+        .end();
+    });
 
   // stats、mode、bail、devtool、profile
-  config.profile(true);
   config.stats('none');
   config.mode(options.env);
   config.bail(!isDev);
   config.devtool(userConfig.devtool === false || userConfig.devtool ? userConfig.devtool : isDev ? DEFAULT_DEV_DEVTOOL : DEFAULT_BUILD_DEVTOOL);
 
   // resolve
-  config.resolve.set('symlinks', true)
+  config.resolve
+    .symlinks(true)
     .modules
     .add('node_modules')
     .end()
@@ -133,11 +144,19 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
   // experiments
   config.experiments({ topLevelAwait: true });
 
+  // module
+  assetRule(applyOptions);
+  svgRule(applyOptions);
+  cssRule(applyOptions);
+  javascriptRule(applyOptions);
+
+  // plugins
   definePlugin({
     ...applyOptions,
     userEnv,
   });
   ignorePlugin(applyOptions);
+  caseSensitivePathsPlugin(applyOptions);
   htmlPlugin(applyOptions);
   speedMeasurePlugin(applyOptions);
   progressPlugin(applyOptions);

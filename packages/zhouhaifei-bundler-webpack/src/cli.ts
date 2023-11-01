@@ -1,9 +1,8 @@
 import { cac } from 'cac';
 import fs from 'fs';
 import path from 'path';
-import { DEFAULT_CONFIG_EXTENSIONS, DEFAULT_CONFIG_NAME } from './constants';
+import { DEFAULT_CONFIG_NAME, version } from './constants';
 import { interfaces } from './types';
-import { version } from './utils/constants';
 import { loadEnv } from './utils/loadEnv';
 import { loadFile } from './utils/loadFile';
 import { dev } from './dev';
@@ -12,15 +11,20 @@ import { resolveFile, resolveModule, tryFiles } from './utils/lookupFile';
 
 const cli = cac('zhouhaifei-react-script');
 const cwd = fs.realpathSync(process.cwd());
-const userConfigFile = resolveModule(resolveFile.bind(null, cwd), DEFAULT_CONFIG_NAME, DEFAULT_CONFIG_EXTENSIONS);
-
-const entryFile = tryFiles([
-  path.join(cwd, 'src/index.tsx'),
-  path.join(cwd, 'src/index.ts'),
-  path.join(cwd, 'index.tsx'),
-  path.join(cwd, 'index.ts'),
+const userConfigFile = tryFiles([
+  path.resolve(cwd, `${DEFAULT_CONFIG_NAME }.ts`),
+  path.resolve(cwd, `${DEFAULT_CONFIG_NAME }.js`),
 ]);
-const entry = { [path.basename(entryFile, path.extname(entryFile))]: entryFile };
+
+const extensions = [
+  '.js',
+  '.jsx',
+  '.ts',
+  '.tsx',
+];
+
+const entryFile = resolveModule(resolveFile.bind(null, cwd), 'src/index', extensions) || resolveModule(resolveFile.bind(null, cwd), 'index', extensions);
+const entry = { [`${path.basename(entryFile, path.extname(entryFile))}`]: entryFile };
 
 // start
 cli
@@ -48,6 +52,7 @@ cli
 
     const userEnv = loadEnv(cwd, '.env');
     const userConfig: interfaces.UserConfig = await loadFile(userConfigFile);
+
     await build({
       userConfig,
       cwd,

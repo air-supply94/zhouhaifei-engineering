@@ -1,5 +1,5 @@
 import proxy from './src/setupProxy';
-import type { interfaces } from '@zhouhaifei/react-scripts';
+import type { interfaces } from '@zhouhaifei/bundler-webpack';
 
 
 export default {

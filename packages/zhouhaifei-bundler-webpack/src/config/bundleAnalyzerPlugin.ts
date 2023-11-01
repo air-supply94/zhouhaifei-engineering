@@ -1,12 +1,12 @@
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import { interfaces } from '../types';
+import type { interfaces } from '../types';
 
 export function bundleAnalyzerPlugin({
   config,
-  env,
+  isProduction,
   userConfig: { analyze },
 }: interfaces.ApplyOptions) {
-  if (env === interfaces.Env.production && analyze) {
+  if (isProduction && analyze) {
     config
       .plugin('webpack-bundle-analyzer')
       .use(BundleAnalyzerPlugin, [

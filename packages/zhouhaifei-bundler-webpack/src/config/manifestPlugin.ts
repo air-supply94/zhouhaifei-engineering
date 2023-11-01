@@ -1,12 +1,12 @@
-import { interfaces } from '../types';
+import type { interfaces } from '../types';
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 
 export function manifestPlugin({
   config,
-  env,
+  isProduction,
   userConfig: { manifestOptions },
 }: interfaces.ApplyOptions) {
-  if (env === interfaces.Env.production) {
+  if (isProduction) {
     config
       .plugin('webpack-manifest-plugin')
       .use(WebpackManifestPlugin, [

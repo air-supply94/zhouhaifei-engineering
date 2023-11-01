@@ -16,10 +16,6 @@ export async function build(options: interfaces.BuildOptions) {
       const info = stats.toJson();
       if (stats.hasErrors()) {
         console.error(info.errors);
-      } else {
-        if (stats.hasWarnings()) {
-          console.warn(info.warnings);
-        }
       }
     }
   });

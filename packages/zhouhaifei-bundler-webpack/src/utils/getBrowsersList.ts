@@ -1,6 +1,6 @@
 import type { interfaces } from '../types';
 
-export function getBrowsersList({ targets }: interfaces.UserConfig['targets']) {
+export function getBrowsersList({ targets }: interfaces.UserConfig['targets']): string[] {
   return (
     targets.browsers ||
     Object.keys(targets).map((key) => {

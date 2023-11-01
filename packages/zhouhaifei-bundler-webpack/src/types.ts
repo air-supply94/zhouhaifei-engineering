@@ -1,21 +1,12 @@
 import type Config from 'webpack-5-chain';
 import type webpack from 'webpack';
 import type { Configuration } from 'webpack';
-import type { Options as HPMOptions } from 'http-proxy-middleware';
 import type { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import type { ManifestPluginOptions } from 'webpack-manifest-plugin';
 import type HtmlWebpackPlugin from 'html-webpack-plugin';
-
-type HPMFnArgs = Parameters<NonNullable<HPMOptions['onProxyReq']>>;
+import type { ProxyConfigMap, ProxyConfigArray } from 'webpack-dev-server';
 
 export namespace interfaces {
-  export interface ProxyOptions extends HPMOptions {
-    target?: string;
-    context?: string | string[];
-    bypass?: (
-      ...args: [HPMFnArgs[1], HPMFnArgs[2], HPMFnArgs[3]]
-    ) => string | boolean | null | void;
-  }
 
   export enum Env {
     development = 'development',
@@ -51,10 +42,16 @@ export namespace interfaces {
     copy?: CopyOptions[] | string[];
     deadCode?: { directories?: string[]; exclude?: string[]; root?: string; };
     htmlOption?: false | HtmlWebpackPlugin.Options;
-
+    svgr?: false | Record<string, any>;
+    lessLoaderOptions?: {[key: string]: any; };
     autoCSSModules?: boolean;
-    lessLoader?: {[key: string]: any; };
-    proxy?: {[key: string]: ProxyOptions; } | ProxyOptions[];
+    styleLoaderOptions?: false | Record<string, any>;
+    cssLoaderModules?: Record<string, any>;
+    cssLoaderOptions?: Record<string, any>;
+    postcssLoaderOptions?: Record<string, any>;
+    autoprefixer?: Record<string, any>;
+    extraPostCSSPlugins?: any[];
+    proxy?: ProxyConfigMap | ProxyConfigArray;
   }
 
   export interface ConfigOptions {
@@ -89,7 +86,6 @@ export namespace interfaces {
     beforeMiddlewares?: any[];
     port?: number;
     host?: string;
-    ip?: string;
     onBeforeMiddleware?: (...args: any[]) => any;
   } & Omit<ConfigOptions, 'env'>;
 
@@ -100,5 +96,9 @@ export namespace interfaces {
     readonly cwd: ConfigOptions['cwd'];
     readonly userConfig: UserConfig;
     readonly staticPathPrefix: ConfigOptions['staticPathPrefix'];
+    readonly isDevelopment: boolean;
+    readonly isProduction: boolean;
+    readonly srcDir: string;
+    readonly publicDir: string;
   }
 }

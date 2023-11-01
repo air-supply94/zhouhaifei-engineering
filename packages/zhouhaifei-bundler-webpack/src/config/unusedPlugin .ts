@@ -1,19 +1,19 @@
-import { interfaces } from '../types';
+import type { interfaces } from '../types';
 import UnusedWebpackPlugin from 'unused-webpack-plugin';
-import path from 'path';
 
 export function unusedPlugin({
   config,
-  env,
+  isProduction,
   cwd,
   userConfig: { deadCode },
+  srcDir,
 }: interfaces.ApplyOptions) {
-  if (env === interfaces.Env.production && deadCode) {
+  if (isProduction && deadCode) {
     config
       .plugin('unused-webpack-plugin')
       .use(UnusedWebpackPlugin, [
         {
-          directories: [path.join(cwd, 'src')],
+          directories: srcDir,
           root: cwd,
           ...deadCode,
         },

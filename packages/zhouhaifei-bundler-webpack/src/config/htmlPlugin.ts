@@ -1,23 +1,23 @@
-import { interfaces } from '../types';
+import type { interfaces } from '../types';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 
 export function htmlPlugin({
   config,
-  env,
-  cwd,
+  isProduction,
   userConfig: {
     htmlOption,
     publicPath,
   },
+  publicDir,
 }: interfaces.ApplyOptions) {
   if (htmlOption !== false) {
     const initOptions = {
       inject: true,
       cache: false,
       publicPath,
-      template: path.resolve(cwd, 'public/index.html'),
-      minify: env === interfaces.Env.production ? {
+      template: path.resolve(publicDir, 'index.html'),
+      minify: isProduction ? {
         removeComments: true,
         collapseWhitespace: true,
         removeRedundantAttributes: true,

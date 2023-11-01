@@ -1,4 +1,4 @@
-import { interfaces } from '../types';
+import type { interfaces } from '../types';
 import fs from 'fs';
 import path from 'path';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
@@ -7,9 +7,9 @@ export function copyPlugin({
   config,
   userConfig: { copy },
   cwd,
-  env,
+  isProduction,
+  publicDir,
 }: interfaces.ApplyOptions) {
-  const publicDir = path.join(cwd, 'public');
   const copyPatterns = [];
 
   if (fs.existsSync(publicDir) && fs.readdirSync(publicDir).length) {
@@ -37,7 +37,7 @@ export function copyPlugin({
     });
   }
 
-  if (env === interfaces.Env.production && copyPatterns.length) {
+  if (isProduction && copyPatterns.length) {
     config
       .plugin('copy-webpack-plugin')
       .use(CopyWebpackPlugin, [{ patterns: copyPatterns }]);

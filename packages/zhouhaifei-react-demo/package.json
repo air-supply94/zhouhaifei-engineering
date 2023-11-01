@@ -24,7 +24,7 @@
     "@types/react-dom": "^18.2.7",
     "@zhouhaifei/code-style": "workspace:*",
     "@zhouhaifei/pc-config": "workspace:*",
-    "@zhouhaifei/react-scripts": "workspace:*",
+    "@zhouhaifei/bundler-webpack": "workspace:*",
     "@zhouhaifei/vite-config": "workspace:*",
     "cross-env": "7.0.3",
     "eslint": "7.29.0",
@@ -46,8 +46,8 @@
   ],
   "scripts": {
     "start-vite": "vite",
-    "start": "zhouhaifei-react-scripts start",
-    "build": "zhouhaifei-react-scripts build"
+    "start": "zhouhaifei-bundler-webpack start",
+    "build-local": "zhouhaifei-bundler-webpack build"
   },
   "gitHead": "d2aa9ce735309d393ebe6452ac392a6a76d9fae6"
 }
