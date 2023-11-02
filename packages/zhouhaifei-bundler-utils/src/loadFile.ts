@@ -30,7 +30,7 @@ async function loadConfigFromBundledFile(
   fileName: string,
   bundledCode: string,
   isESM: boolean
-): Promise<any> {
+): Promise<unknown> {
   if (isESM) {
     const fileBase = path.resolve(path.dirname(fileName), `${Date.now()}-${Math.random()
       .toString(16)

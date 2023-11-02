@@ -9,7 +9,7 @@ export async function dev({
   port,
   host,
   cwd,
-  userConfig,
+  userConfig = {},
   ...rest
 }: interfaces.DevOptions) {
   const webpackConfig = await getConfig({
@@ -18,8 +18,6 @@ export async function dev({
     cwd,
     userConfig,
   });
-  host ||= process.env.HOST || '0.0.0.0';
-  port ||= parseInt(process.env.PORT, 10) || 3000;
 
   const compiler = webpack(webpackConfig);
   const devServerOptions: DevServerConfiguration = {
@@ -50,8 +48,8 @@ export async function dev({
       },
       progress: false,
     },
-    host,
-    port,
+    host: host ? host : process.env.HOST || '0.0.0.0',
+    port: port ? port : parseInt(process.env.PORT, 10) || 3000,
     historyApiFallback: { disableDotRule: true },
     devMiddleware: { publicPath: webpackConfig.output.publicPath },
     static: {

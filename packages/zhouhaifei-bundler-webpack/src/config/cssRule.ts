@@ -9,6 +9,8 @@ const globalExtensions = [
   'less',
   'sass',
   'scss',
+  'styl',
+  'stylus',
 ];
 
 export function cssRule({
@@ -25,6 +27,8 @@ export function cssRule({
     autoprefixer,
     extraPostCSSPlugins,
     postcssLoaderOptions,
+    sassLoaderOptions,
+    stylusLoaderOptions,
   },
 }: interfaces.ApplyOptions) {
   const rulesConfig = [
@@ -44,6 +48,18 @@ export function cssRule({
         },
       },
     },
+    {
+      name: 'sass',
+      test: /\.(sass|scss)(\?.*)?$/,
+      loader: require.resolve('sass-loader'),
+      loaderOptions: sassLoaderOptions || {},
+    },
+    {
+      name: 'stylus',
+      test: /\.(styl|stylus)(\?.*)?$/,
+      loader: require.resolve('stylus-loader'),
+      loaderOptions: stylusLoaderOptions || {},
+    },
   ];
 
   rulesConfig.forEach((item) => {
@@ -62,7 +78,7 @@ export function cssRule({
     const moduleAndNormal = [
       autoCSSModules !== false && {
         rule: rule
-          .oneOf('css-modules')
+          .oneOf(`${name}-modules`)
           .exclude
           .add(/node_modules/)
           .add(globalExtensions.map((val) => path.resolve(srcDir, `global.${val}`)))
@@ -71,7 +87,7 @@ export function cssRule({
       },
       {
         rule: rule
-          .oneOf('css'),
+          .oneOf(name),
         isAutoCSSModuleRule: false,
       },
     ].filter(Boolean);

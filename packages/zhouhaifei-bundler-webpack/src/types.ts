@@ -25,7 +25,7 @@ export namespace interfaces {
     outputPath?: string;
     devtool?: Config.DevTool;
     publicPath?: string;
-    define?: {[key: string]: any; };
+    define?: Record<string, any>;
     externals?: Configuration['externals'];
     preloadOptions?: false | Record<string, any>;
     forkTsCheckerOptions?: false | Record<string, any>;
@@ -43,7 +43,9 @@ export namespace interfaces {
     deadCode?: { directories?: string[]; exclude?: string[]; root?: string; };
     htmlOption?: false | HtmlWebpackPlugin.Options;
     svgr?: false | Record<string, any>;
-    lessLoaderOptions?: {[key: string]: any; };
+    lessLoaderOptions?: Record<string, any>;
+    sassLoaderOptions?: Record<string, any>;
+    stylusLoaderOptions?: Record<string, any>;
     autoCSSModules?: boolean;
     styleLoaderOptions?: false | Record<string, any>;
     cssLoaderModules?: Record<string, any>;
@@ -87,7 +89,7 @@ export namespace interfaces {
 
   export interface ApplyOptions {
     readonly config: Config;
-    readonly browsers: UserConfig['targets'];
+    readonly browsers: string[];
     readonly env: ConfigOptions['env'];
     readonly cwd: ConfigOptions['cwd'];
     readonly userConfig: UserConfig;

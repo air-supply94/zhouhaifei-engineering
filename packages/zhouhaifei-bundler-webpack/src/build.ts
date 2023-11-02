@@ -2,9 +2,13 @@ import webpack from 'webpack';
 import { getConfig } from './config/config';
 import { interfaces } from './types';
 
-export async function build(options: interfaces.BuildOptions) {
+export async function build({
+  userConfig = {},
+  ...rest
+}: interfaces.BuildOptions) {
   const config = await getConfig({
-    ...options,
+    ...rest,
+    userConfig,
     env: interfaces.Env.production,
   });
 

@@ -7,3 +7,4 @@ dist
 packages/generator-zhouhaifei-react
 docs-dist
 .github
+compiled

@@ -1,0 +1,32 @@
+{
+  "name": "@zhouhaifei/bundler-utils",
+  "version": "2.28.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "compiled"
+  ],
+  "license": "MIT",
+  "author": "zhouhaifei1994@sina.com",
+  "dependencies": {
+    "esbuild": "0.19.4"
+  },
+  "devDependencies": {
+    "dotenv": "16.3.1",
+    "dotenv-expand": "10.0.0",
+    "cac": "6.7.14",
+    "father": "4.3.5",
+    "rimraf": "5.0.1"
+  },
+  "scripts": {
+    "doctor": "father doctor",
+    "dev": "father dev",
+    "build": "rimraf dist && father build",
+    "build:deps": "rimraf compiled && father prebundle"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

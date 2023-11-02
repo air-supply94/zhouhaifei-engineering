@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-export const { version } = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../package.json'), 'utf8').toString());
+export const { version } = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../package.json'), 'utf8').toString());
 
 export const DEFAULT_DEV_DEVTOOL = 'cheap-module-source-map';
 export const DEFAULT_BUILD_DEVTOOL = 'source-map';

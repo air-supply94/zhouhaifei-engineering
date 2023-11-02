@@ -3,8 +3,7 @@ import Config from 'webpack-5-chain';
 import crypto from 'crypto';
 import { DEFAULT_BROWSER_TARGETS, DEFAULT_BUILD_DEVTOOL, DEFAULT_DEV_DEVTOOL, DEFAULT_OUTPUT_PATH, version } from '../constants';
 import { interfaces } from '../types';
-import { getBrowsersList } from '../utils/getBrowsersList';
-import { resolveFile } from '../utils/lookupFile';
+import { resolveFile } from '@zhouhaifei/bundler-utils';
 import path from 'path';
 import webpack from 'webpack';
 import { assetRule } from './assetRule';
@@ -21,7 +20,6 @@ import { definePlugin } from './definePlugin';
 import { speedMeasurePlugin } from './speedMeasurePlugin';
 import { progressPlugin } from './progressPlugin';
 import { ignorePlugin } from './ignorePlugin';
-import { harmonyLinkingErrorPlugin } from './harmonyLinkingErrorPlugin';
 import { svgRule } from './svgRule';
 import { unusedPlugin } from './unusedPlugin ';
 import { htmlPlugin } from './htmlPlugin';
@@ -31,6 +29,16 @@ function createEnvironmentHash(userEnv: interfaces.ConfigOptions['userEnv']) {
   hash.update(JSON.stringify(userEnv));
 
   return hash.digest('hex');
+}
+
+function getBrowsersList({ targets }: interfaces.UserConfig['targets']): string[] {
+  return (
+    targets.browsers ||
+    Object.keys(targets)
+      .map((key) => {
+        return `${key} >= ${targets[key] === true ? '0' : targets[key]}`;
+      })
+  );
 }
 
 export async function getConfig(options: interfaces.ConfigOptions): Promise<Configuration> {
@@ -45,8 +53,8 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
     chainWebpack,
     modifyWebpackConfig,
   } = options;
-  userConfig.targets ||= DEFAULT_BROWSER_TARGETS;
-  userConfig.inlineLimit ||= 1024 * 8;
+  userConfig.targets = userConfig.targets || DEFAULT_BROWSER_TARGETS;
+  userConfig.inlineLimit = userConfig.inlineLimit || 1024 * 8;
   userConfig.publicPath = process.env.PUBLIC_URL || userConfig.publicPath || '/';
 
   const nodeModules = /node_modules/;
@@ -167,7 +175,6 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
   bundleAnalyzerPlugin(applyOptions);
   copyPlugin(applyOptions);
   manifestPlugin(applyOptions);
-  harmonyLinkingErrorPlugin(applyOptions);
   unusedPlugin(applyOptions);
 
   // chain webpack

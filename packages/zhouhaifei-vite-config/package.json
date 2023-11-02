@@ -1,24 +1,22 @@
 {
   "name": "@zhouhaifei/vite-config",
   "version": "2.28.1",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
+    "doctor": "father doctor",
     "dev": "father dev",
-    "build": "rimraf dist && father build",
-    "build:deps": "father prebundle"
+    "build": "rimraf dist && father build"
   },
   "dependencies": {
+    "@zhouhaifei/bundler-utils": "workspace:*",
     "@babel/plugin-proposal-class-properties": "7.18.6",
     "@babel/plugin-proposal-decorators": "7.22.7",
     "@vitejs/plugin-react": "4.0.0",
-    "dotenv": "16.3.1",
-    "dotenv-expand": "10.0.0",
-    "vite-plugin-externals": "0.6.2",
     "vite-plugin-html": "3.2.0",
     "vite-plugin-load-css-module": "0.1.4",
     "vite-plugin-require-transform": "1.0.20",

@@ -6,7 +6,7 @@ export function bundleAnalyzerPlugin({
   isProduction,
   userConfig: { analyze },
 }: interfaces.ApplyOptions) {
-  if (isProduction && analyze) {
+  if (isProduction && (process.env.ANALYZE === '1' || analyze)) {
     config
       .plugin('webpack-bundle-analyzer')
       .use(BundleAnalyzerPlugin, [
