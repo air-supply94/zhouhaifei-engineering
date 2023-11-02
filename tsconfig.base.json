@@ -28,14 +28,5 @@
     "resolveJsonModule": true, //导入 JSON Module
     "alwaysStrict": false //以严格模式解析并为每个源文件生成 "use strict"语句
   },
-  "exclude": [
-    "**/node_modules",
-    "**/examples",
-    "**/dist",
-    "**/fixtures",
-    "**/*.test.ts",
-    "**/*.e2e.ts",
-    "**/templates",
-    "ui"
-  ]
+  "exclude": ["**/node_modules", "**/examples", "**/dist", "**/fixtures", "**/*.test.ts", "**/*.e2e.ts", "**/templates", "ui"]
 }

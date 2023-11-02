@@ -78,7 +78,7 @@ export function cssRule({
     const moduleAndNormal = [
       autoCSSModules !== false && {
         rule: rule
-          .oneOf(`${name}-modules`)
+          .oneOf(`${name}-module`)
           .exclude
           .add(/node_modules/)
           .add(globalExtensions.map((val) => path.resolve(srcDir, `global.${val}`)))

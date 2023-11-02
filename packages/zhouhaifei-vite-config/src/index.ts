@@ -70,7 +70,7 @@ export function getDefaultViteConfig({
             ],
             [
               babelPluginProposalClassProperties,
-              { loose: false },
+              { loose: true },
             ],
           ],
         },

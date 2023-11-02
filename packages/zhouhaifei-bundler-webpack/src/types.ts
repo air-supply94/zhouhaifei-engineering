@@ -62,7 +62,7 @@ export namespace interfaces {
     userConfig: UserConfig;
     env: Env;
 
-    userEnv?: Record<string, string | number>;
+    userEnv?: Record<string, string>;
     staticPathPrefix?: string;
     cache?: {
       buildDependencies?: string[];

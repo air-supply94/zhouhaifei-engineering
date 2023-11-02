@@ -24,7 +24,6 @@
     "@types/react-dom": "^18.2.7",
     "@zhouhaifei/bundler-webpack": "workspace:*",
     "@zhouhaifei/code-style": "workspace:*",
-    "@zhouhaifei/pc-config": "workspace:*",
     "@zhouhaifei/vite-config": "workspace:*",
     "cross-env": "7.0.3",
     "eslint": "7.29.0",

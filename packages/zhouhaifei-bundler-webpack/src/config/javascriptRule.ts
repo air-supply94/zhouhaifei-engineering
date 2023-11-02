@@ -1,19 +1,19 @@
-import { interfaces } from '../types';
-import path from 'path';
+import type { interfaces } from '../types';
+import { generateBabelConfig } from '@zhouhaifei/babel-preset';
 
 export function javascriptRule({
   config,
   userConfig,
-  env,
-  cwd,
   isDevelopment,
+  srcDir,
+  browsers,
 }: interfaces.ApplyOptions) {
   const rule = config
     .module
     .rule('javascript')
     .test(/\.(js|mjs|jsx|ts|tsx)$/)
     .include
-    .add(path.resolve(cwd, 'src'))
+    .add(srcDir)
     .end();
 
   if (isDevelopment) {
@@ -24,6 +24,11 @@ export function javascriptRule({
         target: 'es2015',
       });
   } else {
+    const {
+      presets,
+      plugins,
+    } = generateBabelConfig({});
+
     rule.use('thread-loader')
       .loader(require.resolve('thread-loader'))
       .options({
@@ -34,11 +39,13 @@ export function javascriptRule({
       .loader(require.resolve('babel-loader'))
       .options({
         sourceType: 'unambiguous', // 自动处理es和js模块
+        babelrc: false,
+        configFile: false,
         cacheDirectory: true,
-
-        // See #6846 for context on why cacheCompression is disabled
-        cacheCompression: false,
-        compact: env === interfaces.Env.production,
+        browserslistConfigFile: false,
+        targets: browsers,
+        presets,
+        plugins,
       });
   }
 }
