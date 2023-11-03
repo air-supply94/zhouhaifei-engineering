@@ -4,8 +4,7 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 import { createStyleImportPlugin, AntdResolve } from 'vite-plugin-style-import';
 import loadCssModulePlugin from 'vite-plugin-load-css-module';
 import requireTransform from 'vite-plugin-require-transform';
-import babelPluginProposalDecorators from '@babel/plugin-proposal-decorators';
-import babelPluginProposalClassProperties from '@babel/plugin-proposal-class-properties';
+import { generateBabelConfig } from '@zhouhaifei/babel-preset';
 import { loadEnv } from '@zhouhaifei/bundler-utils';
 
 function defineEnv() {
@@ -63,16 +62,10 @@ export function getDefaultViteConfig({
       }) : null,
       react({
         babel: {
-          plugins: [
-            [
-              babelPluginProposalDecorators,
-              { version: 'legacy' },
-            ],
-            [
-              babelPluginProposalClassProperties,
-              { loose: true },
-            ],
-          ],
+          plugins: generateBabelConfig({
+            pluginTransformRuntime: false,
+            classProperties: {},
+          }).plugins,
         },
       }),
     ].filter(Boolean),

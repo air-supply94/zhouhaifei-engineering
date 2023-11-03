@@ -17,6 +17,7 @@ import { manifestPlugin } from './manifestPlugin';
 import { miniCssExtractPlugin } from './miniCssExtractPlugin';
 import { preloadPlugin } from './preloadPlugin';
 import { definePlugin } from './definePlugin';
+import { reactRefreshPlugin } from './reactRefreshPlugin';
 import { speedMeasurePlugin } from './speedMeasurePlugin';
 import { progressPlugin } from './progressPlugin';
 import { ignorePlugin } from './ignorePlugin';
@@ -53,13 +54,18 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
     chainWebpack,
     modifyWebpackConfig,
   } = options;
-  userConfig.targets = userConfig.targets || DEFAULT_BROWSER_TARGETS;
-  userConfig.inlineLimit = userConfig.inlineLimit || 1024 * 8;
-  userConfig.publicPath = process.env.PUBLIC_URL || userConfig.publicPath || '/';
-
   const nodeModules = /node_modules/;
   const isDev = env === interfaces.Env.development;
   const config = new Config();
+
+  userConfig.transpiler = userConfig.transpiler
+    ? userConfig.transpiler
+    : isDev
+      ? interfaces.Transpiler.esbuild
+      : interfaces.Transpiler.babel;
+  userConfig.targets = userConfig.targets || DEFAULT_BROWSER_TARGETS;
+  userConfig.inlineLimit = userConfig.inlineLimit || 1024 * 8;
+  userConfig.publicPath = process.env.PUBLIC_URL || userConfig.publicPath || '/';
 
   const applyOptions: interfaces.ApplyOptions = {
     config,
@@ -176,6 +182,7 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
   copyPlugin(applyOptions);
   manifestPlugin(applyOptions);
   unusedPlugin(applyOptions);
+  reactRefreshPlugin(applyOptions);
 
   // chain webpack
   if (chainWebpack) {

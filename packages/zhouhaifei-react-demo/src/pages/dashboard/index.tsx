@@ -3,6 +3,8 @@ import { Card } from 'antd';
 import styles from './index.less';
 import mock from 'mockjs';
 import { request } from '../../utils';
+import { observable, action } from 'mobx';
+import { observer } from 'mobx-react';
 
 mock.mock('/api/test', 'get', {
   'list|100': [
@@ -14,7 +16,17 @@ mock.mock('/api/test', 'get', {
   ],
 });
 
-export default function() {
+class Store {
+  @observable public age = 0;
+
+  @action public setAge = () => {
+    this.age++;
+  };
+}
+
+const store = new Store();
+
+export default observer(() => {
   React.useEffect(() => {
     request({ url: '/api/test' })
       .then((data) => {
@@ -23,10 +35,15 @@ export default function() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      onClick={store.setAge}
+    >
       <Card>
         hello
+        {store.age}
       </Card>
     </div>
   );
 }
+);

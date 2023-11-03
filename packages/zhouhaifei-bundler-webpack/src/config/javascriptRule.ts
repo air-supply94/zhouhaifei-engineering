@@ -1,10 +1,20 @@
-import type { interfaces } from '../types';
+import { interfaces } from '../types';
 import { generateBabelConfig } from '@zhouhaifei/babel-preset';
 
 export function javascriptRule({
   config,
-  userConfig,
-  isDevelopment,
+  userConfig: {
+    extraPreset,
+    extraPlugins,
+    presetEnv,
+    presetReact,
+    presetTypeScript,
+    pluginTransformRuntime,
+    pluginDecorators,
+    transpiler,
+    reactRefresh,
+    babelLoaderOptions,
+  },
   srcDir,
   browsers,
 }: interfaces.ApplyOptions) {
@@ -12,22 +22,33 @@ export function javascriptRule({
     .module
     .rule('javascript')
     .test(/\.(js|mjs|jsx|ts|tsx)$/)
+    .exclude
+    .add(/node_modules/)
+    .end()
     .include
     .add(srcDir)
     .end();
 
-  if (isDevelopment) {
+  if (transpiler === interfaces.Transpiler.esbuild) {
     rule.use('esbuild-loader')
       .loader(require.resolve('esbuild-loader'))
       .options({
         loader: 'tsx',
         target: 'es2015',
       });
-  } else {
+  } else if (transpiler === interfaces.Transpiler.babel) {
     const {
       presets,
       plugins,
-    } = generateBabelConfig({});
+    } = generateBabelConfig({
+      extraPreset,
+      extraPlugins,
+      presetEnv,
+      presetReact,
+      presetTypeScript,
+      pluginTransformRuntime,
+      pluginDecorators,
+    });
 
     rule.use('thread-loader')
       .loader(require.resolve('thread-loader'))
@@ -35,6 +56,7 @@ export function javascriptRule({
         // additional node.js arguments
         workerNodeArgs: ['--max-old-space-size=1024'],
       });
+
     rule.use('babel-loader')
       .loader(require.resolve('babel-loader'))
       .options({
@@ -44,8 +66,9 @@ export function javascriptRule({
         cacheDirectory: true,
         browserslistConfigFile: false,
         targets: browsers,
+        ...babelLoaderOptions,
         presets,
-        plugins,
+        plugins: plugins.concat(reactRefresh ? [require.resolve('react-refresh/babel')] : []),
       });
   }
 }

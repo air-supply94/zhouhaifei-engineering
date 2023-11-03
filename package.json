@@ -2,33 +2,32 @@
   "name": "zhouhaifei-engineering",
   "private": true,
   "homepage": "https://air-supply94.github.io/zhouhaifei-engineering/",
-  "version": "0.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/air-supply94/zhouhaifei-engineering.git",
     "branch": "master",
     "platform": "github"
   },
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "^pnpm@8.9.2",
   "engines": {
-    "node": ">= 16",
+    "node": ">= 16.20",
     "pnpm": "^8.9.2"
   },
   "devDependencies": {
     "turbo": "^1.10.16",
     "@changesets/cli": "2.26.2",
-    "@commitlint/cli": "^11.0.0",
+    "@commitlint/cli": "11.0.0",
     "@zhouhaifei/code-style": "workspace:*",
-    "commitizen": "^4.2.2",
-    "conventional-changelog-cli": "^2.1.1",
-    "cz-conventional-changelog": "^3.3.0",
+    "commitizen": "4.2.2",
+    "conventional-changelog-cli": "2.1.1",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "7.29.0",
     "husky": "4.3.0",
     "lint-staged": "10.5.2",
     "prettier": "2.2.1",
     "stylelint": "13.13.1",
     "typescript": "4.2.4",
-    "validate-commit-msg": "^2.14.0"
+    "validate-commit-msg": "2.14.0"
   },
   "husky": {
     "hooks": {

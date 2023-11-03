@@ -13,10 +13,9 @@
     "build": "rimraf dist && father build"
   },
   "dependencies": {
-    "@zhouhaifei/bundler-utils": "workspace:*",
-    "@babel/plugin-proposal-class-properties": "7.18.6",
-    "@babel/plugin-proposal-decorators": "7.22.7",
     "@vitejs/plugin-react": "4.0.0",
+    "@zhouhaifei/babel-preset": "workspace:*",
+    "@zhouhaifei/bundler-utils": "workspace:*",
     "vite-plugin-html": "3.2.0",
     "vite-plugin-load-css-module": "0.1.4",
     "vite-plugin-require-transform": "1.0.20",

@@ -5,6 +5,7 @@ import type { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import type { ManifestPluginOptions } from 'webpack-manifest-plugin';
 import type HtmlWebpackPlugin from 'html-webpack-plugin';
 import type { ProxyConfigMap, ProxyConfigArray } from 'webpack-dev-server';
+import type { GenerateBabelConfigOptions } from '@zhouhaifei/babel-preset';
 
 export namespace interfaces {
 
@@ -13,12 +14,19 @@ export namespace interfaces {
     production = 'production',
   }
 
+  export enum Transpiler {
+    babel = 'babel',
+    esbuild = 'esbuild',
+    none = 'none',
+  }
+
   export interface CopyOptions {
     from: string;
     to: string;
   }
 
-  export interface UserConfig {
+  export interface UserConfig extends GenerateBabelConfigOptions {
+    transpiler?: keyof typeof Transpiler;
     alias?: Record<string, string>;
     targets?: Record<string, any>;
     inlineLimit?: number;
@@ -54,6 +62,8 @@ export namespace interfaces {
     autoprefixer?: Record<string, any>;
     extraPostCSSPlugins?: any[];
     proxy?: ProxyConfigMap | ProxyConfigArray;
+    reactRefresh?: boolean;
+    babelLoaderOptions?: Record<string, any>;
   }
 
   export interface ConfigOptions {

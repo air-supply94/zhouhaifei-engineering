@@ -7,7 +7,6 @@
     "dist",
     "compiled"
   ],
-  "license": "MIT",
   "author": "zhouhaifei1994@sina.com",
   "dependencies": {
     "esbuild": "0.19.4"

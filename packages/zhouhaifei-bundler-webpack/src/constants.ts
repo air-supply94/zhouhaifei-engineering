@@ -13,5 +13,5 @@ export const DEFAULT_BROWSER_TARGETS = {
   Firefox: 80,
 };
 
-export const DEFAULT_CONFIG_NAME = '.bundlerWebpackConfig';
+export const DEFAULT_CONFIG_NAME = '.bundlerConfig';
 
