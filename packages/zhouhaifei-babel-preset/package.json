@@ -9,6 +9,7 @@
   ],
   "author": "zhouhaifei1994@sina.com",
   "dependencies": {
+    "@babel/core": "7.23.2",
     "@babel/plugin-proposal-decorators": "7.23.2",
     "@babel/plugin-proposal-do-expressions": "7.22.5",
     "@babel/plugin-proposal-duplicate-named-capturing-groups-regex": "7.22.5",
@@ -43,7 +44,6 @@
     "build:deps": "rimraf compiled && father prebundle"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "access": "public"
   }
 }

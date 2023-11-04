@@ -1,5 +1,6 @@
 import { interfaces } from '../types';
 import { generateBabelConfig } from '@zhouhaifei/babel-preset';
+import webpack from 'webpack';
 
 export function javascriptRule({
   config,
@@ -36,6 +37,9 @@ export function javascriptRule({
         loader: 'tsx',
         target: 'es2015',
       });
+
+    config.plugin('react-provide-plugin')
+      .use(webpack.ProvidePlugin, [{ React: 'react' }]);
   } else if (transpiler === interfaces.Transpiler.babel) {
     const {
       presets,

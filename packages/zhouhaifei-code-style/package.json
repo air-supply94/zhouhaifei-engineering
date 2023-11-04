@@ -28,8 +28,7 @@
     "stylelint-order": "5.0.0"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "access": "public"
   },
   "gitHead": "e764dd3251d852c9b7879f4bcc5e50262648bda8"
 }

@@ -4,12 +4,55 @@ import path from 'path';
 export interface GenerateBabelConfigOptions {
   extraPreset?: any;
   extraPlugins?: any;
-  presetEnv?: Record<string, any>;
-  presetReact?: false | Record<string, any>;
-  presetTypeScript?: Record<string, any>;
-  pluginTransformRuntime?: false | Record<string, any>;
-  pluginDecorators?: false | Record<string, any>;
-  classProperties?: Record<string, any>;
+  presetEnv?: {
+    targets: string | string[] | Record<string, string>;
+    bugfixes?: boolean;
+    spec?: boolean;
+    loose?: boolean;
+    modules?: 'amd' | 'umd' | 'systemjs' | 'commonjs' | 'cjs' | 'auto' | false;
+    debug?: boolean;
+    include?: Array<string | RegExp>;
+    exclude?: Array<string | RegExp>;
+    useBuiltIns?: 'usage' | 'entry' | false;
+    corejs?: { version: string; proposals: boolean; };
+    configPath?: string;
+    ignoreBrowserslistConfig?: boolean;
+    browserslistEnv?: string;
+    shippedProposals?: boolean;
+  };
+  presetReact?: false | {
+    runtime?: 'classic' | 'automatic';
+    development?: boolean;
+    throwIfNamespace?: boolean;
+    pure?: boolean;
+    importSource?: string;
+    pragma?: string;
+    pragmaFrag?: string;
+  };
+  presetTypeScript?: {
+    isTSX?: boolean;
+    jsxPragma?: string;
+    jsxPragmaFrag?: string;
+    allExtensions?: boolean;
+    allowNamespaces?: boolean;
+    allowDeclareFields?: boolean;
+    disallowAmbiguousJSXLike?: boolean;
+    onlyRemoveTypeImports?: boolean;
+    optimizeConstEnums?: boolean;
+    rewriteImportExtensions?: boolean;
+  };
+  pluginTransformRuntime?: false | {
+    corejs?: false | 2 | 3 | { version: 2 | 3; proposals: boolean; };
+    helpers?: boolean;
+    regenerator?: boolean;
+    absoluteRuntime?: string | boolean;
+    version?: string;
+  };
+  pluginDecorators?: false | {
+    version?: '2023-05' | '2023-01' | '2022-03' | '2021-12' | '2018-09' | 'legacy';
+    decoratorsBeforeExport?: boolean;
+  };
+  classProperties?: { loose?: boolean; };
 }
 
 export function generateBabelConfig({
@@ -46,7 +89,7 @@ export function generateBabelConfig({
           },
           ignoreBrowserslistConfig: true,
           ...presetEnv,
-        },
+        } as GenerateBabelConfigOptions['presetEnv'],
       ],
 
       // 转换jsx语法
@@ -56,7 +99,7 @@ export function generateBabelConfig({
           runtime: 'automatic',
           development: process.env.NODE_ENV === 'development',
           ...presetReact,
-        },
+        } as GenerateBabelConfigOptions['presetReact'],
       ],
 
       // 转换ts语法
@@ -68,7 +111,7 @@ export function generateBabelConfig({
           onlyRemoveTypeImports: false,
           optimizeConstEnums: true,
           ...presetTypeScript,
-        },
+        } as GenerateBabelConfigOptions['presetTypeScript'],
       ],
     ].concat(extraPreset)
       .filter(Boolean),
@@ -79,7 +122,7 @@ export function generateBabelConfig({
         {
           version: 'legacy',
           ...pluginDecorators,
-        },
+        } as GenerateBabelConfigOptions['pluginDecorators'],
       ],
 
       // preset-env内置了下面插件,webpack打包不需要下面插件
@@ -89,21 +132,21 @@ export function generateBabelConfig({
         {
           loose: true,
           ...classProperties,
-        },
+        } as GenerateBabelConfigOptions['classProperties'],
       ],
       classProperties && [
         require.resolve('@babel/plugin-proposal-private-methods'),
         {
           loose: true,
           ...classProperties,
-        },
+        } as GenerateBabelConfigOptions['classProperties'],
       ],
       classProperties && [
         require.resolve('@babel/plugin-proposal-private-property-in-object'),
         {
           loose: true,
           ...classProperties,
-        },
+        } as GenerateBabelConfigOptions['classProperties'],
       ],
 
       // do-expressions
@@ -145,7 +188,7 @@ export function generateBabelConfig({
           absoluteRuntime: path.dirname(require.resolve('../package.json')),
           version: runtimeVersion,
           ...pluginTransformRuntime,
-        },
+        } as GenerateBabelConfigOptions['pluginTransformRuntime'],
       ],
     ].concat(extraPlugins)
       .filter(Boolean),

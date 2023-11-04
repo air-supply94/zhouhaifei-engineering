@@ -12,13 +12,11 @@
     "zhouhaifei-bundler-webpack": "bin/zhouhaifei-bundler-webpack.js"
   },
   "dependencies": {
-    "@babel/core": "7.23.2",
     "@svgr/webpack": "8.1.0",
     "@zhouhaifei/babel-preset": "workspace:*",
     "@zhouhaifei/bundler-utils": "workspace:*",
     "babel-loader": "9.1.3",
     "case-sensitive-paths-webpack-plugin": "2.4.0",
-    "chalk": "5.3.0",
     "copy-webpack-plugin": "11.0.0",
     "css-loader": "6.8.1",
     "css-minimizer-webpack-plugin": "5.0.1",
@@ -61,8 +59,7 @@
     "build:deps": "rimraf compiled && father prebundle"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "access": "public"
   },
   "gitHead": "e764dd3251d852c9b7879f4bcc5e50262648bda8"
 }

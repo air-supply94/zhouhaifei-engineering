@@ -5,16 +5,18 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "compiled"
+    "compiled",
+    "bundless"
   ],
   "author": "zhouhaifei1994@sina.com",
   "dependencies": {
     "esbuild": "0.19.4"
   },
   "devDependencies": {
+    "picocolors": "1.0.0",
+    "cac": "6.7.14",
     "dotenv": "16.3.1",
     "dotenv-expand": "10.0.0",
-    "cac": "6.7.14",
     "father": "4.3.5",
     "rimraf": "5.0.1"
   },
@@ -25,7 +27,6 @@
     "build:deps": "rimraf compiled && father prebundle"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "access": "public"
   }
 }

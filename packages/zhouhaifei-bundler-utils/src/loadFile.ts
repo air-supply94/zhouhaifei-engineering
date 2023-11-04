@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { build } from 'esbuild';
+import { build } from '../bundless/esbuild';
 import { createRequire } from 'module';
 
 const _require = createRequire(process.cwd());

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-export function tryFiles(filenames: string[]): string {
+export function tryFiles(filenames: string[]): string | null {
   for (let i = 0; i < filenames.length; i++) {
     const filename = filenames[i];
     if (fs.existsSync(filename)) {
