@@ -10,18 +10,19 @@
   "scripts": {
     "doctor": "father doctor",
     "dev": "father dev",
-    "build": "rimraf dist && father build"
+    "build": "rimraf dist && father build",
+    "build:deps": "rimraf compiled && father prebundle"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "4.0.0",
     "@zhouhaifei/babel-preset": "workspace:*",
     "@zhouhaifei/bundler-utils": "workspace:*",
+    "@vitejs/plugin-react": "4.0.0"
+  },
+  "devDependencies": {
     "vite-plugin-html": "3.2.0",
     "vite-plugin-load-css-module": "0.1.4",
     "vite-plugin-require-transform": "1.0.20",
-    "vite-plugin-style-import": "2.0.0"
-  },
-  "devDependencies": {
+    "vite-plugin-style-import": "2.0.0",
     "father": "4.3.5",
     "rimraf": "5.0.1",
     "vite": "^4.4.5"

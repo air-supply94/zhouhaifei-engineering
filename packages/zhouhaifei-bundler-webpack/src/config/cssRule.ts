@@ -1,3 +1,4 @@
+import { getBrowsersList } from '../utils/getBrowsersList';
 import type { interfaces } from '../types';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
@@ -15,7 +16,6 @@ const globalExtensions = [
 
 export function cssRule({
   config,
-  browsers,
   isDevelopment,
   srcDir,
   userConfig: {
@@ -29,6 +29,7 @@ export function cssRule({
     postcssLoaderOptions,
     sassLoaderOptions,
     stylusLoaderOptions,
+    targets,
   },
 }: interfaces.ApplyOptions) {
   const rulesConfig = [
@@ -150,7 +151,7 @@ export function cssRule({
             plugins: [
               postcssFlexbugsFixes,
               postcssPresetEnv({
-                browsers,
+                browsers: getBrowsersList(targets),
                 autoprefixer: {
                   remove: false,
                   grid: true,

@@ -1,23 +1,27 @@
+import { getBrowsersList } from '../utils/getBrowsersList';
 import { interfaces } from '../types';
 import { generateBabelConfig } from '@zhouhaifei/babel-preset';
 import webpack from 'webpack';
 
 export function javascriptRule({
   config,
+  isDevelopment,
   userConfig: {
-    extraPreset,
-    extraPlugins,
-    presetEnv,
-    presetReact,
-    presetTypeScript,
-    pluginTransformRuntime,
-    pluginDecorators,
+    babelPluginImport,
+    babelExtraPreset,
+    babelExtraPlugins,
+    babelPresetEnv,
+    babelPresetReact,
+    babelPresetTypeScript,
+    babelPluginTransformRuntime,
+    babelPluginDecorators,
     transpiler,
     reactRefresh,
     babelLoaderOptions,
+    esbuildLoaderOptions,
+    targets,
   },
   srcDir,
-  browsers,
 }: interfaces.ApplyOptions) {
   const rule = config
     .module
@@ -36,6 +40,7 @@ export function javascriptRule({
       .options({
         loader: 'tsx',
         target: 'es2015',
+        ...esbuildLoaderOptions,
       });
 
     config.plugin('react-provide-plugin')
@@ -45,13 +50,14 @@ export function javascriptRule({
       presets,
       plugins,
     } = generateBabelConfig({
-      extraPreset,
-      extraPlugins,
-      presetEnv,
-      presetReact,
-      presetTypeScript,
-      pluginTransformRuntime,
-      pluginDecorators,
+      babelPluginImport,
+      babelExtraPreset,
+      babelExtraPlugins,
+      babelPresetEnv,
+      babelPresetReact,
+      babelPresetTypeScript,
+      babelPluginTransformRuntime,
+      babelPluginDecorators,
     });
 
     rule.use('thread-loader')
@@ -69,7 +75,7 @@ export function javascriptRule({
         configFile: false,
         cacheDirectory: true,
         browserslistConfigFile: false,
-        targets: browsers,
+        targets: getBrowsersList(targets),
         ...babelLoaderOptions,
         presets,
         plugins: plugins.concat(reactRefresh ? [require.resolve('react-refresh/babel')] : []),

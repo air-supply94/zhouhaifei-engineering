@@ -9,6 +9,7 @@ import webpack from 'webpack';
 import { assetRule } from './assetRule';
 import { bundleAnalyzerPlugin } from './bundleAnalyzerPlugin';
 import { caseSensitivePathsPlugin } from './caseSensitivePathsPlugin';
+import { compressPlugin } from './compressPlugin';
 import { copyPlugin } from './copyPlugin';
 import { cssRule } from './cssRule';
 import { forkTsCheckerPlugin } from './forkTsCheckerPlugin';
@@ -32,16 +33,6 @@ function createEnvironmentHash(userEnv: interfaces.ConfigOptions['userEnv']) {
   return hash.digest('hex');
 }
 
-function getBrowsersList({ targets }: interfaces.UserConfig['targets']): string[] {
-  return (
-    targets.browsers ||
-    Object.keys(targets)
-      .map((key) => {
-        return `${key} >= ${targets[key] === true ? '0' : targets[key]}`;
-      })
-  );
-}
-
 export async function getConfig(options: interfaces.ConfigOptions): Promise<Configuration> {
   const {
     userConfig = {},
@@ -58,21 +49,18 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
   const isDev = env === interfaces.Env.development;
   const config = new Config();
 
-  userConfig.transpiler = userConfig.transpiler
-    ? userConfig.transpiler
-    : isDev
-      ? interfaces.Transpiler.esbuild
-      : interfaces.Transpiler.babel;
-  userConfig.targets = userConfig.targets || DEFAULT_BROWSER_TARGETS;
-  userConfig.inlineLimit = userConfig.inlineLimit || 1024 * 8;
-  userConfig.publicPath = process.env.PUBLIC_URL || userConfig.publicPath || '/';
+  userConfig.transpiler ||= interfaces.Transpiler.babel;
+  userConfig.jsMinifier ||= interfaces.JSMinifier.esbuild;
+  userConfig.cssMinifier ||= interfaces.CSSMinifier.esbuild;
+  userConfig.targets ||= DEFAULT_BROWSER_TARGETS;
+  userConfig.inlineLimit ||= 1024 * 8;
+  userConfig.publicPath ||= process.env.PUBLIC_URL || '/';
 
   const applyOptions: interfaces.ApplyOptions = {
     config,
     userConfig,
     cwd,
     env,
-    browsers: getBrowsersList({ targets: userConfig.targets }),
     staticPathPrefix,
     isDevelopment: env === interfaces.Env.development,
     isProduction: env === interfaces.Env.production,
@@ -183,6 +171,7 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
   manifestPlugin(applyOptions);
   unusedPlugin(applyOptions);
   reactRefreshPlugin(applyOptions);
+  compressPlugin(applyOptions);
 
   // chain webpack
   if (chainWebpack) {

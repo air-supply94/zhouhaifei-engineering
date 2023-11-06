@@ -6,6 +6,9 @@ import type { ManifestPluginOptions } from 'webpack-manifest-plugin';
 import type HtmlWebpackPlugin from 'html-webpack-plugin';
 import type { ProxyConfigMap, ProxyConfigArray } from 'webpack-dev-server';
 import type { GenerateBabelConfigOptions } from '@zhouhaifei/babel-preset';
+import type { TransformOptions as EsbuildOptions } from '@zhouhaifei/bundler-utils/bundless/esbuild';
+import type { MinifyOptions as TerserOptions } from 'terser';
+import type { CssNanoOptions } from 'css-minimizer-webpack-plugin';
 
 export namespace interfaces {
 
@@ -20,6 +23,18 @@ export namespace interfaces {
     none = 'none',
   }
 
+  export enum JSMinifier {
+    terser = 'terser',
+    esbuild = 'esbuild',
+    none = 'none',
+  }
+
+  export enum CSSMinifier {
+    esbuild = 'esbuild',
+    cssnano = 'cssnano',
+    none = 'none',
+  }
+
   export interface CopyOptions {
     from: string;
     to: string;
@@ -27,8 +42,13 @@ export namespace interfaces {
 
   export interface UserConfig extends GenerateBabelConfigOptions {
     transpiler?: keyof typeof Transpiler;
+    jsMinifier?: keyof typeof JSMinifier;
+    cssMinifier?: keyof typeof CSSMinifier;
+    jsMinifierOptions?: EsbuildOptions | TerserOptions;
+    cssMinifierOptions?: EsbuildOptions | CssNanoOptions | Record<string, any>;
+    esbuildLoaderOptions?: EsbuildOptions;
     alias?: Record<string, string>;
-    targets?: Record<string, any>;
+    targets?: Record< 'chrome' | 'edge' | 'safari' | 'firefox', string | number>;
     inlineLimit?: number;
     outputPath?: string;
     devtool?: Config.DevTool;
@@ -99,7 +119,6 @@ export namespace interfaces {
 
   export interface ApplyOptions {
     readonly config: Config;
-    readonly browsers: string[];
     readonly env: ConfigOptions['env'];
     readonly cwd: ConfigOptions['cwd'];
     readonly userConfig: UserConfig;

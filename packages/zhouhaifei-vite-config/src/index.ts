@@ -1,9 +1,9 @@
 import type { UserConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { createHtmlPlugin } from 'vite-plugin-html';
-import { createStyleImportPlugin, AntdResolve } from 'vite-plugin-style-import';
-import loadCssModulePlugin from 'vite-plugin-load-css-module';
-import requireTransform from 'vite-plugin-require-transform';
+import { createHtmlPlugin } from '../compiled/vite-plugin-html';
+import { createStyleImportPlugin, AntdResolve } from '../compiled/vite-plugin-style-import';
+import loadCssModulePlugin from '../compiled/vite-plugin-load-css-module';
+import requireTransform from '../compiled/vite-plugin-require-transform';
 import { generateBabelConfig } from '@zhouhaifei/babel-preset';
 import { loadEnv } from '@zhouhaifei/bundler-utils';
 
@@ -63,8 +63,8 @@ export function getDefaultViteConfig({
       react({
         babel: {
           plugins: generateBabelConfig({
-            pluginTransformRuntime: false,
-            classProperties: {},
+            babelPluginTransformRuntime: false,
+            babelClassProperties: {},
           }).plugins,
         },
       }),
