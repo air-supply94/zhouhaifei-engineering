@@ -10,7 +10,7 @@
     "allowSyntheticDefaultImports": true, //允许从没有设置默认导出的模块中默认导入
     "allowJs": true, // 允许编译 javascript 文件
     "isolatedModules": true, //将每个文件作为单独的模块
-    "useDefineForClassFields": true,
+    "useDefineForClassFields": false,
     "experimentalDecorators": true, //启用实验性的ES装饰器
     "emitDecoratorMetadata": false, //给源码里的装饰器声明加上设计类型元数据
     "strictNullChecks": false, //在严格的 null检查模式下， null和 undefined值不包含在任何类型里，只允许用它们自己和 any来赋值（有个例外， undefined可以赋值到 void）

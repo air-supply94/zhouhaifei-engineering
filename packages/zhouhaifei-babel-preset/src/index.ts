@@ -79,7 +79,7 @@ export function generateBabelConfig({
         require.resolve('../compiled/@babel/preset-env'),
         {
           bugfixes: true,
-          loose: true,
+          loose: false,
 
           // 保留 es modules 语法,交给 webpack 处理
           modules: false,

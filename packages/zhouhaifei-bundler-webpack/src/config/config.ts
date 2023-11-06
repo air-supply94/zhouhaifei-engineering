@@ -49,7 +49,7 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
   const isDev = env === interfaces.Env.development;
   const config = new Config();
 
-  userConfig.transpiler ||= interfaces.Transpiler.babel;
+  userConfig.transpiler ||= interfaces.Transpiler.esbuild;
   userConfig.jsMinifier ||= interfaces.JSMinifier.esbuild;
   userConfig.cssMinifier ||= interfaces.CSSMinifier.esbuild;
   userConfig.targets ||= DEFAULT_BROWSER_TARGETS;

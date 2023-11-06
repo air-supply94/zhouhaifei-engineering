@@ -21,7 +21,6 @@ class Store {
 
   @action public setAge = () => {
     this.age++;
-    console.log(this.age);
   };
 }
 
