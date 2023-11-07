@@ -7,4 +7,6 @@ packages/generator-zhouhaifei-react
 .umi-production
 docs-dist
 .github
+
 compiled
+bundles

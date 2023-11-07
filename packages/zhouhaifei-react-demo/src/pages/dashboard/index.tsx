@@ -45,5 +45,4 @@ export default observer(() => {
       </Card>
     </div>
   );
-}
-);
+});

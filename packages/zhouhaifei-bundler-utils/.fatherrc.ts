@@ -1,11 +1,13 @@
-import { defineConfig } from 'father';
+import {defineConfig} from 'father';
 
 export default defineConfig({
   extends: '../../.fatherrc.base.ts',
   prebundle: {
     deps: [
-      'picocolors',
+      'chalk',
+      'cross-spawn',
       'cac',
+      'open',
       'dotenv',
       'dotenv-expand'
     ],

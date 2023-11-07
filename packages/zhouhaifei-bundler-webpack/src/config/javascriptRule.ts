@@ -5,7 +5,6 @@ import webpack from 'webpack';
 
 export function javascriptRule({
   config,
-  isDevelopment,
   userConfig: {
     babelPluginImport,
     babelExtraPreset,
@@ -19,6 +18,7 @@ export function javascriptRule({
     reactRefresh,
     babelLoaderOptions,
     esbuildLoaderOptions,
+    threadLoaderOptions,
     targets,
   },
   srcDir,
@@ -60,12 +60,14 @@ export function javascriptRule({
       babelPluginDecorators,
     });
 
-    rule.use('thread-loader')
-      .loader(require.resolve('thread-loader'))
-      .options({
-        // additional node.js arguments
-        workerNodeArgs: ['--max-old-space-size=1024'],
-      });
+    if (threadLoaderOptions) {
+      rule.use('thread-loader')
+        .loader(require.resolve('thread-loader'))
+        .options({
+          // additional node.js arguments
+          workerNodeArgs: ['--max-old-space-size=1024'],
+        });
+    }
 
     rule.use('babel-loader')
       .loader(require.resolve('babel-loader'))

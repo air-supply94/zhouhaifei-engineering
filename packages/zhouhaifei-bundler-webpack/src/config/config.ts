@@ -16,6 +16,7 @@ import { forkTsCheckerPlugin } from './forkTsCheckerPlugin';
 import { javascriptRule } from './javascriptRule';
 import { manifestPlugin } from './manifestPlugin';
 import { miniCssExtractPlugin } from './miniCssExtractPlugin';
+import { optimization } from './optimization';
 import { preloadPlugin } from './preloadPlugin';
 import { definePlugin } from './definePlugin';
 import { reactRefreshPlugin } from './reactRefreshPlugin';
@@ -49,6 +50,7 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
   const isDev = env === interfaces.Env.development;
   const config = new Config();
 
+  userConfig.codeSplitting ||= interfaces.CodeSplit.granularChunks;
   userConfig.transpiler ||= interfaces.Transpiler.esbuild;
   userConfig.jsMinifier ||= interfaces.JSMinifier.esbuild;
   userConfig.cssMinifier ||= interfaces.CSSMinifier.esbuild;
@@ -172,6 +174,7 @@ export async function getConfig(options: interfaces.ConfigOptions): Promise<Conf
   unusedPlugin(applyOptions);
   reactRefreshPlugin(applyOptions);
   compressPlugin(applyOptions);
+  optimization(applyOptions);
 
   // chain webpack
   if (chainWebpack) {

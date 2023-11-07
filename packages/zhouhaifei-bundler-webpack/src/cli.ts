@@ -11,13 +11,15 @@ interface cliData {
   config?: string;
   port?: string;
   host?: string;
+  watch?: boolean;
+  open?: boolean;
 }
 
 const cli = cac('zhouhaifei-bundler-webpack');
 const cwd = fs.realpathSync(process.cwd());
 const userConfigFile = tryFiles([
-  path.resolve(cwd, `${DEFAULT_CONFIG_NAME }.ts`),
-  path.resolve(cwd, `${DEFAULT_CONFIG_NAME }.js`),
+  path.resolve(cwd, `${DEFAULT_CONFIG_NAME}.ts`),
+  path.resolve(cwd, `${DEFAULT_CONFIG_NAME}.js`),
 ]);
 
 const extensions = [
@@ -39,11 +41,13 @@ cli
   .alias('start')
   .option('--port [port]', 'your port')
   .option('--host [host]', 'your host')
+  .option('--open [open]', 'open browser')
   .action(async(root, options: cliData) => {
     process.env.NODE_ENV = interfaces.Env.development;
 
     const userEnv = loadEnv(cwd, '.env') || {};
     const userConfig: interfaces.UserConfig = await loadFile(options?.config ? path.resolve(cwd, options.config) : userConfigFile) || {};
+    userConfig.open ||= Boolean(options.open);
     await dev({
       userConfig,
       cwd,
@@ -57,17 +61,18 @@ cli
 // build
 cli
   .command('build [root]', 'build for production')
+  .option('--watch [watch]', 'watch file')
   .action(async(root, options: cliData) => {
     process.env.NODE_ENV = interfaces.Env.production;
 
     const userEnv = loadEnv(cwd, '.env');
     const userConfig: interfaces.UserConfig = await loadFile(options?.config ? path.resolve(cwd, options.config) : userConfigFile) || {};
-
     await build({
       userConfig,
       cwd,
       userEnv,
       entry,
+      watch: Boolean(options.watch),
     });
   });
 

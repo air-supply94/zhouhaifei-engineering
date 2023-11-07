@@ -6,7 +6,7 @@ import type { ManifestPluginOptions } from 'webpack-manifest-plugin';
 import type HtmlWebpackPlugin from 'html-webpack-plugin';
 import type { ProxyConfigMap, ProxyConfigArray } from 'webpack-dev-server';
 import type { GenerateBabelConfigOptions } from '@zhouhaifei/babel-preset';
-import type { TransformOptions as EsbuildOptions } from '@zhouhaifei/bundler-utils/bundless/esbuild';
+import type { TransformOptions as EsbuildOptions } from '@zhouhaifei/bundler-utils/bundles/esbuild';
 import type { MinifyOptions as TerserOptions } from 'terser';
 import type { CssNanoOptions } from 'css-minimizer-webpack-plugin';
 
@@ -40,6 +40,12 @@ export namespace interfaces {
     to: string;
   }
 
+  export enum CodeSplit {
+    default = 'default',
+    depPerChunk = 'depPerChunk',
+    granularChunks = 'granularChunks',
+  }
+
   export interface UserConfig extends GenerateBabelConfigOptions {
     transpiler?: keyof typeof Transpiler;
     jsMinifier?: keyof typeof JSMinifier;
@@ -47,8 +53,10 @@ export namespace interfaces {
     jsMinifierOptions?: EsbuildOptions | TerserOptions;
     cssMinifierOptions?: EsbuildOptions | CssNanoOptions | Record<string, any>;
     esbuildLoaderOptions?: EsbuildOptions;
+    threadLoaderOptions?: Record<string, any>;
+    codeSplitting?: keyof typeof CodeSplit;
     alias?: Record<string, string>;
-    targets?: Record< 'chrome' | 'edge' | 'safari' | 'firefox', string | number>;
+    targets?: Record<'chrome' | 'edge' | 'safari' | 'firefox', string | number>;
     inlineLimit?: number;
     outputPath?: string;
     devtool?: Config.DevTool;
@@ -84,6 +92,7 @@ export namespace interfaces {
     proxy?: ProxyConfigMap | ProxyConfigArray;
     reactRefresh?: boolean;
     babelLoaderOptions?: Record<string, any>;
+    open?: boolean;
   }
 
   export interface ConfigOptions {

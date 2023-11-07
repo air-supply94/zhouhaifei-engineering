@@ -3,7 +3,7 @@ import type { TerserOptions } from 'terser-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import { interfaces } from '../types';
 import { getEsBuildTarget } from '../utils/getEsBuildTarget';
-import type { TransformOptions as EsbuildOptions } from '@zhouhaifei/bundler-utils/bundless/esbuild';
+import type { TransformOptions as EsbuildOptions } from '@zhouhaifei/bundler-utils/bundles/esbuild';
 
 export function compressPlugin({
   userConfig: {
@@ -47,7 +47,17 @@ export function compressPlugin({
   } else if (jsMinifier === interfaces.JSMinifier.terser) {
     minify = TerserPlugin.terserMinify;
     terserOptions = {
-      format: { comments: false },
+      ecma: 2015,
+      keep_classnames: false,
+      keep_fnames: false,
+      compress: {
+        comparisons: false,
+        inline: 2,
+      },
+      format: {
+        comments: false,
+        ascii_only: true,
+      },
       ...jsMinifierOptions,
     } as TerserOptions;
   }

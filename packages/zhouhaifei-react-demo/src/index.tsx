@@ -4,16 +4,15 @@ import { BrowserRouter } from 'react-router-dom';
 import './global.less';
 import { RenderRoutes } from './routes';
 import { Locale } from './utils';
+import NProgress from 'nprogress';
 
 render();
 
 function render() {
+  NProgress.start();
   function Internal() {
     React.useLayoutEffect(() => {
-      if (process.env.NPROGRESS === 'YES') {
-        // @ts-ignore
-        NProgress.done();
-      }
+      NProgress.done();
     }, []);
 
     return (

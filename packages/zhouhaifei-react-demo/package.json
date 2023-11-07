@@ -3,6 +3,7 @@
   "version": "2.27.0",
   "private": true,
   "dependencies": {
+    "nprogress": "0.2.0",
     "antd": "5.2.1",
     "axios": "0.27.2",
     "lodash": "4.17.21",
@@ -15,6 +16,7 @@
     "react-router-dom": "6.3.0"
   },
   "devDependencies": {
+    "@types/nprogress": "0.2.2",
     "@commitlint/cli": "11.0.0",
     "@types/lodash": "4.14.165",
     "@types/mockjs": "1.0.3",
@@ -28,12 +30,12 @@
     "cross-env": "7.0.3",
     "eslint": "7.29.0",
     "mockjs": "1.1.0",
-    "typescript": "4.2.4",
+    "typescript": "5.0.4",
     "vite": "4.4.5"
   },
   "scripts": {
     "start-vite": "vite",
-    "start": "zhouhaifei-bundler-webpack start",
+    "start": "zhouhaifei-bundler-webpack start --open",
     "build-local": "zhouhaifei-bundler-webpack build"
   },
   "gitHead": "d2aa9ce735309d393ebe6452ac392a6a76d9fae6"
