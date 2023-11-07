@@ -5,6 +5,7 @@ import { interfaces } from './types';
 import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 import path from 'path';
 import { openBrowser } from '@zhouhaifei/bundler-utils';
+import url from 'url';
 
 export async function dev({
   port,
@@ -23,7 +24,14 @@ export async function dev({
   const protocol = 'http';
   host = host || process.env.HOST || '0.0.0.0';
   port = port || parseInt(process.env.PORT, 10) || 3000;
-  const url = `${protocol}://${host === '0.0.0.0' ? 'localhost' : host}:${port}`;
+  const openUrl = url.format({
+    protocol,
+    hostname: host === '0.0.0.0' || host === '::' ? 'localhost' : host,
+    port,
+    pathname: '/',
+  });
+
+  // const url = `${protocol}://${host === '0.0.0.0' ? 'localhost' : host}:${port}`;
 
   const compiler = webpack(webpackConfig);
   const devServerOptions: DevServerConfiguration = {
@@ -67,6 +75,6 @@ export async function dev({
   const server = new WebpackDevServer(devServerOptions, compiler);
   await server.start();
   if (userConfig.open) {
-    openBrowser(url, true);
+    openBrowser(openUrl, true);
   }
 }

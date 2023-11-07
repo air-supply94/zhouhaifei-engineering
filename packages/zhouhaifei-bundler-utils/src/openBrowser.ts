@@ -8,7 +8,6 @@
  * copy from vite
  */
 
-import path from 'path';
 import { exec } from 'child_process';
 import type { ExecOptions } from 'child_process';
 import open from 'open';
@@ -94,7 +93,7 @@ async function startBrowserProcess(
         // Try our best to reuse existing tab with AppleScript
         await execAsync(
           `osascript openChrome.applescript "${encodeURI(url)}" "${openedBrowser}"`,
-          { cwd: path.dirname(__dirname) }
+          { cwd: __dirname }
         );
         return true;
       }
