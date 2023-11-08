@@ -4,7 +4,7 @@ import type { Configuration } from 'webpack';
 import type { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import type { ManifestPluginOptions } from 'webpack-manifest-plugin';
 import type HtmlWebpackPlugin from 'html-webpack-plugin';
-import type { ProxyConfigMap, ProxyConfigArray } from 'webpack-dev-server';
+import type { ProxyConfigMap } from 'webpack-dev-server';
 import type { GenerateBabelConfigOptions } from '@zhouhaifei/babel-preset';
 import type { TransformOptions as EsbuildOptions } from 'esbuild';
 import type { MinifyOptions as TerserOptions } from 'terser';
@@ -76,7 +76,9 @@ export interface UserConfig extends GenerateBabelConfigOptions {
       webpack: typeof webpack;
     },
   ) => void | Promise<void>;
-  analyze?: BundleAnalyzerPlugin.Options;
+  analyzer?: BundleAnalyzerPlugin.Options;
+  analyzerPort?: number;
+  nocompress?: boolean;
   manifestOptions?: ManifestPluginOptions;
   ignoreMomentLocale?: boolean;
   copy?: CopyOptions[] | string[];
@@ -93,11 +95,28 @@ export interface UserConfig extends GenerateBabelConfigOptions {
   postcssLoaderOptions?: Record<string, any>;
   autoprefixer?: Record<string, any>;
   extraPostCSSPlugins?: any[];
-  proxy?: ProxyConfigMap | ProxyConfigArray;
+  proxy?: ProxyConfigMap;
   reactRefresh?: boolean;
   babelLoaderOptions?: Record<string, any>;
-  open?: boolean;
+  staticPathPrefix?: string;
   vite?: ViteUserConfig;
+  open?: boolean;
+  port?: number;
+  host?: string;
+  watch?: boolean;
+}
+
+export interface AAA extends GenerateBabelConfigOptions {
+  externals?: Configuration['externals'];
+  svgr?: false | Record<string, any>;
+
+  lessLoaderOptions?: Record<string, any>;
+  sassLoaderOptions?: Record<string, any>;
+  stylusLoaderOptions?: Record<string, any>;
+  autoCSSModules?: boolean;
+  postcssLoaderOptions?: Record<string, any>;
+  autoprefixer?: Record<string, any>;
+  extraPostCSSPlugins?: any[];
 }
 
 export interface WebpackConfigOptions {
@@ -107,7 +126,6 @@ export interface WebpackConfigOptions {
   env: Env;
 
   userEnv?: Record<string, string>;
-  staticPathPrefix?: string;
   cache?: {
     buildDependencies?: string[];
     cacheDirectory?: string;
@@ -122,21 +140,15 @@ export interface WebpackConfigOptions {
   ) => Configuration | Promise<Configuration>;
 }
 
-export type WebpackBuildOptions = {
-  watch?: boolean;
-} & Omit<WebpackConfigOptions, 'env'>;
+export type WebpackBuildOptions = Omit<WebpackConfigOptions, 'env'>;
 
-export type WebpackDevOptions = {
-  port?: number;
-  host?: string;
-} & Omit<WebpackConfigOptions, 'env'>;
+export type WebpackDevOptions = Omit<WebpackConfigOptions, 'env'>;
 
 export interface WebpackApplyOptions {
   readonly config: Config;
   readonly env: WebpackConfigOptions['env'];
   readonly cwd: WebpackConfigOptions['cwd'];
   readonly userConfig: UserConfig;
-  readonly staticPathPrefix: WebpackConfigOptions['staticPathPrefix'];
   readonly isDevelopment: boolean;
   readonly isProduction: boolean;
   readonly srcDir: string;
@@ -144,11 +156,17 @@ export interface WebpackApplyOptions {
 }
 
 export interface ViteDevOptions {
-  entryFile: string;
-  cwd: WebpackConfigOptions['cwd'];
-  userConfig: UserConfig;
-  env: Env;
-  userEnv?: WebpackConfigOptions['userEnv'];
-  port?: number;
+  readonly cwd: WebpackConfigOptions['cwd'];
+  readonly userConfig: UserConfig;
+  readonly env: Env;
+  readonly userEnv?: WebpackConfigOptions['userEnv'];
+}
+
+export interface cliOptions {
+  config?: string;
+  port?: string;
   host?: string;
+  watch?: boolean;
+  open?: boolean;
+  vite?: boolean;
 }

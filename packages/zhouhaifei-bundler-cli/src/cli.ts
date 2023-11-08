@@ -5,18 +5,9 @@ import { buildWebpack } from './build-webpack';
 import { DEFAULT_CONFIG_NAME, version } from './constants';
 import { devVite } from './dev-vite';
 import { devWebpack } from './dev-webpack';
-import type { UserConfig } from './types';
+import type { cliOptions, UserConfig } from './types';
 import { CliTool, Env } from './types';
-import { loadEnv, loadFile, resolveFile, resolveModule, tryFiles } from './utils';
-
-interface cliData {
-  config?: string;
-  port?: string;
-  host?: string;
-  watch?: boolean;
-  open?: boolean;
-  vite?: boolean;
-}
+import { loadEnv, loadFile, resolveFile, resolveModule, tryFiles, initUserConfig } from './utils';
 
 const cli = cac('zhouhaifei-bundler-cli');
 const cwd = fs.realpathSync(process.cwd());
@@ -44,22 +35,24 @@ cli
   .option('--host [host]', 'your host')
   .option('--open [open]', 'open browser')
   .option('--vite [vite]', 'vite strat your application')
-  .action(async(root, options: cliData) => {
+  .action(async(root, options: cliOptions) => {
     process.env.NODE_ENV = Env.development;
 
     const userEnv = loadEnv(cwd, '.env') || {};
     const userConfig: UserConfig = await loadFile(options?.config ? path.resolve(cwd, options.config) : userConfigFile) || {};
-    userConfig.open ||= Boolean(options.open);
+    initUserConfig(userConfig, {
+      open: options.open,
+      port: options?.port,
+      host: options?.host,
+    });
+
     if (options.vite || userConfig.vite) {
       process.env.CLI_TOOL = CliTool.vite;
       await devVite({
-        entryFile,
         userConfig,
         cwd,
         userEnv,
         env: Env.development,
-        host: options?.host,
-        port: options?.port ? parseInt(options.port, 10) : undefined,
       });
     } else {
       process.env.CLI_TOOL = CliTool.webpack;
@@ -68,8 +61,6 @@ cli
         cwd,
         userEnv,
         entry,
-        host: options?.host,
-        port: options?.port ? parseInt(options.port, 10) : undefined,
       });
     }
   });
@@ -78,18 +69,19 @@ cli
 cli
   .command('build [root]', 'build for production')
   .option('--watch [watch]', 'watch file')
-  .action(async(root, options: cliData) => {
+  .action(async(root, options: cliOptions) => {
     process.env.NODE_ENV = Env.production;
     process.env.CLI_TOOL = CliTool.webpack;
 
     const userEnv = loadEnv(cwd, '.env');
     const userConfig: UserConfig = await loadFile(options?.config ? path.resolve(cwd, options.config) : userConfigFile) || {};
+    initUserConfig(userConfig, { watch: options?.watch });
+
     await buildWebpack({
       userConfig,
       cwd,
       userEnv,
       entry,
-      watch: Boolean(options.watch),
     });
   });
 

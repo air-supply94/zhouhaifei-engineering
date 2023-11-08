@@ -13,13 +13,14 @@ export function compressPlugin({
     targets,
     jsMinifierOptions,
     cssMinifierOptions,
+    nocompress,
   },
   isDevelopment,
   config,
 }: WebpackApplyOptions) {
   if (
     isDevelopment ||
-    process.env.COMPRESS === 'none' ||
+    nocompress ||
     (jsMinifier === JSMinifier.none && cssMinifier === CSSMinifier.none)
   ) {
     config.optimization.minimize(false);

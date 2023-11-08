@@ -9,8 +9,6 @@ import type { WebpackDevOptions } from './types';
 import { Env } from './types';
 
 export async function devWebpack({
-  port,
-  host,
   cwd,
   userConfig = {},
   ...rest
@@ -23,8 +21,12 @@ export async function devWebpack({
   });
 
   const protocol = 'http';
-  host = host || process.env.HOST || '0.0.0.0';
-  port = port || parseInt(process.env.PORT, 10) || 3000;
+  const {
+    host,
+    port,
+    proxy,
+    open,
+  } = userConfig;
   const openUrl = url.format({
     protocol,
     hostname: host === '0.0.0.0' || host === '::' ? 'localhost' : host,
@@ -32,11 +34,9 @@ export async function devWebpack({
     pathname: '/',
   });
 
-  // const url = `${protocol}://${host === '0.0.0.0' ? 'localhost' : host}:${port}`;
-
   const compiler = webpack(webpackConfig);
   const devServerOptions: DevServerConfiguration = {
-    proxy: userConfig.proxy,
+    proxy,
     open: false,
     hot: true,
     allowedHosts: 'all',
@@ -75,7 +75,7 @@ export async function devWebpack({
   };
   const server = new WebpackDevServer(devServerOptions, compiler);
   await server.start();
-  if (userConfig.open) {
+  if (open) {
     openBrowser(openUrl, true);
   }
 }

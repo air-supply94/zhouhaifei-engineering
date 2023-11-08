@@ -1,12 +1,11 @@
 import type { Configuration } from 'webpack';
 import Config from 'webpack-5-chain';
 import crypto from 'crypto';
-import { DEFAULT_BROWSER_TARGETS, DEFAULT_BUILD_DEVTOOL, DEFAULT_DEV_DEVTOOL, DEFAULT_OUTPUT_PATH, version } from '../constants';
+import { version } from '../constants';
 import path from 'path';
 import webpack from 'webpack';
-import { CodeSplit, CSSMinifier, Env, JSMinifier, Transpiler } from '../types';
+import { Env } from '../types';
 import type { WebpackConfigOptions, WebpackApplyOptions } from '../types';
-import { getPublicUrl } from '../utils/getPublicUrl';
 import { assetRule } from './assetRule';
 import { bundleAnalyzerPlugin } from './bundleAnalyzerPlugin';
 import { caseSensitivePathsPlugin } from './caseSensitivePathsPlugin';
@@ -41,7 +40,6 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
     env,
     cwd,
     entry = {},
-    staticPathPrefix = 'static/',
     userEnv = {},
     cache = {},
     chainWebpack,
@@ -50,21 +48,19 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
   const nodeModules = /node_modules/;
   const isDev = env === Env.development;
   const config = new Config();
-
-  userConfig.codeSplitting ||= CodeSplit.granularChunks;
-  userConfig.transpiler ||= Transpiler.esbuild;
-  userConfig.jsMinifier ||= JSMinifier.esbuild;
-  userConfig.cssMinifier ||= CSSMinifier.esbuild;
-  userConfig.targets ||= DEFAULT_BROWSER_TARGETS;
-  userConfig.inlineLimit ||= 1024 * 8;
-  userConfig.publicPath = getPublicUrl(userConfig.publicPath);
-
+  const {
+    outputPath,
+    staticPathPrefix,
+    externals,
+    alias,
+    publicPath,
+    devtool,
+  } = userConfig;
   const applyOptions: WebpackApplyOptions = {
     config,
     userConfig,
     cwd,
     env,
-    staticPathPrefix,
     isDevelopment: env === Env.development,
     isProduction: env === Env.production,
     srcDir: path.resolve(cwd, 'src'),
@@ -99,7 +95,7 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
   config.stats('none');
   config.mode(options.env);
   config.bail(!isDev);
-  config.devtool(userConfig.devtool === false || userConfig.devtool ? userConfig.devtool : isDev ? DEFAULT_DEV_DEVTOOL : DEFAULT_BUILD_DEVTOOL);
+  config.devtool(devtool);
 
   // resolve
   config.resolve
@@ -108,7 +104,7 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
     .add('node_modules')
     .end()
     .alias
-    .merge(userConfig.alias || {})
+    .merge(alias)
     .end()
     .extensions
     .merge([
@@ -124,22 +120,18 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
     .end();
 
   // output
-  const outputPath = path.resolve(
-    cwd,
-    userConfig.outputPath || DEFAULT_OUTPUT_PATH
-  );
   config.output
     .clean(true)
-    .path(outputPath)
+    .path(path.resolve(cwd, outputPath))
     .filename(isDev ? '[name].js' : '[name].[contenthash].js')
     .chunkFilename(isDev ? '[name].async.js' : '[name].[contenthash].async.js')
-    .publicPath(userConfig.publicPath)
+    .publicPath(publicPath)
     .pathinfo(true)
     .set('assetModuleFilename', `${staticPathPrefix}[name].[hash][ext]`)
     .set('hashFunction', 'xxhash64');
 
   // externals
-  config.externals(userConfig.externals || []);
+  config.externals(externals);
 
   // target
   config.target([

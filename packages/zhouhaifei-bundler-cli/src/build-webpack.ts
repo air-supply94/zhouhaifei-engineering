@@ -5,10 +5,10 @@ import { Env } from './types';
 import chalk from 'chalk';
 
 export async function buildWebpack({
-  watch,
   userConfig = {},
   ...rest
 }: WebpackBuildOptions) {
+  const { watch } = userConfig;
   const webpackConfig = await config({
     ...rest,
     userConfig,

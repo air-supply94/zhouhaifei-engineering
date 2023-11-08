@@ -5,7 +5,6 @@ import { CodeSplit } from '../types';
 export function optimization({
   config,
   isProduction,
-  cwd,
   userConfig: { codeSplitting },
 }: WebpackApplyOptions) {
   config

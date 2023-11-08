@@ -32,6 +32,11 @@ export default observer(() => {
       .then((data) => {
         console.log(data);
       });
+
+    request({ url: '/api/iac/role/user/perms' })
+      .then((data) => {
+        console.log(data);
+      });
   }, []);
 
   return (

@@ -3,7 +3,6 @@ import type { WebpackApplyOptions } from '../types';
 
 export function miniCssExtractPlugin({
   config,
-  env,
   isProduction,
 }: WebpackApplyOptions) {
   if (isProduction) {
