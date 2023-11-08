@@ -10,6 +10,7 @@ render();
 
 function render() {
   NProgress.start();
+
   function Internal() {
     React.useLayoutEffect(() => {
       NProgress.done();
@@ -24,18 +25,15 @@ function render() {
     );
   }
 
-  createRoot(document.getElementById('root')).render(<Internal/>);
+  createRoot(document.getElementById('root'))
+    .render(<Internal/>);
 }
 
-// @ts-ignore
-if (typeof module !== 'undefined' && module.hot) {
-  // @ts-ignore
-  module.hot.accept(render);
-}
-
-// .env.development配置相关环境变量
-if (process.env.IS_VITE === 'YES') {
+if (process.env.CLI_TOOL === 'vite') {
   // @ts-ignore
   import.meta.hot.accept();
+} else if (process.env.CLI_TOOL === 'webpack') {
+  // @ts-ignore
+  module.hot.accept(render);
 }
 

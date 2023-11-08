@@ -1,0 +1,6 @@
+## 其它环境变量
+
+- PUBLIC_URL
+- ANALYZE_PORT
+- ANALYZE: 1 开启
+- COMPRESS: 压缩

@@ -24,19 +24,16 @@
     "@types/qs": "6.9.5",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "@zhouhaifei/bundler-webpack": "workspace:*",
+    "@zhouhaifei/bundler-cli": "workspace:*",
     "@zhouhaifei/code-style": "workspace:*",
-    "@zhouhaifei/vite-config": "workspace:*",
     "cross-env": "7.0.3",
     "eslint": "7.29.0",
-    "mockjs": "1.1.0",
-    "typescript": "5.0.4",
-    "vite": "4.4.5"
+    "mockjs": "1.1.0"
   },
   "scripts": {
-    "start-vite": "vite",
-    "start": "zhouhaifei-bundler-webpack start --open",
-    "build-local": "zhouhaifei-bundler-webpack build"
+    "dev-vite": "zhouhaifei-bundler-cli dev --vite --open",
+    "dev-webpack": "zhouhaifei-bundler-cli dev --open",
+    "build-local": "zhouhaifei-bundler-cli build"
   },
   "gitHead": "d2aa9ce735309d393ebe6452ac392a6a76d9fae6"
 }

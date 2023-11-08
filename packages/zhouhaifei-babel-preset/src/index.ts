@@ -76,7 +76,7 @@ export function generateBabelConfig({
     presets: [
       // preset-env
       [
-        require.resolve('../compiled/@babel/preset-env'),
+        require.resolve('@babel/preset-env'),
         {
           bugfixes: true,
           loose: true,
@@ -96,7 +96,7 @@ export function generateBabelConfig({
 
       // 转换jsx语法
       babelPresetReact !== false && [
-        require.resolve('../compiled/@babel/preset-react'),
+        require.resolve('@babel/preset-react'),
         {
           runtime: 'automatic',
           development: process.env.NODE_ENV === 'development',
@@ -106,7 +106,7 @@ export function generateBabelConfig({
 
       // 转换ts语法
       [
-        require.resolve('../compiled/@babel/preset-typescript'),
+        require.resolve('@babel/preset-typescript'),
         {
           allowNamespaces: true,
           allowDeclareFields: true,
@@ -120,7 +120,7 @@ export function generateBabelConfig({
     plugins: [
       // babel-plugin-import
       babelPluginImport && [
-        require.resolve('../compiled/babel-plugin-import'),
+        require.resolve('babel-plugin-import'),
         typeof babelPluginImport === 'string' ? {
           libraryName: babelPluginImport,
           libraryDirectory: 'es',
@@ -130,7 +130,7 @@ export function generateBabelConfig({
 
       // 支持装饰器语法
       babelPluginDecorators !== false && [
-        require.resolve('../compiled/@babel/plugin-proposal-decorators'),
+        require.resolve('@babel/plugin-proposal-decorators'),
         {
           version: 'legacy',
           ...babelPluginDecorators,
@@ -140,21 +140,21 @@ export function generateBabelConfig({
       // preset-env内置了下面插件,webpack打包不需要下面插件
       // vite dev使用esbuild打包,不需要preset和transform-runtime,需要下面插件
       babelClassProperties && [
-        require.resolve('../compiled/@babel/plugin-proposal-class-properties'),
+        require.resolve('@babel/plugin-proposal-class-properties'),
         {
           loose: true,
           ...babelClassProperties,
         } as GenerateBabelConfigOptions['babelClassProperties'],
       ],
       babelClassProperties && [
-        require.resolve('../compiled/@babel/plugin-proposal-private-methods'),
+        require.resolve('@babel/plugin-proposal-private-methods'),
         {
           loose: true,
           ...babelClassProperties,
         } as GenerateBabelConfigOptions['babelClassProperties'],
       ],
       babelClassProperties && [
-        require.resolve('../compiled/@babel/plugin-proposal-private-property-in-object'),
+        require.resolve('@babel/plugin-proposal-private-property-in-object'),
         {
           loose: true,
           ...babelClassProperties,
@@ -162,38 +162,38 @@ export function generateBabelConfig({
       ],
 
       // do-expressions
-      require.resolve('../compiled/@babel/plugin-proposal-do-expressions'),
+      require.resolve('@babel/plugin-proposal-do-expressions'),
 
       // duplicate-named-capturing-groups-regex
-      require.resolve('../compiled/@babel/plugin-proposal-duplicate-named-capturing-groups-regex'),
+      require.resolve('@babel/plugin-proposal-duplicate-named-capturing-groups-regex'),
 
       // 支持 export v from 'mod'语法
-      require.resolve('../compiled/@babel/plugin-proposal-export-default-from'),
+      require.resolve('@babel/plugin-proposal-export-default-from'),
 
       // function-bind
-      require.resolve('../compiled/@babel/plugin-proposal-function-bind'),
+      require.resolve('@babel/plugin-proposal-function-bind'),
 
       // function-sent
-      require.resolve('../compiled/@babel/plugin-proposal-function-sent'),
+      require.resolve('@babel/plugin-proposal-function-sent'),
 
       // partial-application
-      require.resolve('../compiled/@babel/plugin-proposal-partial-application'),
+      require.resolve('@babel/plugin-proposal-partial-application'),
 
       // pipeline-operator
       [
-        require.resolve('../compiled/@babel/plugin-proposal-pipeline-operator'),
+        require.resolve('@babel/plugin-proposal-pipeline-operator'),
         { proposal: 'minimal' },
       ],
 
       // throw-expressions
-      require.resolve('../compiled/@babel/plugin-proposal-throw-expressions'),
+      require.resolve('@babel/plugin-proposal-throw-expressions'),
 
       // record-and-tuple
-      require.resolve('../compiled/@babel/plugin-proposal-record-and-tuple'),
+      require.resolve('@babel/plugin-proposal-record-and-tuple'),
 
       // transform-runtime
       babelPluginTransformRuntime !== false && [
-        require.resolve('../compiled/@babel/plugin-transform-runtime'),
+        require.resolve('@babel/plugin-transform-runtime'),
         {
           helpers: true,
           regenerator: true,

@@ -1,0 +1,98 @@
+import cac from 'cac';
+import fs from 'fs';
+import path from 'path';
+import { buildWebpack } from './build-webpack';
+import { DEFAULT_CONFIG_NAME, version } from './constants';
+import { devVite } from './dev-vite';
+import { devWebpack } from './dev-webpack';
+import type { UserConfig } from './types';
+import { CliTool, Env } from './types';
+import { loadEnv, loadFile, resolveFile, resolveModule, tryFiles } from './utils';
+
+interface cliData {
+  config?: string;
+  port?: string;
+  host?: string;
+  watch?: boolean;
+  open?: boolean;
+  vite?: boolean;
+}
+
+const cli = cac('zhouhaifei-bundler-cli');
+const cwd = fs.realpathSync(process.cwd());
+const userConfigFile = tryFiles([
+  path.resolve(cwd, `${DEFAULT_CONFIG_NAME}.ts`),
+  path.resolve(cwd, `${DEFAULT_CONFIG_NAME}.js`),
+]);
+
+const extensions = [
+  '.js',
+  '.jsx',
+  '.ts',
+  '.tsx',
+];
+
+const entryFile = resolveModule(resolveFile.bind(null, cwd), 'src/index', extensions) || resolveModule(resolveFile.bind(null, cwd), 'index', extensions);
+const entry = { [`${path.basename(entryFile, path.extname(entryFile))}`]: entryFile };
+
+cli.option('-c, --config [config]', 'your config file');
+
+// dev
+cli
+  .command('dev [root]', 'start dev server')
+  .option('--port [port]', 'your port')
+  .option('--host [host]', 'your host')
+  .option('--open [open]', 'open browser')
+  .option('--vite [vite]', 'vite strat your application')
+  .action(async(root, options: cliData) => {
+    process.env.NODE_ENV = Env.development;
+
+    const userEnv = loadEnv(cwd, '.env') || {};
+    const userConfig: UserConfig = await loadFile(options?.config ? path.resolve(cwd, options.config) : userConfigFile) || {};
+    userConfig.open ||= Boolean(options.open);
+    if (options.vite || userConfig.vite) {
+      process.env.CLI_TOOL = CliTool.vite;
+      await devVite({
+        entryFile,
+        userConfig,
+        cwd,
+        userEnv,
+        env: Env.development,
+        host: options?.host,
+        port: options?.port ? parseInt(options.port, 10) : undefined,
+      });
+    } else {
+      process.env.CLI_TOOL = CliTool.webpack;
+      await devWebpack({
+        userConfig,
+        cwd,
+        userEnv,
+        entry,
+        host: options?.host,
+        port: options?.port ? parseInt(options.port, 10) : undefined,
+      });
+    }
+  });
+
+// build
+cli
+  .command('build [root]', 'build for production')
+  .option('--watch [watch]', 'watch file')
+  .action(async(root, options: cliData) => {
+    process.env.NODE_ENV = Env.production;
+    process.env.CLI_TOOL = CliTool.webpack;
+
+    const userEnv = loadEnv(cwd, '.env');
+    const userConfig: UserConfig = await loadFile(options?.config ? path.resolve(cwd, options.config) : userConfigFile) || {};
+    await buildWebpack({
+      userConfig,
+      cwd,
+      userEnv,
+      entry,
+      watch: Boolean(options.watch),
+    });
+  });
+
+cli.help();
+cli.version(version);
+cli.parse();
