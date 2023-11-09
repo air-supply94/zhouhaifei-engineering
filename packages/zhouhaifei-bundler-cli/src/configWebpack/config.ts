@@ -132,9 +132,9 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
     .set('assetModuleFilename', `${staticPathPrefix}[name].[hash][ext]`)
     .set('hashFunction', 'xxhash64');
 
-  // externals
-  // react18.2 dev环境报错
-  config.externals(isProduction ? externals : {});
+  config
+    .externalsType('window')
+    .externals(externals);
 
   // target
   config.target([

@@ -69,7 +69,7 @@ export interface UserConfig extends GenerateBabelConfigOptions {
   devtool?: Config.DevTool;
   publicPath?: string;
   define?: Record<string, any>;
-  externals?: Record<string, { root?: string; commonjs?: string; commonjs2?: string; amd?: string; }>;
+  externals?: Record<string, string>;
   preloadOptions?: false | Record<string, any>;
   forkTsCheckerOptions?: false | Record<string, any>;
   chainWebpack?: (

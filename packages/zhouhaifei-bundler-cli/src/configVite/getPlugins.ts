@@ -41,7 +41,6 @@ export function getPlugins({
         }).plugins,
       },
     }),
-
     InjectEntryScriptPlugin(),
   ];
 

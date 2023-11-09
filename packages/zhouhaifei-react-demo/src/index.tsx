@@ -29,11 +29,13 @@ function render() {
     .render(<Internal/>);
 }
 
-if (process.env.CLI_TOOL === 'vite') {
-  // @ts-ignore
-  import.meta.hot.accept();
-} else if (process.env.CLI_TOOL === 'webpack') {
-  // @ts-ignore
-  module.hot.accept(render);
+if (process.env.NODE_ENV === 'development') {
+  if (process.env.CLI_TOOL === 'vite') {
+    // @ts-ignore1
+    import.meta.hot.accept();
+  } else if (process.env.CLI_TOOL === 'webpack') {
+    // @ts-ignore
+    module.hot.accept(render);
+  }
 }
 
