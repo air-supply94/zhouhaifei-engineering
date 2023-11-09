@@ -6,34 +6,22 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 import { createStyleImportPlugin, AntdResolve } from 'vite-plugin-style-import';
 import loadCssModulePlugin from 'vite-plugin-load-css-module';
 import requireTransform from 'vite-plugin-require-transform';
+import vitePluginSvgr from '@achmadk/vite-plugin-svgr';
 import type { UserConfig } from '../types';
+import { InjectEntryScriptPlugin } from './injectEntryScriptPlugin';
 
 interface Options {
   userConfig: UserConfig;
 }
 
-const bundlerCliInjectScriptPlugin: ViteUserConfig['plugins'][0] = {
-  name: 'bundler-cli-inject-script',
-  transformIndexHtml: () => {
-    return [
-      {
-        tag: 'script',
-        attrs: {
-          type: 'module',
-          src: '/src/index',
-        },
-        injectTo: 'body',
-      },
-    ];
-  },
-};
-
 export function getPlugins({
   userConfig: {
-    babelPluginImport,
+    antd,
     autoCSSModules,
     babelExtraPlugins,
     babelPluginDecorators,
+    babelPluginStyledComponents,
+    svgr,
   },
 }: Options): ViteUserConfig['plugins'] {
   const plugins: ViteUserConfig['plugins'] = [
@@ -48,12 +36,13 @@ export function getPlugins({
           babelPluginTransformRuntime: false,
           babelPluginDecorators,
           babelExtraPlugins,
+          babelPluginStyledComponents,
           babelClassProperties: {},
         }).plugins,
       },
     }),
 
-    bundlerCliInjectScriptPlugin,
+    InjectEntryScriptPlugin(),
   ];
 
   // css-module
@@ -73,17 +62,30 @@ export function getPlugins({
     }));
   }
 
-  // antd-import
-  if (typeof babelPluginImport === 'string') {
+  // antd4x style import
+  if (antd.import) {
     plugins.push(createStyleImportPlugin({
       resolves: [AntdResolve()],
       libs: [
         {
-          libraryName: babelPluginImport,
-          resolveStyle: (name: string) => `${babelPluginImport}/es/${name}/style`,
+          libraryName: antd.libraryName,
+          resolveStyle: (name: string) => `${antd.libraryName}/es/${name}/style`,
         },
       ],
     }));
   }
+
+  // svgr
+  if (svgr !== false) {
+    plugins.push(vitePluginSvgr({
+      svgrOptions: {
+        prettier: false,
+        svgo: false,
+        titleProp: true,
+        ref: true,
+      },
+    }));
+  }
+
   return plugins;
 }

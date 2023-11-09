@@ -8,6 +8,7 @@
   ],
   "author": "zhouhaifei1994@sina.com",
   "dependencies": {
+    "babel-plugin-styled-components": "2.1.4",
     "@babel/core": "7.23.2",
     "@babel/plugin-proposal-class-properties": "7.18.6",
     "@babel/plugin-proposal-decorators": "7.23.2",
@@ -26,19 +27,17 @@
     "@babel/preset-env": "7.23.2",
     "@babel/preset-react": "7.22.15",
     "@babel/preset-typescript": "7.23.2",
-    "babel-plugin-import": "1.13.8",
     "@babel/runtime": "7.23.2",
     "core-js": "3.33.2"
   },
   "devDependencies": {
-    "father": "4.3.5",
-    "rimraf": "5.0.1"
+    "father": "4.3.5"
   },
   "scripts": {
     "doctor": "father doctor",
     "dev": "father dev",
-    "build": "rimraf dist && father build",
-    "build:deps": "rimraf compiled && father prebundle"
+    "build": "father build",
+    "build:deps": "father prebundle"
   },
   "publishConfig": {
     "access": "public"

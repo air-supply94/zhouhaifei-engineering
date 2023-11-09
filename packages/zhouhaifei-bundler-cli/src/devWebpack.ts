@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
-import { config } from './config-webpack/config';
+import { config } from './configWebpack/config';
 import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 import path from 'path';
 import { openBrowser } from './utils';

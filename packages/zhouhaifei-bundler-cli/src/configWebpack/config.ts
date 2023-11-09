@@ -6,6 +6,7 @@ import path from 'path';
 import webpack from 'webpack';
 import { Env } from '../types';
 import type { WebpackConfigOptions, WebpackApplyOptions } from '../types';
+import { antdMomentPlugin } from './antdMomentPlugin';
 import { assetRule } from './assetRule';
 import { bundleAnalyzerPlugin } from './bundleAnalyzerPlugin';
 import { caseSensitivePathsPlugin } from './caseSensitivePathsPlugin';
@@ -41,13 +42,12 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
     cwd,
     entry = {},
     userEnv = {},
-    cache = {},
-    chainWebpack,
-    modifyWebpackConfig,
   } = options;
   const nodeModules = /node_modules/;
   const isDev = env === Env.development;
   const config = new Config();
+  const isDevelopment = env === Env.development;
+  const isProduction = env === Env.production;
   const {
     outputPath,
     staticPathPrefix,
@@ -55,14 +55,16 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
     alias,
     publicPath,
     devtool,
+    chainWebpack,
+    cache,
   } = userConfig;
   const applyOptions: WebpackApplyOptions = {
     config,
     userConfig,
     cwd,
     env,
-    isDevelopment: env === Env.development,
-    isProduction: env === Env.production,
+    isDevelopment,
+    isProduction,
     srcDir: path.resolve(cwd, 'src'),
     publicDir: path.resolve(cwd, 'public'),
   };
@@ -78,8 +80,8 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
   config.cache({
     type: 'filesystem',
     version: version + createEnvironmentHash(userEnv),
-    cacheDirectory: cache.cacheDirectory || path.resolve(cwd, '.cache'),
-    buildDependencies: { config: cache.buildDependencies || []},
+    cacheDirectory: path.resolve(cwd, cache.cacheDirectory),
+    buildDependencies: { config: cache.buildDependencies },
   });
 
   // entry
@@ -131,7 +133,8 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
     .set('hashFunction', 'xxhash64');
 
   // externals
-  config.externals(externals);
+  // react18.2 dev环境报错
+  config.externals(isProduction ? externals : {});
 
   // target
   config.target([
@@ -167,6 +170,7 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
   unusedPlugin(applyOptions);
   reactRefreshPlugin(applyOptions);
   compressPlugin(applyOptions);
+  antdMomentPlugin(applyOptions);
   optimization(applyOptions);
 
   // chain webpack
@@ -176,22 +180,6 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
       webpack,
     });
   }
-  if (userConfig.chainWebpack) {
-    await userConfig.chainWebpack(config, {
-      env,
-      webpack,
-    });
-  }
 
-  let webpackConfig = config.toConfig();
-
-  // modify Config
-  if (modifyWebpackConfig) {
-    webpackConfig = await modifyWebpackConfig(webpackConfig, {
-      env,
-      webpack,
-    });
-  }
-
-  return webpackConfig;
+  return config.toConfig();
 }

@@ -15,15 +15,27 @@ export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = 
 
   userConfig.devtool = userConfig.devtool === false || userConfig.devtool ? userConfig.devtool : process.env.NODE_ENV === Env.development ? DEFAULT_DEV_DEVTOOL : DEFAULT_BUILD_DEVTOOL;
   userConfig.outputPath ||= DEFAULT_OUTPUT_PATH;
-  userConfig.externals ||= [];
+  userConfig.externals ||= {};
   userConfig.alias ||= {};
   userConfig.staticPathPrefix ||= 'static/';
   userConfig.codeSplitting ||= CodeSplit.granularChunks;
-  userConfig.transpiler ||= Transpiler.esbuild;
+  userConfig.antd ||= {};
+  if (!userConfig.antd.libraryName) {
+    userConfig.antd.libraryName = 'antd';
+  }
+
+  // antd4x使用babel-plugin-import
+  // esbuild-loader加载antd style错乱
+  // antd5x不会有问题
+  userConfig.transpiler ||= Transpiler.babel;
   userConfig.jsMinifier ||= JSMinifier.esbuild;
   userConfig.cssMinifier ||= CSSMinifier.esbuild;
   userConfig.targets ||= DEFAULT_BROWSER_TARGETS;
   userConfig.inlineLimit ||= 1024 * 8;
+  userConfig.cache ||= {
+    cacheDirectory: '.cache',
+    buildDependencies: [],
+  };
 
   return userConfig;
 }

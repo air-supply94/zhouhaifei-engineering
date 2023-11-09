@@ -5,7 +5,9 @@ import mock from 'mockjs';
 import { request } from '../../utils';
 import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
+import a, { ReactComponent } from './a.svg';
 
+console.log(a, ReactComponent);
 mock.mock('/api/test', 'get', {
   'list|100': [
     {
@@ -44,7 +46,7 @@ export default observer(() => {
       className={styles.container}
       onClick={store.setAge}
     >
-      <Card>
+      <Card size="small">
         hello
         {store.age}
       </Card>

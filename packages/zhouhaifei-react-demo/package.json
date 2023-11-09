@@ -4,13 +4,13 @@
   "private": true,
   "dependencies": {
     "nprogress": "0.2.0",
-    "antd": "5.2.1",
-    "axios": "0.27.2",
+    "antd": "4.24.14",
+    "axios": "0.21.0",
     "lodash": "4.17.21",
     "mobx": "5.15.7",
     "mobx-react": "6.3.1",
-    "moment": "2.29.4",
-    "qs": "6.11.0",
+    "moment": "2.29.2",
+    "qs": "6.11.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.3.0"
@@ -33,7 +33,7 @@
   "scripts": {
     "dev-vite": "zhouhaifei-bundler-cli dev --vite --open",
     "dev-webpack": "zhouhaifei-bundler-cli dev --open",
-    "build-local": "zhouhaifei-bundler-cli build"
+    "build-webpack": "zhouhaifei-bundler-cli build"
   },
   "gitHead": "d2aa9ce735309d393ebe6452ac392a6a76d9fae6"
 }

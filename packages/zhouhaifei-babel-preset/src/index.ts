@@ -53,7 +53,7 @@ export interface GenerateBabelConfigOptions {
     decoratorsBeforeExport?: boolean;
   };
   babelClassProperties?: { loose?: boolean; };
-  babelPluginImport?: 'antd' | 'antd-mobile' | Record<string, any>;
+  babelPluginStyledComponents?: Record<string, any>;
 }
 
 export function generateBabelConfig({
@@ -65,7 +65,7 @@ export function generateBabelConfig({
   babelPluginTransformRuntime,
   babelPluginDecorators,
   babelClassProperties,
-  babelPluginImport,
+  babelPluginStyledComponents,
 }: GenerateBabelConfigOptions = {}) {
   const packageJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../package.json'), 'utf8')
     .toString());
@@ -118,14 +118,10 @@ export function generateBabelConfig({
     ].concat(babelExtraPreset)
       .filter(Boolean),
     plugins: [
-      // babel-plugin-import
-      babelPluginImport && [
-        require.resolve('babel-plugin-import'),
-        typeof babelPluginImport === 'string' ? {
-          libraryName: babelPluginImport,
-          libraryDirectory: 'es',
-          style: true,
-        } : babelPluginImport,
+      // 支持装饰器语法
+      babelPluginStyledComponents && [
+        require.resolve('@babel/plugin-proposal-decorators'),
+        babelPluginDecorators,
       ],
 
       // 支持装饰器语法

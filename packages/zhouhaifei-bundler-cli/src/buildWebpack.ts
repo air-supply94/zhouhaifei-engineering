@@ -1,5 +1,5 @@
 import webpack from 'webpack';
-import { config } from './config-webpack/config';
+import { config } from './configWebpack/config';
 import type { WebpackBuildOptions } from './types';
 import { Env } from './types';
 import chalk from 'chalk';

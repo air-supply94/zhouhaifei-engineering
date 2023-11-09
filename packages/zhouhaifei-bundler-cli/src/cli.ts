@@ -1,10 +1,10 @@
 import cac from 'cac';
 import fs from 'fs';
 import path from 'path';
-import { buildWebpack } from './build-webpack';
+import { buildWebpack } from './buildWebpack';
 import { DEFAULT_CONFIG_NAME, version } from './constants';
-import { devVite } from './dev-vite';
-import { devWebpack } from './dev-webpack';
+import { devVite } from './devVite';
+import { devWebpack } from './devWebpack';
 import type { cliOptions, UserConfig } from './types';
 import { CliTool, Env } from './types';
 import { loadEnv, loadFile, resolveFile, resolveModule, tryFiles, initUserConfig } from './utils';

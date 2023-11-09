@@ -1,4 +1,4 @@
-import { config } from './config-vite/config';
+import { config } from './configVite/config';
 import type { ViteDevOptions } from './types';
 import { createServer } from 'vite';
 

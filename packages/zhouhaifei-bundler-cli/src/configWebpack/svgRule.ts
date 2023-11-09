@@ -19,7 +19,6 @@ export function svgRule({
       .options({
         prettier: false,
         svgo: false,
-        svgoConfig: { plugins: [{ removeViewBox: false }]},
         titleProp: true,
         ref: true,
         ...svgr,

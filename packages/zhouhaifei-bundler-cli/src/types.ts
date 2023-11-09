@@ -1,6 +1,5 @@
 import type Config from 'webpack-5-chain';
 import type webpack from 'webpack';
-import type { Configuration } from 'webpack';
 import type { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import type { ManifestPluginOptions } from 'webpack-manifest-plugin';
 import type HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -51,6 +50,10 @@ export enum CodeSplit {
 }
 
 export interface UserConfig extends GenerateBabelConfigOptions {
+  cache?: {
+    buildDependencies?: string[];
+    cacheDirectory?: string;
+  };
   transpiler?: keyof typeof Transpiler;
   jsMinifier?: keyof typeof JSMinifier;
   cssMinifier?: keyof typeof CSSMinifier;
@@ -66,7 +69,7 @@ export interface UserConfig extends GenerateBabelConfigOptions {
   devtool?: Config.DevTool;
   publicPath?: string;
   define?: Record<string, any>;
-  externals?: Configuration['externals'];
+  externals?: Record<string, { root?: string; commonjs?: string; commonjs2?: string; amd?: string; }>;
   preloadOptions?: false | Record<string, any>;
   forkTsCheckerOptions?: false | Record<string, any>;
   chainWebpack?: (
@@ -85,6 +88,11 @@ export interface UserConfig extends GenerateBabelConfigOptions {
   deadCode?: { directories?: string[]; exclude?: string[]; root?: string; };
   htmlOption?: false | HtmlWebpackPlugin.Options;
   svgr?: false | Record<string, any>;
+  antd?: {
+    libraryName?: 'antd' | 'antd-mobile';
+    import?: boolean;
+    momentPicker?: boolean;
+  };
   lessLoaderOptions?: Record<string, any>;
   sassLoaderOptions?: Record<string, any>;
   stylusLoaderOptions?: Record<string, any>;
@@ -107,7 +115,6 @@ export interface UserConfig extends GenerateBabelConfigOptions {
 }
 
 export interface AAA extends GenerateBabelConfigOptions {
-  externals?: Configuration['externals'];
   svgr?: false | Record<string, any>;
 
   lessLoaderOptions?: Record<string, any>;
@@ -124,20 +131,7 @@ export interface WebpackConfigOptions {
   entry: Record<string, string>;
   userConfig: UserConfig;
   env: Env;
-
   userEnv?: Record<string, string>;
-  cache?: {
-    buildDependencies?: string[];
-    cacheDirectory?: string;
-  };
-  chainWebpack?: UserConfig['chainWebpack'];
-  modifyWebpackConfig?: (
-    memo: Configuration,
-    args: {
-      env: keyof typeof Env;
-      webpack: typeof webpack;
-    },
-  ) => Configuration | Promise<Configuration>;
 }
 
 export type WebpackBuildOptions = Omit<WebpackConfigOptions, 'env'>;

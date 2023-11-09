@@ -7,7 +7,7 @@ import webpack from 'webpack';
 export function javascriptRule({
   config,
   userConfig: {
-    babelPluginImport,
+    antd,
     babelExtraPreset,
     babelExtraPlugins,
     babelPresetEnv,
@@ -15,6 +15,7 @@ export function javascriptRule({
     babelPresetTypeScript,
     babelPluginTransformRuntime,
     babelPluginDecorators,
+    babelPluginStyledComponents,
     transpiler,
     reactRefresh,
     babelLoaderOptions,
@@ -51,7 +52,6 @@ export function javascriptRule({
       presets,
       plugins,
     } = generateBabelConfig({
-      babelPluginImport,
       babelExtraPreset,
       babelExtraPlugins,
       babelPresetEnv,
@@ -59,6 +59,7 @@ export function javascriptRule({
       babelPresetTypeScript,
       babelPluginTransformRuntime,
       babelPluginDecorators,
+      babelPluginStyledComponents,
     });
 
     if (threadLoaderOptions) {
@@ -67,8 +68,23 @@ export function javascriptRule({
         .options({
           // additional node.js arguments
           workerNodeArgs: ['--max-old-space-size=1024'],
+          ...threadLoaderOptions,
         });
     }
+
+    const extraBabelPlugins: any[] = [
+      reactRefresh && require.resolve('react-refresh/babel'),
+
+      // antd4x style import
+      antd.import && [
+        require.resolve('babel-plugin-import'),
+        {
+          libraryName: antd.libraryName,
+          libraryDirectory: 'es',
+          style: true,
+        },
+      ],
+    ].filter(Boolean);
 
     rule.use('babel-loader')
       .loader(require.resolve('babel-loader'))
@@ -81,7 +97,7 @@ export function javascriptRule({
         targets: getBrowsersList(targets),
         ...babelLoaderOptions,
         presets,
-        plugins: plugins.concat(reactRefresh ? [require.resolve('react-refresh/babel')] : []),
+        plugins: plugins.concat(extraBabelPlugins),
       });
   }
 }

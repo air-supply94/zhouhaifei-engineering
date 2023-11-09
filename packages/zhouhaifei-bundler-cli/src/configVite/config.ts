@@ -1,4 +1,5 @@
 import type { UserConfig, ProxyOptions } from 'vite';
+import path from 'path';
 import { mergeConfig } from 'vite';
 import { LOCAL_IDENT_NAME } from '../constants';
 import type { ViteDevOptions } from '../types';
@@ -10,6 +11,7 @@ export function config({
   env,
   userConfig,
   userEnv,
+  cwd,
 }: ViteDevOptions): UserConfig {
   const {
     host,
@@ -23,9 +25,11 @@ export function config({
     inlineLimit,
     outputPath,
     proxy,
+    cache,
   } = userConfig;
 
   const defaultConfig: UserConfig = {
+    cacheDir: path.resolve(cwd, cache.cacheDirectory),
     define: {
       'process.env': getProcessEnv(userEnv, publicPath, env),
       ...define,
