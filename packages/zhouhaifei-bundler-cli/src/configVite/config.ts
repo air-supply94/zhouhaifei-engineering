@@ -1,4 +1,4 @@
-import { getPostcssOptions } from '@zhouhaifei/postcss-preset';
+import { getPostcssConfig } from '@zhouhaifei/postcss-preset';
 import type { UserConfig, ProxyOptions } from 'vite';
 import path from 'path';
 import { mergeConfig } from 'vite';
@@ -34,6 +34,7 @@ export function config({
     autoprefixer,
     postcssPresetEnvOptions,
     extraPostCSSPlugins,
+    postcssOptions,
   } = userConfig;
 
   const defaultConfig: UserConfig = {
@@ -67,11 +68,12 @@ export function config({
         scss: sassOptions,
         styl: stylusOptions,
       },
-      postcss: getPostcssOptions({
+      postcss: getPostcssConfig({
         browsers: getBrowsersList(targets),
         autoprefixer,
         postcssPresetEnvOptions,
         extraPostCSSPlugins,
+        postcssOptions,
       }),
     },
     plugins: getPlugins({ userConfig }),

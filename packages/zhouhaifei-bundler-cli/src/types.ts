@@ -1,11 +1,11 @@
-import type { GetPostcssOptions } from '@zhouhaifei/postcss-preset';
+import type { GetPostcssConfigOptions } from '@zhouhaifei/postcss-preset';
 import type Config from 'webpack-5-chain';
 import type webpack from 'webpack';
 import type { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import type { ManifestPluginOptions } from 'webpack-manifest-plugin';
 import type HtmlWebpackPlugin from 'html-webpack-plugin';
 import type { ProxyConfigMap } from 'webpack-dev-server';
-import type { GenerateBabelConfigOptions } from '@zhouhaifei/babel-preset';
+import type { GetBabelConfigOptions } from '@zhouhaifei/babel-preset';
 import type { TransformOptions as EsbuildOptions } from 'esbuild';
 import type { MinifyOptions as TerserOptions } from 'terser';
 import type { CssNanoOptions } from 'css-minimizer-webpack-plugin';
@@ -86,12 +86,13 @@ interface StyleConfig {
   cssLoaderModules?: Record<string, any>;
   cssLoaderOptions?: Record<string, any>;
 
-  postcssPresetEnvOptions?: GetPostcssOptions['postcssPresetEnvOptions'];
-  autoprefixer?: GetPostcssOptions['autoprefixer'];
-  extraPostCSSPlugins?: GetPostcssOptions['extraPostCSSPlugins'];
+  postcssPresetEnvOptions?: GetPostcssConfigOptions['postcssPresetEnvOptions'];
+  autoprefixer?: GetPostcssConfigOptions['autoprefixer'];
+  extraPostCSSPlugins?: GetPostcssConfigOptions['extraPostCSSPlugins'];
+  postcssOptions?: GetPostcssConfigOptions['postcssOptions'];
 }
 
-export interface UserConfig extends BaseConfig, StyleConfig, GenerateBabelConfigOptions {
+export interface UserConfig extends BaseConfig, StyleConfig, GetBabelConfigOptions {
   transpiler?: keyof typeof Transpiler;
   jsMinifier?: keyof typeof JSMinifier;
   cssMinifier?: keyof typeof CSSMinifier;

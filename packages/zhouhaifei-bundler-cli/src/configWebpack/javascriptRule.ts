@@ -1,7 +1,7 @@
 import type { WebpackApplyOptions } from '../types';
 import { Transpiler } from '../types';
 import { getBrowsersList } from '../utils';
-import { generateBabelConfig } from '@zhouhaifei/babel-preset';
+import { getBabelConfig } from '@zhouhaifei/babel-preset';
 import webpack from 'webpack';
 import path from 'path';
 
@@ -81,7 +81,7 @@ export function javascriptRule({
       const {
         presets,
         plugins,
-      } = generateBabelConfig({
+      } = getBabelConfig({
         babelExtraPreset,
         babelExtraPlugins,
         babelPresetEnv,

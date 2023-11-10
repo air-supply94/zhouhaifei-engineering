@@ -3,7 +3,7 @@ import type { WebpackApplyOptions } from '../types';
 import { getBrowsersList } from '../utils';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
-import { getPostcssOptions } from '@zhouhaifei/postcss-preset';
+import { getPostcssConfig } from '@zhouhaifei/postcss-preset';
 
 export function cssRule({
   config,
@@ -21,6 +21,7 @@ export function cssRule({
     postcssPresetEnvOptions,
     autoprefixer,
     extraPostCSSPlugins,
+    postcssOptions,
   },
 }: WebpackApplyOptions) {
   const rulesConfig = [
@@ -133,11 +134,12 @@ export function cssRule({
         .use('postcss-loader')
         .loader(require.resolve('postcss-loader'))
         .options({
-          postcssOptions: getPostcssOptions({
+          postcssOptions: getPostcssConfig({
             browsers: getBrowsersList(targets),
             autoprefixer,
             postcssPresetEnvOptions,
             extraPostCSSPlugins,
+            postcssOptions,
           }),
         });
 

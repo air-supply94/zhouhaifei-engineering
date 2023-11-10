@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-export interface GenerateBabelConfigOptions {
+export interface GetBabelConfigOptions {
   babelExtraPreset?: any;
   babelExtraPlugins?: any;
   babelPresetEnv?: {
@@ -56,7 +56,7 @@ export interface GenerateBabelConfigOptions {
   babelPluginStyledComponents?: Record<string, any>;
 }
 
-export function generateBabelConfig({
+export function getBabelConfig({
   babelExtraPreset,
   babelExtraPlugins,
   babelPresetEnv,
@@ -66,7 +66,7 @@ export function generateBabelConfig({
   babelPluginDecorators,
   babelClassProperties,
   babelPluginStyledComponents,
-}: GenerateBabelConfigOptions = {}) {
+}: GetBabelConfigOptions = {}) {
   const packageJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../package.json'), 'utf8')
     .toString());
   const coreJsVersion = packageJson.dependencies['core-js'];
@@ -91,7 +91,7 @@ export function generateBabelConfig({
           },
           ignoreBrowserslistConfig: true,
           ...babelPresetEnv,
-        } as GenerateBabelConfigOptions['babelPresetEnv'],
+        } as GetBabelConfigOptions['babelPresetEnv'],
       ],
 
       // 转换jsx语法
@@ -101,7 +101,7 @@ export function generateBabelConfig({
           runtime: 'automatic',
           development: process.env.NODE_ENV === 'development',
           ...babelPresetReact,
-        } as GenerateBabelConfigOptions['babelPresetReact'],
+        } as GetBabelConfigOptions['babelPresetReact'],
       ],
 
       // 转换ts语法
@@ -113,7 +113,7 @@ export function generateBabelConfig({
           onlyRemoveTypeImports: false,
           optimizeConstEnums: true,
           ...babelPresetTypeScript,
-        } as GenerateBabelConfigOptions['babelPresetTypeScript'],
+        } as GetBabelConfigOptions['babelPresetTypeScript'],
       ],
     ].concat(babelExtraPreset)
       .filter(Boolean),
@@ -130,7 +130,7 @@ export function generateBabelConfig({
         {
           version: 'legacy',
           ...babelPluginDecorators,
-        } as GenerateBabelConfigOptions['babelPluginDecorators'],
+        } as GetBabelConfigOptions['babelPluginDecorators'],
       ],
 
       // preset-env内置了下面插件,webpack打包不需要下面插件
@@ -140,21 +140,21 @@ export function generateBabelConfig({
         {
           loose: true,
           ...babelClassProperties,
-        } as GenerateBabelConfigOptions['babelClassProperties'],
+        } as GetBabelConfigOptions['babelClassProperties'],
       ],
       babelClassProperties && [
         require.resolve('@babel/plugin-proposal-private-methods'),
         {
           loose: true,
           ...babelClassProperties,
-        } as GenerateBabelConfigOptions['babelClassProperties'],
+        } as GetBabelConfigOptions['babelClassProperties'],
       ],
       babelClassProperties && [
         require.resolve('@babel/plugin-proposal-private-property-in-object'),
         {
           loose: true,
           ...babelClassProperties,
-        } as GenerateBabelConfigOptions['babelClassProperties'],
+        } as GetBabelConfigOptions['babelClassProperties'],
       ],
 
       // do-expressions
@@ -196,7 +196,7 @@ export function generateBabelConfig({
           absoluteRuntime: path.dirname(require.resolve('../package.json')),
           version: runtimeVersion,
           ...babelPluginTransformRuntime,
-        } as GenerateBabelConfigOptions['babelPluginTransformRuntime'],
+        } as GetBabelConfigOptions['babelPluginTransformRuntime'],
       ],
     ].concat(babelExtraPlugins)
       .filter(Boolean),

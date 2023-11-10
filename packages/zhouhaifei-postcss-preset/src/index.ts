@@ -1,19 +1,22 @@
 import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
 import postcssPresetEnv from 'postcss-preset-env';
+import type { pluginOptions } from 'postcss-preset-env';
 
-export interface GetPostcssOptions {
+export interface GetPostcssConfigOptions {
   browsers?: string[];
-  postcssPresetEnvOptions?: { autoprefixer?: never; } & Record<string, any>;
-  autoprefixer?: Record<string, any>;
+  postcssOptions?: { plugins: never; } & Record<string, any>;
+  postcssPresetEnvOptions?: { autoprefixer?: never; } & pluginOptions;
+  autoprefixer?: pluginOptions['autoprefixer'];
   extraPostCSSPlugins?: any[];
 }
 
-export function getPostcssOptions({
+export function getPostcssConfig({
   browsers,
   postcssPresetEnvOptions,
   autoprefixer,
   extraPostCSSPlugins,
-}: GetPostcssOptions = {}) {
+  postcssOptions,
+}: GetPostcssConfigOptions = {}) {
   return {
     ident: 'postcss',
     plugins: [
@@ -27,7 +30,8 @@ export function getPostcssOptions({
         },
         stage: 3,
         ...postcssPresetEnvOptions,
-      }),
+      } as pluginOptions),
     ].concat(extraPostCSSPlugins || []),
+    ...postcssOptions,
   };
 }

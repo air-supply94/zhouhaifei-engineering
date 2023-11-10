@@ -1,5 +1,5 @@
 import type { UserConfig as ViteUserConfig } from 'vite';
-import { generateBabelConfig } from '@zhouhaifei/babel-preset';
+import { getBabelConfig } from '@zhouhaifei/babel-preset';
 import { STYLE_EXTENSIONS } from '../constants';
 import react from '@vitejs/plugin-react';
 import { createHtmlPlugin } from 'vite-plugin-html';
@@ -30,7 +30,7 @@ export function getPlugins({
     }),
     react({
       babel: {
-        plugins: generateBabelConfig({
+        plugins: getBabelConfig({
           babelPluginTransformRuntime: false,
           babelPluginDecorators,
           babelExtraPlugins,
