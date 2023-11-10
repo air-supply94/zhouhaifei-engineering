@@ -1,3 +1,4 @@
+import type { GetPostcssOptions } from '@zhouhaifei/postcss-preset';
 import type Config from 'webpack-5-chain';
 import type webpack from 'webpack';
 import type { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
@@ -49,27 +50,59 @@ export enum CodeSplit {
   granularChunks = 'granularChunks',
 }
 
-export interface UserConfig extends GenerateBabelConfigOptions {
+interface BaseConfig {
+  publicDir?: string;
+  open?: boolean;
+  port?: number;
+  host?: string;
+  proxy?: ProxyConfigMap;
   cache?: {
     buildDependencies?: string[];
     cacheDirectory?: string;
   };
+  alias?: Record<string, string>;
+  targets?: Record<'chrome' | 'edge' | 'safari' | 'firefox', string | number>;
+  assetsInlineLimit?: number;
+  outputPath?: string;
+  publicPath?: string;
+  define?: Record<string, any>;
+  externals?: Record<string, string>;
+  antd?: {
+    libraryName?: 'antd' | 'antd-mobile';
+    import?: boolean;
+    momentPicker?: boolean;
+  };
+  watch?: boolean;
+  staticPathPrefix?: string;
+  reactRefresh?: boolean;
+}
+
+interface StyleConfig {
+  autoCSSModules?: boolean;
+  lessOptions?: Record<string, any>;
+  sassOptions?: Record<string, any>;
+  stylusOptions?: Record<string, any>;
+  styleLoaderOptions?: false | Record<string, any>;
+  cssLoaderModules?: Record<string, any>;
+  cssLoaderOptions?: Record<string, any>;
+
+  postcssPresetEnvOptions?: GetPostcssOptions['postcssPresetEnvOptions'];
+  autoprefixer?: GetPostcssOptions['autoprefixer'];
+  extraPostCSSPlugins?: GetPostcssOptions['extraPostCSSPlugins'];
+}
+
+export interface UserConfig extends BaseConfig, StyleConfig, GenerateBabelConfigOptions {
   transpiler?: keyof typeof Transpiler;
   jsMinifier?: keyof typeof JSMinifier;
   cssMinifier?: keyof typeof CSSMinifier;
   jsMinifierOptions?: EsbuildOptions | TerserOptions;
   cssMinifierOptions?: EsbuildOptions | CssNanoOptions | Record<string, any>;
   esbuildLoaderOptions?: EsbuildOptions;
+  babelLoaderOptions?: Record<string, any>;
+  extraJsModuleIncludes?: Array<string | RegExp>;
   threadLoaderOptions?: Record<string, any>;
   codeSplitting?: keyof typeof CodeSplit;
-  alias?: Record<string, string>;
-  targets?: Record<'chrome' | 'edge' | 'safari' | 'firefox', string | number>;
-  inlineLimit?: number;
-  outputPath?: string;
-  devtool?: Config.DevTool;
-  publicPath?: string;
-  define?: Record<string, any>;
-  externals?: Record<string, string>;
+  sourcemap?: Config.DevTool;
   preloadOptions?: false | Record<string, any>;
   forkTsCheckerOptions?: false | Record<string, any>;
   chainWebpack?: (
@@ -87,43 +120,7 @@ export interface UserConfig extends GenerateBabelConfigOptions {
   copy?: CopyOptions[] | string[];
   deadCode?: { directories?: string[]; exclude?: string[]; root?: string; };
   htmlOption?: false | HtmlWebpackPlugin.Options;
-  svgr?: false | Record<string, any>;
-  antd?: {
-    libraryName?: 'antd' | 'antd-mobile';
-    import?: boolean;
-    momentPicker?: boolean;
-  };
-  lessLoaderOptions?: Record<string, any>;
-  sassLoaderOptions?: Record<string, any>;
-  stylusLoaderOptions?: Record<string, any>;
-  autoCSSModules?: boolean;
-  styleLoaderOptions?: false | Record<string, any>;
-  cssLoaderModules?: Record<string, any>;
-  cssLoaderOptions?: Record<string, any>;
-  postcssLoaderOptions?: Record<string, any>;
-  autoprefixer?: Record<string, any>;
-  extraPostCSSPlugins?: any[];
-  proxy?: ProxyConfigMap;
-  reactRefresh?: boolean;
-  babelLoaderOptions?: Record<string, any>;
-  staticPathPrefix?: string;
   vite?: ViteUserConfig;
-  open?: boolean;
-  port?: number;
-  host?: string;
-  watch?: boolean;
-}
-
-export interface AAA extends GenerateBabelConfigOptions {
-  svgr?: false | Record<string, any>;
-
-  lessLoaderOptions?: Record<string, any>;
-  sassLoaderOptions?: Record<string, any>;
-  stylusLoaderOptions?: Record<string, any>;
-  autoCSSModules?: boolean;
-  postcssLoaderOptions?: Record<string, any>;
-  autoprefixer?: Record<string, any>;
-  extraPostCSSPlugins?: any[];
 }
 
 export interface WebpackConfigOptions {
@@ -146,7 +143,6 @@ export interface WebpackApplyOptions {
   readonly isDevelopment: boolean;
   readonly isProduction: boolean;
   readonly srcDir: string;
-  readonly publicDir: string;
 }
 
 export interface ViteDevOptions {

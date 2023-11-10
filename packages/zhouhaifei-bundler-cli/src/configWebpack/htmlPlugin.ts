@@ -8,8 +8,8 @@ export function htmlPlugin({
   userConfig: {
     htmlOption,
     publicPath,
+    publicDir,
   },
-  publicDir,
 }: WebpackApplyOptions) {
   if (htmlOption !== false) {
     const initOptions = {

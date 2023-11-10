@@ -6,7 +6,6 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 import { createStyleImportPlugin, AntdResolve } from 'vite-plugin-style-import';
 import loadCssModulePlugin from 'vite-plugin-load-css-module';
 import requireTransform from 'vite-plugin-require-transform';
-import vitePluginSvgr from '@achmadk/vite-plugin-svgr';
 import type { UserConfig } from '../types';
 import { InjectEntryScriptPlugin } from './injectEntryScriptPlugin';
 
@@ -21,7 +20,6 @@ export function getPlugins({
     babelExtraPlugins,
     babelPluginDecorators,
     babelPluginStyledComponents,
-    svgr,
   },
 }: Options): ViteUserConfig['plugins'] {
   const plugins: ViteUserConfig['plugins'] = [
@@ -71,18 +69,6 @@ export function getPlugins({
           resolveStyle: (name: string) => `${antd.libraryName}/es/${name}/style`,
         },
       ],
-    }));
-  }
-
-  // svgr
-  if (svgr !== false) {
-    plugins.push(vitePluginSvgr({
-      svgrOptions: {
-        prettier: false,
-        svgo: false,
-        titleProp: true,
-        ref: true,
-      },
     }));
   }
 

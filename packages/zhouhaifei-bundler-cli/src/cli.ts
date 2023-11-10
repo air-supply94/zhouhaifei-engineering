@@ -1,8 +1,7 @@
 import cac from 'cac';
-import fs from 'fs';
 import path from 'path';
 import { buildWebpack } from './buildWebpack';
-import { DEFAULT_CONFIG_NAME, version } from './constants';
+import { cwd, DEFAULT_CONFIG_NAME, SRC_DIR, version } from './constants';
 import { devVite } from './devVite';
 import { devWebpack } from './devWebpack';
 import type { cliOptions, UserConfig } from './types';
@@ -10,7 +9,7 @@ import { CliTool, Env } from './types';
 import { loadEnv, loadFile, resolveFile, resolveModule, tryFiles, initUserConfig } from './utils';
 
 const cli = cac('zhouhaifei-bundler-cli');
-const cwd = fs.realpathSync(process.cwd());
+
 const userConfigFile = tryFiles([
   path.resolve(cwd, `${DEFAULT_CONFIG_NAME}.ts`),
   path.resolve(cwd, `${DEFAULT_CONFIG_NAME}.js`),
@@ -23,7 +22,7 @@ const extensions = [
   '.tsx',
 ];
 
-const entryFile = resolveModule(resolveFile.bind(null, cwd), 'src/index', extensions) || resolveModule(resolveFile.bind(null, cwd), 'index', extensions);
+const entryFile = resolveModule(resolveFile.bind(null, cwd), `${SRC_DIR}/index`, extensions) || resolveModule(resolveFile.bind(null, cwd), 'index', extensions);
 const entry = { [`${path.basename(entryFile, path.extname(entryFile))}`]: entryFile };
 
 cli.option('-c, --config [config]', 'your config file');

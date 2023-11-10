@@ -32,4 +32,5 @@ export const DEFAULT_ESBUILD_TARGET_KEYS = [
 ];
 
 export const DEFAULT_CONFIG_NAME = 'bundlerConfig';
-
+export const cwd = fs.realpathSync(process.cwd());
+export const SRC_DIR = 'src';

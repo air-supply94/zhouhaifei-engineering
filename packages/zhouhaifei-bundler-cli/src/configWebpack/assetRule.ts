@@ -2,7 +2,7 @@ import type { WebpackApplyOptions } from '../types';
 
 export function assetRule({
   config,
-  userConfig: { inlineLimit },
+  userConfig: { assetsInlineLimit },
 }: WebpackApplyOptions) {
   config
     .module
@@ -11,15 +11,15 @@ export function assetRule({
     .test(/\.avif$/)
     .type('asset')
     .mimetype('image/avif')
-    .parser({ dataUrlCondition: { maxSize: inlineLimit }});
+    .parser({ dataUrlCondition: { maxSize: assetsInlineLimit }});
 
   config
     .module
     .rule('asset')
     .oneOf('image')
-    .test(/\.(bmp|gif|jpg|jpeg|png)$/)
+    .test(/\.(bmp|gif|jpg|jpeg|png|svg)$/)
     .type('asset')
-    .parser({ dataUrlCondition: { maxSize: inlineLimit }});
+    .parser({ dataUrlCondition: { maxSize: assetsInlineLimit }});
 
   config
     .module

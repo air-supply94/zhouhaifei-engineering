@@ -5,10 +5,12 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 export function copyPlugin({
   config,
-  userConfig: { copy },
+  userConfig: {
+    copy,
+    publicDir,
+  },
   cwd,
   isProduction,
-  publicDir,
 }: WebpackApplyOptions) {
   const copyPatterns = [];
 

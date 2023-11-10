@@ -1,3 +1,4 @@
+import { getPostcssOptions } from '@zhouhaifei/postcss-preset';
 import type { UserConfig, ProxyOptions } from 'vite';
 import path from 'path';
 import { mergeConfig } from 'vite';
@@ -5,7 +6,7 @@ import { LOCAL_IDENT_NAME } from '../constants';
 import type { ViteDevOptions } from '../types';
 import { getProcessEnv } from '../utils/getProcessEnv';
 import { getPlugins } from './getPlugins';
-import { getEsBuildTarget } from '../utils';
+import { getBrowsersList, getEsBuildTarget } from '../utils';
 
 export function config({
   env,
@@ -22,13 +23,21 @@ export function config({
     vite,
     alias,
     targets,
-    inlineLimit,
+    assetsInlineLimit,
     outputPath,
     proxy,
     cache,
+    publicDir,
+    lessOptions,
+    sassOptions,
+    stylusOptions,
+    autoprefixer,
+    postcssPresetEnvOptions,
+    extraPostCSSPlugins,
   } = userConfig;
 
   const defaultConfig: UserConfig = {
+    publicDir,
     cacheDir: path.resolve(cwd, cache.cacheDirectory),
     define: {
       'process.env': getProcessEnv(userEnv, publicPath, env),
@@ -44,7 +53,7 @@ export function config({
     build: {
       commonjsOptions: { transformMixedEsModules: true },
       target: getEsBuildTarget(targets),
-      assetsInlineLimit: inlineLimit,
+      assetsInlineLimit,
       outDir: outputPath,
     },
     css: {
@@ -53,7 +62,17 @@ export function config({
         scopeBehaviour: 'local',
         generateScopedName: LOCAL_IDENT_NAME,
       },
-      preprocessorOptions: { less: { javascriptEnabled: true }},
+      preprocessorOptions: {
+        less: lessOptions,
+        scss: sassOptions,
+        styl: stylusOptions,
+      },
+      postcss: getPostcssOptions({
+        browsers: getBrowsersList(targets),
+        autoprefixer,
+        postcssPresetEnvOptions,
+        extraPostCSSPlugins,
+      }),
     },
     plugins: getPlugins({ userConfig }),
   };

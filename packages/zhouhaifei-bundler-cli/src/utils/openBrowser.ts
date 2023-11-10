@@ -5,7 +5,6 @@
  * MIT Licensed
  * Copyright (c) 2015-present, Facebook, Inc.
  * https://github.com/facebook/create-react-app/blob/master/LICENSE
- * copy from vite
  */
 
 import { exec } from 'child_process';

@@ -1,7 +1,7 @@
 import type { Configuration } from 'webpack';
 import Config from 'webpack-5-chain';
 import crypto from 'crypto';
-import { version } from '../constants';
+import { SRC_DIR, version } from '../constants';
 import path from 'path';
 import webpack from 'webpack';
 import { Env } from '../types';
@@ -13,6 +13,7 @@ import { caseSensitivePathsPlugin } from './caseSensitivePathsPlugin';
 import { compressPlugin } from './compressPlugin';
 import { copyPlugin } from './copyPlugin';
 import { cssRule } from './cssRule';
+import { devServerPlugin } from './devServerPlugin';
 import { forkTsCheckerPlugin } from './forkTsCheckerPlugin';
 import { javascriptRule } from './javascriptRule';
 import { manifestPlugin } from './manifestPlugin';
@@ -24,7 +25,6 @@ import { reactRefreshPlugin } from './reactRefreshPlugin';
 import { speedMeasurePlugin } from './speedMeasurePlugin';
 import { progressPlugin } from './progressPlugin';
 import { ignorePlugin } from './ignorePlugin';
-import { svgRule } from './svgRule';
 import { unusedPlugin } from './unusedPlugin ';
 import { htmlPlugin } from './htmlPlugin';
 
@@ -54,7 +54,7 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
     externals,
     alias,
     publicPath,
-    devtool,
+    sourcemap,
     chainWebpack,
     cache,
   } = userConfig;
@@ -65,8 +65,7 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
     env,
     isDevelopment,
     isProduction,
-    srcDir: path.resolve(cwd, 'src'),
-    publicDir: path.resolve(cwd, 'public'),
+    srcDir: path.resolve(cwd, SRC_DIR),
   };
 
   // watchOptions
@@ -97,7 +96,7 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
   config.stats('none');
   config.mode(options.env);
   config.bail(!isDev);
-  config.devtool(devtool);
+  config.devtool(sourcemap);
 
   // resolve
   config.resolve
@@ -147,7 +146,6 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
 
   // module
   assetRule(applyOptions);
-  svgRule(applyOptions);
   cssRule(applyOptions);
   javascriptRule(applyOptions);
 
@@ -172,6 +170,8 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
   compressPlugin(applyOptions);
   antdMomentPlugin(applyOptions);
   optimization(applyOptions);
+
+  devServerPlugin(applyOptions);
 
   // chain webpack
   if (chainWebpack) {

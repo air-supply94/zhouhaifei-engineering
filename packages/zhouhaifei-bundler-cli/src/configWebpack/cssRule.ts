@@ -2,26 +2,25 @@ import { LOCAL_IDENT_NAME, STYLE_EXTENSIONS } from '../constants';
 import type { WebpackApplyOptions } from '../types';
 import { getBrowsersList } from '../utils';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
-import postcssPresetEnv from 'postcss-preset-env';
 import path from 'path';
+import { getPostcssOptions } from '@zhouhaifei/postcss-preset';
 
 export function cssRule({
   config,
   isDevelopment,
   srcDir,
   userConfig: {
-    lessLoaderOptions,
+    lessOptions,
     autoCSSModules,
     styleLoaderOptions,
     cssLoaderModules,
     cssLoaderOptions,
+    sassOptions,
+    stylusOptions,
+    targets,
+    postcssPresetEnvOptions,
     autoprefixer,
     extraPostCSSPlugins,
-    postcssLoaderOptions,
-    sassLoaderOptions,
-    stylusLoaderOptions,
-    targets,
   },
 }: WebpackApplyOptions) {
   const rulesConfig = [
@@ -35,23 +34,20 @@ export function cssRule({
       loader: require.resolve('less-loader'),
       loaderOptions: {
         implementation: require.resolve('less'),
-        lessOptions: {
-          javascriptEnabled: true,
-          ...lessLoaderOptions,
-        },
+        lessOptions,
       },
     },
     {
       name: 'sass',
       test: /\.(sass|scss)(\?.*)?$/,
       loader: require.resolve('sass-loader'),
-      loaderOptions: sassLoaderOptions || {},
+      loaderOptions: { sassOptions },
     },
     {
       name: 'stylus',
       test: /\.(styl|stylus)(\?.*)?$/,
       loader: require.resolve('stylus-loader'),
-      loaderOptions: stylusLoaderOptions || {},
+      loaderOptions: { stylusOptions },
     },
   ];
 
@@ -137,22 +133,12 @@ export function cssRule({
         .use('postcss-loader')
         .loader(require.resolve('postcss-loader'))
         .options({
-          postcssOptions: {
-            ident: 'postcss',
-            plugins: [
-              postcssFlexbugsFixes,
-              postcssPresetEnv({
-                browsers: getBrowsersList(targets),
-                autoprefixer: {
-                  remove: false,
-                  flexbox: 'no-2009',
-                  ...autoprefixer,
-                },
-                stage: 3,
-              }),
-            ].concat(extraPostCSSPlugins || []),
-            ...postcssLoaderOptions,
-          },
+          postcssOptions: getPostcssOptions({
+            browsers: getBrowsersList(targets),
+            autoprefixer,
+            postcssPresetEnvOptions,
+            extraPostCSSPlugins,
+          }),
         });
 
       // other-loader

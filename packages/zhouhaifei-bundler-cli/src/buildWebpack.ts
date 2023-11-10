@@ -14,6 +14,7 @@ export async function buildWebpack({
     userConfig,
     env: Env.production,
   });
+  delete webpackConfig.devServer;
 
   return new Promise((resolve, reject) => {
     const compiler = webpack(webpackConfig);
