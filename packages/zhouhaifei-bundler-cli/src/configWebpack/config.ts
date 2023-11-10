@@ -93,6 +93,7 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
     });
 
   // stats、mode、bail、devtool、profile
+  config.performance(false);
   config.stats('none');
   config.mode(options.env);
   config.bail(!isDev);
