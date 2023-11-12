@@ -59,7 +59,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && npm run prettier && git add CHANGELOG.md",
     "changeset": "changeset",
     "changeset-version": "changeset version",
-    "changeset-publish": "pnpm run run-build && pnpm run run-test && changeset publish --registry=https://registry.npmjs.com/",
+    "changeset-publish": "changeset publish --registry=https://registry.npmjs.com/",
     "run-test": "turbo test",
     "run-build": "turbo build",
     "lint-staged": "lint-staged --allow-empty",
