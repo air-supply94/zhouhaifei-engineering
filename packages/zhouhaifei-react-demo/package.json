@@ -1,6 +1,5 @@
 {
   "name": "@zhouhaifei/react-demo",
-  "version": "3.0.2",
   "private": true,
   "dependencies": {
     "nprogress": "0.2.0",
@@ -20,19 +19,62 @@
     "@commitlint/cli": "11.0.0",
     "@types/lodash": "4.14.165",
     "@types/mockjs": "1.0.3",
+    "@types/node": "16.18.61",
     "@types/qs": "6.9.5",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "@zhouhaifei/bundler-cli": "workspace:*",
-    "@zhouhaifei/code-style": "workspace:*",
+    "commitizen": "4.2.2",
     "cross-env": "7.0.3",
     "eslint": "7.29.0",
-    "mockjs": "1.1.0"
+    "husky": "4.3.0",
+    "lint-staged": "10.5.2",
+    "mockjs": "1.1.0",
+    "prettier": "2.2.1",
+    "stylelint": "13.13.1",
+    "validate-commit-msg": "2.14.0",
+    "@zhouhaifei/bundler-cli": "workspace:*",
+    "@zhouhaifei/code-style": "workspace:*"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": ">= 16.20"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "git add . && lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && validate-commit-msg"
+    }
+  },
+  "lint-staged": {
+    "**/*.less": [
+      "npm run lint:style-less",
+      "git add ."
+    ],
+    "**/*.{js,jsx,ts,tsx}": [
+      "npm run lint:js",
+      "git add ."
+    ],
+    "**/*.{css,md,html,json}": [
+      "prettier --write",
+      "git add ."
+    ]
+  },
+  "resolutions": {
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7"
   },
   "scripts": {
+    "commit": "cz",
     "dev-vite": "zhouhaifei-bundler-cli dev --vite --open",
     "dev-webpack": "zhouhaifei-bundler-cli dev --open",
-    "build-webpack": "zhouhaifei-bundler-cli build"
-  },
-  "gitHead": "d2aa9ce735309d393ebe6452ac392a6a76d9fae6"
+    "build-webpack": "zhouhaifei-bundler-cli build",
+    "lint-staged": "lint-staged --allow-empty",
+    "lint:style-less": "stylelint --cache --quiet --fix \"src/**/*.less\" --syntax less",
+    "lint:js": "eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
+    "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{css,md,html,json}\""
+  }
 }

@@ -1,17 +1,10 @@
 {
   "name": "@zhouhaifei/code-style",
-  "version": "3.0.2",
-  "description": "code style rule",
-  "main": "lib/index.js",
-  "keywords": [
-    "reactEslintRule",
-    "prettierRule",
-    "styleLintRule"
-  ],
+  "version": "3.0.3",
+  "main": "dist/index.js",
   "files": [
-    "lib"
+    "dist"
   ],
-  "author": "zhouhaifei1994@sina.com",
   "dependencies": {
     "@commitlint/config-conventional": "13.2.0",
     "@typescript-eslint/eslint-plugin": "5.2.0",
@@ -26,6 +19,12 @@
     "stylelint-config-rational-order": "0.1.2",
     "stylelint-declaration-block-no-ignored-properties": "2.4.0",
     "stylelint-order": "5.0.0"
+  },
+  "scripts": {
+    "doctor": "father doctor",
+    "dev": "father dev",
+    "build": "father build",
+    "build:deps": "father prebundle"
   },
   "publishConfig": {
     "access": "public",

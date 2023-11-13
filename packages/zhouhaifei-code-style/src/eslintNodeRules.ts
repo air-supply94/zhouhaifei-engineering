@@ -1,18 +1,18 @@
-module.exports = {
+import { eslintBaseRules } from './eslintBaseRules';
+import { eslintImportRules } from './eslintImportRules';
+import { eslintTypescriptRules } from './eslintTypescriptRules';
+
+export const eslintNodeRules = {
   root: true,
   parser: 'babel-eslint',
-  extends: [
-    'eslint:recommended',
-  ],
+  extends: ['eslint:recommended'],
   plugins: [
     'import',
-    'jsx-a11y',
-    'react',
-    'react-hooks',
     '@typescript-eslint',
   ],
 
   env: {
+    worker: true,
     browser: true,
     commonjs: true,
     es6: true,
@@ -21,34 +21,28 @@ module.exports = {
   },
 
   parserOptions: {
-    ecmaVersion: 2018,
     sourceType: 'module',
     ecmaFeatures: {
+      ecmaVersion: 2018,
       legacyDecorators: true,
-      jsx: true,
     },
   },
 
-  settings: { react: { version: 'detect' } },
+  settings: { react: { version: 'detect' }},
 
   rules: {
-    ...require('./eslintBase'),
-    ...require('./import'),
-    ...require('./jsxAndHooks'),
+    ...eslintBaseRules,
+    ...eslintImportRules,
   },
 
   overrides: [
     {
-      files: [
-        '**/*.ts',
-        '**/*.tsx',
-      ],
+      files: ['**/*.ts'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
-        ecmaVersion: 2018,
         sourceType: 'module',
         ecmaFeatures: {
-          jsx: true,
+          ecmaVersion: 2018,
           legacyDecorators: true,
         },
 
@@ -57,8 +51,7 @@ module.exports = {
       },
       extends: ['plugin:@typescript-eslint/recommended'],
       plugins: ['@typescript-eslint'],
-
-      rules: { ...require('./typescript') },
+      rules: eslintTypescriptRules,
     },
   ],
 };

@@ -1,4 +1,4 @@
-module.exports = {
+export const prettierRules = {
   printWidth: 180,
   tabWidth: 2,
   useTabs: false,
@@ -15,11 +15,11 @@ module.exports = {
   overrides: [
     {
       files: '.prettierrc',
-      options: {parser: 'json'},
+      options: { parser: 'json' },
     },
     {
       files: '*.ejs',
-      options: {parser: 'html'},
+      options: { parser: 'html' },
     },
   ],
 };

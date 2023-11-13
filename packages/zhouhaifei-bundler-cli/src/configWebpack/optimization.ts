@@ -1,4 +1,3 @@
-import crypto from 'crypto';
 import type { WebpackApplyOptions } from '../types';
 import { CodeSplit } from '../types';
 
@@ -7,6 +6,8 @@ export function optimization({
   isDevelopment,
   userConfig: { codeSplitting },
 }: WebpackApplyOptions) {
+  const minSize = 1024 * 20;
+  let id = 0;
   config
     .optimization
     .concatenateModules(true)
@@ -22,14 +23,13 @@ export function optimization({
   switch (codeSplitting) {
     case CodeSplit.depPerChunk:
       config.optimization.splitChunks({
-        chunks: 'all',
-        minChunks: 2,
         cacheGroups: {
           vendors: {
             test: /[\\/]node_modules[\\/]/,
             priority: 10,
             chunks: 'all',
-            minChunks: 2,
+            minSize,
+            minChunks: 1,
             name(module) {
               const path = module.context.replace(/.pnpm[\\/]/, '');
               const match = path.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/);
@@ -59,8 +59,6 @@ export function optimization({
         'react-router-dom',
       ];
       config.optimization.splitChunks({
-        chunks: 'all',
-        minChunks: 2,
         cacheGroups: {
           default: false,
           defaultVendors: false,
@@ -80,7 +78,7 @@ export function optimization({
             test(module: any) {
               return (
                 !isModuleCSS(module) &&
-                module.size() > 160000 &&
+                module.size() > minSize &&
                 /node_modules[/\\]/.test(module.identifier())
               );
             },
@@ -109,29 +107,15 @@ export function optimization({
 
               return `${processedIdentifier || identifier}-lib`;
             },
+            minSize,
             priority: 30,
             reuseExistingChunk: true,
             chunks: 'all',
-            minChunks: 2,
+            minChunks: 1,
           },
           shared: {
-            name(_module: any, chunks: any) {
-              const cryptoName = crypto
-                .createHash('sha1')
-                .update(
-                  chunks.reduce((acc: any, chunk: any) => {
-                    return acc + chunk.name;
-                  }, '')
-                )
-                .digest('base64')
-
-                // replace `+=/` that may be escaped in the url
-                // https://github.com/umijs/umi/issues/9845
-                .replace(/\//g, '')
-                .replace(/\+/g, '-')
-                .replace(/[=]/g, '_');
-              return `shared-${cryptoName}`;
-            },
+            name: () => `shared-${++id}`,
+            minSize,
             priority: 10,
             reuseExistingChunk: true,
             chunks: 'all',

@@ -1,4 +1,4 @@
-module.exports = {
+export const eslintJsxAndHooksRules = {
   // hooks
   'react-hooks/rules-of-hooks': 2,
 
@@ -31,8 +31,8 @@ module.exports = {
   'react/self-closing-comp': [
     2,
     {
-      'component': true,
-      'html': true,
+      component: true,
+      html: true,
     },
   ],
   'react/jsx-boolean-value': 2,
@@ -40,13 +40,13 @@ module.exports = {
   'react/jsx-wrap-multilines': [
     2,
     {
-      'declaration': 'parens-new-line',
-      'assignment': 'parens-new-line',
-      'return': 'parens-new-line',
-      'arrow': 'parens-new-line',
-      'condition': 'parens-new-line',
-      'logical': 'parens-new-line',
-      'prop': 'parens-new-line',
+      declaration: 'parens-new-line',
+      assignment: 'parens-new-line',
+      return: 'parens-new-line',
+      arrow: 'parens-new-line',
+      condition: 'parens-new-line',
+      logical: 'parens-new-line',
+      prop: 'parens-new-line',
     },
   ],
   'react/jsx-uses-react': 2,
@@ -111,7 +111,7 @@ module.exports = {
   'react/jsx-curly-newline': 2,
   'react/jsx-curly-spacing': [
     2,
-    { 'when': 'never' },
+    { when: 'never' },
   ],
   'react/jsx-equals-spacing': [
     2,
@@ -135,8 +135,8 @@ module.exports = {
   'react/jsx-max-props-per-line': [
     2,
     {
-      'maximum': 1,
-      'when': 'always',
+      maximum: 1,
+      when: 'always',
     },
   ],
   'react/jsx-no-duplicate-props': 2,
@@ -144,12 +144,12 @@ module.exports = {
     2,
     [
       {
-        'name': 'Link',
-        'props': ['to'],
+        name: 'Link',
+        props: ['to'],
       },
       {
-        'name': 'a',
-        'props': [
+        name: 'a',
+        props: [
           'href',
           'to',
         ],
@@ -165,10 +165,10 @@ module.exports = {
   'react/jsx-tag-spacing': [
     2,
     {
-      'closingSlash': 'never',
-      'beforeSelfClosing': 'never',
-      'afterOpening': 'never',
-      'beforeClosing': 'never',
+      closingSlash: 'never',
+      beforeSelfClosing: 'never',
+      afterOpening: 'never',
+      beforeClosing: 'never',
     },
   ],
 };

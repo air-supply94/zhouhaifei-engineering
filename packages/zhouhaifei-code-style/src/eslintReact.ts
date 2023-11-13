@@ -1,16 +1,21 @@
-module.exports = {
+import { eslintBaseRules } from './eslintBaseRules';
+import { eslintImportRules } from './eslintImportRules';
+import { eslintJsxAndHooksRules } from './eslintJsxAndHooksRules';
+import { eslintTypescriptRules } from './eslintTypescriptRules';
+
+export const eslintReactRules = {
   root: true,
   parser: 'babel-eslint',
-  extends: [
-    'eslint:recommended',
-  ],
+  extends: ['eslint:recommended'],
   plugins: [
     'import',
+    'jsx-a11y',
+    'react',
+    'react-hooks',
     '@typescript-eslint',
   ],
 
   env: {
-    worker: true,
     browser: true,
     commonjs: true,
     es6: true,
@@ -19,37 +24,43 @@ module.exports = {
   },
 
   parserOptions: {
+    ecmaVersion: 2018,
     sourceType: 'module',
     ecmaFeatures: {
-      ecmaVersion: 2018,
       legacyDecorators: true,
+      jsx: true,
     },
   },
 
-  settings: { react: { version: 'detect' } },
+  settings: { react: { version: 'detect' }},
 
   rules: {
-    ...require('./eslintBase'),
-    ...require('./import'),
+    ...eslintBaseRules,
+    ...eslintImportRules,
+    ...eslintJsxAndHooksRules,
   },
 
   overrides: [
     {
-      files: ['**/*.ts'],
+      files: [
+        '**/*.ts',
+        '**/*.tsx',
+      ],
       parser: '@typescript-eslint/parser',
       parserOptions: {
+        ecmaVersion: 2018,
         sourceType: 'module',
         ecmaFeatures: {
-          ecmaVersion: 2018,
+          jsx: true,
           legacyDecorators: true,
         },
+
         // typescript-eslint specific options
         warnOnUnsupportedTypeScriptVersion: true,
       },
       extends: ['plugin:@typescript-eslint/recommended'],
       plugins: ['@typescript-eslint'],
-
-      rules: { ...require('./typescript') },
+      rules: { ...eslintTypescriptRules },
     },
   ],
 };

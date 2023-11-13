@@ -1,12 +1,11 @@
 {
   "name": "@zhouhaifei/babel-preset",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "author": "zhouhaifei1994@sina.com",
   "dependencies": {
     "babel-plugin-styled-components": "2.1.4",
     "@babel/core": "7.23.2",
@@ -29,9 +28,6 @@
     "@babel/preset-typescript": "7.23.2",
     "@babel/runtime": "7.23.2",
     "core-js": "3.33.2"
-  },
-  "devDependencies": {
-    "father": "4.3.5"
   },
   "scripts": {
     "doctor": "father doctor",

@@ -1,4 +1,4 @@
-module.exports = {
+export const commitLintRules = {
   extends: [require.resolve('@commitlint/config-conventional')],
   rules: {
     'type-case': [

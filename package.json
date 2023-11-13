@@ -13,6 +13,7 @@
     "pnpm": "^8.9.2"
   },
   "devDependencies": {
+    "father": "4.3.7",
     "@types/node": "^16.18.61",
     "@changesets/cli": "2.26.2",
     "@commitlint/cli": "11.0.0",

@@ -1,4 +1,4 @@
-module.exports = {
+export const eslintTypescriptRules = {
   /**
    * core rule
    */
@@ -124,7 +124,7 @@ module.exports = {
   'space-infix-ops': 'off',
   '@typescript-eslint/space-infix-ops': [
     'error',
-    { 'int32Hint': false },
+    { int32Hint: false },
   ],
 
   // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/291)

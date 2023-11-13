@@ -1,4 +1,4 @@
-module.exports = {
+export const eslintBaseRules = {
   // Possible Errors
   'no-console': 0,
 
@@ -287,6 +287,7 @@ module.exports = {
     2,
     'never',
   ],
+
   // has bug
   // 'template-curly-spacing': [
   //   2,

@@ -1,13 +1,13 @@
-module.exports = {
+export const stylelintRules = {
   extends: [
-    'stylelint-config-css-modules',
-    'stylelint-config-prettier',
-    'stylelint-config-rational-order',
-  ].map((key) => require.resolve(key)),
+    require.resolve('stylelint-config-css-modules'),
+    require.resolve('stylelint-config-prettier'),
+    require.resolve('stylelint-config-rational-order'),
+  ],
   plugins: [
-    'stylelint-order',
-    'stylelint-declaration-block-no-ignored-properties',
-  ].map((key) => require.resolve(key)),
+    require.resolve('stylelint-order'),
+    require.resolve('stylelint-declaration-block-no-ignored-properties'),
+  ],
   rules: {
     // recommend
     'at-rule-no-unknown': true,
@@ -17,9 +17,7 @@ module.exports = {
     'declaration-block-no-duplicate-custom-properties': true,
     'declaration-block-no-duplicate-properties': [
       true,
-      {
-        ignore: ['consecutive-duplicates-with-different-values'],
-      },
+      { ignore: ['consecutive-duplicates-with-different-values']},
     ],
     'declaration-block-no-shorthand-property-overrides': true,
     'font-family-no-duplicate-names': true,
@@ -45,9 +43,7 @@ module.exports = {
     'no-descending-specificity': null,
     'selector-type-no-unknown': [
       true,
-      {
-        ignore: ['custom-elements'],
-      },
+      { ignore: ['custom-elements']},
     ],
     'string-no-newline': true,
     'unit-no-unknown': true,
@@ -146,15 +142,15 @@ module.exports = {
     ],
 
     // General
-    'indentation': 2,
-    'linebreaks': 'unix',
+    indentation: 2,
+    linebreaks: 'unix',
     'max-empty-lines': 1,
     'no-eol-whitespace': true,
     'no-missing-end-of-source-newline': true,
     'no-empty-first-line': true,
     'comment-empty-line-before': [
       'always',
-      {except: ['first-nested']},
+      { except: ['first-nested']},
     ],
     'comment-whitespace-inside': 'always',
 

@@ -1,10 +1,6 @@
 {
   "name": "generator-zhouhaifei-react",
-  "version": "3.0.2",
-  "author": {
-    "name": "joey",
-    "email": "zhouhaifei1994@sina.com"
-  },
+  "version": "3.0.3",
   "files": [
     "generators"
   ],
@@ -13,9 +9,6 @@
     "jest": "26.1.0",
     "yeoman-assert": "3.1.0",
     "yeoman-test": "1.7.0"
-  },
-  "engines": {
-    "npm": ">= 4.0.0"
   },
   "dependencies": {
     "chalk": "2.1.0",

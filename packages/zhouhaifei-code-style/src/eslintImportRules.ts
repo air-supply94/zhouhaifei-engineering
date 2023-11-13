@@ -1,4 +1,4 @@
-module.exports = {
+export const eslintImportRules = {
   'import/order': 'off',
   'import/no-unresolved': 'off',
   'import/named': 'off',

@@ -1,8 +1,6 @@
-import { defineConfig } from 'father';
-
-export default defineConfig({
+export default {
   cjs: {
     output: 'dist',
-    sourcemap: true
+    sourcemap: true,
   },
-});
+};
