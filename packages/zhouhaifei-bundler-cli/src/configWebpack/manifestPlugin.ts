@@ -3,10 +3,10 @@ import type { WebpackApplyOptions } from '../types';
 
 export function manifestPlugin({
   config,
-  isProduction,
+  isDevelopment,
   userConfig: { manifestOptions },
 }: WebpackApplyOptions) {
-  if (isProduction) {
+  if (!isDevelopment && manifestOptions !== false) {
     config
       .plugin('webpack-manifest-plugin')
       .use(WebpackManifestPlugin, [

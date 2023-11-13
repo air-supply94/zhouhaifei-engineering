@@ -1,7 +1,7 @@
 import cac from 'cac';
 import path from 'path';
 import { buildWebpack } from './buildWebpack';
-import { cwd, DEFAULT_CONFIG_NAME, SRC_DIR, version } from './constants';
+import { cwd, DEFAULT_CONFIG_NAME, DEFAULT_SRC_DIR, version } from './constants';
 import { devVite } from './devVite';
 import { devWebpack } from './devWebpack';
 import type { cliOptions, UserConfig } from './types';
@@ -22,7 +22,7 @@ const extensions = [
   '.tsx',
 ];
 
-const entryFile = resolveModule(resolveFile.bind(null, cwd), `${SRC_DIR}/index`, extensions) || resolveModule(resolveFile.bind(null, cwd), 'index', extensions);
+const entryFile = resolveModule(resolveFile.bind(null, cwd), `${DEFAULT_SRC_DIR}/index`, extensions) || resolveModule(resolveFile.bind(null, cwd), 'index', extensions);
 const entry = { [`${path.basename(entryFile, path.extname(entryFile))}`]: entryFile };
 
 cli.option('-c, --config [config]', 'your config file');

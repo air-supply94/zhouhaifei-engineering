@@ -1,4 +1,5 @@
 import type { WebpackApplyOptions } from '../types';
+import path from 'path';
 
 export function devServerPlugin({
   userConfig: {
@@ -8,9 +9,9 @@ export function devServerPlugin({
     publicPath,
     publicDir,
   },
-  cwd,
   isDevelopment,
   config,
+  cwd,
 }: WebpackApplyOptions) {
   if (!isDevelopment) {
     return;
@@ -51,7 +52,7 @@ export function devServerPlugin({
     .historyApiFallback({ disableDotRule: true })
     .set('devMiddleware', { publicPath })
     .set('static', {
-      directory: publicDir,
+      directory: path.resolve(cwd, publicDir),
       publicPath,
       watch: { aggregateTimeout: 600 },
     });

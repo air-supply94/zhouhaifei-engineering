@@ -30,8 +30,8 @@
     "prettier": "2.2.1",
     "stylelint": "13.13.1",
     "validate-commit-msg": "2.14.0",
-    "@zhouhaifei/bundler-cli": "3.0.1",
-    "@zhouhaifei/code-style": "3.0.1"
+    "@zhouhaifei/bundler-cli": "3.0.3",
+    "@zhouhaifei/code-style": "3.0.3"
   },
   "config": {
     "commitizen": {

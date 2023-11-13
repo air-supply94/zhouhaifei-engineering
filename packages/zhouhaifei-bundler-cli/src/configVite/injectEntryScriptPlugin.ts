@@ -1,5 +1,5 @@
 import type { UserConfig } from 'vite';
-import { SRC_DIR } from '../constants';
+import { DEFAULT_SRC_DIR } from '../constants';
 
 export function InjectEntryScriptPlugin(): UserConfig['plugins'][0] {
   return {
@@ -10,7 +10,7 @@ export function InjectEntryScriptPlugin(): UserConfig['plugins'][0] {
           tag: 'script',
           attrs: {
             type: 'module',
-            src: `/${SRC_DIR}/index`,
+            src: `/${DEFAULT_SRC_DIR}/index`,
           },
           injectTo: 'body',
         },

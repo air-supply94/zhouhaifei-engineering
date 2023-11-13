@@ -38,7 +38,7 @@ export function config({
   } = userConfig;
 
   const defaultConfig: UserConfig = {
-    publicDir,
+    publicDir: path.resolve(cwd, publicDir),
     cacheDir: path.resolve(cwd, cache.cacheDirectory),
     define: {
       'process.env': getProcessEnv(userEnv, publicPath, env),

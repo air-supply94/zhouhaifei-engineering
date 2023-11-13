@@ -96,6 +96,7 @@ export function cssRule({
           .options({
             base: 0,
             esModule: true,
+            ...styleLoaderOptions,
           });
       } else {
         rule

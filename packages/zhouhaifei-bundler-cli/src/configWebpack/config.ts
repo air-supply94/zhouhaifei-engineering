@@ -1,11 +1,11 @@
-import type { Configuration } from 'webpack';
-import Config from 'webpack-5-chain';
 import crypto from 'crypto';
-import { SRC_DIR, version } from '../constants';
 import path from 'path';
+import type { Configuration } from 'webpack';
 import webpack from 'webpack';
+import Config from 'webpack-5-chain';
+import { DEFAULT_SRC_DIR, version } from '../constants';
+import type { WebpackApplyOptions, WebpackConfigOptions } from '../types';
 import { Env } from '../types';
-import type { WebpackConfigOptions, WebpackApplyOptions } from '../types';
 import { antdMomentPlugin } from './antdMomentPlugin';
 import { assetRule } from './assetRule';
 import { bundleAnalyzerPlugin } from './bundleAnalyzerPlugin';
@@ -13,20 +13,20 @@ import { caseSensitivePathsPlugin } from './caseSensitivePathsPlugin';
 import { compressPlugin } from './compressPlugin';
 import { copyPlugin } from './copyPlugin';
 import { cssRule } from './cssRule';
+import { definePlugin } from './definePlugin';
 import { devServerPlugin } from './devServerPlugin';
 import { forkTsCheckerPlugin } from './forkTsCheckerPlugin';
+import { htmlPlugin } from './htmlPlugin';
+import { ignorePlugin } from './ignorePlugin';
 import { javascriptRule } from './javascriptRule';
 import { manifestPlugin } from './manifestPlugin';
 import { miniCssExtractPlugin } from './miniCssExtractPlugin';
 import { optimization } from './optimization';
 import { preloadPlugin } from './preloadPlugin';
-import { definePlugin } from './definePlugin';
+import { progressPlugin } from './progressPlugin';
 import { reactRefreshPlugin } from './reactRefreshPlugin';
 import { speedMeasurePlugin } from './speedMeasurePlugin';
-import { progressPlugin } from './progressPlugin';
-import { ignorePlugin } from './ignorePlugin';
 import { unusedPlugin } from './unusedPlugin ';
-import { htmlPlugin } from './htmlPlugin';
 
 function createEnvironmentHash(userEnv: WebpackConfigOptions['userEnv']) {
   const hash = crypto.createHash('md5');
@@ -43,11 +43,8 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
     entry = {},
     userEnv = {},
   } = options;
-  const nodeModules = /node_modules/;
-  const isDev = env === Env.development;
   const config = new Config();
   const isDevelopment = env === Env.development;
-  const isProduction = env === Env.production;
   const {
     outputPath,
     staticPathPrefix,
@@ -64,15 +61,14 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
     cwd,
     env,
     isDevelopment,
-    isProduction,
-    srcDir: path.resolve(cwd, SRC_DIR),
+    srcDir: path.resolve(cwd, DEFAULT_SRC_DIR),
   };
 
   // watchOptions
   config.watchOptions({
     aggregateTimeout: 300,
     poll: false,
-    ignored: nodeModules,
+    ignored: /node_modules/,
   });
 
   // cache
@@ -92,11 +88,11 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
         .end();
     });
 
-  // stats、mode、bail、devtool、profile
+  // stats、mode、bail、devtool、profile、performance
   config.performance(false);
   config.stats('none');
   config.mode(options.env);
-  config.bail(!isDev);
+  config.bail(!isDevelopment);
   config.devtool(sourcemap);
 
   // resolve
@@ -125,8 +121,8 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
   config.output
     .clean(true)
     .path(path.resolve(cwd, outputPath))
-    .filename(isDev ? '[name].js' : '[name].[contenthash].js')
-    .chunkFilename(isDev ? '[name].async.js' : '[name].[contenthash].async.js')
+    .filename(isDevelopment ? '[name].js' : '[name].[contenthash].js')
+    .chunkFilename(isDevelopment ? '[name].async.js' : '[name].[contenthash].async.js')
     .publicPath(publicPath)
     .pathinfo(true)
     .set('assetModuleFilename', `${staticPathPrefix}[name].[hash][ext]`)

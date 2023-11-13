@@ -52,7 +52,7 @@ export enum CodeSplit {
 
 interface BaseConfig {
   transpiler?: keyof typeof Transpiler;
-  esbuildLoaderOptions?: EsbuildOptions;
+  esbuildLoaderOptions?: Record<string, any>;
   babelLoaderOptions?: Record<string, any>;
   extraJsModuleIncludes?: Array<string | RegExp>;
   publicDir?: string;
@@ -116,7 +116,7 @@ export interface UserConfig extends BaseConfig, StyleConfig, GetBabelConfigOptio
   ) => void | Promise<void>;
   analyzer?: BundleAnalyzerPlugin.Options;
   analyzerPort?: number;
-  manifestOptions?: ManifestPluginOptions;
+  manifestOptions?: false | ManifestPluginOptions;
   ignoreMomentLocale?: boolean;
   copy?: CopyOptions[] | string[];
   deadCode?: { directories?: string[]; exclude?: string[]; root?: string; };
@@ -142,7 +142,6 @@ export interface WebpackApplyOptions {
   readonly cwd: WebpackConfigOptions['cwd'];
   readonly userConfig: UserConfig;
   readonly isDevelopment: boolean;
-  readonly isProduction: boolean;
   readonly srcDir: string;
 }
 

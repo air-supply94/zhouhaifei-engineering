@@ -20,13 +20,15 @@ export function getPlugins({
     babelExtraPlugins,
     babelPluginDecorators,
     babelPluginStyledComponents,
+    babelClassProperties,
+    publicDir,
   },
 }: Options): ViteUserConfig['plugins'] {
   const plugins: ViteUserConfig['plugins'] = [
     requireTransform({ fileRegex: /\.(ts|tsx|js|jsx)$/ }),
     createHtmlPlugin({
       minify: true,
-      template: 'public/index.html',
+      template: `${publicDir}/index.html`,
     }),
     react({
       babel: {
@@ -35,7 +37,7 @@ export function getPlugins({
           babelPluginDecorators,
           babelExtraPlugins,
           babelPluginStyledComponents,
-          babelClassProperties: {},
+          babelClassProperties: babelClassProperties || {},
         }).plugins,
       },
     }),

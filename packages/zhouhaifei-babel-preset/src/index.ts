@@ -121,7 +121,7 @@ export function getBabelConfig({
       // 支持styled-components
       babelPluginStyledComponents && [
         require.resolve('@babel-plugin-styled-components'),
-        babelPluginDecorators,
+        babelPluginStyledComponents,
       ],
 
       // 支持装饰器语法

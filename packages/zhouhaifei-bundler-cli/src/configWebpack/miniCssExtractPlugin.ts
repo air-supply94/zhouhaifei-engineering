@@ -3,9 +3,9 @@ import type { WebpackApplyOptions } from '../types';
 
 export function miniCssExtractPlugin({
   config,
-  isProduction,
+  isDevelopment,
 }: WebpackApplyOptions) {
-  if (isProduction) {
+  if (!isDevelopment) {
     config
       .plugin('mini-css-extract-plugin')
       .use(MiniCssExtractPlugin, [

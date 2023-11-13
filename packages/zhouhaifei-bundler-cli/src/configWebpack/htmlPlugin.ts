@@ -4,20 +4,21 @@ import type { WebpackApplyOptions } from '../types';
 
 export function htmlPlugin({
   config,
-  isProduction,
+  isDevelopment,
   userConfig: {
     htmlOption,
     publicPath,
     publicDir,
   },
+  cwd,
 }: WebpackApplyOptions) {
   if (htmlOption !== false) {
     const initOptions = {
       inject: true,
       cache: false,
       publicPath,
-      template: path.resolve(publicDir, 'index.html'),
-      minify: isProduction ? {
+      template: path.resolve(cwd, `${publicDir}/index.html`),
+      minify: !isDevelopment ? {
         removeComments: true,
         collapseWhitespace: true,
         removeRedundantAttributes: true,

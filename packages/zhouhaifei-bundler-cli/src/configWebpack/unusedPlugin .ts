@@ -3,12 +3,12 @@ import type { WebpackApplyOptions } from '../types';
 
 export function unusedPlugin({
   config,
-  isProduction,
+  isDevelopment,
   cwd,
   userConfig: { deadCode },
   srcDir,
 }: WebpackApplyOptions) {
-  if (isProduction && deadCode) {
+  if (!isDevelopment && deadCode) {
     config
       .plugin('unused-webpack-plugin')
       .use(UnusedWebpackPlugin, [

@@ -3,10 +3,10 @@ import type { WebpackApplyOptions } from '../types';
 
 export function preloadPlugin({
   config,
-  isProduction,
+  isDevelopment,
   userConfig: { preloadOptions },
 }: WebpackApplyOptions) {
-  if (isProduction && preloadOptions !== false) {
+  if (!isDevelopment && preloadOptions !== false) {
     config
       .plugin('preload-webpack-plugin')
       .use(PreloadWebpackPlugin, [

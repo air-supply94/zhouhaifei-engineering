@@ -15,6 +15,8 @@ export const LOCAL_IDENT_NAME = '[name]__[local]--[hash:base64:8]';
 export const DEFAULT_DEV_DEVTOOL = 'cheap-module-source-map';
 export const DEFAULT_BUILD_DEVTOOL = 'source-map';
 export const DEFAULT_OUTPUT_PATH = 'dist';
+export const DEFAULT_SRC_DIR = 'src';
+export const DEFAULT_PUBLIC_DIR = 'public';
 export const DEFAULT_BROWSER_TARGETS = {
   chrome: 80,
   edge: 79,
@@ -33,4 +35,4 @@ export const DEFAULT_ESBUILD_TARGET_KEYS = [
 
 export const DEFAULT_CONFIG_NAME = 'bundlerConfig';
 export const cwd = fs.realpathSync(process.cwd());
-export const SRC_DIR = 'src';
+

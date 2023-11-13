@@ -10,10 +10,10 @@ export function copyPlugin({
     publicDir,
   },
   cwd,
-  isProduction,
+  isDevelopment,
 }: WebpackApplyOptions) {
   const copyPatterns = [];
-
+  publicDir = path.resolve(cwd, publicDir);
   if (fs.existsSync(publicDir) && fs.readdirSync(publicDir).length) {
     copyPatterns.push({
       from: publicDir,
@@ -39,7 +39,7 @@ export function copyPlugin({
     });
   }
 
-  if (isProduction && copyPatterns.length) {
+  if (!isDevelopment && copyPatterns.length) {
     config
       .plugin('copy-webpack-plugin')
       .use(CopyWebpackPlugin, [{ patterns: copyPatterns }]);

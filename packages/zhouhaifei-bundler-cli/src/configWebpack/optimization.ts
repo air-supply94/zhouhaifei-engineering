@@ -4,7 +4,7 @@ import { CodeSplit } from '../types';
 
 export function optimization({
   config,
-  isProduction,
+  isDevelopment,
   userConfig: { codeSplitting },
 }: WebpackApplyOptions) {
   config
@@ -14,7 +14,7 @@ export function optimization({
     .chunkIds('deterministic')
     .runtimeChunk('single');
 
-  if (!isProduction) {
+  if (isDevelopment) {
     return;
   }
 

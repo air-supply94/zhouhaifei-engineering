@@ -138,7 +138,7 @@ zhouhaifei-bundler-cli build
 
 - 描述: 静态资源的文件夹
 - 类型: string
-- 默认值: 根目录下 public 文件夹
+- 默认值: 'public'
 - 兼容模式: vite 和 webpack
 
 ### open
@@ -204,7 +204,7 @@ zhouhaifei-bundler-cli build
 
 - 描述: 打包生成目录
 - 类型: string
-- 默认值: 项目根目录下 dist 文件夹
+- 默认值: 'dist'
 - 兼容模式: webpack
 
 ### publicPath
@@ -226,7 +226,7 @@ zhouhaifei-bundler-cli build
 
 ### externals
 
-- 描述: 阻止打包配置
+- 描述: 外部依赖,不打包
 - 类型: Record<string, string>
 - 默认值: {}
 - 兼容模式: webpack
@@ -410,7 +410,7 @@ export interface GetBabelConfigOptions {
 
 ### [babelPluginStyledComponents](https://www.npmjs.com/package/babel-plugin-styled-components)
 
-- 默认值: undefined(不开启)
+- 默认值: undefined(对象开启及设置)
 
 ## style 相关配置
 
@@ -450,14 +450,14 @@ export interface GetBabelConfigOptions {
 - 默认值: {base: 0, esModule: true}
 - 兼容模式: webpack 模式 dev
 
-### [cssLoaderModules](https://www.npmjs.com/package/style-loader)
+### [cssLoaderModules](https://www.npmjs.com/package/css-loader)
 
 - 描述: css-loader 的 modules 配置
 - 类型: Record<string, any>
 - 默认值: {localIdentName: '\[name]\_\_\[local]--\[hash:base64:8]'}
 - 兼容模式: webpack
 
-### [cssLoaderOptions](https://www.npmjs.com/package/style-loader)
+### [cssLoaderOptions](https://www.npmjs.com/package/css-loader)
 
 - 描述: css-loader 配置
 - 类型: Record<string, any>
@@ -602,13 +602,13 @@ export interface GetBabelConfigOptions {
 ### [manifestOptions](https://www.npmjs.com/package/webpack-manifest-plugin)
 
 - 描述: webpack-manifest-plugin 配置
-- 类型: ManifestPluginOptions
-- 默认值: undefined(对象开启及设置)
+- 类型: false | ManifestPluginOptions
+- 默认值: {fileName: 'asset-manifest.json'}
 - 兼容模式: webpack 模式 build
 
 ### ignoreMomentLocale
 
-- 描述: 是否忽律 moment 的 local 文件
+- 描述: 是否忽略 moment 的 local 文件
 - 类型: boolean
 - 默认值: true
 - 兼容模式: webpack
@@ -624,7 +624,7 @@ export interface GetBabelConfigOptions {
 
 - 描述: unused-webpack-plugin 配置
 - 类型: { directories?: string[]; exclude?: string[]; root?: string; }
-- 默认值: undefined(对象开启及设置)
+- 默认值: undefined(对象开启及设置,内置 directories 为 src 目录和 root 为 process.pwd)
 - 兼容模式: webpack 模式 build
 
 ### [htmlOption](https://www.npmjs.com/package/html-webpack-plugin)
@@ -661,23 +661,21 @@ const initOptions = {
 ### [vite](https://cn.vitejs.dev/config/)
 
 - 描述: vite 配置
-- 兼容模式: dev 下 vite
+- 兼容模式: dev 模式 vite
 
-### chainWebpack
+### [chainWebpack](https://www.npmjs.com/package/webpack-5-chain)
 
-- 描述: 使用 chain-webpack 修改 webpack 配置
-- 类型: [Config](https://www.npmjs.com/package/webpack-5-chain)
+- 描述: 使用 webpack-5-chain 修改 webpack 配置
+- 类型。[Config](https://www.npmjs.com/package/webpack-5-chain)
 
 ```ts
-{
-  chainWebpack?: (
-    memo: Config,
-    args: {
-      env: keyof typeof Env;
-      webpack: typeof webpack;
-    },
-  ) => void | Promise<void>;
-}
+type chainWebpack = (
+  memo: Config,
+  args: {
+    env: keyof typeof Env;
+    webpack: typeof webpack;
+  },
+) => void | Promise<void>;
 ```
 
 - 默认值: undefined

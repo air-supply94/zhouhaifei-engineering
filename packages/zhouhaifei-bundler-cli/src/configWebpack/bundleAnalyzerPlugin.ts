@@ -3,13 +3,13 @@ import type { WebpackApplyOptions } from '../types';
 
 export function bundleAnalyzerPlugin({
   config,
-  isProduction,
+  isDevelopment,
   userConfig: {
     analyzer,
     analyzerPort,
   },
 }: WebpackApplyOptions) {
-  if (isProduction && analyzer) {
+  if (!isDevelopment && analyzer) {
     config
       .plugin('webpack-bundle-analyzer')
       .use(BundleAnalyzerPlugin, [

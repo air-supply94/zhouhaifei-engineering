@@ -1,10 +1,11 @@
 import type { UserConfig, cliOptions } from '../types';
 import path from 'path';
 import { CodeSplit, CSSMinifier, Env, JSMinifier, Transpiler } from '../types';
-import { cwd, DEFAULT_BROWSER_TARGETS, DEFAULT_BUILD_DEVTOOL, DEFAULT_DEV_DEVTOOL, DEFAULT_OUTPUT_PATH } from '../constants';
+import { cwd, DEFAULT_BROWSER_TARGETS, DEFAULT_BUILD_DEVTOOL, DEFAULT_DEV_DEVTOOL, DEFAULT_OUTPUT_PATH, DEFAULT_PUBLIC_DIR } from '../constants';
 
 export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = {}): UserConfig {
-  userConfig.publicDir ||= path.resolve(cwd, 'public');
+  userConfig.proxy ||= {};
+  userConfig.publicDir ||= DEFAULT_PUBLIC_DIR;
 
   userConfig.open ||= cliOptions.open;
   userConfig.watch ||= cliOptions.watch;
@@ -35,6 +36,7 @@ export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = 
   // esbuild-loader加载antd style错乱
   // antd5x不会有问题
   userConfig.transpiler ||= Transpiler.babel;
+
   userConfig.jsMinifier ||= JSMinifier.esbuild;
   userConfig.cssMinifier ||= CSSMinifier.esbuild;
   userConfig.targets ||= DEFAULT_BROWSER_TARGETS;
