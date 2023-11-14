@@ -9,7 +9,7 @@
     "target": "es6", // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES6'/'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
     "allowSyntheticDefaultImports": true, //允许从没有设置默认导出的模块中默认导入
     "allowJs": true, // 允许编译 javascript 文件
-    "isolatedModules": true, //将每个文件作为单独的模块
+    "isolatedModules": false, //将每个文件作为单独的模块
     "useDefineForClassFields": false,
     "experimentalDecorators": true, //启用实验性的ES装饰器
     "emitDecoratorMetadata": false, //给源码里的装饰器声明加上设计类型元数据
