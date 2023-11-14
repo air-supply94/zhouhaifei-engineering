@@ -15,7 +15,11 @@ export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = 
   userConfig.nocompress ||= process.env.COMPRESS === '1';
   userConfig.analyzer ||= process.env.ANALYZE === '1';
   userConfig.analyzerPort ||= parseInt(process.env.ANALYZE_PORT, 10) || 8888;
+
   userConfig.publicPath ||= process.env.PUBLIC_URL || '/';
+  if (!userConfig.publicPath.endsWith('/')) {
+    userConfig.publicPath += '/';
+  }
 
   userConfig.sourcemap = userConfig.sourcemap === false || userConfig.sourcemap ? userConfig.sourcemap : process.env.NODE_ENV === Env.development ? DEFAULT_DEV_DEVTOOL : DEFAULT_BUILD_DEVTOOL;
   userConfig.outputPath ||= DEFAULT_OUTPUT_PATH;

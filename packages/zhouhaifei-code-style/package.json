@@ -20,6 +20,14 @@
     "stylelint-declaration-block-no-ignored-properties": "2.4.0",
     "stylelint-order": "5.0.0"
   },
+  "devDependencies": {
+    "father": "4.3.7"
+  },
+  "peerDependencies": {
+    "eslint": "^7.29.0",
+    "prettier": "^2.2.1",
+    "stylelint": "^13.13.1"
+  },
   "scripts": {
     "doctor": "father doctor",
     "dev": "father dev",

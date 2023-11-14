@@ -29,6 +29,9 @@
     "@babel/runtime": "7.23.2",
     "core-js": "3.33.2"
   },
+  "devDependencies": {
+    "father": "4.3.7"
+  },
   "scripts": {
     "doctor": "father doctor",
     "dev": "father dev",

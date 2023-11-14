@@ -58,6 +58,9 @@
     "webpack-manifest-plugin": "5.0.0",
     "webpackbar": "5.0.2"
   },
+  "devDependencies": {
+    "father": "4.3.7"
+  },
   "scripts": {
     "doctor": "father doctor",
     "dev": "father dev",
