@@ -6,10 +6,5 @@ export const commitlint = {
       'always',
       'camel-case',
     ],
-    'scope-case': [
-      1,
-      'always',
-      'camel-case',
-    ],
   },
 };
