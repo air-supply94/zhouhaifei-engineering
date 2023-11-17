@@ -54,7 +54,6 @@ const proxy = context.reduce((prev, current) => {
 
 const config: UserConfig = {
   proxy,
-  antd: { import: true },
   externals: {
     lodash: '_',
     qs: 'Qs',

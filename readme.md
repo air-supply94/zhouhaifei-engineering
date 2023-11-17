@@ -51,6 +51,13 @@ git config --global core.safecrlf false
 git config --global core.autocrlf input
 ```
 
+## antd 说明
+
+- antd4x 版本官方推荐 style 按需引入,脚手架 demo 采用的是全量引入
+- 实际项目中用到的组件样式打出来文件大小和全量引入没有太大区别,css 文件 gzip 压缩后文件已经减少很多
+- 根据实际主题需要预先将 antd 的 less 打包成 css,然后将 css 放在 cdn。这样还能各项目享受缓存,打包工具还不用转译 less 文件(减少构建时间)
+- 组件库打包时也采用 bundles 打包(比如 father4),tree shaking 效果更好
+
 ## 配置文件
 
 - 默认是项目根目录下的 bundlerConfig.ts
@@ -106,11 +113,9 @@ zhouhaifei-bundler-cli build
 
 - 描述: 配置构建时转译 js/ts 的工具
 - 类型: 'esbuild' | 'babel'
-- 默认值: 'babel'
+- 默认值: 'esbuild'
 - 兼容模式: webpack
 - 说明 1: esbuild 时使用 esbuild-loader,babel 时使用 babel-loader
-- 说明 2: esbuild 时 antd4 的 style 按需引入样式有问题
-- 说明 3: antd5 或者不使用 antd 时配置成 esbuild 速度更快
 
 ### [esbuildLoaderOptions](https://www.npmjs.com/package/esbuild-loader)
 
@@ -252,15 +257,6 @@ zhouhaifei-bundler-cli build
 - 类型: boolean
 - 默认值: false
 - 兼容模式: vite 和 webpack
-
-### antd
-
-- 描述: antd 相关配置
-- 类型: {libraryName?: 'antd' | 'antd-mobile'; import?: boolean; momentPicker?: boolean;}
-- 默认值: {libraryName: 'antd'}
-- 兼容模式: vite 和 webpack
-- 说明 1: import 是否开启 style 按需引入,antd4 建议开启
-- 说明 2: momentPicker 是否开启 moment 替换 dayjs,antd5 只适配 webpack
 
 ## babel 相关配置
 

@@ -31,16 +31,8 @@ export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = 
 
   userConfig.staticPathPrefix ||= 'static/';
   userConfig.codeSplitting ||= CodeSplit.granularChunks;
-  userConfig.antd ||= {};
-  if (!userConfig.antd.libraryName) {
-    userConfig.antd.libraryName = 'antd';
-  }
 
-  // antd4x使用babel-plugin-import
-  // esbuild-loader加载antd style错乱
-  // antd5x不会有问题
-  userConfig.transpiler ||= Transpiler.babel;
-
+  userConfig.transpiler ||= Transpiler.esbuild;
   userConfig.jsMinifier ||= JSMinifier.esbuild;
   userConfig.cssMinifier ||= CSSMinifier.esbuild;
   userConfig.targets ||= DEFAULT_BROWSER_TARGETS;

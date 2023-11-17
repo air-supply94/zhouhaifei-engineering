@@ -6,7 +6,6 @@ import Config from 'webpack-5-chain';
 import { DEFAULT_SRC_DIR, version } from '../constants';
 import type { WebpackApplyOptions, WebpackConfigOptions } from '../types';
 import { Env } from '../types';
-import { antdMomentPlugin } from './antdMomentPlugin';
 import { assetRule } from './assetRule';
 import { bundleAnalyzerPlugin } from './bundleAnalyzerPlugin';
 import { caseSensitivePathsPlugin } from './caseSensitivePathsPlugin';
@@ -165,7 +164,6 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
   unusedPlugin(applyOptions);
   reactRefreshPlugin(applyOptions);
   compressPlugin(applyOptions);
-  antdMomentPlugin(applyOptions);
   optimization(applyOptions);
 
   devServerPlugin(applyOptions);

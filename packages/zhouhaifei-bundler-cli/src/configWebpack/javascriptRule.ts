@@ -9,7 +9,6 @@ export function javascriptRule({
   config,
   cwd,
   userConfig: {
-    antd,
     babelExtraPreset,
     babelExtraPlugins,
     babelPresetEnv,
@@ -102,19 +101,7 @@ export function javascriptRule({
           });
       }
 
-      const extraBabelPlugins: any[] = [
-        reactRefresh && require.resolve('react-refresh/babel'),
-
-        // antd4x style import
-        antd.import && [
-          require.resolve('babel-plugin-import'),
-          {
-            libraryName: antd.libraryName,
-            libraryDirectory: 'es',
-            style: true,
-          },
-        ],
-      ].filter(Boolean);
+      const extraBabelPlugins: any[] = [reactRefresh && require.resolve('react-refresh/babel')].filter(Boolean);
 
       rule.use('babel-loader')
         .loader(require.resolve('babel-loader'))

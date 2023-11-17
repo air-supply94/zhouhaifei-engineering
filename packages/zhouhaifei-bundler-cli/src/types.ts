@@ -71,11 +71,6 @@ interface BaseConfig {
   publicPath?: string;
   define?: Record<string, any>;
   externals?: Record<string, string>;
-  antd?: {
-    libraryName?: 'antd' | 'antd-mobile';
-    import?: boolean;
-    momentPicker?: boolean;
-  };
   watch?: boolean;
   staticPathPrefix?: string;
   reactRefresh?: boolean;

@@ -3,7 +3,6 @@ import { getBabelConfig } from '@zhouhaifei/babel-preset';
 import { STYLE_EXTENSIONS } from '../constants';
 import react from '@vitejs/plugin-react';
 import { createHtmlPlugin } from 'vite-plugin-html';
-import { createStyleImportPlugin, AntdResolve } from 'vite-plugin-style-import';
 import loadCssModulePlugin from 'vite-plugin-load-css-module';
 import requireTransform from 'vite-plugin-require-transform';
 import type { UserConfig } from '../types';
@@ -15,7 +14,6 @@ interface Options {
 
 export function getPlugins({
   userConfig: {
-    antd,
     autoCSSModules,
     babelExtraPlugins,
     babelPluginDecorators,
@@ -48,6 +46,10 @@ export function getPlugins({
   if (autoCSSModules !== false) {
     plugins.push(loadCssModulePlugin({
       include: (id) => {
+        if (STYLE_EXTENSIONS.some((item) => id.endsWith(`module.${item}`))) {
+          return true;
+        }
+
         if (id.includes('node_modules')) {
           return false;
         }
@@ -58,19 +60,6 @@ export function getPlugins({
 
         return STYLE_EXTENSIONS.some((item) => id.endsWith(`.${item}`));
       },
-    }));
-  }
-
-  // antd4x style import
-  if (antd.import) {
-    plugins.push(createStyleImportPlugin({
-      resolves: [AntdResolve()],
-      libs: [
-        {
-          libraryName: antd.libraryName,
-          resolveStyle: (name: string) => `${antd.libraryName}/es/${name}/style`,
-        },
-      ],
     }));
   }
 
