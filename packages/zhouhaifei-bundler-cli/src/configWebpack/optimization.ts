@@ -6,6 +6,10 @@ export function optimization({
   isDevelopment,
   userConfig: { codeSplitting },
 }: WebpackApplyOptions) {
+  if (isDevelopment) {
+    return;
+  }
+
   const minSize = 1024 * 20;
   let id = 0;
   config
@@ -14,10 +18,6 @@ export function optimization({
     .moduleIds('deterministic')
     .chunkIds('deterministic')
     .runtimeChunk('single');
-
-  if (isDevelopment) {
-    return;
-  }
 
   // 参考umi
   switch (codeSplitting) {
