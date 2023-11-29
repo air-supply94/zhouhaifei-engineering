@@ -6,7 +6,8 @@
     "dist",
     "eslintNode.js",
     "eslintReact.js",
-    "stylelint.js"
+    "stylelint.js",
+    "tsconfig.base.json"
   ],
   "dependencies": {
     "husky": "4.3.0",
