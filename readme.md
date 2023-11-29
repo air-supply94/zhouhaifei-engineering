@@ -501,7 +501,7 @@ export interface GetBabelConfigOptions {
 
 - 描述: 构建时压缩 JavaScript 的工具
 - 类型: 'terser' | 'esbuild' | 'none'
-- 默认值: 'esbuild'
+- 默认值: 'terser'
 - 兼容模式: webpack 模式 build
 
 ### [jsMinifierOptions](https://www.npmjs.com/package/terser-webpack-plugin)
@@ -532,7 +532,7 @@ export interface GetBabelConfigOptions {
 
 - 描述: 构建时压缩 css 的工具
 - 类型: 'esbuild' | 'cssnano' | 'none'
-- 默认值: 'esbuild'
+- 默认值: 'cssnano'
 - 兼容模式: webpack 模式 build
 
 ### [cssMinifierOptions](https://www.npmjs.com/package/css-minimizer-webpack-plugin)
