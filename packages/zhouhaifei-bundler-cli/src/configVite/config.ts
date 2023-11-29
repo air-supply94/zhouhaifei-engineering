@@ -42,6 +42,7 @@ export function config({
     cacheDir: path.resolve(cwd, cache.cacheDirectory),
     define: {
       'process.env': getProcessEnv(userEnv, publicPath, env),
+      global: 'window',
       ...define,
     },
     resolve: { alias },
