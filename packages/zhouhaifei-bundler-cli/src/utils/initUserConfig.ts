@@ -33,8 +33,8 @@ export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = 
   userConfig.codeSplitting ||= CodeSplit.granularChunks;
 
   userConfig.transpiler ||= Transpiler.esbuild;
-  userConfig.jsMinifier ||= JSMinifier.terser;
-  userConfig.cssMinifier ||= CSSMinifier.cssnano;
+  userConfig.jsMinifier ||= JSMinifier.esbuild;
+  userConfig.cssMinifier ||= CSSMinifier.esbuild;
   userConfig.targets ||= DEFAULT_BROWSER_TARGETS;
   userConfig.assetsInlineLimit ||= 1024 * 8;
   userConfig.cache ||= {

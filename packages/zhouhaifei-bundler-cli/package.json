@@ -1,6 +1,6 @@
 {
   "name": "@zhouhaifei/bundler-cli",
-  "version": "3.0.9",
+  "version": "3.0.10",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -13,7 +13,6 @@
   "dependencies": {
     "@zhouhaifei/babel-preset": "workspace:*",
     "@zhouhaifei/postcss-preset": "workspace:*",
-    "@vitejs/plugin-react": "4.0.0",
     "babel-loader": "9.1.3",
     "cac": "6.7.14",
     "case-sensitive-paths-webpack-plugin": "2.4.0",
@@ -43,6 +42,7 @@
     "terser-webpack-plugin": "5.3.9",
     "thread-loader": "4.0.2",
     "unused-webpack-plugin": "2.4.0",
+    "@vitejs/plugin-react": "4.0.0",
     "vite": "4.4.5",
     "vite-plugin-html": "3.2.0",
     "vite-plugin-load-css-module": "0.1.4",

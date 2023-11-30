@@ -81,7 +81,12 @@ export function compressPlugin({
   let minimizerOptions: UserConfig['cssMinifierOptions'];
   if (cssMinifier === CSSMinifier.esbuild) {
     cssMinify = CSSMinimizerWebpackPlugin.esbuildMinify;
-    minimizerOptions = { target: esbuildTarget } as EsbuildOptions;
+    minimizerOptions = {
+      target: esbuildTarget,
+
+      // remove all comments
+      legalComments: 'none',
+    } as EsbuildOptions;
   } else if (cssMinifier === CSSMinifier.cssnano) {
     cssMinify = CSSMinimizerWebpackPlugin.cssnanoMinify;
     minimizerOptions = {

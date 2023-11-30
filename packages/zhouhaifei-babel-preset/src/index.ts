@@ -4,7 +4,7 @@ import path from 'path';
 export interface GetBabelConfigOptions {
   babelExtraPreset?: any;
   babelExtraPlugins?: any;
-  babelPresetEnv?: {
+  babelPresetEnv?: false | {
     targets: string | string[] | Record<string, string>;
     bugfixes?: boolean;
     spec?: boolean;
@@ -29,7 +29,7 @@ export interface GetBabelConfigOptions {
     pragma?: string;
     pragmaFrag?: string;
   };
-  babelPresetTypeScript?: {
+  babelPresetTypeScript?: false | {
     isTSX?: boolean;
     jsxPragma?: string;
     jsxPragmaFrag?: string;
@@ -52,7 +52,7 @@ export interface GetBabelConfigOptions {
     version?: '2023-05' | '2023-01' | '2022-03' | '2021-12' | '2018-09' | 'legacy';
     decoratorsBeforeExport?: boolean;
   };
-  babelClassProperties?: { loose?: boolean; };
+  babelClassProperties?: false | { loose?: boolean; };
   babelPluginStyledComponents?: Record<string, any>;
 }
 
@@ -75,7 +75,7 @@ export function getBabelConfig({
   return {
     presets: [
       // preset-env
-      [
+      babelPresetEnv !== false && [
         require.resolve('@babel/preset-env'),
         {
           bugfixes: true,
@@ -105,7 +105,7 @@ export function getBabelConfig({
       ],
 
       // 转换ts语法
-      [
+      babelPresetTypeScript !== false && [
         require.resolve('@babel/preset-typescript'),
         {
           allowNamespaces: true,
@@ -117,6 +117,7 @@ export function getBabelConfig({
       ],
     ].concat(babelExtraPreset)
       .filter(Boolean),
+
     plugins: [
       // 支持styled-components
       babelPluginStyledComponents && [
@@ -142,6 +143,7 @@ export function getBabelConfig({
           ...babelClassProperties,
         } as GetBabelConfigOptions['babelClassProperties'],
       ],
+
       babelClassProperties && [
         require.resolve('@babel/plugin-proposal-private-methods'),
         {

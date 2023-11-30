@@ -30,13 +30,15 @@ export function getPlugins({
     }),
     react({
       babel: {
-        plugins: getBabelConfig({
+        ...getBabelConfig({
           babelPluginTransformRuntime: false,
+          babelPresetEnv: false,
+          babelPresetReact: false,
           babelPluginDecorators,
           babelExtraPlugins,
           babelPluginStyledComponents,
-          babelClassProperties: babelClassProperties || {},
-        }).plugins,
+          babelClassProperties: babelClassProperties !== false ? {} : babelClassProperties,
+        }),
       },
     }),
     InjectEntryScriptPlugin(),

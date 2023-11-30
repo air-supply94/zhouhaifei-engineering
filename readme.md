@@ -264,22 +264,24 @@ zhouhaifei-bundler-cli build
 export interface GetBabelConfigOptions {
   babelExtraPreset?: any;
   babelExtraPlugins?: any;
-  babelPresetEnv?: {
-    targets: string | string[] | Record<string, string>;
-    bugfixes?: boolean;
-    spec?: boolean;
-    loose?: boolean;
-    modules?: 'amd' | 'umd' | 'systemjs' | 'commonjs' | 'cjs' | 'auto' | false;
-    debug?: boolean;
-    include?: Array<string | RegExp>;
-    exclude?: Array<string | RegExp>;
-    useBuiltIns?: 'usage' | 'entry' | false;
-    corejs?: { version: string; proposals: boolean };
-    configPath?: string;
-    ignoreBrowserslistConfig?: boolean;
-    browserslistEnv?: string;
-    shippedProposals?: boolean;
-  };
+  babelPresetEnv?:
+    | false
+    | {
+        targets: string | string[] | Record<string, string>;
+        bugfixes?: boolean;
+        spec?: boolean;
+        loose?: boolean;
+        modules?: 'amd' | 'umd' | 'systemjs' | 'commonjs' | 'cjs' | 'auto' | false;
+        debug?: boolean;
+        include?: Array<string | RegExp>;
+        exclude?: Array<string | RegExp>;
+        useBuiltIns?: 'usage' | 'entry' | false;
+        corejs?: { version: string; proposals: boolean };
+        configPath?: string;
+        ignoreBrowserslistConfig?: boolean;
+        browserslistEnv?: string;
+        shippedProposals?: boolean;
+      };
   babelPresetReact?:
     | false
     | {
@@ -291,18 +293,20 @@ export interface GetBabelConfigOptions {
         pragma?: string;
         pragmaFrag?: string;
       };
-  babelPresetTypeScript?: {
-    isTSX?: boolean;
-    jsxPragma?: string;
-    jsxPragmaFrag?: string;
-    allExtensions?: boolean;
-    allowNamespaces?: boolean;
-    allowDeclareFields?: boolean;
-    disallowAmbiguousJSXLike?: boolean;
-    onlyRemoveTypeImports?: boolean;
-    optimizeConstEnums?: boolean;
-    rewriteImportExtensions?: boolean;
-  };
+  babelPresetTypeScript?:
+    | false
+    | {
+        isTSX?: boolean;
+        jsxPragma?: string;
+        jsxPragmaFrag?: string;
+        allExtensions?: boolean;
+        allowNamespaces?: boolean;
+        allowDeclareFields?: boolean;
+        disallowAmbiguousJSXLike?: boolean;
+        onlyRemoveTypeImports?: boolean;
+        optimizeConstEnums?: boolean;
+        rewriteImportExtensions?: boolean;
+      };
   babelPluginTransformRuntime?:
     | false
     | {
@@ -318,7 +322,7 @@ export interface GetBabelConfigOptions {
         version?: '2023-05' | '2023-01' | '2022-03' | '2021-12' | '2018-09' | 'legacy';
         decoratorsBeforeExport?: boolean;
       };
-  babelClassProperties?: { loose?: boolean };
+  babelClassProperties?: false | { loose?: boolean };
   babelPluginStyledComponents?: Record<string, any>;
 }
 ```
@@ -335,6 +339,7 @@ export interface GetBabelConfigOptions {
 
 ### [babelPresetEnv](https://babeljs.io/docs/babel-preset-env)
 
+- 说明: false 关闭此内置,默认开启
 - 默认值
 
 ```json
@@ -366,6 +371,7 @@ export interface GetBabelConfigOptions {
 
 ### [babelPresetTypeScript](https://babeljs.io/docs/babel-preset-typescript)
 
+- 说明: false 关闭此内置,默认开启
 - 默认值
 
 ```json
@@ -501,7 +507,7 @@ export interface GetBabelConfigOptions {
 
 - 描述: 构建时压缩 JavaScript 的工具
 - 类型: 'terser' | 'esbuild' | 'none'
-- 默认值: 'terser'
+- 默认值: 'esbuild'
 - 兼容模式: webpack 模式 build
 
 ### [jsMinifierOptions](https://www.npmjs.com/package/terser-webpack-plugin)
@@ -532,7 +538,7 @@ export interface GetBabelConfigOptions {
 
 - 描述: 构建时压缩 css 的工具
 - 类型: 'esbuild' | 'cssnano' | 'none'
-- 默认值: 'cssnano'
+- 默认值: 'esbuild'
 - 兼容模式: webpack 模式 build
 
 ### [cssMinifierOptions](https://www.npmjs.com/package/css-minimizer-webpack-plugin)
