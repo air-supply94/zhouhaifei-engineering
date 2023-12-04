@@ -1,4 +1,12 @@
 {
+  "engines": {
+    "node": ">=16.20",
+    "yarn": ">=1.22.21"
+  },
+  "volta": {
+    "node": "20.10.0",
+    "yarn": "1.22.21"
+  },
   "dependencies": {
     "nprogress": "0.2.0",
     "antd": "4.24.14",
@@ -25,9 +33,6 @@
     "mockjs": "1.1.0",
     "@zhouhaifei/bundler-cli": "3.0.10",
     "@zhouhaifei/code-style": "3.0.10"
-  },
-  "engines": {
-    "node": ">= 16.20"
   },
   "husky": {
     "hooks": {
