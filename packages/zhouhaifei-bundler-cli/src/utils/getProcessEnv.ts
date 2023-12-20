@@ -14,8 +14,6 @@ export function getProcessEnv(userEnv: WebpackConfigOptions['userEnv'], publicPa
       return prev;
     }, {});
 
-  console.log(extraEnv);
-
   return {
     ...extraEnv,
     ...userEnv,
