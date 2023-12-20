@@ -1,7 +1,6 @@
 declare namespace NodeJS {
   interface ProcessEnv {
     readonly NODE_ENV: 'development' | 'production';
-    readonly CLI_TOOL: 'webpack' | 'vite';
     readonly PUBLIC_URL: string;
     readonly REACT_APP_OSS: string;
   }

@@ -1,11 +1,11 @@
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
-import type { WebpackApplyOptions } from '../types';
+import type { ApplyOptions } from '../types';
 
 export function manifestPlugin({
   config,
   isDevelopment,
   userConfig: { manifestOptions },
-}: WebpackApplyOptions) {
+}: ApplyOptions) {
   if (!isDevelopment && manifestOptions !== false) {
     config
       .plugin('webpack-manifest-plugin')

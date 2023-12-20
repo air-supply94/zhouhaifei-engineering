@@ -1,9 +1,9 @@
-import type { WebpackApplyOptions } from '../types';
+import type { ApplyOptions } from '../types';
 
 export function assetRule({
   config,
   userConfig: { assetsInlineLimit },
-}: WebpackApplyOptions) {
+}: ApplyOptions) {
   config
     .module
     .rule('asset')

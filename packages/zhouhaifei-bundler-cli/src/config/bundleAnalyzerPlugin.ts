@@ -1,5 +1,5 @@
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import type { WebpackApplyOptions } from '../types';
+import type { ApplyOptions } from '../types';
 
 export function bundleAnalyzerPlugin({
   config,
@@ -8,7 +8,7 @@ export function bundleAnalyzerPlugin({
     analyzer,
     analyzerPort,
   },
-}: WebpackApplyOptions) {
+}: ApplyOptions) {
   if (!isDevelopment && analyzer) {
     config
       .plugin('webpack-bundle-analyzer')

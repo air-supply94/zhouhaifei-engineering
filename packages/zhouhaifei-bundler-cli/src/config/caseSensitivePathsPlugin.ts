@@ -1,6 +1,6 @@
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
-import type { WebpackApplyOptions } from '../types';
+import type { ApplyOptions } from '../types';
 
-export function caseSensitivePathsPlugin({ config }: WebpackApplyOptions) {
+export function caseSensitivePathsPlugin({ config }: ApplyOptions) {
   config.plugin('case-sensitive-paths-webpack-plugin').use(CaseSensitivePathsPlugin);
 }

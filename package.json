@@ -44,7 +44,7 @@
     "preinstall": "npx only-allow pnpm",
     "changeset": "changeset",
     "changeset-version": "changeset version",
-    "changeset-publish": "changeset publish --registry=https://registry.npmjs.com/",
+    "changeset-publish": "changeset publish --no-git-tag --registry=https://registry.npmjs.com/",
     "run-test": "turbo test",
     "run-build": "turbo build",
     "lint-staged": "lint-staged --allow-empty",

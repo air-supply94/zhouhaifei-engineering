@@ -1,11 +1,10 @@
 import cac from 'cac';
 import path from 'path';
-import { buildWebpack } from './buildWebpack';
+import { build } from './build';
 import { cwd, DEFAULT_CONFIG_NAME, DEFAULT_SRC_DIR, version } from './constants';
-import { devVite } from './devVite';
-import { devWebpack } from './devWebpack';
+import { dev } from './dev';
 import type { cliOptions, UserConfig } from './types';
-import { CliTool, Env } from './types';
+import { Env } from './types';
 import { loadEnv, loadFile, resolveFile, resolveModule, tryFiles, initUserConfig } from './utils';
 
 const cli = cac('zhouhaifei-bundler-cli');
@@ -45,23 +44,12 @@ cli
       host: options?.host,
     });
 
-    if (options.vite || userConfig.vite) {
-      process.env.CLI_TOOL = CliTool.vite;
-      await devVite({
-        userConfig,
-        cwd,
-        userEnv,
-        env: Env.development,
-      });
-    } else {
-      process.env.CLI_TOOL = CliTool.webpack;
-      await devWebpack({
-        userConfig,
-        cwd,
-        userEnv,
-        entry,
-      });
-    }
+    await dev({
+      userConfig,
+      cwd,
+      userEnv,
+      entry,
+    });
   });
 
 // build
@@ -70,13 +58,12 @@ cli
   .option('--watch [watch]', 'watch file')
   .action(async(root, options: cliOptions) => {
     process.env.NODE_ENV = Env.production;
-    process.env.CLI_TOOL = CliTool.webpack;
 
     const userEnv = loadEnv(cwd, '.env');
     const userConfig: UserConfig = await loadFile(options?.config ? path.resolve(cwd, options.config) : userConfigFile) || {};
     initUserConfig(userConfig, { watch: options?.watch });
 
-    await buildWebpack({
+    await build({
       userConfig,
       cwd,
       userEnv,

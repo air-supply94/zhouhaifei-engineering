@@ -1,11 +1,11 @@
-import type { WebpackApplyOptions } from '../types';
+import type { ApplyOptions } from '../types';
 import { CodeSplit } from '../types';
 
 export function optimization({
   config,
   isDevelopment,
   userConfig: { codeSplitting },
-}: WebpackApplyOptions) {
+}: ApplyOptions) {
   if (isDevelopment) {
     return;
   }

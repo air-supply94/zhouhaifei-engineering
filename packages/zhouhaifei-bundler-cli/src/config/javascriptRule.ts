@@ -1,4 +1,4 @@
-import type { WebpackApplyOptions } from '../types';
+import type { ApplyOptions } from '../types';
 import { Transpiler } from '../types';
 import { getBrowsersList } from '../utils';
 import { getBabelConfig } from '@zhouhaifei/babel-preset';
@@ -25,7 +25,7 @@ export function javascriptRule({
     extraJsModuleIncludes,
     targets,
   },
-}: WebpackApplyOptions) {
+}: ApplyOptions) {
   const jsResource = /\.(js|mjs|cjs|jsx|ts|tsx)$/;
   const rules = [
     config

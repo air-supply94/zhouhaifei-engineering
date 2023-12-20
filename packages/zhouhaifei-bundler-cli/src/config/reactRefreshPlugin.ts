@@ -1,10 +1,10 @@
 import ReactRefreshWebpackPlugin from 'react-refresh-webpack-plugin';
-import type { WebpackApplyOptions } from '../types';
+import type { ApplyOptions } from '../types';
 
 export function reactRefreshPlugin({
   config,
   userConfig: { reactRefresh },
-}: WebpackApplyOptions) {
+}: ApplyOptions) {
   if (reactRefresh) {
     config.plugin('react-refresh-webpack-plugin').use(ReactRefreshWebpackPlugin);
   }

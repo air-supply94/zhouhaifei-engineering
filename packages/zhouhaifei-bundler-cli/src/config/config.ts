@@ -4,7 +4,7 @@ import type { Configuration } from 'webpack';
 import webpack from 'webpack';
 import Config from 'webpack-5-chain';
 import { DEFAULT_SRC_DIR, version } from '../constants';
-import type { WebpackApplyOptions, WebpackConfigOptions } from '../types';
+import type { ApplyOptions, ConfigOptions } from '../types';
 import { Env } from '../types';
 import { assetRule } from './assetRule';
 import { bundleAnalyzerPlugin } from './bundleAnalyzerPlugin';
@@ -27,14 +27,14 @@ import { reactRefreshPlugin } from './reactRefreshPlugin';
 import { speedMeasurePlugin } from './speedMeasurePlugin';
 import { unusedPlugin } from './unusedPlugin ';
 
-function createEnvironmentHash(userEnv: WebpackConfigOptions['userEnv']) {
+function createEnvironmentHash(userEnv: ConfigOptions['userEnv']) {
   const hash = crypto.createHash('md5');
   hash.update(JSON.stringify(userEnv));
 
   return hash.digest('hex');
 }
 
-export async function config(options: WebpackConfigOptions): Promise<Configuration> {
+export async function config(options: ConfigOptions): Promise<Configuration> {
   const {
     userConfig = {},
     env,
@@ -54,7 +54,7 @@ export async function config(options: WebpackConfigOptions): Promise<Configurati
     chainWebpack,
     cache,
   } = userConfig;
-  const applyOptions: WebpackApplyOptions = {
+  const applyOptions: ApplyOptions = {
     config,
     userConfig,
     cwd,

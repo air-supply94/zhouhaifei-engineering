@@ -1,11 +1,11 @@
 import PreloadWebpackPlugin from 'preload-webpack-plugin';
-import type { WebpackApplyOptions } from '../types';
+import type { ApplyOptions } from '../types';
 
 export function preloadPlugin({
   config,
   isDevelopment,
   userConfig: { preloadOptions },
-}: WebpackApplyOptions) {
+}: ApplyOptions) {
   if (!isDevelopment && preloadOptions !== false) {
     config
       .plugin('preload-webpack-plugin')

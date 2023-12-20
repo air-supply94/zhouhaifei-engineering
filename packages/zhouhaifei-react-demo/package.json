@@ -56,8 +56,7 @@
     "@types/react-dom": "^18.2.7"
   },
   "scripts": {
-    "dev-vite": "zhouhaifei-bundler-cli dev --vite --open",
-    "dev-webpack": "zhouhaifei-bundler-cli dev --open",
+    "dev": "zhouhaifei-bundler-cli dev --open",
     "build-webpack": "zhouhaifei-bundler-cli build",
     "lint-staged": "lint-staged --allow-empty",
     "lint:style-less": "stylelint --cache --quiet --fix \"src/**/*.less\" --syntax less",

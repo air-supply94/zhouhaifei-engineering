@@ -1,16 +1,16 @@
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
-import { config } from './configWebpack/config';
+import { config } from './config/config';
 import { openBrowser } from './utils';
 import url from 'url';
-import type { WebpackDevOptions } from './types';
+import type { DevOptions } from './types';
 import { Env } from './types';
 
-export async function devWebpack({
+export async function dev({
   cwd,
   userConfig = {},
   ...rest
-}: WebpackDevOptions) {
+}: DevOptions) {
   const webpackConfig = await config({
     ...rest,
     env: Env.development,

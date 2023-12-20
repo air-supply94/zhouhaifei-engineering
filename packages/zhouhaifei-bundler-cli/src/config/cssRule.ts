@@ -1,5 +1,5 @@
 import { LOCAL_IDENT_NAME, STYLE_EXTENSIONS } from '../constants';
-import type { WebpackApplyOptions } from '../types';
+import type { ApplyOptions } from '../types';
 import { getBrowsersList } from '../utils';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
@@ -23,7 +23,7 @@ export function cssRule({
     extraPostCSSPlugins,
     postcssOptions,
   },
-}: WebpackApplyOptions) {
+}: ApplyOptions) {
   const rulesConfig = [
     {
       name: 'css',

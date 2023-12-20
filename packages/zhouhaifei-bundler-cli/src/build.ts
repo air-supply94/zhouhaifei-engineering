@@ -1,13 +1,13 @@
 import webpack from 'webpack';
-import { config } from './configWebpack/config';
-import type { WebpackBuildOptions } from './types';
+import { config } from './config/config';
+import type { BuildOptions } from './types';
 import { Env } from './types';
 import chalk from 'chalk';
 
-export async function buildWebpack({
+export async function build({
   userConfig = {},
   ...rest
-}: WebpackBuildOptions) {
+}: BuildOptions) {
   const { watch } = userConfig;
   const webpackConfig = await config({
     ...rest,

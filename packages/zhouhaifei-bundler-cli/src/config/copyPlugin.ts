@@ -1,4 +1,4 @@
-import type { WebpackApplyOptions } from '../types';
+import type { ApplyOptions } from '../types';
 import fs from 'fs';
 import path from 'path';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
@@ -11,7 +11,7 @@ export function copyPlugin({
   },
   cwd,
   isDevelopment,
-}: WebpackApplyOptions) {
+}: ApplyOptions) {
   const copyPatterns = [];
   publicDir = path.resolve(cwd, publicDir);
   if (fs.existsSync(publicDir) && fs.readdirSync(publicDir).length) {

@@ -1,7 +1,7 @@
 import CSSMinimizerWebpackPlugin from 'css-minimizer-webpack-plugin';
 import type { TerserOptions } from 'terser-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
-import type { WebpackApplyOptions, UserConfig } from '../types';
+import type { ApplyOptions, UserConfig } from '../types';
 import { CSSMinifier, JSMinifier } from '../types';
 import { getEsBuildTarget } from '../utils';
 import type { TransformOptions as EsbuildOptions } from 'esbuild';
@@ -17,7 +17,7 @@ export function compressPlugin({
   },
   isDevelopment,
   config,
-}: WebpackApplyOptions) {
+}: ApplyOptions) {
   if (
     isDevelopment ||
     nocompress ||

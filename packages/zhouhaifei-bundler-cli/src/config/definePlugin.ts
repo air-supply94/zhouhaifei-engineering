@@ -1,8 +1,8 @@
 import webpack from 'webpack';
-import type { WebpackApplyOptions, WebpackConfigOptions } from '../types';
+import type { ApplyOptions, ConfigOptions } from '../types';
 import { getProcessEnv } from '../utils/getProcessEnv';
 
-type Options = WebpackApplyOptions & { userEnv: WebpackConfigOptions['userEnv']; };
+type Options = ApplyOptions & { userEnv: ConfigOptions['userEnv']; };
 
 export function definePlugin({
   config,

@@ -1,10 +1,10 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import type { WebpackApplyOptions } from '../types';
+import type { ApplyOptions } from '../types';
 
 export function miniCssExtractPlugin({
   config,
   isDevelopment,
-}: WebpackApplyOptions) {
+}: ApplyOptions) {
   if (!isDevelopment) {
     config
       .plugin('mini-css-extract-plugin')

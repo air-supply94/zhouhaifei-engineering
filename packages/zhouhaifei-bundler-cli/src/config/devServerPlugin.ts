@@ -1,4 +1,4 @@
-import type { WebpackApplyOptions } from '../types';
+import type { ApplyOptions } from '../types';
 import path from 'path';
 
 export function devServerPlugin({
@@ -12,7 +12,7 @@ export function devServerPlugin({
   isDevelopment,
   config,
   cwd,
-}: WebpackApplyOptions) {
+}: ApplyOptions) {
   if (!isDevelopment) {
     return;
   }

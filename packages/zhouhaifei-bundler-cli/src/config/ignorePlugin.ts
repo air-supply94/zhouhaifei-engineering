@@ -1,10 +1,10 @@
 import webpack from 'webpack';
-import type { WebpackApplyOptions } from '../types';
+import type { ApplyOptions } from '../types';
 
 export function ignorePlugin({
   config,
   userConfig: { ignoreMomentLocale },
-}: WebpackApplyOptions) {
+}: ApplyOptions) {
   if (ignoreMomentLocale !== false) {
     config.plugin('ignore-moment-locale').use(webpack.IgnorePlugin, [
       {

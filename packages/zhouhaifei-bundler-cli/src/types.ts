@@ -9,12 +9,6 @@ import type { GetBabelConfigOptions } from '@zhouhaifei/babel-preset';
 import type { TransformOptions as EsbuildOptions } from 'esbuild';
 import type { MinifyOptions as TerserOptions } from 'terser';
 import type { CssNanoOptions } from 'css-minimizer-webpack-plugin';
-import type { UserConfig as ViteUserConfig } from 'vite';
-
-export enum CliTool {
-  vite = 'vite',
-  webpack = 'webpack',
-}
 
 export enum Env {
   development = 'development',
@@ -117,10 +111,9 @@ export interface UserConfig extends BaseConfig, StyleConfig, GetBabelConfigOptio
   copy?: CopyOptions[] | string[];
   deadCode?: { directories?: string[]; exclude?: string[]; root?: string; };
   htmlOption?: false | HtmlWebpackPlugin.Options;
-  vite?: ViteUserConfig;
 }
 
-export interface WebpackConfigOptions {
+export interface ConfigOptions {
   cwd: string;
   entry: Record<string, string>;
   userConfig: UserConfig;
@@ -128,24 +121,17 @@ export interface WebpackConfigOptions {
   userEnv?: Record<string, string>;
 }
 
-export type WebpackBuildOptions = Omit<WebpackConfigOptions, 'env'>;
+export type BuildOptions = Omit<ConfigOptions, 'env'>;
 
-export type WebpackDevOptions = Omit<WebpackConfigOptions, 'env'>;
+export type DevOptions = Omit<ConfigOptions, 'env'>;
 
-export interface WebpackApplyOptions {
+export interface ApplyOptions {
   readonly config: Config;
-  readonly env: WebpackConfigOptions['env'];
-  readonly cwd: WebpackConfigOptions['cwd'];
+  readonly env: ConfigOptions['env'];
+  readonly cwd: ConfigOptions['cwd'];
   readonly userConfig: UserConfig;
   readonly isDevelopment: boolean;
   readonly srcDir: string;
-}
-
-export interface ViteDevOptions {
-  readonly cwd: WebpackConfigOptions['cwd'];
-  readonly userConfig: UserConfig;
-  readonly env: Env;
-  readonly userEnv?: WebpackConfigOptions['userEnv'];
 }
 
 export interface cliOptions {
@@ -154,5 +140,4 @@ export interface cliOptions {
   host?: string;
   watch?: boolean;
   open?: boolean;
-  vite?: boolean;
 }

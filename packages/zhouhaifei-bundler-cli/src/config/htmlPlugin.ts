@@ -1,6 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
-import type { WebpackApplyOptions } from '../types';
+import type { ApplyOptions } from '../types';
 
 export function htmlPlugin({
   config,
@@ -11,7 +11,7 @@ export function htmlPlugin({
     publicDir,
   },
   cwd,
-}: WebpackApplyOptions) {
+}: ApplyOptions) {
   if (htmlOption !== false) {
     const initOptions = {
       inject: true,

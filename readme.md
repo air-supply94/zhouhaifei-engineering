@@ -70,19 +70,10 @@ git config --global core.autocrlf input
 - .env.development 或者.env.production
 - .env.development.local 或者.env.production.local
 - 优先级由上倒下,且通过上面文件配置的环境变量都可以通过 process.env 获取
-- 内置了 process.env.NODE_ENV 和 process.env.PUBLIC_URL 和 process.env.CLI_TOOL(vite 或 webpack)
 
 ## 项目常见命令
 
-### dev 以 vite 模式启动
-
-- **_vite 模式只支持 dev_**
-
-```shell
-zhouhaifei-bundler-cli dev --vite
-```
-
-### dev 以 webpack 模式启动
+### dev 模式启动
 
 ```shell
 zhouhaifei-bundler-cli dev
@@ -101,7 +92,6 @@ zhouhaifei-bundler-cli build
 | --port=xxx          | 指定端口             | dev          |
 | --host=xxx          | 指定 host            | dev          |
 | --open              | 是否打开浏览器       | dev          |
-| --vite              | 以 vite 模式启动     | dev          |
 | --watch             | 文件变动是否重新打包 | build        |
 | -c=xxx --config=xxx | 指定配置文件         | dev 和 build |
 
@@ -114,22 +104,21 @@ zhouhaifei-bundler-cli build
 - 描述: 配置构建时转译 js/ts 的工具
 - 类型: 'esbuild' | 'babel'
 - 默认值: 'esbuild'
-- 兼容模式: webpack
-- 说明 1: esbuild 时使用 esbuild-loader,babel 时使用 babel-loader
+- 说明: esbuild 时使用 esbuild-loader,babel 时使用 babel-loader
 
 ### [esbuildLoaderOptions](https://www.npmjs.com/package/esbuild-loader)
 
 - 描述: esbuild-loader 配置
 - 类型: Record<string, any>
 - 默认值: {target: 'es2015'}
-- 兼容模式: webpack 模式使用 esbuild 转译
+- 兼容模式: 使用 esbuild 转译
 
 ### [babelLoaderOptions](https://www.npmjs.com/package/babel-loader)
 
 - 描述: babel-loader 配置
 - 类型: Record<string, any>
 - 默认值: {sourceType: 'unambiguous', babelrc: false, configFile: false, cacheDirectory: true, browserslistConfigFile: false, targets: '传入的 targets'}
-- 兼容模式: webpack 使用 babel 转译
+- 兼容模式: 使用 babel 转译
 
 ### extraJsModuleIncludes
 
@@ -137,28 +126,24 @@ zhouhaifei-bundler-cli build
 - 说明: 默认只会对当前目录排除 node_modules 下的文件转译
 - 类型: Array<string | RegExp>
 - 默认值: []
-- 兼容模式: webpack
 
 ### publicDir
 
 - 描述: 静态资源的文件夹
 - 类型: string
 - 默认值: 'public'
-- 兼容模式: vite 和 webpack
 
 ### open
 
 - 描述: dev 模式是否打开浏览器
 - 类型: boolean
 - 默认值: false
-- 兼容模式: vite 和 webpack
 
 ### port
 
 - 描述: dev 模式下 server 的端口
 - 类型: number
 - 默认值: 3000
-- 兼容模式: vite 和 webpack
 - 其他说明: 支持环境变量**_PORT_**
 
 ### host
@@ -166,7 +151,6 @@ zhouhaifei-bundler-cli build
 - 描述: dev 模式下 server 的 host
 - 类型: string
 - 默认值: '0.0.0.0'
-- 兼容模式: vite 和 webpack
 - 其他说明: 支持环境变量**_HOST_**
 
 ### proxy
@@ -174,28 +158,24 @@ zhouhaifei-bundler-cli build
 - 描述: dev 模式下 server 的 代理配置
 - 类型: [ProxyConfigMap](https://webpack.js.org/configuration/dev-server/#devserverproxy)---只支持对象形式
 - 默认值: {}
-- 兼容模式: vite 和 webpack
 
 ### cache
 
 - 描述: 缓存相关配置
 - 类型: {buildDependencies?: string[]; cacheDirectory?: string;}
 - 默认值: {buildDependencies: [] cacheDirectory: 根目录下.cache}
-- 兼容模式: vite 和 webpack
 
 ### alias
 
 - 描述: 别名设置
 - 类型: Record<string, string>
 - 默认值: {'@': '根目录的 src 文件夹'}
-- 兼容模式: vite 和 webpack
 
 ### targets
 
 - 描述: 浏览器兼容性
 - 类型: Record<'chrome' | 'edge' | 'safari' | 'firefox', string | number>
 - 默认值: {chrome: 80, edge: 79, firefox: 78, safari: 11}
-- 兼容模式: vite 和 webpack
 - 说明: babel 及 postcss 相关浏览器配置会根据此自动生成
 
 ### assetsInlineLimit
@@ -203,21 +183,18 @@ zhouhaifei-bundler-cli build
 - 描述: 静态资源 base64 阀值
 - 类型: number
 - 默认值: 8 \* 1024
-- 兼容模式: vite 和 webpack
 
 ### outputPath
 
 - 描述: 打包生成目录
 - 类型: string
 - 默认值: 'dist'
-- 兼容模式: webpack
 
 ### publicPath
 
 - 描述: 资源 url 前缀
 - 类型: string
 - 默认值: '/'
-- 兼容模式: webpack
 - 说明: 支持环境变量**_PUBLIC_URL_**
 
 ### define
@@ -225,7 +202,6 @@ zhouhaifei-bundler-cli build
 - 描述: 定义全局常量替换方式
 - 类型: Record<string, any>
 - 默认值: {}
-- 兼容模式: vite 和 webpack
 - 说明 1: 内置了 process.env.PUBLIC_URL 和 process.env.NODE_ENV 和 process.env.CLI_TOOL
 - 说明 2: 环境变量配置文件生成的 env 合并到 process.env
 
@@ -234,7 +210,6 @@ zhouhaifei-bundler-cli build
 - 描述: 外部依赖,不打包
 - 类型: Record<string, string>
 - 默认值: {}
-- 兼容模式: webpack
 - 说明: 内置 externalsType=window
 
 ### watch
@@ -242,27 +217,24 @@ zhouhaifei-bundler-cli build
 - 描述: 文件变动是否重新打包
 - 类型: boolean
 - 默认值: false
-- 兼容模式: webpack
 
 ### staticPathPrefix
 
 - 描述: 静态资源路径前缀
 - 类型: string
 - 默认值: 'static/'
-- 兼容模式: webpack
 
 ### reactRefresh
 
 - 描述: 是否开启 reactRefresh
 - 类型: boolean
 - 默认值: false
-- 兼容模式: vite 和 webpack
 
 ### processEnvPrefix
 
-- 描述: js代码通过process.env.xxx获取环境变量
+- 描述: js 代码通过 process.env.xxx 获取环境变量
 - 类型?: RegExp
-- 默认值: /^REACT_APP_/i
+- 默认值: /^REACT*APP*/i
 
 ## babel 相关配置
 
@@ -391,7 +363,7 @@ export interface GetBabelConfigOptions {
 
 ### [babelPluginTransformRuntime](https://babeljs.io/docs/babel-plugin-transform-runtime)
 
-- 说明: false 关闭此插件,webpack 中 babel 模式下默认开启,vite 模式默认关闭
+- 说明: false 关闭此插件,webpack 中 babel 模式下默认开启
 
 ```json
 {
@@ -404,7 +376,7 @@ export interface GetBabelConfigOptions {
 
 ### [babelPluginDecorators](https://babeljs.io/docs/babel-plugin-proposal-decorators)
 
-- 说明: false 关闭此插件,webpack 模式和 vite 模式默认开启
+- 说明: false 关闭此插件,默认开启
 - 默认值
 
 ```json
@@ -413,8 +385,7 @@ export interface GetBabelConfigOptions {
 
 ### [babelClassProperties](https://babeljs.io/docs/babel-plugin-transform-class-properties)
 
-- 说明 1: webpack 模式 babel 模式默认开启
-- 说明 2: vite 模式下@babel/plugin-proposal-class-properties、@babel/plugin-proposal-private-methods、@babel/plugin-proposal-private-property-in-object 插件默认开启且 loose 默认为 true
+- 默认开启
 
 ### [babelPluginStyledComponents](https://www.npmjs.com/package/babel-plugin-styled-components)
 
@@ -428,76 +399,66 @@ export interface GetBabelConfigOptions {
 - 描述 2: 排除 src/global.\[css|less|sass|scss|styl|stylus]文件和 node_modules
 - 类型: boolean
 - 默认值: true
-- 兼容模式: vite 和 webpack
 
 ### [lessOptions](https://lesscss.org/usage/#command-line-usage-options)
 
 - 描述: less 相关配置(内置了 less,不用额外下载)
 - 类型: Record<string, any>
 - 默认值: {javascriptEnabled: true}
-- 兼容模式: vite 和 webpack
 
 ### [sassOptions](https://github.com/sass/node-sass)
 
 - 描述: sass 相关配置(如果使用需自行下载 sass)
 - 类型: Record<string, any>
 - 默认值: {}
-- 兼容模式: vite 和 webpack
 
 ### [stylusOptions](https://stylus-lang.com/docs/js.html)
 
 - 描述: stylus 相关配置(如果使用需自行下载 stylus)
 - 类型: Record<string, any>
 - 默认值: {}
-- 兼容模式: vite 和 webpack
 
 ### [styleLoaderOptions](https://www.npmjs.com/package/style-loader)
 
 - 描述: style-loader 相关配置
 - 类型: false | Record<string, any>
 - 默认值: {base: 0, esModule: true}
-- 兼容模式: webpack 模式 dev
+- 兼容模式: dev
 
 ### [cssLoaderModules](https://www.npmjs.com/package/css-loader)
 
 - 描述: css-loader 的 modules 配置
 - 类型: Record<string, any>
 - 默认值: {localIdentName: '\[name]\_\_\[local]--\[hash:base64:8]'}
-- 兼容模式: webpack
 
 ### [cssLoaderOptions](https://www.npmjs.com/package/css-loader)
 
 - 描述: css-loader 配置
 - 类型: Record<string, any>
 - 默认值: {}
-- 兼容模式: webpack
 
 ### [postcssPresetEnvOptions](https://www.npmjs.com/package/postcss-preset-env)
 
 - 描述: postcss-preset-env 配置
 - 类型: Record<string, any>
 - 默认值: {stage: 3}
-- 兼容模式: vite 和 webpack
 
 ### [autoprefixer](https://www.npmjs.com/package/postcss-preset-env)
 
 - 描述: autoprefixer 配置
 - 类型: Record<string, any>
 - 默认值: {remove: false, flexbox: 'no-2009'}
-- 兼容模式: vite 和 webpack
 
 ### extraPostCSSPlugins
 
 - 描述: 额外的 postcss 插件
 - 类型: any[]
 - 默认值: undefined
-- 兼容模式: vite 和 webpack
 
 ### [postcssOptions](https://postcss.org/)
 
 - 描述: postcss 配置,内置了 postcss-flexbugs-fixes 和 postcss-preset-env 插件
 - 类型: Record<string, any>
-- 兼容模式: vite 和 webpack
 
 ## 其他配置
 
@@ -506,7 +467,7 @@ export interface GetBabelConfigOptions {
 - 描述: 是否不压缩,开启后 jsMinifier 和 cssMinifier 相关配置不会生效
 - 类型: boolean
 - 默认值: false
-- 兼容模式: webpack 模式 build
+- 兼容模式: build
 - 说明: 环境变量 COMPRESS='1'也可关闭压缩
 
 ### jsMinifier
@@ -514,14 +475,14 @@ export interface GetBabelConfigOptions {
 - 描述: 构建时压缩 JavaScript 的工具
 - 类型: 'terser' | 'esbuild' | 'none'
 - 默认值: 'esbuild'
-- 兼容模式: webpack 模式 build
+- 兼容模式: build
 
 ### [jsMinifierOptions](https://www.npmjs.com/package/terser-webpack-plugin)
 
 - 描述: terserOptions 配置
 - 类型: EsbuildOptions | TerserOptions;
 - 默认值: EsbuildOptions
-- 兼容模式: webpack 模式 build
+- 兼容模式: build
 - TerserOptions 内置配置
 
 ```json
@@ -545,21 +506,20 @@ export interface GetBabelConfigOptions {
 - 描述: 构建时压缩 css 的工具
 - 类型: 'esbuild' | 'cssnano' | 'none'
 - 默认值: 'esbuild'
-- 兼容模式: webpack 模式 build
+- 兼容模式: build
 
 ### [cssMinifierOptions](https://www.npmjs.com/package/css-minimizer-webpack-plugin)
 
 - 描述: 压缩 css 配置
 - 类型: EsbuildOptions | CssNanoOptions | Record<string, any>;
 - 默认值: {}
-- 兼容模式: webpack 模式 build
+- 兼容模式: build
 
 ### [threadLoaderOptions](https://www.npmjs.com/package/thread-loader)
 
 - 描述: 是否启用 thread-loader 加速
 - 类型: Record<string, any>;
 - 默认值: undefined(对象开启及设置)
-- 兼容模式: webpack
 
 ### codeSplitting
 
@@ -569,34 +529,32 @@ export interface GetBabelConfigOptions {
 - 说明 2: [depPerChunk](https://umijs.org/docs/api/config#codesplitting)
 - 说明 3: [granularChunks](https://umijs.org/docs/api/config#codesplitting)
 - 默认值: 'granularChunks'
-- 兼容模式: webpack 模式 build
+- 兼容模式: build
 
 ### sourcemap
 
 - 描述: sourcemap 配置
 - 默认值: dev 时 cheap-module-source-map,build 时 source-map
-- 兼容模式: webpack
 
 ### [preloadOptions](https://www.npmjs.com/package/preload-webpack-plugin)
 
 - 描述: preload 配置
 - 类型: false | Record<string, any>
 - 默认值: {rel: 'prefetch'}
-- 兼容模式: webpack 模式 build
+- 兼容模式: build
 
 ### [forkTsCheckerOptions](https://www.npmjs.com/package/fork-ts-checker-webpack-plugin)
 
 - 描述: fork-ts-checker-webpack-plugin 配置
 - 类型: false | Record<string, any>
 - 默认值: {}
-- 兼容模式: webpack
 
 ### [analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer)
 
 - 描述: 是否开启 webpack-bundle-analyzer
 - 类型: BundleAnalyzerPlugin.Options;
 - 默认值: undefined(对象开启及设置)
-- 兼容模式: webpack 模式 build
+- 兼容模式: build
 - 说明: 环境变量 ANALYZE='1'也可以开启
 
 ### analyzerPort
@@ -604,7 +562,7 @@ export interface GetBabelConfigOptions {
 - 描述: webpack-bundle-analyzer 对应端口
 - 类型: number
 - 默认值: 8888
-- 兼容模式: webpack 模式 build
+- 兼容模式: build
 - 说明: 环境变量 ANALYZE_PORT 也可以设置
 
 ### [manifestOptions](https://www.npmjs.com/package/webpack-manifest-plugin)
@@ -612,28 +570,27 @@ export interface GetBabelConfigOptions {
 - 描述: webpack-manifest-plugin 配置
 - 类型: false | ManifestPluginOptions
 - 默认值: {fileName: 'asset-manifest.json'}
-- 兼容模式: webpack 模式 build
+- 兼容模式: build
 
 ### ignoreMomentLocale
 
 - 描述: 是否忽略 moment 的 local 文件
 - 类型: boolean
 - 默认值: true
-- 兼容模式: webpack
 
 ### copy
 
 - 描述: 额外复制的目录,默认会复制 publicDir 下的文件到 outputPath
 - 类型: Array<{from: string; to: string;}> | string[]
 - 默认值: []
-- 兼容模式: webpack 模式 build
+- 兼容模式: build
 
 ### [deadCode](https://www.npmjs.com/package/unused-webpack-plugin)
 
 - 描述: unused-webpack-plugin 配置
 - 类型: { directories?: string[]; exclude?: string[]; root?: string; }
 - 默认值: undefined(对象开启及设置,内置 directories 为 src 目录和 root 为 process.pwd)
-- 兼容模式: webpack 模式 build
+- 兼容模式: build
 
 ### [htmlOption](https://www.npmjs.com/package/html-webpack-plugin)
 
@@ -664,13 +621,6 @@ const initOptions = {
 };
 ```
 
-- 兼容模式: webpack
-
-### [vite](https://cn.vitejs.dev/config/)
-
-- 描述: vite 配置
-- 兼容模式: dev 模式 vite
-
 ### [chainWebpack](https://www.npmjs.com/package/webpack-5-chain)
 
 - 描述: 使用 webpack-5-chain 修改 webpack 配置
@@ -687,4 +637,3 @@ type chainWebpack = (
 ```
 
 - 默认值: undefined
-- 兼容模式: webpack

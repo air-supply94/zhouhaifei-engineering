@@ -1,5 +1,5 @@
 import UnusedWebpackPlugin from 'unused-webpack-plugin';
-import type { WebpackApplyOptions } from '../types';
+import type { ApplyOptions } from '../types';
 
 export function unusedPlugin({
   config,
@@ -7,7 +7,7 @@ export function unusedPlugin({
   cwd,
   userConfig: { deadCode },
   srcDir,
-}: WebpackApplyOptions) {
+}: ApplyOptions) {
   if (!isDevelopment && deadCode) {
     config
       .plugin('unused-webpack-plugin')

@@ -1,6 +1,6 @@
-import type { Env, UserConfig, WebpackConfigOptions } from '../types';
+import type { Env, UserConfig, ConfigOptions } from '../types';
 
-export function getProcessEnv(userEnv: WebpackConfigOptions['userEnv'], publicPath: UserConfig['publicPath'], env: Env, processEnvPrefix: UserConfig['processEnvPrefix']) {
+export function getProcessEnv(userEnv: ConfigOptions['userEnv'], publicPath: UserConfig['publicPath'], env: Env, processEnvPrefix: UserConfig['processEnvPrefix']) {
   const extraEnv: Record<string, string> = Object.keys(process.env)
     .filter((key) => {
       if (processEnvPrefix instanceof RegExp) {
@@ -19,6 +19,5 @@ export function getProcessEnv(userEnv: WebpackConfigOptions['userEnv'], publicPa
     ...userEnv,
     NODE_ENV: env,
     PUBLIC_URL: publicPath,
-    CLI_TOOL: process.env.CLI_TOOL,
   };
 }
