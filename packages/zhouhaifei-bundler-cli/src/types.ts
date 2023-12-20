@@ -74,6 +74,7 @@ interface BaseConfig {
   watch?: boolean;
   staticPathPrefix?: string;
   reactRefresh?: boolean;
+  processEnvPrefix?: RegExp;
 }
 
 interface StyleConfig {

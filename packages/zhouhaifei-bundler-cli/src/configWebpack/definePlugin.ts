@@ -10,6 +10,7 @@ export function definePlugin({
   userConfig: {
     define,
     publicPath,
+    processEnvPrefix,
   },
   userEnv,
 }: Options) {
@@ -22,7 +23,7 @@ export function definePlugin({
     }
   }
 
-  const processEnvOptions = getProcessEnv(userEnv, publicPath, env);
+  const processEnvOptions = getProcessEnv(userEnv, publicPath, env, processEnvPrefix);
   const processEnv = {};
   for (const key in processEnvOptions) {
     if (Object.prototype.hasOwnProperty.call(processEnvOptions, key)) {

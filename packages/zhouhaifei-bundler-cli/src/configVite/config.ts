@@ -35,13 +35,14 @@ export function config({
     postcssPresetEnvOptions,
     extraPostCSSPlugins,
     postcssOptions,
+    processEnvPrefix,
   } = userConfig;
 
   const defaultConfig: UserConfig = {
     publicDir: path.resolve(cwd, publicDir),
     cacheDir: path.resolve(cwd, cache.cacheDirectory),
     define: {
-      'process.env': getProcessEnv(userEnv, publicPath, env),
+      'process.env': getProcessEnv(userEnv, publicPath, env, processEnvPrefix),
       global: 'window',
       ...define,
     },

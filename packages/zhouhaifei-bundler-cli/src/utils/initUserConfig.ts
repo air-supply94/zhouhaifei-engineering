@@ -4,6 +4,8 @@ import { CodeSplit, CSSMinifier, Env, JSMinifier, Transpiler } from '../types';
 import { cwd, DEFAULT_BROWSER_TARGETS, DEFAULT_BUILD_DEVTOOL, DEFAULT_DEV_DEVTOOL, DEFAULT_OUTPUT_PATH, DEFAULT_PUBLIC_DIR } from '../constants';
 
 export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = {}): UserConfig {
+  userConfig.processEnvPrefix ||= /^REACT_APP_/i;
+
   userConfig.proxy ||= {};
   userConfig.publicDir ||= DEFAULT_PUBLIC_DIR;
 

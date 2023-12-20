@@ -258,6 +258,12 @@ zhouhaifei-bundler-cli build
 - 默认值: false
 - 兼容模式: vite 和 webpack
 
+### processEnvPrefix
+
+- 描述: js代码通过process.env.xxx获取环境变量
+- 类型?: RegExp
+- 默认值: /^REACT_APP_/i
+
 ## babel 相关配置
 
 ```ts
