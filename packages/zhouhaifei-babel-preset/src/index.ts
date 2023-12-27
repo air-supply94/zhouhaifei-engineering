@@ -52,7 +52,6 @@ export interface GetBabelConfigOptions {
     version?: '2023-05' | '2023-01' | '2022-03' | '2021-12' | '2018-09' | 'legacy';
     decoratorsBeforeExport?: boolean;
   };
-  babelClassProperties?: false | { loose?: boolean; };
   babelPluginStyledComponents?: Record<string, any>;
 }
 

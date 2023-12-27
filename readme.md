@@ -300,7 +300,6 @@ export interface GetBabelConfigOptions {
         version?: '2023-05' | '2023-01' | '2022-03' | '2021-12' | '2018-09' | 'legacy';
         decoratorsBeforeExport?: boolean;
       };
-  babelClassProperties?: false | { loose?: boolean };
   babelPluginStyledComponents?: Record<string, any>;
 }
 ```
@@ -323,7 +322,7 @@ export interface GetBabelConfigOptions {
 ```json
 {
   "bugfixes": true,
-  "loose": true,
+  "loose": false,
   "modules": false,
   "debug": false,
   "useBuiltIns": "usage",
@@ -382,10 +381,6 @@ export interface GetBabelConfigOptions {
 ```json
 { "version": "legacy" }
 ```
-
-### [babelClassProperties](https://babeljs.io/docs/babel-plugin-transform-class-properties)
-
-- 默认开启
 
 ### [babelPluginStyledComponents](https://www.npmjs.com/package/babel-plugin-styled-components)
 
