@@ -62,5 +62,6 @@
     "lint:style-less": "stylelint --cache --quiet --fix \"src/**/*.less\" --syntax less",
     "lint:js": "eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
     "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{css,md,html,json}\""
-  }
+  },
+  "version": "3.1.3"
 }
