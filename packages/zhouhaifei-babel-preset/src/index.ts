@@ -64,7 +64,6 @@ export function getBabelConfig({
   babelPresetTypeScript,
   babelPluginTransformRuntime,
   babelPluginDecorators,
-  babelClassProperties,
   babelPluginStyledComponents,
 }: GetBabelConfigOptions = {}) {
   const packageJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../package.json'), 'utf8')
@@ -79,7 +78,7 @@ export function getBabelConfig({
         require.resolve('@babel/preset-env'),
         {
           bugfixes: true,
-          loose: true,
+          loose: false,
 
           // 保留 es modules 语法,交给 webpack 处理
           modules: false,
@@ -132,31 +131,6 @@ export function getBabelConfig({
           version: 'legacy',
           ...babelPluginDecorators,
         } as GetBabelConfigOptions['babelPluginDecorators'],
-      ],
-
-      // preset-env内置了下面插件,webpack打包不需要下面插件
-      // vite dev使用esbuild打包,不需要preset和transform-runtime,需要下面插件
-      babelClassProperties && [
-        require.resolve('@babel/plugin-proposal-class-properties'),
-        {
-          loose: true,
-          ...babelClassProperties,
-        } as GetBabelConfigOptions['babelClassProperties'],
-      ],
-
-      babelClassProperties && [
-        require.resolve('@babel/plugin-proposal-private-methods'),
-        {
-          loose: true,
-          ...babelClassProperties,
-        } as GetBabelConfigOptions['babelClassProperties'],
-      ],
-      babelClassProperties && [
-        require.resolve('@babel/plugin-proposal-private-property-in-object'),
-        {
-          loose: true,
-          ...babelClassProperties,
-        } as GetBabelConfigOptions['babelClassProperties'],
       ],
 
       // do-expressions
