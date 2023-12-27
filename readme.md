@@ -9,7 +9,7 @@
 ```shell
 mkdir 目录名称
 cd 目录名称
-npx -p yo -p generator-zhouhaifei-react -c "yo zhouhaifei-react"
+npx -p yo@4.3.1 -p generator-zhouhaifei-react -c "yo zhouhaifei-react"
 ```
 
 ### 下载
