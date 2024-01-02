@@ -18,13 +18,33 @@ module.exports = class extends Generator {
     );
 
     this.copyTemplate(
-      this.templatePath('\.**'),
+      this.templatePath('.**'),
       this.destinationPath('')
     );
 
-    this.moveDestination(
-      '.gitignore.ejs',
-      '.gitignore'
-    );
+    const tplList = [
+      '.editorconfig',
+      '.env.development',
+      '.env.production',
+      '.eslintignore',
+      '.eslintrc.cjs',
+      '.gitignore',
+      '.npmrc',
+      '.prettierignore',
+      '.stylelintignore',
+      'bundlerConfig.ts',
+      'commitlint.config.cjs',
+      'package.json',
+      'prettier.config.cjs',
+      'stylelint.config.cjs',
+      'tsconfig.json',
+    ];
+
+    for (let i = 0; i < tplList.length; i++) {
+      this.moveDestination(
+        `${tplListl[i]}.tpl`,
+        tplList[i]
+      );
+    }
   }
 };
