@@ -54,16 +54,18 @@ async function getPublishPackagesInfo(): Promise<PublishPackagesInfo[]> {
   const packagesPath = path.resolve(cwd, 'packages');
   const files = await fs.promises.readdir(packagesPath);
   const result: PublishPackagesInfo[] = [];
-
+  const ignoreFiles = ['.DS_Store'];
   for (let i = 0; i < files.length; i++) {
-    const packagePath = path.resolve(packagesPath, files[i]);
-    const content: PackageJsonInfo = require(path.resolve(packagePath, 'package.json'));
-    if (content.private !== true) {
-      result.push({
-        filename: files[i],
-        packagePath,
-        packageJson: content,
-      });
+    if (!ignoreFiles.includes(files[i])) {
+      const packagePath = path.resolve(packagesPath, files[i]);
+      const content: PackageJsonInfo = require(path.resolve(packagePath, 'package.json'));
+      if (content.private !== true) {
+        result.push({
+          filename: files[i],
+          packagePath,
+          packageJson: content,
+        });
+      }
     }
   }
 
@@ -148,7 +150,7 @@ function getNpmTag(version: string) {
 
   // commit
   console.log(chalk.bold('commit'));
-  await $`git commit --all --message "chore(*): release ${version}"`;
+  await $`git commit --all --message "chore(*): release ${version}" --no-verify`;
 
   // git tag
   console.log(chalk.bold('git tag'));
