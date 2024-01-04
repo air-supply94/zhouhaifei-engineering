@@ -15,8 +15,12 @@
     "node": "20.10.0"
   },
   "devDependencies": {
+    "chalk": "4.1.2",
+    "zx": "7.2.3",
+    "git-repo-info": "2.1.1",
+    "esno": "4.0.0",
+    "typescript": "4.2.4",
     "@types/node": "^16.18.61",
-    "@changesets/cli": "2.26.2",
     "@zhouhaifei/code-style": "workspace:*",
     "turbo": "^1.10.16"
   },
@@ -42,11 +46,9 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "changeset": "changeset",
-    "changeset-version": "changeset version",
-    "changeset-publish": "changeset publish --no-git-tag --registry=https://registry.npmjs.com/",
-    "run-test": "turbo test",
-    "run-build": "turbo build",
+    "release": "esno scripts/release.ts",
+    "test": "turbo test",
+    "build": "turbo build",
     "lint-staged": "lint-staged --allow-empty",
     "lint:js": "eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
     "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{css,md,html,json}\""
