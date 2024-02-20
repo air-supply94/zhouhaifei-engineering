@@ -42,6 +42,7 @@ export function devServerPlugin({
     .set('client', {
       logging: 'none',
       overlay: {
+        runtimeErrors: false,
         errors: true,
         warnings: false,
       },

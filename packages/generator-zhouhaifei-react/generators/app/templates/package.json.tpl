@@ -18,7 +18,7 @@
     "qs": "6.11.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-router-dom": "6.18.0"
+    "react-router-dom": "6.22.1"
   },
   "devDependencies": {
     "typescript": "4.2.4",

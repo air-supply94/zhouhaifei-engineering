@@ -43,7 +43,7 @@ const context = [
   '/ejl-pms',
   '/ejl-pos',
 ];
-const proxy = context.reduce((prev, current) => {
+const proxy = context.reduce((prev: Record<string, any>, current) => {
   prev[current] = {
     target,
     changeOrigin: true,
