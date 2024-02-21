@@ -10,7 +10,7 @@
   "dependencies": {
     "nprogress": "0.2.0",
     "antd": "4.24.14",
-    "axios": "0.27.2",
+    "axios": "0.28.0",
     "lodash": "4.17.21",
     "mobx": "5.15.7",
     "mobx-react": "6.3.1",

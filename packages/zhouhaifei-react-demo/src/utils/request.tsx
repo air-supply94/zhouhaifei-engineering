@@ -31,10 +31,7 @@ export const singleton = (function() {
       .interceptors
       .response
       .use(undefined, (error: AxiosError) => {
-        if (!axios.isCancel(error)) {
-          message.error(error.message || '请求失败');
-        }
-
+        message.error(error.message || '请求失败');
         return Promise.reject(error);
       });
 
