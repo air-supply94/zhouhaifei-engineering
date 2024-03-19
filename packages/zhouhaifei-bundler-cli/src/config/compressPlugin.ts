@@ -70,8 +70,6 @@ export function compressPlugin({
         {
           extractComments: false,
           minify,
-
-          // @ts-expect-error
           terserOptions,
         },
       ]);

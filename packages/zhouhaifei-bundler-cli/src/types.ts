@@ -7,7 +7,6 @@ import type HtmlWebpackPlugin from 'html-webpack-plugin';
 import type { ProxyConfigMap } from 'webpack-dev-server';
 import type { GetBabelConfigOptions } from '@zhouhaifei/babel-preset';
 import type { TransformOptions as EsbuildOptions } from 'esbuild';
-import type { MinifyOptions as TerserOptions } from 'terser';
 import type { CssNanoOptions } from 'css-minimizer-webpack-plugin';
 
 export enum Env {
@@ -89,7 +88,7 @@ interface StyleConfig {
 export interface UserConfig extends BaseConfig, StyleConfig, GetBabelConfigOptions {
   nocompress?: boolean;
   jsMinifier?: keyof typeof JSMinifier;
-  jsMinifierOptions?: EsbuildOptions | TerserOptions;
+  jsMinifierOptions?: EsbuildOptions | any;
   cssMinifier?: keyof typeof CSSMinifier;
   cssMinifierOptions?: EsbuildOptions | CssNanoOptions | Record<string, any>;
   threadLoaderOptions?: Record<string, any>;

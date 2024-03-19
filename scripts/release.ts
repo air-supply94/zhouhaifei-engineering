@@ -73,7 +73,7 @@ async function getPublishPackagesInfo(): Promise<PublishPackagesInfo[]> {
 }
 
 function getNpmTag(version: string) {
-  const checkVersionReg = /^\d+\.\d+\.\d+(-(alpha|beta|rc)\.\d+){0,1}$/;
+  const checkVersionReg = /^\d+\.\d+\.\d+(-(alpha|beta|rc)\.\d+)?$/;
   if (!checkVersionReg.test(version)) {
     const error = '版本不符合规范';
     throw new Error(error);

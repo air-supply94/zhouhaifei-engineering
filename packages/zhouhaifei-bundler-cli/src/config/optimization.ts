@@ -134,10 +134,10 @@ function isModuleCSS(module: { type: string; }) {
     // mini-css-extract-plugin
     module.type === 'css/mini-extract' ||
 
-    // extract-css-chunks-webpack-plugin (old)
+    // extract-css-chunks-webpack-plugin(old)
     module.type === 'css/extract-chunks' ||
 
-    // extract-css-chunks-webpack-plugin (new)
+    // extract-css-chunks-webpack-plugin(new)
     module.type === 'css/extract-css-chunks'
   );
 }
