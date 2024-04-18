@@ -1,48 +1,7 @@
 import type { UserConfig } from '@zhouhaifei/bundler-cli';
 
-const target = 'https://cdtestcloudwms.ejingling.cn/';
-const context = [
-  '/api',
-  '/sku',
-  '/employee',
-  '/category',
-  '/baseSerializeSchema',
-  '/brand',
-  '/base',
-  '/shop',
-  '/warehouse',
-  '/courier',
-  '/city',
-  '/district',
-  '/province',
-  '/organization',
-  '/oms',
-  '/basecommon',
-  '/courier',
-  '/productQuery',
-  '/custom',
-  '/address_courier',
-  '/product',
-  '/logRequest',
-  '/skuQuery',
-  '/accessLog',
-  '/serial_number',
-  '/fms',
-  '/ejl-erp-oms',
-  '/ejl-erp-wms',
-  '/ejl-erp-oms-static',
-  '/ejl-erp-wms-static',
-  '/aftersale',
-  '/warehouse_bin',
-  '/warehouseShelf',
-  '/eshop',
-  '/page',
-  '/static',
-  '/logout',
-  '/cw-ejl-erp-wms',
-  '/ejl-pms',
-  '/ejl-pos',
-];
+const target = 'http://localhost:8000';
+const context = ['/api'];
 const proxy = context.reduce((prev: Record<string, any>, current) => {
   prev[current] = {
     target,
@@ -55,15 +14,12 @@ const proxy = context.reduce((prev: Record<string, any>, current) => {
 const config: UserConfig = {
   proxy,
   externals: {
-    lodash: '_',
+    underscore: '_',
+    dayjs: 'dayjs',
     qs: 'Qs',
     axios: 'axios',
     react: 'React',
     'react-dom': 'ReactDOM',
-    mobx: 'mobx',
-    'mobx-react': 'mobxReact',
-    'mobx-react-lite': 'mobxReactLite',
-    moment: 'moment',
   },
 };
 export default config;

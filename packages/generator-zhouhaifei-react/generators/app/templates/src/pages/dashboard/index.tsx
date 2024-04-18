@@ -1,39 +1,47 @@
 import React from 'react';
 import { Card } from 'antd';
 import styles from './index.less';
-import mock from 'mockjs';
-import { request } from '../../utils';
-import { observable, action } from 'mobx';
+import axios from 'axios';
+import { makeAutoObservable } from 'mobx';
 import { observer } from 'mobx-react';
 
-mock.mock('/api/test', 'get', {
-  'list|100': [
-    {
-      name: '@city',
-      'value|1-100': 50,
-      'type|0-2': 1,
-    },
-  ],
-});
+if (process.env.NODE_ENV === 'development') {
+  import('mockjs').then((mock) => {
+    mock.mock('/api/test', 'get', {
+      'list|100': [
+        {
+          name: '@city',
+          'value|1-100': 50,
+          'type|0-2': 1,
+        },
+      ],
+    });
+  });
+}
 
 class Store {
-  @observable public age = 0;
+  constructor() {
+    makeAutoObservable(this);
+  }
 
-  @action public setAge = () => {
+  private name = '';
+
+  public age = 0;
+
+  public setAge = () => {
     this.age++;
   };
 }
 
 const store = new Store();
-
 export default observer(() => {
   React.useEffect(() => {
-    request({ url: '/api/test' })
+    axios.request({ url: '/api/test' })
       .then((data) => {
         console.log(data);
       });
 
-    request({ url: '/api/iac/role/user/perms' })
+    axios.request({ url: '/api/iac/role/user/perms' })
       .then((data) => {
         console.log(data);
       });

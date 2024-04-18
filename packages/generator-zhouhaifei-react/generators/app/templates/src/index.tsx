@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './global.less';
 import { RenderRoutes } from './routes';
-import { Locale } from './utils';
 import NProgress from 'nprogress';
+import { Locale } from './utils';
 
 render();
 

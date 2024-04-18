@@ -8,31 +8,30 @@
     "yarn": "1.22.21"
   },
   "dependencies": {
+    "dayjs": "1.11.10",
+    "underscore": "1.13.6",
     "nprogress": "0.2.0",
-    "antd": "4.24.14",
+    "antd": "5.16.2",
     "axios": "0.28.0",
-    "lodash": "4.17.21",
-    "mobx": "5.15.7",
-    "mobx-react": "6.3.1",
-    "moment": "2.29.2",
+    "mobx": "6.12.3",
+    "mobx-react": "9.1.1",
     "qs": "6.11.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.22.1"
   },
   "devDependencies": {
+    "@types/underscore": "1.11.15",
     "typescript": "4.2.4",
     "@types/nprogress": "0.2.2",
-    "@types/lodash": "4.14.165",
-    "@types/mockjs": "1.0.3",
-    "@types/node": "16.18.61",
+    "@types/mockjs": "1.0.10",
     "@types/qs": "6.9.5",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "cross-env": "7.0.3",
     "mockjs": "1.1.0",
-    "@zhouhaifei/bundler-cli": "3.1.9",
-    "@zhouhaifei/code-style": "3.1.9"
+    "@zhouhaifei/bundler-cli": "workspace:*",
+    "@zhouhaifei/code-style": "workspace:*"
   },
   "husky": {
     "hooks": {
