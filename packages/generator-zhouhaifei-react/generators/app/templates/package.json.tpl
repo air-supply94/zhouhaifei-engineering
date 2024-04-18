@@ -30,8 +30,8 @@
     "@types/react-dom": "^18.2.7",
     "cross-env": "7.0.3",
     "mockjs": "1.1.0",
-    "@zhouhaifei/bundler-cli": "workspace:*",
-    "@zhouhaifei/code-style": "workspace:*"
+    "@zhouhaifei/bundler-cli": "3.1.10",
+    "@zhouhaifei/code-style": "3.1.10"
   },
   "husky": {
     "hooks": {
