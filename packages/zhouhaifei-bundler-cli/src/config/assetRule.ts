@@ -17,7 +17,7 @@ export function assetRule({
     .module
     .rule('asset')
     .oneOf('image')
-    .test(/\.(bmp|gif|jpg|jpeg|png|svg)$/)
+    .test(/\.(bmp|gif|jpg|jpeg|png|svg|webp)$/)
     .type('asset')
     .parser({ dataUrlCondition: { maxSize: assetsInlineLimit }});
 
