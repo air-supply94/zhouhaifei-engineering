@@ -18,9 +18,6 @@ importers:
       '@zhouhaifei/code-style':
         specifier: workspace:*
         version: link:packages/zhouhaifei-code-style
-      chalk:
-        specifier: 4.1.2
-        version: 4.1.2
       esno:
         specifier: 4.0.0
         version: 4.0.0

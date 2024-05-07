@@ -1,7 +1,6 @@
 import assert from 'assert';
 import getGitRepoInfo from 'git-repo-info';
 import 'zx/globals';
-import chalk from 'chalk';
 import fs from 'fs';
 import path from 'path';
 
@@ -90,30 +89,30 @@ function getNpmTag(version: string) {
   const publishPackagesInfo = await getPublishPackagesInfo();
   const checkedPackage = publishPackagesInfo[0].packageJson;
 
-  console.log(chalk.bold(`publish packages: \r\n\r\n${publishPackagesInfo.map((item) => item.packageJson.name)
-    .join('\r\n')}\r\n\r\n`));
+  console.log(`publish packages: \r\n\r\n${publishPackagesInfo.map((item) => item.packageJson.name)
+    .join('\r\n')}\r\n\r\n`);
 
   const { branch } = getGitRepoInfo();
-  console.log(chalk.bold(`branch: ${branch}`));
+  console.log(`branch: ${branch}`);
 
   // check git status
-  console.log(chalk.bold('check git status'));
+  console.log('check git status');
   const isGitClean = (await $`git status --porcelain`).stdout.trim().length;
   assert(!isGitClean, 'git status is not clean');
 
   // check git remote update
-  console.log(chalk.bold('check git remote update'));
+  console.log('check git remote update');
   await $`git fetch`;
   const gitStatus = (await $`git status --short --branch`).stdout.trim();
   assert(!gitStatus.includes('behind'), 'git status is behind remote');
 
   // check npm registry
-  console.log(chalk.bold('check npm registry'));
+  console.log('check npm registry');
   const registry = (await $`npm config get registry`).stdout.trim();
   assert(registry === publishRegistry, `npm registry is not ${publishRegistry}`);
 
   // check npm ownership
-  console.log(chalk.bold('check npm ownership'));
+  console.log('check npm ownership');
   const whoami = (await $`npm whoami`).stdout.trim();
   const owners = (await $`npm owner ls ${checkedPackage.name}`).stdout
     .trim()
@@ -124,22 +123,22 @@ function getNpmTag(version: string) {
   assert(owners.includes(whoami), `${checkedPackage.name} is not owned by ${whoami}`);
 
   // build packages
-  console.log(chalk.bold('build packages'));
+  console.log('build packages');
   await $`cd ${cwd}; npm run ${buildCmd}`;
 
   // test packages
-  console.log(chalk.bold('test packages'));
+  console.log('test packages');
   await $`cd ${cwd}; npm run ${testCmd}`;
 
   // bump version
-  console.log(chalk.bold('bump version'));
+  console.log('bump version');
 
   const version = (await question(
     `Input release version (current: ${checkedPackage.version}): `
   )).trim();
   const tag = getNpmTag(version);
 
-  console.log(chalk.bold('update generator packages'));
+  console.log('update generator packages');
   await updateGeneratorPackages(version);
 
   await Promise.all(publishPackagesInfo.map(async(item) => {
@@ -149,14 +148,14 @@ function getNpmTag(version: string) {
   (await $`cd ${cwd} ; pnpm publish --no-git-checks -r --tag ${tag} --publish-branch ${branch}`);
 
   // commit
-  console.log(chalk.bold('commit'));
+  console.log('commit');
   await $`git commit --all --message "chore(*): release ${version}" --no-verify`;
 
   // git tag
-  console.log(chalk.bold('git tag'));
+  console.log(`git tag is ${version}`);
   await $`git tag v${version}`;
 
   // git push
-  console.log(chalk.bold('git push'));
+  console.log('git push');
   await $`git push origin ${branch} --tags`;
 })();
