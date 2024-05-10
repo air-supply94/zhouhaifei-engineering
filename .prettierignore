@@ -31,3 +31,5 @@ CNAME
 .umi-production
 docs-dist
 .github
+
+pnpm-lock.yaml
