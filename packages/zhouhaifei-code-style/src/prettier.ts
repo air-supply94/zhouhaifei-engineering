@@ -1,5 +1,5 @@
 export const prettier = {
-  printWidth: 180,
+  printWidth: 240,
   tabWidth: 2,
   useTabs: false,
   semi: true,
@@ -8,18 +8,13 @@ export const prettier = {
   jsxSingleQuote: false,
   trailingComma: 'all',
   bracketSpacing: true,
-  jsxBracketSameLine: false,
-  proseWrap: 'never',
-  endOfLine: 'lf',
+  bracketSameLine: true,
   arrowParens: 'always',
-  overrides: [
-    {
-      files: '.prettierrc',
-      options: { parser: 'json' },
-    },
-    {
-      files: '*.ejs',
-      options: { parser: 'html' },
-    },
-  ],
+  proseWrap: 'preserve',
+  htmlWhitespaceSensitivity: 'css',
+  vueIndentScriptAndStyle: false,
+  endOfLine: 'lf',
+  embeddedLanguageFormatting: 'auto',
+  singleAttributePerLine: false,
+  plugins: [require.resolve('prettier-plugin-packagejson')],
 };

@@ -3,12 +3,18 @@
   "version": "3.1.10",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "zhouhaifei-bundler-cli": "bin/zhouhaifei-bundler-cli.js"
+  },
   "files": [
     "bin",
     "dist"
   ],
-  "bin": {
-    "zhouhaifei-bundler-cli": "bin/zhouhaifei-bundler-cli.js"
+  "scripts": {
+    "build": "father build",
+    "build:deps": "father prebundle",
+    "dev": "father dev",
+    "doctor": "father doctor"
   },
   "dependencies": {
     "@zhouhaifei/babel-preset": "workspace:*",
@@ -51,12 +57,6 @@
   },
   "devDependencies": {
     "father": "4.3.7"
-  },
-  "scripts": {
-    "doctor": "father doctor",
-    "dev": "father dev",
-    "build": "father build",
-    "build:deps": "father prebundle"
   },
   "publishConfig": {
     "access": "public",

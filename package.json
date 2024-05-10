@@ -7,49 +7,46 @@
     "branch": "master",
     "platform": "github"
   },
-  "engines": {
-    "node": ">= 16.20",
-    "pnpm": ">= 8.9.2"
-  },
-  "volta": {
-    "node": "20.10.0"
-  },
-  "devDependencies": {
-    "zx": "7.2.3",
-    "git-repo-info": "2.1.1",
-    "esno": "4.0.0",
-    "typescript": "4.2.4",
-    "@types/node": "^16.18.61",
-    "@zhouhaifei/code-style": "workspace:*",
-    "turbo": "^1.10.16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run changelog && git add . && lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && validate-commit-msg"
-    }
-  },
-  "resolutions": {
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7"
+  "scripts": {
+    "build": "turbo build",
+    "commit": "cz",
+    "preinstall": "npx only-allow pnpm",
+    "lint:js": "eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
+    "prepare": "husky",
+    "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{yaml,md,html,json}\"",
+    "release": "esno scripts/release.ts",
+    "test": "turbo test"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "npm run lint:js",
       "git add ."
     ],
-    "**/*.{css,md,html,json}": [
+    "**/*.{yaml,md,html,json}": [
       "prettier --write",
       "git add ."
     ]
   },
-  "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "release": "esno scripts/release.ts",
-    "test": "turbo test",
-    "build": "turbo build",
-    "lint-staged": "lint-staged --allow-empty",
-    "lint:js": "eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
-    "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{css,md,html,json}\""
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "resolutions": {
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7"
+  },
+  "devDependencies": {
+    "@types/node": "^16.18.61",
+    "@zhouhaifei/code-style": "workspace:*",
+    "esno": "4.0.0",
+    "git-repo-info": "2.1.1",
+    "turbo": "^1.10.16",
+    "typescript": "4.2.4",
+    "zx": "7.2.3"
+  },
+  "volta": {
+    "node": "20.10.0",
+    "pnpm": "8.9.2"
   }
 }

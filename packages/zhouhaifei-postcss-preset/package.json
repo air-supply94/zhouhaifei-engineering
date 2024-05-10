@@ -6,6 +6,12 @@
   "files": [
     "dist"
   ],
+  "scripts": {
+    "build": "father build",
+    "build:deps": "father prebundle",
+    "dev": "father dev",
+    "doctor": "father doctor"
+  },
   "dependencies": {
     "postcss": "8.4.31",
     "postcss-flexbugs-fixes": "5.0.2",
@@ -13,12 +19,6 @@
   },
   "devDependencies": {
     "father": "4.3.7"
-  },
-  "scripts": {
-    "doctor": "father doctor",
-    "dev": "father dev",
-    "build": "father build",
-    "build:deps": "father prebundle"
   },
   "publishConfig": {
     "access": "public",
