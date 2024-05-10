@@ -297,6 +297,9 @@ importers:
       stylelint-config-css-modules:
         specifier: 4.4.0
         version: 4.4.0(stylelint@16.5.0)
+      stylelint-config-standard:
+        specifier: 36.0.0
+        version: 36.0.0(stylelint@16.5.0)
       stylelint-order:
         specifier: 6.0.4
         version: 6.0.4(stylelint@16.5.0)
@@ -16282,6 +16285,25 @@ packages:
       stylelint: 16.5.0(typescript@4.2.4)
     optionalDependencies:
       stylelint-scss: 6.3.0(stylelint@16.5.0)
+    dev: false
+
+  /stylelint-config-recommended@14.0.0(stylelint@16.5.0):
+    resolution: {integrity: sha512-jSkx290CglS8StmrLp2TxAppIajzIBZKYm3IxT89Kg6fGlxbPiTiyH9PS5YUuVAFwaJLl1ikiXX0QWjI0jmgZQ==}
+    engines: {node: '>=18.12.0'}
+    peerDependencies:
+      stylelint: ^16.0.0
+    dependencies:
+      stylelint: 16.5.0(typescript@4.2.4)
+    dev: false
+
+  /stylelint-config-standard@36.0.0(stylelint@16.5.0):
+    resolution: {integrity: sha512-3Kjyq4d62bYFp/Aq8PMKDwlgUyPU4nacXsjDLWJdNPRUgpuxALu1KnlAHIj36cdtxViVhXexZij65yM0uNIHug==}
+    engines: {node: '>=18.12.0'}
+    peerDependencies:
+      stylelint: ^16.1.0
+    dependencies:
+      stylelint: 16.5.0(typescript@4.2.4)
+      stylelint-config-recommended: 14.0.0(stylelint@16.5.0)
     dev: false
 
   /stylelint-order@6.0.4(stylelint@16.5.0):

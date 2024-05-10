@@ -13,17 +13,17 @@
     "preinstall": "npx only-allow pnpm",
     "lint:js": "eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
     "prepare": "husky",
-    "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{yaml,md,html,json}\"",
+    "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{less,css,scss,sass,yaml,md,html,json}\"",
     "release": "esno scripts/release.ts",
     "test": "turbo test"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "npm run lint:js",
+      "eslint --cache --quiet --fix",
       "git add ."
     ],
-    "**/*.{yaml,md,html,json}": [
-      "prettier --write",
+    "**/*.{less,css,scss,sass,yaml,md,html,json}": [
+      "prettier --cache --cache-strategy metadata -c --write",
       "git add ."
     ]
   },

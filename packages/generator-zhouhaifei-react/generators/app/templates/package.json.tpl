@@ -4,7 +4,7 @@
     "commit": "cz",
     "dev": "zhouhaifei-bundler-cli dev --open",
     "lint:js": "eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
-    "lint:style-less": "stylelint --cache --quiet --fix \"src/**/*.{less,css,scss,sass}\"",
+    "lint:style": "stylelint --cache --quiet --fix \"src/**/*.{less,css,scss,sass}\"",
     "prepare": "husky",
     "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{less,css,scss,sass,yaml,md,html,json}\""
   },
