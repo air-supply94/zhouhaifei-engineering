@@ -4,21 +4,22 @@
     "commit": "cz",
     "dev": "zhouhaifei-bundler-cli dev --open",
     "lint:js": "eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
-    "lint:style-less": "stylelint --cache --quiet --fix \"src/**/*.less\" --syntax less",
+    "lint:style-less": "stylelint --cache --quiet --fix \"src/**/*.{less,css,scss,sass}\"",
     "prepare": "husky",
-    "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{yaml,md,html,json}\""
+    "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{less,css,scss,sass,yaml,md,html,json}\""
   },
   "lint-staged": {
-    "**/*.less": [
-      "npm run lint:style-less",
+    "**/*.{less,css,scss,sass}": [
+      "prettier --cache --cache-strategy metadata -c --write",
+      "stylelint --cache --quiet --fix",
       "git add ."
     ],
     "**/*.{js,jsx,ts,tsx}": [
-      "npm run lint:js",
+      "eslint --cache --quiet --fix",
       "git add ."
     ],
     "**/*.{yaml,md,html,json}": [
-      "prettier --write",
+      "prettier --cache --cache-strategy metadata -c --write",
       "git add ."
     ]
   },

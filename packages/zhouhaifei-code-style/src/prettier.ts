@@ -8,7 +8,7 @@ export const prettier = {
   jsxSingleQuote: false,
   trailingComma: 'all',
   bracketSpacing: true,
-  bracketSameLine: true,
+  bracketSameLine: false,
   arrowParens: 'always',
   proseWrap: 'preserve',
   htmlWhitespaceSensitivity: 'css',
@@ -17,4 +17,15 @@ export const prettier = {
   embeddedLanguageFormatting: 'auto',
   singleAttributePerLine: false,
   plugins: [require.resolve('prettier-plugin-packagejson')],
+  overrides: [
+    {
+      files: [
+        '*.css',
+        '*.less',
+        '*.scss',
+        '*.sass',
+      ],
+      options: { singleQuote: false },
+    },
+  ],
 };
