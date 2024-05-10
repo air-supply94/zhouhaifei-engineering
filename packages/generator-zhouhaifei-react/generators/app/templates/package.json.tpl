@@ -5,7 +5,7 @@
     "dev": "zhouhaifei-bundler-cli dev --open",
     "lint:js": "eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
     "lint:style": "stylelint --cache --quiet --fix \"src/**/*.{less,css,scss,sass}\"",
-    "prepare": "husky",
+    "prepare": "npx husky@9.0.11",
     "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{less,css,scss,sass,yaml,md,html,json}\""
   },
   "lint-staged": {

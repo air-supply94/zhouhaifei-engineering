@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-git add . && lint-staged --allow-empty
+git add . && npx lint-staged@15.2.2 --allow-empty
