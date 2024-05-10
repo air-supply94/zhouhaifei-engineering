@@ -1,2 +1,2 @@
 #!/bin/sh
-npx --no -- commitlint --edit $1
+npx commitlint@19.3.0 --edit $1
