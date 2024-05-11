@@ -58,8 +58,8 @@
     "mockjs": "1.1.0",
     "typescript": "4.2.4"
   },
-  "volta": {
-    "node": "20.10.0",
-    "yarn": "1.22.21"
+  "engines": {
+    "node": "20.11.1",
+    "pnpm": "9.1.0"
   }
 }

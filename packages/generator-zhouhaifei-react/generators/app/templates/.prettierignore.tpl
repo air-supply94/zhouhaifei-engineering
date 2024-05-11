@@ -3,8 +3,10 @@
 **/*.jsx
 **.ts
 **.tsx
+
 public
 dist
+packages/generator-zhouhaifei-react
 coverage
 .dockerignore
 .DS_Store
@@ -22,3 +24,9 @@ LICENSE
 yarn-error.log
 .history
 CNAME
+.umi
+.umi-production
+docs-dist
+.github
+
+pnpm-lock.yaml

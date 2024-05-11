@@ -61,7 +61,8 @@
     "stylelint": "16.5.0",
     "typescript": "4.2.4"
   },
-  "volta": {
-    "node": "20.10.0"
+  "engines": {
+    "node": "20.11.1",
+    "pnpm": "9.1.0"
   }
 }

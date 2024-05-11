@@ -4,9 +4,6 @@
 **.ts
 **.tsx
 
-compiled
-bundles
-
 public
 dist
 packages/generator-zhouhaifei-react

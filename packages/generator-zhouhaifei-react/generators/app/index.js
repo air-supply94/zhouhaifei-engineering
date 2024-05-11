@@ -1,9 +1,8 @@
-'use strict';
-const chalk = require('chalk');
-const Generator = require('yeoman-generator');
-const yosay = require('yosay');
+import chalk from 'chalk';
+import Generator from 'yeoman-generator';
+import yosay from 'yosay';
 
-module.exports = class extends Generator {
+export default class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
     this.log(
@@ -20,6 +19,10 @@ module.exports = class extends Generator {
     this.copyTemplate(
       this.templatePath('.**'),
       this.destinationPath('')
+    );
+    this.copyTemplate(
+      this.templatePath('.husky'),
+      this.destinationPath('.husky')
     );
 
     const tplList = [
@@ -42,9 +45,9 @@ module.exports = class extends Generator {
 
     for (let i = 0; i < tplList.length; i++) {
       this.moveDestination(
-        `${tplListl[i]}.tpl`,
+        `${tplList[i]}.tpl`,
         tplList[i]
       );
     }
   }
-};
+}

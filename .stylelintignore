@@ -1,12 +1,10 @@
 public
-coverage
-packages
+node_modules
 dist
+coverage
+packages/generator-zhouhaifei-react
+**/lib
 .umi
 .umi-production
-packages/generator-zhouhaifei-react
 docs-dist
 .github
-
-compiled
-bundles
