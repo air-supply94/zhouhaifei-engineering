@@ -108,7 +108,7 @@ export interface UserConfig extends BaseConfig, StyleConfig, GetBabelConfigOptio
   manifestOptions?: false | ManifestPluginOptions;
   ignoreMomentLocale?: boolean;
   copy?: CopyOptions[] | string[];
-  deadCode?: { directories?: string[]; exclude?: string[]; root?: string; };
+  deadCode?: { directories?: string[]; exclude?: string[]; root?: string };
   htmlOption?: false | HtmlWebpackPlugin.Options;
 }
 

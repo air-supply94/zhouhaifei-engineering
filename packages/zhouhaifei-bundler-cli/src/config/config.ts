@@ -35,25 +35,10 @@ function createEnvironmentHash(userEnv: ConfigOptions['userEnv']) {
 }
 
 export async function config(options: ConfigOptions): Promise<Configuration> {
-  const {
-    userConfig = {},
-    env,
-    cwd,
-    entry = {},
-    userEnv = {},
-  } = options;
+  const { userConfig = {}, env, cwd, entry = {}, userEnv = {} } = options;
   const config = new Config();
   const isDevelopment = env === Env.development;
-  const {
-    outputPath,
-    staticPathPrefix,
-    externals,
-    alias,
-    publicPath,
-    sourcemap,
-    chainWebpack,
-    cache,
-  } = userConfig;
+  const { outputPath, staticPathPrefix, externals, alias, publicPath, sourcemap, chainWebpack, cache } = userConfig;
   const applyOptions: ApplyOptions = {
     config,
     userConfig,
@@ -79,13 +64,9 @@ export async function config(options: ConfigOptions): Promise<Configuration> {
   });
 
   // entry
-  Object.keys(entry)
-    .forEach((key) => {
-      config
-        .entry(key)
-        .add(entry[key])
-        .end();
-    });
+  Object.keys(entry).forEach((key) => {
+    config.entry(key).add(entry[key]).end();
+  });
 
   // stats、mode、bail、devtool、profile、performance
   config.performance(false);
@@ -95,26 +76,7 @@ export async function config(options: ConfigOptions): Promise<Configuration> {
   config.devtool(sourcemap);
 
   // resolve
-  config.resolve
-    .symlinks(true)
-    .modules
-    .add('node_modules')
-    .end()
-    .alias
-    .merge(alias)
-    .end()
-    .extensions
-    .merge([
-      '.ts',
-      '.tsx',
-      '.js',
-      '.jsx',
-      '.mjs',
-      '.cjs',
-      '.json',
-      '.wasm',
-    ])
-    .end();
+  config.resolve.symlinks(true).modules.add('node_modules').end().alias.merge(alias).end().extensions.merge(['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs', '.json', '.wasm']).end();
 
   // output
   config.output
@@ -127,15 +89,10 @@ export async function config(options: ConfigOptions): Promise<Configuration> {
     .set('assetModuleFilename', `${staticPathPrefix}[name].[hash][ext]`)
     .set('hashFunction', 'xxhash64');
 
-  config
-    .externalsType('window')
-    .externals(externals);
+  config.externalsType('window').externals(externals);
 
   // target
-  config.target([
-    'web',
-    'es5',
-  ]);
+  config.target(['web', 'es5']);
 
   // experiments
   config.experiments({ topLevelAwait: true });

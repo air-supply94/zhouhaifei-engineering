@@ -6,11 +6,7 @@ import url from 'url';
 import type { DevOptions } from './types';
 import { Env } from './types';
 
-export async function dev({
-  cwd,
-  userConfig = {},
-  ...rest
-}: DevOptions) {
+export async function dev({ cwd, userConfig = {}, ...rest }: DevOptions) {
   const webpackConfig = await config({
     ...rest,
     env: Env.development,
@@ -21,11 +17,7 @@ export async function dev({
   delete webpackConfig.devServer;
 
   const protocol = 'http';
-  const {
-    host,
-    port,
-    open,
-  } = userConfig;
+  const { host, port, open } = userConfig;
   const openUrl = url.format({
     protocol,
     hostname: host === '0.0.0.0' || host === '::' ? 'localhost' : host,

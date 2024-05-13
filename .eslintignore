@@ -2,4 +2,6 @@ public
 node_modules
 dist
 coverage
+bin
 packages/generator-zhouhaifei-react
+packages/zhouhaifei-code-style/*.js

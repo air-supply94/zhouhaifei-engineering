@@ -4,10 +4,5 @@ import 'dayjs/locale/zh-cn';
 import React from 'react';
 
 export const Locale: React.FC<React.PropsWithChildren> = function Locale(props) {
-  return (
-    <ConfigProvider locale={zhCN}>
-      {props.children}
-    </ConfigProvider>
-  );
+  return <ConfigProvider locale={zhCN}>{props.children}</ConfigProvider>;
 };
-

@@ -3,10 +3,7 @@ import { config } from './config/config';
 import type { BuildOptions } from './types';
 import { Env } from './types';
 
-export async function build({
-  userConfig = {},
-  ...rest
-}: BuildOptions) {
+export async function build({ userConfig = {}, ...rest }: BuildOptions) {
   const { watch } = userConfig;
   const webpackConfig = await config({
     ...rest,
@@ -40,10 +37,7 @@ export async function build({
 
     // handle watch mode
     if (watch) {
-      const watching = compiler.watch(
-        webpackConfig.watchOptions || {},
-        handler
-      );
+      const watching = compiler.watch(webpackConfig.watchOptions || {}, handler);
 
       watching.close.bind(watching);
     } else {
@@ -51,4 +45,3 @@ export async function build({
     }
   });
 }
-

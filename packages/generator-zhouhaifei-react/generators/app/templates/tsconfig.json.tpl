@@ -5,5 +5,5 @@
     "lib": ["esnext", "dom"]
   },
   "exclude": ["node_modules", "dist"],
-  "include": ["src"]
+  "include": ["src", "bundlerConfig.ts"]
 }

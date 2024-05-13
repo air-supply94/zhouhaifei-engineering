@@ -6,12 +6,7 @@ import { expand } from 'dotenv-expand';
 export function loadEnv(cwd: string, envFile: string): Record<string, string> {
   const dotenv = path.resolve(cwd, envFile);
   const NODE_ENV = process.env.NODE_ENV;
-  const dotenvFiles = [
-    dotenv,
-    `${dotenv}.local`,
-    `${dotenv}.${NODE_ENV}`,
-    `${dotenv}.${NODE_ENV}.local`,
-  ].filter(Boolean);
+  const dotenvFiles = [dotenv, `${dotenv}.local`, `${dotenv}.${NODE_ENV}`, `${dotenv}.${NODE_ENV}.local`].filter(Boolean);
 
   let envConfig: Record<string, string> = {};
   dotenvFiles.forEach((dotenvFile) => {
@@ -19,7 +14,7 @@ export function loadEnv(cwd: string, envFile: string): Record<string, string> {
       const parseConfig = config({ path: dotenvFile });
       envConfig = {
         ...envConfig,
-        ...parseConfig?.parsed || {},
+        ...(parseConfig?.parsed || {}),
       };
       expand(parseConfig);
     }

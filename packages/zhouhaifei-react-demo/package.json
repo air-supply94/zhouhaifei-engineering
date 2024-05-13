@@ -3,33 +3,7 @@
   "private": true,
   "scripts": {
     "build-webpack": "zhouhaifei-bundler-cli build",
-    "commit": "cz",
-    "dev": "zhouhaifei-bundler-cli dev --open",
-    "lint:js": "cross-env TIMING=1 eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
-    "lint:style": "stylelint --cache --quiet --fix \"src/**/*.{less,css,scss,sass}\"",
-    "prepare": "pnpx husky@9.0.11",
-    "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{js,jsx,ts,tsx,less,css,scss,sass,yaml,md,html,json}\""
-  },
-  "lint-staged": {
-    "**/*.{less,css,scss,sass}": [
-      "prettier --cache --cache-strategy metadata -c --write",
-      "stylelint --cache --quiet --fix",
-      "git add ."
-    ],
-    "**/*.{js,jsx,ts,tsx}": [
-      "prettier --cache --cache-strategy metadata -c --write",
-      "eslint --cache --quiet --fix",
-      "git add ."
-    ],
-    "**/*.{yaml,md,html,json}": [
-      "prettier --cache --cache-strategy metadata -c --write",
-      "git add ."
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
+    "dev": "zhouhaifei-bundler-cli dev --open"
   },
   "resolutions": {
     "@types/react": "^18.2.21",
@@ -58,9 +32,7 @@
     "@zhouhaifei/bundler-cli": "workspace:*",
     "@zhouhaifei/code-style": "workspace:*",
     "cross-env": "7.0.3",
-    "eslint": "8.57.0",
     "mockjs": "1.1.0",
-    "stylelint": "16.5.0",
     "typescript": "5.4.5"
   },
   "engines": {

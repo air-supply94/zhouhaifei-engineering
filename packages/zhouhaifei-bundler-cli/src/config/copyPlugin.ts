@@ -3,15 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
-export function copyPlugin({
-  config,
-  userConfig: {
-    copy,
-    publicDir,
-  },
-  cwd,
-  isDevelopment,
-}: ApplyOptions) {
+export function copyPlugin({ config, userConfig: { copy, publicDir }, cwd, isDevelopment }: ApplyOptions) {
   const copyPatterns = [];
   publicDir = path.resolve(cwd, publicDir);
   if (fs.existsSync(publicDir) && fs.readdirSync(publicDir).length) {
@@ -40,8 +32,6 @@ export function copyPlugin({
   }
 
   if (!isDevelopment && copyPatterns.length) {
-    config
-      .plugin('copy-webpack-plugin')
-      .use(CopyWebpackPlugin, [{ patterns: copyPatterns }]);
+    config.plugin('copy-webpack-plugin').use(CopyWebpackPlugin, [{ patterns: copyPatterns }]);
   }
 }

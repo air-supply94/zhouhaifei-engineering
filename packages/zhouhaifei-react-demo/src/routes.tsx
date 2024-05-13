@@ -14,12 +14,12 @@ export type MenuDataItem = {
 export const routes: MenuDataItem[] = [
   {
     name: '',
-    element: <DefaultLayout/>,
+    element: <DefaultLayout />,
     children: [
       {
         name: '仪表盘',
         path: '/dashboard',
-        element: <Dashboard/>,
+        element: <Dashboard />,
       },
       {
         path: '/',
@@ -32,7 +32,7 @@ export const routes: MenuDataItem[] = [
       },
       {
         path: '*',
-        element: <NoPage/>,
+        element: <NoPage />,
       },
     ],
   },

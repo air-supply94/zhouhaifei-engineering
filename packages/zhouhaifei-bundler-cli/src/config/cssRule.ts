@@ -9,20 +9,7 @@ export function cssRule({
   config,
   isDevelopment,
   srcDir,
-  userConfig: {
-    lessOptions,
-    autoCSSModules,
-    styleLoaderOptions,
-    cssLoaderModules,
-    cssLoaderOptions,
-    sassOptions,
-    stylusOptions,
-    targets,
-    postcssPresetEnvOptions,
-    autoprefixer,
-    extraPostCSSPlugins,
-    postcssOptions,
-  },
+  userConfig: { lessOptions, autoCSSModules, styleLoaderOptions, cssLoaderModules, cssLoaderOptions, sassOptions, stylusOptions, targets, postcssPresetEnvOptions, autoprefixer, extraPostCSSPlugins, postcssOptions },
 }: ApplyOptions) {
   const rulesConfig = [
     {
@@ -53,40 +40,27 @@ export function cssRule({
   ];
 
   rulesConfig.forEach((item) => {
-    const {
-      name,
-      test,
-      loader,
-      loaderOptions,
-    } = item;
+    const { name, test, loader, loaderOptions } = item;
 
-    const rule = config
-      .module
-      .rule(name)
-      .test(test);
+    const rule = config.module.rule(name).test(test);
 
     const moduleAndNormal = [
       autoCSSModules !== false && {
         rule: rule
           .oneOf(`${name}-module`)
-          .exclude
-          .add(/node_modules/)
+          .exclude.add(/node_modules/)
           .add(STYLE_EXTENSIONS.map((val) => path.resolve(srcDir, `global.${val}`)))
           .end(),
         isAutoCSSModuleRule: true,
       },
       {
-        rule: rule
-          .oneOf(name),
+        rule: rule.oneOf(name),
         isAutoCSSModuleRule: false,
       },
     ].filter(Boolean);
 
     moduleAndNormal.forEach((val) => {
-      const {
-        rule,
-        isAutoCSSModuleRule,
-      } = val;
+      const { rule, isAutoCSSModuleRule } = val;
 
       // style-loader、mini-css-extract-plugin
       if (isDevelopment && styleLoaderOptions !== false) {
@@ -99,24 +73,23 @@ export function cssRule({
             ...styleLoaderOptions,
           });
       } else {
-        rule
-          .use('mini-css-extract-plugin')
-          .loader(MiniCssExtractPlugin.loader)
-          .options({
-            emit: true,
-            esModule: true,
-          });
+        rule.use('mini-css-extract-plugin').loader(MiniCssExtractPlugin.loader).options({
+          emit: true,
+          esModule: true,
+        });
       }
 
       // css-loader
-      const cssLoaderModulesConfig = isAutoCSSModuleRule ? {
-        localIdentName: LOCAL_IDENT_NAME,
-        ...cssLoaderModules,
-      } : {
-        localIdentName: LOCAL_IDENT_NAME,
-        auto: true,
-        ...cssLoaderModules,
-      };
+      const cssLoaderModulesConfig = isAutoCSSModuleRule
+        ? {
+            localIdentName: LOCAL_IDENT_NAME,
+            ...cssLoaderModules,
+          }
+        : {
+            localIdentName: LOCAL_IDENT_NAME,
+            auto: true,
+            ...cssLoaderModules,
+          };
 
       rule
         .use('css-loader')

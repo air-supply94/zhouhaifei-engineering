@@ -4,23 +4,21 @@
     "commit": "cz",
     "dev": "zhouhaifei-bundler-cli dev --open",
     "lint:js": "cross-env TIMING=1 eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
-    "lint:style": "stylelint --cache --quiet --fix \"src/**/*.{less,css,scss,sass}\"",
+    "lint:style": "stylelint --cache --quiet --fix \"{**/*,*}.{less,css,scss,sass}\"",
     "prepare": "pnpx husky@9.0.11",
     "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{js,jsx,ts,tsx,less,css,scss,sass,yaml,md,html,json}\""
   },
   "lint-staged": {
-    "**/*.{less,css,scss,sass}": [
+    "{**/*,*}.{js,jsx,ts,tsx,less,css,scss,sass,yaml,md,html,json}": [
       "prettier --cache --cache-strategy metadata -c --write",
+      "git add ."
+    ],
+    "{**/*,*}.{less,css,scss,sass}": [
       "stylelint --cache --quiet --fix",
       "git add ."
     ],
-    "**/*.{js,jsx,ts,tsx}": [
-      "prettier --cache --cache-strategy metadata -c --write",
+    "{**/*,*}.{js,jsx,ts,tsx}": [
       "eslint --cache --quiet --fix",
-      "git add ."
-    ],
-    "**/*.{yaml,md,html,json}": [
-      "prettier --cache --cache-strategy metadata -c --write",
       "git add ."
     ]
   },

@@ -21,12 +21,21 @@ importers:
       '@zhouhaifei/code-style':
         specifier: workspace:*
         version: link:packages/zhouhaifei-code-style
+      cross-env:
+        specifier: 7.0.3
+        version: 7.0.3
+      eslint:
+        specifier: 8.57.0
+        version: 8.57.0
       esno:
         specifier: 4.0.0
         version: 4.0.0
       git-repo-info:
         specifier: 2.1.1
         version: 2.1.1
+      stylelint:
+        specifier: 16.5.0
+        version: 16.5.0(typescript@5.4.5)
       turbo:
         specifier: ^1.10.16
         version: 1.11.2
@@ -362,15 +371,9 @@ importers:
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
-      eslint:
-        specifier: 8.57.0
-        version: 8.57.0
       mockjs:
         specifier: 1.1.0
         version: 1.1.0
-      stylelint:
-        specifier: 16.5.0
-        version: 16.5.0(typescript@5.4.5)
       typescript:
         specifier: 5.4.5
         version: 5.4.5
@@ -4779,10 +4782,6 @@ packages:
 
   ignore@3.3.10:
     resolution: {integrity: sha512-Pgs951kaMm5GXP7MOvxERINe3gsaVjUWFm+UZPSq9xYriQAksyhg0csnS0KXSNRD5NmNdapXEpjxG49+AKh/ug==}
-
-  ignore@5.3.0:
-    resolution: {integrity: sha512-g7dmpshy+gD7mh88OC9NwSGTKoc3kyLAZQRU1mt53Aw/vnvfXnbC+F/7F7QoYVKbV+KNvJx8wArewKy1vXMtlg==}
-    engines: {node: '>= 4'}
 
   ignore@5.3.1:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}
@@ -13481,7 +13480,7 @@ snapshots:
     dependencies:
       dir-glob: 3.0.1
       fast-glob: 3.3.2
-      ignore: 5.3.0
+      ignore: 5.3.1
       merge2: 1.4.1
       slash: 4.0.0
 
@@ -13727,8 +13726,6 @@ snapshots:
   ieee754@1.2.1: {}
 
   ignore@3.3.10: {}
-
-  ignore@5.3.0: {}
 
   ignore@5.3.1: {}
 

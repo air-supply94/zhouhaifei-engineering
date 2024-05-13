@@ -19,12 +19,7 @@ export const prettier = {
   plugins: [require.resolve('prettier-plugin-packagejson')],
   overrides: [
     {
-      files: [
-        '*.css',
-        '*.less',
-        '*.scss',
-        '*.sass',
-      ],
+      files: ['*.css', '*.less', '*.scss', '*.sass'],
       options: { singleQuote: false },
     },
   ],

@@ -6,23 +6,8 @@ import { CSSMinifier, JSMinifier } from '../types';
 import { getEsBuildTarget } from '../utils';
 import type { TransformOptions as EsbuildOptions } from 'esbuild';
 
-export function compressPlugin({
-  userConfig: {
-    jsMinifier,
-    cssMinifier,
-    targets,
-    jsMinifierOptions,
-    cssMinifierOptions,
-    nocompress,
-  },
-  isDevelopment,
-  config,
-}: ApplyOptions) {
-  if (
-    isDevelopment ||
-    nocompress ||
-    (jsMinifier === JSMinifier.none && cssMinifier === CSSMinifier.none)
-  ) {
+export function compressPlugin({ userConfig: { jsMinifier, cssMinifier, targets, jsMinifierOptions, cssMinifierOptions, nocompress }, isDevelopment, config }: ApplyOptions) {
+  if (isDevelopment || nocompress || (jsMinifier === JSMinifier.none && cssMinifier === CSSMinifier.none)) {
     config.optimization.minimize(false);
     return;
   }
@@ -65,14 +50,13 @@ export function compressPlugin({
   }
 
   if (jsMinifier !== JSMinifier.none) {
-    config.optimization.minimizer(`js-${jsMinifier}`)
-      .use(TerserPlugin, [
-        {
-          extractComments: false,
-          minify,
-          terserOptions,
-        },
-      ]);
+    config.optimization.minimizer(`js-${jsMinifier}`).use(TerserPlugin, [
+      {
+        extractComments: false,
+        minify,
+        terserOptions,
+      },
+    ]);
   }
 
   let cssMinify;
@@ -87,12 +71,7 @@ export function compressPlugin({
     } as EsbuildOptions;
   } else if (cssMinifier === CSSMinifier.cssnano) {
     cssMinify = CSSMinimizerWebpackPlugin.cssnanoMinify;
-    minimizerOptions = {
-      preset: [
-        'default',
-        { discardComments: { removeAll: true }},
-      ],
-    };
+    minimizerOptions = { preset: ['default', { discardComments: { removeAll: true } }] };
   }
   minimizerOptions = {
     ...minimizerOptions,
@@ -100,13 +79,11 @@ export function compressPlugin({
   };
 
   if (cssMinifier !== CSSMinifier.none) {
-    config.optimization
-      .minimizer(`css-${cssMinifier}`)
-      .use(CSSMinimizerWebpackPlugin, [
-        {
-          minify: cssMinify,
-          minimizerOptions,
-        },
-      ]);
+    config.optimization.minimizer(`css-${cssMinifier}`).use(CSSMinimizerWebpackPlugin, [
+      {
+        minify: cssMinify,
+        minimizerOptions,
+      },
+    ]);
   }
 }

@@ -1,18 +1,7 @@
 import type { ApplyOptions } from '../types';
 import path from 'path';
 
-export function devServerPlugin({
-  userConfig: {
-    proxy,
-    port,
-    host,
-    publicPath,
-    publicDir,
-  },
-  isDevelopment,
-  config,
-  cwd,
-}: ApplyOptions) {
+export function devServerPlugin({ userConfig: { proxy, port, host, publicPath, publicDir }, isDevelopment, config, cwd }: ApplyOptions) {
   if (!isDevelopment) {
     return;
   }
@@ -21,21 +10,12 @@ export function devServerPlugin({
     .proxy(proxy)
     .open(false)
     .hot(true)
-    .allowedHosts
-    .add('all')
+    .allowedHosts.add('all')
     .end()
     .compress(true)
     .headers({
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': [
-        'GET',
-        'HEAD',
-        'PUT',
-        'POST',
-        'PATCH',
-        'DELETE',
-        'OPTIONS',
-      ].join(', '),
+      'Access-Control-Allow-Methods': ['GET', 'HEAD', 'PUT', 'POST', 'PATCH', 'DELETE', 'OPTIONS'].join(', '),
       'Access-Control-Allow-Headers': '*',
       'Access-Control-Allow-Credentials': 'true',
     })

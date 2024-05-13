@@ -28,59 +28,51 @@ export function javascriptRule({
 }: ApplyOptions) {
   const jsResource = /\.(js|mjs|cjs|jsx|ts|tsx)$/;
   const rules = [
-    config
-      .module
+    config.module
       .rule('jsAndJsx')
       .test(jsResource)
-      .exclude
-      .add(/node_modules/)
+      .exclude.add(/node_modules/)
       .end()
-      .include
-      .add(cwd)
+      .include.add(cwd)
       .end(),
 
-    extraJsModuleIncludes && config
-      .module
-      .rule('extraJsAndJsx')
-      .test(jsResource)
-      .include
-      .add(
-        extraJsModuleIncludes.map((item) => {
-          if (item instanceof RegExp) {
-            return item;
-          }
+    extraJsModuleIncludes &&
+      config.module
+        .rule('extraJsAndJsx')
+        .test(jsResource)
+        .include.add(
+          extraJsModuleIncludes.map((item) => {
+            if (item instanceof RegExp) {
+              return item;
+            }
 
-          if (path.isAbsolute(item)) {
-            return item;
-          }
+            if (path.isAbsolute(item)) {
+              return item;
+            }
 
-          if (item.endsWith('./')) {
-            return path.resolve(cwd, item);
-          }
+            if (item.endsWith('./')) {
+              return path.resolve(cwd, item);
+            }
 
-          return path.dirname(require.resolve(item));
-        })
-      )
-      .end(),
-  ]
-    .filter(Boolean);
+            return path.dirname(require.resolve(item));
+          }),
+        )
+        .end(),
+  ].filter(Boolean);
 
   rules.forEach((rule) => {
     if (transpiler === Transpiler.esbuild) {
-      rule.use('esbuild-loader')
+      rule
+        .use('esbuild-loader')
         .loader(require.resolve('esbuild-loader'))
         .options({
           target: 'es2015',
           ...esbuildLoaderOptions,
         });
 
-      config.plugin('react-provide-plugin')
-        .use(webpack.ProvidePlugin, [{ React: 'react' }]);
+      config.plugin('react-provide-plugin').use(webpack.ProvidePlugin, [{ React: 'react' }]);
     } else if (transpiler === Transpiler.babel) {
-      const {
-        presets,
-        plugins,
-      } = getBabelConfig({
+      const { presets, plugins } = getBabelConfig({
         babelExtraPreset,
         babelExtraPlugins,
         babelPresetEnv,
@@ -92,7 +84,8 @@ export function javascriptRule({
       });
 
       if (threadLoaderOptions) {
-        rule.use('thread-loader')
+        rule
+          .use('thread-loader')
           .loader(require.resolve('thread-loader'))
           .options({
             // additional node.js arguments
@@ -103,7 +96,8 @@ export function javascriptRule({
 
       const extraBabelPlugins: any[] = [reactRefresh && require.resolve('react-refresh/babel')].filter(Boolean);
 
-      rule.use('babel-loader')
+      rule
+        .use('babel-loader')
         .loader(require.resolve('babel-loader'))
         .options({
           sourceType: 'unambiguous', // 自动处理es和js模块

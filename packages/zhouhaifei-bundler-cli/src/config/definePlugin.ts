@@ -2,18 +2,9 @@ import webpack from 'webpack';
 import type { ApplyOptions, ConfigOptions } from '../types';
 import { getProcessEnv } from '../utils/getProcessEnv';
 
-type Options = ApplyOptions & { userEnv: ConfigOptions['userEnv']; };
+type Options = ApplyOptions & { userEnv: ConfigOptions['userEnv'] };
 
-export function definePlugin({
-  config,
-  env,
-  userConfig: {
-    define,
-    publicPath,
-    processEnvPrefix,
-  },
-  userEnv,
-}: Options) {
+export function definePlugin({ config, env, userConfig: { define, publicPath, processEnvPrefix }, userEnv }: Options) {
   const defineEnv = {};
   if (define) {
     for (const key in define) {
@@ -31,11 +22,10 @@ export function definePlugin({
     }
   }
 
-  config.plugin('define-plugin')
-    .use(webpack.DefinePlugin, [
-      {
-        'process.env': processEnv,
-        ...defineEnv,
-      },
-    ]);
+  config.plugin('define-plugin').use(webpack.DefinePlugin, [
+    {
+      'process.env': processEnv,
+      ...defineEnv,
+    },
+  ]);
 }

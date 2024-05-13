@@ -26,15 +26,9 @@ const _require = createRequire(process.cwd());
   }
 }*/
 
-async function loadConfigFromBundledFile(
-  fileName: string,
-  bundledCode: string,
-  isESM: boolean
-): Promise<unknown> {
+async function loadConfigFromBundledFile(fileName: string, bundledCode: string, isESM: boolean): Promise<unknown> {
   if (isESM) {
-    const fileBase = path.resolve(path.dirname(fileName), `${Date.now()}-${Math.random()
-      .toString(16)
-      .slice(2)}`);
+    const fileBase = path.resolve(path.dirname(fileName), `${Date.now()}-${Math.random().toString(16).slice(2)}`);
     const fileNameTmp = `${fileBase}.mjs`;
     await fs.promises.writeFile(fileNameTmp, bundledCode);
     try {
@@ -76,10 +70,7 @@ export async function loadFile(filename: string): Promise<unknown> {
     entryPoints: [filename],
     outfile: 'out.js',
     write: false,
-    target: [
-      'node14.18',
-      'node16',
-    ],
+    target: ['node14.18', 'node16'],
     platform: 'node',
     bundle: true,
     format: isEsm ? 'esm' : 'cjs',
@@ -90,4 +81,3 @@ export async function loadFile(filename: string): Promise<unknown> {
 
   return loadConfigFromBundledFile(filename, result.outputFiles[0].text, isEsm);
 }
-

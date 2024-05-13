@@ -7,7 +7,7 @@ declare namespace NodeJS {
 }
 
 // images
-declare module '*.svg'
+declare module '*.svg';
 declare module '*.bmp';
 declare module '*.gif';
 declare module '*.jpg';
@@ -23,7 +23,7 @@ declare module '*.less';
 declare module '*.scss';
 declare module '*.sass';
 declare module '*.styl';
-declare module '*.stylus'
+declare module '*.stylus';
 
 declare module '*.mp4';
 declare module '*.webm';

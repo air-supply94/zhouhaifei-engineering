@@ -26,27 +26,26 @@ async function updateGeneratorPackages(version: string) {
     {
       generatorTplPath: path.resolve(cwd, 'packages/generator-zhouhaifei-react/generators/app/templates/package.json.tpl'),
       updateDependencies: [],
-      updateDevDependencies: [
-        '@zhouhaifei/bundler-cli',
-        '@zhouhaifei/code-style',
-      ],
+      updateDevDependencies: ['@zhouhaifei/bundler-cli', '@zhouhaifei/code-style'],
     },
   ];
 
-  await Promise.all(data.map(async(item) => {
-    const oldDataStr = await fs.promises.readFile(item.generatorTplPath, 'utf8');
-    const oldDataJson = JSON.parse(oldDataStr);
+  await Promise.all(
+    data.map(async (item) => {
+      const oldDataStr = await fs.promises.readFile(item.generatorTplPath, 'utf8');
+      const oldDataJson = JSON.parse(oldDataStr);
 
-    item.updateDependencies.forEach((value) => {
-      oldDataJson.dependencies[value] = version;
-    });
+      item.updateDependencies.forEach((value) => {
+        oldDataJson.dependencies[value] = version;
+      });
 
-    item.updateDevDependencies.forEach((value) => {
-      oldDataJson.devDependencies[value] = version;
-    });
+      item.updateDevDependencies.forEach((value) => {
+        oldDataJson.devDependencies[value] = version;
+      });
 
-    await fs.promises.writeFile(item.generatorTplPath, JSON.stringify(oldDataJson, null, 2));
-  }));
+      await fs.promises.writeFile(item.generatorTplPath, JSON.stringify(oldDataJson, null, 2));
+    }),
+  );
 }
 
 async function getPublishPackagesInfo(): Promise<PublishPackagesInfo[]> {
@@ -57,6 +56,7 @@ async function getPublishPackagesInfo(): Promise<PublishPackagesInfo[]> {
     const packagePath = path.resolve(packagesPath, files[i]);
     const packageJsonPath = path.resolve(packagePath, 'package.json');
     if (fs.existsSync(packageJsonPath)) {
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
       const content: PackageJsonInfo = require(packageJsonPath);
       if (content.private !== true) {
         result.push({
@@ -85,12 +85,11 @@ function getNpmTag(version: string) {
   return 'latest';
 }
 
-(async() => {
+(async () => {
   const publishPackagesInfo = await getPublishPackagesInfo();
   const checkedPackage = publishPackagesInfo[0].packageJson;
 
-  console.log(`publish packages: \r\n\r\n${publishPackagesInfo.map((item) => item.packageJson.name)
-    .join('\r\n')}\r\n\r\n`);
+  console.log(`publish packages: \r\n\r\n${publishPackagesInfo.map((item) => item.packageJson.name).join('\r\n')}\r\n\r\n`);
 
   const { branch } = getGitRepoInfo();
   console.log(`branch: ${branch}`);
@@ -131,19 +130,19 @@ function getNpmTag(version: string) {
   // bump version
   console.log('bump version');
 
-  const version = (await question(
-    `Input release version (current: ${checkedPackage.version}): `
-  )).trim();
+  const version = (await question(`Input release version (current: ${checkedPackage.version}): `)).trim();
   const tag = getNpmTag(version);
 
   console.log('update generator packages');
   await updateGeneratorPackages(version);
 
-  await Promise.all(publishPackagesInfo.map(async(item) => {
-    (await $`cd ${item.packagePath} ; npm version ${version} --no-git-tag-version`);
-  }));
+  await Promise.all(
+    publishPackagesInfo.map(async (item) => {
+      await $`cd ${item.packagePath} ; npm version ${version} --no-git-tag-version`;
+    }),
+  );
 
-  (await $`cd ${cwd} ; pnpm publish --no-git-checks -r --tag ${tag} --publish-branch ${branch}`);
+  await $`cd ${cwd} ; pnpm publish --no-git-checks -r --tag ${tag} --publish-branch ${branch}`;
 
   // commit
   console.log('commit');

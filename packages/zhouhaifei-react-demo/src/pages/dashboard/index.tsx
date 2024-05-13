@@ -36,15 +36,13 @@ class Store {
 const store = new Store();
 export default observer(() => {
   React.useEffect(() => {
-    axios.request({ url: '/api/test' })
-      .then((data) => {
-        console.log(data);
-      });
+    axios.request({ url: '/api/test' }).then((data) => {
+      console.log(data);
+    });
 
-    axios.request({ url: '/api/iac/role/user/perms' })
-      .then((data) => {
-        console.log(data);
-      });
+    axios.request({ url: '/api/iac/role/user/perms' }).then((data) => {
+      console.log(data);
+    });
   }, []);
 
   return (

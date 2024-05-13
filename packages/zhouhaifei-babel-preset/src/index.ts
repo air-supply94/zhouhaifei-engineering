@@ -4,69 +4,69 @@ import path from 'path';
 export interface GetBabelConfigOptions {
   babelExtraPreset?: any;
   babelExtraPlugins?: any;
-  babelPresetEnv?: false | {
-    targets: string | string[] | Record<string, string>;
-    bugfixes?: boolean;
-    spec?: boolean;
-    loose?: boolean;
-    modules?: 'amd' | 'umd' | 'systemjs' | 'commonjs' | 'cjs' | 'auto' | false;
-    debug?: boolean;
-    include?: Array<string | RegExp>;
-    exclude?: Array<string | RegExp>;
-    useBuiltIns?: 'usage' | 'entry' | false;
-    corejs?: { version: string; proposals: boolean; };
-    configPath?: string;
-    ignoreBrowserslistConfig?: boolean;
-    browserslistEnv?: string;
-    shippedProposals?: boolean;
-  };
-  babelPresetReact?: false | {
-    runtime?: 'classic' | 'automatic';
-    development?: boolean;
-    throwIfNamespace?: boolean;
-    pure?: boolean;
-    importSource?: string;
-    pragma?: string;
-    pragmaFrag?: string;
-  };
-  babelPresetTypeScript?: false | {
-    isTSX?: boolean;
-    jsxPragma?: string;
-    jsxPragmaFrag?: string;
-    allExtensions?: boolean;
-    allowNamespaces?: boolean;
-    allowDeclareFields?: boolean;
-    disallowAmbiguousJSXLike?: boolean;
-    onlyRemoveTypeImports?: boolean;
-    optimizeConstEnums?: boolean;
-    rewriteImportExtensions?: boolean;
-  };
-  babelPluginTransformRuntime?: false | {
-    corejs?: false | 2 | 3 | { version: 2 | 3; proposals: boolean; };
-    helpers?: boolean;
-    regenerator?: boolean;
-    absoluteRuntime?: string | boolean;
-    version?: string;
-  };
-  babelPluginDecorators?: false | {
-    version?: '2023-05' | '2023-01' | '2022-03' | '2021-12' | '2018-09' | 'legacy';
-    decoratorsBeforeExport?: boolean;
-  };
+  babelPresetEnv?:
+    | false
+    | {
+        targets: string | string[] | Record<string, string>;
+        bugfixes?: boolean;
+        spec?: boolean;
+        loose?: boolean;
+        modules?: 'amd' | 'umd' | 'systemjs' | 'commonjs' | 'cjs' | 'auto' | false;
+        debug?: boolean;
+        include?: Array<string | RegExp>;
+        exclude?: Array<string | RegExp>;
+        useBuiltIns?: 'usage' | 'entry' | false;
+        corejs?: { version: string; proposals: boolean };
+        configPath?: string;
+        ignoreBrowserslistConfig?: boolean;
+        browserslistEnv?: string;
+        shippedProposals?: boolean;
+      };
+  babelPresetReact?:
+    | false
+    | {
+        runtime?: 'classic' | 'automatic';
+        development?: boolean;
+        throwIfNamespace?: boolean;
+        pure?: boolean;
+        importSource?: string;
+        pragma?: string;
+        pragmaFrag?: string;
+      };
+  babelPresetTypeScript?:
+    | false
+    | {
+        isTSX?: boolean;
+        jsxPragma?: string;
+        jsxPragmaFrag?: string;
+        allExtensions?: boolean;
+        allowNamespaces?: boolean;
+        allowDeclareFields?: boolean;
+        disallowAmbiguousJSXLike?: boolean;
+        onlyRemoveTypeImports?: boolean;
+        optimizeConstEnums?: boolean;
+        rewriteImportExtensions?: boolean;
+      };
+  babelPluginTransformRuntime?:
+    | false
+    | {
+        corejs?: false | 2 | 3 | { version: 2 | 3; proposals: boolean };
+        helpers?: boolean;
+        regenerator?: boolean;
+        absoluteRuntime?: string | boolean;
+        version?: string;
+      };
+  babelPluginDecorators?:
+    | false
+    | {
+        version?: '2023-05' | '2023-01' | '2022-03' | '2021-12' | '2018-09' | 'legacy';
+        decoratorsBeforeExport?: boolean;
+      };
   babelPluginStyledComponents?: Record<string, any>;
 }
 
-export function getBabelConfig({
-  babelExtraPreset,
-  babelExtraPlugins,
-  babelPresetEnv,
-  babelPresetReact,
-  babelPresetTypeScript,
-  babelPluginTransformRuntime,
-  babelPluginDecorators,
-  babelPluginStyledComponents,
-}: GetBabelConfigOptions = {}) {
-  const packageJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../package.json'), 'utf8')
-    .toString());
+export function getBabelConfig({ babelExtraPreset, babelExtraPlugins, babelPresetEnv, babelPresetReact, babelPresetTypeScript, babelPluginTransformRuntime, babelPluginDecorators, babelPluginStyledComponents }: GetBabelConfigOptions = {}) {
+  const packageJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../package.json'), 'utf8').toString());
   const coreJsVersion = packageJson.dependencies['core-js'];
   const runtimeVersion = packageJson.dependencies['@babel/runtime'];
 
@@ -113,15 +113,13 @@ export function getBabelConfig({
           ...babelPresetTypeScript,
         } as GetBabelConfigOptions['babelPresetTypeScript'],
       ],
-    ].concat(babelExtraPreset)
+    ]
+      .concat(babelExtraPreset)
       .filter(Boolean),
 
     plugins: [
       // 支持styled-components
-      babelPluginStyledComponents && [
-        require.resolve('@babel-plugin-styled-components'),
-        babelPluginStyledComponents,
-      ],
+      babelPluginStyledComponents && [require.resolve('@babel-plugin-styled-components'), babelPluginStyledComponents],
 
       // 支持装饰器语法
       babelPluginDecorators !== false && [
@@ -151,10 +149,7 @@ export function getBabelConfig({
       require.resolve('@babel/plugin-proposal-partial-application'),
 
       // pipeline-operator
-      [
-        require.resolve('@babel/plugin-proposal-pipeline-operator'),
-        { proposal: 'minimal' },
-      ],
+      [require.resolve('@babel/plugin-proposal-pipeline-operator'), { proposal: 'minimal' }],
 
       // throw-expressions
       require.resolve('@babel/plugin-proposal-throw-expressions'),
@@ -173,7 +168,8 @@ export function getBabelConfig({
           ...babelPluginTransformRuntime,
         } as GetBabelConfigOptions['babelPluginTransformRuntime'],
       ],
-    ].concat(babelExtraPlugins)
+    ]
+      .concat(babelExtraPlugins)
       .filter(Boolean),
   };
 }

@@ -4,19 +4,13 @@ import type { pluginOptions } from 'postcss-preset-env';
 
 export interface GetPostcssConfigOptions {
   browsers?: string[];
-  postcssOptions?: { plugins: never; } & Record<string, any>;
-  postcssPresetEnvOptions?: { autoprefixer?: never; } & pluginOptions;
+  postcssOptions?: { plugins: never } & Record<string, any>;
+  postcssPresetEnvOptions?: { autoprefixer?: never } & pluginOptions;
   autoprefixer?: pluginOptions['autoprefixer'];
   extraPostCSSPlugins?: any[];
 }
 
-export function getPostcssConfig({
-  browsers,
-  postcssPresetEnvOptions,
-  autoprefixer,
-  extraPostCSSPlugins,
-  postcssOptions,
-}: GetPostcssConfigOptions = {}) {
+export function getPostcssConfig({ browsers, postcssPresetEnvOptions, autoprefixer, extraPostCSSPlugins, postcssOptions }: GetPostcssConfigOptions = {}) {
   return {
     ident: 'postcss',
     plugins: [

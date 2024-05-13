@@ -1,8 +1,5 @@
 export const stylelint = {
-  extends: [
-    require.resolve('stylelint-config-standard'),
-    require.resolve('stylelint-config-css-modules'),
-  ],
+  extends: [require.resolve('stylelint-config-standard'), require.resolve('stylelint-config-css-modules')],
   plugins: [require.resolve('stylelint-order')],
   rules: {
     'property-no-vendor-prefix': null,
@@ -11,34 +8,12 @@ export const stylelint = {
     'media-feature-name-no-vendor-prefix': null,
     'selector-no-vendor-prefix': null,
 
-    'at-rule-empty-line-before': [
-      'always',
-      {
-        except: [
-          'inside-block',
-          'blockless-after-blockless',
-          'first-nested',
-        ],
-      },
-    ],
-    'custom-property-empty-line-before': [
-      'never',
-      {
-        except: [
-          'first-nested',
-          'after-comment',
-          'after-custom-property',
-        ],
-      },
-    ],
+    'at-rule-empty-line-before': ['always', { except: ['inside-block', 'blockless-after-blockless', 'first-nested'] }],
+    'custom-property-empty-line-before': ['never', { except: ['first-nested', 'after-comment', 'after-custom-property'] }],
     'declaration-empty-line-before': [
       'always',
       {
-        except: [
-          'after-comment',
-          'after-declaration',
-          'first-nested',
-        ],
+        except: ['after-comment', 'after-declaration', 'first-nested'],
         ignore: ['inside-single-line-block'],
       },
     ],
