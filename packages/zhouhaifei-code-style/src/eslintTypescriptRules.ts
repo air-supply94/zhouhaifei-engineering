@@ -13,6 +13,7 @@ export const eslintTypescriptRules = {
     'error',
     {
       accessibility: 'explicit',
+      ignoredMethodNames: ['getDerivedStateFromProps', 'componentDidMount', 'render', 'shouldComponentUpdate', 'getSnapshotBeforeUpdate', 'componentDidUpdate', 'componentWillUnmount', 'getDerivedStateFromError', 'componentDidCatch'],
       overrides: {
         accessors: 'explicit',
         constructors: 'no-public',
@@ -30,10 +31,8 @@ export const eslintTypescriptRules = {
   '@typescript-eslint/no-import-type-side-effects': 'error',
   '@typescript-eslint/no-inferrable-types': 'error',
   '@typescript-eslint/no-namespace': 'off',
-  '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
   '@typescript-eslint/no-unnecessary-qualifier': 'error',
   '@typescript-eslint/no-useless-empty-export': 'error',
-  '@typescript-eslint/no-useless-template-literals': 'error',
   '@typescript-eslint/prefer-function-type': 'error',
   '@typescript-eslint/prefer-includes': 'error',
   '@typescript-eslint/prefer-reduce-type-parameter': 'error',

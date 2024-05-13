@@ -4,6 +4,7 @@ export const eslintReactRules = {
   'react-hooks/exhaustive-deps': 2,
 
   // eslint-plugin-react
+  'react/display-name': 0,
   'react/prop-types': 0,
   'react/jsx-boolean-value': 2,
   'react/jsx-curly-brace-presence': [2, 'never'],
