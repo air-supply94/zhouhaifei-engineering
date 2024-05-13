@@ -18,7 +18,6 @@ export const eslintBaseRules = {
   'guard-for-in': 2,
   'no-alert': 2,
   'no-caller': 2,
-  'no-continue': 2,
   'no-div-regex': 2,
   'no-eval': 2,
   'no-extend-native': 2,
