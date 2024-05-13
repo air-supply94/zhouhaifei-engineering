@@ -1,28 +1,18 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-# cache
 .cache
 .vscode
 .eslintcache
+.stylelintcache
 .turbo
 
-# dependencies
 node_modules
 .idea
-.umi
-.umi-production
-docs-dist
-.github
-
-# testing
 coverage
-
-# production
 dist
-
-# misc
 .DS_Store
-zhouhaifei-react-demo/.env.local
-zhouhaifei-react-demo/.env.development.local
-zhouhaifei-react-demo/.env.production.local
-
 *.log
+
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+

@@ -1,54 +1,21 @@
 import { eslintBaseRules } from './eslintBaseRules';
-import { eslintImportRules } from './eslintImportRules';
 import { eslintTypescriptRules } from './eslintTypescriptRules';
 
 export const eslintNode = {
   root: true,
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   extends: ['eslint:recommended'],
-  plugins: [
-    'import',
-    '@typescript-eslint',
-  ],
-
+  plugins: ['import'],
   env: {
-    worker: true,
-    browser: true,
     commonjs: true,
     es6: true,
-    jest: true,
     node: true,
   },
-
-  parserOptions: {
-    sourceType: 'module',
-    ecmaFeatures: {
-      ecmaVersion: 2018,
-      legacyDecorators: true,
-    },
-  },
-
-  settings: { react: { version: 'detect' }},
-
-  rules: {
-    ...eslintBaseRules,
-    ...eslintImportRules,
-  },
-
+  rules: eslintBaseRules,
   overrides: [
     {
-      files: ['**/*.ts'],
+      files: ['{**/*,*}.ts'],
       parser: '@typescript-eslint/parser',
-      parserOptions: {
-        sourceType: 'module',
-        ecmaFeatures: {
-          ecmaVersion: 2018,
-          legacyDecorators: true,
-        },
-
-        // typescript-eslint specific options
-        warnOnUnsupportedTypeScriptVersion: true,
-      },
       extends: ['plugin:@typescript-eslint/recommended'],
       plugins: ['@typescript-eslint'],
       rules: eslintTypescriptRules,

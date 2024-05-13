@@ -3,10 +3,10 @@
     "build": "zhouhaifei-bundler-cli build",
     "commit": "cz",
     "dev": "zhouhaifei-bundler-cli dev --open",
-    "lint:js": "eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
+    "lint:js": "cross-env TIMING=1 eslint --fix --cache --quiet --ext .js,.jsx,.ts,.tsx .",
     "lint:style": "stylelint --cache --quiet --fix \"src/**/*.{less,css,scss,sass}\"",
-    "prepare": "npx husky@9.0.11",
-    "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{less,css,scss,sass,yaml,md,html,json}\""
+    "prepare": "pnpx husky@9.0.11",
+    "prettier": "prettier --cache --cache-strategy metadata -c --write \"**/*.{js,jsx,ts,tsx,less,css,scss,sass,yaml,md,html,json}\""
   },
   "lint-staged": {
     "**/*.{less,css,scss,sass}": [
@@ -15,6 +15,7 @@
       "git add ."
     ],
     "**/*.{js,jsx,ts,tsx}": [
+      "prettier --cache --cache-strategy metadata -c --write",
       "eslint --cache --quiet --fix",
       "git add ."
     ],
@@ -56,7 +57,7 @@
     "@zhouhaifei/code-style": "3.1.12",
     "cross-env": "7.0.3",
     "mockjs": "1.1.0",
-    "typescript": "4.2.4"
+    "typescript": "5.4.5"
   },
   "engines": {
     "node": "20.11.1"

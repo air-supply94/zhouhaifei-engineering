@@ -117,9 +117,7 @@ function getNpmTag(version: string) {
   const owners = (await $`npm owner ls ${checkedPackage.name}`).stdout
     .trim()
     .split('\n')
-    .map((line) => {
-      return line.split(' ')[0];
-    });
+    .map((line) => line.split(' ')[0]);
   assert(owners.includes(whoami), `${checkedPackage.name} is not owned by ${whoami}`);
 
   // build packages

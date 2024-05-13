@@ -19,18 +19,16 @@ function render() {
     return (
       <Locale>
         <BrowserRouter>
-          <RenderRoutes/>
+          <RenderRoutes />
         </BrowserRouter>
       </Locale>
     );
   }
 
-  createRoot(document.getElementById('root'))
-    .render(<Internal/>);
+  createRoot(document.getElementById('root')).render(<Internal />);
 }
 
 if (process.env.NODE_ENV === 'development') {
   // @ts-ignore
   module.hot.accept(render);
 }
-
