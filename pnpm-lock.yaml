@@ -239,6 +239,9 @@ importers:
 
   packages/zhouhaifei-code-style:
     dependencies:
+      '@babel/core':
+        specifier: 7.23.2
+        version: 7.23.2
       '@babel/eslint-parser':
         specifier: 7.24.5
         version: 7.24.5(@babel/core@7.23.2)(eslint@8.57.0)
