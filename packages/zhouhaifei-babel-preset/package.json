@@ -1,6 +1,6 @@
 {
   "name": "@zhouhaifei/babel-preset",
-  "version": "3.1.12",
+  "version": "3.1.23-alpha.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
