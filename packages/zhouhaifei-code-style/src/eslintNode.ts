@@ -4,6 +4,7 @@ import { eslintTypescriptRules } from './eslintTypescriptRules';
 export const eslintNode = {
   root: true,
   parser: '@babel/eslint-parser',
+  parserOptions: { requireConfigFile: false },
   extends: ['eslint:recommended'],
   plugins: ['import'],
   env: {

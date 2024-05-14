@@ -5,6 +5,7 @@ import { eslintTypescriptRules } from './eslintTypescriptRules';
 export const eslintReact = {
   root: true,
   parser: '@babel/eslint-parser',
+  parserOptions: { requireConfigFile: false },
   extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:jsx-a11y/recommended'],
   plugins: ['import', 'jsx-a11y', 'react', 'react-hooks'],
   env: {
