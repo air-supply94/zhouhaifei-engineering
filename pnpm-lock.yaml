@@ -208,9 +208,6 @@ importers:
       terser-webpack-plugin:
         specifier: 5.3.9
         version: 5.3.9(esbuild@0.19.4)(webpack@5.89.0(esbuild@0.19.4))
-      thread-loader:
-        specifier: 4.0.2
-        version: 4.0.2(webpack@5.89.0(esbuild@0.19.4))
       unused-webpack-plugin:
         specifier: 2.4.0
         version: 2.4.0
@@ -5177,9 +5174,6 @@ packages:
   json-buffer@3.0.1:
     resolution: {integrity: sha512-4bV5BfR2mqfQTJm+V5tPPdf+ZpuhiIvTuAB5g8kcrXOZpTT/QwwVRWBywX1ozr6lEuPdbHxwaJlm9G6mI2sfSQ==}
 
-  json-parse-better-errors@1.0.2:
-    resolution: {integrity: sha512-mrqyZKfX5EhL7hvqcV6WG1yYjnjeuYDzDhhcAAUrq8Po85NBQBJP+ZDUT75qZQ98IkUoBqdkExkukOU7Ts2wrw==}
-
   json-parse-even-better-errors@2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
 
@@ -7832,12 +7826,6 @@ packages:
   textextensions@5.16.0:
     resolution: {integrity: sha512-7D/r3s6uPZyU//MCYrX6I14nzauDwJ5CxazouuRGNuvSCihW87ufN6VLoROLCrHg6FblLuJrT6N2BVaPVzqElw==}
     engines: {node: '>=0.8'}
-
-  thread-loader@4.0.2:
-    resolution: {integrity: sha512-UOk/KBydsQjh4Ja5kocxDUzhv11KYptHN/h8gdSwo6/MBkYrWqQua6K2qwlpXnCXS9c/uLs8F/JF8rpveF0+fA==}
-    engines: {node: '>= 16.10.0'}
-    peerDependencies:
-      webpack: ^5.0.0
 
   thread-stream@0.15.2:
     resolution: {integrity: sha512-UkEhKIg2pD+fjkHQKyJO3yoIvAP3N6RlNFt2dUhcS1FGvCD1cQa1M/PGknCLFIyZdtJOWQjejp7bdNqmN7zwdA==}
@@ -14121,8 +14109,6 @@ snapshots:
 
   json-buffer@3.0.1: {}
 
-  json-parse-better-errors@1.0.2: {}
-
   json-parse-even-better-errors@2.3.1: {}
 
   json-schema-traverse@0.4.1: {}
@@ -17116,14 +17102,6 @@ snapshots:
   text-table@0.2.0: {}
 
   textextensions@5.16.0: {}
-
-  thread-loader@4.0.2(webpack@5.89.0(esbuild@0.19.4)):
-    dependencies:
-      json-parse-better-errors: 1.0.2
-      loader-runner: 4.3.0
-      neo-async: 2.6.2
-      schema-utils: 4.2.0
-      webpack: 5.89.0(esbuild@0.19.4)
 
   thread-stream@0.15.2:
     dependencies:

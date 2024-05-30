@@ -21,7 +21,6 @@ export function javascriptRule({
     reactRefresh,
     babelLoaderOptions,
     esbuildLoaderOptions,
-    threadLoaderOptions,
     extraJsModuleIncludes,
     targets,
   },
@@ -82,17 +81,6 @@ export function javascriptRule({
         babelPluginDecorators,
         babelPluginStyledComponents,
       });
-
-      if (threadLoaderOptions) {
-        rule
-          .use('thread-loader')
-          .loader(require.resolve('thread-loader'))
-          .options({
-            // additional node.js arguments
-            workerNodeArgs: ['--max-old-space-size=1024'],
-            ...threadLoaderOptions,
-          });
-      }
 
       const extraBabelPlugins: any[] = [reactRefresh && require.resolve('react-refresh/babel')].filter(Boolean);
 

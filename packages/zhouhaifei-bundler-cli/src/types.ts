@@ -91,7 +91,6 @@ export interface UserConfig extends BaseConfig, StyleConfig, GetBabelConfigOptio
   jsMinifierOptions?: EsbuildOptions | any;
   cssMinifier?: keyof typeof CSSMinifier;
   cssMinifierOptions?: EsbuildOptions | CssNanoOptions | Record<string, any>;
-  threadLoaderOptions?: Record<string, any>;
   codeSplitting?: keyof typeof CodeSplit;
   sourcemap?: Config.DevTool;
   preloadOptions?: false | Record<string, any>;

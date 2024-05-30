@@ -26,10 +26,10 @@ export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = 
   userConfig.sourcemap = userConfig.sourcemap === false || userConfig.sourcemap ? userConfig.sourcemap : process.env.NODE_ENV === Env.development ? DEFAULT_DEV_DEVTOOL : DEFAULT_BUILD_DEVTOOL;
   userConfig.outputPath ||= DEFAULT_OUTPUT_PATH;
   userConfig.externals ||= {};
-  userConfig.alias ||= {};
-  if (userConfig.alias['@'] == null) {
-    userConfig.alias['@'] = path.resolve(cwd, 'src');
-  }
+  userConfig.alias = {
+    '@': path.resolve(cwd, 'src'),
+    ...userConfig.alias,
+  };
 
   userConfig.staticPathPrefix ||= 'static/';
   userConfig.codeSplitting ||= CodeSplit.granularChunks;
@@ -39,9 +39,10 @@ export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = 
   userConfig.cssMinifier ||= CSSMinifier.esbuild;
   userConfig.targets ||= DEFAULT_BROWSER_TARGETS;
   userConfig.assetsInlineLimit ||= 1024 * 8;
-  userConfig.cache ||= {
+  userConfig.cache = {
     cacheDirectory: '.cache',
     buildDependencies: [],
+    ...userConfig.cache,
   };
 
   userConfig.lessOptions = {
