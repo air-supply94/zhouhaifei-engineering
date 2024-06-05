@@ -10,12 +10,10 @@ export const DEFAULT_OUTPUT_PATH = 'dist';
 export const DEFAULT_SRC_DIR = 'src';
 export const DEFAULT_PUBLIC_DIR = 'public';
 export const DEFAULT_BROWSER_TARGETS = {
-  chrome: 80,
-  edge: 79,
+  chrome: 87,
+  edge: 88,
   firefox: 78,
-
-  // 低于11,esbuild会报错
-  safari: 11,
+  safari: 13,
 };
 
 export const DEFAULT_ESBUILD_TARGET_KEYS = ['chrome', 'edge', 'firefox', 'safari'];
