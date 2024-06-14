@@ -45,8 +45,7 @@ async function startBrowserProcess(browser: string | undefined, browserArgs: str
       const ps = await execAsync('ps cax');
       const openedBrowser = preferredOSXBrowser && ps.includes(preferredOSXBrowser) ? preferredOSXBrowser : supportedChromiumBrowsers.find((b) => ps.includes(b));
       if (openedBrowser) {
-        const applescriptPath = '../openChrome.applescript';
-        await execAsync(`osascript ${applescriptPath} "${encodeURI(openUrl)}" "${openedBrowser}"`, { cwd: url.fileURLToPath(import.meta.url) });
+        await execAsync(`osascript openChrome.applescript "${encodeURI(openUrl)}" "${openedBrowser}"`, { cwd: url.fileURLToPath(new URL('../', import.meta.url)) });
         return true;
       }
     } catch (err) {
