@@ -19,22 +19,19 @@ export function cssRule({
     {
       name: 'less',
       test: /\.less(\?.*)?$/,
-      loader: require.resolve('less-loader'),
-      loaderOptions: {
-        implementation: require.resolve('less'),
-        lessOptions,
-      },
+      loader: 'less-loader',
+      loaderOptions: { lessOptions },
     },
     {
       name: 'sass',
       test: /\.(sass|scss)(\?.*)?$/,
-      loader: require.resolve('sass-loader'),
+      loader: 'sass-loader',
       loaderOptions: { sassOptions },
     },
     {
       name: 'stylus',
       test: /\.(styl|stylus)(\?.*)?$/,
-      loader: require.resolve('stylus-loader'),
+      loader: 'stylus-loader',
       loaderOptions: { stylusOptions },
     },
   ];
@@ -66,7 +63,7 @@ export function cssRule({
       if (isDevelopment && styleLoaderOptions !== false) {
         rule
           .use('style-loader')
-          .loader(require.resolve('style-loader'))
+          .loader('style-loader')
           .options({
             base: 0,
             esModule: true,
@@ -93,7 +90,7 @@ export function cssRule({
 
       rule
         .use('css-loader')
-        .loader(require.resolve('css-loader'))
+        .loader('css-loader')
         .options({
           import: true,
           esModule: true,
@@ -106,7 +103,7 @@ export function cssRule({
       // postcss-loader
       rule
         .use('postcss-loader')
-        .loader(require.resolve('postcss-loader'))
+        .loader('postcss-loader')
         .options({
           postcssOptions: getPostcssConfig({
             browsers: getBrowsersList(targets),

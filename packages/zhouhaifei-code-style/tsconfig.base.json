@@ -2,7 +2,7 @@
   "compilerOptions": {
     "jsx": "react-jsx", // 指定 jsx 代码的生成
     "moduleResolution": "Bundler", // 选择模块解析策略
-    "module": "Esnext",
+    "module": "ESNext",
     "target": "ES2020", // 指定 ECMAScript 目标版本
     "allowSyntheticDefaultImports": true, //允许从没有设置默认导出的模块中默认导入
     "allowJs": true, // 允许编译 javascript 文件

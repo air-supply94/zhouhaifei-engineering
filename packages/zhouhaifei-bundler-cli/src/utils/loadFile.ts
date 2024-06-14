@@ -2,13 +2,15 @@ import fs from 'fs';
 import path from 'path';
 import { build } from 'esbuild';
 import { createRequire } from 'module';
+import { cwd } from '../constants';
+import url from 'url';
 
-const _require = createRequire(process.cwd());
+const _require = createRequire(cwd);
 
-/* async function isEsmConfig(baseDir: string, configFileName: string): Promise<boolean> {
-  if (/\.m[jt]s$/.test(configFileName)) {
+async function isEsmConfig(baseDir: string, configFileName: string): Promise<boolean> {
+  if (/\.mjs$/.test(configFileName)) {
     return true;
-  } else if (/\.c[jt]s$/.test(configFileName)) {
+  } else if (/\.cjs$/.test(configFileName)) {
     return false;
   } else {
     try {
@@ -24,18 +26,18 @@ const _require = createRequire(process.cwd());
       return false;
     }
   }
-}*/
+}
 
 async function loadConfigFromBundledFile(fileName: string, bundledCode: string, isESM: boolean): Promise<unknown> {
   if (isESM) {
-    const fileBase = path.resolve(path.dirname(fileName), `${Date.now()}-${Math.random().toString(16).slice(2)}`);
+    const fileBase = `${fileName}.timestamp-${Date.now()}-${Math.random().toString(16).slice(2)}`;
     const fileNameTmp = `${fileBase}.mjs`;
-    await fs.promises.writeFile(fileNameTmp, bundledCode);
+    const fileUrl = `${url.pathToFileURL(fileBase)}.mjs`;
+    await fs.writeFileSync(fileNameTmp, bundledCode);
     try {
-      const result = await import(fileNameTmp);
-      return result.default;
+      return (await import(fileUrl)).default;
     } finally {
-      await fs.promises.unlink(fileNameTmp);
+      fs.unlink(fileNameTmp, () => {});
     }
   } else {
     const extension = path.extname(fileName);
@@ -64,13 +66,13 @@ export async function loadFile(filename: string): Promise<unknown> {
     return null;
   }
 
-  const isEsm = false;
+  const isEsm = await isEsmConfig(cwd, filename);
   const result = await build({
-    absWorkingDir: process.cwd(),
+    absWorkingDir: cwd,
     entryPoints: [filename],
     outfile: 'out.js',
     write: false,
-    target: ['node14.18', 'node16'],
+    target: ['node20'],
     platform: 'node',
     bundle: true,
     format: isEsm ? 'esm' : 'cjs',

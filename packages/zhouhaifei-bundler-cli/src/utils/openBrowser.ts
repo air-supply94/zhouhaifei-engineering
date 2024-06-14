@@ -12,13 +12,9 @@ import type { ExecOptions } from 'child_process';
 import open from 'open';
 import spawn from 'cross-spawn';
 import chalk from 'chalk';
+import url from 'url';
 
-/**
- * Reads the BROWSER environment variable and decides what to do with it.
- */
 export function openBrowser(url: string, opt: string | true): void {
-  // The browser executable to open.
-  // See https://github.com/sindresorhus/open#app for documentation.
   const browser = typeof opt === 'string' ? opt : process.env.BROWSER || '';
   if (browser.toLowerCase().endsWith('.js')) {
     executeNodeScript(browser, url);
@@ -40,11 +36,7 @@ function executeNodeScript(scriptPath: string, url: string) {
 
 const supportedChromiumBrowsers = ['Google Chrome Canary', 'Google Chrome Dev', 'Google Chrome Beta', 'Google Chrome', 'Microsoft Edge', 'Brave Browser', 'Vivaldi', 'Chromium'];
 
-async function startBrowserProcess(browser: string | undefined, browserArgs: string[], url: string) {
-  // If we're on OS X, the user hasn't specifically
-  // requested a different browser, we can try opening
-  // a Chromium browser with AppleScript. This lets us reuse an
-  // existing tab when possible instead of creating a new one.
+async function startBrowserProcess(browser: string | undefined, browserArgs: string[], openUrl: string) {
   const preferredOSXBrowser = browser === 'google chrome' ? 'Google Chrome' : browser;
   const shouldTryOpenChromeWithAppleScript = process.platform === 'darwin' && (!preferredOSXBrowser || supportedChromiumBrowsers.includes(preferredOSXBrowser));
 
@@ -53,8 +45,8 @@ async function startBrowserProcess(browser: string | undefined, browserArgs: str
       const ps = await execAsync('ps cax');
       const openedBrowser = preferredOSXBrowser && ps.includes(preferredOSXBrowser) ? preferredOSXBrowser : supportedChromiumBrowsers.find((b) => ps.includes(b));
       if (openedBrowser) {
-        // Try our best to reuse existing tab with AppleScript
-        await execAsync(`osascript openChrome.applescript "${encodeURI(url)}" "${openedBrowser}"`, { cwd: __dirname });
+        const applescriptPath = '../openChrome.applescript';
+        await execAsync(`osascript ${applescriptPath} "${encodeURI(openUrl)}" "${openedBrowser}"`, { cwd: url.fileURLToPath(import.meta.url) });
         return true;
       }
     } catch (err) {
@@ -62,16 +54,10 @@ async function startBrowserProcess(browser: string | undefined, browserArgs: str
     }
   }
 
-  // Another special case: on OS X, check if BROWSER has been set to "open".
-  // In this case, instead of passing the string `open` to `open` function (which won't work),
-  // just ignore it (thus ensuring the intended behavior, i.e. opening the system browser):
-  // https://github.com/facebook/create-react-app/pull/1690#issuecomment-283518768
   if (process.platform === 'darwin' && browser === 'open') {
     browser = undefined;
   }
 
-  // Fallback to open
-  // (It will always open new tab)
   try {
     const options: open.Options = browser
       ? {
@@ -81,9 +67,7 @@ async function startBrowserProcess(browser: string | undefined, browserArgs: str
           },
         }
       : {};
-    open(url, options).catch(() => {
-      // Prevent `unhandledRejection` error.
-    });
+    open(openUrl, options).catch(() => {});
     return true;
   } catch (err) {
     return false;

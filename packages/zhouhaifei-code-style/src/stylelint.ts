@@ -1,6 +1,6 @@
 export const stylelint = {
-  extends: [require.resolve('stylelint-config-standard'), require.resolve('stylelint-config-css-modules')],
-  plugins: [require.resolve('stylelint-order')],
+  extends: ['stylelint-config-standard', 'stylelint-config-css-modules'],
+  plugins: ['stylelint-order'],
   rules: {
     'property-no-vendor-prefix': null,
     'value-no-vendor-prefix': null,

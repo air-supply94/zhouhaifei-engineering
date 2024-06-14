@@ -10,10 +10,8 @@
     "tsconfig.base.json"
   ],
   "scripts": {
-    "build": "father build",
-    "build:deps": "father prebundle",
-    "dev": "father dev",
-    "doctor": "father doctor"
+    "build": "tsup",
+    "dev": "tsup --watch"
   },
   "dependencies": {
     "@babel/core": "7.23.2",
@@ -36,7 +34,7 @@
     "stylelint-order": "6.0.4"
   },
   "devDependencies": {
-    "father": "4.3.7"
+    "tsup": "8.1.0"
   },
   "publishConfig": {
     "access": "public",

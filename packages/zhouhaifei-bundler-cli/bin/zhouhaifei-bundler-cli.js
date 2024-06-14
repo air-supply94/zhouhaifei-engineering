@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 function start() {
-  return require('../dist/cli.js');
+  return import('../dist/cli.js');
 }
 
 start();

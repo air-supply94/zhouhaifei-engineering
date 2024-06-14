@@ -9,7 +9,7 @@ import { loadEnv, loadFile, resolveFile, resolveModule, tryFiles, initUserConfig
 
 const cli = cac('zhouhaifei-bundler-cli');
 
-const userConfigFile = tryFiles([path.resolve(cwd, `${DEFAULT_CONFIG_NAME}.ts`), path.resolve(cwd, `${DEFAULT_CONFIG_NAME}.js`)]);
+const userConfigFile = tryFiles([`${DEFAULT_CONFIG_NAME}.ts`, `${DEFAULT_CONFIG_NAME}.js`, `${DEFAULT_CONFIG_NAME}.mjs`].map((item) => path.resolve(cwd, item)));
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 

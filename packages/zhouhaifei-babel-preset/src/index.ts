@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import url from 'url';
 
 export interface GetBabelConfigOptions {
   babelExtraPreset?: any;
@@ -66,15 +67,15 @@ export interface GetBabelConfigOptions {
 }
 
 export function getBabelConfig({ babelExtraPreset, babelExtraPlugins, babelPresetEnv, babelPresetReact, babelPresetTypeScript, babelPluginTransformRuntime, babelPluginDecorators, babelPluginStyledComponents }: GetBabelConfigOptions = {}) {
-  const packageJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../package.json'), 'utf8').toString());
+  const packageJsonPath = new URL('../package.json', import.meta.url);
+  const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8').toString());
   const coreJsVersion = packageJson.dependencies['core-js'];
   const runtimeVersion = packageJson.dependencies['@babel/runtime'];
-
   return {
     presets: [
       // preset-env
       babelPresetEnv !== false && [
-        require.resolve('@babel/preset-env'),
+        '@babel/preset-env',
         {
           bugfixes: true,
           loose: false,
@@ -94,7 +95,7 @@ export function getBabelConfig({ babelExtraPreset, babelExtraPlugins, babelPrese
 
       // 转换jsx语法
       babelPresetReact !== false && [
-        require.resolve('@babel/preset-react'),
+        '@babel/preset-react',
         {
           runtime: 'automatic',
           development: process.env.NODE_ENV === 'development',
@@ -104,7 +105,7 @@ export function getBabelConfig({ babelExtraPreset, babelExtraPlugins, babelPrese
 
       // 转换ts语法
       babelPresetTypeScript !== false && [
-        require.resolve('@babel/preset-typescript'),
+        '@babel/preset-typescript',
         {
           allowNamespaces: true,
           allowDeclareFields: true,
@@ -119,11 +120,11 @@ export function getBabelConfig({ babelExtraPreset, babelExtraPlugins, babelPrese
 
     plugins: [
       // 支持styled-components
-      babelPluginStyledComponents && [require.resolve('@babel-plugin-styled-components'), babelPluginStyledComponents],
+      babelPluginStyledComponents && ['@babel-plugin-styled-components', babelPluginStyledComponents],
 
       // 支持装饰器语法
       babelPluginDecorators !== false && [
-        require.resolve('@babel/plugin-proposal-decorators'),
+        '@babel/plugin-proposal-decorators',
         {
           version: 'legacy',
           ...babelPluginDecorators,
@@ -131,39 +132,39 @@ export function getBabelConfig({ babelExtraPreset, babelExtraPlugins, babelPrese
       ],
 
       // do-expressions
-      require.resolve('@babel/plugin-proposal-do-expressions'),
+      '@babel/plugin-proposal-do-expressions',
 
       // duplicate-named-capturing-groups-regex
-      require.resolve('@babel/plugin-proposal-duplicate-named-capturing-groups-regex'),
+      '@babel/plugin-proposal-duplicate-named-capturing-groups-regex',
 
       // 支持 export v from 'mod'语法
-      require.resolve('@babel/plugin-proposal-export-default-from'),
+      '@babel/plugin-proposal-export-default-from',
 
       // function-bind
-      require.resolve('@babel/plugin-proposal-function-bind'),
+      '@babel/plugin-proposal-function-bind',
 
       // function-sent
-      require.resolve('@babel/plugin-proposal-function-sent'),
+      '@babel/plugin-proposal-function-sent',
 
       // partial-application
-      require.resolve('@babel/plugin-proposal-partial-application'),
+      '@babel/plugin-proposal-partial-application',
 
       // pipeline-operator
-      [require.resolve('@babel/plugin-proposal-pipeline-operator'), { proposal: 'minimal' }],
+      ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }],
 
       // throw-expressions
-      require.resolve('@babel/plugin-proposal-throw-expressions'),
+      '@babel/plugin-proposal-throw-expressions',
 
       // record-and-tuple
-      require.resolve('@babel/plugin-proposal-record-and-tuple'),
+      '@babel/plugin-proposal-record-and-tuple',
 
       // transform-runtime
       babelPluginTransformRuntime !== false && [
-        require.resolve('@babel/plugin-transform-runtime'),
+        '@babel/plugin-transform-runtime',
         {
           helpers: true,
           regenerator: true,
-          absoluteRuntime: path.dirname(require.resolve('../package.json')),
+          absoluteRuntime: path.dirname(url.fileURLToPath(packageJsonPath)),
           version: runtimeVersion,
           ...babelPluginTransformRuntime,
         } as GetBabelConfigOptions['babelPluginTransformRuntime'],
