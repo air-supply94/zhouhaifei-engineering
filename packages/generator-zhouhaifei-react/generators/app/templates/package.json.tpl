@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "antd": "5.19.3",
-    "axios": "0.28.0",
+    "axios": "1.7.2",
     "dayjs": "1.11.11",
     "mobx": "6.13.1",
     "mobx-react": "9.1.1",
@@ -39,8 +39,8 @@
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@types/underscore": "1.11.15",
-    "@zhouhaifei/bundler-cli": "3.1.17",
-    "@zhouhaifei/code-style": "3.1.17",
+    "@zhouhaifei/bundler-cli": "3.2.0",
+    "@zhouhaifei/code-style": "3.2.0",
     "cross-env": "7.0.3",
     "mockjs": "1.1.0",
     "typescript": "5.4.5"
