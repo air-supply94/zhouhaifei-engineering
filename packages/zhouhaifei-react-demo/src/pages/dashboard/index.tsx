@@ -4,20 +4,17 @@ import styles from './index.less';
 import axios from 'axios';
 import { makeAutoObservable } from 'mobx';
 import { observer } from 'mobx-react';
+import mock from 'mockjs';
 
-if (process.env.NODE_ENV === 'development') {
-  import('mockjs').then((mock) => {
-    mock.mock('/api/test', 'get', {
-      'list|100': [
-        {
-          name: '@city',
-          'value|1-100': 50,
-          'type|0-2': 1,
-        },
-      ],
-    });
-  });
-}
+mock.mock('/api/test', 'get', {
+  'list|100': [
+    {
+      name: '@city',
+      'value|1-100': 50,
+      'type|0-2': 1,
+    },
+  ],
+});
 
 class Store {
   constructor() {
@@ -37,10 +34,6 @@ const store = new Store();
 export default observer(() => {
   React.useEffect(() => {
     axios.request({ url: '/api/test' }).then((data) => {
-      console.log(data);
-    });
-
-    axios.request({ url: '/api/iac/role/user/perms' }).then((data) => {
       console.log(data);
     });
   }, []);

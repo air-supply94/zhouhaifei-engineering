@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './global.less';
 import { RenderRoutes } from './routes';
 import NProgress from 'nprogress';
-import { Locale } from './utils';
+import { Locale } from './compnents/locale';
 
 render();
 
