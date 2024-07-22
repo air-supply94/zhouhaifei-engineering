@@ -12,6 +12,7 @@ const proxy = context.reduce((prev: Record<string, any>, current) => {
 }, {});
 
 const config: UserConfig = {
+  tailwindcssOptions: true,
   proxy,
   externals: {
     underscore: '_',

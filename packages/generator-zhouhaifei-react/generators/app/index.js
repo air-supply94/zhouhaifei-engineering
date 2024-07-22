@@ -30,6 +30,7 @@ export default class extends Generator {
       'prettier.config.cjs',
       'stylelint.config.cjs',
       'tsconfig.json',
+      'tailwind.config.ts',
     ];
 
     for (let i = 0; i < tplList.length; i++) {

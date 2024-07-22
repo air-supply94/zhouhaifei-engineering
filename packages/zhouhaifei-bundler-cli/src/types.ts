@@ -83,6 +83,7 @@ interface StyleConfig {
   autoprefixer?: GetPostcssConfigOptions['autoprefixer'];
   extraPostCSSPlugins?: GetPostcssConfigOptions['extraPostCSSPlugins'];
   postcssOptions?: GetPostcssConfigOptions['postcssOptions'];
+  tailwindcssOptions?: GetPostcssConfigOptions['tailwindcssOptions'];
 }
 
 export interface UserConfig extends BaseConfig, StyleConfig, GetBabelConfigOptions {

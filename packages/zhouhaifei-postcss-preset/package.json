@@ -27,7 +27,8 @@
   "dependencies": {
     "postcss": "8.4.31",
     "postcss-flexbugs-fixes": "5.0.2",
-    "postcss-preset-env": "9.3.0"
+    "postcss-preset-env": "9.3.0",
+    "tailwindcss": "3.4.6"
   },
   "devDependencies": {
     "tsup": "8.1.0"

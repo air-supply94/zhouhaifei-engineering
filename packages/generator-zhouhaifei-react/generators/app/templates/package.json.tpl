@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "scripts": {
     "build": "zhouhaifei-bundler-cli build",
     "commit": "cz",

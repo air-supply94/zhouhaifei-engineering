@@ -1,6 +1,7 @@
 {
   "name": "@zhouhaifei/react-demo",
   "private": true,
+  "type": "module",
   "scripts": {
     "build-webpack": "zhouhaifei-bundler-cli build",
     "dev": "zhouhaifei-bundler-cli dev --open"

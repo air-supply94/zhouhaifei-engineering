@@ -1,2 +1,11 @@
+/* stylelint-disable at-rule-no-unknown */
+
 @import url("nprogress/nprogress.css");
-@import url("antd/dist/reset.css");
+@layer tailwind-base, antd;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@tailwind components;
+@tailwind utilities;

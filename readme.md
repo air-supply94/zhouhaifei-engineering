@@ -2,7 +2,7 @@
 
 ### node
 
-- 建议 >= 16.20.1
+- 建议 >= 20.0.0
 
 ### 生成
 
@@ -50,13 +50,6 @@ git config --global core.autocrlf false
 git config --global core.safecrlf false
 git config --global core.autocrlf input
 ```
-
-## antd 说明
-
-- antd4x 版本官方推荐 style 按需引入,脚手架 demo 采用的是全量引入
-- 实际项目中用到的组件样式打出来文件大小和全量引入没有太大区别,css 文件 gzip 压缩后文件已经减少很多
-- 根据实际主题需要预先将 antd 的 less 打包成 css,然后将 css 放在 cdn。这样还能各项目享受缓存,打包工具还不用转译 less 文件(减少构建时间)
-- 组件库打包时也采用 bundles 打包(比如 father4),tree shaking 效果更好
 
 ## 配置文件
 
@@ -449,6 +442,12 @@ export interface GetBabelConfigOptions {
 - 描述: 额外的 postcss 插件
 - 类型: any[]
 - 默认值: undefined
+
+### tailwindcssOptions
+
+- 描述: 是否开启tailwindcss
+- 类型: boolean
+- 默认值: false
 
 ### [postcssOptions](https://postcss.org/)
 
