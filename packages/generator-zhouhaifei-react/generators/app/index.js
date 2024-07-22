@@ -31,6 +31,7 @@ export default class extends Generator {
       'stylelint.config.cjs',
       'tsconfig.json',
       'tailwind.config.ts',
+      '.nvmrc',
     ];
 
     for (let i = 0; i < tplList.length; i++) {
