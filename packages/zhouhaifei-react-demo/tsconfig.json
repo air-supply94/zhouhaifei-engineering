@@ -5,5 +5,5 @@
     "lib": ["esnext", "dom"]
   },
   "exclude": ["node_modules", "dist"],
-  "include": ["src", "bundlerConfig.ts"]
+  "include": ["src", "bundlerConfig.ts", "tailwind.config.ts"]
 }
