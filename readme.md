@@ -168,7 +168,7 @@ zhouhaifei-bundler-cli build
 
 - 描述: 浏览器兼容性
 - 类型: Record<'chrome' | 'edge' | 'safari' | 'firefox', string | number>
-- 默认值: {chrome: 80, edge: 79, firefox: 78, safari: 11}
+- 默认值: {chrome: 87, edge: 88, firefox: 78, safari: 13}
 - 说明: babel 及 postcss 相关浏览器配置会根据此自动生成
 
 ### assetsInlineLimit
