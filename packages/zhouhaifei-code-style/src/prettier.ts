@@ -1,5 +1,5 @@
 export const prettier = {
-  printWidth: 240,
+  printWidth: 180,
   tabWidth: 2,
   useTabs: false,
   semi: true,
