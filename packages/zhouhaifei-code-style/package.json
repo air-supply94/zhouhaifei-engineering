@@ -1,6 +1,6 @@
 {
   "name": "@zhouhaifei/code-style",
-  "version": "3.2.5",
+  "version": "3.2.6",
   "main": "dist/index.js",
   "files": [
     "dist",
