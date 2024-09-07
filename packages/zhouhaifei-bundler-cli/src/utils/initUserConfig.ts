@@ -23,7 +23,8 @@ export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = 
     userConfig.publicPath += '/';
   }
 
-  userConfig.sourcemap = userConfig.sourcemap === false || userConfig.sourcemap ? userConfig.sourcemap : process.env.NODE_ENV === Env.development ? DEFAULT_DEV_DEVTOOL : DEFAULT_BUILD_DEVTOOL;
+  userConfig.sourcemap =
+    userConfig.sourcemap === false || userConfig.sourcemap ? userConfig.sourcemap : process.env.NODE_ENV === Env.development ? DEFAULT_DEV_DEVTOOL : DEFAULT_BUILD_DEVTOOL;
   userConfig.outputPath ||= DEFAULT_OUTPUT_PATH;
   userConfig.externals ||= {};
   userConfig.alias = {

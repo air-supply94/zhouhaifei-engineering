@@ -1,6 +1,7 @@
 import { eslintBaseRules } from './eslintBaseRules';
 import { eslintReactRules } from './eslintReactRules';
 import { eslintTypescriptRules } from './eslintTypescriptRules';
+import { eslintImportRules } from './eslintImportRules';
 
 export const eslintReact = {
   root: true,
@@ -15,7 +16,9 @@ export const eslintReact = {
   rules: {
     ...eslintBaseRules,
     ...eslintReactRules,
+    ...eslintImportRules,
   },
+  settings: { react: { version: 'detect' } },
 
   overrides: [
     {

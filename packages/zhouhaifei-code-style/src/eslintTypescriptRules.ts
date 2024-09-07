@@ -13,7 +13,17 @@ export const eslintTypescriptRules = {
     'error',
     {
       accessibility: 'explicit',
-      ignoredMethodNames: ['getDerivedStateFromProps', 'componentDidMount', 'render', 'shouldComponentUpdate', 'getSnapshotBeforeUpdate', 'componentDidUpdate', 'componentWillUnmount', 'getDerivedStateFromError', 'componentDidCatch'],
+      ignoredMethodNames: [
+        'getDerivedStateFromProps',
+        'componentDidMount',
+        'render',
+        'shouldComponentUpdate',
+        'getSnapshotBeforeUpdate',
+        'componentDidUpdate',
+        'componentWillUnmount',
+        'getDerivedStateFromError',
+        'componentDidCatch',
+      ],
       overrides: {
         accessors: 'explicit',
         constructors: 'no-public',

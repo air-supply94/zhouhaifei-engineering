@@ -9,7 +9,21 @@ export function cssRule({
   config,
   isDevelopment,
   srcDir,
-  userConfig: { lessOptions, autoCSSModules, styleLoaderOptions, cssLoaderModules, cssLoaderOptions, sassOptions, stylusOptions, targets, postcssPresetEnvOptions, autoprefixer, extraPostCSSPlugins, postcssOptions, tailwindcssOptions },
+  userConfig: {
+    lessOptions,
+    autoCSSModules,
+    styleLoaderOptions,
+    cssLoaderModules,
+    cssLoaderOptions,
+    sassOptions,
+    stylusOptions,
+    targets,
+    postcssPresetEnvOptions,
+    autoprefixer,
+    extraPostCSSPlugins,
+    postcssOptions,
+    tailwindcssOptions,
+  },
 }: ApplyOptions) {
   const rulesConfig = [
     {

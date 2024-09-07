@@ -1,5 +1,6 @@
 import { eslintBaseRules } from './eslintBaseRules';
 import { eslintTypescriptRules } from './eslintTypescriptRules';
+import { eslintImportRules } from './eslintImportRules';
 
 export const eslintNode = {
   root: true,
@@ -12,7 +13,10 @@ export const eslintNode = {
     es6: true,
     node: true,
   },
-  rules: eslintBaseRules,
+  rules: {
+    ...eslintBaseRules,
+    ...eslintImportRules,
+  },
   overrides: [
     {
       files: ['{**/*,*}.ts'],

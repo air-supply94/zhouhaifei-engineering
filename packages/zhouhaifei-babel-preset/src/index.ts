@@ -66,7 +66,16 @@ export interface GetBabelConfigOptions {
   babelPluginStyledComponents?: Record<string, any>;
 }
 
-export function getBabelConfig({ babelExtraPreset, babelExtraPlugins, babelPresetEnv, babelPresetReact, babelPresetTypeScript, babelPluginTransformRuntime, babelPluginDecorators, babelPluginStyledComponents }: GetBabelConfigOptions = {}) {
+export function getBabelConfig({
+  babelExtraPreset,
+  babelExtraPlugins,
+  babelPresetEnv,
+  babelPresetReact,
+  babelPresetTypeScript,
+  babelPluginTransformRuntime,
+  babelPluginDecorators,
+  babelPluginStyledComponents,
+}: GetBabelConfigOptions = {}) {
   const packageJsonPath = new URL('../package.json', import.meta.url);
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8').toString());
   const coreJsVersion = packageJson.dependencies['core-js'];
