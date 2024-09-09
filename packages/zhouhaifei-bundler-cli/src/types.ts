@@ -1,13 +1,13 @@
-import type { GetPostcssConfigOptions } from '@zhouhaifei/postcss-preset';
-import type Config from 'webpack-5-chain';
-import type webpack from 'webpack';
-import type { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import type { ManifestPluginOptions } from 'webpack-manifest-plugin';
-import type HtmlWebpackPlugin from 'html-webpack-plugin';
-import type { ProxyConfigMap } from 'webpack-dev-server';
 import type { GetBabelConfigOptions } from '@zhouhaifei/babel-preset';
-import type { TransformOptions as EsbuildOptions } from 'esbuild';
+import type { GetPostcssConfigOptions } from '@zhouhaifei/postcss-preset';
 import type { CssNanoOptions } from 'css-minimizer-webpack-plugin';
+import type { TransformOptions as EsbuildOptions } from 'esbuild';
+import type HtmlWebpackPlugin from 'html-webpack-plugin';
+import type webpack from 'webpack';
+import type Config from 'webpack-5-chain';
+import type { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import type { ProxyConfigMap } from 'webpack-dev-server';
+import type { ManifestPluginOptions } from 'webpack-manifest-plugin';
 
 export enum Env {
   development = 'development',

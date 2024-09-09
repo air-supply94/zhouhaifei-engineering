@@ -18,8 +18,6 @@ export default class extends Generator {
       '.editorconfig',
       '.env.development',
       '.env.production',
-      '.eslintignore',
-      '.eslintrc.cjs',
       '.gitignore',
       '.npmrc',
       '.prettierignore',

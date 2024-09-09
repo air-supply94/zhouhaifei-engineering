@@ -1,0 +1,126 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+  "files": {
+    "ignore": [
+      "pnpm-lock.yaml",
+      "yarn.lock",
+      "package-lock.json",
+      ".cache",
+      ".vscode",
+      ".eslintcache",
+      ".stylelintcache",
+      ".turbo",
+      "node_modules",
+      ".idea",
+      "coverage",
+      "dist",
+      ".DS_Store",
+      "*.log",
+      ".env.local",
+      ".env.development.local",
+      ".env.test.local",
+      ".env.production.local"
+    ],
+    "ignoreUnknown": true
+  },
+  "json": {
+    "parser": {
+      "allowComments": true
+    },
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineEnding": "lf",
+      "lineWidth": 120
+    }
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 120,
+    "attributePosition": "auto"
+  },
+  "organizeImports": { "enabled": true },
+  "javascript": {
+    "parser": {
+      "unsafeParameterDecoratorsEnabled": true
+    },
+    "formatter": {
+      "quoteStyle": "single",
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "all",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineEnding": "lf",
+      "lineWidth": 120,
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "attributePosition": "auto"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "noAutofocus": "off",
+        "useAnchorContent": "off",
+        "useKeyWithClickEvents": "off",
+        "useKeyWithMouseEvents": "off",
+        "useValidAnchor": "off"
+      },
+      "complexity": {
+        "noForEach": "off",
+        "noStaticOnlyClass": "off"
+      },
+      "correctness": {
+        "noVoidTypeReturn": "off",
+        "useExhaustiveDependencies": "error",
+        "useHookAtTopLevel": "error"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "off",
+        "noDangerouslySetInnerHtmlWithChildren": "off"
+      },
+      "style": {
+        "noArguments": "off",
+        "noImplicitBoolean": "error",
+        "noNonNullAssertion": "off",
+        "noParameterAssign": "off",
+        "noUselessElse": "off",
+        "useEnumInitializers": "off",
+        "useExponentiationOperator": "off",
+        "useWhile": "off",
+        "useNamingConvention": "off",
+        "useBlockStatements": "error",
+        "useFragmentSyntax": "error",
+        "useShorthandArrayType": "error",
+        "useShorthandAssign": "error",
+        "useSingleCaseStatement": "error",
+        "useConsistentArrayType": {
+          "level": "error",
+          "options": { "syntax": "shorthand" }
+        }
+      },
+      "suspicious": {
+        "noDoubleEquals": "off",
+        "noExplicitAny": "off",
+        "noSuspiciousSemicolonInJsx": "error"
+      }
+    },
+    "ignore": ["**/public", "**/node_modules", "**/dist", "**/coverage"]
+  }
+}

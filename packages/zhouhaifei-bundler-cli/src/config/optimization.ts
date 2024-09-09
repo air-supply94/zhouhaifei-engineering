@@ -8,7 +8,11 @@ export function optimization({ config, isDevelopment, userConfig: { codeSplittin
 
   const minSize = 1024 * 20;
   let id = 0;
-  config.optimization.concatenateModules(true).moduleIds('deterministic').chunkIds('deterministic').runtimeChunk('single');
+  config.optimization
+    .concatenateModules(true)
+    .moduleIds('deterministic')
+    .chunkIds('deterministic')
+    .runtimeChunk('single');
 
   // 参考umi
   switch (codeSplitting) {
@@ -37,7 +41,17 @@ export function optimization({ config, isDevelopment, userConfig: { codeSplittin
 
     case CodeSplit.granularChunks:
       {
-        const FRAMEWORK_BUNDLES = ['react-dom', 'react', 'redux', 'react-redux', 'mobx', 'mobx-react', 'history', 'react-router', 'react-router-dom'];
+        const FRAMEWORK_BUNDLES = [
+          'react-dom',
+          'react',
+          'redux',
+          'react-redux',
+          'mobx',
+          'mobx-react',
+          'history',
+          'react-router',
+          'react-router-dom',
+        ];
         config.optimization.splitChunks({
           cacheGroups: {
             default: false,
@@ -55,19 +69,21 @@ export function optimization({ config, isDevelopment, userConfig: { codeSplittin
                 return !isModuleCSS(module) && module.size() > minSize && /node_modules[/\\]/.test(module.identifier());
               },
               name(module: any) {
-                const rawRequest = module.rawRequest && module.rawRequest.replace(/^@(\w+)[/\\]/, '$1-');
+                const rawRequest = module.rawRequest?.replace(/^@(\w+)[/\\]/, '$1-');
                 if (rawRequest) {
                   return `${
                     // when `require()` a package with relative path,
                     // need remove leading `.` and `/`, otherwise will not found `.js` file
                     // e.g. require('../../lib/codemirror')
-                    rawRequest.replace(/\./g, '_').replace(/\//g, '-')
+                    rawRequest
+                      .replace(/\./g, '_')
+                      .replace(/\//g, '-')
                   }-lib`;
                 }
 
                 const identifier = module.identifier();
                 const trimmedIdentifier = /(?:^|[/\\])node_modules[/\\](.*)/.exec(identifier);
-                const processedIdentifier = trimmedIdentifier && trimmedIdentifier[1].replace(/^@(\w+)[/\\]/, '$1-');
+                const processedIdentifier = trimmedIdentifier?.[1].replace(/^@(\w+)[/\\]/, '$1-');
 
                 return `${processedIdentifier || identifier}-lib`;
               },

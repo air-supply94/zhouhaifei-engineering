@@ -1,8 +1,8 @@
-import assert from 'assert';
+import assert from 'node:assert';
 import getGitRepoInfo from 'git-repo-info';
 import 'zx/globals';
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 const cwd = fs.realpathSync(process.cwd());
 const publishRegistry = 'https://registry.npmjs.org/';
@@ -24,7 +24,10 @@ interface PublishPackagesInfo {
 async function updateGeneratorPackages(version: string) {
   const data = [
     {
-      generatorTplPath: path.resolve(cwd, 'packages/generator-zhouhaifei-react/generators/app/templates/package.json.tpl'),
+      generatorTplPath: path.resolve(
+        cwd,
+        'packages/generator-zhouhaifei-react/generators/app/templates/package.json.tpl',
+      ),
       updateDependencies: [],
       updateDevDependencies: ['@zhouhaifei/bundler-cli', '@zhouhaifei/code-style'],
     },
@@ -89,7 +92,9 @@ function getNpmTag(version: string) {
   const publishPackagesInfo = await getPublishPackagesInfo();
   const checkedPackage = publishPackagesInfo[0].packageJson;
 
-  console.log(`publish packages: \r\n\r\n${publishPackagesInfo.map((item) => item.packageJson.name).join('\r\n')}\r\n\r\n`);
+  console.log(
+    `publish packages: \r\n\r\n${publishPackagesInfo.map((item) => item.packageJson.name).join('\r\n')}\r\n\r\n`,
+  );
 
   const { branch } = getGitRepoInfo();
   console.log(`branch: ${branch}`);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRoutes, Navigate } from 'react-router-dom';
+import { Navigate, useRoutes } from 'react-router-dom';
 import type { RouteObject } from 'react-router-dom';
 import { DefaultLayout } from './compnents/defaultLayout';
 import { NoPage } from './compnents/noPage';
@@ -14,25 +14,20 @@ export type MenuDataItem = {
 export const routes: MenuDataItem[] = [
   {
     name: '',
-    element: <DefaultLayout/>,
+    element: <DefaultLayout />,
     children: [
       {
         name: '仪表盘',
         path: '/dashboard',
-        element: <Dashboard/>,
+        element: <Dashboard />,
       },
       {
         path: '/',
-        element: (
-          <Navigate
-            replace
-            to="/dashboard"
-          />
-        ),
+        element: <Navigate replace={true} to="/dashboard" />,
       },
       {
         path: '*',
-        element: <NoPage/>,
+        element: <NoPage />,
       },
     ],
   },

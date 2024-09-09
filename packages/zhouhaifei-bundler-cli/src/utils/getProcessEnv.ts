@@ -1,6 +1,11 @@
-import type { Env, UserConfig, ConfigOptions } from '../types';
+import type { ConfigOptions, Env, UserConfig } from '../types';
 
-export function getProcessEnv(userEnv: ConfigOptions['userEnv'], publicPath: UserConfig['publicPath'], env: Env, processEnvPrefix: UserConfig['processEnvPrefix']) {
+export function getProcessEnv(
+  userEnv: ConfigOptions['userEnv'],
+  publicPath: UserConfig['publicPath'],
+  env: Env,
+  processEnvPrefix: UserConfig['processEnvPrefix'],
+) {
   const extraEnv: Record<string, string> = Object.keys(process.env)
     .filter((key) => {
       if (processEnvPrefix instanceof RegExp) {

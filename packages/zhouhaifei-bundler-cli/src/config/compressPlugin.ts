@@ -1,12 +1,16 @@
 import CSSMinimizerWebpackPlugin from 'css-minimizer-webpack-plugin';
+import type { TransformOptions as EsbuildOptions } from 'esbuild';
 import type { TerserOptions } from 'terser-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import type { ApplyOptions, UserConfig } from '../types';
 import { CSSMinifier, JSMinifier } from '../types';
 import { getEsBuildTarget } from '../utils';
-import type { TransformOptions as EsbuildOptions } from 'esbuild';
 
-export function compressPlugin({ userConfig: { jsMinifier, cssMinifier, targets, jsMinifierOptions, cssMinifierOptions, nocompress }, isDevelopment, config }: ApplyOptions) {
+export function compressPlugin({
+  userConfig: { jsMinifier, cssMinifier, targets, jsMinifierOptions, cssMinifierOptions, nocompress },
+  isDevelopment,
+  config,
+}: ApplyOptions) {
   if (isDevelopment || nocompress || (jsMinifier === JSMinifier.none && cssMinifier === CSSMinifier.none)) {
     config.optimization.minimize(false);
     return;
@@ -20,7 +24,7 @@ export function compressPlugin({ userConfig: { jsMinifier, cssMinifier, targets,
     esbuildTarget.push('es2015');
   }
 
-  let minify;
+  let minify: any;
   let terserOptions: UserConfig['jsMinifierOptions'];
   if (jsMinifier === JSMinifier.esbuild) {
     minify = TerserPlugin.esbuildMinify;
@@ -59,7 +63,7 @@ export function compressPlugin({ userConfig: { jsMinifier, cssMinifier, targets,
     ]);
   }
 
-  let cssMinify;
+  let cssMinify: any;
   let minimizerOptions: UserConfig['cssMinifierOptions'];
   if (cssMinifier === CSSMinifier.esbuild) {
     cssMinify = CSSMinimizerWebpackPlugin.esbuildMinify;

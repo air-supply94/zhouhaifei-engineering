@@ -10,7 +10,7 @@ export async function build({ userConfig = {}, ...rest }: BuildOptions) {
     userConfig,
     env: Env.production,
   });
-  delete webpackConfig.devServer;
+  webpackConfig.devServer = undefined;
 
   return new Promise((resolve, reject) => {
     const compiler = webpack(webpackConfig);

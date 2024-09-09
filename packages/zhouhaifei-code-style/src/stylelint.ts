@@ -9,7 +9,10 @@ export const stylelint = {
     'selector-no-vendor-prefix': null,
 
     'at-rule-empty-line-before': ['always', { except: ['inside-block', 'blockless-after-blockless', 'first-nested'] }],
-    'custom-property-empty-line-before': ['never', { except: ['first-nested', 'after-comment', 'after-custom-property'] }],
+    'custom-property-empty-line-before': [
+      'never',
+      { except: ['first-nested', 'after-comment', 'after-custom-property'] },
+    ],
     'declaration-empty-line-before': [
       'always',
       {

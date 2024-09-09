@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'node:fs';
 
 export const { version } = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8').toString());
 export const STYLE_EXTENSIONS = ['css', 'less', 'sass', 'scss', 'styl', 'stylus'];

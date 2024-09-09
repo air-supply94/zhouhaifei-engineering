@@ -1,9 +1,9 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import { createRequire } from 'node:module';
+import path from 'node:path';
+import url from 'node:url';
 import { build } from 'esbuild';
-import { createRequire } from 'module';
 import { cwd } from '../constants';
-import url from 'url';
 
 const _require = createRequire(cwd);
 

@@ -1,8 +1,13 @@
+import path from 'node:path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import path from 'path';
 import type { ApplyOptions } from '../types';
 
-export function htmlPlugin({ config, isDevelopment, userConfig: { htmlOption, publicPath, publicDir }, cwd }: ApplyOptions) {
+export function htmlPlugin({
+  config,
+  isDevelopment,
+  userConfig: { htmlOption, publicPath, publicDir },
+  cwd,
+}: ApplyOptions) {
   if (htmlOption !== false) {
     const initOptions = {
       inject: true,

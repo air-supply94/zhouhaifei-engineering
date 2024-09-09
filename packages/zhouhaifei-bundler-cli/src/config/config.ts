@@ -1,5 +1,5 @@
-import crypto from 'crypto';
-import path from 'path';
+import crypto from 'node:crypto';
+import path from 'node:path';
 import type { Configuration } from 'webpack';
 import webpack from 'webpack';
 import Config from 'webpack-5-chain';
@@ -76,7 +76,14 @@ export async function config(options: ConfigOptions): Promise<Configuration> {
   config.devtool(sourcemap);
 
   // resolve
-  config.resolve.symlinks(true).modules.add('node_modules').end().alias.merge(alias).end().extensions.merge(['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs', '.json', '.wasm']).end();
+  config.resolve
+    .symlinks(true)
+    .modules.add('node_modules')
+    .end()
+    .alias.merge(alias)
+    .end()
+    .extensions.merge(['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs', '.json', '.wasm'])
+    .end();
 
   // output
   config.output

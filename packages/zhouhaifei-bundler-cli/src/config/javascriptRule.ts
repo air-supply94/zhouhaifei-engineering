@@ -1,8 +1,8 @@
+import { getBabelConfig } from '@zhouhaifei/babel-preset';
+import webpack from 'webpack';
 import type { ApplyOptions } from '../types';
 import { Transpiler } from '../types';
 import { getBrowsersList } from '../utils';
-import { getBabelConfig } from '@zhouhaifei/babel-preset';
-import webpack from 'webpack';
 
 export function javascriptRule({
   config,
@@ -34,7 +34,8 @@ export function javascriptRule({
       .include.add(cwd)
       .end(),
 
-    extraJsModuleIncludes && config.module.rule('extraJsAndJsx').test(jsResource).include.add(extraJsModuleIncludes).end(),
+    extraJsModuleIncludes &&
+      config.module.rule('extraJsAndJsx').test(jsResource).include.add(extraJsModuleIncludes).end(),
   ].filter(Boolean);
 
   rules.forEach((rule) => {

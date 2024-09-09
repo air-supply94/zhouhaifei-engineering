@@ -12,7 +12,14 @@ export interface GetPostcssConfigOptions {
   extraPostCSSPlugins?: any[];
 }
 
-export function getPostcssConfig({ browsers, postcssPresetEnvOptions, autoprefixer, extraPostCSSPlugins, postcssOptions, tailwindcssOptions }: GetPostcssConfigOptions = {}) {
+export function getPostcssConfig({
+  browsers,
+  postcssPresetEnvOptions,
+  autoprefixer,
+  extraPostCSSPlugins,
+  postcssOptions,
+  tailwindcssOptions,
+}: GetPostcssConfigOptions = {}) {
   return {
     ident: 'postcss',
     plugins: [

@@ -1,10 +1,10 @@
+import url from 'node:url';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import { config } from './config/config';
-import { openBrowser } from './utils';
-import url from 'url';
 import type { DevOptions } from './types';
 import { Env } from './types';
+import { openBrowser } from './utils';
 
 export async function dev({ cwd, userConfig = {}, ...rest }: DevOptions) {
   const webpackConfig = await config({
@@ -14,7 +14,7 @@ export async function dev({ cwd, userConfig = {}, ...rest }: DevOptions) {
     userConfig,
   });
   const devServerConfig = webpackConfig.devServer;
-  delete webpackConfig.devServer;
+  webpackConfig.devServer = undefined;
 
   const protocol = 'http';
   const { host, port, open } = userConfig;

@@ -1,9 +1,9 @@
+import path from 'node:path';
+import { getPostcssConfig } from '@zhouhaifei/postcss-preset';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { LOCAL_IDENT_NAME, STYLE_EXTENSIONS } from '../constants';
 import type { ApplyOptions } from '../types';
 import { getBrowsersList } from '../utils';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import path from 'path';
-import { getPostcssConfig } from '@zhouhaifei/postcss-preset';
 
 export function cssRule({
   config,

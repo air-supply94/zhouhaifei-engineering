@@ -6,10 +6,10 @@
     "husky-commitlint": "commitlint -e",
     "lint": "npm run prettier && npm run lint:js && npm run lint:style",
     "dev": "zhouhaifei-bundler-cli dev --open",
-    "lint:js": "cross-env TIMING=1 eslint --fix --cache --quiet --ext .js,.cjs,.mjs,.jsx,.ts,.tsx .",
+    "lint:js": "biome check --write --unsafe .",
     "lint:style": "stylelint --cache --quiet --fix \"{**/*,*}.{less,css,scss,sass}\"",
     "prepare": "npx husky@9.0.11",
-    "prettier": "prettier --cache --cache-strategy metadata -c --write \"{**/*,*}.{js,cjs,mjs,jsx,ts,tsx,less,css,scss,sass,yaml,md,html,json}\""
+    "prettier": "prettier --cache --cache-strategy metadata -c --write \"{**/*,*}.{less,css,scss,sass,yaml,md,html}\""
   },
   "config": {
     "commitizen": {

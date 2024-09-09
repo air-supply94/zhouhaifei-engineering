@@ -1,7 +1,12 @@
+import path from 'node:path';
 import type { ApplyOptions } from '../types';
-import path from 'path';
 
-export function devServerPlugin({ userConfig: { proxy, port, host, publicPath, publicDir }, isDevelopment, config, cwd }: ApplyOptions) {
+export function devServerPlugin({
+  userConfig: { proxy, port, host, publicPath, publicDir },
+  isDevelopment,
+  config,
+  cwd,
+}: ApplyOptions) {
   if (!isDevelopment) {
     return;
   }

@@ -1,10 +1,10 @@
-import React from 'react';
 import { Card } from 'antd';
-import styles from './index.less';
 import axios from 'axios';
 import { makeAutoObservable } from 'mobx';
 import { observer } from 'mobx-react';
 import mock from 'mockjs';
+import React from 'react';
+import styles from './index.less';
 
 mock.mock('/api/test', 'get', {
   'list|100': [
@@ -39,10 +39,7 @@ export default observer(() => {
   }, []);
 
   return (
-    <div
-      className={styles.container}
-      onClick={store.setAge}
-    >
+    <div className={styles.container} onClick={store.setAge}>
       <Card size="small">
         hello
         {store.age}

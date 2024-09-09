@@ -2,7 +2,7 @@ root = true
 
 [*]
 end_of_line = lf
-max_line_length = 180
+max_line_length = 120
 charset = utf-8
 indent_style = space
 indent_size = 2

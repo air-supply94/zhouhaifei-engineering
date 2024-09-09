@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRoutes, Navigate } from 'react-router-dom';
+import { Navigate, useRoutes } from 'react-router-dom';
 import type { RouteObject } from 'react-router-dom';
 import { DefaultLayout } from './compnents/defaultLayout';
 import { NoPage } from './compnents/noPage';
@@ -23,12 +23,7 @@ export const routes: MenuDataItem[] = [
       },
       {
         path: '/',
-        element: (
-          <Navigate
-            replace
-            to="/dashboard"
-          />
-        ),
+        element: <Navigate replace={true} to="/dashboard" />,
       },
       {
         path: '*',

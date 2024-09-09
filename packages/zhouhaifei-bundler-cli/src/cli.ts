@@ -1,19 +1,25 @@
+import path from 'node:path';
 import cac from 'cac';
-import path from 'path';
 import { build } from './build';
-import { cwd, DEFAULT_CONFIG_NAME, DEFAULT_SRC_DIR, version } from './constants';
+import { DEFAULT_CONFIG_NAME, DEFAULT_SRC_DIR, cwd, version } from './constants';
 import { dev } from './dev';
-import type { cliOptions, UserConfig } from './types';
+import type { UserConfig, cliOptions } from './types';
 import { Env } from './types';
-import { loadEnv, loadFile, resolveFile, resolveModule, tryFiles, initUserConfig } from './utils';
+import { initUserConfig, loadEnv, loadFile, resolveFile, resolveModule, tryFiles } from './utils';
 
 const cli = cac('zhouhaifei-bundler-cli');
 
-const userConfigFile = tryFiles([`${DEFAULT_CONFIG_NAME}.ts`, `${DEFAULT_CONFIG_NAME}.js`, `${DEFAULT_CONFIG_NAME}.mjs`].map((item) => path.resolve(cwd, item)));
+const userConfigFile = tryFiles(
+  [`${DEFAULT_CONFIG_NAME}.ts`, `${DEFAULT_CONFIG_NAME}.js`, `${DEFAULT_CONFIG_NAME}.mjs`].map((item) =>
+    path.resolve(cwd, item),
+  ),
+);
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
-const entryFile = resolveModule(resolveFile.bind(null, cwd), `${DEFAULT_SRC_DIR}/index`, extensions) || resolveModule(resolveFile.bind(null, cwd), 'index', extensions);
+const entryFile =
+  resolveModule(resolveFile.bind(null, cwd), `${DEFAULT_SRC_DIR}/index`, extensions) ||
+  resolveModule(resolveFile.bind(null, cwd), 'index', extensions);
 const entry = { [path.basename(entryFile, path.extname(entryFile))]: entryFile };
 
 cli.option('-c, --config [config]', 'your config file');
@@ -29,7 +35,8 @@ cli
     process.env.NODE_ENV = Env.development;
 
     const userEnv = loadEnv(cwd, '.env') || {};
-    const userConfig: UserConfig = (await loadFile(options?.config ? path.resolve(cwd, options.config) : userConfigFile)) || {};
+    const userConfig: UserConfig =
+      (await loadFile(options?.config ? path.resolve(cwd, options.config) : userConfigFile)) || {};
     initUserConfig(userConfig, {
       open: options.open,
       port: options?.port,
@@ -52,7 +59,8 @@ cli
     process.env.NODE_ENV = Env.production;
 
     const userEnv = loadEnv(cwd, '.env');
-    const userConfig: UserConfig = (await loadFile(options?.config ? path.resolve(cwd, options.config) : userConfigFile)) || {};
+    const userConfig: UserConfig =
+      (await loadFile(options?.config ? path.resolve(cwd, options.config) : userConfigFile)) || {};
     initUserConfig(userConfig, { watch: options?.watch });
 
     await build({

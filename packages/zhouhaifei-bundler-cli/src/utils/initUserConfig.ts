@@ -1,7 +1,14 @@
+import path from 'node:path';
+import {
+  DEFAULT_BROWSER_TARGETS,
+  DEFAULT_BUILD_DEVTOOL,
+  DEFAULT_DEV_DEVTOOL,
+  DEFAULT_OUTPUT_PATH,
+  DEFAULT_PUBLIC_DIR,
+  cwd,
+} from '../constants';
 import type { UserConfig, cliOptions } from '../types';
-import path from 'path';
-import { CodeSplit, CSSMinifier, Env, JSMinifier, Transpiler } from '../types';
-import { cwd, DEFAULT_BROWSER_TARGETS, DEFAULT_BUILD_DEVTOOL, DEFAULT_DEV_DEVTOOL, DEFAULT_OUTPUT_PATH, DEFAULT_PUBLIC_DIR } from '../constants';
+import { CSSMinifier, CodeSplit, Env, JSMinifier, Transpiler } from '../types';
 
 export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = {}): UserConfig {
   userConfig.processEnvPrefix ||= /^REACT_APP_/i;
@@ -12,11 +19,11 @@ export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = 
   userConfig.open ||= cliOptions.open;
   userConfig.watch ||= cliOptions.watch;
   userConfig.host ||= cliOptions.host || process.env.HOST || '0.0.0.0';
-  userConfig.port ||= parseInt(cliOptions.port, 10) || parseInt(process.env.PORT, 10) || 3000;
+  userConfig.port ||= Number.parseInt(cliOptions.port, 10) || Number.parseInt(process.env.PORT, 10) || 3000;
 
   userConfig.nocompress ||= process.env.COMPRESS === '1';
   userConfig.analyzer ||= process.env.ANALYZE === '1';
-  userConfig.analyzerPort ||= parseInt(process.env.ANALYZE_PORT, 10) || 8888;
+  userConfig.analyzerPort ||= Number.parseInt(process.env.ANALYZE_PORT, 10) || 8888;
 
   userConfig.publicPath ||= process.env.PUBLIC_URL || '/';
   if (!userConfig.publicPath.endsWith('/')) {
@@ -24,7 +31,11 @@ export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = 
   }
 
   userConfig.sourcemap =
-    userConfig.sourcemap === false || userConfig.sourcemap ? userConfig.sourcemap : process.env.NODE_ENV === Env.development ? DEFAULT_DEV_DEVTOOL : DEFAULT_BUILD_DEVTOOL;
+    userConfig.sourcemap === false || userConfig.sourcemap
+      ? userConfig.sourcemap
+      : process.env.NODE_ENV === Env.development
+        ? DEFAULT_DEV_DEVTOOL
+        : DEFAULT_BUILD_DEVTOOL;
   userConfig.outputPath ||= DEFAULT_OUTPUT_PATH;
   userConfig.externals ||= {};
   userConfig.alias = {
