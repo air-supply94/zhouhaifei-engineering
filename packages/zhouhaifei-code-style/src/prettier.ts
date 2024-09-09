@@ -16,6 +16,7 @@ export const prettier = {
   endOfLine: 'lf',
   embeddedLanguageFormatting: 'auto',
   singleAttributePerLine: true,
+  plugins: ['prettier-plugin-packagejson'],
   overrides: [
     {
       files: ['*.css', '*.less', '*.scss', '*.sass'],

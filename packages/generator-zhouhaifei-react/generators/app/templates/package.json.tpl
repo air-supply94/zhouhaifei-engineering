@@ -9,7 +9,7 @@
     "lint:js": "biome check --write --unsafe .",
     "lint:style": "stylelint --cache --quiet --fix \"{**/*,*}.{less,css,scss,sass}\"",
     "prepare": "npx husky@9.0.11",
-    "prettier": "prettier --cache --cache-strategy metadata -c --write \"{**/*,*}.{less,css,scss,sass,yaml,md,html}\""
+    "prettier": "prettier --cache --cache-strategy metadata -c --write \"{**/*,*}.{less,css,scss,sass,yaml,md,html,json}\""
   },
   "config": {
     "commitizen": {

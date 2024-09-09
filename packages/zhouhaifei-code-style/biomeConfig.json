@@ -51,6 +51,7 @@
   },
   "organizeImports": { "enabled": true },
   "javascript": {
+    "jsxRuntime": "transparent",
     "parser": {
       "unsafeParameterDecoratorsEnabled": true
     },

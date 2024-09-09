@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "jsx": "react", // 指定 jsx 代码的生成
+    "jsx": "react-jsx", // 指定 jsx 代码的生成
     "moduleResolution": "Bundler", // 选择模块解析策略
     "module": "ESNext",
     "target": "ES2020", // 指定 ECMAScript 目标版本
