@@ -2,12 +2,7 @@
   "name": "@zhouhaifei/code-style",
   "version": "3.3.0-alpha.0",
   "main": "dist/index.js",
-  "files": [
-    "dist",
-    "stylelint.js",
-    "tsconfig.base.json",
-    "biomeConfig.json"
-  ],
+  "files": ["dist", "stylelint.js", "tsconfig.base.json", "biomeConfig.json"],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch"

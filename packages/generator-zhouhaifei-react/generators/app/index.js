@@ -15,6 +15,7 @@ export default class extends Generator {
     this.copyTemplate(this.templatePath('.husky'), this.destinationPath('.husky'));
 
     const tplList = [
+      'biome.json',
       '.editorconfig',
       '.env.development',
       '.env.production',
