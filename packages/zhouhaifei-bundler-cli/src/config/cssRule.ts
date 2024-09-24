@@ -22,7 +22,7 @@ export function cssRule({
     autoprefixer,
     extraPostCSSPlugins,
     postcssOptions,
-    tailwindcssOptions,
+    enableTailwindcss,
   },
 }: ApplyOptions) {
   const rulesConfig = [
@@ -125,7 +125,7 @@ export function cssRule({
             postcssPresetEnvOptions,
             extraPostCSSPlugins,
             postcssOptions,
-            tailwindcssOptions,
+            enableTailwindcss,
           }),
         });
 

@@ -1,6 +1,6 @@
 import { Card } from 'antd';
 import axios from 'axios';
-import { makeAutoObservable } from 'mobx';
+import { action, observable } from 'mobx';
 import { observer } from 'mobx-react';
 import mock from 'mockjs';
 import React from 'react';
@@ -17,15 +17,9 @@ mock.mock('/api/test', 'get', {
 });
 
 class Store {
-  constructor() {
-    makeAutoObservable(this);
-  }
+  @observable public accessor age = 0;
 
-  private name = '';
-
-  public age = 0;
-
-  public setAge = () => {
+  @action public setAge = () => {
     this.age++;
   };
 }
@@ -36,10 +30,6 @@ export default observer(() => {
     axios.request({ url: '/api/test' }).then((data) => {
       console.log(data);
     });
-
-    axios.request({ url: '/api/iac/role/user/perms' }).then((data) => {
-      console.log(data);
-    });
   }, []);
 
   return (
@@ -48,6 +38,7 @@ export default observer(() => {
         hello
         {store.age}
       </Card>
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
     </div>
   );
 });

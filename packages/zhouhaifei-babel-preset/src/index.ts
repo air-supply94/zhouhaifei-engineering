@@ -135,7 +135,7 @@ export function getBabelConfig({
       babelPluginDecorators !== false && [
         '@babel/plugin-proposal-decorators',
         {
-          version: 'legacy',
+          version: '2023-05',
           ...babelPluginDecorators,
         } as GetBabelConfigOptions['babelPluginDecorators'],
       ],

@@ -4,7 +4,7 @@ import type { pluginOptions } from 'postcss-preset-env';
 import tailwindcss from 'tailwindcss';
 
 export interface GetPostcssConfigOptions {
-  tailwindcssOptions?: boolean;
+  enableTailwindcss?: boolean;
   browsers?: string[];
   postcssOptions?: { plugins: never } & Record<string, any>;
   postcssPresetEnvOptions?: { autoprefixer?: never } & pluginOptions;
@@ -18,7 +18,7 @@ export function getPostcssConfig({
   autoprefixer,
   extraPostCSSPlugins,
   postcssOptions,
-  tailwindcssOptions,
+  enableTailwindcss,
 }: GetPostcssConfigOptions = {}) {
   return {
     ident: 'postcss',
@@ -34,7 +34,7 @@ export function getPostcssConfig({
         stage: 3,
         ...postcssPresetEnvOptions,
       } as pluginOptions),
-      tailwindcssOptions && tailwindcss(),
+      enableTailwindcss && tailwindcss(),
     ]
       .filter(Boolean)
       .concat(extraPostCSSPlugins || []),

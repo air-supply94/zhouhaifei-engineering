@@ -6,7 +6,7 @@ import type HtmlWebpackPlugin from 'html-webpack-plugin';
 import type webpack from 'webpack';
 import type Config from 'webpack-5-chain';
 import type { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import type { ProxyConfigMap } from 'webpack-dev-server';
+import type { ProxyConfigArray } from 'webpack-dev-server';
 import type { ManifestPluginOptions } from 'webpack-manifest-plugin';
 
 export enum Env {
@@ -52,7 +52,7 @@ interface BaseConfig {
   open?: boolean;
   port?: number;
   host?: string;
-  proxy?: ProxyConfigMap;
+  proxy?: ProxyConfigArray;
   cache?: {
     buildDependencies?: string[];
     cacheDirectory?: string;
@@ -83,7 +83,7 @@ interface StyleConfig {
   autoprefixer?: GetPostcssConfigOptions['autoprefixer'];
   extraPostCSSPlugins?: GetPostcssConfigOptions['extraPostCSSPlugins'];
   postcssOptions?: GetPostcssConfigOptions['postcssOptions'];
-  tailwindcssOptions?: GetPostcssConfigOptions['tailwindcssOptions'];
+  enableTailwindcss?: GetPostcssConfigOptions['enableTailwindcss'];
 }
 
 export interface UserConfig extends BaseConfig, StyleConfig, GetBabelConfigOptions {
