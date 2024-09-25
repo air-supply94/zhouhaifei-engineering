@@ -443,7 +443,7 @@ export interface GetBabelConfigOptions {
 - 类型: any[]
 - 默认值: undefined
 
-### tailwindcssOptions
+### enableTailwindcss
 
 - 描述: 是否开启tailwindcss
 - 类型: boolean
