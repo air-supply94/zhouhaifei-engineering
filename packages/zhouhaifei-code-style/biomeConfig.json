@@ -48,7 +48,7 @@
     "indentWidth": 2,
     "lineEnding": "lf",
     "lineWidth": 120,
-    "attributePosition": "auto"
+    "attributePosition": "multiline"
   },
   "organizeImports": { "enabled": true },
   "javascript": {
@@ -70,7 +70,7 @@
       "lineWidth": 120,
       "bracketSpacing": true,
       "bracketSameLine": false,
-      "attributePosition": "auto"
+      "attributePosition": "multiline"
     }
   },
   "linter": {

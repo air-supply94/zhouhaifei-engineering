@@ -23,7 +23,12 @@ export const routes: MenuDataItem[] = [
       },
       {
         path: '/',
-        element: <Navigate replace={true} to="/dashboard" />,
+        element: (
+          <Navigate
+            replace={true}
+            to="/dashboard"
+          />
+        ),
       },
       {
         path: '*',

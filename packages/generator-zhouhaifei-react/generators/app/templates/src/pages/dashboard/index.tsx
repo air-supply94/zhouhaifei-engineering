@@ -33,7 +33,10 @@ export default observer(() => {
   }, []);
 
   return (
-    <div className={styles.container} onClick={store.setAge}>
+    <div
+      className={styles.container}
+      onClick={store.setAge}
+    >
       <Card size="small">
         hello
         {store.age}
