@@ -1,6 +1,6 @@
 {
   "name": "@zhouhaifei/bundler-cli",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "type": "module",
   "exports": {
     ".": {
@@ -40,7 +40,11 @@
   "bin": {
     "zhouhaifei-bundler-cli": "bin/zhouhaifei-bundler-cli.js"
   },
-  "files": ["bin", "dist", "openChrome.applescript"],
+  "files": [
+    "bin",
+    "dist",
+    "openChrome.applescript"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch"
