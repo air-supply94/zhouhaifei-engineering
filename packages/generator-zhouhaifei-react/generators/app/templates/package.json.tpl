@@ -34,7 +34,7 @@
     "underscore": "1.13.6"
   },
   "devDependencies": {
-    "@types/mockjs": "1.0.10",
+    "@faker-js/faker": "9.0.3",
     "@types/nprogress": "0.2.2",
     "@types/qs": "6.9.15",
     "@types/react": "^18.2.21",
@@ -43,7 +43,6 @@
     "@zhouhaifei/bundler-cli": "3.4.1",
     "@zhouhaifei/code-style": "3.4.1",
     "cross-env": "7.0.3",
-    "mockjs": "1.1.0",
     "typescript": "5.4.5"
   },
   "engines": {
