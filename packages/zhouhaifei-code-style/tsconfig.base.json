@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": false,
     "jsx": "react-jsx", // 指定 jsx 代码的生成
     "moduleResolution": "Bundler", // 选择模块解析策略
     "module": "ESNext",
