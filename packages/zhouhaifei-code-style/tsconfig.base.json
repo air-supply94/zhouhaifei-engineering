@@ -25,14 +25,12 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true, //在表达式和声明上有隐含的 any类型时报错
-    "strictPropertyInitialization": true,
     "strictFunctionTypes": true,
     "strictBindCallApply": true,
     "forceConsistentCasingInFileNames": true, //禁止对同一个文件的不一致的引用
     "importHelpers": true, //从 tslib 导入辅助工具函数（比如 __extends， __rest等）
     "esModuleInterop": true, //自动增加默认导出项
     "sourceMap": true, //生成相应的 .map文件
-    "suppressImplicitAnyIndexErrors": true, //阻止 --noImplicitAny对缺少索引签名的索引对象报错
     "skipLibCheck": true, //忽略所有的声明文件（ *.d.ts）的类型检查
     "resolveJsonModule": true, //导入 JSON Module
     "alwaysStrict": false //以严格模式解析并为每个源文件生成 "use strict"语句
