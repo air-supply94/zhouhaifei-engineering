@@ -60,7 +60,7 @@ export interface BabelConfigOptions {
   babelPluginDecorators?:
     | false
     | {
-        version?: '2023-05' | '2023-01' | '2022-03' | '2021-12' | '2018-09' | 'legacy';
+        version?: '2023-11' | '2023-05' | '2023-01' | '2022-03' | '2021-12' | '2018-09' | 'legacy';
         decoratorsBeforeExport?: boolean;
       };
 }
@@ -130,7 +130,7 @@ export function getBabelConfig({
       babelPluginDecorators !== false && [
         '@babel/plugin-proposal-decorators',
         {
-          version: '2023-05',
+          version: '2023-11',
           ...babelPluginDecorators,
         } as BabelConfigOptions['babelPluginDecorators'],
       ],

@@ -290,10 +290,9 @@ export interface GetBabelConfigOptions {
   babelPluginDecorators?:
     | false
     | {
-        version?: '2023-05' | '2023-01' | '2022-03' | '2021-12' | '2018-09' | 'legacy';
+        version?: '2023-11' | '2023-05' | '2023-01' | '2022-03' | '2021-12' | '2018-09' | 'legacy';
         decoratorsBeforeExport?: boolean;
       };
-  babelPluginStyledComponents?: Record<string, any>;
 }
 ```
 
@@ -372,12 +371,8 @@ export interface GetBabelConfigOptions {
 - 默认值
 
 ```json
-{ "version": "legacy" }
+{ "version": "2023-11" }
 ```
-
-### [babelPluginStyledComponents](https://www.npmjs.com/package/babel-plugin-styled-components)
-
-- 默认值: undefined(对象开启及设置)
 
 ## style 相关配置
 
