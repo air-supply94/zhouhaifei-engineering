@@ -15,7 +15,6 @@ export function javascriptRule({
     babelPresetTypeScript,
     babelPluginTransformRuntime,
     babelPluginDecorators,
-    babelPluginStyledComponents,
     transpiler,
     reactRefresh,
     babelLoaderOptions,
@@ -58,7 +57,6 @@ export function javascriptRule({
         babelPresetTypeScript,
         babelPluginTransformRuntime,
         babelPluginDecorators,
-        babelPluginStyledComponents,
       });
 
       const extraBabelPlugins: any[] = [reactRefresh && 'react-refresh/babel'].filter(Boolean);

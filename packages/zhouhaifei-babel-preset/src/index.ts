@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import url from 'node:url';
 
-export interface GetBabelConfigOptions {
+export interface BabelConfigOptions {
   babelExtraPreset?: any;
   babelExtraPlugins?: any;
   babelPresetEnv?:
@@ -63,7 +63,6 @@ export interface GetBabelConfigOptions {
         version?: '2023-05' | '2023-01' | '2022-03' | '2021-12' | '2018-09' | 'legacy';
         decoratorsBeforeExport?: boolean;
       };
-  babelPluginStyledComponents?: Record<string, any>;
 }
 
 export function getBabelConfig({
@@ -74,8 +73,7 @@ export function getBabelConfig({
   babelPresetTypeScript,
   babelPluginTransformRuntime,
   babelPluginDecorators,
-  babelPluginStyledComponents,
-}: GetBabelConfigOptions = {}) {
+}: BabelConfigOptions = {}) {
   const packageJsonPath = new URL('../package.json', import.meta.url);
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8').toString());
   const coreJsVersion = packageJson.dependencies['core-js'];
@@ -99,7 +97,7 @@ export function getBabelConfig({
           },
           ignoreBrowserslistConfig: true,
           ...babelPresetEnv,
-        } as GetBabelConfigOptions['babelPresetEnv'],
+        } as BabelConfigOptions['babelPresetEnv'],
       ],
 
       // 转换jsx语法
@@ -109,7 +107,7 @@ export function getBabelConfig({
           runtime: 'automatic',
           development: process.env.NODE_ENV === 'development',
           ...babelPresetReact,
-        } as GetBabelConfigOptions['babelPresetReact'],
+        } as BabelConfigOptions['babelPresetReact'],
       ],
 
       // 转换ts语法
@@ -121,51 +119,21 @@ export function getBabelConfig({
           onlyRemoveTypeImports: false,
           optimizeConstEnums: true,
           ...babelPresetTypeScript,
-        } as GetBabelConfigOptions['babelPresetTypeScript'],
+        } as BabelConfigOptions['babelPresetTypeScript'],
       ],
     ]
       .concat(babelExtraPreset)
       .filter(Boolean),
 
     plugins: [
-      // 支持styled-components
-      babelPluginStyledComponents && ['@babel-plugin-styled-components', babelPluginStyledComponents],
-
       // 支持装饰器语法
       babelPluginDecorators !== false && [
         '@babel/plugin-proposal-decorators',
         {
           version: '2023-05',
           ...babelPluginDecorators,
-        } as GetBabelConfigOptions['babelPluginDecorators'],
+        } as BabelConfigOptions['babelPluginDecorators'],
       ],
-
-      // do-expressions
-      '@babel/plugin-proposal-do-expressions',
-
-      // duplicate-named-capturing-groups-regex
-      '@babel/plugin-proposal-duplicate-named-capturing-groups-regex',
-
-      // 支持 export v from 'mod'语法
-      '@babel/plugin-proposal-export-default-from',
-
-      // function-bind
-      '@babel/plugin-proposal-function-bind',
-
-      // function-sent
-      '@babel/plugin-proposal-function-sent',
-
-      // partial-application
-      '@babel/plugin-proposal-partial-application',
-
-      // pipeline-operator
-      ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }],
-
-      // throw-expressions
-      '@babel/plugin-proposal-throw-expressions',
-
-      // record-and-tuple
-      '@babel/plugin-proposal-record-and-tuple',
 
       // transform-runtime
       babelPluginTransformRuntime !== false && [
@@ -176,7 +144,7 @@ export function getBabelConfig({
           absoluteRuntime: path.dirname(url.fileURLToPath(packageJsonPath)),
           version: runtimeVersion,
           ...babelPluginTransformRuntime,
-        } as GetBabelConfigOptions['babelPluginTransformRuntime'],
+        } as BabelConfigOptions['babelPluginTransformRuntime'],
       ],
     ]
       .concat(babelExtraPlugins)

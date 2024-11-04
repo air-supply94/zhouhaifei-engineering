@@ -1,5 +1,5 @@
-import type { GetBabelConfigOptions } from '@zhouhaifei/babel-preset';
-import type { GetPostcssConfigOptions } from '@zhouhaifei/postcss-preset';
+import type { BabelConfigOptions } from '@zhouhaifei/babel-preset';
+import type { PostcssConfigOptions } from '@zhouhaifei/postcss-preset';
 import type { CssNanoOptions } from 'css-minimizer-webpack-plugin';
 import type { TransformOptions as EsbuildOptions } from 'esbuild';
 import type HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -79,14 +79,14 @@ interface StyleConfig {
   cssLoaderModules?: Record<string, any>;
   cssLoaderOptions?: Record<string, any>;
 
-  postcssPresetEnvOptions?: GetPostcssConfigOptions['postcssPresetEnvOptions'];
-  autoprefixer?: GetPostcssConfigOptions['autoprefixer'];
-  extraPostCSSPlugins?: GetPostcssConfigOptions['extraPostCSSPlugins'];
-  postcssOptions?: GetPostcssConfigOptions['postcssOptions'];
-  enableTailwindcss?: GetPostcssConfigOptions['enableTailwindcss'];
+  postcssPresetEnvOptions?: PostcssConfigOptions['postcssPresetEnvOptions'];
+  autoprefixer?: PostcssConfigOptions['autoprefixer'];
+  extraPostCSSPlugins?: PostcssConfigOptions['extraPostCSSPlugins'];
+  postcssOptions?: PostcssConfigOptions['postcssOptions'];
+  enableTailwindcss?: PostcssConfigOptions['enableTailwindcss'];
 }
 
-export interface UserConfig extends BaseConfig, StyleConfig, GetBabelConfigOptions {
+export interface UserConfig extends BaseConfig, StyleConfig, BabelConfigOptions {
   nocompress?: boolean;
   jsMinifier?: keyof typeof JSMinifier;
   jsMinifierOptions?: EsbuildOptions | any;

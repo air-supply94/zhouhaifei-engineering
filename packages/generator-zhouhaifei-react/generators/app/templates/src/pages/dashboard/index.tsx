@@ -24,7 +24,7 @@ export default observer(() => {
         hello
         {store.age}
       </Card>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <h1 className="text-18 font-500 underline">Hello world!</h1>
     </div>
   );
 });
