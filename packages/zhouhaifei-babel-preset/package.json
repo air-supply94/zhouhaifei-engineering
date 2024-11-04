@@ -1,6 +1,6 @@
 {
   "name": "@zhouhaifei/babel-preset",
-  "version": "3.4.6",
+  "version": "3.4.7",
   "type": "module",
   "exports": {
     ".": {
@@ -17,7 +17,9 @@
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch"
