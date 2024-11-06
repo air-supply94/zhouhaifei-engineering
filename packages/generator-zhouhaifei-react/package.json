@@ -1,9 +1,11 @@
 {
   "name": "generator-zhouhaifei-react",
-  "version": "3.4.7",
+  "version": "3.4.8",
   "type": "module",
   "main": "generators/index.js",
-  "files": ["generators"],
+  "files": [
+    "generators"
+  ],
   "dependencies": {
     "chalk": "5.3.0",
     "yeoman-generator": "7.1.1",
