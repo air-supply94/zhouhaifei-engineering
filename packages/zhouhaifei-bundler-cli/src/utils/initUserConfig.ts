@@ -13,7 +13,7 @@ import { CSSMinifier, CodeSplit, Env, JSMinifier, Transpiler } from '../types';
 export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = {}): UserConfig {
   userConfig.processEnvPrefix ||= /^REACT_APP_/i;
 
-  userConfig.proxy ||= {};
+  userConfig.proxy ||= [];
   userConfig.publicDir ||= DEFAULT_PUBLIC_DIR;
 
   userConfig.open ||= cliOptions.open;
@@ -47,8 +47,8 @@ export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = 
   userConfig.codeSplitting ||= CodeSplit.granularChunks;
 
   userConfig.transpiler ||= Transpiler.esbuild;
-  userConfig.jsMinifier ||= JSMinifier.esbuild;
-  userConfig.cssMinifier ||= CSSMinifier.esbuild;
+  userConfig.jsMinifier ||= JSMinifier.terser;
+  userConfig.cssMinifier ||= CSSMinifier.cssnano;
   userConfig.targets ||= DEFAULT_BROWSER_TARGETS;
   userConfig.assetsInlineLimit ||= 1024 * 8;
   userConfig.cache = {
