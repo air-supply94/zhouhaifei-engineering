@@ -1,6 +1,6 @@
 {
   "name": "@zhouhaifei/bundler-cli",
-  "version": "3.4.8",
+  "version": "3.4.9-alpha.0",
   "type": "module",
   "exports": {
     ".": {
