@@ -8,7 +8,6 @@ const cwd = fs.realpathSync(process.cwd());
 const publishRegistry = 'https://registry.npmjs.org/';
 const buildCmd = 'build';
 const testCmd = 'test';
-const lintCmd = 'lint';
 
 interface PackageJsonInfo {
   name?: string;
