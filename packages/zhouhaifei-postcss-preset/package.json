@@ -1,6 +1,6 @@
 {
   "name": "@zhouhaifei/postcss-preset",
-  "version": "3.4.9-alpha.1",
+  "version": "3.4.9",
   "type": "module",
   "exports": {
     ".": {
