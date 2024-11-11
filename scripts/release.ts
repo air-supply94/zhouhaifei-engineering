@@ -150,13 +150,9 @@ function getNpmTag(version: string) {
 
   await $`cd ${cwd} ; pnpm publish --no-git-checks -r --tag ${tag} --publish-branch ${branch}`;
 
-  // lint packages
-  console.log('lint packages');
-  await $`cd ${cwd}; npm run ${lintCmd}`;
-
   // commit
   console.log('commit');
-  await $`git commit --all --message "chore(*): release ${version}" --no-verify`;
+  await $`git commit --all --message "chore(*): release ${version}"`;
 
   // git tag
   console.log(`git tag is ${version}`);
