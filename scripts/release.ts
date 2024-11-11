@@ -148,11 +148,11 @@ function getNpmTag(version: string) {
     }),
   );
 
-  await $`cd ${cwd} ; pnpm publish --no-git-checks -r --tag ${tag} --publish-branch ${branch}`;
-
   // commit
   console.log('commit');
   await $`git commit --all --message "chore(*): release ${version}"`;
+
+  await $`cd ${cwd} ; pnpm publish --no-git-checks -r --tag ${tag} --publish-branch ${branch}`;
 
   // git tag
   console.log(`git tag is ${version}`);
