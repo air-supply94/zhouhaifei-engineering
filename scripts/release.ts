@@ -8,6 +8,7 @@ const cwd = fs.realpathSync(process.cwd());
 const publishRegistry = 'https://registry.npmjs.org/';
 const buildCmd = 'build';
 const testCmd = 'test';
+const lintCmd = 'lint';
 
 interface PackageJsonInfo {
   name?: string;
@@ -148,6 +149,10 @@ function getNpmTag(version: string) {
   );
 
   await $`cd ${cwd} ; pnpm publish --no-git-checks -r --tag ${tag} --publish-branch ${branch}`;
+
+  // lint packages
+  console.log('lint packages');
+  await $`cd ${cwd}; npm run ${lintCmd}`;
 
   // commit
   console.log('commit');
