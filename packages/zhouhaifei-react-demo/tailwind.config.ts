@@ -18,15 +18,6 @@ for (let i = 10; i <= 200; i += 2) {
   lineHeight[i * 1.5] = `${(i * 1.5) / remUnit}rem`;
 }
 
-const tinySize: Record<string, string> = {
-  '0': `0${unit}`,
-  '1': `1${unit}`,
-  '2': `${2 / remUnit}rem`,
-  '4': `${4 / remUnit}rem`,
-  '6': `${6 / remUnit}rem`,
-  '8': `${8 / remUnit}rem`,
-};
-
 export default {
   content: ['./src/**/*.{html,js,ts,jsx,tsx}'],
   theme: {
@@ -46,9 +37,6 @@ export default {
     },
     spacing: space,
     borderRadius: space,
-    borderWidth: tinySize,
-    divideWidth: tinySize,
-    outlineWidth: tinySize,
     fontWeight: {
       400: '400',
       500: '500',
