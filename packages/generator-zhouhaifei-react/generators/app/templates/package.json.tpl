@@ -8,7 +8,7 @@
     "dev": "zhouhaifei-bundler-cli dev --open",
     "lint:js": "biome check --write --unsafe .",
     "lint:style": "stylelint --allow-empty-input --cache --quiet --fix \"{**/*,*}.{less,css,scss,sass}\"",
-    "prepare": "npx husky@9.0.11",
+    "prepare": "husky",
     "prettier": "prettier --cache --cache-strategy metadata -c --write \"{**/*,*}.{less,css,scss,sass,yaml,md,html,json}\""
   },
   "config": {
