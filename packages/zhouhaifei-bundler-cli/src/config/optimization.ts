@@ -7,7 +7,6 @@ export function optimization({ config, isDevelopment, userConfig: { codeSplittin
   }
 
   const minSize = 1024 * 20;
-  let id = 0;
   config.optimization
     .concatenateModules(true)
     .moduleIds('deterministic')
@@ -22,9 +21,8 @@ export function optimization({ config, isDevelopment, userConfig: { codeSplittin
           vendors: {
             test: /[\\/]node_modules[\\/]/,
             priority: 10,
-            chunks: 'all',
+            chunks: 'async',
             minSize,
-            minChunks: 1,
             name(module) {
               const path = module.context.replace(/.pnpm[\\/]/, '');
               const match = path.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/);
@@ -54,13 +52,10 @@ export function optimization({ config, isDevelopment, userConfig: { codeSplittin
         ];
         config.optimization.splitChunks({
           cacheGroups: {
-            default: false,
-            defaultVendors: false,
             framework: {
               name: 'framework',
               test: new RegExp(`[\\\\/]node_modules[\\\\/](${FRAMEWORK_BUNDLES.join('|')})[\\\\/]`),
               chunks: 'all',
-              minChunks: 1,
               priority: 40,
               enforce: true,
             },
@@ -87,19 +82,11 @@ export function optimization({ config, isDevelopment, userConfig: { codeSplittin
 
                 return `${processedIdentifier || identifier}-lib`;
               },
-              minSize,
               priority: 30,
               reuseExistingChunk: true,
-              chunks: 'all',
+              chunks: 'async',
               minChunks: 1,
-            },
-            shared: {
-              name: () => `shared-${++id}`,
               minSize,
-              priority: 10,
-              reuseExistingChunk: true,
-              chunks: 'all',
-              minChunks: 2,
             },
           },
         });
