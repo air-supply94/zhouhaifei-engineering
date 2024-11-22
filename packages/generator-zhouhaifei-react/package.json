@@ -1,6 +1,6 @@
 {
   "name": "generator-zhouhaifei-react",
-  "version": "3.4.11",
+  "version": "3.5.0",
   "type": "module",
   "main": "generators/index.js",
   "files": ["generators"],
