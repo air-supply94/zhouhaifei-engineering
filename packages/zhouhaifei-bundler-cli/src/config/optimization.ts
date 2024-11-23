@@ -21,7 +21,7 @@ export function optimization({ config, isDevelopment, userConfig: { codeSplittin
           vendors: {
             test: /[\\/]node_modules[\\/]/,
             priority: 10,
-            chunks: 'async',
+            chunks: 'all',
             minSize,
             name(module) {
               const path = module.context.replace(/.pnpm[\\/]/, '');
@@ -52,6 +52,7 @@ export function optimization({ config, isDevelopment, userConfig: { codeSplittin
         ];
         config.optimization.splitChunks({
           cacheGroups: {
+            defaultVendors: false,
             framework: {
               name: 'framework',
               test: new RegExp(`[\\\\/]node_modules[\\\\/](${FRAMEWORK_BUNDLES.join('|')})[\\\\/]`),
@@ -84,7 +85,7 @@ export function optimization({ config, isDevelopment, userConfig: { codeSplittin
               },
               priority: 30,
               reuseExistingChunk: true,
-              chunks: 'async',
+              chunks: 'all',
               minChunks: 1,
               minSize,
             },
