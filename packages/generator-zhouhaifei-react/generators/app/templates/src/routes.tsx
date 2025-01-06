@@ -4,8 +4,6 @@ import type { RouteObject } from 'react-router-dom';
 import { DefaultLayout } from './compnents/defaultLayout';
 import { NoPage } from './compnents/noPage';
 
-const Dashboard = React.lazy(() => import('./pages/dashboard'));
-
 export type MenuDataItem = {
   name?: string;
   children?: MenuDataItem[];
@@ -13,14 +11,9 @@ export type MenuDataItem = {
 
 export const routes: MenuDataItem[] = [
   {
-    name: '',
-    element: <DefaultLayout />,
+    path: '/',
+    Component: DefaultLayout,
     children: [
-      {
-        name: '仪表盘',
-        path: '/dashboard',
-        element: <Dashboard />,
-      },
       {
         path: '/',
         element: (
@@ -31,10 +24,15 @@ export const routes: MenuDataItem[] = [
         ),
       },
       {
-        path: '*',
-        element: <NoPage />,
+        name: '仪表盘',
+        path: 'dashboard',
+        Component: React.lazy(() => import('./pages/dashboard')),
       },
     ],
+  },
+  {
+    path: '*',
+    Component: NoPage,
   },
 ];
 

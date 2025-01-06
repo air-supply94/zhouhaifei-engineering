@@ -22,18 +22,21 @@ export default {
   content: ['./src/**/*.{html,js,ts,jsx,tsx}'],
   theme: {
     colors: {
-      bg: '#f2f2f4',
-      divide: '#EDEDED',
-      primary: '#3B86F6',
+      success: 'var(--ant-color-success)',
+      error: 'var(--ant-color-error)',
+      warning: 'var(--ant-color-warning)',
+      bg: 'var(--ant-color-bg-layout)',
+      divide: 'var(--ant-color-border)',
+      primary: 'var(--ant-color-primary)',
       // text-标题色
-      heading: '#131D34',
+      heading: 'var(--ant-color-text-base)',
       // text-正常色
       normal: '#6E6E71',
       // text-二级色
       secondary: '#848B9E',
       white: '#fff',
       transparent: 'transparent',
-      mask: 'rgba(0, 0, 0, 0.8)',
+      black: '#000',
     },
     spacing: space,
     borderRadius: space,
@@ -48,5 +51,5 @@ export default {
     fontSize,
     lineHeight,
   },
-  plugins: [],
+  corePlugins: { preflight: true },
 } as Config;
