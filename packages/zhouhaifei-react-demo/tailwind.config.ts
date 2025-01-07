@@ -12,7 +12,10 @@ for (let i = 2; i <= end; i += 2) {
 }
 
 const fontSize: Record<string, string> = {};
-const lineHeight: Record<string, string> = {};
+const lineHeight: Record<string, string> = {
+  '0': `0${unit}`,
+  '1': '1',
+};
 for (let i = 10; i <= 200; i += 2) {
   fontSize[i] = `${i / remUnit}rem`;
   lineHeight[i * 1.5] = `${(i * 1.5) / remUnit}rem`;
