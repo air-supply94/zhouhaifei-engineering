@@ -1,3 +1,6 @@
 {
-  "extends": ["./packages/zhouhaifei-code-style/biomeConfig.json"]
+  "extends": ["./packages/zhouhaifei-code-style/biomeConfig.json"],
+  "javascript": {
+    "globals": ["$"]
+  }
 }

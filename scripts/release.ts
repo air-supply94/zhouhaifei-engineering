@@ -59,7 +59,6 @@ async function getPublishPackagesInfo(): Promise<PublishPackagesInfo[]> {
     const packagePath = path.resolve(packagesPath, files[i]);
     const packageJsonPath = path.resolve(packagePath, 'package.json');
     if (fs.existsSync(packageJsonPath)) {
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
       const content: PackageJsonInfo = require(packageJsonPath);
       if (content.private !== true) {
         result.push({
@@ -135,6 +134,7 @@ function getNpmTag(version: string) {
   // bump version
   console.log('bump version');
 
+  // biome-ignore lint/correctness/noUndeclaredVariables: <explanation>
   const version = (await question(`Input release version (current: ${checkedPackage.version}): `)).trim();
   const tag = getNpmTag(version);
 

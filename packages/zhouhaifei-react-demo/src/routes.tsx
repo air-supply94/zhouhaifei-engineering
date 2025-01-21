@@ -5,7 +5,7 @@ import { DefaultLayout } from './compnents/defaultLayout';
 import { NoPage } from './compnents/noPage';
 
 export type MenuDataItem = {
-  name?: string;
+  title?: string;
   children?: MenuDataItem[];
 } & RouteObject;
 
@@ -24,7 +24,7 @@ export const routes: MenuDataItem[] = [
         ),
       },
       {
-        name: '仪表盘',
+        title: '仪表盘',
         path: 'dashboard',
         Component: React.lazy(() => import('./pages/dashboard')),
       },

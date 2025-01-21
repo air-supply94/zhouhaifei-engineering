@@ -31,7 +31,7 @@ cli
   .option('--host [host]', 'your host')
   .option('--open [open]', 'open browser')
   .option('--vite [vite]', 'vite strat your application')
-  .action(async (root, options: cliOptions) => {
+  .action(async (_root, options: cliOptions) => {
     process.env.NODE_ENV = Env.development;
 
     const userEnv = loadEnv(cwd, '.env') || {};
@@ -55,7 +55,7 @@ cli
 cli
   .command('build [root]', 'build for production')
   .option('--watch [watch]', 'watch file')
-  .action(async (root, options: cliOptions) => {
+  .action(async (_root, options: cliOptions) => {
     process.env.NODE_ENV = Env.production;
 
     const userEnv = loadEnv(cwd, '.env');

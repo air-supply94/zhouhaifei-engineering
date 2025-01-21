@@ -68,7 +68,7 @@ async function startBrowserProcess(browser: string | undefined, browserArgs: str
         });
         return true;
       }
-    } catch (err) {
+    } catch (_err) {
       // Ignore errors
     }
   }
@@ -88,7 +88,7 @@ async function startBrowserProcess(browser: string | undefined, browserArgs: str
       : {};
     open(openUrl, options).catch(() => {});
     return true;
-  } catch (err) {
+  } catch (_err) {
     return false;
   }
 }

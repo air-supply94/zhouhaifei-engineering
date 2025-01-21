@@ -85,10 +85,16 @@
         "useValidAnchor": "off"
       },
       "complexity": {
+        "noUselessUndefinedInitialization": "error",
+        "noVoid": "error",
         "noForEach": "off",
         "noStaticOnlyClass": "off"
       },
       "correctness": {
+        "noUndeclaredVariables": "error",
+        "noUnusedImports": "error",
+        "noUnusedPrivateClassMembers": "error",
+        "noUnusedVariables": "error",
         "noVoidTypeReturn": "off",
         "useExhaustiveDependencies": "error",
         "useHookAtTopLevel": "error"

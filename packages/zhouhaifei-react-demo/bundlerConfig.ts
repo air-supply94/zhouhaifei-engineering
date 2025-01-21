@@ -1,3 +1,5 @@
+import { resolve } from 'node:path';
+import process from 'node:process';
 import type { UserConfig } from '@zhouhaifei/bundler-cli';
 
 const target = 'http://localhost:8000';
@@ -6,6 +8,7 @@ const proxy = [{ target, changeOrigin: true, secure: false, context }];
 
 const config: UserConfig = {
   enableTailwindcss: true,
+  alias: { src: resolve(process.cwd(), './src') },
   proxy,
   /*  externals: {
     underscore: '_',

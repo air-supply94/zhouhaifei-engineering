@@ -28,9 +28,6 @@ export const Locale: React.FC<React.PropsWithChildren> = function Locale(props) 
           colorBorder: colors.divide,
         },
       }}
-      getPopupContainer={() =>
-        process.env.NODE_ENV === 'development' ? document.querySelector('#root') : document.body
-      }
       locale={zhCN}
     >
       {props.children}
