@@ -1,0 +1,15 @@
+.tabContainer {
+  :global {
+    .ant-tabs-nav {
+      margin-bottom: 0 !important;
+
+      &::before {
+        border-bottom: 0 !important;
+      }
+    }
+
+    .ant-tabs-tab-active {
+      @apply !border-divide;
+    }
+  }
+}

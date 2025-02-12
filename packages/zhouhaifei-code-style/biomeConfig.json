@@ -91,7 +91,7 @@
         "noStaticOnlyClass": "off"
       },
       "correctness": {
-        "noUndeclaredVariables": "error",
+        "noUndeclaredVariables": "off",
         "noUnusedImports": "error",
         "noUnusedPrivateClassMembers": "error",
         "noUnusedVariables": "error",

@@ -134,7 +134,6 @@ function getNpmTag(version: string) {
   // bump version
   console.log('bump version');
 
-  // biome-ignore lint/correctness/noUndeclaredVariables: <explanation>
   const version = (await question(`Input release version (current: ${checkedPackage.version}): `)).trim();
   const tag = getNpmTag(version);
 

@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "antd": "5.19.3",
-    "axios": "1.7.2",
+    "axios": "1.7.9",
     "dayjs": "1.11.11",
     "mobx": "6.13.1",
     "mobx-react": "9.1.1",
@@ -42,6 +42,7 @@
     "@types/underscore": "1.11.15",
     "@zhouhaifei/bundler-cli": "3.5.1",
     "@zhouhaifei/code-style": "3.5.1",
+    "axios-mock-adapter": "2.1.0",
     "cross-env": "7.0.3",
     "typescript": "5.4.5"
   },

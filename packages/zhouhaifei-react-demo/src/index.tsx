@@ -1,12 +1,16 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, useRoutes } from 'react-router-dom';
 import './global.less';
 import NProgress from 'nprogress';
+import { routes } from 'src/routes';
 import { Locale } from './compnents/locale';
-import { RenderRoutes } from './routes';
 
 render();
+
+function RenderRoutes() {
+  return useRoutes(routes);
+}
 
 function render() {
   NProgress.start();
