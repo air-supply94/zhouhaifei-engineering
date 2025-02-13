@@ -17,6 +17,7 @@ export default class extends Generator {
     const tplList = [
       'biome.json',
       '.editorconfig',
+      '.env',
       '.env.development',
       '.env.production',
       '.gitignore',

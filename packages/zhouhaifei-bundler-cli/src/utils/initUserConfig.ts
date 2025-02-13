@@ -40,6 +40,7 @@ export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = 
   userConfig.externals ||= {};
   userConfig.alias = {
     '@': path.resolve(cwd, 'src'),
+    src: path.resolve(cwd, 'src'),
     ...userConfig.alias,
   };
 

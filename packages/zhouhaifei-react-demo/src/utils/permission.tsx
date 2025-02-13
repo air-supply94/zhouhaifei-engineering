@@ -1,5 +1,5 @@
 import { Empty } from 'antd';
-import { observable, set } from 'mobx';
+import { observable } from 'mobx';
 import { observer } from 'mobx-react';
 import type React from 'react';
 
@@ -18,18 +18,19 @@ export interface PermissionProps {
 
 export function hasPermission(permissionId: PermissionProps['permissionId']): boolean {
   if (typeof permissionId === 'string') {
-    return permissionList.includes(permissionId);
+    return permissionList.data.includes(permissionId);
   } else if (Array.isArray(permissionId)) {
-    return Boolean(permissionId.some((item) => permissionList.includes(item)));
+    return Boolean(permissionId.some((item) => permissionList.data.includes(item)));
   } else {
     return true;
   }
 }
 
-const permissionList: string[] = observable([]);
+const permissionList: { data: string[] } = observable({ data: [] });
 export const setPermissionList = (data: string[]) => {
-  set(permissionList, data);
+  permissionList.data = data;
 };
+
 export const Permission = observer(({ permissionId, children, renderNoPermission }: PermissionProps) => {
   if (hasPermission(permissionId)) {
     return children;
