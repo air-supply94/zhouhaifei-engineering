@@ -40,8 +40,8 @@
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@types/underscore": "1.11.15",
-    "@zhouhaifei/bundler-cli": "3.5.2-alpha.0",
-    "@zhouhaifei/code-style": "3.5.2-alpha.0",
+    "@zhouhaifei/bundler-cli": "3.5.2",
+    "@zhouhaifei/code-style": "3.5.2",
     "axios-mock-adapter": "2.1.0",
     "cross-env": "7.0.3",
     "typescript": "5.4.5"
