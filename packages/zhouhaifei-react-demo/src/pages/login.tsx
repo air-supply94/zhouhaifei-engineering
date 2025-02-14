@@ -2,7 +2,7 @@ import { Button, Form, Input } from 'antd';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ASSETS } from 'src/assets';
-import { SYSTEM_CONFIG, type UserInfo, layoutStore, request, setPermissionList, userStore } from 'src/utils';
+import { SYSTEM_CONFIG, type UserInfo, request } from 'src/utils';
 
 export default function () {
   const [loading, setLoading] = React.useState(false);
@@ -21,9 +21,6 @@ export default function () {
         data: loginData,
       });
       localStorage.setItem(SYSTEM_CONFIG.storageTokenKey, info.data?.accessToken);
-      userStore.setUserInfo(info.data || {});
-      setPermissionList(info.data?.permissions || []);
-      layoutStore.setMenuData(userStore.getMenuData());
       navigate('/');
     } finally {
       setLoading(false);

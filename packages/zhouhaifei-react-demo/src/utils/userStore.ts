@@ -2,8 +2,7 @@ import { action, observable } from 'mobx';
 import type { MenuItem } from '../compnents/layout';
 import { type RouteItem, menuRoutes } from '../routes';
 import { SYSTEM_CONFIG } from './constants';
-import { layoutStore } from './layoutStore';
-import { hasPermission, setPermissionList } from './permission';
+import { hasPermission } from './permission';
 import { request } from './request';
 
 export interface UserInfo {
@@ -15,17 +14,11 @@ export interface UserInfo {
 }
 
 export class UserStore {
-  constructor() {
-    Promise.all([this.getUserInfo()]).then(() => {
-      setPermissionList(this.userInfo.permissions || []);
-      layoutStore.setMenuData(this.getMenuData());
-    });
-  }
   @observable public accessor userInfo: UserInfo = {};
   @action public setUserInfo = (userInfo: UserInfo) => {
     this.userInfo = userInfo;
   };
-  private getUserInfo = async () => {
+  public getUserInfo = async () => {
     const info = await request<BaseData<UserInfo>>({ url: '/api/userInfo' });
     this.userInfo = info.data || {};
   };

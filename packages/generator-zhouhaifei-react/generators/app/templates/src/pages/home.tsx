@@ -2,7 +2,12 @@ import { Button, Popconfirm, Popover } from 'antd';
 import { observer } from 'mobx-react';
 import { ASSETS } from 'src/assets';
 import { Layout } from 'src/compnents/layout';
-import { layoutStore, userStore } from 'src/utils';
+import { layoutStore, setPermissionList, userStore } from 'src/utils';
+
+userStore.getUserInfo().then(() => {
+  setPermissionList(userStore.userInfo?.permissions || []);
+  layoutStore.setMenuData(userStore.getMenuData());
+});
 
 export default observer(() => {
   return (
