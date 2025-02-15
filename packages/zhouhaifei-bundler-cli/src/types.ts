@@ -74,7 +74,6 @@ interface StyleConfig {
   autoCSSModules?: boolean;
   lessOptions?: Record<string, any>;
   sassOptions?: Record<string, any>;
-  stylusOptions?: Record<string, any>;
   styleLoaderOptions?: false | Record<string, any>;
   cssLoaderModules?: Record<string, any>;
   cssLoaderOptions?: Record<string, any>;

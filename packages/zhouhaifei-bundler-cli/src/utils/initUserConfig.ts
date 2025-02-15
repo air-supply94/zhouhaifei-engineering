@@ -63,7 +63,6 @@ export function initUserConfig(userConfig: UserConfig, cliOptions: cliOptions = 
     ...userConfig.lessOptions,
   };
   userConfig.sassOptions ||= {};
-  userConfig.stylusOptions ||= {};
   userConfig.autoprefixer ||= {};
   userConfig.postcssPresetEnvOptions ||= {};
 

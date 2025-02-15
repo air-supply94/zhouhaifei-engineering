@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 
 export const { version } = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8').toString());
-export const STYLE_EXTENSIONS = ['css', 'less', 'sass', 'scss', 'styl', 'stylus'];
+export const STYLE_EXTENSIONS = ['css', 'less', 'sass', 'scss'];
 export const LOCAL_IDENT_NAME = '[name]__[local]--[hash:base64:8]';
 export const DEFAULT_DEV_DEVTOOL = 'cheap-module-source-map';
 export const DEFAULT_BUILD_DEVTOOL = 'source-map';

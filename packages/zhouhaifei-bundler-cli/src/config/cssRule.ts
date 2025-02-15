@@ -16,7 +16,6 @@ export function cssRule({
     cssLoaderModules,
     cssLoaderOptions,
     sassOptions,
-    stylusOptions,
     targets,
     postcssPresetEnvOptions,
     autoprefixer,
@@ -41,12 +40,6 @@ export function cssRule({
       test: /\.(sass|scss)(\?.*)?$/,
       loader: 'sass-loader',
       loaderOptions: { sassOptions },
-    },
-    {
-      name: 'stylus',
-      test: /\.(styl|stylus)(\?.*)?$/,
-      loader: 'stylus-loader',
-      loaderOptions: { stylusOptions },
     },
   ];
 

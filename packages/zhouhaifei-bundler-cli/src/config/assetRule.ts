@@ -21,7 +21,7 @@ export function assetRule({ config, userConfig: { assetsInlineLimit } }: ApplyOp
     .oneOf('fallback')
     .exclude.add(/^$/) /* handle data: resources */
     .add(/\.(js|mjs|cjs|jsx|ts|tsx)$/)
-    .add(/\.(css|less|sass|scss|styl|stylus)$/)
+    .add(/\.(css|less|sass|scss)$/)
     .add(/\.html$/)
     .add(/\.mdx?$/)
     .add(/\.json$/)
