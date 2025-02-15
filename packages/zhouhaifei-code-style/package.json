@@ -1,6 +1,6 @@
 {
   "name": "@zhouhaifei/code-style",
-  "version": "3.5.2",
+  "version": "3.6.0",
   "main": "dist/index.js",
   "files": ["dist", "stylelint.js", "tsconfig.base.json", "biomeConfig.json"],
   "scripts": {
