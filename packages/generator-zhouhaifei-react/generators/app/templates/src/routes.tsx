@@ -12,7 +12,8 @@ function TestPage() {
   );
 }
 
-export type RouteItem = { children?: RouteItem[] } & RouteObject & RouterMeta;
+export type RouteItem = { children?: RouteItem[]; index?: boolean } & Omit<RouteObject, 'index' | 'children'> &
+  RouterMeta;
 
 export const menuRoutes: RouteItem[] = [
   {
@@ -59,10 +60,12 @@ export const routes: RouteItem[] = [
     title: '',
     path: SYSTEM_CONFIG.routerPrefix,
     children: (function dfs(data: RouteItem[]): RouteItem[] {
-      return data.filter((item) => ({
-        ...item,
-        children: dfs(item.children || []),
-      }));
+      return data
+        .filter((item) => !item.redirect)
+        .map((item) => ({
+          ...item,
+          children: dfs(item.children || []),
+        }));
     })(menuRoutes),
   },
   {
