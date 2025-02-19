@@ -1,9 +1,10 @@
 import dayjs from 'dayjs';
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import type { RouteObject } from 'react-router-dom';
+import type { IndexRouteObject } from 'react-router-dom';
 import { NoPage } from './compnents/noPage';
 import { SYSTEM_CONFIG } from './utils';
+
 function TestPage() {
   return (
     <div className={'flex flex-1 justify-center items-center text-32 font-500 text-error'}>
@@ -12,8 +13,7 @@ function TestPage() {
   );
 }
 
-export type RouteItem = { children?: RouteItem[]; index?: boolean } & Omit<RouteObject, 'index' | 'children'> &
-  RouterMeta;
+export type RouteItem = { children?: RouteItem[] } & Omit<IndexRouteObject, 'index' | 'children'> & RouterMeta;
 
 export const menuRoutes: RouteItem[] = [
   {
