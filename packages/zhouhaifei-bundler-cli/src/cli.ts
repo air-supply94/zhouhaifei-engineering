@@ -1,19 +1,13 @@
 import path from 'node:path';
 import cac from 'cac';
 import { build } from './build';
-import { DEFAULT_CONFIG_NAME, DEFAULT_SRC_DIR, cwd, version } from './constants';
+import { DEFAULT_SRC_DIR, USER_CONFIG_FILE, cwd, version } from './constants';
 import { dev } from './dev';
 import type { UserConfig, cliOptions } from './types';
 import { Env } from './types';
-import { initUserConfig, loadEnv, loadFile, resolveFile, resolveModule, tryFiles } from './utils';
+import { initUserConfig, loadEnv, loadFile, resolveFile, resolveModule } from './utils';
 
 const cli = cac('zhouhaifei-bundler-cli');
-
-const userConfigFile = tryFiles(
-  [`${DEFAULT_CONFIG_NAME}.ts`, `${DEFAULT_CONFIG_NAME}.js`, `${DEFAULT_CONFIG_NAME}.mjs`].map((item) =>
-    path.resolve(cwd, item),
-  ),
-);
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
@@ -36,7 +30,7 @@ cli
 
     const userEnv = loadEnv(cwd, '.env') || {};
     const userConfig: UserConfig =
-      (await loadFile(options?.config ? path.resolve(cwd, options.config) : userConfigFile)) || {};
+      (await loadFile(options?.config ? path.resolve(cwd, options.config) : USER_CONFIG_FILE)) || {};
     initUserConfig(userConfig, {
       open: options.open,
       port: options?.port,
@@ -60,7 +54,7 @@ cli
 
     const userEnv = loadEnv(cwd, '.env');
     const userConfig: UserConfig =
-      (await loadFile(options?.config ? path.resolve(cwd, options.config) : userConfigFile)) || {};
+      (await loadFile(options?.config ? path.resolve(cwd, options.config) : USER_CONFIG_FILE)) || {};
     initUserConfig(userConfig, { watch: options?.watch });
 
     await build({

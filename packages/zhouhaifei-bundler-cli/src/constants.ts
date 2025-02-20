@@ -1,4 +1,6 @@
 import fs from 'node:fs';
+import path from 'node:path';
+import { tryFiles } from './utils';
 
 export const { version } = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8').toString());
 export const STYLE_EXTENSIONS = ['css', 'less', 'sass', 'scss'];
@@ -19,3 +21,9 @@ export const DEFAULT_ESBUILD_TARGET_KEYS = Object.keys(DEFAULT_BROWSER_TARGETS);
 
 export const DEFAULT_CONFIG_NAME = 'bundlerConfig';
 export const cwd = fs.realpathSync(process.cwd());
+
+export const USER_CONFIG_FILE = tryFiles(
+  [`${DEFAULT_CONFIG_NAME}.ts`, `${DEFAULT_CONFIG_NAME}.js`, `${DEFAULT_CONFIG_NAME}.mjs`].map((item) =>
+    path.resolve(cwd, item),
+  ),
+);

@@ -55,16 +55,16 @@ export function cssRule({
           .exclude.add(/node_modules/)
           .add(STYLE_EXTENSIONS.map((val) => path.resolve(srcDir, `global.${val}`)))
           .end(),
-        isAutoCSSModuleRule: true,
+        auto: undefined,
       },
       {
         rule: rule.oneOf(name),
-        isAutoCSSModuleRule: false,
+        auto: true,
       },
     ].filter(Boolean);
 
     moduleAndNormal.forEach((val) => {
-      const { rule, isAutoCSSModuleRule } = val;
+      const { rule, auto } = val;
 
       // style-loader、mini-css-extract-plugin
       if (isDevelopment && styleLoaderOptions !== false) {
@@ -84,25 +84,20 @@ export function cssRule({
       }
 
       // css-loader
-      const cssLoaderModulesConfig = isAutoCSSModuleRule
-        ? {
-            localIdentName: LOCAL_IDENT_NAME,
-            ...cssLoaderModules,
-          }
-        : {
-            localIdentName: LOCAL_IDENT_NAME,
-            auto: true,
-            ...cssLoaderModules,
-          };
+      const cssLoaderModulesConfig = {
+        namedExport: false,
+        exportLocalsConvention: 'as-is',
+        localIdentName: LOCAL_IDENT_NAME,
+        exportGlobals: true,
+        auto,
+        ...cssLoaderModules,
+      };
 
       rule
         .use('css-loader')
         .loader('css-loader')
         .options({
-          import: true,
-          esModule: true,
           importLoaders: 1,
-          url: true,
           modules: cssLoaderModulesConfig,
           ...cssLoaderOptions,
         });

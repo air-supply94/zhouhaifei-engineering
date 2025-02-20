@@ -21,31 +21,32 @@
     "@types/react-dom": "^18.2.7"
   },
   "dependencies": {
-    "antd": "5.19.3",
+    "antd": "5.24.1",
     "axios": "1.7.9",
-    "dayjs": "1.11.11",
-    "mobx": "6.13.1",
-    "mobx-react": "9.1.1",
+    "dayjs": "1.11.13",
+    "mobx": "6.13.6",
+    "mobx-react": "9.2.0",
     "nprogress": "0.2.0",
-    "qs": "6.12.3",
+    "qs": "6.14.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-router-dom": "6.25.1",
-    "underscore": "1.13.6"
+    "react-router-dom": "6.29.0",
+    "underscore": "1.13.7"
   },
   "devDependencies": {
-    "@faker-js/faker": "9.0.3",
-    "@types/nprogress": "0.2.2",
-    "@types/qs": "6.9.15",
+    "@faker-js/faker": "9.5.0",
+    "@types/nprogress": "0.2.3",
+    "@types/qs": "6.9.18",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "@types/underscore": "1.11.15",
+    "@types/underscore": "1.13.0",
     "@zhouhaifei/bundler-cli": "3.6.0",
     "@zhouhaifei/code-style": "3.6.0",
     "axios-mock-adapter": "2.1.0",
     "cross-env": "7.0.3",
-    "typescript": "5.4.5"
+    "typescript": "5.7.3"
   },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
   "engines": {
     "node": ">=20.0.0"
   }

@@ -23,13 +23,13 @@
     "dev": "tsup --watch"
   },
   "dependencies": {
-    "postcss": "8.4.47",
+    "postcss": "8.5.3",
     "postcss-flexbugs-fixes": "5.0.2",
-    "postcss-preset-env": "10.0.9",
-    "tailwindcss": "3.4.14"
+    "postcss-preset-env": "10.1.4",
+    "tailwindcss": "3.4.17"
   },
   "devDependencies": {
-    "tsup": "8.1.0"
+    "tsup": "8.3.6"
   },
   "publishConfig": {
     "access": "public",

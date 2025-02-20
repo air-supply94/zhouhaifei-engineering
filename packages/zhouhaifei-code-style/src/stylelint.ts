@@ -32,5 +32,7 @@ export const stylelint = {
     'function-url-quotes': null,
     'declaration-block-no-redundant-longhand-properties': null,
     'no-descending-specificity': null,
+    'at-rule-no-unknown': null,
+    'at-rule-no-deprecated': null,
   },
 };
