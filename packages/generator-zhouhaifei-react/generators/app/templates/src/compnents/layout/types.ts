@@ -1,8 +1,10 @@
+import type React from 'react';
+
 type _MenuAndTabItem = {
   id: string;
   path?: string;
   title?: string;
-  icon?: string;
+  icon?: React.ReactNode;
 };
 
 export interface MenuItem extends _MenuAndTabItem {

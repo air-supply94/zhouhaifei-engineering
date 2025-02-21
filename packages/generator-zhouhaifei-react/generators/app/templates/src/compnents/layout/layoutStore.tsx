@@ -124,9 +124,7 @@ export class LayoutStore {
       id: tabId,
       opened: true,
     };
-    if (oldTab == null) {
-      this.tabList.push(newTabItem);
-    } else {
+    if (oldTab) {
       oldTab.path = newTabItem.path;
       oldTab.title = newTabItem.title;
       oldTab.icon = newTabItem.icon;
@@ -136,6 +134,8 @@ export class LayoutStore {
           item.contentWindow.location.href = newTabItem.path;
         }
       });
+    } else {
+      this.tabList.push(newTabItem);
     }
 
     this.setActiveTabId(tabId);
