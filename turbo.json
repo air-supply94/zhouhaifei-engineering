@@ -13,6 +13,5 @@
       "dependsOn": ["build"],
       "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts", "__tests__/**/*.ts"]
     }
-  },
-  "globalDependencies": ["tsconfig.json"]
+  }
 }
