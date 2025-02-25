@@ -105,7 +105,7 @@ function getNpmTag(version: string) {
 
   // check git remote update
   console.log('check git remote update');
-  await $`git fetch`;
+  await $`git fetch origin ${branch}`;
   const gitStatus = (await $`git status --short --branch`).stdout.trim();
   assert(!gitStatus.includes('behind'), 'git status is behind remote');
 

@@ -29,35 +29,20 @@ async function isEsmConfig(baseDir: string, configFileName: string): Promise<boo
 }
 
 async function loadConfigFromBundledFile(fileName: string, bundledCode: string, isESM: boolean): Promise<unknown> {
-  if (isESM) {
-    const fileBase = `${fileName}.timestamp-${Date.now()}-${Math.random().toString(16).slice(2)}`;
-    const fileNameTmp = `${fileBase}.mjs`;
-    const fileUrl = `${url.pathToFileURL(fileBase)}.mjs`;
-    await fs.writeFileSync(fileNameTmp, bundledCode);
-    try {
+  const fileBase = `${fileName}.timestamp-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  const fileNameTmp = `${fileBase}.${isESM ? 'mjs' : 'cjs'}`;
+  await fs.promises.writeFile(fileNameTmp, bundledCode);
+
+  try {
+    if (isESM) {
+      const fileUrl = `${url.pathToFileURL(fileBase)}.mjs`;
       return (await import(fileUrl)).default;
-    } finally {
-      fs.unlink(fileNameTmp, () => {});
+    } else {
+      const raw = _require(fileNameTmp);
+      return raw.__esModule ? raw.default : raw;
     }
-  } else {
-    const extension = path.extname(fileName);
-
-    const realFileName = await fs.promises.realpath(fileName);
-    const loaderExt = extension in _require.extensions ? extension : '.js';
-    const defaultLoader = _require.extensions[loaderExt]!;
-    _require.extensions[loaderExt] = (module: NodeModule, filename: string) => {
-      if (filename === realFileName) {
-        (module as any)._compile(bundledCode, filename);
-      } else {
-        defaultLoader(module, filename);
-      }
-    };
-
-    // clear cache
-    delete _require.cache[_require.resolve(fileName)];
-    const raw = _require(fileName);
-    _require.extensions[loaderExt] = defaultLoader;
-    return raw.__esModule ? raw.default : raw;
+  } finally {
+    await fs.promises.unlink(fileNameTmp);
   }
 }
 

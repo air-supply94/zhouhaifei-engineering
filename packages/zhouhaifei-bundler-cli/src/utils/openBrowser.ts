@@ -78,7 +78,7 @@ async function startBrowserProcess(browser: string | undefined, browserArgs: str
   }
 
   try {
-    const options: open.Options = browser
+    const options = browser
       ? {
           app: {
             name: browser,
