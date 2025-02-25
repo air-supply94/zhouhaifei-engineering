@@ -10,7 +10,7 @@ const proxy = [
 ];
 
 const config: UserConfig = {
-  enableTailwindcss: true,
+  extraPostCSSPlugins: { '@tailwindcss/postcss': {} },
   proxy,
   /*  externals: {
     underscore: '_',

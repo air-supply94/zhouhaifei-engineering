@@ -1,15 +1,11 @@
-import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
-import postcssPresetEnv from 'postcss-preset-env';
 import type { pluginOptions } from 'postcss-preset-env';
-import tailwindcss from 'tailwindcss';
 
 export interface PostcssConfigOptions {
-  enableTailwindcss?: boolean;
   browsers?: string[];
   postcssOptions?: { plugins: never } & Record<string, any>;
   postcssPresetEnvOptions?: { autoprefixer?: never } & pluginOptions;
   autoprefixer?: pluginOptions['autoprefixer'];
-  extraPostCSSPlugins?: any[];
+  extraPostCSSPlugins?: Record<string, Record<string, any>>;
 }
 
 export function getPostcssConfig({
@@ -18,13 +14,12 @@ export function getPostcssConfig({
   autoprefixer,
   extraPostCSSPlugins,
   postcssOptions,
-  enableTailwindcss,
 }: PostcssConfigOptions = {}) {
   return {
     ident: 'postcss',
-    plugins: [
-      postcssFlexbugsFixes,
-      postcssPresetEnv({
+    plugins: {
+      'postcss-flexbugs-fixes': {},
+      'postcss-preset-env': {
         browsers,
         autoprefixer: {
           remove: false,
@@ -33,11 +28,10 @@ export function getPostcssConfig({
         },
         stage: 3,
         ...postcssPresetEnvOptions,
-      } as pluginOptions),
-      enableTailwindcss && tailwindcss(),
-    ]
-      .filter(Boolean)
-      .concat(extraPostCSSPlugins || []),
+      } as pluginOptions,
+      ...extraPostCSSPlugins,
+    },
+
     ...postcssOptions,
   };
 }

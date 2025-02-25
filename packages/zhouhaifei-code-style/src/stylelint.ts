@@ -34,5 +34,6 @@ export const stylelint = {
     'no-descending-specificity': null,
     'at-rule-no-unknown': null,
     'at-rule-no-deprecated': null,
+    'import-notation': null,
   },
 };

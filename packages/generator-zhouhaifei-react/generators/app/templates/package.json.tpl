@@ -34,6 +34,8 @@
     "underscore": "1.13.7"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "4.0.8",
+    "tailwindcss": "4.0.8",
     "@faker-js/faker": "9.5.0",
     "@types/nprogress": "0.2.3",
     "@types/qs": "6.9.18",

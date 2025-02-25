@@ -70,19 +70,13 @@ interface BaseConfig {
   processEnvPrefix?: RegExp;
 }
 
-interface StyleConfig {
+interface StyleConfig extends PostcssConfigOptions {
   autoCSSModules?: boolean;
   lessOptions?: Record<string, any>;
   sassOptions?: Record<string, any>;
   styleLoaderOptions?: false | Record<string, any>;
   cssLoaderModules?: Record<string, any>;
   cssLoaderOptions?: Record<string, any>;
-
-  postcssPresetEnvOptions?: PostcssConfigOptions['postcssPresetEnvOptions'];
-  autoprefixer?: PostcssConfigOptions['autoprefixer'];
-  extraPostCSSPlugins?: PostcssConfigOptions['extraPostCSSPlugins'];
-  postcssOptions?: PostcssConfigOptions['postcssOptions'];
-  enableTailwindcss?: PostcssConfigOptions['enableTailwindcss'];
 }
 
 export interface UserConfig extends BaseConfig, StyleConfig, BabelConfigOptions {

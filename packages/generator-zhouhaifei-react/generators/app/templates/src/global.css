@@ -1,12 +1,7 @@
 @import url("nprogress/nprogress.css");
-@layer tailwind-base, antd;
-
-@layer tailwind-base {
-  @tailwind base;
-}
-
-@tailwind components;
-@tailwind utilities;
+@layer theme, base, antd, components, utilities;
+@import "tailwindcss";
+@config "../tailwind.config.ts";
 
 html,
 body,
