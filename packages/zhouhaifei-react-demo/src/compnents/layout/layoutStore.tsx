@@ -1,5 +1,5 @@
 import { action, computed, observable } from 'mobx';
-import styles from './layout.less';
+import styles from 'src/compnents/layout/layout.css';
 import type { CacheData, MenuItem, TabItem } from './types';
 
 function findMenuPath(data: MenuItem[], itemId: string, path: MenuItem[] = []): MenuItem[] {

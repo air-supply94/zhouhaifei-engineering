@@ -1,8 +1,13 @@
 import type { UserConfig } from '@zhouhaifei/bundler-cli';
 
-const target = 'http://localhost:8000';
-const context = ['/api'];
-const proxy = [{ target, changeOrigin: true, secure: false, context }];
+const proxy = [
+  {
+    target: 'http://localhost:8000',
+    changeOrigin: true,
+    secure: false,
+    context: ['/api'],
+  },
+];
 
 const config: UserConfig = {
   enableTailwindcss: true,
