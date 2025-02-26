@@ -112,7 +112,7 @@ const Content = observer(
           <iframe
             key={item.id}
             style={{ display: item.id == activeTabId ? 'block' : 'none' }}
-            dataset-id={`${item.id}`}
+            id={`${item.id}`}
             className={'flex-1 min-w-[1000px]'}
             src={item.path}
             title={item.title}

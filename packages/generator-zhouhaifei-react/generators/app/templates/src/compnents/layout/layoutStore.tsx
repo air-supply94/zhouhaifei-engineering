@@ -1,5 +1,4 @@
 import { action, computed, observable } from 'mobx';
-import styles from 'src/compnents/layout/layout.css';
 import type { CacheData, MenuItem, TabItem } from './types';
 
 function findMenuPath(data: MenuItem[], itemId: string, path: MenuItem[] = []): MenuItem[] {
@@ -124,13 +123,15 @@ export class LayoutStore {
       id: tabId,
       opened: true,
     };
+
     if (oldTab) {
+      const oldPath = oldTab.path;
       oldTab.path = newTabItem.path;
       oldTab.title = newTabItem.title;
       oldTab.icon = newTabItem.icon;
-      const iframeList = document.querySelectorAll<HTMLIFrameElement>(`.${styles.tabContainer} iframe`);
+      const iframeList = document.querySelectorAll<HTMLIFrameElement>('iframe');
       [].slice.call(iframeList || []).forEach((item: HTMLIFrameElement) => {
-        if (item.dataset.id == tabId) {
+        if (item.id == tabId && oldPath != newTabItem.path) {
           item.contentWindow.location.href = newTabItem.path;
         }
       });
