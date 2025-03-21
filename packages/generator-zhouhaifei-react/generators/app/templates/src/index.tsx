@@ -1,10 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, useRoutes } from 'react-router-dom';
-import 'src/global.css';
+import './global.css';
 import NProgress from 'nprogress';
-import { routes } from 'src/routes';
 import { Locale } from './compnents/locale';
+import { routes } from './routes';
 
 render();
 

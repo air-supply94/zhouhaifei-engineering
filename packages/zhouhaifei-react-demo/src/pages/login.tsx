@@ -1,8 +1,8 @@
 import { Button, Form, Input } from 'antd';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ASSETS } from 'src/assets';
-import { SYSTEM_CONFIG, type UserInfo, request } from 'src/utils';
+import { ASSETS } from '../assets';
+import { SYSTEM_CONFIG, type UserInfo, request } from '../utils';
 
 export default function () {
   const [loading, setLoading] = React.useState(false);

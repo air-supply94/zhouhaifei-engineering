@@ -1,8 +1,8 @@
 import { Button, Popconfirm, Popover } from 'antd';
 import { observer } from 'mobx-react';
-import { ASSETS } from 'src/assets';
-import { Layout } from 'src/compnents/layout';
-import { layoutStore, setPermissionList, userStore } from 'src/utils';
+import { ASSETS } from '../assets';
+import { Layout } from '../compnents/layout';
+import { layoutStore, setPermissionList, userStore } from '../utils';
 
 userStore.getUserInfo().then(() => {
   setPermissionList(userStore.userInfo?.permissions || []);

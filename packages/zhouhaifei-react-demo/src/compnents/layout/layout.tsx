@@ -2,7 +2,7 @@ import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Button, Menu, type MenuProps, Tabs, type TabsProps, theme } from 'antd';
 import { observer } from 'mobx-react';
 import type React from 'react';
-import styles from 'src/compnents/layout/layout.css';
+import styles from './layout.css';
 import type { LayoutStore } from './layoutStore';
 import type { MenuItem } from './types';
 
