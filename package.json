@@ -35,7 +35,7 @@
     "cross-env": "7.0.3",
     "esno": "4.8.0",
     "git-repo-info": "2.1.1",
-    "turbo": "2.4.2",
+    "turbo": "2.5.0",
     "typescript": "5.7.3",
     "zx": "8.3.2"
   },

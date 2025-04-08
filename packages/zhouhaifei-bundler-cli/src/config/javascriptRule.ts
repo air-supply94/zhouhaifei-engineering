@@ -2,7 +2,7 @@ import { getBabelConfig } from '@zhouhaifei/babel-preset';
 import webpack from 'webpack';
 import type { ApplyOptions } from '../types';
 import { Transpiler } from '../types';
-import { getBrowsersList } from '../utils';
+import { getBrowsersList, getEsBuildTarget } from '../utils';
 
 export function javascriptRule({
   config,
@@ -23,6 +23,13 @@ export function javascriptRule({
     targets,
   },
 }: ApplyOptions) {
+  const esbuildTarget = getEsBuildTarget(targets);
+
+  // 提升 esbuild 压缩产物的兼容性,比如不出现 ?? 这种语法
+  if (!esbuildTarget.includes('es2015')) {
+    esbuildTarget.push('es2015');
+  }
+
   const jsResource = /\.(js|mjs|cjs|jsx|ts|tsx)$/;
   const rules = [
     config.module
@@ -43,7 +50,7 @@ export function javascriptRule({
         .use('esbuild-loader')
         .loader('esbuild-loader')
         .options({
-          target: 'es2015',
+          target: esbuildTarget,
           ...esbuildLoaderOptions,
         });
 
