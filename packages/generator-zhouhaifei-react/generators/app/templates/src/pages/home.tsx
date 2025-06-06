@@ -9,6 +9,7 @@ userStore.getUserInfo().then(() => {
   layoutStore.setMenuData(userStore.getMenuData());
 });
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default observer(() => {
   return (
     <Layout

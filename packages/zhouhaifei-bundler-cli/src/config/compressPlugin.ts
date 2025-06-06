@@ -38,10 +38,13 @@ export function compressPlugin({
   } else if (jsMinifier === JSMinifier.terser) {
     minify = TerserPlugin.terserMinify;
     terserOptions = {
+      // 只移除 console.log，保留其他
       ecma: 2015,
       keep_classnames: false,
       keep_fnames: false,
       compress: {
+        drop_console: true, // 移除所有 console
+        pure_funcs: ['console.log'],
         comparisons: false,
         inline: 2,
       },

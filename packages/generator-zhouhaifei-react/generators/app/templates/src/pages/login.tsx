@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { ASSETS } from '../assets';
 import { SYSTEM_CONFIG, type UserInfo, request } from '../utils';
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default function () {
   const [loading, setLoading] = React.useState(false);
   const navigate = useNavigate();

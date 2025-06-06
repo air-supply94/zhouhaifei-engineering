@@ -1,6 +1,6 @@
 {
   "extends": ["./packages/zhouhaifei-code-style/biomeConfig.json"],
-  "javascript": {
-    "globals": ["$"]
+  "linter": {
+    "ignore": ["packages/generator-zhouhaifei-react", "tailwind.config.ts", "bundlerConfig.ts", "tsup.config.ts"]
   }
 }
